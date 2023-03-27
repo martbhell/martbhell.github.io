@@ -41,7 +41,7 @@ Short tldr of methods to answers to the objectives
 - The nyancat took a bit of more time than I should admit, but primarily I forgot how sudo works and what sudo -u does..
 - The frosty keypad I got to write a small python script: (also on a wall somewhere :)
 
-```
+```python
 #!/usr/bin/python3
 import random
 
@@ -80,7 +80,7 @@ You'll need to hit CTRL+C when it doesn't find any more solutions. It's not the 
 - The windows events log file I just opened the file on a Windows machine and looked around
 - The sysmon file I printed some interesting keys in the json strings with a tiny python script
 
-```
+```python
 #!/usr/bin/python3
 import json
 
@@ -116,7 +116,7 @@ Some things I learnt were:
     - get-content riddle # Gives an md5sum
 - md5sum hunter
 
-```
+```powershell
 $files = Get-childitem -Path /home/elf/depths -recurse -File
 Foreach ($file in $files)
  {
@@ -282,7 +282,7 @@ And then we get to the CAPTCHA + tensorflow madness! This was real fun, haven't 
 
 Another very good kringlecon talk on this topic: [https://www.youtube.com/watch?v=jmVPLwjm\_zs&feature=youtu.be](https://www.youtube.com/watch?v=jmVPLwjm_zs&feature=youtu.be) led to a github repo. Some other code and training images were found as soon as one got far enough into the Steam Tunnels. I managed to after not too much googling get the python script to store the images in teh CAPTEHA in a directory and then run the predict tensorflow python script on the github repo against it. It was however too slow. Fortunately I had access to a machine with lots of cores so moving all the data there and re-running the python got it working for me. 2 oversubscribed cores and 2GB RAM was too little. 80 dedicated single server skylake cores and 356GB RAM completed it much faster. There were messages about tensorflow from pip not having been compiled with all the things enabled. I could I suppose also have tried this with a GPU :) And the PYTHON:
 
-```
+```python
 #!/usr/bin/env python3
 # Fridosleigh.com CAPTEHA API - Made by Krampus Hollyfeld
 import requests
@@ -479,7 +479,7 @@ if __name__ == "__main__":
     - First went down a rabbit hole of the sqlmap tamper scripts.
     - Just doing this:
 
-```
+```bash
 #!/bin/bash
 token=$(curl validation)
 sqlmap --url="https://url?token=$token" -p variable
@@ -490,7 +490,7 @@ sqlmap --url="https://url?token=$token" -p variable
     - got a noice SQL error!
 - tamper investigation was not wasted because
 
-```
+```bash
 #!/bin/bash
 token=$(curl validation)
 sqlmap --url="https://studentportal.elfu.org/application-check.php?elfmail=my%40example.com&token=$token" -p elfmail --eval="import requests;token=requests.get('https://studentportal.elfu.org/validator.php').text"
@@ -621,7 +621,7 @@ this is doing the rseed, sar, and
 
 ## The Key Writer
 
-```
+```python
 #!/usr/bin/python3
 
 
@@ -667,7 +667,7 @@ localhost elfscrow.elfu.org
 
 Bunch of false positives for some reason... when I use the list of keys I generated and my API and a localhost flask API and hosts file override. Anyway, let this run and used file to stop when it found a pdf, it stopped at 4849 (or 4850th key in keys \[\] in my python api.py, unsure if that is sorted.. so the creation time might have been 1575663650 ( _Friday, December 6, 2019 8:20:50 PM_ ) :
 
-```
+```bash
 #!/bin/bash
 
 # the Bruter
@@ -689,7 +689,7 @@ done
 
 and the API.py
 
-```
+```python
 #https://stoplight.io/blog/python-rest-api/
 from flask import Flask, json
 import os

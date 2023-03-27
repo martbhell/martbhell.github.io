@@ -26,6 +26,8 @@ With [http://www.guldmyr.com/blog/esxi-vmware-workstation/](http://www.guldmyr.c
 
 [oi-dev-151a-text-x86.iso](http://openindiana.org/ "get it from openindiana.org") installed
 
+```bash
+
 pkg install package/pkg
 
 pkg update
@@ -41,18 +43,21 @@ groupadd postgres
 chown postgres:postgres /var/postgres
 
 chmod 755 /var/postgres
+```
 
 The pkg update makes it into 151a2
 
 If you do not create the ones above the install of service/postgres will fail and create a new BE.
 
+```bash
 pkg install pkg:/database/postgres-84
 pkg install pkg:/service/database/postgres-84
 
 vi /etc/passwd
-
+```
 change postgres to 90:90 and homedir to /export/home/postgres
 
+```bash
 mkdir /export/home/postgres
 
 chown postgres.postgres /export/home/postgres
@@ -60,9 +65,11 @@ root@oi:~# vi /export/home/postgres/.profile
 PATH=/usr/postgres/8.4/bin:${PATH}
 PGDATA=/var/postgres/8.4/data
 export PATH PGDATA
+```
 
 you probably also want to add these to the root user's path
 
+```bash
 svcadm enable postgresql-84:32\_bit
 
 root@oi:/var/log# svcs -a|grep postg
@@ -74,6 +81,7 @@ su - postgres
 psql
 
 \\l
+```
 
 I initially did this in an ESXi VM in VMWare Workstation, but that keept freezing so I went over to a 'real vm' instead. The VM is more responsive.
 
@@ -81,12 +89,13 @@ I initially did this in an ESXi VM in VMWare Workstation, but that keept freezin
 
 wget it from [www.dcache.org](http://www.dcache.org "http://www.dcache.org")
 
-pkgadd -d dcache-server-1.9.12-16.pkg
+`pkgadd -d dcache-server-1.9.12-16.pkg`
 
 follow [http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml](http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml "http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml") for the instructions of which postgresql-scripts and users and stuff to create
 
 It's however not enough :
 
+```bash
 root@oi:~# /opt/d-cache/bin/dcache start
 /opt/d-cache/bin/dcache\[127\]: local: not found \[No such file or directory\]
 /opt/d-cache/bin/dcache\[128\]: local: not found \[No such file or directory\]
@@ -95,11 +104,13 @@ root@oi:~# /opt/d-cache/bin/dcache start
 /opt/d-cache/bin/dcache\[131\]: local: not found \[No such file or directory\]
 /opt/d-cache/bin/dcache\[132\]: local: not found \[No such file or directory\]
 /opt/d-cache/bin/dcache\[317\]: .\[162\]: local: not found \[No such file or directory\]
+```
 
 so, edit /opt/d-cache/bin/dcache and remove the if in the beginning that will make it use /usr/xpg4/bin/sh - so that it uses /bin/bash instead.
 
 Like this:
 
+```bash
 if \[ "$1" = "%" \]; then
     shift
 elif \[ "\`uname\`" = "SunOS" \]; then
@@ -110,17 +121,20 @@ elif \[ "\`uname\`" = "SunOS" \]; then
         echo "probably break, but we attempt to execute it anyway."
     fi
 fi
+```
 
 after I changed this, I noticed in the console that it said:
 
-rpcbind: non-local attempt to set
+`rpcbind: non-local attempt to set`
 
 bad?
 
 anyway, then start dCache
 
+```bash
 root@oi:/opt/d-cache/bin# /opt/d-cache/bin/dcache start
 Starting dCacheDomain done
+```
 
 in /var/log/dCacheDomain.log you'll find why it's not working:
 
@@ -128,13 +142,17 @@ touch /etc/exports
 
 and it appears to be stable, except for some errors about (NFSv3-oi), however, we disregard those for now, we just want to get it running!
 
+```bash
 vi /opt/d-cache/etc/dcache.conf
 dcache.layout=single
 mkdir /pool1
+```
 
 and
 
+```bash
 vi /opt/d-cache/etc/layouts/single.conf
+```
 
 uncomment the pool1 section, set a maxDiskSize=2G to specify max disk space allowed. Specifics are in the installation part on dcache.org in the book.
 
@@ -146,13 +164,15 @@ Next step is to try it out, this might prove a little bit more difficult (to fin
 
 so maybe next time you restart the vm it gives some errors and puts the postgresql-server in maintenance mode. Look in /var/adm/messages for some tips, it should point you to
 
+```bash
 svcs -xv svc:/application/database/postgresql\_84:default\_32bit
+```
 
 /var/svc/log/application-database-postgresql\_84\\:default\_32bit.log
 
 which will tell you more about what's going on and how to fix it
 
-svcadm restart svcadm clear
+`svcadm restart svcadm clear`
 
 ## Use dCache with webdav
 
@@ -160,8 +180,10 @@ We'll start with trying to use Webdav (doesn't require anything fancy on the cli
 
 go to the layout file and uncomment the webdav part, add
 
+```
 webdavAnonymousAccess=FULL
 webdavRootPath=/data/world-writable
+```
 
 The script /opt/d-cache/bin/chimera-cli.sh sadly assumes that you need bash or a special version of bash somehow. So running
 
@@ -213,21 +235,23 @@ Download dCache2Go from here:
 
 To convert it into VMware format:
 
-VBoxManage clonehd source.vdi target.vmdk --format VMDK
+`VBoxManage clonehd source.vdi target.vmdk --format VMDK`
 
 Then create new vm and set the new vmdk file as the disk.
 
 When this VM is up (and the dCache server of course), hit:
 
-mount -t nfs4 -o minorversion ip.to.dcache.host:/ /mnt
+`mount -t nfs4 -o minorversion ip.to.dcache.host:/ /mnt`
 
 then
 
+```
 cd /mnt/data/world-writable
 mkdir another
 cd another
 cp /bin/bash .
 cp bash /tmp/bash
 diff /tmp/bash /bin/bash
+```
 
 ## SCORE! We have a working dCache setup in a VM running openindiana!

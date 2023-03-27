@@ -74,6 +74,7 @@ Fighting with docker took a lot of my time when getting this working the first t
 
 Commands to run on an Ubuntu 14.04 VM to get a kind of similar environment as in travis:
 
+```bash
 sudo apt update
 sudo apt upgrade
 sudo apt install build-essential libssl-dev libffi-dev python-dev git
@@ -81,5 +82,6 @@ sudo apt install docker.io cgroup-lite
 /usr/share/docker.io/contrib/check-config.sh 
 echo 'DOCKER\_OPTS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -s devicemapper"' | sudo tee /etc/default/docker > /dev/null
 sudo cgroups-mount
+```
 
 And then from there run the commands you have in .travis.yml

@@ -13,7 +13,7 @@ Does it still build?
 
 CentOS 7.7:
 
-```
+```bash
 $ sudo yum install git
 $ git clone github.com/quadra-game/quadra
 $ sudo yum groupinstall "Development Tools" 
@@ -28,7 +28,7 @@ $ make
 
 Does it run!?
 
-$ QUADRADIR=. ./quadra
+`$ QUADRADIR=. ./quadra`
 
 And I get a very nice window :)
 

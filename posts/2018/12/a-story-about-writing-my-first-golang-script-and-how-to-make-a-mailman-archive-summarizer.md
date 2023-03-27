@@ -35,7 +35,7 @@ In summary the steps to get there were:
 - Put this in a map (golang is **different** here too. Kind of like a python dictionary but one had to initialize it in advance. Lots of googling involved :)
 - Loop over the map and create RSS, JSON, ATOM or HTML output using the [gorilla feeds pkg](http://www.gorillatoolkit.org/pkg/feeds). Use of the [time](https://golang.org/pkg/time/) pkg in Golang was needed to have nice fields in the RSS, this was interesting. Not using UNIX 1970 seconds epoch but some date in 2006? Some|most functions?types?interfaces? (I don't know the names of most things) give a value AND an error on the call makes declaring? a variable a bit funny looking:
 
-```
+```golang
 for l, _ := range data {
     keys = append(keys, l)
 }
