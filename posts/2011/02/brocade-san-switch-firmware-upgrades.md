@@ -290,7 +290,22 @@ Brocade release notes in .pdf
 
 ## Notes from the release notes:
 
-Upgrading from Fabric OS 5.0.x to 5.2.3 is supported Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not. Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades) Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later. Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later. Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2 Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later. Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2. Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported. Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS\_UpgradeGuide\_v730.pdf and the Brocade Release notes). Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s" Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s". Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s". Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
+ - Upgrading from Fabric OS 5.0.x to 5.2.3 is supported
+ - Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not.
+ - Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades)
+ - Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b
+ - Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later.
+ - Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later.
+ - Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2
+ - Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later.
+ - Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2.
+ - Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported.
+ - Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS\_UpgradeGuide\_v730.pdf and the Brocade Release notes).
+ - Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall
+ - Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s"
+ - Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s".
+ - Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s".
+ - Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
 
 About non-disruptively: This means you **can** go to 7.0.xfrom earlier  than 6.4.1a but ports will go offline during the upgrade. See the release notes or Upgrade Guides for more details.
 
