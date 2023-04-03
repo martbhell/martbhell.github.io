@@ -1,6 +1,8 @@
-theme: minima
+remote_theme: jekyll/minima
 plugins:
+    - jekyll-remote-theme
     - jekyll-relative-links
 relative_links:
     enabled: true
     collections: true
+google_analytics: G-H4LG7R6ZGG
