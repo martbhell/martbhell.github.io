@@ -1,10 +1,10 @@
 ---
 title: "Brocade SAN Switch Firmware Upgrades"
 date: "2011-02-01"
-categories: 
+categories:
   - "it"
   - "storage"
-tags: 
+tags:
   - "brocade"
   - "brocade-san"
   - "fabric"
@@ -37,31 +37,184 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
 ## Updates in this article:
 
-\[su\_accordion\] \[su\_spoiler title="Old Updates"\]
+<details><summary>Old Updates < 2013</summary>
 
-**2011-02-22**: Updated links because the release notes I had before to 6.1.x and above did not work anymore. Also changed the sub-versions in 6.1.x and above to the latest released one by HP. **2011-02-24**: Found link to [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1 "FOS 6.0.x and 5.1.x") on HP.com with the help of an ITRC thread. **2011-04-21**: Added links for correlating Brocade Product name, model number and HP name. Latest in 6.4.x series is now 6.4.1b **2011-05-05**: Added link to Web Tools for 6.2.x with reference to how to upgrade Firmware via the web tools. **2011-05-15**: A note added about compatibility regarding the 'HP' firmware files and other vendors - as far as I can tell the ones downloaded from HP will work on other non-HP switches. Also posted a [new blog post](http://www.guldmyr.com/blog/hps-brocade-firmwares-compatible-with-other-switches/ "works?") about that. Added [link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "IBM SAN b-type Firmware Version 6.x Release Notes") to IBM.com - for correlating product names and for getting (all Fabric OS) firmwares. EMC [also has Brocade products](http://www.brocade.com/partnerships/oems/index.page "on brocade.com"). **2011-05-18**: Added a link to a post on [HP's support forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new HP's ITRC Forum") where the post helped a bit. Also made post a little easier, wrote a little about the release.plist confusion. **2011-05-24**: Added example to show that driver updates are important. Some more restructuring of the article. **2011-07-12:** Added FOS 7.0.0a **2011-07-14:** Added [link](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/mostViewedResults/?d-8034386-p=&d-8034386-o=&sort=updatedDate&tableId=tableA&dir=desc&page=&d-8034386-s=&showSecondTableA=&action=tableAction&sp4ts.oid=3742051 "searching for HP SAN Switch b-series 8/80 advisories") to HP knowledge base and updated a link to an ITRC forum thread to point to the new forum. **2011-09-29**: Added FOS 7.0.0b and section about CF cards. **2011-10-19**: Wrote a bit about firmware upgrade order. **2011-10-24:** The HP links to 6.0.0c and 5.3.x seems to not work anymore. I could not find either of these for download on HP's website. The IBM one still has 6.0.0c (release notes anyway). **2011-12-05**: Went through all links to make sure they worked. Re-wrote some of the steps and re-ordered so that 'decide' is before 'prepare'. Added output from switch when doing the firmware upgrade via CLI. **2011-12-10:** Added table of contents via a plugin. **2012-01-02**: Added FOS 7.0.0c **2012-01-09**: Added EMC branded switches default pw **2012-02-14**: Added HP's [link](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareIndex.jsp?lang=en&cc=us&prodNameId=315080&prodTypeId=12169&prodSeriesId=315078&swLang=8&taskId=135&swEnvOID=54 "on hp.com") to FOS 5.x. firmware. **2012-02-15:** Added [IBM's link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com") to FOS 7 info and downloads. **2012-02-21:** Some notes about which switches can do which firmware. Re-wrote a part of the upgrade order section. **2012-02-27**: Note about licenses. **2012-02-29**: Added note about 5.1.x to 5.3.x, made upgrade path clearer. Also made how to find 5.3.x and 6.x firmwares a little clearer for HP's page. **2012-03-01**: Added 6.2.2f and 7.0.1 and note about plist/ftp for 5.1.x **2012-04-03:** Addeed 6.3.2e **2012-04-24:** Added 7.0.1a **2012-04-27:** Rewrote some part of the upgrade section. **2012-06-07:** Added 6.4.3 and 7.0.1b **2012-06-14:** Added link to [Brocade FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf "on brocade.com") in decide section. **2012-10-27:** Some grammar updates and 16G FOS 7.x requirement. 6.4.3b and 7.0.2. **2012-11-05**: Updated links to release notes. Perhaps it's time to condense the updates list. Notes about passive/active ftp, ifmodeshow|ipaddrshow and java version required (listed in release notes).
+**2011-02-22:** Updated links because the release notes I had before to 6.1.x and above did not work anymore. Also changed the sub-versions in 6.1.x and above to the latest released one by HP.
 
-**2013-03-10**: 7.0.2b and 6.4.3c added some notes about compatibility. Improved list of which FOS works with which FC speeds. **2013-03-29:** Added 7.1.0a and 7.0.2c. Only HP is out with 7.1.0a as of now. Brocade may have it non-publicly, at least I cannot see it in [my brocade](http://my.brocade.com/ "http://my.brocade.com/"). Other minor updates. **2013-04-04:** Added link to 6.4.3d **2013-05-02:** Updated link to FOS Target Path. **2013-06-23:** Changed some ftp:// links to http:// **2013-07-16:** Added link to IBM's [pdf](http://www.ibm.com/developerworks/aix/library/au-aix-san-switch-firmware/au-aix-san-switch-firmware-pdf.pdf "pdf") with pictures for firmware upgrade. **2013-08-03:** 6.4.3e by IBM - not available by HP yet. Disruptive upgrades are OK from 6.2 to 6.4. **2013-08-05:** Added 7.1.1, updated some links to release notes. **2013-10-03:** Made it a bit clearer regarding which is the earliest firmware you can upgrade from. Newer revisions of some Brocade release notes. 7.0.2d out and 6.4.3e link to hp.com **2013-11-14:** Removed comment that B300 does not support 6.4.x - it does! It should have been the 200E! Thanks Eugene :)
+**2011-02-24:** Found link to [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1 "FOS 6.0.x and 5.1.x") on HP.com with the help of an ITRC thread.
+
+**2011-04-21:** Added links for correlating Brocade Product name, model number and HP name. Latest in 6.4.x series is now 6.4.1b
+
+**2011-05-05:** Added link to Web Tools for 6.2.x with reference to how to upgrade Firmware via the web tools.
+
+**2011-05-15:** A note added about compatibility regarding the 'HP' firmware files and other vendors - as far as I can tell the ones downloaded from HP will work on other non-HP switches. Also posted a [new blog post](http://www.guldmyr.com/blog/hps-brocade-firmwares-compatible-with-other-switches/ "works?") about that. Added [link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "IBM SAN b-type Firmware Version 6.x Release Notes") to IBM.com - for correlating product names and for getting (all Fabric OS) firmwares. EMC [also has Brocade products](http://www.brocade.com/partnerships/oems/index.page "on brocade.com").
+
+**2011-05-18:** Added a link to a post on [HP's support forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new HP's ITRC Forum") where the post helped a bit. Also made post a little easier, wrote a little about the release.plist confusion.
+
+**2011-05-24:** Added example to show that driver updates are important. Some more restructuring of the article.
+
+**2011-07-12:** Added FOS 7.0.0a
+
+**2011-07-14:** Added [link](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/mostViewedResults/?d-8034386-p=&d-8034386-o=&sort=updatedDate&tableId=tableA&dir=desc&page=&d-8034386-s=&showSecondTableA=&action=tableAction&sp4ts.oid=3742051 "searching for HP SAN Switch b-series 8/80 advisories") to HP knowledge base and updated a link to an ITRC forum thread to point to the new forum.
+
+**2011-09-29:** Added FOS 7.0.0b and section about CF cards.
+
+**2011-10-19:** Wrote a bit about firmware upgrade order.
+
+**2011-10-24:** The HP links to 6.0.0c and 5.3.x seems to not work anymore. I could not find either of these for download on HP's website. The IBM one still has 6.0.0c (release notes anyway).
+
+**2011-12-05:** Went through all links to make sure they worked. Re-wrote some of the steps and re-ordered so that 'decide' is before 'prepare'. Added output from switch when doing the firmware upgrade via CLI.
+
+**2011-12-10:** Added table of contents via a plugin.
+
+**2012-01-02:** Added FOS 7.0.0c
+
+**2012-01-09:** Added EMC branded switches default pw
+
+**2012-02-14:** Added HP's [link](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareIndex.jsp?lang=en&cc=us&prodNameId=315080&prodTypeId=12169&prodSeriesId=315078&swLang=8&taskId=135&swEnvOID=54 "on hp.com") to FOS 5.x. firmware.
+
+**2012-02-15:** Added [IBM's link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com") to FOS 7 info and downloads.
+
+**2012-02-21:** Some notes about which switches can do which firmware. Re-wrote a part of the upgrade order section.
+
+**2012-02-27:** Note about licenses.
+
+**2012-02-29:** Added note about 5.1.x to 5.3.x, made upgrade path clearer. Also made how to find 5.3.x and 6.x firmwares a little clearer for HP's page.
+
+**2012-03-01:** Added 6.2.2f and 7.0.1 and note about plist/ftp for 5.1.x
+
+**2012-04-03:** Addeed 6.3.2e
+
+**2012-04-24:** Added 7.0.1a
+
+**2012-04-27:** Rewrote some part of the upgrade section.
+
+**2012-06-07:** Added 6.4.3 and 7.0.1b
+
+**2012-06-14:** Added link to [Brocade FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf "on brocade.com") in decide section.
+
+**2012-10-27:** Some grammar updates and 16G FOS 7.x requirement. 6.4.3b and 7.0.2.
+
+**2012-11-05:** Updated links to release notes. Perhaps it's time to condense the updates list. Notes about passive/active ftp, ifmodeshow|ipaddrshow and java version required (listed in release notes).
+
+</details>
+<details><summary>Old Updates < 2020</summary>
+
+**2013-03-10:** 7.0.2b and 6.4.3c added some notes about compatibility. Improved list of which FOS works with which FC speeds.
+
+**2013-03-29:** Added 7.1.0a and 7.0.2c. Only HP is out with 7.1.0a as of now. Brocade may have it non-publicly, at least I cannot see it in [my brocade](http://my.brocade.com/ "http://my.brocade.com/"). Other minor updates.
+
+**2013-04-04:** Added link to 6.4.3d
+
+**2013-05-02:** Updated link to FOS Target Path.
+
+**2013-06-23:** Changed some ftp:// links to http://
+
+**2013-07-16:** Added link to IBM's [pdf](http://www.ibm.com/developerworks/aix/library/au-aix-san-switch-firmware/au-aix-san-switch-firmware-pdf.pdf "pdf") with pictures for firmware upgrade.
+
+**2013-08-03:** 6.4.3e by IBM - not available by HP yet. Disruptive upgrades are OK from 6.2 to 6.4.
+
+**2013-08-05:** Added 7.1.1, updated some links to release notes.
+
+**2013-10-03:** Made it a bit clearer regarding which is the earliest firmware you can upgrade from. Newer revisions of some Brocade release notes. 7.0.2d out and 6.4.3e link to hp.com
+
+**2013-11-14:** Removed comment that B300 does not support 6.4.x - it does! It should have been the 200E! Thanks Eugene :)
 
 **2014-02-01:** As of 2014-02-01 HP does not allow anybody without a valid support agreement to download firmwares. Release notes and at least some firmware links appears to still be working. Expect difficulty and broken links while hunting for firmwares. Fabric OS firmwares downloaded from IBM's site works on HP switches too, but there might be some differences (although I couldn't find any important ones when I compared 6.3.1b). So far it seems this restriction of access to firmwares only applies to HP servers.
 
 **2014-02-07:** Added new link to [HP's page for FOS 5.2 to 6.3](http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm "http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm")  Thanks Leo R!
 
-**2014-02-11:** Added 7.2.0b and 7.1.1c (HP have 7.1.1c release notes up but IBM does not - to find Brocade version go to IBM's download the firmware page that's on Brocade.com and get the release notes from there). Also 3 years anniversary on this post on 2014-02-01! **2014-02-17:** But be careful with 7.2.0b - IBM has a note on their [7.x page](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855") about 7.2.0b saying: "_IBM recommends that customers not deploy FOS 7.2.0b if virtual switch capability is needed. Virtual switch users should migrate to an earlier version as soon as possible._" **2014-03-17:** The problem with 7.2.0b was likely DEFECT000491192 fixed in 7.2.0c and later also DEFECT000494570 was fixed in 7.2.0d. 7.2.0x seems a bit unstable at the moment. 7.2.1 is currently available for download via HP's pages but not via IBM/Brocade's. Also no release notes available. Archived 2013 updates. **2014-04-18:** Added 6.4.3f and 7.1.1c and 7.1.2 is out. Updated migration paths a bit. The Brocade release notes of 7.1.x actually have a decent list of the migration path needed now. See the section "Recommended Migration Paths to FOS v7.1.2". **2014-08-06:** 7.2.1a, 7.1.2a, 7.0.2e. Updated some links that had gone bad ([FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf)) and made the "Show/Hide" Updates work again. **2014-09-28:** 7.1.2b and 7.2.1b is out. **2014-10-01:**  7.3.0a is out but can't find any release notes for it. **2014-10-25:** 7.2.1c **2015-01-18:** 7.2.1d, 7.3.0c. "HP's" release notes are too hard to find.. Added a note about FileZilla being a good ftp server. Thanks Harry Redl! **2015-02-20:** 6.2.2g, 6.4.3g **2015-04-06:** 7.3.1a from HP **2015-04-21:** 7.3.1a from IBM **2015-06-19:** Note about FileZilla being hosted off sourceforge - installer might contain malware. **2015-07-07:** 7.4.0a, 7.3.1b, 7.2.1e. Removed link to HP's webkey license page. Doesn't work anymore. Note about BNA version required to manage Fabric OS v7.4 switches. **2015-08-31:** 6.4.3g and 7.3.1b new revision of release notes. 7.2.1f, 7.4.0b **2015-09-01:** 7.3.1c **2015-09-16**: New versions of release notes. **2015-10-25:** [7.4.1](ftp://public.dhe.ibm.com/storage/san/fos7/v7.4.1_ReleaseNotes_v1.0.pdf) is out for the brave and 6.4.3h (Fixes to OpenSSL CVE-2015-0286, CVE-2015-0288, CVE-2015-0289, CVE-2015-0292) **2015-12-05:** 7.2.1g and 7.3.1d. Updated some links. Need to go through a lot of the HP ones here to point to HPE.. **2016-02-24:** 7.4.1b **2016-03-15:** 7.3.2 **2016-05-17**: 7.4.1c **2016-08-13:** 7.3.2a, 7.4.1d **2016-12-19:** 7.3.2b, 7.4.1e
+**2014-02-11:** Added 7.2.0b and 7.1.1c (HP have 7.1.1c release notes up but IBM does not - to find Brocade version go to IBM's download the firmware page that's on Brocade.com and get the release notes from there). Also 3 years anniversary on this post on 2014-02-01!
 
-\[/su\_spoiler\] \[su\_spoiler title="New Updates" open="yes"\]
+**2014-02-17:** But be careful with 7.2.0b - IBM has a note on their [7.x page](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855") about 7.2.0b saying: "_IBM recommends that customers not deploy FOS 7.2.0b if virtual switch capability is needed. Virtual switch users should migrate to an earlier version as soon as possible._"
 
-**2017-03-10:** 8.x has been out for a while **2017-04-29:** new links to Brocade FOS target path and better links for where to fetch firmwares **2017-05-03:** 8.0.2b and added links to Upgrade Guides for [8.0](http://www.brocade.com/content/dam/common/documents/content-types/software-upgrade-guide/fos-800-upgradeguide.pdf).0 and [7.4](http://www.brocade.com/content/html/en/software-upgrade-guide/FOS_740_UPGRADE/).0) **2017-05-13:** [7.4.2](ftp://public.dhe.ibm.com/storage/san/fos7/v7.4.2_ReleaseNotes_v2.0.pdf) **2017-08-07:** [8.1.0c](http://public.dhe.ibm.com/storage/san/fos8/v8.1.0c_ReleaseNotes_v1.0.pdf) **2017-11-09**: [8.1.1a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.1a_ReleaseNotes_v1.0.pdf) **2017-12-05:** [8.0.2c](ftp://public.dhe.ibm.com/storage/san/fos8/v8.0.2c_ReleaseNotes_v1.0.pdf) **2018-01-01:** [8.1.2a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.2a_ReleaseNotes_v1.0.pdf) and [7.4.2b](http://:http://service.boulder.ibm.com/storage/san/fos7/v7.4.2b_ReleaseNotes_v1.0.pdf) **2018-02-08:** [7.4.2c](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2c_ReleaseNotes_v1.0.pdf) and [8.0.2d](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2d_ReleaseNotes_v1.0.pdf) **2018-06-15:** [8.2.0a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.2.0a_ReleaseNotes_v1.0.pdf) and [8.1.2d](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.2d_ReleaseNotes_v1.0.pdf) and [8.0.2e](ftp://public.dhe.ibm.com/storage/san/fos8/v8.0.2e_ReleaseNotes_v1.0.pdf) **2018-10-11**: fixing some links, Brocade is now Broadcom so some links are not working anymore surprise. Some HP links no longer work so removed those too. **2018-12-07**: [7.4.2d](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf) and [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf) and [8.1.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.1.2f_ReleaseNotes_v2.0.pdf) **2019-04-18:** [FOS Target Path](https://docs.broadcom.com/docs/53-1003916) on Broadcom.  From a reader got a link to NetApp's [Brocadeassist portal](http://www.brocadeassist.com/public/NetAppRelease) where **newer firmware** can be found than on IBM's. Some more link updates and link to [8.2.1b](https://portal.broadcom.com/web/support/netapp?p_p_id=AssistPortal&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=directDownloadURL&p_p_cacheability=cacheLevelPage&_AssistPortal_mvcRenderCommandName=landingPageURL&downloadURL=/u002/extwebportal/ORACLE/INBOUND/DOCSAFE/TEMPDOWNLOADS/18140880443172713.pdf&filename=v8.2.1b_releasenotes_v1.0.pdf) **2019-04-19**: More link fixes.  FOS 6.x - 8.x firmwares can all be downloaded from the brocadeassist portal. **2019-04-20:** 8.1.2g and 8.2.1b on IBM release notes so updated links **2019-07-17:** BlueChris in a comment found a nice HPE link to older Firmwares! **2019-08-23:** 8.2.1c is on NetApp's link but there are no release notes - I'd pass **2019-11-21:** **all** links to firmware downloads don't work right now. Only one I have found is to HPE, but there you need support contract. Found a public link? **2020-05-10:** Also some new releases, 8.2.2 is out. **2020-09-27: ** 9.0.0a got released in August
+**2014-03-17:** The problem with 7.2.0b was likely DEFECT000491192 fixed in 7.2.0c and later also DEFECT000494570 was fixed in 7.2.0d. 7.2.0x seems a bit unstable at the moment. 7.2.1 is currently available for download via HP's pages but not via IBM/Brocade's. Also no release notes available. Archived 2013 updates.
 
-**2020-12-12**: 9.0.0b is out
+**2014-04-18:** Added 6.4.3f and 7.1.1c and 7.1.2 is out. Updated migration paths a bit. The Brocade release notes of 7.1.x actually have a decent list of the migration path needed now. See the section "Recommended Migration Paths to FOS v7.1.2".
 
-**2021-08-15**: Only send download links to places allowed by Broadcom. The firmware appears to be only available from there and with a support contract these days. Also some devices stop working if they are too old with a too new firmware. Comments disabled ;/ Thanks for the ride!
+**2014-08-06:** 7.2.1a, 7.1.2a, 7.0.2e. Updated some links that had gone bad ([FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf)) and made the "Show/Hide" Updates work again.
 
- 
+**2014-09-28:** 7.1.2b and 7.2.1b is out.
 
-\[/su\_spoiler\]
+**2014-10-01:**  7.3.0a is out but can't find any release notes for it.
 
-\[/su\_accordion\]
+**2014-10-25:** 7.2.1c
+
+**2015-01-18:** 7.2.1d, 7.3.0c. "HP's" release notes are too hard to find.. Added a note about FileZilla being a good ftp server. Thanks Harry Redl!
+
+**2015-02-20:** 6.2.2g, 6.4.3g
+
+**2015-04-06:** 7.3.1a from HP
+
+**2015-04-21:** 7.3.1a from IBM
+
+**2015-06-19:** Note about FileZilla being hosted off sourceforge - installer might contain malware.
+
+**2015-07-07:** 7.4.0a, 7.3.1b, 7.2.1e. Removed link to HP's webkey license page. Doesn't work anymore. Note about BNA version required to manage Fabric OS v7.4 switches.
+
+**2015-08-31:** 6.4.3g and 7.3.1b new revision of release notes. 7.2.1f, 7.4.0b
+
+**2015-09-01:** 7.3.1c
+
+**2015-09-16:** New versions of release notes.
+
+**2015-10-25:** [7.4.1](ftp://public.dhe.ibm.com/storage/san/fos7/v7.4.1_ReleaseNotes_v1.0.pdf) is out for the brave and 6.4.3h (Fixes to OpenSSL CVE-2015-0286, CVE-2015-0288, CVE-2015-0289, CVE-2015-0292)
+
+**2015-12-05:** 7.2.1g and 7.3.1d. Updated some links. Need to go through a lot of the HP ones here to point to HPE..
+
+**2016-02-24:** 7.4.1b
+
+**2016-03-15:** 7.3.2
+
+**2016-05-17:** 7.4.1c
+
+**2016-08-13:** 7.3.2a, 7.4.1d
+
+**2016-12-19:** 7.3.2b, 7.4.1e
+
+**2017-03-10:** 8.x has been out for a while
+
+**2017-04-29:** new links to Brocade FOS target path and better links for where to fetch firmwares
+
+**2017-05-03:** 8.0.2b and added links to Upgrade Guides for [8.0](http://www.brocade.com/content/dam/common/documents/content-types/software-upgrade-guide/fos-800-upgradeguide.pdf).0 and [7.4](http://www.brocade.com/content/html/en/software-upgrade-guide/FOS_740_UPGRADE/).0)
+
+**2017-05-13:** [7.4.2](ftp://public.dhe.ibm.com/storage/san/fos7/v7.4.2_ReleaseNotes_v2.0.pdf)
+
+**2017-08-07:** [8.1.0c](http://public.dhe.ibm.com/storage/san/fos8/v8.1.0c_ReleaseNotes_v1.0.pdf)
+
+**2017-11-09:** [8.1.1a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.1a_ReleaseNotes_v1.0.pdf)
+
+**2017-12-05:** [8.0.2c](ftp://public.dhe.ibm.com/storage/san/fos8/v8.0.2c_ReleaseNotes_v1.0.pdf)
+
+**2018-01-01:** [8.1.2a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.2a_ReleaseNotes_v1.0.pdf) and [7.4.2b](http://:http://service.boulder.ibm.com/storage/san/fos7/v7.4.2b_ReleaseNotes_v1.0.pdf)
+
+**2018-02-08:** [7.4.2c](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2c_ReleaseNotes_v1.0.pdf) and [8.0.2d](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2d_ReleaseNotes_v1.0.pdf)
+
+**2018-06-15:** [8.2.0a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.2.0a_ReleaseNotes_v1.0.pdf) and [8.1.2d](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.2d_ReleaseNotes_v1.0.pdf) and [8.0.2e](ftp://public.dhe.ibm.com/storage/san/fos8/v8.0.2e_ReleaseNotes_v1.0.pdf)
+
+**2018-10-11:** fixing some links, Brocade is now Broadcom so some links are not working anymore surprise. Some HP links no longer work so removed those too.
+
+**2018-12-07:** [7.4.2d](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf) and [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf) and [8.1.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.1.2f_ReleaseNotes_v2.0.pdf)
+
+**2019-04-18:** [FOS Target Path](https://docs.broadcom.com/docs/53-1003916) on Broadcom.  From a reader got a link to NetApp's [Brocadeassist portal](http://www.brocadeassist.com/public/NetAppRelease) where **newer firmware** can be found than on IBM's. Some more link updates and link to [8.2.1b](https://portal.broadcom.com/web/support/netapp?p_p_id=AssistPortal&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=directDownloadURL&p_p_cacheability=cacheLevelPage&_AssistPortal_mvcRenderCommandName=landingPageURL&downloadURL=/u002/extwebportal/ORACLE/INBOUND/DOCSAFE/TEMPDOWNLOADS/18140880443172713.pdf&filename=v8.2.1b_releasenotes_v1.0.pdf)
+
+**2019-04-19:** More link fixes.  FOS 6.x - 8.x firmwares can all be downloaded from the brocadeassist portal.
+
+**2019-04-20:** 8.1.2g and 8.2.1b on IBM release notes so updated links
+
+**2019-08-23:** 8.2.1c is on NetApp's link but there are no release notes - I'd pass
+
+**2019-11-21:** **all** links to firmware downloads don't work right now. Only one I have found is to HPE, but there you need support contract.
+
+**2020-05-10:** Also some new releases, 8.2.2 is out.
+
+**2020-09-27:** 9.0.0a got released in August
+
+**2020-12-12:** 9.0.0b is out
+
+</details>
+
+**2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days!
 
 ## Steps
 
@@ -79,7 +232,7 @@ If the switch is on 5.1.x you can go directly to 5.3.x.
 
 What I usually recommend is this path: **5.0.1d -> 5.2.3 -> 5.3.2c -> 6.0.1a -> 6.1.2c -> 6.2.2g -> 6.3.2e -> 6.4.3h > 7.0.2e > 7.1.2b > 7.2.1g > 7.3.2a > 7.4.2f > 8.0.2f > 8.1.2g > 8.2.2b > 9.0.0b**
 
-_It's also possible to upgrade from a version earlier than 6.4.1b to 7.0.x or from 7.0.x to 7.2.x  - but this is a **disruptive** upgrade (meaning ports will go offline/online during upgrade)._ 
+_It's also possible to upgrade from a version earlier than 6.4.1b to 7.0.x or from 7.0.x to 7.2.x  - but this is a **disruptive** upgrade (meaning ports will go offline/online during upgrade)._
 
 Brocade now has a document that describes a process of determining the 'ideal' version of Fabric OS you should be running. It is called [Brocade FOS Target Path](https://docs.broadcom.com/docs/53-1003916 "Brocade FOS Target Path").
 
@@ -137,7 +290,22 @@ Brocade release notes in .pdf
 
 ## Notes from the release notes:
 
-Upgrading from Fabric OS 5.0.x to 5.2.3 is supported Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not. Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades) Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later. Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later. Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2 Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later. Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2. Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported. Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS\_UpgradeGuide\_v730.pdf and the Brocade Release notes). Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s" Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s". Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s". Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
+ - Upgrading from Fabric OS 5.0.x to 5.2.3 is supported
+ - Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not.
+ - Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades)
+ - Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b
+ - Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later.
+ - Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later.
+ - Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2
+ - Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later.
+ - Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2.
+ - Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported.
+ - Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS\_UpgradeGuide\_v730.pdf and the Brocade Release notes).
+ - Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall
+ - Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s"
+ - Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s".
+ - Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s".
+ - Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
 
 About non-disruptively: This means you **can** go to 7.0.xfrom earlier  than 6.4.1a but ports will go offline during the upgrade. See the release notes or Upgrade Guides for more details.
 
@@ -242,6 +410,7 @@ In some cases you may have to specify the sub directory. For example the 4/16 HP
 
 ### firmwaredownload example:
 
+```bash
 switch:admin> firmwaredownload
 Server Name or IP Address: IP.TO.SCP.SERVER
 User Name: username
@@ -270,6 +439,8 @@ Do you want to continue \[Y\]: y
 All packages have been downloaded successfully.
  Firmware has been downloaded to the secondary partition of the switch.
  HA Rebooting ...
+
+```
 
 ### Transfer Protocol and Connectivity
 
