@@ -148,7 +148,7 @@ If you have to upgrade many steps, you should upgrade to the latest in the serie
 
 If the switch is on 5.1.x you can go directly to 5.3.x.
 
-What I usually recommend is this path: **5.0.1d -> 5.2.3 -> 5.3.2c -> 6.0.1a -> 6.1.2c -> 6.2.2g -> 6.3.2e -> 6.4.3h > 7.0.2e > 7.1.2b > 7.2.1g > 7.3.2a > 7.4.2f > 8.0.2f > 8.1.2g > 8.2.2b > 9.0.0b**
+What I usually recommend is this path: **5.0.1d -> 5.2.3 -> 5.3.2c -> 6.0.1a -> 6.1.2c -> 6.2.2g -> 6.3.2e -> 6.4.3h > 7.0.2e > 7.1.2b > 7.2.1g > 7.3.2a > 7.4.2f > 8.0.2f > 8.1.2g > 8.2.2b > 9.0.0b > 9.1.1b**
 
 _It's also possible to upgrade from a version earlier than 6.4.1b to 7.0.x or from 7.0.x to 7.2.x  - but this is a **disruptive** upgrade (meaning ports will go offline/online during upgrade)._
 
@@ -221,7 +221,7 @@ Brocade release notes in .pdf:
  - [8.2.1a](http://public.dhe.ibm.com/storage/san/fos8/v8.2.1a_ReleaseNotes_v1.0.pdf)
  - [8.2.2b](http://service.boulder.ibm.com/storage/san/fos8/v8.2.2b_ReleaseNotes_v2.0.pdf)
  - [9.0.0a (hp release notes, thin on information)](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v186294/HPE_FOS_9.0.0a_RN_v1.0.pdf)
- - [9.1.1a](https://docs.broadcom.com/doc/FOS-911a-RN)
+ - [9.1.1a](https://docs.broadcom.com/doc/FOS-911a-RN) [9.1.1b HPE](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v225909/HPE_FOS_9.1.1b_RN_v1.pdf)
 
 ## Notes from the release notes:
 
