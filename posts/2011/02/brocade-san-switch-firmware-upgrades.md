@@ -131,7 +131,8 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
 </details>
 
-**2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days!
+**2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days! Also [HPE has them](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_241cfaab2fed4696a003f38ee0).
+**2023-04-04:** 9.1.1a with link to broadcom
 
 ## Steps
 
@@ -220,6 +221,7 @@ Brocade release notes in .pdf:
  - [8.2.1a](http://public.dhe.ibm.com/storage/san/fos8/v8.2.1a_ReleaseNotes_v1.0.pdf)
  - [8.2.2b](http://service.boulder.ibm.com/storage/san/fos8/v8.2.2b_ReleaseNotes_v2.0.pdf)
  - [9.0.0a (hp release notes, thin on information)](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v186294/HPE_FOS_9.0.0a_RN_v1.0.pdf)
+ - [9.1.1a](https://docs.broadcom.com/doc/FOS-911a-RN)
 
 ## Notes from the release notes:
 
@@ -239,6 +241,7 @@ Brocade release notes in .pdf:
  - Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s".
  - Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s".
  - Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
+ - Upgrading to Fabric OS 9.1.x "For Brocade X6, G630, X7, and G730 a valid Trusted FOS (TruFOS) Certificate is _required_"
 
 About non-disruptively: This means you **can** go to 7.0.xfrom earlier  than 6.4.1a but ports will go offline during the upgrade. See the release notes or Upgrade Guides for more details.
 
