@@ -2,6 +2,7 @@ remote_theme: jekyll/minima
 plugins:
     - jekyll-remote-theme
     - jekyll-relative-links
+    - jekyll-sitemap
 relative_links:
     enabled: true
     collections: true
