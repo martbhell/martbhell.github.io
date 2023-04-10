@@ -1,6 +1,5 @@
 remote_theme: jekyll/minima
 plugins:
-    - jekyll-feed
     - jekyll-remote-theme
     - jekyll-relative-links
     - jekyll-sitemap
@@ -8,3 +7,6 @@ relative_links:
     enabled: true
     collections: true
 google_analytics: G-H4LG7R6ZGG
+name: guldmyr.com
+description: There is IT in Helsinki
+url: https://guldmyr.com
