@@ -1,12 +1,8 @@
 ---
 title: "Non Brocade Branded USB stick activation"
 date: 2020-09-17
-categories: 
-  - "storage"
-tags: 
-  - "brocade"
-  - "usb"
----
+category: storage
+tags: brocade, usb
 
 Another submission courtesy of **Eberhard**.
 

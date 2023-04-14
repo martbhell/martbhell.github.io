@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - gnome</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/gnome-screensaver-uses-a-lot-of-memory.html">"gnome-screensaver uses a lot of memory"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-04-14T00:00:00+03:00">
+                Published: "2011-04-14"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/gnome.html">gnome</a> <a href="/tag/screensaver.html">screensaver</a> <a href="/tag/linux.html">linux</a> <a href="/tag/memory.html">memory</a> <a href="/tag/hog.html">hog</a> <a href="/tag/useage.html">useage</a> </p>
+</footer><!-- /.post-info --><p>Just checked out a memory useage script (because honestly I find top a but too complicated). I found one that looks good on <a href="http://www.asim.pk/2011/03/28/find-memory-consumed-by-currently-running-processes-on-linux/" title="memory useage perl script">asim.pk</a> . The script is a nice little perl script. Just download it from the link and set chmod +x ps_mem.pl and you can run it with "sudo ps_mem.pl", you need to be root for some reason to run this script.</p>
+<p>My machine is a Lenovo T400 with a radeon card.</p>
+<p>This told me that gnome-screensaver was using some 400MB. A bit of googling did not give me any real hints if there is a configuration change or so. So instead I decided to change the way I lock my workstation in <a href="http://dwm.suckless.org" title="dwm">dwm</a>.</p>
+<p>Now, I call upon a program I called "screenlock", this I put in /usr/local/bin/screenlock:</p>
+<p><code>killall gnome-screensaver; sleep 1; gnome-screensaver; gnome-screensaver-command -l</code></p>
+<p>That's it. (kills it, waits a bit, starts it, then locks)</p>
+<p>Then in config.h for dwm this under /* commands */:</p>
+<p><code>static const char *locksaver[] = { "screenlock", NULL } ;</code></p>
+<p>and under keys</p>
+<p><code>{ MODKEY, XK_l, spawn, {.v = locksaver } },</code></p>
+<p>with all the spaces/tabs that is in config.h, unsure if it's necessary but why take a chance :p</p>
+<p>Now it stays around 10MB :)</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/dwm-start-up-script-that-works-with-gdm-login-manager.html" rel="bookmark"
+                           title="Permalink to "DWM - start up script that works with GDM login manager"">"DWM - start up script that works with GDM login manager"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-03-18T00:00:00+02:00">
+                Published: "2011-03-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/gdm.html">gdm</a> <a href="/tag/gnome.html">gnome</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/window.html">window</a> <a href="/tag/manager.html">manager</a> </p>
+</footer><!-- /.post-info -->                <p>*** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz below.</p>
+<p>My config: <a href="http://www.guldmyr.com/blog/wp-content/uploads/jg_dwm_conf.tar.gz">jg_dwm_conf.tar</a></p>
+<p><a href="http://www.guldmyr.com/blog/wp-content/uploads/backup.tar.gz"></a>Goal: Be able to exit <a href="http://dwm.suckless.org" title="dwm at suckless.org">DWM and</a> get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login …</p>
+                <a class="readmore" href="/dwm-start-up-script-that-works-with-gdm-login-manager.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/dwm-not-your-average-mainstream-window-manager.html" rel="bookmark"
+                           title="Permalink to "DWM - not your average mainstream window manager"">"DWM - not your average mainstream window manager"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-03-16T00:00:00+02:00">
+                Published: "2011-03-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/gnome.html">gnome</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/window.html">window</a> <a href="/tag/manager.html">manager</a> </p>
+</footer><!-- /.post-info -->                <p>Have been playing around with a new window manager (new as in for me, I've only used fluxbox, kde and gnome before) called DWM - see more information on <a href="http://www.suckless.org" title="suckless.org">www.suckless.org.</a></p>
+<p>I'm running it on a T400 with RHEL6 (which uses gnome login manager - gde).</p>
+<h2>Basically:</h2>
+<ol>
+<li>if you want to …</li></ol>
+                <a class="readmore" href="/dwm-not-your-average-mainstream-window-manager.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

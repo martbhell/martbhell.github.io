@@ -1,15 +1,8 @@
 ---
 title: "Update by bota!"
 date: 2011-04-01
-categories: 
-  - "finland"
-tags: 
-  - "bo7a"
-  - "canada"
-  - "island"
-  - "live-on-an-island"
-  - "travel"
----
+category: finland
+tags: bo7a, canada, island, live, on, an, island, travel
 
 [http://www.guldmyr.com/blog/last-irc-post-of-bota-for-a-while/](http://www.guldmyr.com/blog/last-irc-post-of-bota-for-a-while/)
 

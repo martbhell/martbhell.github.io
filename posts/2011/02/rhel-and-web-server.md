@@ -1,20 +1,8 @@
 ---
 title: "RHEL and web-server"
 date: 2011-02-28
-categories: 
-  - "it"
-tags: 
-  - "firewall"
-  - "guide"
-  - "http"
-  - "httpd"
-  - "iptables"
-  - "port-22"
-  - "port-80"
-  - "rhel"
-  - "ssh"
-  - "sshd"
----
+category: it
+tags: firewall, guide, http, httpd, iptables, port, 22, port, 80, rhel, ssh, sshd
 
 Another thing you will notice if you are used to debian is that RHEL has iptables enabled by default.
 

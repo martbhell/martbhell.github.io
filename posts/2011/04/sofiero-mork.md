@@ -1,13 +1,8 @@
 ---
 title: "Sofiero Mörk"
 date: 2011-04-08
-categories: 
-  - "finland"
-tags: 
-  - "beer"
-  - "ol"
-  - "sofiero"
----
+category: finland
+tags: beer, ol, sofiero
 
 Ahh.
 

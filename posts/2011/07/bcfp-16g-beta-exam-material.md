@@ -1,18 +1,8 @@
 ---
 title: "BCFP 16G Beta Exam Material"
 date: 2011-07-14
-categories: 
-  - "storage"
-tags: 
-  - "bcfp"
-  - "brocade"
-  - "certification"
-  - "learning"
-  - "san"
-  - "storage-network"
-  - "study"
-  - "study-material"
----
+category: storage
+tags: bcfp, brocade, certification, learning, san, storage, network, study, study, material
 
 After the announcement of the available material Fabric OS 7.0.0a has been released.
 

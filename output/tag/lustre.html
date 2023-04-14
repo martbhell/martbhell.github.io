@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - lustre</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/lustre-25-centos6-test-in-openstack.html">"Lustre 2.5 + CentOS6 Test in OpenStack"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-05-30T00:00:00+03:00">
+                Published: "2014-05-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info --><p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
+<p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc. Hostnames set. /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.</p>
+<p>With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use the latest branch for 2.5 so the instructions are <a href="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821" title="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821">https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821</a></p>
+<h2>Server side</h2>
+<p><strong>MDT/OST:</strong> Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).</p>
+<p>yum localinstall all files from: http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/</p>
+<p>Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next boot: <a href="https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel">https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel</a></p>
+<p>RPMS are here: http://downloads.whamcloud.com/public/lustre/latest-feature-release/el6/server/SRPMS/</p>
+<p>For rebuilding these are also needed:</p>
+<p>yum -y install kernel-devel* kernel-debug* rpm-build make libselinux-devel gcc</p>
+<p>basically:</p>
+<ul>
+<li>git clone -b b2_5 git://git.whamcloud.com/fs/lustre-release.git</li>
+<li>autogen</li>
+<li>install kernel.src from redhat (puts tar.gz in /root/rpmbuild/SOURCES/)</li>
+<li>if rpmbuilding as user build, then copy files from /root/rpmbuild into /home/build/rpmbuild..</li>
+<li>rebuilding kernel requires quite a bit of hard disk space, as I only had 10G for / then I made symlinks under $HOME to the $HOME/kernel and $HOME/lustre-release</li>
+</ul>
+<p>yum -y install expect and install the new kernel with lustre patches and the lustre and lustre modules.</p>
+<p>Not important?: WARNING: /lib/modules/2.6.32-431.17.1.el6.x86_64/weak-updates/kernel/fs/lustre/fsfilt_ldiskfs.ko needs unknown symbol ldiskfs_free_blocks</p>
+<p>/sbin/new-kernel-pkg --package kernel --mkinitrd --dracut --depmod --install 2.6.32.431.17.1.el6_lustre</p>
+<p>chkconfig lustre on</p>
+<p>edit /etc/modprobe.d/lustre.conf and add the lnet parameters</p>
+<p>modprobe lnet lctl network up # lctl list_nids</p>
+<p>creating MDT: mkfs.lustre --mdt --mgs --index=0 --fsname=wrk /dev/vdc1 mounting MDT: mkdir /mnt/MDT; mount.lustre /dev/vdc1 /mnt/MDT</p>
+<p>creating OST: mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1 mounting OST: mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1</p>
+<h2>Client Side</h2>
+<p>rpmbuild --rebuild --without servers</p>
+<p>cd /root/rpmbuild/RPMS/x86_64 rpm -Uvh lustre-client*</p>
+<p>add modprobe.d/lustre.conf modprobe lnet lctl network up lctl list_nids</p>
+<p>mount.lustre lustreserver@tcp:/wrk /wrk</p>
+<p>lfs df!</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/setup-a-3-node-lustre-filesystem.html" rel="bookmark"
+                           title="Permalink to "Setup a 3 Node Lustre Filesystem"">"Setup a 3 Node Lustre Filesystem"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-10-13T00:00:00+03:00">
+                Published: "2012-10-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
+</footer><!-- /.post-info -->                <h1>Introduction</h1>
+<p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
+<p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
+<p>Basic components:</p>
+<p>VMWare Workstation <a href="http://www.nic.funet.fi" title="finnish mirror">3 x CentOS</a> 6 …</p>
+                <a class="readmore" href="/setup-a-3-node-lustre-filesystem.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-4.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 - Day 4"">"HEPIX Spring 2011 - Day 4"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-09T00:00:00+03:00">
+                Published: "2011-05-09"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/eofs.html">eofs</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/iaas.html">iaas</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/ol.html">ol</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/image.html">image</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vm.html">vm</a> </p>
+</footer><!-- /.post-info -->                <p>Dinner on the 3rd night was amazing. It was at the hotel Weisse Schwan in Arheilgen outside Darmstadt and it was a nice reception hall with big round tables, waiters with lots of wine and great buffet food. A+</p>
+<p><a href="http://molnmolnmoln.se" title="moln@IDG">Cloudy day</a>!</p>
+<h2>Or - Infrastructure as a Service - IaaS</h2>
+<p>A few had …</p>
+                <a class="readmore" href="/hepix-spring-2011-day-4.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-3.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 – Day 3"">"HEPIX Spring 2011 – Day 3"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-05T00:00:00+03:00">
+                Published: "2011-05-05"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/adaptec.html">adaptec</a> <a href="/tag/buffered.html">buffered</a> <a href="/tag/tape.html">tape</a> <a href="/tag/marks.html">marks</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/ermm.html">ermm</a> <a href="/tag/errata.html">errata</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/ioapps.html">ioapps</a> <a href="/tag/ioreplay.html">ioreplay</a> <a href="/tag/ipv4.html">ipv4</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/linux.html">linux</a> <a href="/tag/service.html">service</a> <a href="/tag/now.html">now</a> <a href="/tag/sl.html">sl</a> <a href="/tag/strace.html">strace</a> <a href="/tag/sun.html">sun</a> <a href="/tag/t10000c.html">t10000c</a> <a href="/tag/drive.html">drive</a> <a href="/tag/tsm.html">tsm</a> </p>
+</footer><!-- /.post-info -->                <p>Day 3 woop!</p>
+<p>An evaluation of <a href="http://www.gluster.org/" title="gluster.org">gluster</a>: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot.</p>
+<p>Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and <a href="http://www-935.ibm.com/services/de/igs/pdf/br-stor-enterprise-remove-mm-en.pdf" title="links to pdf on ibm.com">ERMM</a>. Where ERMM manages the libraries, so that TSM only sees …</p>
+                <a class="readmore" href="/hepix-spring-2011-day-3.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-1.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 - Day 1"">"HEPIX Spring 2011 - Day 1"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-02T00:00:00+03:00">
+                Published: "2011-05-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/batch.html">batch</a> <a href="/tag/system.html">system</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/routers.html">routers</a> <a href="/tag/conference.html">conference</a> <a href="/tag/fermilab.html">fermilab</a> <a href="/tag/frankfurt.html">frankfurt</a> <a href="/tag/gsi.html">gsi</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/failures.html">failures</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kit.html">kit</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/nikhef.html">nikhef</a> <a href="/tag/pue.html">pue</a> <a href="/tag/super.html">super</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supermicro.html">supermicro</a> <a href="/tag/tty.html">tty</a> <a href="/tag/hack.html">hack</a> </p>
+</footer><!-- /.post-info -->                <p>Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …</p>
+                <a class="readmore" href="/hepix-spring-2011-day-1.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011"">"HEPIX Spring 2011"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-01T00:00:00+03:00">
+                Published: "2011-05-01"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/darmstadt.html">darmstadt</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supercomputing.html">supercomputing</a> </p>
+</footer><!-- /.post-info -->                <p>I'm heading to <a href="http://www.hepix.org/" title="hepix.org">Hepix</a> this whole week!</p>
+<p>Looks like there's some really <a href="http://indico.cern.ch/conferenceTimeTable.py?confId=118192#20110502" title="timetable">interesting topics</a> like:</p>
+<p>Lustre, glustre, ipv6, stuff about the CERN it facilities, Scientific Linux report, cloud/grid virtualization, Oracle Linux.</p>
+<p>I'll sure be doing a bit of blogging about what's going down.</p>
+                <a class="readmore" href="/hepix-spring-2011.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

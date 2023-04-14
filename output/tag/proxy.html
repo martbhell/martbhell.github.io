@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - proxy</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/red-hat-certification-rhce-course-outline.html">"Red Hat Certification – RHCE - Course Outline"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-06-13T00:00:00+03:00">
+                Published: "2012-06-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/authconfig.html">authconfig</a> <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/gnupg.html">gnupg</a> <a href="/tag/gpg.html">gpg</a> <a href="/tag/http.html">http</a> <a href="/tag/proxy.html">proxy</a> <a href="/tag/iptables.html">iptables</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/ldap.html">ldap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/masquerade.html">masquerade</a> <a href="/tag/nat.html">nat</a> <a href="/tag/openssl.html">openssl</a> <a href="/tag/pam.html">pam</a> <a href="/tag/pki.html">pki</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/routing.html">routing</a> <a href="/tag/squid.html">squid</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/keygen.html">keygen</a> <a href="/tag/sssd.html">sssd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/web.html">web</a> </p>
+</footer><!-- /.post-info --><p>Howdy!</p>
+<p>In case you saw my previous posts I've been prepping for a RHCE course the last couple of weeks.</p>
+<p>Here are the posts based on the objectives:</p>
+<ul>
+<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd">http/https</a></li>
+<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns">dns</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp">ftp</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-nfs/">nfs</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-smb/">smb</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-e-mail/">smtp</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/">ntp</a></li>
+</ul>
+<p>Odds are quite high that I've missed something or not gone deep enough into some subjects and for the record some subjects I decided to skip.</p>
+<p>I'm taking the course over at Tieturi here in Helsinki and they have published the schedule for the course, with quite <a href="http://www.tieturi.fi/kurssit/kurssi.html?course=83902366&amp;category=RedHat%2BLinux&amp;city=Helsinki&amp;training=25.06.2012" title="on tieturi.fi">detailed o</a>utline.</p>
+<p>This outline of the course can with benefit be used to see if you missed any terms or functions while going through the objectives.</p>
+<p>I'll go through the ones I find more interesting below:</p>
+<h2>Network Resource Access Controls</h2>
+<p>-Internet Protocol and Routing</p>
+<p>OK, well this is quite obvious, some commands:</p>
+<p>ip addr
+ip route
+route add
+netstat -rn</p>
+<h3>IPv6</h3>
+<p>-IPv6: Dynamic Interface Configuration -IPv6: StaticInterface Configuration -IPv6: Routing Configuration</p>
+<p>You can add IPV6 specific lines in the ifcfg-device files in /etc/sysconfig/network-scripts/. See /usr/share/doc/initscripts*/sysconfig</p>
+<p>Some settings can also go into /etc/sysconfig/network</p>
+<h3>iptables</h3>
+<p>-<a href="http://en.wikipedia.org/wiki/Netfilter" title="on wikipedia">Netfilter</a> Overview -Rules: General Considerations -<a href="http://en.wikipedia.org/wiki/Netfilter#Connection_Tracking" title="on wikipedia">Connection Tracking</a> -Network Address Translation (NAT) -IPv6 and ip6tables</p>
+<h2>Web Services</h2>
+<p>-Squid Web Proxy Cache</p>
+<p>On client check what IP you get:</p>
+<p>curl --proxy squid-server.example.com:3128 www.guldmyr.com/ip.php</p>
+<p>On server install and setup squid:</p>
+<p>yum install squid
+vi /etc/squid/squid.conf</p>
+<h1>add this line in the right place:</h1>
+<p>acl localnet src 192.168.1.1/32</p>
+<h1>allow port 3128 TCP in the firewall (use very strict access here)</h1>
+<p>service squid start</p>
+<p>On client:</p>
+<p>curl --proxy squid-server.example.com:3128 www.guldmyr.com/ip.php</p>
+<p>Beware that this is unsecure. Very unsecure. You should at least set up a password for the proxy, change the default port and have as limited firewall rules as possible.</p>
+<h2>E-mail Services</h2>
+<p>-Simple Mail Transport Protocol -Sendmail SMTP Restrictions -Sendmail Operation</p>
+<h2>Securing Data</h2>
+<h3>-The Need For Encryption</h3>
+<p><a href="http://support.microsoft.com/kb/246071" title="on microsoft.com :)">-Symmetric Encryption</a></p>
+<p>Symmetric uses a secret/password to encrypt and decrypt a message. You can use GnuPG (cli command is 'gpg') to encrypt and decrypt a file symmetrically. Arguments:</p>
+<p>--symmetric/-c == symmetric cipher (CAST5 by default) --force-mdc == if you don't have this you'll get "message was not integrity protected"</p>
+<p>There are many more things you can specify.</p>
+<p>echo "awesome secret message" &gt; /tmp/file
+gpg --symmetric --force-mdc /tmp/file</p>
+<h1>(enter password)</h1>
+<h1>this creates a /tmp/file.gpg</h1>
+<h1>beware that /tmp/file still exists</h1>
+<h1>to decrypt:</h1>
+<p>gpg --decrypt /tmp/file.gpg
+gpg: 3DES encrypted data
+gpg: encrypted with 1 passphrase
+awesome secret message</p>
+<h3>-Asymmetric Encryption</h3>
+<p>Uses a key-pair. A public key and a private key. A message <strong>encrypted with the public key</strong> can only be decrypted with the <strong>private key</strong>. A message encrypted with the <strong>private key</strong> can only be decrypted with the <strong>public key</strong>.</p>
+<p>GnuPG can let you handle this.</p>
+<p>Login with a user called 'labber':</p>
+<p>gpg --gen-key</p>
+<h1>in this interactive dialog enter username: labber, e-mail and password</h1>
+<h1>this doesn't always work, might take _long_time_, eventually I just tried on another machine</h1>
+<p>echo "secret message" &gt; /tmp/file
+gpg -e -r labber /tmp/file</p>
+<h1>enter password</h1>
+<p>gpg --decrypt /tmp/file</p>
+<h1>enter password</h1>
+<p>To export the public key in ASCII format you can:</p>
+<p>gpg --armor --output "key.txt" --export "labber"</p>
+<p>However, how to encrypt a file with somebody else's public key?</p>
+<h3>-Public Key Infrastructures - PKI</h3>
+<p>Consists of:</p>
+<ul>
+<li>CA - certificate authority - issues and verifies digital certiciates</li>
+<li>RA - registration authoriy - verifies user identity requesting info from the CA</li>
+<li>central directory - used to store and index keys</li>
+</ul>
+<p>-Digital Certificates</p>
+<p>A certificate has user details and the public key.</p>
+<h2>Account Management</h2>
+<p>-Account Management -Account Information (Name Service) -<a href="http://en.wikipedia.org/wiki/Name_Service_Switch" title="on wikipedia">Name Service Switch</a> (NSS) -<a href="http://linux-pam.org/whatispam.html" title="on linux-pam.org">Pluggable Authentication Modules</a> (PAM) -PAM Operation -Utilities and Authentication</p>
+<h3>PAM</h3>
+<p>Basically a way to authenticate users. You can put different types of authentication ways behind PAM. So that a software only needs to learn to authenticate to PAM and then PAM takes care of the behind-the-scenes-work.</p>
+<p>For example you can have PAM connect to an ldap-server.</p>
+<p>CLI: authconfig</p>
+<p>Files: /etc/sysconfig/authconfig /etc/pam.d/ /etc/sssd/sssd.conf</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/installing-squid-32-on-centos-53.html" rel="bookmark"
+                           title="Permalink to "Installing Squid 3.2 on CentOS 5.3"">"Installing Squid 3.2 on CentOS 5.3"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-20T00:00:00+03:00">
+                Published: "2011-04-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/linux.html">linux</a> <a href="/tag/proxy.html">proxy</a> <a href="/tag/shell.html">shell</a> <a href="/tag/squid.html">squid</a> <a href="/tag/cache.html">cache</a> </p>
+</footer><!-- /.post-info -->                <p>Giving this one a shot :) I will be compiling it myself as well.</p>
+<p>Squid for those who do not know is a <a href="http://en.wikipedia.org/wiki/Proxy_server" title="on wiki">proxy server.</a> Proxys can be used for many things, but one great thing if you have a thinner connection to the Internet, you can use this to speed …</p>
+                <a class="readmore" href="/installing-squid-32-on-centos-53.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,15 +1,8 @@
 ---
 title: "Red Hat Certification – RHCE – System Configuration and Management"
 date: 2012-04-30
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "linux"
-  - "red-hat"
-  - "rhce"
-  - "studying"
----
+category: it
+tags: certification, linux, red, hat, rhce, studying
 
 # RHCE Preparation - System Configuration and Management
 

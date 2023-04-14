@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - laptop</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/arch-linux-on-a-t400-log.html">"Arch Linux on a T400 - Log"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-12-14T00:00:00+02:00">
+                Published: "2013-12-14"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/arch.html">arch</a> <a href="/tag/linux.html">linux</a> <a href="/tag/install.html">install</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/lenovo.html">lenovo</a> <a href="/tag/t400.html">t400</a> </p>
+</footer><!-- /.post-info --><p>Trying out Arch Linux on a Lenovo T400!</p>
+<p>First step after getting the T400 Dual Core Centrino 2.26GHz 4GB RAM: replace the 160GB spinning rust to a 120GB Samsung 840. Very easy to take out the old disk and put the new SSD in the carrier.</p>
+<p><a href="https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T400">https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T400</a> has some details.</p>
+<p><a href="https://wiki.archlinux.org/index.php/Installation_Guide">https://wiki.archlinux.org/index.php/Installation_Guide</a> and the <a href="https://wiki.archlinux.org/index.php/Beginners'_Guide">Beginner's Guide</a> are quite helpful.</p>
+<p>To make it easy, the partition layout I created with parted was:</p>
+<p>mklabel: MSDOS mkpart: pri, 0%, 300M /boot ext4 - flag bootable mkpart: pri, 300M, 100%, /, ext4 No swap!</p>
+<p>Install base and some important packages to disk after mkfs and mounting and setting up mirrors:</p>
+<p>pacstrap /mnt base dialog iw wpa_supplicant grub parted sudo alsa-utils vim ttf-dejavu openssh screen</p>
+<p><a href="https://wiki.archlinux.org/index.php/Beginners'_Guide">Beginners'_Guide</a> had sufficient instructions to set up the boot loader, except this was needed or the grub-mkconfig would fail with syntax error.</p>
+<p>echo "GRUB_DISABLE_SUBMENU=y" &gt;&gt; /etc/default/grub</p>
+<p>After successful boot time to get a graphical display up and running :)</p>
+<p>Beginner's guide to the rescue: <a href="https://wiki.archlinux.org/index.php/Beginners'_Guide#Graphical_User_Interface">Beginners'_Guide#Graphical_User_Interface</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/LightDM">Lightdm</a> was easy to set up and worked right out of the box, which GDM did not. <a href="https://wiki.archlinux.org/index.php/Dwm">DWM</a> was easy too, I think I can get used to using the ABS/makepkg stuff. Nicer than compiling it and copying the binary around.</p>
+<p>Windows key is Mod4Key in config.h for DWM.</p>
+<p>Packages and getting chromium-pepper-flash working:</p>
+<ol>
+<li><a href="https://wiki.archlinux.org/index.php/Aura">Install all the dependencies for Aura</a></li>
+<li>Download aura and makepkg -i install it</li>
+<li>aura -A chromium-pepper-flash</li>
+</ol>
+<p>alsamixer and pressing "m" mutes/unmutes a channel :)</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/making-use-of-ibm-laptop-t40-part-4.html" rel="bookmark"
+                           title="Permalink to "Making use of IBM Laptop T40 – Part 4"">"Making use of IBM Laptop T40 – Part 4"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-19T00:00:00+03:00">
+                Published: "2011-04-19"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/hdd.html">hdd</a> <a href="/tag/hdparm.html">hdparm</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/synergy.html">synergy</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> </p>
+</footer><!-- /.post-info -->                <p>Logging in!</p>
+<p>Wireless worked straight from the start. It says that my battery probably is broken (only 28% capacity). Some 2.6~GB is used by the default installation out of my 40GB disk. 1.6GB for swap.</p>
+<h3>Step 1 - set up Synergy.</h3>
+<p>This is so I don't have to …</p>
+                <a class="readmore" href="/making-use-of-ibm-laptop-t40-part-4.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/making-use-of-ibm-laptop-t40-part-3.html" rel="bookmark"
+                           title="Permalink to "Making use of IBM Laptop T40 – Part 3"">"Making use of IBM Laptop T40 – Part 3"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-18T00:00:00+03:00">
+                Published: "2011-04-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/hdd.html">hdd</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> <a href="/tag/ultimatebootcd.html">ultimatebootcd</a> </p>
+</footer><!-- /.post-info -->                <h3>Preface</h3>
+<p>Two previous posts:</p>
+<p><a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/" title="PART1">Part1</a> - thoughts before installing <a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-2/" title="par2">Part2</a> - ultimate boot CD - for diagnostics</p>
+<p>I ran the laptop with google-chrome 10 and two flash-pages loading all night, no blue-screens, no errors in event viewer. No actually it looks and feels pretty ok. It's not very fast, but I suspect this …</p>
+                <a class="readmore" href="/making-use-of-ibm-laptop-t40-part-3.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/making-use-of-ibm-laptop-t40-part-2.html" rel="bookmark"
+                           title="Permalink to "Making use of IBM Laptop T40 – Part 2"">"Making use of IBM Laptop T40 – Part 2"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-17T00:00:00+03:00">
+                Published: "2011-04-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/hdd.html">hdd</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> <a href="/tag/ultimatebootcd.html">ultimatebootcd</a> </p>
+</footer><!-- /.post-info -->                <p>Previous post in this series: <a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/" title="previous post">http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/</a></p>
+<p>I'm going to try to put ubcd on an old USB pen I have, lots easier than burning a CD/DVD. Which I may not even have. It's an old Jens of Sweden 1GB mp3-player, that doesn't start unless …</p>
+                <a class="readmore" href="/making-use-of-ibm-laptop-t40-part-2.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/making-use-of-ibm-laptop-t40-part-1.html" rel="bookmark"
+                           title="Permalink to "Making use of IBM Laptop T40 - Part 1"">"Making use of IBM Laptop T40 - Part 1"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-16T00:00:00+03:00">
+                Published: "2011-04-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/hdd.html">hdd</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> <a href="/tag/ultimatebootcd.html">ultimatebootcd</a> </p>
+</footer><!-- /.post-info -->                <p>Next project coming up!</p>
+<p>I want to have the laptop running so that I can have some use for it. Maybe run some services on it instead of in a VM on my desktop? But also so that I can chat while playing games ;)</p>
+<p>I want to put Linux on …</p>
+                <a class="readmore" href="/making-use-of-ibm-laptop-t40-part-1.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

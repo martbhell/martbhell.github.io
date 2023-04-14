@@ -1,9 +1,7 @@
 ---
 title: "Convert a string to integer in Kibana with painless"
 date: 2020-12-16
-categories: 
-  - "it"
----
+category: it
 
 if (doc\['bytes.keyword'\].size()!=0) {
     return Integer.parseInt(doc\['bytes.keyword'\].value)

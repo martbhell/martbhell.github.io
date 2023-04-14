@@ -1,11 +1,8 @@
 ---
 title: "Resepti: Lapsi Kana & Lohi Porkkana Bataatti"
 date: 2020-01-12
-categories: 
-  - "finland"
-tags: 
-  - "resepti"
----
+category: finland
+tags: resepti
 
 Ota pakasti lohta pakastimesta.
 

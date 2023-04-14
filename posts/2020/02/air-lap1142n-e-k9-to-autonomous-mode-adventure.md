@@ -1,20 +1,8 @@
 ---
 title: "AIR-LAP1142N-E-K9 to autonomous Mode Adventure"
 date: 2020-02-19
-categories: 
-  - "it"
-tags: 
-  - "aironet"
-  - "cisco"
-  - "ethernet"
-  - "https"
-  - "ip"
-  - "lap1142n-e-k9"
-  - "network"
-  - "vlan"
-  - "wifi"
-  - "wlan"
----
+category: it
+tags: aironet, cisco, ethernet, https, ip, lap1142n, e, k9, network, vlan, wifi, wlan
 
 > ## [![Wifi and PoE injector ](images/DSC_1469-300x225.jpg)](https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg)
 

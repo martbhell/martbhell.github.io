@@ -1,11 +1,8 @@
 ---
 title: "EMC - Symmetrix and CLARiiON"
 date: 2011-01-15
-categories: 
-  - "storage"
-tags: 
-  - "emc"
-  - "storage"
+category: storage
+tags: emc, storage
 coverImage: "storage.gif"
 ---
 

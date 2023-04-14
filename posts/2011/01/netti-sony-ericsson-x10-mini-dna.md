@@ -1,20 +1,8 @@
 ---
 title: "Netti + Sony Ericsson X10 Mini + DNA"
 date: 2011-01-28
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "access-point"
-  - "android"
-  - "apn"
-  - "dna"
-  - "internet"
-  - "netti"
-  - "sony-ericsson"
-  - "suomi"
-  - "x10-mini"
----
+category: finland, it
+tags: access, point, android, apn, dna, internet, netti, sony, ericsson, suomi, x10, mini
 
 So you just got your SE X10 Mini in another country and wants to use it in Finland with the telephone service provider DNA? Not as easy as it seems! Well, first it's hard to get the actual number, but after you get your social security number it should not be that hard.
 

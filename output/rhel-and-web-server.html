@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"RHEL and web-server"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "firewall" "guide" "http" "httpd" "iptables" "port-22" "port-80" "rhel" "ssh" "sshd" Another thing you will notice if you are used to..." />
+        <meta name="description" content="Another thing you will notice if you are used to debian is that RHEL has iptables enabled by default. To alter it you use the 'iptables' command...." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,24 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"firewall"</li>
-<li>"guide"</li>
-<li>"http"</li>
-<li>"httpd"</li>
-<li>"iptables"</li>
-<li>"port-22"</li>
-<li>"port-80"</li>
-<li>"rhel"</li>
-<li>"ssh"</li>
-<li>"sshd"</li>
-</ul>
-<hr>
-<p>Another thing you will notice if you are used to debian is that RHEL has iptables enabled by default.</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/firewall.html">firewall</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/httpd.html">httpd</a> <a href="/tag/iptables.html">iptables</a> <a href="/tag/port.html">port</a> <a href="/tag/22.html">22</a> <a href="/tag/80.html">80</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/sshd.html">sshd</a> </p>
+</footer><!-- /.post-info -->      <p>Another thing you will notice if you are used to debian is that RHEL has iptables enabled by default.</p>
 <p>To alter it you use the 'iptables' command. It is quite complex and there are good guides out there.</p>
 <p>If you just want to let http and ssh through you can run this:</p>
 <p><strong>iptables -I RH-Firewall-1-INPUT 3 -p tcp -m tcp --dport 80 --tcp-flags SYN,RST,ACK SYN -j ACCEPT</strong> <strong>iptables -I RH-Firewall-1-INPUT 3 -p tcp -m tcp --dport 22 --tcp-flags SYN,RST,ACK SYN -j ACCEPT</strong></p>

@@ -1,11 +1,8 @@
 ---
 title: "Coffee: Kaffetoria Espresso Flores"
 date: 2020-01-21
-categories: 
-  - "finland"
-tags: 
-  - "coffee"
----
+category: finland
+tags: coffee
 
 ![](images/DSC_1367-768x1024.jpg)
 

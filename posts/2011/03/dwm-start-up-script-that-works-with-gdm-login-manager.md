@@ -1,16 +1,8 @@
 ---
 title: "DWM - start up script that works with GDM login manager"
 date: 2011-03-18
-categories: 
-  - "it"
-tags: 
-  - "dwm"
-  - "gdm"
-  - "gnome"
-  - "linux"
-  - "rhel"
-  - "window-manager"
----
+category: it
+tags: dwm, gdm, gnome, linux, rhel, window, manager
 
 \*\*\* 2011-04-18 Updated with my current dwm config files, see the jg\_dwm\_conf.tar.gz below.
 

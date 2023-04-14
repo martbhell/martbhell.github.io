@@ -1,15 +1,10 @@
 ---
 title: "Post Frisco"
 date: 2012-09-20
-categories: 
-  - "finland"
-tags: 
-  - "golden-gate"
-  - "san-francisco"
-  - "states"
-  - "travel"
-  - "usa"
----
+category: finland
+tags: goldengate, sanfrancisco, states, travel, usa
+
+Bicycling Is Fun!
 
 - Bicycle up to and over a fog covered Golden Gate bridge, pretty awesome downhills!
 - Eaten at a relative's french gourmet food (not expensive!) - it's name is: sous beurre. It is up on 24th mission street together with a cafe called sugarlump.

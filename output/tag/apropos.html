@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - apropos</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/how-to-find-things-in-linux-man-pages.html">"How to find things in Linux man pages"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-12-20T00:00:00+02:00">
+                Published: "2011-12-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/apropos.html">apropos</a> <a href="/tag/grep.html">grep</a> <a href="/tag/help.html">help</a> <a href="/tag/linux.html">linux</a> <a href="/tag/man.html">man</a> <a href="/tag/pages.html">pages</a> <a href="/tag/manual.html">manual</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/search.html">search</a> <a href="/tag/xargs.html">xargs</a> <a href="/tag/yum.html">yum</a> <a href="/tag/zgrep.html">zgrep</a> </p>
+</footer><!-- /.post-info --><p>There's a couple of places (naturally).</p>
+<p>It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank.</p>
+<p>In RHEL there is /usr/share/doc where there are some special places, for example /usr/share/doc/initscripts*/sysconfig.txt for all config files that relate to the boot-up process. There is also /usr/share/man. In /usr/share/man/man5 which has all the level 5 man pages in gzip format. For example "man 5 yum.conf" you can find in /usr/share/man/man5/yum.conf.5.gz.</p>
+<p>To open a man page you just type 'man yum'. To get the man page for yum, or 'man man' for the manual for man.</p>
+<p>To search through man-pages you can use either of these (they are the same):</p>
+<p>man -k yum
+apropos yum</p>
+<p>While inside a man-page you can search by typing: / and then what you want to search for and then ENTER. Like this: /priority This will hilight all the matched entries, you move to the next match with 'n'. This might differ between operating systems, it depends on which viewer is used to present the man page.</p>
+<p>Sometimes these don't find what you are looking for. In that case you could manually move into /usr/share/man/man5 and hit:</p>
+<p>zgrep priority *</p>
+<p>to grep through the gzip files looking for any entries that says 'priority'.</p>
+<p>or, if you want to you could use this to search through all directories:</p>
+<p>find . -name "*"|xargs zgrep -i priority</p>
+<p>or even better (if you're not looking for a language specific man page):</p>
+<p>find /usr/share/man* -name "*"|xargs zgrep -i gpgcheck</p>
+<p>These are all relatively slow though, if you read this and have any suggestions please let me know :)</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

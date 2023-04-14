@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"haproxy lab setup!"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "ansible" "haproxy" "openstack" Been seeing haproxy more and more lately as it seems even the stuff I work with are moving towards web..." />
+        <meta name="description" content="Been seeing haproxy more and more lately as it seems even the stuff I work with are moving towards web :) So a good time as any to play around..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,17 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"ansible"</li>
-<li>"haproxy"</li>
-<li>"openstack"</li>
-</ul>
-<hr>
-<p>Been seeing haproxy more and more lately as it seems even the stuff I work with are moving towards web :)</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/ansible.html">ansible</a> <a href="/tag/haproxy.html">haproxy</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info -->      <p>Been seeing haproxy more and more lately as it seems even the stuff I work with are moving towards web :)</p>
 <p>So a good time as any to play around with it!</p>
 <p>First setup is the tag "single-node" in <a href="https://github.com/martbhell/haproxy-lab">https://github.com/martbhell/haproxy-lab</a> - this means it just configures one apache httpd and one haproxy. In the haproxy it creates multiple vhosts with content being served from different directories, and then it points to each of these as a haproxy backend.</p>
 <p>To illustrate the load balancing the playbook also installs php and shows the path of the file that's being served.</p>

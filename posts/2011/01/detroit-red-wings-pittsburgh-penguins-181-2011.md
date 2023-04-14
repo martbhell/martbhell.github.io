@@ -1,11 +1,8 @@
 ---
 title: "Detroit Red Wings - Pittsburgh Penguins 18/1 2011"
 date: 2011-01-19
-categories: 
-  - "finland"
-tags: 
-  - "nhl"
----
+category: finland
+tags: nhl
 
 Just watched the replay of this high profile game.
 

@@ -1,19 +1,8 @@
 ---
 title: "Music of the Day 22nd of May"
 date: 2011-05-22
-categories: 
-  - "finland"
-tags: 
-  - "elipepsia"
-  - "free"
-  - "music"
-  - "not-morrissey-hurl"
-  - "portland"
-  - "ra-ra-riot"
-  - "the-ascetic-junkies"
-  - "the-whigs"
-  - "thesixtyone"
----
+category: finland
+tags: elipepsia, free, music, not, morrissey, hurl, portland, ra, ra, riot, the, ascetic, junkies, the, whigs, thesixtyone
 
 [Dying is Fine - Ra Ra Riot](http://rarariot.tumblr.com/post/5334715256/hey-uk-europe-we-are-psyched-to-announce-that "on tumblr") - Sounds a lot like Morrissey occasionally, but not often enough for me to start hurling, so I liek. Beware of their main web site [http://www.rarariot.com/](http://www.rarariot.com/) - you can get epilepsia for free there. Wild bass in the song **Boy** - check it out, nowz!
 

@@ -1,18 +1,8 @@
 ---
 title: "Music of the day 22th of June (vinyl café edition)"
 date: 2011-06-22
-categories: 
-  - "finland"
-tags: 
-  - "canada"
-  - "cbc"
-  - "music"
-  - "podcast"
-  - "radio"
-  - "story-exchange"
-  - "traveling"
-  - "vinyl-cafe"
----
+category: finland
+tags: canada, cbc, music, podcast, radio, story, exchange, traveling, vinyl, cafe
 
 My favorite English language radio-show is the [Vinyl Café](http://www.cbc.ca/vinylcafe/ "cbc.ca") with Stuart McLean. It's a CBC radio show and the hosts travel around Canada (and now also US) having live shows, live music, stories sent in by listeners and also their own stories of course. I guess you could say it's a show with stories, often fun ones.
 

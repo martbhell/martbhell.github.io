@@ -1,16 +1,8 @@
 ---
 title: "Finnish words from ankidroid"
 date: 2014-07-05
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "android"
-  - "ankidroid"
-  - "finnish"
-  - "language"
-  - "study"
----
+category: finland, it
+tags: android, ankidroid, finnish, language, study
 
 Lately I've been using ankidroid to study Finnish - or at least to expand my vocabulary a bit. I think it's great but it won't work by itself and requires quite a bit of tenacity.
 

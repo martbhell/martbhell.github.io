@@ -1,21 +1,8 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – ssh"
 date: 2012-06-06
-categories: 
-  - "it"
-tags: 
-  - "centos"
-  - "certification"
-  - "file-transfer"
-  - "linux"
-  - "openssh"
-  - "red-hat"
-  - "rhce"
-  - "ssh"
-  - "sshd"
-  - "studying"
-  - "tcp-wrapper"
----
+category: it
+tags: centos, certification, file, transfer, linux, openssh, red, hat, rhce, ssh, sshd, studying, tcp, wrapper
 
 [1st post](http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

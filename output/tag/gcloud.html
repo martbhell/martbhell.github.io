@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - gcloud</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/wasthereannhlgamelastnightcom-now-using-object-storage.html">"wasthereannhlgamelastnight.com - now using object storage!"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-10-07T00:00:00+03:00">
+                Published: "2017-10-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cloud.html">cloud</a> <a href="/tag/gcloud.html">gcloud</a> <a href="/tag/google.html">google</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/programming.html">programming</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
+</footer><!-- /.post-info --><p>To continue this series of blog posts about the awesome <a href="https://wasthereannhlgamelastnight.appspot.com/WINGS">https://wasthereannhlgamelastnight.appspot.com/WINGS</a> web site where you can see if there was in fact, an <a href="http://nhl.com/schedule">NHL</a> game last night :)</p>
+<p>Some background: First I had a python script that scraped the website of nhl.com and later changed that to just grab the data from the JSON REST API of nhl.com - much nicer. But it was still outputing the result to stdout as a set and a dictionary. And then I would in the application import this file to get the schedule. This was quite hacky and ugly :) But hey it worked.</p>
+<p>As of <a href="https://github.com/martbhell/wasthereannhlgamelastnight/commit/391c154670c4577c5d185937e56a340ff912810c">this commit</a> it now uses Google's <a href="https://cloud.google.com/storage/">Cloud Object Storage</a>:</p>
+<ul>
+<li>a special URL (one has to be an admin to be able to access it)</li>
+<li>there's a cronjob which calls this URL once a day (22:00 in some time zone)</li>
+<li>when this URL is called a <a href="https://github.com/martbhell/wasthereannhlgamelastnight/blob/master/src/update_schedule.py">python script</a> runs which:<ul>
+<li>checks what year it is and composes the URL to the API so that we only grab this season's games (to be a bit nicer to the API)</li>
+<li>does some sanity checking - that the fetched data is not empty</li>
+<li>extracts the dates and teams as before and writes two variables,<ul>
+<li>one list which has the dates when there's a game</li>
+<li>one dictionary which has the dates and all the games on each date<ul>
+<li>probably the last would be enough ;)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>finally always overwrites the schedule</li>
+</ul>
+</li>
+</ul>
+<p>To only update it when there are changes would be cool as then I could notify myself (and possibly others) when there have been changes, but it would mean that the JSON dict has to be ordered, which they aren't by default so I'd have to change some stuff. The <a href="https://cloud.google.com/appengine/docs/standard/python/googlecloudstorageclient/gcsfilestat_class">GCSFileStat</a> has a checksum-like metadata of the files called <a href="https://en.wikipedia.org/wiki/HTTP_ETag">ETAG</a>. But probably it would be best to first compute a checksum of the generated JSON and then add that as an extra metadata to the object as this ETAG is probably implemented differently between providers.</p>
+<p>http://www.guldmyr.com/blog/wasthereannhlgamelastnight-appspot-com-fixed-working-again/</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/wasthereannhlgamelastnightappspotcom-fixed-working-again.html" rel="bookmark"
+                           title="Permalink to "wasthereannhlgamelastnight.appspot.com - fixed - working again!"">"wasthereannhlgamelastnight.appspot.com - fixed - working again!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-10-04T00:00:00+03:00">
+                Published: "2017-10-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland-it.html">finland, it</a>.</p>
+<p>tags: <a href="/tag/api.html">api</a> <a href="/tag/gcloud.html">gcloud</a> <a href="/tag/google.html">google</a> <a href="/tag/json.html">json</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/python.html">python</a> <a href="/tag/rest.html">rest</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
+</footer><!-- /.post-info -->                <p>With NHL 2017-2018 season coming up and I had some extra spare time I thought why not finally fix this great website again :)</p>
+<p>As NHL changed the layout of their schedule page about two seasons ago - there's these days "infinite scrolling" or whatever it's called when the page only loads …</p>
+                <a class="readmore" href="/wasthereannhlgamelastnightappspotcom-fixed-working-again.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - chromecast</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/home-network-convergence.html">"Home Network Convergence"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-07-14T00:00:00+03:00">
+                Published: "2019-07-14"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/chromecast.html">chromecast</a> <a href="/tag/dnsmasq.html">dnsmasq</a> <a href="/tag/hostapd.html">hostapd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/media.html">media</a> <a href="/tag/server.html">server</a> <a href="/tag/openwrt.html">openwrt</a> <a href="/tag/raspberry.html">raspberry</a> <a href="/tag/pi.html">pi</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/lan.html">lan</a> <a href="/tag/wi.html">wi</a> <a href="/tag/fi.html">fi</a> <a href="/tag/wireless.html">wireless</a> <a href="/tag/access.html">access</a> <a href="/tag/point.html">point</a> </p>
+</footer><!-- /.post-info --><p>Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone.</p>
+<p>I've been thinking lately and in previous posts that maybe I should just get an access point and plug it in a port in the correct VLAN near the TV, as mentioned in a previous posts in https://www.guldmyr.com/blog/vlan-in-the-home-network/ or https://www.guldmyr.com/blog/some-updates-to-the-home-network/</p>
+<p>But then the other day I started looking at maybe the raspberry Pi I have as a media player could be turned into an access point? (some googling suggest it could be done, but several talk about basic linux install with hostapd and dnsmasq which maybe openwrt would be more fun).</p>
+<p>Then I realized that I already have an access point over there which is what phones and the chromecast is connected to and I don't want a third wifi network at home!</p>
+<p>Finally the solution is to get the media server onto the same network as the chromecast. This I could now after the VLAN changes do quite easily.</p>
+<p>Steps: - take the desktop's cable and put it in a dumb 1GbE switch I had unused - new cable from my desktop's system board NIC to go same a switch - at this point ssh into media server from internet (because it has no monitor/keyboard) - add usb NIC to the media server and connect to the switch - setup static NIC without default gw etc - update firewalls</p>
+<p>Things learnt: - the USB NIC got a funny and long interface name when I plugged it in. On next reboot it got eth0. So the network interface config I wrote initially didn't really work anymore :)</p>
+<p>Feels good to not have to this this old and unmaintained media player on the raspberry pi anymore. The android app I use even supports EAC3!</p>
+<p>Next I'm wondering what to do with that raspberry pi! retropie maybe?</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

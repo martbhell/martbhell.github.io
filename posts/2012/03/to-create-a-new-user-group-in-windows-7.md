@@ -1,26 +1,8 @@
 ---
 title: "To create a new user group in Windows 7"
 date: 2012-03-09
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "command-view"
-  - "command-view-simulator"
-  - "cv"
-  - "cv-simulator"
-  - "cvutil"
-  - "disk-array"
-  - "eva"
-  - "firmware"
-  - "hp"
-  - "hsv300"
-  - "p6000"
-  - "simulator"
-  - "sssu"
-  - "storage"
-  - "xcs"
----
+category: it, storage
+tags: command, view, command, view, simulator, cv, cv, simulator, cvutil, disk, array, eva, firmware, hp, hsv300, p6000, simulator, sssu, storage, xcs
 
 This post is [created upon request](http://www.guldmyr.com/blog/p6000-eva-command-view-simulator/comment-page-1/#comment-6759 "comment") by a reader.
 

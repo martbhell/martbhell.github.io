@@ -1,14 +1,8 @@
 ---
 title: "Songs of the day – 30 of March – 2011"
 date: 2011-03-30
-categories: 
-  - "finland"
-tags: 
-  - "free"
-  - "music"
-  - "streaming"
-  - "thesixtyone"
----
+category: finland
+tags: free, music, streaming, thesixtyone
 
 [Juke Cartel - Save Me](http://www.thesixtyone.com/s/a5WokfWSZ5f/ "on t61.com")\# rock, much more so than the previous ones I've mentioned :)
 

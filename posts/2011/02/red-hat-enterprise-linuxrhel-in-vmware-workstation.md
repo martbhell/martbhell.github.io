@@ -1,18 +1,8 @@
 ---
 title: "Red Hat Enterprise Linux(RHEL) in VMWare Workstation"
 date: 2011-02-21
-categories: 
-  - "it"
-tags: 
-  - "kernel"
-  - "linux"
-  - "red-hat-enterprise"
-  - "rhel"
-  - "ssh"
-  - "subscription-number"
-  - "ubuntu"
-  - "vmware-workstation"
----
+category: it
+tags: kernel, linux, red, hat, enterprise, rhel, ssh, subscription, number, ubuntu, vmware, workstation
 
 ## Test with Red Hat Enterprise Linux (RHEL).
 

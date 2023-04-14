@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - practices</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/bcfd-san-design-best-practices.html">"BCFD - SAN Design Best Practices"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-01-23T00:00:00+02:00">
+                Published: "2012-01-23"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bcfd.html">bcfd</a> <a href="/tag/best.html">best</a> <a href="/tag/practices.html">practices</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/designer.html">designer</a> <a href="/tag/certification.html">certification</a> <a href="/tag/design.html">design</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/area.html">area</a> <a href="/tag/network.html">network</a> </p>
+</footer><!-- /.post-info --><p>This is a post in series of me studying for the BCFD - Brocade Certified Fabric Designer and it's my comments on the document SAN Design Best Practices. Apparently this document is planned to be updated. The one I have is version 2.1. To find the latest go to My.brocade.com , documentation, Best Practices Guides. There's also a "SAN Migration" guide there, but it's from 2003 so irrelevant when it comes to anything specific, but ideas and reasons and methods might be valuable.</p>
+<p>OK. I thought about doing something similar for this document as for the previous ones. But I just don't feel like that, it's basically just re-writing things in different wording so that it sticks in my brain. No instead I'll post the questions that popped into my brain while reading it.</p>
+<p>For a starter, I printed this .pdf. OK it's not so environmentally friendly but it's nice to have a break. One thing though, it took me a lot longer to read this than the course modules for BCFD. The SAN Design Best Practices is a first class pdf. At least in my opinion. I mean it's general <strong>and</strong> specific. It needs to be general because there's a lot of reasons behind designing things. Also, I don't have any actual previous experience designing a SAN, so this is all new to me, and brings up a new side of Storage and Storage Networking that I just haven't bothered much with before. Hopefully I have and will be learning a lot.</p>
+<h2>Links</h2>
+<p>This paper refers to a lot of documents.</p>
+<p>The "<a href="http://www.brocade.com/downloads/documents/matrices/Brocade_Scalability_Guidelines_100208.pdf">Brocade Scalability Guidelines</a>" is not updated with 16G products (Only goes to FOS 6.3.0).</p>
+<h2>Latency</h2>
+<p>Page 10 it says "hop count is not a concern if the total switching latency is less than the disk I/O timeout value".</p>
+<p>Every switch hop adds latency (frame needs to be put in ASIC, processed then sent on its way).</p>
+<p>Switch latency is measured in microseconds. Disk I/O - is that the same as multipathing timeout? So 60 seconds for MPIO default in Windows?</p>
+<p>How are these latencies measured?</p>
+<h2>Redundancy Resiliency</h2>
+<p>Two fairly similar words. One indicates something has a replica or a duplicate to fall back on. The other indicates the strength, can it by itself handle a problem.</p>
+<p>Core switches should be equal or higher perf compared to edge switches. Highest performing switch should be the principal switch. Redundant links should be placed on different blades/ASICs or at least different port groups.</p>
+<h2>EHT - edge hold time</h2>
+<p>New timeout value that can discard blocked frames earlier than the 500ms default (down to 100ms). An I/O retry will still happen for each dropped frame.</p>
+<p>Is a new features in FOS 7<strong>(confirm)</strong> and it is ASIC dependent. Meaning ports in another port group are not affected by the EHT in another port group.</p>
+<p>EHT applies to all F_Ports on a switch <em>and</em> all the E_ports that share ASIC with F_Ports.</p>
+<p>Intended for initiators only.</p>
+<h2>ICL</h2>
+<p>Directors interconnected via ICL is not considered a hop in FICON, is it in Open Systems? Are the links uni-directional?</p>
+<p>ICL cables should all have the same length. ISL can be a bit different, max 30m in difference. Don't have ISL and ICL to the same switch/domain.</p>
+<h2>Links</h2>
+<p>Hyper-Scale Fabrics: Scale-out Architecture with Brocade DCX 8510 Feature Brief.</p>
+<h2>Small Fabrics</h2>
+<p>Page 15: Brocade recommends core-edge as primary SAN design, or mesh for <strong>small fabrics</strong> (under 2000). !!! That's pretty big.. On page 16 it says use full-mesh under 1500 ports.</p>
+<h2>Fan-In and Fan-Out and Oversubscription</h2>
+<p>Host ports to Target Ports</p>
+<p>Device to ISL</p>
+<p>Fan In : number of device ports that need to share a single port, be it target or ISL.</p>
+<p>Consider: port queue depth, iops and throughput.</p>
+<p>Example: If you have 4 devices with one 8G FC port each (32Gbps) and they are connecting over an ISL of 2x8G to another switch to a storage array that also have 2x8G then there is a 2:1 oversubscription, both on the ISL and on the target ports.</p>
+<h2>Bottleneck Detection</h2>
+<p>BD consumes switch memory, don't monitor more than 100 ports on a 48k (no limit on DCX).</p>
+<p>Start monitoring a small number of storage ports.</p>
+<h2>Fabric Watch</h2>
+<p>Thresholds and actions are generally different between initiators and targets. Thus place these on different switches.</p>
+<p><a href="http://www.brocade.com/downloads/documents/product_manuals/B_SAN/FabricWatch_AdminGd_v700.pdf">FW Administrator's Guide 7.0.0</a></p>
+<p>Monitor Class 3 frame discards (C3TX_TO), they are an indicator of high-latency devices.</p>
+<h3>Fabric Watch Classes</h3>
+<p>This is a wide grouping of similar devices. For example, temperature is a part of the class Environment.</p>
+<h2>Long Distance</h2>
+<h3>Buffer Allocation</h3>
+<p>Number of credits: 6+ ((link speed Gb/s * Distance in km) / frame size in KB)</p>
+<p>On 8510 4K buffers are available per ASIC to drive 16Gbps to 500km at 2KB frame size. With credit linking, buffers can be borrowed from a neighboring ASIC to extend distance. Details about 'credit linking'? Not many hits about this on google.</p>
+<p>You can connect DWDMs in pass-thru mode where the switch is providing all the buffering.</p>
+<h3>FCIP</h3>
+<p>FCIP adds a small latency (35 micro seconds). This is without the underlying TCP/IP delays.</p>
+<p>Use QoS to give FCIP traffic highest priority. Use CAR (committed access rate) to limit other traffic. Use ARL (adaptive rate limiting) and set the limit to the remaining bandwidth.</p>
+<p>FCIP traffic believes it is the only one using the bandwidth it has available, other traffic will suffer if they if they are sharing.</p>
+<p>Use rate limiting on the FCIP on the Brocade systems, don't limit it on the IP network.</p>
+<h3>MLX</h3>
+<p>This is mentioned for when extending mainframe/FICON extension over FCIP.</p>
+<p><a href="http://www.brocade.com/products/all/routers/product-details/netiron-mlx-series/index.page" title="brocade.com">MLX is a Brocade Router.</a></p>
+<h3>OC</h3>
+<p>OC1 =~ 52Mbps or without overhead ~50Mbps OC12 = 12*52 or about 622Mbps OC48 = 48*52 or about 2488Mbps</p>
+<p>OC12 is recommended for Compression Mode 3 (GZIP/software only) OC48 is recommended for Compression Mode 2 (SW with HW assist)</p>
+<p>Neither of those are recommended for synchronous replications. Mode 0 is recommended and that is HW only compression.</p>
+<h2>Gaussian or Normal Distribution</h2>
+<p><a href="http://en.wikipedia.org/wiki/Normal_distribution">http://en.wikipedia.org/wiki/Normal_distribution</a></p>
+<p>Have fun.</p>
+<h2>Virtualization</h2>
+<p>There's quite a bit about new Virtualization Engines in this paper. It basically means a device that has other disk arrays behind it, and then this device presents disks to servers. The danger is told to be that the engine can send a lot of small control frames, using up the buffer credits without using all the available bandwidth.</p>
+<p><strong>APM and Fabric Watch can apparently be used to monitor for excessive levels of SCSI reservations. How? -</strong> No specific details found but it is apparently threshold configurable in  fabric watch.</p>
+<h2>NPIV</h2>
+<p>Less domains equals to reduced:</p>
+<ul>
+<li>inter-switch zone transfers</li>
+<li>name server synchronizations</li>
+<li>RSCN processing</li>
+</ul>
+<h2>Dynamic Fabric Provisioning (DFP)</h2>
+<p>Only on Brocade HBAs and 16G.</p>
+<p>Dynamically provision switch-generated virtual WWN.</p>
+<p>Can be user-generated as well.</p>
+<p>WWN stays the same even after HBA replacement.</p>
+<p>In practice this means you can zone, QoS even before the HBA is online and before you know what the WWN is of the new device.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

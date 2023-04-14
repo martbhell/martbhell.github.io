@@ -1,14 +1,8 @@
 ---
 title: "New theme"
 date: 2012-07-19
-categories: 
-  - "it"
-tags: 
-  - "hemingway"
-  - "hemingwayex"
-  - "theme"
-  - "wordpress"
----
+category: it
+tags: hemingway, hemingwayex, theme, wordpress
 
 Just updated the theme to [http://www.nullin.com/hemingwayex/](http://www.nullin.com/hemingwayex/)
 

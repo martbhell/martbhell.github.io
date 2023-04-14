@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - pdsh</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/pdsh-parallell-distributed-shell.html">"pdsh - parallell distributed shell"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-11-10T00:00:00+02:00">
+                Published: "2012-11-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/distributed.html">distributed</a> <a href="/tag/shell.html">shell</a> <a href="/tag/hpc.html">hpc</a> <a href="/tag/pdsh.html">pdsh</a> <a href="/tag/rpmforge.html">rpmforge</a> </p>
+</footer><!-- /.post-info --><p><a href="https://code.google.com/p/pdsh/" title="https://code.google.com/p/pdsh/">pdsh</a></p>
+<p>This a software to run commands on a set of servers.</p>
+<p>For example 'pdsh -a uname -av' will give you "uname -av" of all machines.</p>
+<p><a href="http://techsnail.com/howtos-tutorials/installing-pdsh-on-hpc-cluster/" title="http://techsnail.com/howtos-tutorials/installing-pdsh-on-hpc-cluster/">http://techsnail.com/howtos-tutorials/installing-pdsh-on-hpc-cluster/</a></p>
+<p>It can be installed from rpmforge.0</p>
+<p>wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+rpm -ivh rpm-release*
+yum install pdsh</p>
+<p>after that you can immediately run "pdsh -w oss1,client1 uname -av" to run a command on a remote node.</p>
+<p>It's possible to set up so that it executes on a pre-defined list. Check out /etc/machines.</p>
+<p>Extremely useful if you want to save some time :)</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

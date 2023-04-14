@@ -1,17 +1,8 @@
 ---
 title: "wtangy.se – site rename and automatic deployments!"
 date: 2017-10-25
-categories: 
-  - "finland"
-tags: 
-  - "appengine"
-  - "google"
-  - "nhl"
-  - "travis"
-  - "wasthereannhlgamelastnight"
-  - "wtangy"
-  - "wtangy-se"
----
+category: finland
+tags: appengine, google, nhl, travis, wasthereannhlgamelastnight, wtangy, wtangy, se
 
 This is a good one!
 

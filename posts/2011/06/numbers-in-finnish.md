@@ -1,15 +1,8 @@
 ---
 title: "Numbers in Finnish"
 date: 2011-06-02
-categories: 
-  - "finland"
-tags: 
-  - "finnish"
-  - "kielta"
-  - "language"
-  - "numbers"
-  - "suomen"
----
+category: finland
+tags: finnish, kielta, language, numbers, suomen
 
 What I found/find really hard was separate kahdeksan and yhdeksän, because cmon, they are pretty similar!
 

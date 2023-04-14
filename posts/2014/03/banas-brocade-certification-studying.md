@@ -1,16 +1,8 @@
 ---
 title: "BANAS - Brocade Certification - Studying"
 date: 2014-03-30
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "bna"
-  - "brocade"
-  - "certification"
-  - "network-advisor"
-  - "studying"
----
+category: it, storage
+tags: bna, brocade, certification, network, advisor, studying
 
 I'm going to focus on the below things when studying for BANAS: They are based on the current objectives listed on Brocade's [page](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page "http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page").
 

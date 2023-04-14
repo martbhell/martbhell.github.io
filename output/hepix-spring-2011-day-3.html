@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"HEPIX Spring 2011 – Day 3"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" "storage" tags: "adaptec" "buffered-tape-marks" "cern" "cloud" "ermm" "errata" "hepix" "hepix-spring-2011" "ibm" "ioapps" "ioreplay" "ipv4"..." />
+        <meta name="description" content="Day 3 woop! An evaluation of gluster: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li class="active"><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,38 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"</li>
-<li>"storage"
-tags: </li>
-<li>"adaptec"</li>
-<li>"buffered-tape-marks"</li>
-<li>"cern"</li>
-<li>"cloud"</li>
-<li>"ermm"</li>
-<li>"errata"</li>
-<li>"hepix"</li>
-<li>"hepix-spring-2011"</li>
-<li>"ibm"</li>
-<li>"ioapps"</li>
-<li>"ioreplay"</li>
-<li>"ipv4"</li>
-<li>"ipv6"</li>
-<li>"lustre"</li>
-<li>"oracle"</li>
-<li>"scientific-linux"</li>
-<li>"service-now"</li>
-<li>"sl"</li>
-<li>"strace"</li>
-<li>"sun"</li>
-<li>"t10000c"</li>
-<li>"tape-drive"</li>
-<li>"tsm"</li>
-</ul>
-<hr>
-<p>Day 3 woop!</p>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/adaptec.html">adaptec</a> <a href="/tag/buffered.html">buffered</a> <a href="/tag/tape.html">tape</a> <a href="/tag/marks.html">marks</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/ermm.html">ermm</a> <a href="/tag/errata.html">errata</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/ioapps.html">ioapps</a> <a href="/tag/ioreplay.html">ioreplay</a> <a href="/tag/ipv4.html">ipv4</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/linux.html">linux</a> <a href="/tag/service.html">service</a> <a href="/tag/now.html">now</a> <a href="/tag/sl.html">sl</a> <a href="/tag/strace.html">strace</a> <a href="/tag/sun.html">sun</a> <a href="/tag/t10000c.html">t10000c</a> <a href="/tag/drive.html">drive</a> <a href="/tag/tsm.html">tsm</a> </p>
+</footer><!-- /.post-info -->      <p>Day 3 woop!</p>
 <p>An evaluation of <a href="http://www.gluster.org/" title="gluster.org">gluster</a>: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot.</p>
 <p>Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and <a href="http://www-935.ibm.com/services/de/igs/pdf/br-stor-enterprise-remove-mm-en.pdf" title="links to pdf on ibm.com">ERMM</a>. Where ERMM manages the libraries, so that TSM only sees the link to the ERMM. No need to set up specific paths from each agent to each tape drive in each library. They were also using Oracle/SUN's T10000c tape drives that goes all the way up to 5TB - which is quite far ahead of LTO consortium's LTO-5 that only goes to 1.5/3TB per tape. Some talk about <a href="http://publib.boulder.ibm.com/infocenter/zos/v1r10/index.jsp?topic=/com.ibm.zos.r10.idad500/buftms.htm" title="on boulder.ibm.com">buffered tape marks</a> which speeds up tape operations significantly.</p>
 <p>Lustre success story at GSI. They have 105 servers that provide 1.2PB of storage and max throughput seen is 160Gb/s. Some problems with</p>

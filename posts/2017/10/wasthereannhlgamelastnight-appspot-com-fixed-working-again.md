@@ -1,19 +1,8 @@
 ---
 title: "wasthereannhlgamelastnight.appspot.com - fixed - working again!"
 date: 2017-10-04
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "api"
-  - "gcloud"
-  - "google"
-  - "json"
-  - "nhl"
-  - "python"
-  - "rest"
-  - "wasthereannhlgamelastnight"
----
+category: finland, it
+tags: api, gcloud, google, json, nhl, python, rest, wasthereannhlgamelastnight
 
 With NHL 2017-2018 season coming up and I had some extra spare time I thought why not finally fix this great website again :)
 

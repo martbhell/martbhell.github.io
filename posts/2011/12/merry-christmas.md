@@ -1,12 +1,8 @@
 ---
 title: "Merry Christmas"
 date: 2011-12-24
-categories: 
-  - "finland"
-tags: 
-  - "christmas"
-  - "finland"
----
+category: finland
+tags: christmas, finland
 
 Merry Christmas ya'll!
 

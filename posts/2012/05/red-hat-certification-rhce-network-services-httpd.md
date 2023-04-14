@@ -1,18 +1,8 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services - httpd"
 date: 2012-05-02
-categories: 
-  - "it"
-tags: 
-  - "apache"
-  - "centos"
-  - "certification"
-  - "httpd"
-  - "linux"
-  - "red-hat"
-  - "rhce"
-  - "studying"
----
+category: it
+tags: apache, centos, certification, httpd, linux, red, hat, rhce, studying
 
 [1st post](http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

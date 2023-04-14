@@ -1,15 +1,8 @@
 ---
 title: "Music of the day – 19th of April + Go Detroit Day"
 date: 2011-04-19
-categories: 
-  - "finland"
-tags: 
-  - "florence-and-the-machine"
-  - "leila-boussard"
-  - "music"
-  - "nhl"
-  - "thesixtyone"
----
+category: finland
+tags: florence, and, the, machine, leila, boussard, music, nhl, thesixtyone
 
 [Dog Days Are Over - Florence and the Machine](http://www.thesixtyone.com/s/5X6CJmbA6qc/ "on t61") - Just awesome.
 

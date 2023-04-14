@@ -1,13 +1,8 @@
 ---
 title: "haproxy lab setup!"
 date: 2017-08-07
-categories: 
-  - "it"
-tags: 
-  - "ansible"
-  - "haproxy"
-  - "openstack"
----
+category: it
+tags: ansible, haproxy, openstack
 
 Been seeing haproxy more and more lately as it seems even the stuff I work with are moving towards web :)
 

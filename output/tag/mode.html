@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - mode</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/access-gateway-npv-tr.html">"Access Gateway - NPV - TR"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-05-11T00:00:00+03:00">
+                Published: "2012-05-11"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/access.html">access</a> <a href="/tag/gateway.html">gateway</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/ipm.html">ipm</a> <a href="/tag/mds.html">mds</a> <a href="/tag/npiv.html">npiv</a> <a href="/tag/npv.html">npv</a> <a href="/tag/qlogic.html">qlogic</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/transparent.html">transparent</a> <a href="/tag/mode.html">mode</a> </p>
+</footer><!-- /.post-info --><h2>Say what??</h2>
+<p><a href="http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/access_gateway.page" title="link to brocade.com">Access Gateway</a> - Brocade</p>
+<p><a href="http://datacenteroverlords.com/2012/05/08/npv-and-npiv/" title="great discussion in the comments on this post by the way">NPV</a> (N_port Virtualization (not NPIV) - Cisco</p>
+<p><a href="http://community.brocade.com/thread/6267?start=0&amp;tstart=0" title="on brocade.com">Transparent Mode</a> - QLogic</p>
+<p>These are all names for the basic idea / functionality but as there's no standard the vendors have made up their own names for it.</p>
+<p>A switch in Access Gateway (AG) mode does not consume Domain IDs, you can do port mapping, needs NPIV on the port in the switch that it connects to. AG requires a switch / fabric to connect to as it doesn't run the normal fibre channel services.</p>
+<p>It is very useful in case you are going to mix vendors in your fabric. Meaning you can populate the core with Brocade switches and then connect other vendors' switches in the above modes to the Brocade switches.</p>
+<p>On some QLogic switches you can also set a port into TR-mode, see <a href="http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN-Small/Can-I-connect-HP-8-20q-to-HP-8-24c-via-TR-port/td-p/5723725#.UAfyrNIgcak" title="hp.com">this post</a> on HP's EBC forum about how to do it. It is not exactly the same as AG or NPV, because you still need to do zoning on the QLogic switch.</p>
+<p>There is also the IPM by Qlogic for IBM - it looks like a module that you cannot switch between 'fabric' and 'IPM' mode. Which is what you can do on a Cisco or on a Brocade switch.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,10 +1,7 @@
 ---
 title: "Yesterday was my last day at CSCfi"
 date: 2020-03-08
-categories: 
-  - "finland"
-  - "it"
----
+category: finland, it
 
 9 years were significant and meaningful to me.
 

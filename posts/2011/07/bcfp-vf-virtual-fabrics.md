@@ -1,18 +1,8 @@
 ---
 title: "BCFP - VF - Virtual Fabrics"
 date: 2011-07-30
-categories: 
-  - "finland"
-tags: 
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-professional"
-  - "fabrics"
-  - "san"
-  - "storage-network"
-  - "vf"
-  - "virtual-fabrics"
----
+category: finland
+tags: bcfp, brocade, brocade, certified, fabric, professional, fabrics, san, storage, network, vf, virtual, fabrics
 
 The free material does not go through the virtual fabrics and the [exam objectives](http://community.brocade.com/docs/DOC-2041 "bcfp 16g exam objectives") does not mention them specifically. Even so - it's probably a good idea to get some grip about it anyway as it is mentioned in the BCFP 8G material and there are questions concerning it in the Nutshell Guide and the BCFP 8 knowledge assessment. Also it is mentioned in the pre-requisites for the BCFP (the AFS 141).
 

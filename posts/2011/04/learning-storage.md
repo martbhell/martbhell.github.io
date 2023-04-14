@@ -1,19 +1,8 @@
 ---
 title: "Learning Storage"
 date: 2011-04-28
-categories: 
-  - "storage"
-tags: 
-  - "disk-drives"
-  - "infosmack"
-  - "learning"
-  - "netapp"
-  - "podcast"
-  - "storage"
-  - "storage-book"
-  - "storage-brain"
-  - "theregister"
----
+category: storage
+tags: disk, drives, infosmack, learning, netapp, podcast, storage, storage, book, storage, brain, theregister
 
 \*\* 2011-08-18 Just updated the link to the HP forum.
 

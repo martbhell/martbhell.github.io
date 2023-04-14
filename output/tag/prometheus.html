@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - prometheus</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/prometheus-and-snmp-from-a-printer.html">"Prometheus and SNMP from a printer"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2021-04-07T00:00:00+03:00">
+                Published: "2021-04-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/monitoring.html">monitoring</a> <a href="/tag/printer.html">printer</a> <a href="/tag/prometheus.html">prometheus</a> <a href="/tag/snmp.html">snmp</a> </p>
+</footer><!-- /.post-info --><p>The other week I finally for this thing working I've been trying weakly to do every now and then when I had a few minutes free: send an alert before a toner runs out in a printer!</p>
+<p>Way back I set up <a href="https://github.com/prometheus/snmp_exporter">SNMP_exporter</a> to fetch metrics from switches. This worked very nicely. ( In retrospect this works nicely because it's the default type of device )</p>
+<p>But for printers we didn't get much useful data out. Even though we use the vanilla upstream <a href="https://github.com/prometheus/snmp_exporter/blob/main/snmp.yml">snmp.yml</a> which has printer stuff in it. And when I did an snmpwalk I did manage with some research to find the correct OIDs to query to get the level of ink in the toners. So I knew the printer did publish the information I was looking for.</p>
+<p>The answer? Select a <strong>module</strong> when sending the request to the exporter! I didn't select <strong>printer_mib</strong> so it used if_mib that only has interface statistics.</p>
+<p>What would have helped? Not suing the vanilla (large) snmp.yml and only use a custom one that has the data we wanted..</p>
+<p>Printers are no fun :/</p>
+<p>Prometheus is!</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

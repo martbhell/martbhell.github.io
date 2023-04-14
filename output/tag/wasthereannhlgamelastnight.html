@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - wasthereannhlgamelastnight</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/wtangyse-site-rename-and-automatic-deployments.html">"wtangy.se – site rename and automatic deployments!"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-10-25T00:00:00+03:00">
+                Published: "2017-10-25"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/appengine.html">appengine</a> <a href="/tag/google.html">google</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/travis.html">travis</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> <a href="/tag/wtangy.html">wtangy</a> <a href="/tag/se.html">se</a> </p>
+</footer><!-- /.post-info --><p>This is a good one!</p>
+<p>Previous entries in this series: <a href="http://www.guldmyr.com/blog/wasthereannhlgamelastnight-com-now-using-object-storage/">http://www.guldmyr.com/blog/wasthereannhlgamelastnight-com-now-using-object-storage/</a> and  <a href="http://www.guldmyr.com/blog/wasthereannhlgamelastnight-appspot-com-fixed-working-again/">http://www.guldmyr.com/blog/wasthereannhlgamelastnight-appspot-com-fixed-working-again/</a></p>
+<h1>Renamed to wtangy.se</h1>
+<p>First things first! The website has been renamed to <a href="https://wtangy.se">wtangy.se</a>! Nobody in their right mind would type out wasthereannhlgamelastnight.com.. so now it's an acronym of wasthereannhlgame<strong>yesterday</strong>. <a href="http://wtangy.se">wtangy.se</a> . Using Sweden .se top level domain because there was an offer making it really cheap :)</p>
+<h1>Automatic testing and deployment</h1>
+<p>Second important update is that now we do some <a href="https://github.com/martbhell/wasthereannhlgamelastnight/blob/master/.travis.yml">automatic testing and deployment.</a></p>
+<p>This is done with <a href="https://travis-ci.org/martbhell/wasthereannhlgamelastnight/builds">travis-ci.org</a> where one can view builds, the configuration is done in <a href="https://github.com/martbhell/wasthereannhlgamelastnight/blob/master/.travis.yml">this file.</a></p>
+<p>In google cloud there's different <em>versions</em> of the apps deployed. If we don't promote a version it will not be accessible from wtangy.se (or wasthereannhlgamelastnight.appspot.com) but via some other URL.</p>
+<p>Right now the testing happens like this on every commit:</p>
+<ol>
+<li>deploy the code to a <em>testing</em> version (which we don't promote)</li>
+<li>then we run some scripts:<ol>
+<li>pylint on the python scripts</li>
+<li>an <a href="https://github.com/martbhell/wasthereannhlgamelastnight/blob/master/e2e_test.py">end to end test</a> which tries to visit the website.</li>
+</ol>
+</li>
+<li>if the above succeeds we do deploy to master (which we do promote)</li>
+</ol>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/wasthereannhlgamelastnightcom-now-using-object-storage.html" rel="bookmark"
+                           title="Permalink to "wasthereannhlgamelastnight.com - now using object storage!"">"wasthereannhlgamelastnight.com - now using object storage!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-10-07T00:00:00+03:00">
+                Published: "2017-10-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cloud.html">cloud</a> <a href="/tag/gcloud.html">gcloud</a> <a href="/tag/google.html">google</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/programming.html">programming</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
+</footer><!-- /.post-info -->                <p>To continue this series of blog posts about the awesome <a href="https://wasthereannhlgamelastnight.appspot.com/WINGS">https://wasthereannhlgamelastnight.appspot.com/WINGS</a> web site where you can see if there was in fact, an <a href="http://nhl.com/schedule">NHL</a> game last night :)</p>
+<p>Some background: First I had a python script that scraped the website of nhl.com and later changed that …</p>
+                <a class="readmore" href="/wasthereannhlgamelastnightcom-now-using-object-storage.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/wasthereannhlgamelastnightappspotcom-fixed-working-again.html" rel="bookmark"
+                           title="Permalink to "wasthereannhlgamelastnight.appspot.com - fixed - working again!"">"wasthereannhlgamelastnight.appspot.com - fixed - working again!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-10-04T00:00:00+03:00">
+                Published: "2017-10-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland-it.html">finland, it</a>.</p>
+<p>tags: <a href="/tag/api.html">api</a> <a href="/tag/gcloud.html">gcloud</a> <a href="/tag/google.html">google</a> <a href="/tag/json.html">json</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/python.html">python</a> <a href="/tag/rest.html">rest</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
+</footer><!-- /.post-info -->                <p>With NHL 2017-2018 season coming up and I had some extra spare time I thought why not finally fix this great website again :)</p>
+<p>As NHL changed the layout of their schedule page about two seasons ago - there's these days "infinite scrolling" or whatever it's called when the page only loads …</p>
+                <a class="readmore" href="/wasthereannhlgamelastnightappspotcom-fixed-working-again.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/was-there-an-nhl-game-last-night.html" rel="bookmark"
+                           title="Permalink to "Was there an NHL game last night?"">"Was there an NHL game last night?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-06-07T00:00:00+03:00">
+                Published: "2015-06-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/appengine.html">appengine</a> <a href="/tag/icehockey.html">icehockey</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
+</footer><!-- /.post-info -->                <p>Yesterday my Internet activities was restricted unnecessarily!</p>
+<p>While waiting for the replay of last night's NHL game to air, I didn't want to browse quite a large chunk of my normal Internets - because knowing the score while watching the game sucks. Unbeknownst to me - there was no game last night …</p>
+                <a class="readmore" href="/was-there-an-nhl-game-last-night.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

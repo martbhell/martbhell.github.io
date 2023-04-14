@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - bcu</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/storage-fc-hba-transfer-size-tuning.html">"Storage FC HBA Transfer Size Tuning"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-03-06T00:00:00+02:00">
+                Published: "2012-03-06"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bcu.html">bcu</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/emulex.html">emulex</a> <a href="/tag/fc.html">fc</a> <a href="/tag/fibre.html">fibre</a> <a href="/tag/channel.html">channel</a> <a href="/tag/hba.html">hba</a> <a href="/tag/limtransfersize.html">limtransfersize</a> <a href="/tag/performance.html">performance</a> <a href="/tag/tuning.html">tuning</a> <a href="/tag/qlfc.html">qlfc</a> <a href="/tag/qlogic.html">qlogic</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/size.html">size</a> </p>
+</footer><!-- /.post-info --><p>HP just published an advisory describing how to tune some parameters for Emulex, Qlogic and Brocade Fibre Channel HBAs: <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02518189">c02518189</a>. It sounds like these are new, but these changes have been around for at least 6 months in all three vendors' HBAs.</p>
+<h2><strong>Emulex</strong></h2>
+<p>"Emulex driver version 2.42.002 or later, along with OneCommand Manager version 5.1.53.2 or later,"</p>
+<p>Use HBAnywhere to change these.</p>
+<p>Examples to tune the server or port level transfer size:</p>
+<ul>
+<li>128 kbytes, set the LimTransferSize = 2 and ExtTransferSize = 0 (default)</li>
+<li>512 kbytes, set the LimTransferSize = 0 (default) and ExtTransferSize = 0 (default)</li>
+<li>1 Mbytes, set the LimTransferSize = 0 (default) and ExtTransferSize = 1</li>
+</ul>
+<h2>Qlogic</h2>
+<p>This is part of the Qlogic SANSurfer utility.</p>
+<ul>
+<li>c:\&gt;qlfc -tsize /fc</li>
+<li>c:\&gt;qlfc -tsize /fc /set 128</li>
+<li>c:\&gt;qlfc -tsize /fc /set default</li>
+</ul>
+<h2>Brocade</h2>
+<ul>
+<li>bcu drvconf --key bfa_max_xfer_len --val 64</li>
+<li>bcu drvconf --key bfa_max_xfer_len --val 128</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

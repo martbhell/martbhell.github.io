@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - exam</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/bcvrp-brocade-certified-virtual-router-professional-objectives.html">"BCvRP – Brocade Certified virtual Router Professional – Objectives"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-11-10T00:00:00+02:00">
+                Published: "2013-11-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcvrp.html">bcvrp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/objectives.html">objectives</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info --><p>For training these I set up networks. Many. Drawing the networks first in LibreOffice Draw and then setting them up with virtual machine templates and LAN segments.</p>
+<p>The exam I took in October and because it was a beta exam the results aren't out until December :)</p>
+<p>The BCvRP has the below <a href="http://community.brocade.com/docs/DOC-3349" title="http://community.brocade.com/docs/DOC-3349">objectives</a> (included for free are some of my comments on each topic). None of this should be taken as a replacement for taking the actual course and actually doing these things on a vrouter. And honestly, the various concepts and technologies described in the objectives below can become very complex. So before taking this course/exam you at a minimum want to know the basics of BGP and setting up an OSPF network should be a breeze.</p>
+<h1>OSPF Multi-Area Concepts</h1>
+<ul>
+<li>
+<p><strong><em>Describe OSPF routing concepts</em></strong></p>
+</li>
+<li>
+<p>Stub area - replace external routes with a default route</p>
+</li>
+<li>NSSA - not so stubby - can have a local external route inside a stub area</li>
+<li>no-summary : exclude inter-area routes</li>
+<li>LSA - link state advertisements<ul>
+<li>1 All OSPFs: Lists subnets/links directly connected, does not cross area boundaries</li>
+<li>2 from DR: Lists routers connected to a network, does not cross</li>
+<li>3 from ABR: Lists networks from outside the local area</li>
+<li>4 from ASBR: Summary, lists location of ASBR</li>
+<li>5 from ASBR: AS external, list networks outside OSPF AS. 7 for NSSA.</li>
+</ul>
+</li>
+<li>Summarization: Good to have continuous addresses in an area, easier to summarize.<ul>
+<li>Do not summarize routes originating in Area 0.</li>
+</ul>
+</li>
+</ul>
+<h1>BGP, EBGP and IBGP Concepts</h1>
+<ul>
+<li>
+<p><strong><em>Describe gateway protocol concepts</em></strong></p>
+</li>
+<li>
+<p>BGP Basics</p>
+<ul>
+<li>Purpose is to determine best path (not necessarily the shortest)</li>
+<li>TCP Connection, no periodic updates.</li>
+<li>iBGP - within an AS / eBGP - between AS</li>
+<li>Attributes - BGP policies - costs</li>
+<li>eBGP - best to be on the same network</li>
+<li>TCP port 179</li>
+<li>A unique AS number is needed, there are <a href="http://en.wikipedia.org/wiki/Autonomous_System_(Internet)" title="64512 to 65534">private AS numbers</a>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>eBGP</strong></p>
+<p>set protocols bgp AS# router-id IP set protocols bgp AS# neighbor ip-address remote-as as-number set protocols bgp AS# network address/mask</p>
+<p>exact match must be in the router's table: create a static route to blackhole on the router</p>
+<p><strong>iBGP</strong> = same AS on the BGP peer (the neighbor)</p>
+<p>iBGP - a full mesh is necessary. iBGP does not forward routes learned from other iBGP peers. One can use "next-hop-self" so that iBGP router's change the next-hop address to a network whenever it propagates the route. update-source - this needs to be the same as the router-id.</p>
+<p>iBGP required settings: local AS number, neighbor address and "update source".</p>
+<p>bgp does not reset advertised routes after an administrator's changes. Changes to eBGP does not come into affect until you run the reset: '<strong>reset ip bgp external out</strong>'. The BGP table can be large - gigabytes. Use the word soft to only request updates and not reset the peer connection.</p>
+<p>reset ip bgp external [ipv4 address]</p>
+<h4>Tuning attributes and priority</h4>
+<ol>
+<li>Local preference - only included within an AS. Default is 100. Higher is better.</li>
+<li>AS Path - always forwarded - shorter is better</li>
+<li>Origin - lowest</li>
+<li>Multi-exit discriminator # modified by an ISP to indicate preference</li>
+<li>eBGP preferred over iBGP</li>
+<li>Lowest Peer ID</li>
+<li>Community # group of prefixes with a common property. Can be used in filters.</li>
+</ol>
+<p>Prepending: insert your AS number in the AS in the beginning of the AS path. Communities are created with: set policy community list</p>
+<h3>BGP troubleshooting</h3>
+<p>An active peer - not good. Trying to actively set up a session.</p>
+<h3>iBGP design</h3>
+<ul>
+<li>Does not have to be physically connected (as in BGP).<ul>
+<li>Connectivity over BGP</li>
+</ul>
+</li>
+<li>Peer to loopback address</li>
+<li>Full mesh is required<ul>
+<li>Doesn't scale. You can use a Route reflector ("concentrator") and have other iBGP routers as clients.</li>
+<li>route reflectors must be meshed</li>
+<li>You can also create multiple private AS within your AS. Reduces members in the mesh. Called a confederation.<ul>
+<li>Public AS number is only visible in the config</li>
+<li>The Private numbers are visible in the show ip bgp commands.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Create a peer group, set BGP settings on the peer group. Then assign peers to the group.</p>
+<h2><strong>Route Redistribution</strong></h2>
+<ul>
+<li>
+<p>Describe route redistribution design and configuration</p>
+</li>
+<li>
+<p>Best practices:</p>
+<ul>
+<li>Set metrics</li>
+<li>Do not redistribute into or out of BGP</li>
+<li>Use network statements</li>
+<li>Statements to direct towards BGP exit points</li>
+<li>Only redistribute a network from one host (VRRP)</li>
+</ul>
+</li>
+<li>OSPF: metric type (increase cost)</li>
+<li>Only active routes are redistributed</li>
+</ul>
+<h2><strong>IPsec VPNs</strong></h2>
+<ul>
+<li>Identify IKE Phase 1 and Phase 2 operations</li>
+<li>Describe how to configure and troubleshoot an IPsec VPN</li>
+</ul>
+<h2><strong>OpenVPN Concepts</strong></h2>
+<ul>
+<li>Identify the features of OpenVPN</li>
+<li>Describe OpenVPN configuration</li>
+</ul>
+<h2><strong>VRRP Concepts</strong></h2>
+<ul>
+<li>Describe VRRP concepts and operations</li>
+</ul>
+<h2><strong>Optimization</strong></h2>
+<ul>
+<li>Describe the attributes of WAN load balancing</li>
+<li>Describe QoS features and configuration</li>
+</ul>
+<h1>Policy-Based Routing</h1>
+<ul>
+<li>Explain where policy-based routing falls in Brocade Vyatta packet flow</li>
+<li>
+<p>Configure and verify policy-based routing</p>
+</li>
+<li>
+<p>Default: drop route entry . By default it only takes the first action that matches.</p>
+</li>
+<li>Rule -&gt; Filter -&gt; Route Map (excluding deny filters) &gt; Take action as defined</li>
+<li>Filter list: prefix 172.16.0.0/16, le 24. Any netmasks between /16 and 24, including /16.</li>
+<li>
+<p>Regexp for matching AS lists - use underscore to match whitespaces</p>
+</li>
+<li>
+<p>Filter has the rules.</p>
+<ul>
+<li>permit/deny in the filters affects if the rule is applied to the filter.</li>
+</ul>
+</li>
+<li>Route-maps has the rules.</li>
+</ul>
+<h1>Multicast Routing</h1>
+<ul>
+<li>Describe multicast protocols/elements</li>
+<li>Configure and troubleshoot multicast routing</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcvre-brocade-certified-virtual-router-engineer.html" rel="bookmark"
+                           title="Permalink to "BCvRE - Brocade Certified virtual Router Engineer"">"BCvRE - Brocade Certified virtual Router Engineer"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-09-08T00:00:00+03:00">
+                Published: "2013-09-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcvre.html">bcvre</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info -->                <p>Been checking out the Vyatta vRouter a bit closer. Mostly because of the BCvRE exam but I'm slowly starting to think there might be some benefits to using it elsewhere too.</p>
+<ol>
+<li>See <a href="http://www.guldmyr.com/blog/vyatta-a-routervpnfirewall-in-a-vm-brocade-certified-vrouter-engineer/">vyatta-a-routervpnfirewall-in-a-vm-brocade-certified-vrouter-engineer/</a> for where to find manuals or training materials.</li>
+<li>See <a href="http://www.guldmyr.com/blog/?p=2041">the objectives</a>.</li>
+</ol>
+<p>I tried installing <a href="http://vyatta.com/" title="http://vyatta.com/">Vyatta</a> vRouter 6 …</p>
+                <a class="readmore" href="/bcvre-brocade-certified-virtual-router-engineer.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcvre-brocade-certified-virtual-router-engineer-objectives.html" rel="bookmark"
+                           title="Permalink to "BCvRE - Brocade Certified virtual Router Engineer - Objectives"">"BCvRE - Brocade Certified virtual Router Engineer - Objectives"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-09-08T00:00:00+03:00">
+                Published: "2013-09-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcvre.html">bcvre</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/objectives.html">objectives</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info -->                <p>This post will be continuously updated with my short notes under each concept. It's not meant to be a replacement of the official training materials. I'm just starting out playing with the vRouter Core / open source version and installing it in a VM and set up some networks and firewalls …</p>
+                <a class="readmore" href="/bcvre-brocade-certified-virtual-router-engineer-objectives.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/vyatta-a-routervpnfirewall-in-a-vm.html" rel="bookmark"
+                           title="Permalink to "Vyatta: a router/vpn/firewall in a VM"">"Vyatta: a router/vpn/firewall in a VM"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-26T00:00:00+03:00">
+                Published: "2013-08-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/bcvre.html">bcvre</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info -->                <p>Brocade has a beta exam up for <a href="http://community.brocade.com/docs/DOC-3336">BCVRE</a> - Certified vRouter Engineer - which is on the Vyatta software from the company with the same name that Brocade bought last year.</p>
+<p>There is the free open source core. Download from here: <a href="http://vyatta.org/downloads?whence=">http://vyatta.org/downloads</a> (no you don't have to register).  The …</p>
+                <a class="readmore" href="/vyatta-a-routervpnfirewall-in-a-vm.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcfp-how-to-prepare-for-the-exam.html" rel="bookmark"
+                           title="Permalink to "BCFP - How to prepare for the exam"">"BCFP - How to prepare for the exam"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-09-03T00:00:00+03:00">
+                Published: "2011-09-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/exam.html">exam</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info -->                <p>Until now I've been just reading the material, when there's something unclear in the material I've looked it up in command reference guides, release notes, user guides or otherwise on the Intertubes.</p>
+<p>This doesn't really prepare you for the format the exam is in. I mean the exam is in …</p>
+                <a class="readmore" href="/bcfp-how-to-prepare-for-the-exam.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcfp-brocade-certified-fabric-professional-16g-beta-exam.html" rel="bookmark"
+                           title="Permalink to "BCFP - Brocade Certified Fabric Professional 16G Beta Exam"">"BCFP - Brocade Certified Fabric Professional 16G Beta Exam"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-22T00:00:00+03:00">
+                Published: "2011-07-22"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/asic.html">asic</a> <a href="/tag/bcfa.html">bcfa</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/administrator.html">administrator</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/exam.html">exam</a> <a href="/tag/fos.html">fos</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> </p>
+</footer><!-- /.post-info -->                <p>More studying. Only a month and a half to go.</p>
+<p>Currently repeating/re-reading BCFA stuff and mostly focusing on the new stuff. Expect to do this this whole week but gradually weave in more BCFP stuff.</p>
+<p>An idea - I don't think I need to re-hearse the BCFA that much. The …</p>
+                <a class="readmore" href="/bcfp-brocade-certified-fabric-professional-16g-beta-exam.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcfa-brocade-certified-fabric-administrator-16g-beta.html" rel="bookmark"
+                           title="Permalink to "BCFA - Brocade Certified Fabric Administrator 16G Beta"">"BCFA - Brocade Certified Fabric Administrator 16G Beta"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-20T00:00:00+03:00">
+                Published: "2011-07-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/asic.html">asic</a> <a href="/tag/bcfa.html">bcfa</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/administrator.html">administrator</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/exam.html">exam</a> <a href="/tag/fos.html">fos</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> </p>
+</footer><!-- /.post-info -->                <p>I am currently going for the BCFP - fabric professional - exam, but I did the BCFA 6 months ago so I'll re-read the material and of course there's the new stuff with FOS 7, new hardware, 16g, new ASIC that I should probably learn as well.</p>
+<h2>Some new stuff</h2>
+<p>'fabric name' …</p>
+                <a class="readmore" href="/bcfa-brocade-certified-fabric-administrator-16g-beta.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/reading-encryptedpassword-protected-pdf-on-linux.html" rel="bookmark"
+                           title="Permalink to "Reading encrypted/password protected pdf on Linux"">"Reading encrypted/password protected pdf on Linux"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-13T00:00:00+03:00">
+                Published: "2011-07-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/adobe.html">adobe</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/evince.html">evince</a> <a href="/tag/exam.html">exam</a> <a href="/tag/foxit.html">foxit</a> <a href="/tag/foxitreader.html">foxitreader</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pdf.html">pdf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/study.html">study</a> <a href="/tag/material.html">material</a> </p>
+</footer><!-- /.post-info -->                <p><img alt="Brocade Logo" src="images/logo-brocade.gif" title="Brocade Logo"></p>
+<h2>The problematic PDF</h2>
+<p>The CFP300 material on <strong><a href="http://community.brocade.com/docs/DOC-2041" title="linky">http://community.brocade.com/docs/DOC-2041</a></strong> is encrypted so that it cannot be printed/re-edited without a password.</p>
+<p>If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite …</p>
+                <a class="readmore" href="/reading-encryptedpassword-protected-pdf-on-linux.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

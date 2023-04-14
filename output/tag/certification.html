@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - certification</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/studying-for-openstack-certified-administrator.html">"Studying for Openstack Certified Administrator"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-11-04T00:00:00+02:00">
+                Published: "2018-11-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info --><p>The plan : study a bit and then attempt the <a href="https://www.openstack.org/coa#coa-details">coa</a> exam. If I don't pass then attend the course during openstack summit: <a href="https://www.openstack.org/summit/berlin-2018/summit-schedule/events/22735/rsvp-required-suse-two-day-training-openstack-administration-prepare-for-the-certified-exams-day-2﻿">SUSE</a></p>
+<p>And what to study? I've been doing openstack admin work for the last year or two. So I have already done and used most services, except <strong>Swift</strong>. But there are some things that were only done once when each environment was setup. Also at $dayjob our code does a lot for us.</p>
+<p>One such thing I noticed while looking through <a href="https://github.com/AJNOURI/COA/wiki/02.-Compute:-Nova">https://github.com/AJNOURI/COA/wiki/02.-Compute:-Nova</a></p>
+<p>Was setting the default project quota. I wonder if that's a cli/webui/API call or service config. But a config file would be weird, unless it's in Keystone. <em>Turns out default quotas are in each of the services' config files. It's also possible to set a default quota with for example the nova command.</em></p>
+<p>Another perhaps useful thing I did was to go through the release notes for the services. $dayjob run <a href="https://releases.openstack.org/newton/index.html">Newton</a> so I started with the release after that and tried to grok and look for biggest changes. Introduction of placement was one of them and I got an introduction to that while playing with devstack and "failed to create resource provider devstack" error. After looking through logs I saw a "409 conflict" HTTP error or placement was complaining that the resource already existed. So somehow during setup it was created but in the wrong way? I deleted it and restarted nova and it got created automatically and after that nova started acting a lot better :)</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcefp-2015-certified.html" rel="bookmark"
+                           title="Permalink to "BCEFP 2015 certified!"">"BCEFP 2015 certified!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-06-30T00:00:00+03:00">
+                Published: "2014-06-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcefp.html">bcefp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/certification.html">certification</a> </p>
+</footer><!-- /.post-info -->                <p>Passed the Brocade Certified Ethernet Fabric Professional 2015 exam in May and I finally got the results back!</p>
+<p><a href="https://www.certmetrics.com/brocade/public/transcript.aspx?transcript=8XRF1FE12MR41GC4">https://www.certmetrics.com/brocade/public/transcript.aspx?transcript=8XRF1FE12MR41GC4</a></p>
+<p>This one felt quite hairy compared to the other tests I've taken. Definitely recommend doing the course / getting some real hands-on experience …</p>
+                <a class="readmore" href="/bcefp-2015-certified.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcefp-2015-studying-for-the-exam-part-3.html" rel="bookmark"
+                           title="Permalink to "BCEFP 2015 – Studying for the exam - part 3"">"BCEFP 2015 – Studying for the exam - part 3"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-30T00:00:00+03:00">
+                Published: "2014-05-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
+</footer><!-- /.post-info -->                <p>This third post  focuses on the remaining sources of information I had for studying for the BCEPF. At the time this post is published I have taken the exam.</p>
+<p>When I make comments to CLI commands I put them after a #.</p>
+<p>This is part of a series of posts on …</p>
+                <a class="readmore" href="/bcefp-2015-studying-for-the-exam-part-3.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcefp-2015-studying-for-the-exam-part-2.html" rel="bookmark"
+                           title="Permalink to "BCEFP 2015 – Studying for the exam - part 2"">"BCEFP 2015 – Studying for the exam - part 2"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-21T00:00:00+03:00">
+                Published: "2014-05-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
+</footer><!-- /.post-info -->                <p>This second post  focuses on the NOS Admin Guide.</p>
+<p>When I make comments to CLI commands I put them after a #.</p>
+<p>This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional.</p>
+<p>The two previous posts: <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">Objectives and reading materials</a> and <a href="http://www.guldmyr.com/blog/bcefp-2015-studying-for-the-exam/" title="BCEFP 2015 – Studying for the exam">course …</a></p>
+                <a class="readmore" href="/bcefp-2015-studying-for-the-exam-part-2.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/bcefp-2015-studying-for-the-exam.html" rel="bookmark"
+                           title="Permalink to "BCEFP 2015 - Studying for the exam"">"BCEFP 2015 - Studying for the exam"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-07T00:00:00+03:00">
+                Published: "2014-05-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
+</footer><!-- /.post-info -->                <p>In a <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">previous post</a> I listed a some of the sources Brocade listed that one should use when studying for the BCEFP exam. Here I'm going through a those I found some comments on what what they are and what I think of them.</p>
+<h2>Beta Course Material</h2>
+<p>The first of …</p>
+                <a class="readmore" href="/bcefp-2015-studying-for-the-exam.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/brocade-certified-ethernet-fabric-professional-2015-beta-exam.html" rel="bookmark"
+                           title="Permalink to "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam"">"Brocade Certified Ethernet Fabric Professional 2015 Beta Exam"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-04-18T00:00:00+03:00">
+                Published: "2014-04-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
+</footer><!-- /.post-info -->                <h2>Intro</h2>
+<p><a href="http://community.brocade.com/t5/Certification/BCEFP-2015-Beta-Exam-Information-and-Study-Material/ta-p/58276">http://community.brocade.com/t5/Certification/BCEFP-2015-Beta-Exam-Information-and-Study-Material/ta-p/58276</a></p>
+<p>The course materials, including references to various resources such as the NOS Admin guide are available on the page above.</p>
+<p>The Advanced Ethernet Fabric Troubleshooting (VDX-TS 300-WBT) has the pdf's on the link above, but it's also currently free on …</p>
+                <a class="readmore" href="/brocade-certified-ethernet-fabric-professional-2015-beta-exam.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/brocade-certified-professional-data-center-track-check.html" rel="bookmark"
+                           title="Permalink to "Brocade Certified Professional Data Center Track - Check!"">"Brocade Certified Professional Data Center Track - Check!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-04-02T00:00:00+03:00">
+                Published: "2014-04-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/bcfa.html">bcfa</a> <a href="/tag/bcfd.html">bcfd</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/bcpcn.html">bcpcn</a> <a href="/tag/bcpdc.html">bcpdc</a> <a href="/tag/bcpf.html">bcpf</a> <a href="/tag/bcpi.html">bcpi</a> <a href="/tag/bna.html">bna</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/certification.html">certification</a> <a href="/tag/network.html">network</a> <a href="/tag/advisor.html">advisor</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info -->                <p>After ~49 posts on this blog on the topic Brocade the first larger block is finally complete: the Brocade Certified Professional Data Center Track (<strong>BCPDC</strong>)!</p>
+<p>What's that? So Brocade has several (4) tracks which consist of  certifications/accrediations, some are shared between the tracks and some are only in one …</p>
+                <a class="readmore" href="/brocade-certified-professional-data-center-track-check.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/banas-brocade-certification-studying.html" rel="bookmark"
+                           title="Permalink to "BANAS - Brocade Certification - Studying"">"BANAS - Brocade Certification - Studying"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-30T00:00:00+02:00">
+                Published: "2014-03-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/bna.html">bna</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certification.html">certification</a> <a href="/tag/network.html">network</a> <a href="/tag/advisor.html">advisor</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info -->                <p>I'm going to focus on the below things when studying for BANAS: They are based on the current objectives listed on Brocade's <a href="http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page" title="http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page">page</a>.</p>
+<h2>Brocade Accredited Network Advisor Specialist Exam Topics</h2>
+<ul>
+<li>The Brocade Accredited Network Advisor Specialist exam has these objectives:</li>
+</ul>
+<h3>Product Features</h3>
+<ul>
+<li>Demonstrate knowledge of Brocade Network Advisor product features …</li></ul>
+                <a class="readmore" href="/banas-brocade-certification-studying.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/brocade-certified-ethernet-fabric-professional.html" rel="bookmark"
+                           title="Permalink to "Brocade Certified Ethernet Fabric Professional"">"Brocade Certified Ethernet Fabric Professional"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-25T00:00:00+02:00">
+                Published: "2014-03-25"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcefp.html">bcefp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certification.html">certification</a> <a href="/tag/study.html">study</a> </p>
+</footer><!-- /.post-info -->                <p>Brocade Certified Ethernet Fabric Professional - BCEFP - is available for free right now! I signed up and if you pass it you're in the drawing for a $500 amazon coupon each week/month :)</p>
+<p>Ethernet Fabric you say? <em>"As a Brocade Certified Ethernet Fabric Professional, you must be able to demonstrate knowledge …</em></p>
+                <a class="readmore" href="/brocade-certified-ethernet-fabric-professional.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/banas-brocade-accredited-network-advisor-specialist.html" rel="bookmark"
+                           title="Permalink to "BANAS - Brocade Accredited Network Advisor Specialist"">"BANAS - Brocade Accredited Network Advisor Specialist"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-02-27T00:00:00+02:00">
+                Published: "2014-02-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bna.html">bna</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certification.html">certification</a> <a href="/tag/network.html">network</a> <a href="/tag/advisor.html">advisor</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info -->                <p>Finally got around to start preparing the last certificate/accreditation - <a href="http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/curriculum.page" title="curriculum on brocade.com">BANAS</a> - to complete the Brocade Data Center Track (ok, not last. There are plenty more!).</p>
+<p>It looks like it's an accreditation showing that the taker can do some basic tasks in Brocade Network Advisor (BNA). This used to be a …</p>
+                <a class="readmore" href="/banas-brocade-accredited-network-advisor-specialist.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 6
+        <a href="/tag/certification2.html">&raquo;</a>
+        <a href="/tag/certification6.html">&#8649;</a>
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

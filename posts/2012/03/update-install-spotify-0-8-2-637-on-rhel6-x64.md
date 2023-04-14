@@ -1,17 +1,8 @@
 ---
 title: "Update / Install Spotify 0.8.2.637 on RHEL6 x64"
 date: 2012-03-26
-categories: 
-  - "it"
-tags: 
-  - "0-8-2-637"
-  - "alien"
-  - "qt"
-  - "red-hat"
-  - "rhel"
-  - "spotify"
-  - "ubuntu"
----
+category: it
+tags: 0, 8, 2, 637, alien, qt, red, hat, rhel, spotify, ubuntu
 
 Previous post:
 

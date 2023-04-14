@@ -1,30 +1,8 @@
 ---
 title: "Confused by the different interfaces in storage?"
 date: 2012-02-27
-categories: 
-  - "storage"
-tags: 
-  - "cables"
-  - "connectors"
-  - "copper"
-  - "ethernet"
-  - "fiber"
-  - "fibre"
-  - "hba"
-  - "hca"
-  - "history"
-  - "infiniband"
-  - "networking"
-  - "optic"
-  - "qsfp"
-  - "roadmap"
-  - "san"
-  - "sfp"
-  - "speeds"
-  - "storage"
-  - "storage-networking"
-  - "storage-networks"
----
+category: storage
+tags: cables, connectors, copper, ethernet, fiber, fibre, hba, hca, history, infiniband, networking, optic, qsfp, roadmap, san, sfp, speeds, storage, storage, networking, storage, networks
 
 Look no further than this link by Demartek:
 

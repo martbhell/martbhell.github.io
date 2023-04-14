@@ -1,13 +1,8 @@
 ---
 title: "Pythons"
 date: 2013-01-14
-categories: 
-  - "it"
-tags: 
-  - "programming"
-  - "python"
-  - "studying"
----
+category: it
+tags: programming, python, studying
 
 Ever thought about studying a bit of programming? Thought it was a too daunting task?
 

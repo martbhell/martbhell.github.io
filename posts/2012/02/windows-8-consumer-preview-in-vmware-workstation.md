@@ -1,18 +1,8 @@
 ---
 title: "Windows 8 Consumer Preview in VMWare Workstation"
 date: 2012-02-29
-categories: 
-  - "it"
-tags: 
-  - "beta"
-  - "preview"
-  - "testing"
-  - "vmware"
-  - "vmware-workstation"
-  - "windows"
-  - "windows-8"
-  - "windows-8-preview"
----
+category: it
+tags: beta, preview, testing, vmware, vmware, workstation, windows, windows, 8, windows, 8, preview
 
 Checking out the new Windows 8 Consumer preview! Installing in a VM on a host with Windows 7 and Intel Core i7. Downloading the x64 English version from here: [http://windows.microsoft.com/en-US/windows-8/iso](http://windows.microsoft.com/en-US/windows-8/iso "http://windows.microsoft.com/en-US/windows-8/iso") _"To snap apps, you need a screen resolution of at least 1366 x 768"_ so I guess I better increase the resolution! Went with 1680x1050 which seems like an arbitrary number but with the highest (1920x1080) the text was blurry.
 

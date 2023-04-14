@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - scientific</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/red-hat-certification-rhce-kvm-via-cli.html">"Red Hat Certification - RHCE - KVM via CLI"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-06-16T00:00:00+03:00">
+                Published: "2012-06-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/libvirt.html">libvirt</a> <a href="/tag/libvirtd.html">libvirtd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/qemu.html">qemu</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/studying.html">studying</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info --><p>In a previous <a href="http://www.guldmyr.com/blog/rhcsa-preparation/">post</a> while preparing for RHCSA I installed kvm post-installation, via the GUI.</p>
+<p>But how to install, configure and use it only from the CLI?</p>
+<h2>Virt-Manager</h2>
+<p><a href="http://virt-manager.org/page/Main_Page">http://virt-manager.org/page/Main_Page</a> has some details</p>
+<p>As a test-machine I'm using a server with Scientific Linux 6.2 (with virtualization enabled as seen by 'cat /proc/cpuinfo|grep vmx').</p>
+<p>None of the Virtualization Groups are installed, as seen by 'yum grouplist'. While doing that you'll find four different groups. You can use</p>
+<p>yum groupinfo "Virtualization Client"</p>
+<p>or correspondingly to get more information about the group.</p>
+<p>yum groupinstall Virtualization "Virtualization Tools" "Virtualization Platform" "Virtualization Client"</p>
+<p>This installs a lot of things. Libvirt, virt-manager, qemu, gnome and python things.</p>
+<p>lsmod|grep kvm
+service libvirtd start
+lsmod|grep kvm</p>
+<p>This also sets up a bridge-interface (virbr0).</p>
+<p>Now, how to install a machine or connect to the hypervisor?</p>
+<p>How to get console?</p>
+<p>ssh -XYC user@kvmserver
+virt-manager</p>
+<p>did not work.</p>
+<p>On the <strong>client</strong> you could try to do:</p>
+<p>yum groupinstall "Virtualization Client"
+yum install libvirt
+virt-manager</p>
+<p>Then start virt-manager and connect to your server. However this didn't work for me either. Is virtualization needed on the client too?</p>
+<p>Noit is not, first: check if Virtualization is enabled on the server. Look in /var/log/messages for</p>
+<p>kernel: kvm: disabled by bios</p>
+<p>If it says that you'll need to go into BIOS / Processor Options / and enable Virtualization.</p>
+<p>Then you can start virt-manager, check that you can connect to the KVMserver.</p>
+<p>Copy a .iso to /var/lib/libvirt/images on the server.</p>
+<p>Re-connect to the kvm-server in virt-manager.</p>
+<p>Add a new VM called <strong>test</strong>. Using 6.2 net-install and NAT network interface. This may take a while.</p>
+<p>Pointing the VM to kvm-server where a httpd is running (remember firewall rules) and an SL 6.2 is stored. Installing a Basic Server.</p>
+<p>OK, we could use virt-manager, it's quite straight-forward and doesn't require any edits of config files at all.</p>
+<h2>Moving on to <strong>virsh</strong>.</h2>
+<p>To install a vm you use 'virt-install'.</p>
+<p>You can get lots of info from 'virsh'</p>
+<p>virsh pool-list
+virsh vol-list default
+virsh list
+virsh list-all
+virsh dumpxml test &gt; /tmp/test.xml
+cp /tmp/test.xml /tmp/new.xml</p>
+<p>Edit new.xml</p>
+<p>change name to new and remove line with UUID</p>
+<p>virt-xml-validate /tmp/new.xml
+virsh help create
+virsh create --file /tmp/new.xml
+virsh list</p>
+<p>This creates a new VM that uses the same disk and setup. But, if you shut down this new domain, it will disappear from virsh list --all and the list. To keep it you need to define it first:</p>
+<p>virsh define --file /tmp/new.xml
+virsh start new</p>
+<p>This can become quite a bit more complicated. You would probably want to make clones (virt-clone) or snapshots (virsh help snapshot) instead of using the same disk file.</p>
+<p>Making your own .xml from scratch looks fairly complicated. You could use 'virt-install' however.</p>
+<p>virt-install --help
+virt-install -n awesome -r 1024 --vcpus 1 --description=AWESOME --cdrom /var/lib/libvirt/images/CentOS-6.2-x86_64-netinstall.iso --os-type=linux --os-variant=rhel6 --disk path=/var/lib/libvirt/images/awesome,size=8 --hvm</p>
+<p>For this the console actually works while running 'virt-install' over ssh on the kvm-server.</p>
+<p>To make edit to a vm over ssh:</p>
+<p>virsh edit NAMEOFVM</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/centos-58-released.html" rel="bookmark"
+                           title="Permalink to "CentOS 5.8 Released"">"CentOS 5.8 Released"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-03-08T00:00:00+02:00">
+                Published: "2012-03-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/os.html">os</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/slc.html">slc</a> </p>
+</footer><!-- /.post-info -->                <p>CentOS 5.8 was released today 8th of March.</p>
+<p><a href="http://wiki.centos.org/Manuals/ReleaseNotes/CentOS5.8">http://wiki.centos.org/Manuals/ReleaseNotes/CentOS5.8</a></p>
+<p>You can download it from many mirrors, for example from FUNET: <a href="http://ftp.funet.fi/pub/Linux/INSTALL/Centos/">http://ftp.funet.fi/pub/Linux/INSTALL/Centos/</a></p>
+<p>It installs just fine on an HP DL360 G7 with P410 and P411 controller …</p>
+                <a class="readmore" href="/centos-58-released.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/password-when-starting-a-linux-server-in-single-user-mode.html" rel="bookmark"
+                           title="Permalink to "password when starting a linux server in single-user mode"">"password when starting a linux server in single-user mode"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-03-08T00:00:00+02:00">
+                Published: "2012-03-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/hardening.html">hardening</a> <a href="/tag/init.html">init</a> <a href="/tag/inittab.html">inittab</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/security.html">security</a> <a href="/tag/single.html">single</a> <a href="/tag/user.html">user</a> <a href="/tag/singleuser.html">singleuser</a> <a href="/tag/slc.html">slc</a> <a href="/tag/su.html">su</a> <a href="/tag/sulogin.html">sulogin</a> <a href="/tag/sushell.html">sushell</a> </p>
+</footer><!-- /.post-info -->                <p>http://www.cromwell-intl.com/unix/linux-break-in-howto.html</p>
+<p>On RHEL 6.2-based systems (like Scientific Linux 6.2): edit /etc/sysconfig/init</p>
+<p># Set to '/sbin/sulogin' to prompt for password on single-user mode # Set to '/sbin/sushell' otherwise</p>
+<p>Like this:</p>
+<p>SINGLE=/sbin/sulogin</p>
+<p>Then if you add an 's' to the …</p>
+                <a class="readmore" href="/password-when-starting-a-linux-server-in-single-user-mode.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-3.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 – Day 3"">"HEPIX Spring 2011 – Day 3"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-05T00:00:00+03:00">
+                Published: "2011-05-05"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/adaptec.html">adaptec</a> <a href="/tag/buffered.html">buffered</a> <a href="/tag/tape.html">tape</a> <a href="/tag/marks.html">marks</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/ermm.html">ermm</a> <a href="/tag/errata.html">errata</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/ioapps.html">ioapps</a> <a href="/tag/ioreplay.html">ioreplay</a> <a href="/tag/ipv4.html">ipv4</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/linux.html">linux</a> <a href="/tag/service.html">service</a> <a href="/tag/now.html">now</a> <a href="/tag/sl.html">sl</a> <a href="/tag/strace.html">strace</a> <a href="/tag/sun.html">sun</a> <a href="/tag/t10000c.html">t10000c</a> <a href="/tag/drive.html">drive</a> <a href="/tag/tsm.html">tsm</a> </p>
+</footer><!-- /.post-info -->                <p>Day 3 woop!</p>
+<p>An evaluation of <a href="http://www.gluster.org/" title="gluster.org">gluster</a>: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot.</p>
+<p>Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and <a href="http://www-935.ibm.com/services/de/igs/pdf/br-stor-enterprise-remove-mm-en.pdf" title="links to pdf on ibm.com">ERMM</a>. Where ERMM manages the libraries, so that TSM only sees …</p>
+                <a class="readmore" href="/hepix-spring-2011-day-3.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-2.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 – Day 2"">"HEPIX Spring 2011 – Day 2"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-04T00:00:00+03:00">
+                Published: "2011-05-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cooling.html">cooling</a> <a href="/tag/cpu.html">cpu</a> <a href="/tag/naming.html">naming</a> <a href="/tag/dell.html">dell</a> <a href="/tag/disk.html">disk</a> <a href="/tag/failures.html">failures</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/green.html">green</a> <a href="/tag/it.html">it</a> <a href="/tag/cube.html">cube</a> <a href="/tag/heat.html">heat</a> <a href="/tag/exchanger.html">exchanger</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hs06.html">hs06</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/synchrotron.html">synchrotron</a> </p>
+</footer><!-- /.post-info -->                <p>Guten aben!</p>
+<p>Darmstadt is a very beautiful city. It's quite old and there are lots of parks and eh, cool, houses.</p>
+<p>A person from the UK said yesterday (in the pub Ratkeller) something like this: <em>"A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one …</em></p>
+                <a class="readmore" href="/hepix-spring-2011-day-2.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011"">"HEPIX Spring 2011"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-01T00:00:00+03:00">
+                Published: "2011-05-01"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/darmstadt.html">darmstadt</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supercomputing.html">supercomputing</a> </p>
+</footer><!-- /.post-info -->                <p>I'm heading to <a href="http://www.hepix.org/" title="hepix.org">Hepix</a> this whole week!</p>
+<p>Looks like there's some really <a href="http://indico.cern.ch/conferenceTimeTable.py?confId=118192#20110502" title="timetable">interesting topics</a> like:</p>
+<p>Lustre, glustre, ipv6, stuff about the CERN it facilities, Scientific Linux report, cloud/grid virtualization, Oracle Linux.</p>
+<p>I'll sure be doing a bit of blogging about what's going down.</p>
+                <a class="readmore" href="/hepix-spring-2011.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

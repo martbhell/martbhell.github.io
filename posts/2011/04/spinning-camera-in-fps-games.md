@@ -1,28 +1,8 @@
 ---
 title: "Spinning Camera in FPS games"
 date: 2011-04-21
-categories: 
-  - "it"
-tags: 
-  - "ati"
-  - "call-of-duty"
-  - "camera"
-  - "camera-spin"
-  - "cod"
-  - "fps"
-  - "games"
-  - "logitech"
-  - "mouse"
-  - "mouse-spin"
-  - "pc"
-  - "portal-2"
-  - "spinning"
-  - "spinning-camera"
-  - "spinning-mouse"
-  - "steam"
-  - "windows"
-  - "windows-7"
----
+category: it
+tags: ati, call, of, duty, camera, camera, spin, cod, fps, games, logitech, mouse, mouse, spin, pc, portal, 2, spinning, spinning, camera, spinning, mouse, steam, windows, windows, 7
 
 Ever experienced this relatively frustrating phenomena?
 

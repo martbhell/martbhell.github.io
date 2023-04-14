@@ -1,11 +1,8 @@
 ---
 title: "Resepti: Kana Korma"
 date: 2019-10-06
-categories: 
-  - "finland"
-tags: 
-  - "korma"
----
+category: finland
+tags: korma
 
 ![](images/DSC_1084-1024x768.jpg)
 

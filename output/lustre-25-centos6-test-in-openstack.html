@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"Lustre 2.5 + CentOS6 Test in OpenStack"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""storage" tags: "centos" "linux" "lustre" "openstack" Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack. Three VMs:..." />
+        <meta name="description" content="Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack. Three VMs: two servers, one MDS, one OSS and one Client. CentOS65..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li class="active"><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,18 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"storage"
-tags: </li>
-<li>"centos"</li>
-<li>"linux"</li>
-<li>"lustre"</li>
-<li>"openstack"</li>
-</ul>
-<hr>
-<p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info -->      <p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
 <p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc. Hostnames set. /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.</p>
 <p>With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use the latest branch for 2.5 so the instructions are <a href="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821" title="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821">https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821</a></p>
 <h2>Server side</h2>

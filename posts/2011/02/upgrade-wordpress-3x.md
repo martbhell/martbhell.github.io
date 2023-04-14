@@ -1,18 +1,8 @@
 ---
 title: "Upgrade WordPress 3.x"
 date: 2011-02-24
-categories: 
-  - "it"
-tags: 
-  - "guide"
-  - "phpmyadmin"
-  - "safemode"
-  - "update"
-  - "upgrade"
-  - "upgrade-wordpress"
-  - "webhost"
-  - "wordpress"
----
+category: it
+tags: guide, phpmyadmin, safemode, update, upgrade, upgrade, wordpress, webhost, wordpress
 
 Hi!
 

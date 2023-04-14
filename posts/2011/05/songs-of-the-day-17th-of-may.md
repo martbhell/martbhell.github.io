@@ -1,17 +1,8 @@
 ---
 title: "Songs of the day 17th of May"
 date: 2011-05-17
-categories: 
-  - "finland"
-tags: 
-  - "felix-fables"
-  - "free"
-  - "hayley-sales"
-  - "ingrid-michaelson"
-  - "katzenjammer"
-  - "music"
-  - "thesixtyone"
----
+category: finland
+tags: felix, fables, free, hayley, sales, ingrid, michaelson, katzenjammer, music, thesixtyone
 
 From the front page of thesixtyone.com
 

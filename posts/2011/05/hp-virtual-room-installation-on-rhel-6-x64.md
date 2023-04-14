@@ -1,23 +1,8 @@
 ---
 title: "HP Virtual Room Installation on RHEL 6 x64"
 date: 2011-05-14
-categories: 
-  - "it"
-tags: 
-  - "10-04-lts"
-  - "hp"
-  - "libs"
-  - "linux"
-  - "red-hat-enterprise-linux"
-  - "remote-support"
-  - "rhel"
-  - "rhel6"
-  - "share-desktop"
-  - "ubuntu"
-  - "virtual-room"
-  - "vroom"
-  - "x64"
----
+category: it
+tags: 10, 04, lts, hp, libs, linux, red, hat, enterprise, linux, remote, support, rhel, rhel6, share, desktop, ubuntu, virtual, room, vroom, x64
 
 http://forums11.itrc.hp.com/service/forums/questionanswer.do?threadId=1478734
 

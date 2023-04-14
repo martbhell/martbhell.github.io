@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - gdm</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/dwm-start-up-script-that-works-with-gdm-login-manager.html">"DWM - start up script that works with GDM login manager"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-03-18T00:00:00+02:00">
+                Published: "2011-03-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/gdm.html">gdm</a> <a href="/tag/gnome.html">gnome</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/window.html">window</a> <a href="/tag/manager.html">manager</a> </p>
+</footer><!-- /.post-info --><p>*** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz below.</p>
+<p>My config: <a href="http://www.guldmyr.com/blog/wp-content/uploads/jg_dwm_conf.tar.gz">jg_dwm_conf.tar</a></p>
+<p><a href="http://www.guldmyr.com/blog/wp-content/uploads/backup.tar.gz"></a>Goal: Be able to exit <a href="http://dwm.suckless.org" title="dwm at suckless.org">DWM and</a> get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)</p>
+<p>Finally got this working like I want it to - with some help from #suckless on irc.oftc.net. This works for me with RHEL6, GDM --version 2.30.4 and DWM 5.8.2. My problem was that before (you can see how that looked in <a href="http://www.guldmyr.com/blog/dwm-editing-the-bar-to-show-time/" title="dwm not so good">this post</a>) I ran the dwm also in a loop. But this is not necessary. If you want to keep the statusbar updated with some goodies by running a while loop, you only need to run the xsetroot in a while loop.</p>
+<p>/usr/share/xsessions/dwm.desktop</p>
+<p>Looks like this:</p>
+<p><code>[Desktop Entry] Encoding=UTF-8 Name=dwm Comment=This session starts dwm Exec=/usr/local/bin/dwm-start Type=Application</code></p>
+<p>/usr/local/bin/dwm-start</p>
+<p>Looks like this (updated on 2011-04-18):</p>
+<p><code>#!/bin/sh #not applicable? I do not have this directory in my home dir. # --- commands here and before the "while true; do" are run once #xrdb -merge ~/.Xresources #open screensaver (so that gnome-screensaver-command -l works) /usr/bin/gnome-screensaver &amp; #open pwer manager #exec gnome-power-manager</code></p>
+<p><code>#black bg #want this #path to background #/usr/share/backgrounds/abstract/Flow.png xsetroot -solid black</code></p>
+<p><code>`#while loop to update statusbar with some goodies while true; do #battery battotal=</code>awk '/last full capacity/{print $4}' &lt; /proc/acpi/battery/BAT0/info<code>; batfree=</code>awk '/remaining capacity/{print $3}' &lt; /proc/acpi/battery/BAT0/state<code>; battper=$(( 100*$batfree/$battotal )); battery=</code>awk '/charging state/{print $3}' &lt; /proc/acpi/battery/BAT0/state<code>; #memfreak to get it in MB memfreak2=</code>grep MemFree /proc/meminfo | awk '{ print $2 }'`; memfreak=$(( $memfreak2/1024 )); #time CLK=$( date +'%a %b %d %R:%S %Z' ) #volume VOL=$( amixer get Master | tail -1 | awk '{ print $5 }' | tr -d '[]' ) #loadavg AVG=$( cat /proc/loadavg | cut -d ' ' -f -3 ) #network stats in Bytes #NW=$( dstat -n --nocolor 1 1 | tail -1 | awk '{ print $1, $2}' ) #this one is not so good, increases a delay of 1-2s of the updating. #put it in the xsetrootname plz (tip of the day, do not put | as first char after " xsetroot -name "$AVG | $memfreak MB | $battper% $battery | Vol: $VOL | $CLK | " sleep 1 done &amp;</p>
+<h1>loop is done? :p</h1>
+<p>``</p>
+<p><code>#traying sleep 1 /usr/bin/ck-launch-session &amp; /usr/local/bin/stalonetray &amp; /usr/bin/nm-applet &amp; /usr/bin/gnome-volume-control-applet &amp; feh -z -Z --bg-scale /home/jguldmyr/Pictures/dwm_pattern.png #feh -z -Z -B black -b trans --bg-scale /home/jguldmyr/Pictures/Flow.png #start dwm after loop exec /usr/local/bin/dwm &gt; /dev/null</code></p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

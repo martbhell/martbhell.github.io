@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - tcpdump</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/red-hat-certification-rhce-network-services-ntp.html">"Red Hat Certification – RHCE – Network Services – NTP"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-06-08T00:00:00+03:00">
+                Published: "2012-06-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/ntpq.html">ntpq</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> <a href="/tag/synchronization.html">synchronization</a> <a href="/tag/tcpdump.html">tcpdump</a> <a href="/tag/time.html">time</a> <a href="/tag/sync.html">sync</a> <a href="/tag/synchronizatino.html">synchronizatino</a> </p>
+</footer><!-- /.post-info --><p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
+<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
+<h1>Network services</h1>
+<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
+<ul>
+<li>Install the packages needed to provide the service.</li>
+<li>Configure SELinux to support the service.</li>
+<li>Configure the service to start when the system is booted.</li>
+<li>Configure the service for basic operation.</li>
+<li>Configure host-based and user-based security for the service.</li>
+</ul>
+<p>User should be able to do the following for all these services:</p>
+<ul>
+<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd">http/https</a></li>
+<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns">dns</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp">ftp</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-nfs/">nfs</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-smb/">smb</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-e-mail/">smtp</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/">ntp</a></li>
+</ul>
+<h2>NTP:</h2>
+<p>You could possibly test this from Windows as well.</p>
+<p>On linux it's fairly straight-forward, you can use ntpd both as a client and as a server.</p>
+<p>Check in /var/log/messages for details</p>
+<p>The time-synchronization with ntpd is slow by design (to not overload or cause dramatic changes in the time set).</p>
+<p>ntpdate is instant but it's not recommended to be used. For example with 'ntpdate -q'.</p>
+<p>man ntp.conf this then points to : man ntp_acc man ntp_auth man ntp_clock man ntp_misc</p>
+<ul>
+<li>
+<p>Install the packages needed to provide the service.</p>
+</li>
+<li>
+<p>yum install ntp</p>
+</li>
+<li>
+<p>Configure SELinux to support the service</p>
+</li>
+<li>
+<p>nothing to configure??</p>
+</li>
+<li>
+<p>Configure the service to start when the system is booted.</p>
+</li>
+<li>
+<p>chkconfig ntpd on</p>
+</li>
+<li>
+<p>Configure the service for basic operation.</p>
+</li>
+<li>
+<p>/etc/ntp.conf</p>
+</li>
+<li>
+<p>server ntp.server.com</p>
+</li>
+<li>
+<p>service ntpd start</p>
+</li>
+<li>
+<p>ntpq -p # to see status</p>
+</li>
+<li>
+<p>Configure host-based and user-based security for the service</p>
+</li>
+<li>
+<p>iptables</p>
+</li>
+<li>
+<p>port 123 (UDP)</p>
+</li>
+</ul>
+<h2>Enable ntpd as a client</h2>
+<p>What's a bit reverse for ntpd is that first you need to configure the server as a client</p>
+<p>So that your local ntp-server gets good time from somewhere else. You can find a good time-server to use on www.pool.ntp.org</p>
+<p>You only need to add one server line but for redundancy you should probably have more than one.</p>
+<p>As an example with your client on 192.168.0.0/24 and server is on 192.168.1.0/24.</p>
+<p>All you need to do is for the client part:</p>
+<p>server ntp.example.com
+service ntpd restart
+ntpq -p</p>
+<h2>Enable ntpd as a server</h2>
+<p>You need to add a restrict line in ntp.conf.</p>
+<p>You also need to allow port 123 UDP in the firewall.</p>
+<p>restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap
+service ntpd restart</p>
+<h2>Client to use your ntp server</h2>
+<p>Basically the same as the above for client, but you specify the address to your NTP-server instead of one from pool.ntp.org.</p>
+<h2>Extra</h2>
+<ul>
+<li>Synchronize time using other NTP peers.</li>
+</ul>
+<p>I believe this has been covered.</p>
+<h2>More Extra</h2>
+<p>One extra thing you may want to check out is the 'tinker' command.</p>
+<p>This is put on top of ntp.conf and more info are available in 'man ntp_misc'.</p>
+<p>However, most of the time you just need to wait a bit for the time change to come through.</p>
+<h2>tcpdump</h2>
+<p>There's not much to go in logs on either server or client for ntpd. You'll get messages in /var/log/messages though that says "synchronized" and when the service is starting.</p>
+<p>You can also use tcpdump on the server to see if there are any packets coming in.</p>
+<p>tcpdump -i eth0 -w /tmp/tcmpdump.123 -s0 'udp port 123 and host NTP.CLIENT.IP'</p>
+<h1>wait a while, restart ntpd on client</h1>
+<p>tcpdump -r /tmp/tcmpdump.123</p>
+<h1>this will then show some packets if you have a working communication between server and client</h1>
+<h2>To test that it's working</h2>
+<p>Start with the server still connecting to an ntp-server with good time.</p>
+<p>You could then set the date and time manually on the server to something else. For example, let's say the current time is 6 JUN 2012 17:15:00.</p>
+<p>Set it to 15 minutes before:</p>
+<p>date -s "6 JUN 2012 17:00:00"
+service ntpd restart</p>
+<p>Also restart ntpd on the client, then wait, this will probably take a bit longer than before.</p>
+<p>If you set the time manually to something too big it won't work. You could then experiment with 'tinker panic 0'</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

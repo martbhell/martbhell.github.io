@@ -1,22 +1,8 @@
 ---
 title: "RHCSA – Rapid Track – Day 4"
 date: 2011-12-15
-categories: 
-  - "it"
-tags: 
-  - "net"
-  - "acl"
-  - "automounter"
-  - "certification"
-  - "kickstart"
-  - "linux"
-  - "red-hat"
-  - "rhcsa"
-  - "selinux"
-  - "sssd"
-  - "storage"
-  - "studying"
----
+category: it
+tags: net, acl, automounter, certification, kickstart, linux, red, hat, rhcsa, selinux, sssd, storage, studying
 
 Last day!
 

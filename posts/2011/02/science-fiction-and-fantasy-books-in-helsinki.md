@@ -1,18 +1,8 @@
 ---
 title: "Science-Fiction and Fantasy Books in Helsinki"
 date: 2011-02-25
-categories: 
-  - "finland"
-tags: 
-  - "book"
-  - "fantasy"
-  - "helmet"
-  - "kirjakauppa"
-  - "kirjasto"
-  - "library"
-  - "sci-fi"
-  - "second-hand"
----
+category: finland
+tags: book, fantasy, helmet, kirjakauppa, kirjasto, library, sci, fi, second, hand
 
 Where to find them? Where are some good second hand shops, new book shops, any tips on buying from the Internet.
 

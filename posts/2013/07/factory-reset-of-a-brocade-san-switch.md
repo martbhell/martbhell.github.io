@@ -1,15 +1,8 @@
 ---
 title: "Factory reset of a Brocade SAN switch"
 date: 2013-07-18
-categories: 
-  - "storage"
-tags: 
-  - "access-gateway"
-  - "ag"
-  - "brocade"
-  - "factory-reset"
-  - "licenses"
----
+category: storage
+tags: access, gateway, ag, brocade, factory, reset, licenses
 
 Ever wondered which is the easiest way?
 

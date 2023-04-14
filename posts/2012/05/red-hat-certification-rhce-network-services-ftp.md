@@ -1,18 +1,8 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – FTP"
 date: 2012-05-12
-categories: 
-  - "it"
-tags: 
-  - "centos"
-  - "certification"
-  - "file-transfer"
-  - "ftp"
-  - "linux"
-  - "red-hat"
-  - "rhce"
-  - "studying"
----
+category: it
+tags: centos, certification, file, transfer, ftp, linux, red, hat, rhce, studying
 
 [1st post](http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

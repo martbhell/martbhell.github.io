@@ -1,14 +1,8 @@
 ---
 title: "LSC  - LDAP Synchronization Connector"
 date: 2021-09-28
-categories: 
-  - "it"
-tags: 
-  - "java"
-  - "ldap"
-  - "sync"
-  - "synchronization"
----
+category: it
+tags: java, ldap, sync, synchronization
 
 At $dayjob I recently found this tool.
 

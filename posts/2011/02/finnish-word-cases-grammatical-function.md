@@ -1,14 +1,8 @@
 ---
 title: "Finnish - Word Cases - Grammatical Function"
 date: 2011-02-03
-categories: 
-  - "finland"
-tags: 
-  - "finland"
-  - "finnish"
-  - "language"
-  - "study"
----
+category: finland
+tags: finland, finnish, language, study
 
 Finnish works the way that it adds something at the end of the word (and maybe change the middle of the word) to make it mean things like: location, possession, from, receipient, future, channel, how, ..., there is 16 of them - obviously I find this a little difficult!
 

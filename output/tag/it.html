@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - it</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/reading-encryptedpassword-protected-pdf-on-linux.html">"Reading encrypted/password protected pdf on Linux"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-07-13T00:00:00+03:00">
+                Published: "2011-07-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/adobe.html">adobe</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/evince.html">evince</a> <a href="/tag/exam.html">exam</a> <a href="/tag/foxit.html">foxit</a> <a href="/tag/foxitreader.html">foxitreader</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pdf.html">pdf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/study.html">study</a> <a href="/tag/material.html">material</a> </p>
+</footer><!-- /.post-info --><p><img alt="Brocade Logo" src="images/logo-brocade.gif" title="Brocade Logo"></p>
+<h2>The problematic PDF</h2>
+<p>The CFP300 material on <strong><a href="http://community.brocade.com/docs/DOC-2041" title="linky">http://community.brocade.com/docs/DOC-2041</a></strong> is encrypted so that it cannot be printed/re-edited without a password.</p>
+<p>If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite poppler) says:</p>
+<p>Error: Weird encryption info Error: Incorrect password</p>
+<p>It's only the material starting with M0* that has this issue, this has also been seen with other documents. Maybe this is because they were created with a <em><strong>too new</strong></em> version of Adobe Acrobat that evince/pdftotext doesn't support. The rest of the material are going to be public and they are user/admin guides anyway. But the M0* files are from the actual course material for the 16G so this is why.</p>
+<p>The solution on RHEL6 x64: install <a href="http://www.foxitsoftware.com/pdf/desklinux/" title=".com">FoxitReader</a>. Download the .rpm - then hit 'rpm -Uvh FoxitReader-1.1-0.fc9.i386.rpm' and it will be installed. To start it just hit 'FoxitReader'.</p>
+<p>Anyway I think it's nice of Brocade to pre-release the course material for those doing the beta-test. If you want the real material the cheapest is 650$ and then you get the material, narration of the pdfs (usually good quality, not just reading off the presentations) and a few quite good lab exercises.</p>
+<h2>The Studying</h2>
+<p>Just threading along here with the material, slowly but steady. I'm starting with the NPIV / Access Gateway stuff. It's a bit more complicated than just a switch that isn't its own domain, it's also mapping the virtual WWN to the N_ports (a switch in AG mode has N_ports that connect to F_ports in another switch). Usually N_ports are on hosts' and targets' ports and the switches' has the F_ports.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/frustration.html" rel="bookmark"
+                           title="Permalink to "Frustration?"">"Frustration?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-06-20T00:00:00+03:00">
+                Published: "2011-06-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/firmware.html">firmware</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/itrc.html">itrc</a> <a href="/tag/learning.html">learning</a> <a href="/tag/upgrade.html">upgrade</a> </p>
+</footer><!-- /.post-info -->                <p>This is from a post on the ITRC forum, I will copy it into here because the forum are moving soon and you never know if the links will work or not :) Also I do want to immortalize it.</p>
+<p>Title: <strong>Is it just me? Or does everything required a fw …</strong></p>
+                <a class="readmore" href="/frustration.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/nerves-of-steel-requirement-for-being-a-sysadmin.html" rel="bookmark"
+                           title="Permalink to "Nerves of steel: requirement for being a sysadmin?"">"Nerves of steel: requirement for being a sysadmin?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-27T00:00:00+03:00">
+                Published: "2011-05-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/sysadmin.html">sysadmin</a> <a href="/tag/system.html">system</a> <a href="/tag/administrator.html">administrator</a> </p>
+</footer><!-- /.post-info -->                <p>Is it just me?</p>
+<p>Whenever I have to restart something or do some actual maintenance on a server - that my heart starts pumping and I get really really nervous.</p>
+<p>I've heard many times people say things like:</p>
+<p>"pain is temporary, glory is forever" (quote from <a href="http://www.imdb.com/title/tt0120201/" title="starship troopers">a movie)</a> when it comes …</p>
+                <a class="readmore" href="/nerves-of-steel-requirement-for-being-a-sysadmin.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/server-and-storage-tips-from-the-itrc.html" rel="bookmark"
+                           title="Permalink to "Server and Storage Tips from the ITRC"">"Server and Storage Tips from the ITRC"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-21T00:00:00+03:00">
+                Published: "2011-05-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/blade.html">blade</a> <a href="/tag/c.html">c</a> <a href="/tag/class.html">class</a> <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/eva.html">eva</a> <a href="/tag/flexfabric.html">flexfabric</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/itrc.html">itrc</a> <a href="/tag/port.html">port</a> <a href="/tag/mapping.html">mapping</a> <a href="/tag/sc11xe.html">sc11xe</a> <a href="/tag/scsi.html">scsi</a> <a href="/tag/sense.html">sense</a> <a href="/tag/errors.html">errors</a> <a href="/tag/storage.html">storage</a> <a href="/tag/support.html">support</a> </p>
+</footer><!-- /.post-info -->                <p>Just a good howto - tip - solution. It's a little hard to find good threads.</p>
+<p>Hard to find something.. should probably write it in here when I think of it. Also the ITRC are moving to another platform in June 2011 so maybe these won't be available after this.</p>
+<p>** Update 2011-06-27 …</p>
+                <a class="readmore" href="/server-and-storage-tips-from-the-itrc.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-2.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 – Day 2"">"HEPIX Spring 2011 – Day 2"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-04T00:00:00+03:00">
+                Published: "2011-05-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cooling.html">cooling</a> <a href="/tag/cpu.html">cpu</a> <a href="/tag/naming.html">naming</a> <a href="/tag/dell.html">dell</a> <a href="/tag/disk.html">disk</a> <a href="/tag/failures.html">failures</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/green.html">green</a> <a href="/tag/it.html">it</a> <a href="/tag/cube.html">cube</a> <a href="/tag/heat.html">heat</a> <a href="/tag/exchanger.html">exchanger</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hs06.html">hs06</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/synchrotron.html">synchrotron</a> </p>
+</footer><!-- /.post-info -->                <p>Guten aben!</p>
+<p>Darmstadt is a very beautiful city. It's quite old and there are lots of parks and eh, cool, houses.</p>
+<p>A person from the UK said yesterday (in the pub Ratkeller) something like this: <em>"A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one …</em></p>
+                <a class="readmore" href="/hepix-spring-2011-day-2.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-1.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 - Day 1"">"HEPIX Spring 2011 - Day 1"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-02T00:00:00+03:00">
+                Published: "2011-05-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/batch.html">batch</a> <a href="/tag/system.html">system</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/routers.html">routers</a> <a href="/tag/conference.html">conference</a> <a href="/tag/fermilab.html">fermilab</a> <a href="/tag/frankfurt.html">frankfurt</a> <a href="/tag/gsi.html">gsi</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/failures.html">failures</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kit.html">kit</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/nikhef.html">nikhef</a> <a href="/tag/pue.html">pue</a> <a href="/tag/super.html">super</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supermicro.html">supermicro</a> <a href="/tag/tty.html">tty</a> <a href="/tag/hack.html">hack</a> </p>
+</footer><!-- /.post-info -->                <p>Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …</p>
+                <a class="readmore" href="/hepix-spring-2011-day-1.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ubuntu-11-in-vmware-workstation.html" rel="bookmark"
+                           title="Permalink to "Ubuntu 11 in VMWare Workstation"">"Ubuntu 11 in VMWare Workstation"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-03T00:00:00+03:00">
+                Published: "2011-04-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/11.html">11</a> <a href="/tag/04.html">04</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/natty.html">natty</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>Time for another test! This time it's Ubuntu 11.04 Natty.</p>
+<p>My setup is a Intel Core i7 920 on Windows 7 x64 with 8GB RAM.</p>
+<p>*** Update 2011-04-29 - I just heard that if you run this in a Virtual Machine you do not get all the shebang on the default …</p>
+                <a class="readmore" href="/ubuntu-11-in-vmware-workstation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/transparent-putty-in-windows-7.html" rel="bookmark"
+                           title="Permalink to "Transparent PuTTY in Windows 7"">"Transparent PuTTY in Windows 7"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-18T00:00:00+02:00">
+                Published: "2011-02-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/appearance.html">appearance</a> <a href="/tag/auto.html">auto</a> <a href="/tag/login.html">login</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/linux.html">linux</a> <a href="/tag/putty.html">putty</a> <a href="/tag/set.html">set</a> <a href="/tag/opacity.html">opacity</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/terminal.html">terminal</a> <a href="/tag/client.html">client</a> <a href="/tag/transparency.html">transparency</a> <a href="/tag/tray.html">tray</a> <a href="/tag/icon.html">icon</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->                <p>PuTTY is a terminal client, it does telnet, raw, serial, ssh, <a href="http://en.wikipedia.org/wiki/Rlogin" title="rlogin wikipedia">rlogin</a>. I've only ever used telnet, raw, serial and ssh.</p>
+<p>The normal client can be downloaded from <a href="http://www.putty.nl" title="putty.nl">http://www.putty.nl</a></p>
+<p>But, maybe you want to make PuTTY prettier?</p>
+<p>Like this?:</p>
+<p>[caption id="attachment_414" align="alignnone" width="659"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/putty2.png"><img alt="putty pretty" src="images/putty2.png" title="putty2"></a> putty …</p>
+                <a class="readmore" href="/transparent-putty-in-windows-7.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/install-drupal-7-in-debian-6.html" rel="bookmark"
+                           title="Permalink to "Install Drupal 7 in Debian 6"">"Install Drupal 7 in Debian 6"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-11T00:00:00+02:00">
+                Published: "2011-02-11"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/admin.html">admin</a> <a href="/tag/accounts.html">accounts</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/database.html">database</a> <a href="/tag/settings.html">settings</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/script.html">script</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/web.html">web</a> <a href="/tag/server.html">server</a> <a href="/tag/apache.html">apache</a> </p>
+</footer><!-- /.post-info -->                <p>Time for another go!</p>
+<h3>Drupal is ..</h3>
+<p>.. a pretty famous and widely used CMS out there - so here we go -&gt;</p>
+<p>1. Get sudo <a href="http://wiki.debian.org/sudo" title="configure sudo">configured</a> on debian. Sucks to have to log on as root all the time when installing apps etc.</p>
+<p>2. <a href="http://drupal.org/project/drupal" title="drupal">Download</a> and untar drupal 7</p>
+<p>3. Read INSTALL.TXT …</p>
+                <a class="readmore" href="/install-drupal-7-in-debian-6.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ubuntu-1010-vmware-irssi.html" rel="bookmark"
+                           title="Permalink to "Ubuntu 10.10 + VMWare + Irssi"">"Ubuntu 10.10 + VMWare + Irssi"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-10T00:00:00+02:00">
+                Published: "2011-02-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/guide.html">guide</a> <a href="/tag/irssi.html">irssi</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/networking.html">networking</a> <a href="/tag/ram.html">ram</a> <a href="/tag/swap.html">swap</a> <a href="/tag/space.html">space</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>How small VM can you make if you are only going to use it to run <a href="http://irssi.org/" title="irssi.org">Irssi</a> in a <a href="http://www.gnu.org/software/screen/" title="screen">screen</a>?</p>
+<p>OS: Ubuntu 10.10 x64 Virtual Kernel Hypervisor: VMWare Workstation</p>
+<p>Disk - no logs - 1.10GB is what my previous took, with samba, so probably less but 1.1 should be …</p>
+                <a class="readmore" href="/ubuntu-1010-vmware-irssi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 3
+        <a href="/tag/it2.html">&raquo;</a>
+        <a href="/tag/it3.html">&#8649;</a>
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

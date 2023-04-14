@@ -1,14 +1,8 @@
 ---
 title: "Hello Silicon Valley!"
 date: 2012-09-11
-categories: 
-  - "storage"
-tags: 
-  - "brcdtechday"
-  - "brocade"
-  - "silicon-valley"
-  - "usa"
----
+category: storage
+tags: brcdtechday, brocade, silicon, valley, usa
 
 Checked in at the hotel, mighty fancy one, it has a pool :)
 

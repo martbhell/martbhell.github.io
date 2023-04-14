@@ -1,15 +1,8 @@
 ---
 title: "RHCSA – Rapid Track – Day 2"
 date: 2011-12-13
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "linux"
-  - "red-hat"
-  - "rhcsa"
-  - "studying"
----
+category: it
+tags: certification, linux, red, hat, rhcsa, studying
 
 I wrote in the preparation that there were no 'set up ftp/www service'. What do you think we did today in the course? Set up vsftpd and httpd :)
 

@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"Setup a 3 Node Lustre Filesystem"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""storage" tags: "centos" "cluster" "filesystem" "install" "kernel" "linux" "lustre" "mds" "oss" "ost" "rhel" "rpmbuild" "san" "storage" "vmware"..." />
+        <meta name="description" content="Introduction Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously. This is a small..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li class="active"><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,30 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"storage"
-tags: </li>
-<li>"centos"</li>
-<li>"cluster"</li>
-<li>"filesystem"</li>
-<li>"install"</li>
-<li>"kernel"</li>
-<li>"linux"</li>
-<li>"lustre"</li>
-<li>"mds"</li>
-<li>"oss"</li>
-<li>"ost"</li>
-<li>"rhel"</li>
-<li>"rpmbuild"</li>
-<li>"san"</li>
-<li>"storage"</li>
-<li>"vmware"</li>
-<li>"yum"</li>
-</ul>
-<hr>
-<h1>Introduction</h1>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
+</footer><!-- /.post-info -->      <h1>Introduction</h1>
 <p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
 <p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
 <p>Basic components:</p>

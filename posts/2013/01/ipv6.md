@@ -1,13 +1,8 @@
 ---
 title: "IPv6"
 date: 2013-01-13
-categories: 
-  - "it"
-tags: 
-  - "ip"
-  - "ipv6"
-  - "networking"
----
+category: it
+tags: ip, ipv6, networking
 
 Do you have IPv6 connectivity? Perhaps a server and a domain name already set up?
 

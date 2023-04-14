@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - disk</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/command-view-p6000-eva-simulator-100.html">"Command View P6000 EVA Simulator 10.0"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-04-24T00:00:00+03:00">
+                Published: "2013-04-24"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/simulator.html">simulator</a> <a href="/tag/cv.html">cv</a> <a href="/tag/cvutil.html">cvutil</a> <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/eva.html">eva</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/hp.html">hp</a> <a href="/tag/hsv300.html">hsv300</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/sssu.html">sssu</a> <a href="/tag/storage.html">storage</a> <a href="/tag/xcs.html">xcs</a> </p>
+</footer><!-- /.post-info --><p>Due to somewhat popular demand here's another post detailing the steps for somewhat successfully installing HP P6000 Command View Simulator on Windows 7 x64. It can be a bitch.</p>
+<p>The <a href="http://www.guldmyr.com/blog/p6000-eva-command-view-simulator/">older post</a> is from 2011 with CV 9.4, this one also has PA - performance advisory bundled.</p>
+<ul>
+<li>Download: <a href="http://software.hp.com/" title="http://software.hp.com/">http://software.hp.com</a></li>
+<li>Two files: EVA Simulator 10.0 (Z7550-00252_EvasimInstaller_100fr_v1.exe) and a readme</li>
+<li>There is an e-mail listed in the readme!<ul>
+<li>But if you want to, you can put in a comment below saying how sexy I am :p</li>
+</ul>
+</li>
+<li>The readme is quite long but most of it is about how to use the PA (performance analyzer), Appendix B is a required read. It describes how to add the Groups so you can log on to CV.<ul>
+<li>A <a href="http://www.guldmyr.com/blog/to-create-a-new-user-group-in-windows-7/">previous blog</a> post by myself truly also goes through how to add a user group :)</li>
+</ul>
+</li>
+</ul>
+<h2>For lazy hounds:</h2>
+<ol>
+<li><em>(optional)</em> Disable UAC in Windows and make yourself admin.</li>
+<li>Put an account in the Windows Group called "HP Storage Admins".</li>
+<li>Launch the downloaded file (it extracts a setup.exe and .msi file)</li>
+<li>Launch setup.exe - it's located in the same directory where you launched the Z7550-00252_EvasimInstaller_100fr_v1.exe</li>
+<li>Next, next, next, next, yes, yes, Wait, yes, Installed!</li>
+<li>Try out the "Start HP P6000 EVA Simulator" new icon on your desktop, does it work? Profit!</li>
+</ol>
+<p>"XF application has stopped working" - some friendly error I got and CV simulator did not start.. Most likely permission issue. Peaking through one of the command-prompts it repeats access denied.</p>
+<p>It's amazing that the CV simulator still relies on .bat scripts. Guess it's for backwards compatibility with XP and Vista? Only one file necessary for all those Windows OS variants.</p>
+<p>With default Windows security, the Simulator runs into a problem when it tries to write to files under c:\program files (x86)\ . There are probably many ways to remedy that, one might be step 1 above. This worked:</p>
+<ol>
+<li>Go to C:\Program Files (x86)\Hewlett-Packard\HP P6000 EVA Simulator\evasim</li>
+<li>Right-click on 'start_bundle.bat' and run it as an administrator. This should start the simulator.</li>
+<li>Open up a command prompt with Admin Privileges, cd your way into evasim directory and type: "start startcv.bat"</li>
+<li>That should launch the Command View process and also IE pointing to CV.</li>
+<li>If not, point your web-browser to: https://localhost:2374/SPoG/ or https://localhost:2374/</li>
+<li>Log in with the user/password you added into the "HP Storage Admins" group earlier.</li>
+</ol>
+<h2>Some tips:</h2>
+<p>In one of the "DOS" windows, there might be more clues as to what's going on.</p>
+<p>Open a command prompt with admin privilieges by typing "cmd" in the search bar then right-clicking and starting as administrator.</p>
+<p>Inside the Simulator DOS prompt you can hit enter and if you see some commands (save, stop, exit, start) then that's the simulator window.</p>
+<p>If you want your changes to be kept, type "save" in the simulator window before quitting.</p>
+<h2>Some thoughts:</h2>
+<p>It feels a bit ruggish. I bet this whole mess could be improved quite easily with some decent scripts. Here's one I'd like to see:</p>
+<p>if $os == Win7:
+    if $write_read_permissions_in_program_files != "allowed":
+        print_in_big_letter("You need more axx! Do $THIS")
+        exit_everything_and_die</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/to-create-a-new-user-group-in-windows-7.html" rel="bookmark"
+                           title="Permalink to "To create a new user group in Windows 7"">"To create a new user group in Windows 7"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-03-09T00:00:00+02:00">
+                Published: "2012-03-09"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/simulator.html">simulator</a> <a href="/tag/cv.html">cv</a> <a href="/tag/cvutil.html">cvutil</a> <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/eva.html">eva</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/hp.html">hp</a> <a href="/tag/hsv300.html">hsv300</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/sssu.html">sssu</a> <a href="/tag/storage.html">storage</a> <a href="/tag/xcs.html">xcs</a> </p>
+</footer><!-- /.post-info -->                <p>This post is <a href="http://www.guldmyr.com/blog/p6000-eva-command-view-simulator/comment-page-1/#comment-6759" title="comment">created upon request</a> by a reader.</p>
+<p>May or may not be needed for the P6000 Simulator. It is however required when you install the real HP P6000 Command View.</p>
+<p>First you need to get into 'Computer Management', do this by right-clicking on 'My Computer'. Then click your …</p>
+                <a class="readmore" href="/to-create-a-new-user-group-in-windows-7.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/p6000-eva-command-view-simulator.html" rel="bookmark"
+                           title="Permalink to "P6000 - EVA - Command View Simulator"">"P6000 - EVA - Command View Simulator"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-18T00:00:00+03:00">
+                Published: "2011-07-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/simulator.html">simulator</a> <a href="/tag/cv.html">cv</a> <a href="/tag/cvutil.html">cvutil</a> <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/eva.html">eva</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/hp.html">hp</a> <a href="/tag/hsv300.html">hsv300</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/sssu.html">sssu</a> <a href="/tag/storage.html">storage</a> <a href="/tag/xcs.html">xcs</a> </p>
+</footer><!-- /.post-info -->                <p><a href="https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=P6000EVASimulator">https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=P6000EVASimulator</a></p>
+<p>Command View EVA is HP's web based management tool for their EVA/P6000 products. It's been looking the same for quite some time except the quite old ones. It's simple to use compared to other management softwares but sure …</p>
+                <a class="readmore" href="/p6000-eva-command-view-simulator.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/p6000-firmware-command-view.html" rel="bookmark"
+                           title="Permalink to "P6000 Firmware & Command View"">"P6000 Firmware & Command View"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-06-17T00:00:00+03:00">
+                Published: "2011-06-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/abm.html">abm</a> <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/disks.html">disks</a> <a href="/tag/download.html">download</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/eva.html">eva</a> <a href="/tag/fcoe.html">fcoe</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/hp.html">hp</a> <a href="/tag/management.html">management</a> <a href="/tag/module.html">module</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/release.html">release</a> <a href="/tag/notes.html">notes</a> <a href="/tag/storage.html">storage</a> <a href="/tag/xcs.html">xcs</a> <a href="/tag/10000000.html">10000000</a> </p>
+</footer><!-- /.post-info -->                <p>The P6000 firmware XCS <a href="https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=T4256-63141" title="on hp.com">10000000</a> is out, or has been for a while now. You can find it on <a href="http://software.hp.com" title="http://software.hp.com">http://software.hp.com</a> or the link above.</p>
+<p>The Command View 9.4 release notes are <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&amp;lang=en&amp;cc=us&amp;docIndexId=64179&amp;taskId=101&amp;prodTypeId=18964&amp;prodSeriesId=471497" title="cv 9.4 release notes">here</a>.</p>
+<p>Extra nice stuff (besides the obvious ones like new hw support):</p>
+<ul>
+<li>HDD upgrades via …</li></ul>
+                <a class="readmore" href="/p6000-firmware-command-view.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/what-do-i-do.html" rel="bookmark"
+                           title="Permalink to "What do I do?"">"What do I do?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-16T00:00:00+03:00">
+                Published: "2011-05-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland-it.html">finland, it</a>.</p>
+<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/collider.html">collider</a> <a href="/tag/disk.html">disk</a> <a href="/tag/cache.html">cache</a> <a href="/tag/lhc.html">lhc</a> <a href="/tag/particle.html">particle</a> <a href="/tag/physics.html">physics</a> <a href="/tag/work.html">work</a> </p>
+</footer><!-- /.post-info -->                <p>Hard to tell.. but if you see this pretty cool 6min movie: <a href="http://www.phdcomics.com/comics.php?f=1430">http://www.phdcomics.com/comics.php?f=1430</a></p>
+<p>you'll see that they mention a collider. This thing sends out lots of data from each collision.</p>
+<p>I administrate a system that gets a little bit (very little) of that …</p>
+                <a class="readmore" href="/what-do-i-do.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-2.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 – Day 2"">"HEPIX Spring 2011 – Day 2"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-04T00:00:00+03:00">
+                Published: "2011-05-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cooling.html">cooling</a> <a href="/tag/cpu.html">cpu</a> <a href="/tag/naming.html">naming</a> <a href="/tag/dell.html">dell</a> <a href="/tag/disk.html">disk</a> <a href="/tag/failures.html">failures</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/green.html">green</a> <a href="/tag/it.html">it</a> <a href="/tag/cube.html">cube</a> <a href="/tag/heat.html">heat</a> <a href="/tag/exchanger.html">exchanger</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hs06.html">hs06</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/synchrotron.html">synchrotron</a> </p>
+</footer><!-- /.post-info -->                <p>Guten aben!</p>
+<p>Darmstadt is a very beautiful city. It's quite old and there are lots of parks and eh, cool, houses.</p>
+<p>A person from the UK said yesterday (in the pub Ratkeller) something like this: <em>"A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one …</em></p>
+                <a class="readmore" href="/hepix-spring-2011-day-2.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/next-generation-eva-p6000.html" rel="bookmark"
+                           title="Permalink to "Next Generation EVA - P6000"">"Next Generation EVA - P6000"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-03T00:00:00+03:00">
+                Published: "2011-05-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/eva.html">eva</a> <a href="/tag/hp.html">hp</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/sas.html">sas</a> <a href="/tag/storage.html">storage</a> <a href="/tag/thin.html">thin</a> <a href="/tag/provisioning.html">provisioning</a> </p>
+</footer><!-- /.post-info -->                <p>On theregister there was recently <a href="http://www.theregister.co.uk/2011/05/03/hp_fifth_gen_eva/" title="on theregister">a post</a> that maybe HP will announce the new EVA's in Vegas in June - the P6000.</p>
+<p>I just opened a discussion on the ITRC forum, maybe we'll see some more posts there. I myself am hoping for some thin provisioning or why not SAS backends …</p>
+                <a class="readmore" href="/next-generation-eva-p6000.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/learning-storage.html" rel="bookmark"
+                           title="Permalink to "Learning Storage"">"Learning Storage"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-28T00:00:00+03:00">
+                Published: "2011-04-28"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/disk.html">disk</a> <a href="/tag/drives.html">drives</a> <a href="/tag/infosmack.html">infosmack</a> <a href="/tag/learning.html">learning</a> <a href="/tag/netapp.html">netapp</a> <a href="/tag/podcast.html">podcast</a> <a href="/tag/storage.html">storage</a> <a href="/tag/book.html">book</a> <a href="/tag/brain.html">brain</a> <a href="/tag/theregister.html">theregister</a> </p>
+</footer><!-- /.post-info -->                <p>** 2011-08-18 Just updated the link to the HP forum.</p>
+<p>I also wrote <a href="http://www.guldmyr.com/blog/san-primer-introduction-to-san/" title="guldmyr.com">a primer</a> to Data Storage.</p>
+<p>Just listened to this podcast episode #96 of <a href="http://www.theregister.co.uk/2011/04/26/infosmack_enterprise_tech_podcast_episode_96/" title="on theregister - infosmack ep 96">Infosmack on theregister</a> (about storage). Very interesting to hear what some really experienced people say about storage and the</p>
+<p>future. Like hybrid disk drives becoming …</p>
+                <a class="readmore" href="/learning-storage.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

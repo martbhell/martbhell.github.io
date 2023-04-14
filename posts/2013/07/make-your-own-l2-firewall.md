@@ -1,19 +1,8 @@
 ---
 title: "Make your own L2 Firewall!"
 date: 2013-07-17
-categories: 
-  - "it"
-tags: 
-  - "coursera"
-  - "firewall"
-  - "learning"
-  - "linux"
-  - "pox"
-  - "python"
-  - "sdn"
-  - "software-defined-networking"
-  - "studying"
----
+category: it
+tags: coursera, firewall, learning, linux, pox, python, sdn, software, defined, networking, studying
 
 Is what I did this week during the [SDN Course](https://www.coursera.org/course/sdn "https://www.coursera.org/course/sdn") on Coursera :)
 

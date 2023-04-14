@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - virtualbox</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/linuxconfau2016-and-a-freeipa-workshop.html">"linux.conf.au.2016 and a FreeIPA workshop"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-03-31T00:00:00+03:00">
+                Published: "2016-03-31"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/redhat.html">redhat</a> <a href="/tag/rh414.html">rh414</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/vagrant.html">vagrant</a> <a href="/tag/virtualbox.html">virtualbox</a> </p>
+</footer><!-- /.post-info --><p><a href="https://github.com/freeipa/freeipa-workshop">https://github.com/freeipa/freeipa-workshop</a></p>
+<p>In preparation for the RH414 course I'm taking next week I think I should have a look at kerberos, freeipa and bind a bit :)</p>
+<p>During linux.conf.au.2016 there was a <a href="https://linux.conf.au/schedule/30130/view_talk">workshop</a> on FreeIPA. (There were many other interesting talks there, for example the <a href="http://jbainbri.github.io/">Network Performance Tuning</a> by Jamie Bainbridge).</p>
+<p>There is a video to accompany it: <a href="https://www.youtube.com/watch?v=VLhNcirKFDs">https://www.youtube.com/watch?v=VLhNcirKFDs</a></p>
+<h2>Notes</h2>
+<ul>
+<li>Bonus feature: get acquainted with vagrant too!</li>
+</ul>
+<p>Vagrant 1.7.4 and Virtualbox 5.0 works just fine together (except I had some issues with network interfaces on Ubuntu 15.10 and Virtualbox 5 and Vagrant - the MAC addresses were the same on the VM's interfaces to the "NAT" network- they also got some weird IP addresses there). I could only find that IP used in resolv.conf (from the dhcp) - so that could be changed.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/install-freebsd-in-virtualbox.html" rel="bookmark"
+                           title="Permalink to "Install FreeBSD in VirtualBox"">"Install FreeBSD in VirtualBox"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-11-24T00:00:00+02:00">
+                Published: "2011-11-24"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bash.html">bash</a> <a href="/tag/freebsd.html">freebsd</a> <a href="/tag/install.html">install</a> <a href="/tag/operatingsystem.html">operatingsystem</a> <a href="/tag/os.html">os</a> <a href="/tag/ports.html">ports</a> <a href="/tag/virtualbox.html">virtualbox</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info -->                <h2>The Past</h2>
+<p>I used to run FreeBSD 5 and 6 about eight years ago on a Pentium III 900MHz machine with maybe 768MB RAM. It was very slow but after a lot of tinkering with the kernel I got it to boot and run very nicely.</p>
+<p>Fluxbox was the window …</p>
+                <a class="readmore" href="/install-freebsd-in-virtualbox.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/virtualbox-free-os-virtualization.html" rel="bookmark"
+                           title="Permalink to "Virtualbox - Free OS Virtualization"">"Virtualbox - Free OS Virtualization"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-03-12T00:00:00+02:00">
+                Published: "2011-03-12"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/rhel.html">rhel</a> <a href="/tag/virtualbox.html">virtualbox</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>Had the opportunity to try out <a href="http://www.virtualbox.org/" title="virtualbox">virtualbox</a> the other day on RHEL.</p>
+<p>I really liked the part that the rpm that I downloaded was signed and I had to import the signature to be able to install the package! Feels safe. Install did not cause any other problems for me …</p>
+                <a class="readmore" href="/virtualbox-free-os-virtualization.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

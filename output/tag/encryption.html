@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - encryption</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/lets-encrypt-the-web-renewal.html">"Let's encrypt the web - renewal"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-02-15T00:00:00+02:00">
+                Published: "2016-02-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/encryption.html">encryption</a> <a href="/tag/letsencrypt.html">letsencrypt</a> </p>
+</footer><!-- /.post-info --><p>So easy!</p>
+<p>just:</p>
+<p>As I ran the letsencrypt-auto <a href="http://www.guldmyr.com/blog/lets-encrypt-the-web/">last time</a>, I did again.</p>
+<ul>
+<li>sudo systemctl stop nginx</li>
+<li>cd letsencrypt</li>
+<li>git pull</li>
+<li>./letsencrypt-auto</li>
+<li>enter enter etc</li>
+<li>sudo apache2ctl stop # .. why did it start apache2 automatically?</li>
+<li>sudo systemctl start nginx</li>
+</ul>
+<p>Since letsencrypt-auto version 0.5.0 it's:</p>
+<ul>
+<li>sudo systemctl stop nginx</li>
+<li>cd letsencrypt</li>
+<li>git pull</li>
+<li>./letsencrypt-auto --standalone --domains "my.example.com,2.example.com"</li>
+<li>sudo systemctl restart nginx</li>
+</ul>
+<p>Since <a href="https://github.com/certbot/certbot">certbot</a>-auto (renamed from letsencrypt):</p>
+<ul>
+<li>sudo systemctl stop nginx</li>
+<li>./certbot-auto renew</li>
+<li>sudo systemctl start nginx</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/red-hat-certification-rhce-course-outline.html" rel="bookmark"
+                           title="Permalink to "Red Hat Certification – RHCE - Course Outline"">"Red Hat Certification – RHCE - Course Outline"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-06-13T00:00:00+03:00">
+                Published: "2012-06-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/authconfig.html">authconfig</a> <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/gnupg.html">gnupg</a> <a href="/tag/gpg.html">gpg</a> <a href="/tag/http.html">http</a> <a href="/tag/proxy.html">proxy</a> <a href="/tag/iptables.html">iptables</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/ldap.html">ldap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/masquerade.html">masquerade</a> <a href="/tag/nat.html">nat</a> <a href="/tag/openssl.html">openssl</a> <a href="/tag/pam.html">pam</a> <a href="/tag/pki.html">pki</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/routing.html">routing</a> <a href="/tag/squid.html">squid</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/keygen.html">keygen</a> <a href="/tag/sssd.html">sssd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/web.html">web</a> </p>
+</footer><!-- /.post-info -->                <p>Howdy!</p>
+<p>In case you saw my previous posts I've been prepping for a RHCE course the last couple of weeks.</p>
+<p>Here are the posts based on the objectives:</p>
+<ul>
+<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd">http/https</a></li>
+<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns">dns</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp">ftp</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-nfs/">nfs</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-smb/">smb</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-e-mail/">smtp</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
+<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/">ntp</a></li>
+</ul>
+<p>Odds are quite high that I've missed something or not gone deep enough …</p>
+                <a class="readmore" href="/red-hat-certification-rhce-course-outline.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/reading-encryptedpassword-protected-pdf-on-linux.html" rel="bookmark"
+                           title="Permalink to "Reading encrypted/password protected pdf on Linux"">"Reading encrypted/password protected pdf on Linux"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-13T00:00:00+03:00">
+                Published: "2011-07-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/adobe.html">adobe</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/evince.html">evince</a> <a href="/tag/exam.html">exam</a> <a href="/tag/foxit.html">foxit</a> <a href="/tag/foxitreader.html">foxitreader</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pdf.html">pdf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/study.html">study</a> <a href="/tag/material.html">material</a> </p>
+</footer><!-- /.post-info -->                <p><img alt="Brocade Logo" src="images/logo-brocade.gif" title="Brocade Logo"></p>
+<h2>The problematic PDF</h2>
+<p>The CFP300 material on <strong><a href="http://community.brocade.com/docs/DOC-2041" title="linky">http://community.brocade.com/docs/DOC-2041</a></strong> is encrypted so that it cannot be printed/re-edited without a password.</p>
+<p>If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite …</p>
+                <a class="readmore" href="/reading-encryptedpassword-protected-pdf-on-linux.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

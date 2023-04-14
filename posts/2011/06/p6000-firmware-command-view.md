@@ -1,26 +1,8 @@
 ---
 title: "P6000 Firmware & Command View"
 date: 2011-06-17
-categories: 
-  - "storage"
-tags: 
-  - "abm"
-  - "command-view"
-  - "disk-array"
-  - "disks"
-  - "download"
-  - "enterprise-virtual-array"
-  - "eva"
-  - "fcoe"
-  - "firmware"
-  - "hp"
-  - "management-module"
-  - "p6000"
-  - "release-notes"
-  - "storage"
-  - "xcs"
-  - "xcs-10000000"
----
+category: storage
+tags: abm, command, view, disk, array, disks, download, enterprise, virtual, array, eva, fcoe, firmware, hp, management, module, p6000, release, notes, storage, xcs, xcs, 10000000
 
 The P6000 firmware XCS [10000000](https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=T4256-63141 "on hp.com") is out, or has been for a while now. You can find it on [http://software.hp.com](http://software.hp.com "http://software.hp.com") or the link above.
 

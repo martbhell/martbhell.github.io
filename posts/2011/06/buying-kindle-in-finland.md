@@ -1,25 +1,8 @@
 ---
 title: "Buying Kindle in Finland"
 date: 2011-06-30
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "amazon-kindle"
-  - "books"
-  - "e-book"
-  - "e-book-reader"
-  - "e-reader"
-  - "ebook"
-  - "eject"
-  - "ereader"
-  - "fantasy"
-  - "kindle"
-  - "linux"
-  - "reading"
-  - "shopping"
-  - "steven-erikson"
----
+category: finland, it
+tags: amazon, kindle, books, e, book, e, book, reader, e, reader, ebook, eject, ereader, fantasy, kindle, linux, reading, shopping, steven, erikson
 
 On the 28th I purchased it around 1900. Today on the 30th at 0820 it arrived in the airport in Helsinki. Also yesterday somebody called and said it would come this week.
 

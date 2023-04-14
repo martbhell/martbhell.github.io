@@ -1,12 +1,8 @@
 ---
 title: "Finnish Sentences - Kaivopuistu"
 date: 2012-05-06
-categories: 
-  - "finland"
-tags: 
-  - "finnish"
-  - "language"
----
+category: finland
+tags: finnish, language
 
 Disclaimer: I am still studying Finnish and not so good :)
 

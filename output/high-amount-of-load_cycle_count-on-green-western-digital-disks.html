@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"High amount of Load_Cycle_Count on Green Western Digital disks"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" "storage" tags: "idl3ctl" "llc" "load_cycle_count" "ubuntu" "wd" "wdidle3" "wdidle3-exe" "western-digital" You are monitoring the SMART..." />
+        <meta name="description" content="You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive. Thought I'd check out..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li class="active"><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,23 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"</li>
-<li>"storage"
-tags: </li>
-<li>"idl3ctl"</li>
-<li>"llc"</li>
-<li>"load_cycle_count"</li>
-<li>"ubuntu"</li>
-<li>"wd"</li>
-<li>"wdidle3"</li>
-<li>"wdidle3-exe"</li>
-<li>"western-digital"</li>
-</ul>
-<hr>
-<p>You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive.</p>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/idl3ctl.html">idl3ctl</a> <a href="/tag/llc.html">llc</a> <a href="/tag/load_cycle_count.html">load_cycle_count</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/wd.html">wd</a> <a href="/tag/wdidle3.html">wdidle3</a> <a href="/tag/exe.html">exe</a> <a href="/tag/western.html">western</a> <a href="/tag/digital.html">digital</a> </p>
+</footer><!-- /.post-info -->      <p>You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive.</p>
 <p>Thought I'd check out the SMART value of the disks in my desktop today (while checking if I had notifications from smartd on).</p>
 <p>Low and behold, the Load_Cycle_Count (LLC) was really high, much higher than power_cycle_count on the 3TB WD disk I have. It turns out this is quite an old problem so there are a few posts about this on the Internets. The Interwebs <a href="http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3%20" title="http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3">says</a> max in the specs are 300k load cycles. Smartctl -a says I'm already at 218602 after 9302 power on hours (387 days but I power off the computer at night).</p>
 <p>Disk:</p>

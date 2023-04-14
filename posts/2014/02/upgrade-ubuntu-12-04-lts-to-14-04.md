@@ -1,16 +1,8 @@
 ---
 title: "Upgrade Ubuntu 12.04 LTS to 14.04"
 date: 2014-02-03
-categories: 
-  - "it"
-tags: 
-  - "12-04"
-  - "14-04"
-  - "dist-upgrade"
-  - "lts"
-  - "ubuntu"
-  - "upgrade"
----
+category: it
+tags: 12, 04, 14, 04, dist, upgrade, lts, ubuntu, upgrade
 
 Yesterday I upgraded Ubuntu 12.04 LTS to 14.04 devel release. This is not recommended :)
 

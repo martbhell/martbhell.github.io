@@ -1,14 +1,8 @@
 ---
 title: "DWM editing the bar to show time"
 date: 2011-03-14
-categories: 
-  - "finland"
-tags: 
-  - "dwm"
-  - "rhel"
-  - "status-bar"
-  - "statusbar"
----
+category: finland
+tags: dwm, rhel, status, bar, statusbar
 
 `xrdb -merge ~/.Xresources while true; do # BAT=$(acpi | awk '{ print $4 }' | sed s/","//g) CLK=$( date +'%H:%M') # xsetroot -name "$BAT | $CLK" xsetroot -name "$CLK" sleep 1 done | while true; do ~/bin/dwm; done`
 

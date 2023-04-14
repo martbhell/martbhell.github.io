@@ -1,13 +1,8 @@
 ---
 title: "Great Android Apps"
 date: 2011-01-26
-categories: 
-  - "it"
-tags: 
-  - "android"
-  - "apps"
-  - "it-2"
----
+category: it
+tags: android, apps, it, 2
 
 My phone is a Sony Ericsson Xperia Active and an Asus Transformer TF101 (with cyanogenmod 10.0). I am located in Finland so these apps may or may not exist in your market.
 

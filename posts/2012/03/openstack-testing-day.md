@@ -1,19 +1,8 @@
 ---
 title: "openstack testing day"
 date: 2012-03-10
-categories: 
-  - "it"
-tags: 
-  - "fedora"
-  - "linux"
-  - "openstack"
-  - "operating-system"
-  - "os"
-  - "red-hat"
-  - "testing"
-  - "virtualization"
-  - "vmware-workstation"
----
+category: it
+tags: fedora, linux, openstack, operating, system, os, red, hat, testing, virtualization, vmware, workstation
 
 Only one day late!
 

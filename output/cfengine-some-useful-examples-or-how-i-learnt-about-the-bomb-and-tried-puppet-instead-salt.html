@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "automation" "cfe" "cfengine" "cms" "linux" "puppet" "resolv-conf" "resolver" "salt" "salt-highstate" "script" "scripting" Building on..." />
+        <meta name="description" content="Building on the initial post about cfengine we're going to try out some things that may actually be useful. My goal would be to make..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,26 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"automation"</li>
-<li>"cfe"</li>
-<li>"cfengine"</li>
-<li>"cms"</li>
-<li>"linux"</li>
-<li>"puppet"</li>
-<li>"resolv-conf"</li>
-<li>"resolver"</li>
-<li>"salt"</li>
-<li>"salt-highstate"</li>
-<li>"script"</li>
-<li>"scripting"</li>
-</ul>
-<hr>
-<p>Building on the <a href="http://www.guldmyr.com/blog/cfengine-whats-that-all-about/" title="cfengine – what’s that about?">initial post</a> about cfengine we're going to try out some things that may actually be useful.</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/automation.html">automation</a> <a href="/tag/cfe.html">cfe</a> <a href="/tag/cfengine.html">cfengine</a> <a href="/tag/cms.html">cms</a> <a href="/tag/linux.html">linux</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/resolv.html">resolv</a> <a href="/tag/conf.html">conf</a> <a href="/tag/resolver.html">resolver</a> <a href="/tag/salt.html">salt</a> <a href="/tag/highstate.html">highstate</a> <a href="/tag/script.html">script</a> <a href="/tag/scripting.html">scripting</a> </p>
+</footer><!-- /.post-info -->      <p>Building on the <a href="http://www.guldmyr.com/blog/cfengine-whats-that-all-about/" title="cfengine – what’s that about?">initial post</a> about cfengine we're going to try out some things that may actually be useful.</p>
 <p>My goal would be to make /etc/resolv.conf identical between all the machines.</p>
 <p>The server setup is the lustre cluster we built in a previous post.</p>
 <p>In this post you'll first see two attempts at getting cfengine and then puppet to do my bidding until success was finally accomplished with <a href="http://www.guldmyr.com/blog/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt/#salt">salt</a>.</p>

@@ -1,18 +1,8 @@
 ---
 title: "Asus Eee Pad Transformer TF 101 + root + arch in chroot"
 date: 2012-09-05
-categories: 
-  - "it"
-tags: 
-  - "android"
-  - "arch"
-  - "asus"
-  - "asus-eee-pad"
-  - "asus-transformer"
-  - "chroot"
-  - "linux"
-  - "tf101"
----
+category: it
+tags: android, arch, asus, asus, eee, pad, asus, transformer, chroot, linux, tf101
 
 Just got one of these - thought it would be a great tool when going to [conferences](http://www.guldmyr.com/blog/brocade-analyst-and-technology-day-2012/ "Like Brocade Analyst and Technology Day 2012 for example") for example or somewhere where I would need a small computer but don't want to bring a long my normal heavy laptop.
 

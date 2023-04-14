@@ -1,17 +1,8 @@
 ---
 title: "SunOS 5.11 OpenSolaris Man Page Trick"
 date: 2011-08-01
-categories: 
-  - "finland"
-tags: 
-  - "bash-script"
-  - "man"
-  - "manpage"
-  - "manual"
-  - "opensolaris"
-  - "solaris"
-  - "sun"
----
+category: finland
+tags: bash, script, man, manpage, manual, opensolaris, solaris, sun
 
 Ever had to read a man page on a Solaris system? You'll see these
 

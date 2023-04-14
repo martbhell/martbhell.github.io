@@ -1,17 +1,8 @@
 ---
 title: "BCvRE - Brocade Certified virtual Router Engineer - Objectives"
 date: 2013-09-08
-categories: 
-  - "it"
-tags: 
-  - "bcvre"
-  - "brocade"
-  - "certified"
-  - "exam"
-  - "objectives"
-  - "open-source"
-  - "virtualization"
----
+category: it
+tags: bcvre, brocade, certified, exam, objectives, open, source, virtualization
 
 This post will be continuously updated with my short notes under each concept. It's not meant to be a replacement of the official training materials. I'm just starting out playing with the vRouter Core / open source version and installing it in a VM and set up some networks and firewalls is probably one of the best way to learn this. Learn by doing!
 

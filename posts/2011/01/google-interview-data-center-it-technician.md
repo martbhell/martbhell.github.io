@@ -1,23 +1,8 @@
 ---
 title: "Google Interview - Data Center IT Technician"
 date: 2011-01-21
-categories: 
-  - "finland"
-  - "it"
-  - "storage"
-tags: 
-  - "data-center"
-  - "data-center-technician"
-  - "data-centre"
-  - "datacenter"
-  - "datacentre"
-  - "google"
-  - "hamina"
-  - "interview"
-  - "it-2"
-  - "job"
-  - "questions"
----
+category: finland, it, storage
+tags: data, center, data, center, technician, data, centre, datacenter, datacentre, google, hamina, interview, it, 2, job, questions
 
 \* Updated 2011-01-29 \* Updated 2011-03-08 Dtek contributed some more questions from the first interview. \* Updated 2011-03-23 - Added question about PCI/PCIe and DOS partitions. **Also I have been asking the few who have commented to add their input but not so much feedback yet. Feel free to drop me an e-mail or put in a comment :)** \* Updated 2011-03-24 - Wrote a little more about the '100 broken computers' question. \* Updated 2011-05-21 - Added some more detail/discussion about the questions in the first section.
 

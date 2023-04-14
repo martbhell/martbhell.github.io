@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"Make your own L2 Firewall!"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "coursera" "firewall" "learning" "linux" "pox" "python" "sdn" "software-defined-networking" "studying" Is what I did this week during..." />
+        <meta name="description" content="Is what I did this week during the SDN Course on Coursera :) Within mininet or with a real OpenFlow capable switch, you can point the switch to..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,23 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"coursera"</li>
-<li>"firewall"</li>
-<li>"learning"</li>
-<li>"linux"</li>
-<li>"pox"</li>
-<li>"python"</li>
-<li>"sdn"</li>
-<li>"software-defined-networking"</li>
-<li>"studying"</li>
-</ul>
-<hr>
-<p>Is what I did this week during the <a href="https://www.coursera.org/course/sdn" title="https://www.coursera.org/course/sdn">SDN Course</a> on Coursera :)</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pox.html">pox</a> <a href="/tag/python.html">python</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info -->      <p>Is what I did this week during the <a href="https://www.coursera.org/course/sdn" title="https://www.coursera.org/course/sdn">SDN Course</a> on Coursera :)</p>
 <p>Within <a href="http://mininet.org/" title="http://mininet.org/">mininet</a> or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to do.</p>
 <p><a href="http://www.noxrepo.org/pox/about-pox/" title="noxrepo.org">POX</a> is one of these APIs that you can use to create controllers, it's good for learning about controllers as it's not so low level as it's sibling NOX, which is in C++. There are switches in JAVA too (<a href="http://www.projectfloodlight.org/floodlight/" title="http://www.projectfloodlight.org/floodlight/">Floodlight</a>) and many more.</p>
 <p>With POX there are some example switches, for example a basic L2 learning switch. It remembers (among quite a few other things) MAC addresses for hosts and remembers in which ports the MAC addresses can be found. With a simple ping: After L2 broadcast is done to find the MAC of the recipient, the controllers install the MAC_source+port and MAC_destination+port as flows on the switches.</p>

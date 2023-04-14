@@ -1,11 +1,8 @@
 ---
 title: "Resepti: ChilliFetaPasta"
 date: 2019-10-08
-categories: 
-  - "finland"
-tags: 
-  - "food"
----
+category: finland
+tags: food
 
 Kahdelle
 

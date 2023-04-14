@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - bcvrp</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/bcvrp-brocade-certified-virtual-router-professional-objectives.html">"BCvRP – Brocade Certified virtual Router Professional – Objectives"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-11-10T00:00:00+02:00">
+                Published: "2013-11-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcvrp.html">bcvrp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/objectives.html">objectives</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info --><p>For training these I set up networks. Many. Drawing the networks first in LibreOffice Draw and then setting them up with virtual machine templates and LAN segments.</p>
+<p>The exam I took in October and because it was a beta exam the results aren't out until December :)</p>
+<p>The BCvRP has the below <a href="http://community.brocade.com/docs/DOC-3349" title="http://community.brocade.com/docs/DOC-3349">objectives</a> (included for free are some of my comments on each topic). None of this should be taken as a replacement for taking the actual course and actually doing these things on a vrouter. And honestly, the various concepts and technologies described in the objectives below can become very complex. So before taking this course/exam you at a minimum want to know the basics of BGP and setting up an OSPF network should be a breeze.</p>
+<h1>OSPF Multi-Area Concepts</h1>
+<ul>
+<li>
+<p><strong><em>Describe OSPF routing concepts</em></strong></p>
+</li>
+<li>
+<p>Stub area - replace external routes with a default route</p>
+</li>
+<li>NSSA - not so stubby - can have a local external route inside a stub area</li>
+<li>no-summary : exclude inter-area routes</li>
+<li>LSA - link state advertisements<ul>
+<li>1 All OSPFs: Lists subnets/links directly connected, does not cross area boundaries</li>
+<li>2 from DR: Lists routers connected to a network, does not cross</li>
+<li>3 from ABR: Lists networks from outside the local area</li>
+<li>4 from ASBR: Summary, lists location of ASBR</li>
+<li>5 from ASBR: AS external, list networks outside OSPF AS. 7 for NSSA.</li>
+</ul>
+</li>
+<li>Summarization: Good to have continuous addresses in an area, easier to summarize.<ul>
+<li>Do not summarize routes originating in Area 0.</li>
+</ul>
+</li>
+</ul>
+<h1>BGP, EBGP and IBGP Concepts</h1>
+<ul>
+<li>
+<p><strong><em>Describe gateway protocol concepts</em></strong></p>
+</li>
+<li>
+<p>BGP Basics</p>
+<ul>
+<li>Purpose is to determine best path (not necessarily the shortest)</li>
+<li>TCP Connection, no periodic updates.</li>
+<li>iBGP - within an AS / eBGP - between AS</li>
+<li>Attributes - BGP policies - costs</li>
+<li>eBGP - best to be on the same network</li>
+<li>TCP port 179</li>
+<li>A unique AS number is needed, there are <a href="http://en.wikipedia.org/wiki/Autonomous_System_(Internet)" title="64512 to 65534">private AS numbers</a>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>eBGP</strong></p>
+<p>set protocols bgp AS# router-id IP set protocols bgp AS# neighbor ip-address remote-as as-number set protocols bgp AS# network address/mask</p>
+<p>exact match must be in the router's table: create a static route to blackhole on the router</p>
+<p><strong>iBGP</strong> = same AS on the BGP peer (the neighbor)</p>
+<p>iBGP - a full mesh is necessary. iBGP does not forward routes learned from other iBGP peers. One can use "next-hop-self" so that iBGP router's change the next-hop address to a network whenever it propagates the route. update-source - this needs to be the same as the router-id.</p>
+<p>iBGP required settings: local AS number, neighbor address and "update source".</p>
+<p>bgp does not reset advertised routes after an administrator's changes. Changes to eBGP does not come into affect until you run the reset: '<strong>reset ip bgp external out</strong>'. The BGP table can be large - gigabytes. Use the word soft to only request updates and not reset the peer connection.</p>
+<p>reset ip bgp external [ipv4 address]</p>
+<h4>Tuning attributes and priority</h4>
+<ol>
+<li>Local preference - only included within an AS. Default is 100. Higher is better.</li>
+<li>AS Path - always forwarded - shorter is better</li>
+<li>Origin - lowest</li>
+<li>Multi-exit discriminator # modified by an ISP to indicate preference</li>
+<li>eBGP preferred over iBGP</li>
+<li>Lowest Peer ID</li>
+<li>Community # group of prefixes with a common property. Can be used in filters.</li>
+</ol>
+<p>Prepending: insert your AS number in the AS in the beginning of the AS path. Communities are created with: set policy community list</p>
+<h3>BGP troubleshooting</h3>
+<p>An active peer - not good. Trying to actively set up a session.</p>
+<h3>iBGP design</h3>
+<ul>
+<li>Does not have to be physically connected (as in BGP).<ul>
+<li>Connectivity over BGP</li>
+</ul>
+</li>
+<li>Peer to loopback address</li>
+<li>Full mesh is required<ul>
+<li>Doesn't scale. You can use a Route reflector ("concentrator") and have other iBGP routers as clients.</li>
+<li>route reflectors must be meshed</li>
+<li>You can also create multiple private AS within your AS. Reduces members in the mesh. Called a confederation.<ul>
+<li>Public AS number is only visible in the config</li>
+<li>The Private numbers are visible in the show ip bgp commands.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Create a peer group, set BGP settings on the peer group. Then assign peers to the group.</p>
+<h2><strong>Route Redistribution</strong></h2>
+<ul>
+<li>
+<p>Describe route redistribution design and configuration</p>
+</li>
+<li>
+<p>Best practices:</p>
+<ul>
+<li>Set metrics</li>
+<li>Do not redistribute into or out of BGP</li>
+<li>Use network statements</li>
+<li>Statements to direct towards BGP exit points</li>
+<li>Only redistribute a network from one host (VRRP)</li>
+</ul>
+</li>
+<li>OSPF: metric type (increase cost)</li>
+<li>Only active routes are redistributed</li>
+</ul>
+<h2><strong>IPsec VPNs</strong></h2>
+<ul>
+<li>Identify IKE Phase 1 and Phase 2 operations</li>
+<li>Describe how to configure and troubleshoot an IPsec VPN</li>
+</ul>
+<h2><strong>OpenVPN Concepts</strong></h2>
+<ul>
+<li>Identify the features of OpenVPN</li>
+<li>Describe OpenVPN configuration</li>
+</ul>
+<h2><strong>VRRP Concepts</strong></h2>
+<ul>
+<li>Describe VRRP concepts and operations</li>
+</ul>
+<h2><strong>Optimization</strong></h2>
+<ul>
+<li>Describe the attributes of WAN load balancing</li>
+<li>Describe QoS features and configuration</li>
+</ul>
+<h1>Policy-Based Routing</h1>
+<ul>
+<li>Explain where policy-based routing falls in Brocade Vyatta packet flow</li>
+<li>
+<p>Configure and verify policy-based routing</p>
+</li>
+<li>
+<p>Default: drop route entry . By default it only takes the first action that matches.</p>
+</li>
+<li>Rule -&gt; Filter -&gt; Route Map (excluding deny filters) &gt; Take action as defined</li>
+<li>Filter list: prefix 172.16.0.0/16, le 24. Any netmasks between /16 and 24, including /16.</li>
+<li>
+<p>Regexp for matching AS lists - use underscore to match whitespaces</p>
+</li>
+<li>
+<p>Filter has the rules.</p>
+<ul>
+<li>permit/deny in the filters affects if the rule is applied to the filter.</li>
+</ul>
+</li>
+<li>Route-maps has the rules.</li>
+</ul>
+<h1>Multicast Routing</h1>
+<ul>
+<li>Describe multicast protocols/elements</li>
+<li>Configure and troubleshoot multicast routing</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

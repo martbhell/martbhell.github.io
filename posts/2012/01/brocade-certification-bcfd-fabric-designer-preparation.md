@@ -1,17 +1,8 @@
 ---
 title: "Brocade Certification - BCFD - Fabric Designer - Preparation"
 date: 2012-01-13
-categories: 
-  - "storage"
-tags: 
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-designer"
-  - "certification"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+category: storage
+tags: bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
 
 BCFD exam is going into Beta testing in January as well!
 

@@ -1,23 +1,8 @@
 ---
 title: "Install Drupal 7 in Debian 6"
 date: 2011-02-11
-categories: 
-  - "it"
-tags: 
-  - "admin-accounts"
-  - "apt-get"
-  - "database-settings"
-  - "debian"
-  - "debian-6"
-  - "drupal"
-  - "guide"
-  - "http"
-  - "it-2"
-  - "phpmyadmin"
-  - "script"
-  - "upgrade"
-  - "web-server-apache"
----
+category: it
+tags: admin, accounts, apt, get, database, settings, debian, debian, 6, drupal, guide, http, it, 2, phpmyadmin, script, upgrade, web, server, apache
 
 Time for another go!
 

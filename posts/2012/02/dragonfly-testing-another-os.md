@@ -1,17 +1,8 @@
 ---
 title: "Dragonfly - Testing another OS"
 date: 2012-02-27
-categories: 
-  - "it"
-tags: 
-  - "bsd"
-  - "dragonfly"
-  - "freebsd"
-  - "operating-system"
-  - "os"
-  - "vmware"
-  - "vmware-workstation"
----
+category: it
+tags: bsd, dragonfly, freebsd, operating, system, os, vmware, vmware, workstation
 
 # [http://www.dragonflybsd.org/](http://www.dragonflybsd.org/ "http://www.dragonflybsd.org/")
 

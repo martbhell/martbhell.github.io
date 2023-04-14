@@ -1,15 +1,8 @@
 ---
 title: "BANAS - Brocade Accredited Network Advisor Specialist"
 date: 2014-02-27
-categories: 
-  - "it"
-tags: 
-  - "bna"
-  - "brocade"
-  - "certification"
-  - "network-advisor"
-  - "studying"
----
+category: it
+tags: bna, brocade, certification, network, advisor, studying
 
 Finally got around to start preparing the last certificate/accreditation - [BANAS](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/curriculum.page "curriculum on brocade.com") - to complete the Brocade Data Center Track (ok, not last. There are plenty more!).
 

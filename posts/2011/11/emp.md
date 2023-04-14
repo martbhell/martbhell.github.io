@@ -1,15 +1,8 @@
 ---
 title: "EMP"
 date: 2011-11-22
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "emp"
-  - "online-world"
-  - "post-apocalypse"
-  - "printing"
----
+category: finland, it
+tags: emp, online, world, post, apocalypse, printing
 
 Do you print pictures or keep all of them online? What about if you've written a lot of text on some obscure blog on the Intertubez. What if something happens and you can't retrieve it?
 

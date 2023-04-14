@@ -1,16 +1,8 @@
 ---
 title: "wasthereannhlgamelastnight.com - now using object storage!"
 date: 2017-10-07
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "cloud"
-  - "gcloud"
-  - "google"
-  - "nhl"
-  - "programming"
-  - "wasthereannhlgamelastnight"
+category: it, storage
+tags: cloud, gcloud, google, nhl, programming, wasthereannhlgamelastnight
 coverImage: "screenshot.png"
 ---
 

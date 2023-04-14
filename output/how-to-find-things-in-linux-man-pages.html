@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"How to find things in Linux man pages"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "apropos" "grep" "help" "linux" "man" "man-pages" "manual" "red-hat" "rhel" "search" "xargs" "yum" "zgrep" There's a couple of places..." />
+        <meta name="description" content="There's a couple of places (naturally). It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,27 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"apropos"</li>
-<li>"grep"</li>
-<li>"help"</li>
-<li>"linux"</li>
-<li>"man"</li>
-<li>"man-pages"</li>
-<li>"manual"</li>
-<li>"red-hat"</li>
-<li>"rhel"</li>
-<li>"search"</li>
-<li>"xargs"</li>
-<li>"yum"</li>
-<li>"zgrep"</li>
-</ul>
-<hr>
-<p>There's a couple of places (naturally).</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/apropos.html">apropos</a> <a href="/tag/grep.html">grep</a> <a href="/tag/help.html">help</a> <a href="/tag/linux.html">linux</a> <a href="/tag/man.html">man</a> <a href="/tag/pages.html">pages</a> <a href="/tag/manual.html">manual</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/search.html">search</a> <a href="/tag/xargs.html">xargs</a> <a href="/tag/yum.html">yum</a> <a href="/tag/zgrep.html">zgrep</a> </p>
+</footer><!-- /.post-info -->      <p>There's a couple of places (naturally).</p>
 <p>It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank.</p>
 <p>In RHEL there is /usr/share/doc where there are some special places, for example /usr/share/doc/initscripts*/sysconfig.txt for all config files that relate to the boot-up process. There is also /usr/share/man. In /usr/share/man/man5 which has all the level 5 man pages in gzip format. For example "man 5 yum.conf" you can find in /usr/share/man/man5/yum.conf.5.gz.</p>
 <p>To open a man page you just type 'man yum'. To get the man page for yum, or 'man man' for the manual for man.</p>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - ubuntu</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/high-amount-of-load_cycle_count-on-green-western-digital-disks.html">"High amount of Load_Cycle_Count on Green Western Digital disks"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-10-26T00:00:00+03:00">
+                Published: "2014-10-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/idl3ctl.html">idl3ctl</a> <a href="/tag/llc.html">llc</a> <a href="/tag/load_cycle_count.html">load_cycle_count</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/wd.html">wd</a> <a href="/tag/wdidle3.html">wdidle3</a> <a href="/tag/exe.html">exe</a> <a href="/tag/western.html">western</a> <a href="/tag/digital.html">digital</a> </p>
+</footer><!-- /.post-info --><p>You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive.</p>
+<p>Thought I'd check out the SMART value of the disks in my desktop today (while checking if I had notifications from smartd on).</p>
+<p>Low and behold, the Load_Cycle_Count (LLC) was really high, much higher than power_cycle_count on the 3TB WD disk I have. It turns out this is quite an old problem so there are a few posts about this on the Internets. The Interwebs <a href="http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3%20" title="http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3">says</a> max in the specs are 300k load cycles. Smartctl -a says I'm already at 218602 after 9302 power on hours (387 days but I power off the computer at night).</p>
+<p>Disk:</p>
+<p>Model Family:     Western Digital Caviar Green (AF, SATA 6Gb/s)
+Device Model:     WDC WD30EZRX-00DC0B0</p>
+<p>For Windows there's a wdidle3.exe that is a DOS program that one can put on a bootable floppy (...) and boot a computer on to change some stuff on a disk.</p>
+<p>Fortunately I run Linux (Ubuntu 14.10 since yesterday) and there's a tool called <strong>idl3ctl</strong> - one can grab it from here: <a href="http://idle3-tools.sourceforge.net/" title="http://idle3-tools.sourceforge.net/">http://idle3-tools.sourceforge.net/</a></p>
+<p>I got the latest source code and compiled it myself because there had been some updates to it since the last release (2012 vs 2011 ..). "idl3ctl -g" shows that the disk was set to park itself after 8s. I disabled that with idl3ctl and powered off and on the computer and now the tool says it's disabled.</p>
+<p>Hopefully this should increase the lifetime of my disk.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/upgrade-ubuntu-1204-lts-to-1404.html" rel="bookmark"
+                           title="Permalink to "Upgrade Ubuntu 12.04 LTS to 14.04"">"Upgrade Ubuntu 12.04 LTS to 14.04"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-02-03T00:00:00+02:00">
+                Published: "2014-02-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/12.html">12</a> <a href="/tag/04.html">04</a> <a href="/tag/14.html">14</a> <a href="/tag/dist.html">dist</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/lts.html">lts</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->                <p>Yesterday I upgraded Ubuntu 12.04 LTS to 14.04 devel release. This is not recommended :)</p>
+<p>I wonder what will happen when 14.04 real is out.. *update: it is out now, so the "-d" in "update-manager -d" is no longer necessary?</p>
+<p>How to? Just run "update-manager -d" and click …</p>
+                <a class="readmore" href="/upgrade-ubuntu-1204-lts-to-1404.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/running-ubuntu-on-a-desktop.html" rel="bookmark"
+                           title="Permalink to "Running Ubuntu on a Desktop"">"Running Ubuntu on a Desktop"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-12-15T00:00:00+02:00">
+                Published: "2012-12-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/desktop.html">desktop</a> <a href="/tag/install.html">install</a> <a href="/tag/linux.html">linux</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/tips.html">tips</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->                <h1>Introduction</h1>
+<p>Recently I've had the pleasure of installing Ubuntu on my desktop. Here are some thoughts and what I initially do:</p>
+<p>Machine is a:</p>
+<p>Motherboard: Gigayte GA-EX58-UD3R CPU: Intel Core i7 Memory: 8GB Disks: Intel i300 SSD, 2x500GB and 1x3TB Western Digital Drives. Graphics Card: AMD HD6800</p>
+<p>Here are some …</p>
+                <a class="readmore" href="/running-ubuntu-on-a-desktop.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/update-install-spotify-082637-on-rhel6-x64.html" rel="bookmark"
+                           title="Permalink to "Update / Install Spotify 0.8.2.637 on RHEL6 x64"">"Update / Install Spotify 0.8.2.637 on RHEL6 x64"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-03-26T00:00:00+03:00">
+                Published: "2012-03-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/0.html">0</a> <a href="/tag/8.html">8</a> <a href="/tag/2.html">2</a> <a href="/tag/637.html">637</a> <a href="/tag/alien.html">alien</a> <a href="/tag/qt.html">qt</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->                <p>Previous post:</p>
+<p><a href="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/" title="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/">http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/</a></p>
+<p>Installed spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm - this is converted from the .deb package that is downloaded from: <a href="http://repository.spotify.com/pool/non-free/s/spotify/" title="http://repository.spotify.com/pool/non-free/s/spotify/">http://repository.spotify.com/pool/non-free/s/spotify/</a></p>
+<p>you convert with 'alien' and this command:</p>
+<p>alien --to-rpm spotify-client_0.8.2.637.g252b980 …</p>
+                <a class="readmore" href="/update-install-spotify-082637-on-rhel6-x64.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ubuntu-1104-natty.html" rel="bookmark"
+                           title="Permalink to "Ubuntu 11.04 Natty"">"Ubuntu 11.04 Natty"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-10-16T00:00:00+03:00">
+                Published: "2011-10-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/linux.html">linux</a> <a href="/tag/natty.html">natty</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/11.html">11</a> <a href="/tag/04.html">04</a> </p>
+</footer><!-- /.post-info -->                <p>Time for another 'do-release-upgrade'!</p>
+<p>This took away dwm-tools and suckless-tools (amonger other stuff). This means that META+p does not work anymore. So you cannot start any apps. Just install them again with 'sudo apt-get install dwm' and you're good to go. Don't even need to restart anything.</p>
+<p>Found this …</p>
+                <a class="readmore" href="/ubuntu-1104-natty.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/how-to-restrict-access-to-your-phpmyadmin.html" rel="bookmark"
+                           title="Permalink to "How to restrict access to your phpmyadmin"">"How to restrict access to your phpmyadmin"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-27T00:00:00+03:00">
+                Published: "2011-07-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/apache.html">apache</a> <a href="/tag/hardening.html">hardening</a> <a href="/tag/linux.html">linux</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/security.html">security</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/vm.html">vm</a> </p>
+</footer><!-- /.post-info -->                <p>Went through the apache logs on my web-server and saw some access requests to my phpmyadmin page.</p>
+<p>It's probably a good idea to restrict access to this web based sql admin interface (in case there is an exploit I don't want somebody to use it on this).</p>
+<h2>How to make …</h2>
+                <a class="readmore" href="/how-to-restrict-access-to-your-phpmyadmin.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ubuntu-automatic-software-updates.html" rel="bookmark"
+                           title="Permalink to "Ubuntu + Automatic Software Updates"">"Ubuntu + Automatic Software Updates"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-12T00:00:00+03:00">
+                Published: "2011-07-12"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/cronjob.html">cronjob</a> <a href="/tag/crontab.html">crontab</a> <a href="/tag/linux.html">linux</a> <a href="/tag/script.html">script</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->                <p>How often do you actually log on to your machine - hit sudo apt-get update; sudo apt-get upgrade without reading what the changes are? I do it every time, unless it's a dist-upgrade we're talking about.</p>
+<p>So how do we get this going?</p>
+<p>The tool you're looking for is called cron-apt …</p>
+                <a class="readmore" href="/ubuntu-automatic-software-updates.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ubuntu-server-vmware-workstation.html" rel="bookmark"
+                           title="Permalink to "Ubuntu Server + VMWare Workstation"">"Ubuntu Server + VMWare Workstation"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-30T00:00:00+03:00">
+                Published: "2011-05-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/chat.html">chat</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/irssi.html">irssi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/sharepoint.html">sharepoint</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->                <h3><strong>0/ Have your own virtual machine in your desktop is not hard!</strong></h3>
+<h4>0.1/ Some Terminology</h4>
+<ul>
+<li>OS - Operating System</li>
+<li>Host OS - Underlying OS - in this you install <a href="http://www.vmware.com/products/workstation/" title="vmware workstation">VMWare Workstation</a>.</li>
+</ul>
+<blockquote>
+<ul>
+<li>Host needs to be stared for the guest to be able to start.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Guest OS - The extra OS you install inside …</li></ul>
+                <a class="readmore" href="/ubuntu-server-vmware-workstation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/upgrade-ubuntu-1010-to-natty.html" rel="bookmark"
+                           title="Permalink to "Upgrade Ubuntu 10.10 to Natty"">"Upgrade Ubuntu 10.10 to Natty"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-23T00:00:00+03:00">
+                Published: "2011-05-23"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/11.html">11</a> <a href="/tag/04.html">04</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/natty.html">natty</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>Saw this note today in the MOTD - that I can upgrade with <strong>do-release-upgrade.</strong></p>
+<p>Official <a href="http://www.ubuntu.com/download/ubuntu/upgrade" title=".com">instructions/details</a> from Ubuntu and <a href="http://www.unixtutorial.org/2011/03/upgrading-ubuntu-with-do-release-upgrade/" title="unixtutorial">here</a> is another quality post  on unixtutorial.</p>
+<p>My Ubuntu 10.10 is running inside a VMWare Workstation Virtual Machine on my Windows 7 x64.</p>
+<p>I did it over ssh with 'sudo …</p>
+                <a class="readmore" href="/upgrade-ubuntu-1010-to-natty.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hp-virtual-room-installation-on-rhel-6-x64.html" rel="bookmark"
+                           title="Permalink to "HP Virtual Room Installation on RHEL 6 x64"">"HP Virtual Room Installation on RHEL 6 x64"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-14T00:00:00+03:00">
+                Published: "2011-05-14"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/04.html">04</a> <a href="/tag/lts.html">lts</a> <a href="/tag/hp.html">hp</a> <a href="/tag/libs.html">libs</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/remote.html">remote</a> <a href="/tag/support.html">support</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/share.html">share</a> <a href="/tag/desktop.html">desktop</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/room.html">room</a> <a href="/tag/vroom.html">vroom</a> <a href="/tag/x64.html">x64</a> </p>
+</footer><!-- /.post-info -->                <p>http://forums11.itrc.hp.com/service/forums/questionanswer.do?threadId=1478734</p>
+<p>I couldn't get it to work.</p>
+<p>Eventually I installed Ubuntu 10.04 LTS in a VM in Virtualbox and in there it worked.</p>
+<p>However, resolution is only 800x600. So I found this page: </p>
+<p>﻿<a href="http://forums.virtualbox.org/viewtopic.php?t=15679">http://forums.virtualbox.org/viewtopic.php …</a></p>
+                <a class="readmore" href="/hp-virtual-room-installation-on-rhel-6-x64.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 2
+        <a href="/tag/ubuntu2.html">&raquo;</a>
+        <a href="/tag/ubuntu2.html">&#8649;</a>
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

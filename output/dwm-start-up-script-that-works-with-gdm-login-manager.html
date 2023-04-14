@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"DWM - start up script that works with GDM login manager"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "dwm" "gdm" "gnome" "linux" "rhel" "window-manager" *** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz..." />
+        <meta name="description" content="*** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz below. My config: jg_dwm_conf.tar Goal: Be able to exit DWM..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,20 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"dwm"</li>
-<li>"gdm"</li>
-<li>"gnome"</li>
-<li>"linux"</li>
-<li>"rhel"</li>
-<li>"window-manager"</li>
-</ul>
-<hr>
-<p>*** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz below.</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/gdm.html">gdm</a> <a href="/tag/gnome.html">gnome</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/window.html">window</a> <a href="/tag/manager.html">manager</a> </p>
+</footer><!-- /.post-info -->      <p>*** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz below.</p>
 <p>My config: <a href="http://www.guldmyr.com/blog/wp-content/uploads/jg_dwm_conf.tar.gz">jg_dwm_conf.tar</a></p>
 <p><a href="http://www.guldmyr.com/blog/wp-content/uploads/backup.tar.gz"></a>Goal: Be able to exit <a href="http://dwm.suckless.org" title="dwm at suckless.org">DWM and</a> get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)</p>
 <p>Finally got this working like I want it to - with some help from #suckless on irc.oftc.net. This works for me with RHEL6, GDM --version 2.30.4 and DWM 5.8.2. My problem was that before (you can see how that looked in <a href="http://www.guldmyr.com/blog/dwm-editing-the-bar-to-show-time/" title="dwm not so good">this post</a>) I ran the dwm also in a loop. But this is not necessary. If you want to keep the statusbar updated with some goodies by running a while loop, you only need to run the xsetroot in a while loop.</p>

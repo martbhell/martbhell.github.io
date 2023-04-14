@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"DWM editing the bar to show time"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""finland" tags: "dwm" "rhel" "status-bar" "statusbar" xrdb -merge ~/.Xresources while true; do # BAT=$(acpi | awk '{ print $4 }' | sed s/","//g)..." />
+        <meta name="description" content="xrdb -merge ~/.Xresources while true; do # BAT=$(acpi | awk '{ print $4 }' | sed s/","//g) CLK=$( date +'%H:%M') # xsetroot -name "$BAT | $CLK"..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li class="active"><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,18 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"finland"
-tags: </li>
-<li>"dwm"</li>
-<li>"rhel"</li>
-<li>"status-bar"</li>
-<li>"statusbar"</li>
-</ul>
-<hr>
-<p><code>xrdb -merge ~/.Xresources while true; do # BAT=$(acpi | awk '{ print $4 }' | sed s/","//g) CLK=$( date +'%H:%M') # xsetroot -name "$BAT | $CLK" xsetroot -name "$CLK" sleep 1 done | while true; do ~/bin/dwm; done</code></p>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/status.html">status</a> <a href="/tag/bar.html">bar</a> <a href="/tag/statusbar.html">statusbar</a> </p>
+</footer><!-- /.post-info -->      <p><code>xrdb -merge ~/.Xresources while true; do # BAT=$(acpi | awk '{ print $4 }' | sed s/","//g) CLK=$( date +'%H:%M') # xsetroot -name "$BAT | $CLK" xsetroot -name "$CLK" sleep 1 done | while true; do ~/bin/dwm; done</code></p>
 <p>Will this work to on RHEL6 x64 on a T400 Lenovo/IBM? Let's see tomorrow :)</p>
 <p>*** 14/3 0900- after a little modification the startup script now looks like this (just pointed to it in /usr/share/xsession/dwm.start) - script is also chmod a+x:</p>
 <p>`# commands here and before the "while true; do" are run once #not applicable? I do not have this directory in my home dir. #xrdb -merge ~/.Xresources #open screensaver /usr/bin/gnome-screensaver #open power manager #gnome-power-manager</p>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - fedora</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/openstack-testing-day.html">"openstack testing day"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-03-10T00:00:00+02:00">
+                Published: "2012-03-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/fedora.html">fedora</a> <a href="/tag/linux.html">linux</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/os.html">os</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/testing.html">testing</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info --><p>Only one day late!</p>
+<p>I actually started installing this on the 8th but I forgot to install it to hdd so the 'yum update' failed and broke the machine with I/O errors :)</p>
+<p>Installing it in a VMWare Workstation (fedora 64-bit type, 2, cores, 4G RAM, 20G disk).</p>
+<p><a href="http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day">http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day</a></p>
+<h1>Basic Setup</h1>
+<h2>1</h2>
+<p><a href="http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages">http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages</a> - No problem.</p>
+<h2>2</h2>
+<p><a href="http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova">http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova</a> -</p>
+<p>Says that if you are doing this in a VM you need to "configure nova to use qemu without KVM and hardware virtualization:". This is not true, as VMWare Workstation 8 has virtualization pass-through.</p>
+<p>[root@localhost mart]# vgcreate nova-volumes $(sudo losetup --show -f /var/lib/nova/nova-volumes.img)
+  No physical volume label read from /dev/loop0
+  Writing physical volume data to disk "/dev/loop0"
+  Physical volume "/dev/loop0" successfully created
+  Volume group "nova-volumes" successfully created</p>
+<p>openstack-nova-db-setup</p>
+<p>Gives this error, which already is reported:</p>
+<p>Verified connectivity to MySQL.
+Creating 'nova' database.
+Asking openstack-nova to sync the databse.
+2012-03-09 07:28:26 WARNING nova.utils [-] /usr/lib/python2.7/site-packages/nova/db/sqlalchemy/migrate_repo/versions/075_convert_bw_usage_to_store_network_id.py:49: SADeprecationWarning: useexisting is deprecated.  Use extend_existing.
+  useexisting=True)</p>
+<p>2012-03-09 07:28:28 WARNING nova.utils [-] /usr/lib/python2.7/site-packages/nova/db/sqlalchemy/migrate_repo/versions/081_drop_instance_id_bw_cache.py:40: SADeprecationWarning: useexisting is deprecated.  Use extend_existing.
+  useexisting=True)</p>
+<p>Complete!</p>
+<h2>3</h2>
+<p>[root@localhost nova]# ADMIN_PASSWORD=$OS_PASSWORD openstack-keystone-sample-data
+The default service password has been detected.  Please consider
+setting an actual password in environment variable SERVICE_PASSWORD</p>
+<p>But after that it generates users.</p>
+<h2>4</h2>
+<p>No problems, should 'glance index' return anything at this stage?</p>
+<h2>5</h2>
+<p>No problems.</p>
+<h2>6 Add SSH keypair</h2>
+<p>No problems, just do exactly what the instructions say (don't try to be smart and put them in .sh files for example :P).</p>
+<h2>7 Register Guest Images</h2>
+<p>At this point the wiki went down :/</p>
+<p>[root@localhost ~]# glance add name=f16 is_public=true disk_format=qcow2 container_format=ovf copy_from=http://berrange.fedorapeople.org/images/2012-02-29/f16-x86_64-openstack-sda.qcow2
+Failed to add image. Got error:
+Unexpected response: 500
+Note: Your image metadata may still be in the registry, but the image's status will likely be 'killed'.</p>
+<p>Yes, this is where it fall short. Manpage for clance doesn't even have the 'copy_from'. Maybe it could be downloaded? 'glance index' doesn't work either.</p>
+<p>[root@localhost ~]# glance index
+Failed to show index. Got error:
+Internal Server error: Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/eventlet/wsgi.py", line 336, in handle_one_response
+    result = self.application(self.environ, start_response)
+  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 147, in __call__
+    resp = self.call_func(req, *args, **self.kwargs)
+  File "/usr/lib/python2.7/site-packages/webob/dec.py", line 210, in call_func
+    return self.func(req, *args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/glance/common/wsgi.py", line 279, in __
+    response = req.get_response(self.application)
+  File "/usr/lib/python2.7/site-packages/webob/request.py", line 1086, in get_re
+    application, catch_exc_info=False)
+  File "/usr/lib/python2.7/site-packages/webob/request.py", line 1055, in call_a
+    app_iter = application(self.environ, start_response)
+  File "/usr/lib/python2.7/site-packages/keystone/middleware/auth_token.py", lin
+    valid = self._validate_claims(claims)
+  File "/usr/lib/python2.7/site-packages/keystone/middleware/auth_token.py", lin
+    return self._validate_claims(claims, False)
+  File "/usr/lib/python2.7/site-packages/keystone/middleware/auth_token.py", lin
+    self.admin_password)
+  File "/usr/lib/python2.7/site-packages/keystone/middleware/auth_token.py", lin
+    return json.loads(data)["access"]["token"]["id"]
+  File "/usr/lib64/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib64/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib64/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded</p>
+<p>[root@localhost ~]# cd images/
+[root@localhost images]# ls
+aki-tty  ami-tty  ari-tty
+[root@localhost images]# http://berrange.fedorapeople.org/images/2012-02-29/f16- x86_64-openstack-sda.qcow2^C
+[root@localhost images]# glance add name=aki-tty is_public=true container_format                                                                                        =aki disk_format=aki &lt; aki-tty/image
+=================================================[100%] 7.79M/s, ETA  0h  0m  0s
+=[  2%]                                                 1.25M/s, ETA  0h  0m  3s                                                                                        Failed to add image. Got error:
+You are not authorized to complete this action.
+Details: 401 Unauthorized</p>
+<p>This server could not verify that you are authorized to access the document you                                                                                         requested. Either you supplied the wrong credentials (e.g., bad password), or yo                                                                                        ur browser does not understand how to supply the credentials required.</p>
+<p>Note: Your image metadata may still be in the registry, but the image's status w                                                                                        =================================================[100%] 20.9M/s, ETA  0h  0m  0s
+[root@localhost images]#</p>
+<p>Stuck!</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/rhel-5-unity.html" rel="bookmark"
+                           title="Permalink to "RHEL 5 + Unity"">"RHEL 5 + Unity"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-22T00:00:00+02:00">
+                Published: "2011-02-22"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/depositories.html">depositories</a> <a href="/tag/fedora.html">fedora</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/unity.html">unity</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>See my <a href="http://www.guldmyr.com/blog/red-hat-enterprise-linuxrhel-in-vmware-workstation/">previous post</a> for how to install it.</p>
+<p>A couple of days later and the <a href="http://www.guldmyr.com/blog/time-sync-for-linux-vms-in-vmware-workstation/" title="rhel synch vmware workstation">time is still in synch</a>. When I logged on there was a pop-up saying there were some updates. Put in root password and you get to see which are updates, the ones with a …</p>
+                <a class="readmore" href="/rhel-5-unity.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

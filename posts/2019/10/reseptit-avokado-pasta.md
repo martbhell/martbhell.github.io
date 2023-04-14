@@ -1,9 +1,7 @@
 ---
 title: "Reseptit: Avokado pasta"
 date: 2019-10-29
-categories: 
-  - "finland"
----
+category: finland
 
 Kahdelle
 

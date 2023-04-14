@@ -1,15 +1,8 @@
 ---
 title: "Red Hat Certification - RHCE - Preparation"
 date: 2011-12-18
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "linux"
-  - "red-hat"
-  - "rhcsa"
-  - "studying"
----
+category: it
+tags: certification, linux, red, hat, rhcsa, studying
 
 Wow, there's lots of it in there. Some of it is about networking and a lot about individual services. I haven't actually planned to go get the exam soon, but I think just going through these objectives will make me better at Linux. Anyway, if I pass the RHCE, that extends the RHCSA expiration automagically.
 

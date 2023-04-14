@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"Vyatta: a router/vpn/firewall in a VM"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" "storage" tags: "bcvre" "brocade" "certified" "exam" "open-source" "virtualization" Brocade has a beta exam up for BCVRE - Certified vRouter..." />
+        <meta name="description" content="Brocade has a beta exam up for BCVRE - Certified vRouter Engineer - which is on the Vyatta software from the company with the same name that..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li class="active"><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,21 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"</li>
-<li>"storage"
-tags: </li>
-<li>"bcvre"</li>
-<li>"brocade"</li>
-<li>"certified"</li>
-<li>"exam"</li>
-<li>"open-source"</li>
-<li>"virtualization"</li>
-</ul>
-<hr>
-<p>Brocade has a beta exam up for <a href="http://community.brocade.com/docs/DOC-3336">BCVRE</a> - Certified vRouter Engineer - which is on the Vyatta software from the company with the same name that Brocade bought last year.</p>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/bcvre.html">bcvre</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info -->      <p>Brocade has a beta exam up for <a href="http://community.brocade.com/docs/DOC-3336">BCVRE</a> - Certified vRouter Engineer - which is on the Vyatta software from the company with the same name that Brocade bought last year.</p>
 <p>There is the free open source core. Download from here: <a href="http://vyatta.org/downloads?whence=">http://vyatta.org/downloads</a> (no you don't have to register).  The evaluation/<a href="http://www.vyatta.com/product/vyatta-network-os/get-started">subscriber</a> version has the API and web gui available, I'll probably check those out closer to the exam date.</p>
 <p>I grabbed VC6.6 - Virtualization ISO. Use it in a VM and assign 5GB disk (install only requires 1G, or you could just run it on the iso, but then it doesn't keep state between reboots) and 1GB RAM. Two NICs: One NAT and one private. But to get more acquainted with it you'll likely have to do a bit more configuration on the hypervisor side. Such as turn off dhcpd in your virtual networks.</p>
 <p>To install it to disk: hit "install system" at the CLI after it's booted.</p>

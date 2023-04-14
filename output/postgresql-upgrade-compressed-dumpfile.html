@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"PostgreSQL upgrade - compressed dumpfile"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "compression" "database" "linux" "pgsql" "postgres" "postgresql" "sql" "upgrade" Why does a PostgreSQL upgrade require an export,..." />
+        <meta name="description" content="Why does a PostgreSQL upgrade require an export, uninstall, install and then import of the database? That big changes in the database? It would be..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,22 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"compression"</li>
-<li>"database"</li>
-<li>"linux"</li>
-<li>"pgsql"</li>
-<li>"postgres"</li>
-<li>"postgresql"</li>
-<li>"sql"</li>
-<li>"upgrade"</li>
-</ul>
-<hr>
-<p>Why does a PostgreSQL upgrade require an export, uninstall, install and then import of the database? That big changes in the database?</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/compression.html">compression</a> <a href="/tag/database.html">database</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pgsql.html">pgsql</a> <a href="/tag/postgres.html">postgres</a> <a href="/tag/postgresql.html">postgresql</a> <a href="/tag/sql.html">sql</a> <a href="/tag/upgrade.html">upgrade</a> </p>
+</footer><!-- /.post-info -->      <p>Why does a PostgreSQL upgrade require an export, uninstall, install and then import of the database? That big changes in the database?</p>
 <p>It would be nice to know how to import from a compressed archive, <strong>anybody ever got this working?</strong> If so, please leave a comment! I've been googling my behind off but hasn't located one yet. And the <a href="http://www.postgresql.org/docs/8.4/static/app-pgrestore.html" title="on postgresql.org">pg_restore manual</a> says it should be able to handle archives in the non-plain text format.</p>
 <p>pg_dumpall |gzip &gt; dumpall.gz</p>
 <p>neither of these worked afterward the remove, install and initdb: pg_restore -Fc dumpall.gz pg_restore dumpall.gz</p>

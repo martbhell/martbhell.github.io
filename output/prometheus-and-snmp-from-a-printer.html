@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"Prometheus and SNMP from a printer"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "monitoring" "printer" "prometheus" "snmp" The other week I finally for this thing working I've been trying weakly to do every now and..." />
+        <meta name="description" content="The other week I finally for this thing working I've been trying weakly to do every now and then when I had a few minutes free: send an alert..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,18 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"monitoring"</li>
-<li>"printer"</li>
-<li>"prometheus"</li>
-<li>"snmp"</li>
-</ul>
-<hr>
-<p>The other week I finally for this thing working I've been trying weakly to do every now and then when I had a few minutes free: send an alert before a toner runs out in a printer!</p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/monitoring.html">monitoring</a> <a href="/tag/printer.html">printer</a> <a href="/tag/prometheus.html">prometheus</a> <a href="/tag/snmp.html">snmp</a> </p>
+</footer><!-- /.post-info -->      <p>The other week I finally for this thing working I've been trying weakly to do every now and then when I had a few minutes free: send an alert before a toner runs out in a printer!</p>
 <p>Way back I set up <a href="https://github.com/prometheus/snmp_exporter">SNMP_exporter</a> to fetch metrics from switches. This worked very nicely. ( In retrospect this works nicely because it's the default type of device )</p>
 <p>But for printers we didn't get much useful data out. Even though we use the vanilla upstream <a href="https://github.com/prometheus/snmp_exporter/blob/main/snmp.yml">snmp.yml</a> which has printer stuff in it. And when I did an snmpwalk I did manage with some research to find the correct OIDs to query to get the level of ink in the toners. So I knew the printer did publish the information I was looking for.</p>
 <p>The answer? Select a <strong>module</strong> when sending the request to the exporter! I didn't select <strong>printer_mib</strong> so it used if_mib that only has interface statistics.</p>

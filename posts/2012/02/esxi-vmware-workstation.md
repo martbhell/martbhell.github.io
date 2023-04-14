@@ -1,15 +1,8 @@
 ---
 title: "ESXi + VMWare Workstation + OpenIndiana"
 date: 2012-02-18
-categories: 
-  - "it"
-tags: 
-  - "esx"
-  - "esxi"
-  - "openindiana"
-  - "vmware"
-  - "vmware-workstation"
----
+category: it
+tags: esx, esxi, openindiana, vmware, vmware, workstation
 
 ### Before
 

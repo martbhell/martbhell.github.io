@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"Studying for Openstack Certified Administrator"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""it" tags: "certification" "cloud" "openstack" The plan : study a bit and then attempt the coa exam. If I don't pass then attend the course during..." />
+        <meta name="description" content="The plan : study a bit and then attempt the coa exam. If I don't pass then attend the course during openstack summit: SUSE And what to study? I've..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,17 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"it"
-tags: </li>
-<li>"certification"</li>
-<li>"cloud"</li>
-<li>"openstack"</li>
-</ul>
-<hr>
-<p>The plan : study a bit and then attempt the <a href="https://www.openstack.org/coa#coa-details">coa</a> exam. If I don't pass then attend the course during openstack summit: <a href="https://www.openstack.org/summit/berlin-2018/summit-schedule/events/22735/rsvp-required-suse-two-day-training-openstack-administration-prepare-for-the-certified-exams-day-2﻿">SUSE</a></p>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info -->      <p>The plan : study a bit and then attempt the <a href="https://www.openstack.org/coa#coa-details">coa</a> exam. If I don't pass then attend the course during openstack summit: <a href="https://www.openstack.org/summit/berlin-2018/summit-schedule/events/22735/rsvp-required-suse-two-day-training-openstack-administration-prepare-for-the-certified-exams-day-2﻿">SUSE</a></p>
 <p>And what to study? I've been doing openstack admin work for the last year or two. So I have already done and used most services, except <strong>Swift</strong>. But there are some things that were only done once when each environment was setup. Also at $dayjob our code does a lot for us.</p>
 <p>One such thing I noticed while looking through <a href="https://github.com/AJNOURI/COA/wiki/02.-Compute:-Nova">https://github.com/AJNOURI/COA/wiki/02.-Compute:-Nova</a></p>
 <p>Was setting the default project quota. I wonder if that's a cli/webui/API call or service config. But a config file would be weird, unless it's in Keystone. <em>Turns out default quotas are in each of the services' config files. It's also possible to set a default quota with for example the nova command.</em></p>

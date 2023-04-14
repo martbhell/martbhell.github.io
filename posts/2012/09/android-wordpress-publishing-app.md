@@ -1,13 +1,8 @@
 ---
 title: "Android wordpress publishing app"
 date: 2012-09-17
-categories: 
-  - "it"
-tags: 
-  - "android"
-  - "blogging"
-  - "wordpress"
----
+category: it
+tags: android, blogging, wordpress
 
 Enabled! Wonder if there's been lots of exploits for this method of writing posts?
 

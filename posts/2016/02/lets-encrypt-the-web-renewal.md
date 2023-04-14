@@ -1,12 +1,8 @@
 ---
 title: "Let's encrypt the web - renewal"
 date: 2016-02-15
-categories: 
-  - "it"
-tags: 
-  - "encryption"
-  - "letsencrypt"
----
+category: it
+tags: encryption, letsencrypt
 
 So easy!
 

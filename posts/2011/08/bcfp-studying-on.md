@@ -1,15 +1,8 @@
 ---
 title: "BCFP Studying on"
 date: 2011-08-16
-categories: 
-  - "storage"
-tags: 
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-professional"
-  - "fcip"
-  - "top-talkers"
----
+category: storage
+tags: bcfp, brocade, brocade, certified, fabric, professional, fcip, top, talkers
 
 A bit quiet here. I'm quite busy at work and also studying for the BCFP. Currently wrapping up the end of 'going through the material and putting what I find interesting in a document so that I can print it and re-read it and make notes etc'.
 

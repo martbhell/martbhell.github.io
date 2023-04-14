@@ -1,12 +1,8 @@
 ---
 title: "android"
 date: 2011-01-14
-categories: 
-  - "it"
-tags: 
-  - "embassy"
-  - "finland"
----
+category: it
+tags: embassy, finland
 
 Testing the posting via android native browser.
 

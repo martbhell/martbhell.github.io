@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - dell</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/hepix-spring-2011-day-2.html">"HEPIX Spring 2011 – Day 2"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-05-04T00:00:00+03:00">
+                Published: "2011-05-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it-storage.html">it, storage</a>.</p>
+<p>tags: <a href="/tag/cooling.html">cooling</a> <a href="/tag/cpu.html">cpu</a> <a href="/tag/naming.html">naming</a> <a href="/tag/dell.html">dell</a> <a href="/tag/disk.html">disk</a> <a href="/tag/failures.html">failures</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/green.html">green</a> <a href="/tag/it.html">it</a> <a href="/tag/cube.html">cube</a> <a href="/tag/heat.html">heat</a> <a href="/tag/exchanger.html">exchanger</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hs06.html">hs06</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/synchrotron.html">synchrotron</a> </p>
+</footer><!-- /.post-info --><p>Guten aben!</p>
+<p>Darmstadt is a very beautiful city. It's quite old and there are lots of parks and eh, cool, houses.</p>
+<p>A person from the UK said yesterday (in the pub Ratkeller) something like this: <em>"A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one if their life depended on it. These are the people we provide IT for."</em></p>
+<p>So no wonder that their IT systems/infrastructure is a little bit complex too!</p>
+<p>Today's topics are: Site Reports, IT Infrastructure (Drupal, Indico, Invenio, Fair 3D cube) and Computing(OpenMP, CMS and Batch nodes).</p>
+<h3>Site reports</h3>
+<p>Some of these institutions have a <a href="http://en.wikipedia.org/wiki/Synchrotron" title="on wikipedia">synchrotron</a> which is a cyclic particle accelerator - looks quite cool on the pictures. Some use <a href="http://en.wikipedia.org/wiki/Cfengine" title="on wikipedia">cfengine</a> for managing the clusters - as in they want to avoid logging on to each node and doing configuration but instead do it from a tool. One such tool that is quite common (<a href="http://en.wikipedia.org/wiki/Puppet_(software)" title="on wikipedia">Puppet</a>) can also be used for Desktops.</p>
+<p>Not many use HP storage stuff, <a href="http://www.datadirectnet.com/" title="datadirect.com">DDN</a> is quite common. <a href="http://www.nexsan.com/" title="nexsan.com">Nexsan</a>, <a href="http://bluearc.com/" title=".com">bluearc</a></p>
+<p>One site had big problems with their Dell servers - caused by misapplied cooling paste on the CPUs - Dell replaced 90% of the heatsinks and fixed this.</p>
+<p>One also had disk failures during high load.They ran the <a href="https://twiki.cern.ch/twiki/bin/view/FIOgroup/TsiBenchHEPSPECWlcg" title="on cern wiki">HS06</a> – Hep Spec 06 – test and while running that disks dropped off.Disk failures traced to anomalously high cooling fan vibration. After replacing all components, and then moving fans to another machine, they saw the error.</p>
+<h3>IT Infrastructure</h3>
+<p>CERN is working on moving to Drupal for their web sites. Investigating Varnish (good for ddos, caching and load balancing). Drupal is hard to learn.</p>
+<p>Then there were some sessions about programming - CMS 64-bit and OpenMP. One thought here: is it possible to discern the properties of an Intel/AMD CPU based on the name? Like E5530? Maybe <a href="http://www.intel.com/products/processor_number/" title="on intel.com">this link</a> on intel.com can be of some assistance.</p>
+<h4>Fair 3D Tier-0 Green-IT Cube</h4>
+<p>Quite cool concept(patented) that they are very soon starting to build here in Germany. Using water vaporization with outside air (and fans in summer) to cool the air, and also water based heat exchangers in each rack to push warm air (by pressure built up by fans, so the racks needs to be quite air tight) from the back of the servers through the heat exchanger that cools the air, and then pushes it over the aisle to the next row of racks. They managed to get down to a PUE of 1.062 at best.</p>
+<p>Next Days: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-5/" title="day5">Day 5</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-4/" title="day4">Day 4</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-3/" title="day3">Day 3</a></p>
+<p><a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/" title="day2"></a></p>
+<p>Previous Day: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/" title="day2"></a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-1/" title="day1">Day 1</a></p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

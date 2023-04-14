@@ -1,11 +1,8 @@
 ---
 title: "Resepti: Risotto"
 date: 2020-03-15
-categories: 
-  - "finland"
-tags: 
-  - "resepti"
----
+category: finland
+tags: resepti
 
 Ainesosat:
 

@@ -1,9 +1,7 @@
 ---
 title: "Quadra - Did You Play It?"
 date: 2020-02-06
-categories: 
-  - "it"
----
+category: it
 
 In my youth I enjoyed the LANs. One fun game we played was Quadra - which is a multiplayer tetris where by playing the game you send more blocks to your opponents making it very stressful :D
 

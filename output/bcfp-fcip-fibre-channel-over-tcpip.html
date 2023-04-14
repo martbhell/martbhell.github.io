@@ -6,14 +6,19 @@
         <meta name="generator" content="Pelican" />
         <title>"BCFP - FCIP - Fibre Channel over TCP/IP"</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
-        <meta name="description" content=""storage" tags: "bcfp" "brocade" "brocade-certified-professional" "certification" "circuits" "extension" "fcip" "fibre-channel" "fibre-channel-ip"..." />
+        <meta name="description" content="Still studying for Brocade's BCFP Exam. This post is to try to put light on some of the terms/technologies you'll be surrounded by when learning..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li class="active"><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -33,32 +38,9 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
-<p>In <a href="/category/misc.html">misc</a>.</p>
-
-</footer><!-- /.post-info -->      <ul>
-<li>"storage"
-tags: </li>
-<li>"bcfp"</li>
-<li>"brocade"</li>
-<li>"brocade-certified-professional"</li>
-<li>"certification"</li>
-<li>"circuits"</li>
-<li>"extension"</li>
-<li>"fcip"</li>
-<li>"fibre-channel"</li>
-<li>"fibre-channel-ip"</li>
-<li>"gbe"</li>
-<li>"ip"</li>
-<li>"qos"</li>
-<li>"routing"</li>
-<li>"trunking"</li>
-<li>"tunnels"</li>
-<li>"ve_port"</li>
-<li>"vex_port"</li>
-<li>"virtual-fabric"</li>
-</ul>
-<hr>
-<p>Still studying for Brocade's BCFP Exam. This post is to try to put light on some of the terms/technologies you'll be surrounded by when learning about FCIP.</p>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/circuits.html">circuits</a> <a href="/tag/extension.html">extension</a> <a href="/tag/fcip.html">fcip</a> <a href="/tag/fibre.html">fibre</a> <a href="/tag/channel.html">channel</a> <a href="/tag/ip.html">ip</a> <a href="/tag/gbe.html">gbe</a> <a href="/tag/qos.html">qos</a> <a href="/tag/routing.html">routing</a> <a href="/tag/trunking.html">trunking</a> <a href="/tag/tunnels.html">tunnels</a> <a href="/tag/ve_port.html">ve_port</a> <a href="/tag/vex_port.html">vex_port</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/fabric.html">fabric</a> </p>
+</footer><!-- /.post-info -->      <p>Still studying for Brocade's BCFP Exam. This post is to try to put light on some of the terms/technologies you'll be surrounded by when learning about FCIP.</p>
 <p>Guides you should see are the "Fabric OS FCIP Administrator's Guide" and you should probably start with the material for BCFP - part 4 (theory) and 5 (administration).</p>
 <p>Basically the FC frames will be encapsulated in packets over TCP/IP, making the TCP/IP part  invisible/irrelevant to the SAN fabric and the FC frames invisible/irrelevant to the TCP/IP. Except of course for the FC routers that bridge the networks. It is possible to run FCR over FCIP as well via the VEX ports (virtual EX_port). Extension. This means that it's using TCP flow control, no BB credits.</p>
 <h2>Terminology</h2>

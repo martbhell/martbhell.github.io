@@ -1,18 +1,8 @@
 ---
 title: "Fantasy Book Review – Steven Erikson – The Crippled God – Part 2"
 date: 2011-07-11
-categories: 
-  - "finland"
-tags: 
-  - "book"
-  - "crippled-god"
-  - "fantasy"
-  - "malaz"
-  - "malazan"
-  - "reading"
-  - "review"
-  - "steven-eriksson"
----
+category: finland
+tags: book, crippled, god, fantasy, malaz, malazan, reading, review, steven, eriksson
 
 Read about 1/3 of the book now. [Here is part 1.](http://www.guldmyr.com/blog/fantasy-book-review-steven-erikson-the-crippled-god-part-1/ "post 1 of the review")
 

@@ -1,22 +1,8 @@
 ---
 title: "Simple RRD graphs"
 date: 2011-11-18
-categories: 
-  - "it"
-tags: 
-  - "bash"
-  - "dcache"
-  - "graph"
-  - "graphs"
-  - "linux"
-  - "monitoring"
-  - "movers"
-  - "plotting"
-  - "rrd"
-  - "rrdtool"
-  - "script"
-  - "statistics"
----
+category: it
+tags: bash, dcache, graph, graphs, linux, monitoring, movers, plotting, rrd, rrdtool, script, statistics
 
 This is how to create simple RRD graphs using one data source that can be 0 and above. It is not an "ever increasing" counter.
 

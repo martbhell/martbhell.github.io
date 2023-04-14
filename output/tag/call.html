@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - call</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/spinning-camera-in-fps-games.html">"Spinning Camera in FPS games"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-04-21T00:00:00+03:00">
+                Published: "2011-04-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/ati.html">ati</a> <a href="/tag/call.html">call</a> <a href="/tag/of.html">of</a> <a href="/tag/duty.html">duty</a> <a href="/tag/camera.html">camera</a> <a href="/tag/spin.html">spin</a> <a href="/tag/cod.html">cod</a> <a href="/tag/fps.html">fps</a> <a href="/tag/games.html">games</a> <a href="/tag/logitech.html">logitech</a> <a href="/tag/mouse.html">mouse</a> <a href="/tag/pc.html">pc</a> <a href="/tag/portal.html">portal</a> <a href="/tag/2.html">2</a> <a href="/tag/spinning.html">spinning</a> <a href="/tag/steam.html">steam</a> <a href="/tag/windows.html">windows</a> <a href="/tag/7.html">7</a> </p>
+</footer><!-- /.post-info --><p>Ever experienced this relatively frustrating phenomena?</p>
+<p>My setup:</p>
+<p>Windows 7 x64 with an ATI Card HD5700 series. A logitech wireless keyboard+mouse.</p>
+<p>Camera just keeps on spinning and if you move the mouse it changes pitch, speed or whatever.</p>
+<p>Things to try:</p>
+<ul>
+<li>Got a joypad/joystick in the vicinity? Plug it out.</li>
+<li>Got a bluetooth thing and a controller nearby? Disable bluetooth.</li>
+<li>When it's spinning you can try plugging out your mouse/kebyoard/joypad to see if it stops then.</li>
+<li>Update graphics drivers</li>
+<li>Try with a wire (cheap as you can find) keyboard and mouse.</li>
+</ul>
+<p>I had been runnnig synergy for a week or so, this is an application for controlling the mouse on another computer - over your network - by just dragging the cursor to the edge of your screen. Was working fine, I had it running while playing Portal 2, Call of Duty, Crysis. Working fine except that it minimized the game when I was at the edge..</p>
+<p>Then I decided to update Windows with Windows Update (bunch of security fixes only..) and new AMD/ATI Drivers for my HD5770 card.</p>
+<p>Then suddenly it started (the updates required reboots).</p>
+<p>I rolled back driver, unplugged mouse/keyboard, rebooted a couple of times. Went through the windows update. Killed synergy - by default even if you run a program in full screen it will switch over to the other monitor, which is not so awesome because it minimizes games like Portal 2. I scoured the <a href="http://forums.steampowered.com/" title="steam forums">Steam Forums</a> but nothing that helped.</p>
+<p>In the end I found a 'synergys' process running even though the service was disabled and stopped. To stop it I had to select the "view processes for all users" and then end it.</p>
+<p>Then whoop! No more spinning! I suspect it may have been the same even with the updates if I had just done a reboot.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

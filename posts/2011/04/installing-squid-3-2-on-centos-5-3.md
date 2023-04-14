@@ -1,15 +1,8 @@
 ---
 title: "Installing Squid 3.2 on CentOS 5.3"
 date: 2011-04-20
-categories: 
-  - "it"
-tags: 
-  - "linux"
-  - "proxy"
-  - "shell"
-  - "squid"
-  - "squid-cache"
----
+category: it
+tags: linux, proxy, shell, squid, squid, cache
 
 Giving this one a shot :) I will be compiling it myself as well.
 

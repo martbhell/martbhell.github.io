@@ -1,13 +1,8 @@
 ---
 title: "FreeNAS 8.0.3 Released"
 date: 2011-12-10
-categories: 
-  - "storage"
-tags: 
-  - "deduplication"
-  - "freenas"
-  - "zfs"
----
+category: storage
+tags: deduplication, freenas, zfs
 
 http://sourceforge.net/projects/freenas/files/FreeNAS-8.0.3/README/download
 

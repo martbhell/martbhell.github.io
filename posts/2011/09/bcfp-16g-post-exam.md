@@ -1,17 +1,8 @@
 ---
 title: "BCFP 16G : Post-Exam"
 date: 2011-09-07
-categories: 
-  - "storage"
-tags: 
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-professional"
-  - "certification"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+category: storage
+tags: bcfp, brocade, brocade, certified, fabric, professional, certification, storage, storage, area, network, storage, network
 
 OK, did the exam. Took 2.5 hours.
 

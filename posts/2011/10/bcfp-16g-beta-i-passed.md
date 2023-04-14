@@ -1,17 +1,8 @@
 ---
 title: "BCFP 16G Beta - I passed!"
 date: 2011-10-15
-categories: 
-  - "storage"
-tags: 
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-professional"
-  - "certification"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+category: storage
+tags: bcfp, brocade, brocade, certified, fabric, professional, certification, storage, storage, area, network, storage, network
 
 In a moment of frustration/impatience I posted on 'Brocade Certified' that it was still 3 weeks until the results are posted. Good boss of training Joe Cannata replied that I could e-mail him and get the results before. I did, and I passed! Most excellent and kind of them to do that! So nice to not have to wait the extra three weeks until it's entered/updated in the Pearson Vue system. What kind of name is that anyway? Pearson Vue? Latin? Turns out no.
 

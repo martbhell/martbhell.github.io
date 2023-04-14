@@ -1,9 +1,7 @@
 ---
 title: "Resepti: Kana Caesar"
 date: 2019-11-12
-categories: 
-  - "finland"
----
+category: finland
 
 Croutons : Uniin päällä. Laitta pakastettuna leipä mikroaaltouuniin ja lämmitävät. Leikkaa ja laitaa uunilevylle. Miksata öljyllä ja valkosipulilla. Odottaa.
 

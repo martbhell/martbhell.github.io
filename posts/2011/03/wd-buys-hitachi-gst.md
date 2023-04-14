@@ -1,16 +1,8 @@
 ---
 title: "WD buys Hitachi GST"
 date: 2011-03-10
-categories: 
-  - "storage"
-tags: 
-  - "hitachi"
-  - "home-storage"
-  - "slashdotted"
-  - "storage"
-  - "wd"
-  - "western-digital"
----
+category: storage
+tags: hitachi, home, storage, slashdotted, storage, wd, western, digital
 
 Linky to [the register](http://www.theregister.co.uk/2011/03/07/wd_buys_hitsachi_gst/ "wd buys hitsachi gst on theregister")
 
