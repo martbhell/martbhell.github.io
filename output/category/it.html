@@ -12,29 +12,271 @@
         <header id="banner" class="body">
                 <h1><a href="/">There is IT in Helsinki</a></h1>
                 <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/finland-it.html">finland, it</a></li>
+                    <li><a href="/category/finland-it-storage.html">finland, it, storage</a></li>
                     <li class="active"><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/it-storage.html">it, storage</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/android.html">"android"</a></h1>
+                    <h1 class="entry-title"><a href="/lsc-ldap-synchronization-connector.html">"LSC  - LDAP Synchronization Connector"</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2011-01-14T00:00:00+02:00">
-                Published: "2011-01-14"
+        <abbr class="published" title="2021-09-28T00:00:00+03:00">
+                Published: "2021-09-28"
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/embassy.html">embassy</a> <a href="/tag/finland.html">finland</a> </p>
-</footer><!-- /.post-info --><p>Testing the posting via android native browser.</p>
-<p>Line break.</p>
-<p>Going to swedish embassy now. When renewing passports the police can send them there. About 1/3 of the price if you get picture etc in the embassy :-)</p>
-<p>Hope I make it.</p>                </article>
+<p>tags: <a href="/tag/java.html">java</a> <a href="/tag/ldap.html">ldap</a> <a href="/tag/sync.html">sync</a> <a href="/tag/synchronization.html">synchronization</a> </p>
+</footer><!-- /.post-info --><p>At $dayjob I recently found this tool.</p>
+<p><a href="https://lsc-project.org/doku.php">https://lsc-project.org/doku.php</a></p>
+<p>Use case was a workaround to get our good old posixGroups into groupOfNames; because some tools like bitwarden on premise requires that members of the groups are DNs for them to be able to figure out who's member of what group.</p>
+<p>Got it working pretty nicely after <a href="https://lsc-project.org/documentation/tutorial/synchronizeposixgroupstogroupofnames">learning</a> some fun things like:</p>
+<ul>
+<li>settings in the lsc.xml have to be in the correct order</li>
+<li>Connection settings in <a href="https://lsc-project.org/documentation/2.0/configuration/connections/ldap">documentation</a> listed as mandatory, are not mandatory (as in don't have to be explicitly defined in the lsc.xml).</li>
+<li>LSC 2.1 requires java8 :(</li>
+</ul>
+<p>För monitoring it, I opted to parse the output of the tool rather than reading the log file. There's a nice logback.xml one probably could use to improve this bit. Maybe somehow log to JSON or some such to get machine readable output?</p>                </article>
             </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/prometheus-and-snmp-from-a-printer.html" rel="bookmark"
+                           title="Permalink to "Prometheus and SNMP from a printer"">"Prometheus and SNMP from a printer"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2021-04-07T00:00:00+03:00">
+                Published: "2021-04-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/monitoring.html">monitoring</a> <a href="/tag/printer.html">printer</a> <a href="/tag/prometheus.html">prometheus</a> <a href="/tag/snmp.html">snmp</a> </p>
+</footer><!-- /.post-info -->                <p>The other week I finally for this thing working I've been trying weakly to do every now and then when I had a few minutes free: send an alert before a toner runs out in a printer!</p>
+<p>Way back I set up <a href="https://github.com/prometheus/snmp_exporter">SNMP_exporter</a> to fetch metrics from switches. This worked …</p>
+                <a class="readmore" href="/prometheus-and-snmp-from-a-printer.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/convert-a-string-to-integer-in-kibana-with-painless.html" rel="bookmark"
+                           title="Permalink to "Convert a string to integer in Kibana with painless"">"Convert a string to integer in Kibana with painless"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-12-16T00:00:00+02:00">
+                Published: "2020-12-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+
+</footer><!-- /.post-info -->                <p>if (doc['bytes.keyword'].size()!=0) {
+    return Integer.parseInt(doc['bytes.keyword'].value)
+}</p>
+<p>This took me a while to figure out!</p>
+<p>The above only works for Integer (so no 1.1 or 2.22).</p>
+<p>It works on ELK 7.10</p>
+<p>I needed it because I'm using %{COMBINEDAPACHELOG} GROK pattern.</p>
+<p>That …</p>
+                <a class="readmore" href="/convert-a-string-to-integer-in-kibana-with-painless.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/new-home-network-plan.html" rel="bookmark"
+                           title="Permalink to "New Home Network Plan!"">"New Home Network Plan!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-07-05T00:00:00+03:00">
+                Published: "2020-07-05"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+
+</footer><!-- /.post-info -->                <p>Changing apartment again so a pretty decent time to change the network at home.</p>
+<p>Doing it a bit on the cheap this time around.</p>
+<p>We'll get a docsis cable connection. Fortunately I have a modem used to connect to the same ISP from a previous apartment. Unfortunately the modem was …</p>
+                <a class="readmore" href="/new-home-network-plan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/3-months-at-iqm-today.html" rel="bookmark"
+                           title="Permalink to "3 months at IQM today!"">"3 months at IQM today!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-06-17T00:00:00+03:00">
+                Published: "2020-06-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+
+</footer><!-- /.post-info -->                <p>And I'm on holiday :)</p>
+<p>Wasn't really expecting to be able to go on holiday working for a startup, but there's some coverage and the old IT Admin is still there so very nice to be able to take time off and not have to worry. Even get some more later …</p>
+                <a class="readmore" href="/3-months-at-iqm-today.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/one-month-at-iqm-today.html" rel="bookmark"
+                           title="Permalink to "One month at IQM today!"">"One month at IQM today!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-04-17T00:00:00+03:00">
+                Published: "2020-04-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+
+</footer><!-- /.post-info -->                <p>Was reminded that today was exactly one calendar month since I joined IQM Finland</p>
+<p>It's been a very hectic month and it's been mostly remote because of the pandemic. Have met a few people, video chatted with a few. We have these weekly lunch meetings that is a good way …</p>
+                <a class="readmore" href="/one-month-at-iqm-today.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/air-lap1142n-e-k9-to-autonomous-mode-adventure.html" rel="bookmark"
+                           title="Permalink to "AIR-LAP1142N-E-K9 to autonomous Mode Adventure"">"AIR-LAP1142N-E-K9 to autonomous Mode Adventure"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-02-19T00:00:00+02:00">
+                Published: "2020-02-19"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/aironet.html">aironet</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/https.html">https</a> <a href="/tag/ip.html">ip</a> <a href="/tag/lap1142n.html">lap1142n</a> <a href="/tag/e.html">e</a> <a href="/tag/k9.html">k9</a> <a href="/tag/network.html">network</a> <a href="/tag/vlan.html">vlan</a> <a href="/tag/wifi.html">wifi</a> <a href="/tag/wlan.html">wlan</a> </p>
+</footer><!-- /.post-info -->                <blockquote>
+<h2><a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"><img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"></a></h2>
+</blockquote>
+<h2>Some initial needful information</h2>
+<ul>
+<li>Reset is done by holding MODE and then powering off and on the device</li>
+<li>Default enable password is Cisco</li>
+<li>Serial ttyUSB0 worked with one usb to rs232 and then a serial to RJ45 adapter, my cheapo ebay USB to rj45 did not work. The colors of …</li></ul>
+                <a class="readmore" href="/air-lap1142n-e-k9-to-autonomous-mode-adventure.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/quadra-did-you-play-it.html" rel="bookmark"
+                           title="Permalink to "Quadra - Did You Play It?"">"Quadra - Did You Play It?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-02-06T00:00:00+02:00">
+                Published: "2020-02-06"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+
+</footer><!-- /.post-info -->                <p>In my youth I enjoyed the LANs. One fun game we played was Quadra - which is a multiplayer tetris where by playing the game you send more blocks to your opponents making it very stressful :D</p>
+<p><a href="https://github.com/quadra-game/quadra">https://github.com/quadra-game/quadra</a> turns out it is open source and it's out …</p>
+                <a class="readmore" href="/quadra-did-you-play-it.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/kringlecon-2019-write-up.html" rel="bookmark"
+                           title="Permalink to "Kringlecon 2019 Write-Up"">"Kringlecon 2019 Write-Up"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-01-15T00:00:00+02:00">
+                Published: "2020-01-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/ctf.html">ctf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/language.html">language</a> <a href="/tag/security.html">security</a> <a href="/tag/sudo.html">sudo</a> <a href="/tag/trail.html">trail</a> <a href="/tag/of.html">of</a> <a href="/tag/tears.html">tears</a> </p>
+</footer><!-- /.post-info -->                <h2>The challenges!</h2>
+<p>Hoe the season to be jolly! Been giving a few <a href="https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation)">CTFs</a>  lately. It started with the disobey 2020 <a href="https://disobey2020.github.io/">puzzle</a> to get the hacker ticket. Then there was the <a href="https://overthewire.org/">OverTheWire</a>'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - <a href="https://holidayhackchallenge.com/2019/">KringleCon</a> 2019. As of writing I got …</p>
+                <a class="readmore" href="/kringlecon-2019-write-up.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/logging-as-a-service.html" rel="bookmark"
+                           title="Permalink to "Logging as a Service"">"Logging as a Service"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-11-12T00:00:00+02:00">
+                Published: "2019-11-12"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+
+</footer><!-- /.post-info -->                <p>Is there an open source thing out there I could use??</p>
+<p>So if I only want to use mostly free and open source it there's a bunch of tools one need to glue together:</p>
+<p>These days I'd like to for primary ingestion have a BGP ECMP/anycast for rsyslog receivers …</p>
+                <a class="readmore" href="/logging-as-a-service.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 16
+        <a href="/category/it2.html">&raquo;</a>
+        <a href="/category/it16.html">&#8649;</a>
+</p>
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
