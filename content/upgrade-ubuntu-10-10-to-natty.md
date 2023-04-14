@@ -1,0 +1,1 @@
+../posts/2011/05/upgrade-ubuntu-10-10-to-natty.md

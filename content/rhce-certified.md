@@ -1,0 +1,1 @@
+../posts/2012/07/rhce-certified.md

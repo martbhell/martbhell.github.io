@@ -1,0 +1,1 @@
+../posts/2013/04/command-view-p6000-eva-simulator-10-0.md

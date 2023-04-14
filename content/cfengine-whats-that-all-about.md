@@ -1,0 +1,1 @@
+../posts/2012/11/cfengine-whats-that-all-about.md

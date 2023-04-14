@@ -1,0 +1,1 @@
+../posts/2011/07/bcfp-brocade-certified-fabric-professional-16-gbps-beta-test-exam.md

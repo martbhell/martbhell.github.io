@@ -1,0 +1,1 @@
+../posts/2011/02/ubuntu-10-10-vmware-irssi.md

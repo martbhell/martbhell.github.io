@@ -1,0 +1,1 @@
+../posts/2014/04/brocade-certified-ethernet-fabric-professional-2015-beta-exam.md

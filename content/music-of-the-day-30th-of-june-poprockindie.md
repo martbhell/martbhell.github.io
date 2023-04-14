@@ -1,0 +1,1 @@
+../posts/2011/06/music-of-the-day-30th-of-june-poprockindie.md

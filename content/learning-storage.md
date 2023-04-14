@@ -1,0 +1,1 @@
+../posts/2011/04/learning-storage.md

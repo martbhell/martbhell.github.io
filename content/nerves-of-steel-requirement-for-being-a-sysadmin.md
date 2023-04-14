@@ -1,0 +1,1 @@
+../posts/2011/05/nerves-of-steel-requirement-for-being-a-sysadmin.md

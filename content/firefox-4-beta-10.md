@@ -1,0 +1,1 @@
+../posts/2011/01/firefox-4-beta-10.md

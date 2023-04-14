@@ -1,0 +1,1 @@
+../posts/2015/06/was-there-an-nhl-game-last-night.md

@@ -1,0 +1,1 @@
+../posts/2011/03/post-updated-moving-to-finland.md

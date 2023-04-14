@@ -1,0 +1,1 @@
+../posts/2011/02/time-sync-for-linux-vms-in-vmware-workstation.md

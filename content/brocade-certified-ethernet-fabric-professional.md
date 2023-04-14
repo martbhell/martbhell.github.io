@@ -1,0 +1,1 @@
+../posts/2014/03/brocade-certified-ethernet-fabric-professional.md

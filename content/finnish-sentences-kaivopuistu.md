@@ -1,0 +1,1 @@
+../posts/2012/05/finnish-sentences-kaivopuistu.md

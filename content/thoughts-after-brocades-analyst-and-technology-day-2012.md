@@ -1,0 +1,1 @@
+../posts/2012/09/thoughts-after-brocades-analyst-and-technology-day-2012.md

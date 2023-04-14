@@ -1,0 +1,1 @@
+../posts/2011/11/install-open-solaris-in-vmware-workstation.md

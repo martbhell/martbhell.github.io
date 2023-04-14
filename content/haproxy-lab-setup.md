@@ -1,0 +1,1 @@
+../posts/2017/08/haproxy-lab-setup.md

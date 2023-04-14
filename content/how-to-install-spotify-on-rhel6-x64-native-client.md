@@ -1,0 +1,1 @@
+../posts/2011/08/how-to-install-spotify-on-rhel6-x64-native-client.md

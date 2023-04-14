@@ -1,0 +1,1 @@
+../posts/2019/05/some-updates-to-the-home-network.md

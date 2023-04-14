@@ -1,0 +1,1 @@
+../posts/2011/03/wd-buys-hitachi-gst.md

@@ -1,0 +1,1 @@
+../posts/2013/11/bcvrp-brocade-certified-virtual-router-professional-objectives.md

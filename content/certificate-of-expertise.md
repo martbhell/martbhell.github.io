@@ -1,0 +1,1 @@
+../posts/2013/08/certificate-of-expertise.md

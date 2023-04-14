@@ -1,0 +1,1 @@
+../posts/2012/06/red-hat-certification-rhce-course-outline.md

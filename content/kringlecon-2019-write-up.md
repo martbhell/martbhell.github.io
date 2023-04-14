@@ -1,0 +1,1 @@
+../posts/2020/01/kringlecon-2019-write-up.md
