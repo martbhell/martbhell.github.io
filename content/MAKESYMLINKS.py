@@ -7,6 +7,8 @@ posts_dir = '../posts'
 content_dir = '.'
 image_dir = './images'
 
+debug = False
+
 # Get a list of all .md files in the posts directory and its subdirectories
 
 image_extensions = ['gif', 'jpg', 'png', 'GIF', 'JPG', 'PNG']
@@ -15,7 +17,6 @@ image_files = []
 for extension in image_extensions:
   image_files += glob.glob(os.path.join(posts_dir, f'**/*.{extension}'), recursive=True)
 
-print(image_files)
 posts = []
 
 if len(md_files) == 0:
@@ -37,7 +38,8 @@ for md_file in md_files:
         # Create the symlink
         os.symlink(md_file, symlink_path)
     except FileExistsError:
-        print(f"Skipping {md_file}: symlink already exists.")
+        if debug: print(f"Skipping {md_file}: symlink already exists.")
+        pass
 
 # Create symlinks for each image in the content directory
 for image_file in image_files:
@@ -55,4 +57,5 @@ for image_file in image_files:
         # Create the symlink
         os.symlink(image_file_path, symlink_path)
     except FileExistsError:
-        print(f"Skipping {md_file}: symlink already exists.")
+        if debug: print(f"Skipping {image_file}: symlink already exists.")
+        pass
