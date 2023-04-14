@@ -1,6 +1,6 @@
 ---
 title: "Brocade - Vyatta - Future"
-date: "2013-12-26"
+date: 2013-12-26
 categories: 
   - "it"
 tags: 
