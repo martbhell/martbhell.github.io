@@ -1,13 +1,1 @@
----
-title: "Resepti - kokoos kana keitto"
-date: 2020-09-19
-categories: 
-  - "finland"
----
-
-- Riisi
-- Öljy paistettu paprika, sipuli, inkevääri ja valkosipuli. Laittakaa sitten vihreä thai taikina.
-- Kokoosmaito ja vesi ja kana ja kala liemikuutio
-- Kana
-
-[https://www.perdue.com/recipes/easy-thai-coconut-chicken-soup/2352/](https://www.perdue.com/recipes/easy-thai-coconut-chicken-soup/2352/)
+../posts/2020/09/resepti-kokoos-kana-keitto.md
