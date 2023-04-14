@@ -1,1 +1,20 @@
-../posts/2011/01/firefox-4-beta-10.md
+---
+title: "Firefox 4 Beta 10"
+date: 2011-01-27
+categories: 
+  - "it"
+tags: 
+  - "firefox"
+  - "it-2"
+  - "webmail"
+---
+
+Just got the message to upgrade to Firefox 4 Beta 10 and as usual I don't notice any differences - but that's a good thing right?
+
+[Release notes](http://www.mozilla.com/en-US/firefox/4.0b10/releasenotes/ "ffoxreleasenotes")
+
+With 8GB RAM I don't think this will apply so much to me either: "Improvements in memory usage"
+
+My (two) plugins still work too
+
+The ones I use are webmail notifier (gmail, hotmail and a [custom squirrelmail script](/blog/customized-webmail-notifier-script-for-squirrelmail "webmail script")) and adblock plus. Default theme. A cluttered work space is very annoying to me :)
