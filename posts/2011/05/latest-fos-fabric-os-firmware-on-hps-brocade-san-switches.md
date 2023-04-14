@@ -1,6 +1,6 @@
 ---
 title: "Latest FOS ( Fabric OS ) Firmware on HP's Brocade SAN switches"
-date: "2011-05-25"
+date: 2011-05-25
 categories: 
   - "storage"
 tags: 

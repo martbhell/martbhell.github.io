@@ -1,6 +1,6 @@
 ---
 title: "password when starting a linux server in single-user mode"
-date: "2012-03-08"
+date: 2012-03-08
 categories: 
   - "it"
 tags: 

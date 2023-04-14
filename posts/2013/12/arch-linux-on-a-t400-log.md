@@ -1,6 +1,6 @@
 ---
 title: "Arch Linux on a T400 - Log"
-date: "2013-12-14"
+date: 2013-12-14
 categories: 
   - "it"
 tags: 

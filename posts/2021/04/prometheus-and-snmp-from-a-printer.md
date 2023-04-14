@@ -1,6 +1,6 @@
 ---
 title: "Prometheus and SNMP from a printer"
-date: "2021-04-07"
+date: 2021-04-07
 categories: 
   - "it"
 tags: 

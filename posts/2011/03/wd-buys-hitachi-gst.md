@@ -1,6 +1,6 @@
 ---
 title: "WD buys Hitachi GST"
-date: "2011-03-10"
+date: 2011-03-10
 categories: 
   - "storage"
 tags: 

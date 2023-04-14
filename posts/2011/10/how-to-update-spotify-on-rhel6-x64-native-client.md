@@ -1,6 +1,6 @@
 ---
 title: "How-To : Update Spotify on RHEL6 x64 native client"
-date: "2011-10-14"
+date: 2011-10-14
 categories: 
   - "it"
 tags: 

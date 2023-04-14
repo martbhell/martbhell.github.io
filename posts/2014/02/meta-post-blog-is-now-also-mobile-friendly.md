@@ -1,6 +1,6 @@
 ---
 title: "Meta Post: Blog is now also mobile friendly!"
-date: "2014-02-24"
+date: 2014-02-24
 categories: 
   - "finland"
   - "it"

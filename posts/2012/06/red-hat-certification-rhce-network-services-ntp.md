@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – NTP"
-date: "2012-06-08"
+date: 2012-06-08
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Picture from Silicon Valley"
-date: "2012-09-13"
+date: 2012-09-13
 categories: 
   - "it"
 tags: 

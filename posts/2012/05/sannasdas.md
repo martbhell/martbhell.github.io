@@ -1,6 +1,6 @@
 ---
 title: "SANNASDAS"
-date: "2012-05-29"
+date: 2012-05-29
 categories: 
   - "it"
 tags: 

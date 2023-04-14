@@ -1,6 +1,6 @@
 ---
 title: "HP Virtual Room Installation on RHEL 6 x64"
-date: "2011-05-14"
+date: 2011-05-14
 categories: 
   - "it"
 tags: 

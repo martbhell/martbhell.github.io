@@ -1,6 +1,6 @@
 ---
 title: "Update to Spotify - An RSS Feed"
-date: "2012-07-08"
+date: 2012-07-08
 categories: 
   - "it"
 tags: 

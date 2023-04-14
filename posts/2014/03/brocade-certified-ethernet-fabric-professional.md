@@ -1,6 +1,6 @@
 ---
 title: "Brocade Certified Ethernet Fabric Professional"
-date: "2014-03-25"
+date: 2014-03-25
 categories: 
   - "it"
 tags: 

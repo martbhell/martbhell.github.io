@@ -1,6 +1,6 @@
 ---
 title: "BCFP - Fibre Channel Routing - FCR - FC-FC Routing"
-date: "2011-07-26"
+date: 2011-07-26
 categories: 
   - "storage"
 tags: 

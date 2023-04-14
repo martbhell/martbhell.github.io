@@ -1,6 +1,6 @@
 ---
 title: "Best pizzeria in Helsinki city"
-date: "2011-01-21"
+date: 2011-01-21
 categories: 
   - "finland"
 tags: 

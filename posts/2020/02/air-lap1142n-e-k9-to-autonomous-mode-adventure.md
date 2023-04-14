@@ -1,6 +1,6 @@
 ---
 title: "AIR-LAP1142N-E-K9 to autonomous Mode Adventure"
-date: "2020-02-19"
+date: 2020-02-19
 categories: 
   - "it"
 tags: 

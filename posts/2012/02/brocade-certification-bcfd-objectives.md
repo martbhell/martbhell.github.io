@@ -1,6 +1,6 @@
 ---
 title: "Brocade Certification - BCFD - Objectives"
-date: "2012-02-02"
+date: 2012-02-02
 categories: 
   - "storage"
 tags: 

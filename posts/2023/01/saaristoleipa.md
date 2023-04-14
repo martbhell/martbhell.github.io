@@ -1,6 +1,6 @@
 ---
 title: "saaristoleipä"
-date: "2023-01-18"
+date: 2023-01-18
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "BCFA - Brocade Certified Fabric Administrator 16G Beta"
-date: "2011-07-20"
+date: 2011-07-20
 categories: 
   - "storage"
 tags: 

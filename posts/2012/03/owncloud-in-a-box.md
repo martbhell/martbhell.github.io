@@ -1,6 +1,6 @@
 ---
 title: "owncloud in a box!"
-date: "2012-03-13"
+date: 2012-03-13
 categories: 
   - "it"
 tags: 

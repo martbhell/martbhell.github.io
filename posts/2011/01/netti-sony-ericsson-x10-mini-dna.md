@@ -1,6 +1,6 @@
 ---
 title: "Netti + Sony Ericsson X10 Mini + DNA"
-date: "2011-01-28"
+date: 2011-01-28
 categories: 
   - "finland"
   - "it"

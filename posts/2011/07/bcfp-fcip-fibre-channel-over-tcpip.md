@@ -1,6 +1,6 @@
 ---
 title: "BCFP - FCIP - Fibre Channel over TCP/IP"
-date: "2011-07-28"
+date: 2011-07-28
 categories: 
   - "storage"
 tags: 

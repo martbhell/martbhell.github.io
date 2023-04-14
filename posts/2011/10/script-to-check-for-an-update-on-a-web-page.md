@@ -1,6 +1,6 @@
 ---
 title: "Script To Check For an Update on a Web Page"
-date: "2011-10-19"
+date: 2011-10-19
 categories: 
   - "it"
 tags: 

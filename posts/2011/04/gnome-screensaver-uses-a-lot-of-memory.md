@@ -1,6 +1,6 @@
 ---
 title: "gnome-screensaver uses a lot of memory"
-date: "2011-04-14"
+date: 2011-04-14
 categories: 
   - "finland"
 tags: 

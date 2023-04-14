@@ -1,6 +1,6 @@
 ---
 title: "BCFP - Brocade Certified Fabric Professional - 16 Gbps Beta Test Exam"
-date: "2011-07-04"
+date: 2011-07-04
 categories: 
   - "storage"
 tags: 

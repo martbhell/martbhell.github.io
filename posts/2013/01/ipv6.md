@@ -1,6 +1,6 @@
 ---
 title: "IPv6"
-date: "2013-01-13"
+date: 2013-01-13
 categories: 
   - "it"
 tags: 

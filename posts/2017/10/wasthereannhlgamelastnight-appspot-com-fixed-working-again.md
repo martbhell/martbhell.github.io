@@ -1,6 +1,6 @@
 ---
 title: "wasthereannhlgamelastnight.appspot.com - fixed - working again!"
-date: "2017-10-04"
+date: 2017-10-04
 categories: 
   - "finland"
   - "it"

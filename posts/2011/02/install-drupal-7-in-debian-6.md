@@ -1,6 +1,6 @@
 ---
 title: "Install Drupal 7 in Debian 6"
-date: "2011-02-11"
+date: 2011-02-11
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Simple RRD graphs"
-date: "2011-11-18"
+date: 2011-11-18
 categories: 
   - "it"
 tags: 

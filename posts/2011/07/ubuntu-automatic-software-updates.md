@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu + Automatic Software Updates"
-date: "2011-07-12"
+date: 2011-07-12
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Install Open Solaris in VMWare Workstation"
-date: "2011-11-22"
+date: 2011-11-22
 categories: 
   - "it"
 tags: 

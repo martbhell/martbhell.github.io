@@ -1,6 +1,6 @@
 ---
 title: "Tiny Core Linux"
-date: "2012-03-03"
+date: 2012-03-03
 categories: 
   - "it"
 tags: 

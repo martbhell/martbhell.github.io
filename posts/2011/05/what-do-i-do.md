@@ -1,6 +1,6 @@
 ---
 title: "What do I do?"
-date: "2011-05-16"
+date: 2011-05-16
 categories: 
   - "finland"
   - "it"

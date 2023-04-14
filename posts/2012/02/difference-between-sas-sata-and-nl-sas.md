@@ -1,6 +1,6 @@
 ---
 title: "Difference between SAS, SATA and NL-SAS"
-date: "2012-02-24"
+date: 2012-02-24
 categories: 
   - "storage"
 tags: 

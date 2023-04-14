@@ -1,6 +1,6 @@
 ---
 title: "Mininet - Software Defined Networking"
-date: "2013-04-29"
+date: 2013-04-29
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Brocade Accredited Server Specialist - BASP"
-date: "2012-08-18"
+date: 2012-08-18
 categories: 
   - "it"
 tags: 

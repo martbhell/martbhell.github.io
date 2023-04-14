@@ -1,6 +1,6 @@
 ---
 title: "HP's Brocade firmwares compatible with other switches?"
-date: "2011-05-15"
+date: 2011-05-15
 categories: 
   - "it"
   - "storage"

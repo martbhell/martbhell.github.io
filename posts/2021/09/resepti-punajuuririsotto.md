@@ -1,6 +1,6 @@
 ---
 title: "Resepti: punajuuririsotto"
-date: "2021-09-12"
+date: 2021-09-12
 categories: 
   - "finland"
 tags: 

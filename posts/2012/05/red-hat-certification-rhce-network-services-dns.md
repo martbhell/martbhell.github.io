@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – DNS"
-date: "2012-05-08"
+date: 2012-05-08
 categories: 
   - "it"
 tags: 

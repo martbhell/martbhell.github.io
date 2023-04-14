@@ -1,6 +1,6 @@
 ---
 title: "Last IRC-post of bota for a while"
-date: "2011-03-30"
+date: 2011-03-30
 categories: 
   - "finland"
 tags: 

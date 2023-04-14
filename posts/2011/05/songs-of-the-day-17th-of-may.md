@@ -1,6 +1,6 @@
 ---
 title: "Songs of the day 17th of May"
-date: "2011-05-17"
+date: 2011-05-17
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Great Android Apps"
-date: "2011-01-26"
+date: 2011-01-26
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Access Gateway - NPV - TR"
-date: "2012-05-11"
+date: 2012-05-11
 categories: 
   - "storage"
 tags: 

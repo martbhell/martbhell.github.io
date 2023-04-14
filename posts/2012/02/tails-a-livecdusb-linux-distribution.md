@@ -1,6 +1,6 @@
 ---
 title: "Tails - A LiveCD/USB Linux Distribution"
-date: "2012-02-25"
+date: 2012-02-25
 categories: 
   - "it"
 tags: 

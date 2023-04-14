@@ -1,6 +1,6 @@
 ---
 title: "Science-Fiction and Fantasy Books in Helsinki"
-date: "2011-02-25"
+date: 2011-02-25
 categories: 
   - "finland"
 tags: 

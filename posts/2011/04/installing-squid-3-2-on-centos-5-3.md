@@ -1,6 +1,6 @@
 ---
 title: "Installing Squid 3.2 on CentOS 5.3"
-date: "2011-04-20"
+date: 2011-04-20
 categories: 
   - "it"
 tags: 

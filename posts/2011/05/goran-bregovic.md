@@ -1,6 +1,6 @@
 ---
 title: "Goran Bregovic"
-date: "2011-05-18"
+date: 2011-05-18
 categories: 
   - "finland"
 tags: 

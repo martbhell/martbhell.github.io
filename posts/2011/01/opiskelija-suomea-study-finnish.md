@@ -1,6 +1,6 @@
 ---
 title: "Opiskelija suomea - study Finnish"
-date: "2011-01-17"
+date: 2011-01-17
 categories: 
   - "finland"
 tags: 

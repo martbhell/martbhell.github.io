@@ -1,6 +1,6 @@
 ---
 title: "SAN Primer - Introduction to Data Storage"
-date: "2011-07-28"
+date: 2011-07-28
 categories: 
   - "storage"
 tags: 

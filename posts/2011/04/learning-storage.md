@@ -1,6 +1,6 @@
 ---
 title: "Learning Storage"
-date: "2011-04-28"
+date: 2011-04-28
 categories: 
   - "storage"
 tags: 

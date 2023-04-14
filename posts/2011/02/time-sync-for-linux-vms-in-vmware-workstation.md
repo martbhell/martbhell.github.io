@@ -1,6 +1,6 @@
 ---
 title: "Time Sync for Linux VMs in VMWare Workstation"
-date: "2011-02-27"
+date: 2011-02-27
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "How-To : Install Spotify on RHEL6 x64 native client"
-date: "2011-08-25"
+date: 2011-08-25
 categories: 
   - "it"
 tags: 

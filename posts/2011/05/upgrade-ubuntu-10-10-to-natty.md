@@ -1,6 +1,6 @@
 ---
 title: "Upgrade Ubuntu 10.10 to Natty"
-date: "2011-05-23"
+date: 2011-05-23
 categories: 
   - "it"
 tags: 

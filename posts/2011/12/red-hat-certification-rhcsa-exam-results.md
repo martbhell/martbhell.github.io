@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification - RHCSA - Exam Results"
-date: "2011-12-19"
+date: 2011-12-19
 categories: 
   - "it"
 tags: 

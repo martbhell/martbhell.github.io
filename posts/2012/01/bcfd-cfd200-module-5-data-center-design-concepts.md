@@ -1,6 +1,6 @@
 ---
 title: "BCFD – CFD200 – Module 5 – Data Center Design Concepts"
-date: "2012-01-16"
+date: 2012-01-16
 categories: 
   - "storage"
 tags: 

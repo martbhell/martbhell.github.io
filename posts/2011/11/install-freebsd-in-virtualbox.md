@@ -1,6 +1,6 @@
 ---
 title: "Install FreeBSD in VirtualBox"
-date: "2011-11-24"
+date: 2011-11-24
 categories: 
   - "it"
 tags: 

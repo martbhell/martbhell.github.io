@@ -1,6 +1,6 @@
 ---
 title: "Yesterday was my last day at CSCfi"
-date: "2020-03-08"
+date: 2020-03-08
 categories: 
   - "finland"
   - "it"

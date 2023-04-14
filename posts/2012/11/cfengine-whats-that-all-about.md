@@ -1,6 +1,6 @@
 ---
 title: "cfengine - what's that about?"
-date: "2012-11-03"
+date: 2012-11-03
 categories: 
   - "it"
 tags: 

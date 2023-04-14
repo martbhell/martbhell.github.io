@@ -1,6 +1,6 @@
 ---
 title: "Fantasy Book Review – Steven Erikson – The Crippled God – Part 2"
-date: "2011-07-11"
+date: 2011-07-11
 categories: 
   - "finland"
 tags: 

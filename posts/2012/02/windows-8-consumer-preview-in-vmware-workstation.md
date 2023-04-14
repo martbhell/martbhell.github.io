@@ -1,6 +1,6 @@
 ---
 title: "Windows 8 Consumer Preview in VMWare Workstation"
-date: "2012-02-29"
+date: 2012-02-29
 categories: 
   - "it"
 tags: 

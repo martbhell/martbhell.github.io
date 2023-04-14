@@ -1,6 +1,6 @@
 ---
 title: "Fantasy Book Review - Steven Erikson - Dust of Dreams"
-date: "2011-06-27"
+date: 2011-06-27
 categories: 
   - "finland"
 tags: 

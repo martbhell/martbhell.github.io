@@ -1,6 +1,6 @@
 ---
 title: "Finnish Idioms - not joking!"
-date: "2011-04-01"
+date: 2011-04-01
 categories: 
   - "finland"
 tags: 

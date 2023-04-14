@@ -1,6 +1,6 @@
 ---
 title: "BCFP 16G Beta Exam Material"
-date: "2011-07-14"
+date: 2011-07-14
 categories: 
   - "storage"
 tags: 

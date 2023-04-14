@@ -1,6 +1,6 @@
 ---
 title: "Google Interview - Data Center IT Technician"
-date: "2011-01-21"
+date: 2011-01-21
 categories: 
   - "finland"
   - "it"

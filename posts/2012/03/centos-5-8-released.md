@@ -1,6 +1,6 @@
 ---
 title: "CentOS 5.8 Released"
-date: "2012-03-08"
+date: 2012-03-08
 categories: 
   - "it"
 tags: 

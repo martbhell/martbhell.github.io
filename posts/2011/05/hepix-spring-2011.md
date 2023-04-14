@@ -1,6 +1,6 @@
 ---
 title: "HEPIX Spring 2011"
-date: "2011-05-01"
+date: 2011-05-01
 categories: 
   - "it"
   - "storage"

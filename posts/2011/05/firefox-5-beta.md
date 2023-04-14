@@ -1,6 +1,6 @@
 ---
 title: "Firefox 5 Beta"
-date: "2011-05-26"
+date: 2011-05-26
 categories: 
   - "it"
 tags: 

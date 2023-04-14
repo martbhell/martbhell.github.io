@@ -1,6 +1,6 @@
 ---
 title: "Finnish - Word Cases - Non-productive Cases"
-date: "2011-02-06"
+date: 2011-02-06
 categories: 
   - "finland"
 tags: 

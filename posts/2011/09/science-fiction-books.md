@@ -1,6 +1,6 @@
 ---
 title: "Science-Fiction Books"
-date: "2011-09-13"
+date: 2011-09-13
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE - Course Outline"
-date: "2012-06-13"
+date: 2012-06-13
 categories: 
   - "it"
 tags: 

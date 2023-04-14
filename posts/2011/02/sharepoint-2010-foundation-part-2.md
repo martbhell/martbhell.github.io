@@ -1,6 +1,6 @@
 ---
 title: "Sharepoint 2010 Foundation - Part 2"
-date: "2011-02-02"
+date: 2011-02-02
 categories: 
   - "it"
 tags: 

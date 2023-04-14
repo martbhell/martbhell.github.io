@@ -1,6 +1,6 @@
 ---
 title: "Setup a 3 Node Lustre Filesystem"
-date: "2012-10-13"
+date: 2012-10-13
 categories: 
   - "storage"
 tags: 

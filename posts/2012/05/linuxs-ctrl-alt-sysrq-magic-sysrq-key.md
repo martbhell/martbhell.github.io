@@ -1,6 +1,6 @@
 ---
 title: "Linux's ctrl-alt-SysRq - Magic SysRq Key"
-date: "2012-05-03"
+date: 2012-05-03
 categories: 
   - "it"
 tags: 

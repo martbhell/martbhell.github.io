@@ -1,6 +1,6 @@
 ---
 title: "ESXi + VMWare Workstation + OpenIndiana"
-date: "2012-02-18"
+date: 2012-02-18
 categories: 
   - "it"
 tags: 

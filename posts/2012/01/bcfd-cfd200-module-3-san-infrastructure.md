@@ -1,6 +1,6 @@
 ---
 title: "BCFD - CFD200 - Module 3 - SAN Infrastructure"
-date: "2012-01-14"
+date: 2012-01-14
 categories: 
   - "storage"
 tags: 

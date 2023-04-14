@@ -1,6 +1,6 @@
 ---
 title: "Firefox 4 Beta 10"
-date: "2011-01-27"
+date: 2011-01-27
 categories: 
   - "it"
 tags: 

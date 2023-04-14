@@ -1,6 +1,6 @@
 ---
 title: "Pythons"
-date: "2013-01-14"
+date: 2013-01-14
 categories: 
   - "it"
 tags: 

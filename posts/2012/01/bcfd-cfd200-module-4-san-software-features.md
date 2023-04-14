@@ -1,6 +1,6 @@
 ---
 title: "BCFD - CFD200 - Module 4 - SAN Software Features"
-date: "2012-01-15"
+date: 2012-01-15
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Brocade Analyst and Technology Day 2012"
-date: "2012-08-24"
+date: 2012-08-24
 categories: 
   - "storage"
 tags: 

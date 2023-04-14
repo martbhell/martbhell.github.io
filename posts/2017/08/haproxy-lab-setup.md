@@ -1,6 +1,6 @@
 ---
 title: "haproxy lab setup!"
-date: "2017-08-07"
+date: 2017-08-07
 categories: 
   - "it"
 tags: 

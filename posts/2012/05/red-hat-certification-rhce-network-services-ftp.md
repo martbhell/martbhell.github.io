@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – FTP"
-date: "2012-05-12"
+date: 2012-05-12
 categories: 
   - "it"
 tags: 

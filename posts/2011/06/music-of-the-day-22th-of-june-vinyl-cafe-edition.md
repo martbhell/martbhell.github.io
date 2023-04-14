@@ -1,6 +1,6 @@
 ---
 title: "Music of the day 22th of June (vinyl café edition)"
-date: "2011-06-22"
+date: 2011-06-22
 categories: 
   - "finland"
 tags: 

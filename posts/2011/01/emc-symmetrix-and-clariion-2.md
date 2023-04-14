@@ -1,6 +1,6 @@
 ---
 title: "EMC - Symmetrix and CLARiiON - 2"
-date: "2011-01-15"
+date: 2011-01-15
 categories: 
   - "storage"
 tags: 

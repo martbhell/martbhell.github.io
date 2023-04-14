@@ -1,6 +1,6 @@
 ---
 title: "Finnish words from ankidroid"
-date: "2014-07-05"
+date: 2014-07-05
 categories: 
   - "finland"
   - "it"

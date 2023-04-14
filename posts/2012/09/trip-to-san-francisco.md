@@ -1,6 +1,6 @@
 ---
 title: "Trip to San Francisco"
-date: "2012-09-10"
+date: 2012-09-10
 categories: 
   - "finland"
 tags: 

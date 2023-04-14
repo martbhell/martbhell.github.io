@@ -1,6 +1,6 @@
 ---
 title: "Music of the Day - 30th of June - poprockindie"
-date: "2011-06-30"
+date: 2011-06-30
 categories: 
   - "finland"
 tags: 

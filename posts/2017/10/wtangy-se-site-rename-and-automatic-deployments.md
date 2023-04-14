@@ -1,6 +1,6 @@
 ---
 title: "wtangy.se – site rename and automatic deployments!"
-date: "2017-10-25"
+date: 2017-10-25
 categories: 
   - "finland"
 tags: 

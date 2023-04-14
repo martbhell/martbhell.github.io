@@ -1,6 +1,6 @@
 ---
 title: "Dragonfly - Testing another OS"
-date: "2012-02-27"
+date: 2012-02-27
 categories: 
   - "it"
 tags: 

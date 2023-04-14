@@ -1,6 +1,6 @@
 ---
 title: "DWM - not your average mainstream window manager"
-date: "2011-03-16"
+date: 2011-03-16
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Finnish - Word Cases - Locative (expressing place)"
-date: "2011-02-04"
+date: 2011-02-04
 categories: 
   - "finland"
 tags: 

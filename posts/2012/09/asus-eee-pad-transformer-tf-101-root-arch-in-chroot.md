@@ -1,6 +1,6 @@
 ---
 title: "Asus Eee Pad Transformer TF 101 + root + arch in chroot"
-date: "2012-09-05"
+date: 2012-09-05
 categories: 
   - "it"
 tags: 

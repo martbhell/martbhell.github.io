@@ -1,6 +1,6 @@
 ---
 title: "BCFP Studying on"
-date: "2011-08-16"
+date: 2011-08-16
 categories: 
   - "storage"
 tags: 

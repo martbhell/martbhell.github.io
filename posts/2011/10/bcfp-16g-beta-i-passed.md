@@ -1,6 +1,6 @@
 ---
 title: "BCFP 16G Beta - I passed!"
-date: "2011-10-15"
+date: 2011-10-15
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Resepti: Tortellini Casserole"
-date: "2020-01-12"
+date: 2020-01-12
 categories: 
   - "finland"
 tags: 

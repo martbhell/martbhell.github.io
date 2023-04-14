@@ -1,6 +1,6 @@
 ---
 title: "Finnish Sentences - Kaivopuistu"
-date: "2012-05-06"
+date: 2012-05-06
 categories: 
   - "finland"
 tags: 

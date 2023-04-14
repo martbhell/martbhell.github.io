@@ -1,6 +1,6 @@
 ---
 title: "RHEL 5 + Unity"
-date: "2011-02-22"
+date: 2011-02-22
 categories: 
   - "it"
 tags: 

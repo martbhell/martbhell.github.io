@@ -1,6 +1,6 @@
 ---
 title: "DWM editing the bar to show time"
-date: "2011-03-14"
+date: 2011-03-14
 categories: 
   - "finland"
 tags: 

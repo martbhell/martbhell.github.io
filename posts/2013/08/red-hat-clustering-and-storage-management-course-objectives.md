@@ -1,6 +1,6 @@
 ---
 title: "Red Hat - Clustering and Storage Management - Course Objectives"
-date: "2013-08-15"
+date: 2013-08-15
 categories: 
   - "it"
   - "storage"

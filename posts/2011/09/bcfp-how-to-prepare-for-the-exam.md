@@ -1,6 +1,6 @@
 ---
 title: "BCFP - How to prepare for the exam"
-date: "2011-09-03"
+date: 2011-09-03
 categories: 
   - "storage"
 tags: 

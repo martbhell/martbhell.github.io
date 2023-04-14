@@ -1,6 +1,6 @@
 ---
 title: "SDN course on coursera"
-date: "2013-07-07"
+date: 2013-07-07
 categories: 
   - "it"
 tags: 

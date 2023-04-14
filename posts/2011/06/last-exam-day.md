@@ -1,6 +1,6 @@
 ---
 title: "Last Exam Day"
-date: "2011-06-16"
+date: 2011-06-16
 categories: 
   - "finland"
   - "it"

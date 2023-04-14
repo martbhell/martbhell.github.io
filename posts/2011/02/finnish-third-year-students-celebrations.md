@@ -1,6 +1,6 @@
 ---
 title: "Finnish third year students celebrations"
-date: "2011-02-17"
+date: 2011-02-17
 categories: 
   - "finland"
 tags: 

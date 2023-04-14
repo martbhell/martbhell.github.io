@@ -1,6 +1,6 @@
 ---
 title: "Moved to Finland"
-date: "2011-01-14"
+date: 2011-01-14
 categories: 
   - "finland"
 tags: 

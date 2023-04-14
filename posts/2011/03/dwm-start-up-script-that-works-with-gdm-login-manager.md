@@ -1,6 +1,6 @@
 ---
 title: "DWM - start up script that works with GDM login manager"
-date: "2011-03-18"
+date: 2011-03-18
 categories: 
   - "it"
 tags: 

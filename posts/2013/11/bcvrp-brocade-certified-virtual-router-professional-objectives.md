@@ -1,6 +1,6 @@
 ---
 title: "BCvRP – Brocade Certified virtual Router Professional – Objectives"
-date: "2013-11-10"
+date: 2013-11-10
 categories: 
   - "it"
 tags: 

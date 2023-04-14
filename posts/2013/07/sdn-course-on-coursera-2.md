@@ -1,6 +1,6 @@
 ---
-title: "SDN Course on Coursera"
-date: "2013-07-10"
+title: "SDN Course on Coursera-2"
+date: 2013-07-10
 categories: 
   - "it"
 tags: 

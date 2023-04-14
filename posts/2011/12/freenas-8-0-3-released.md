@@ -1,6 +1,6 @@
 ---
 title: "FreeNAS 8.0.3 Released"
-date: "2011-12-10"
+date: 2011-12-10
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Playstation 3 - it's purty"
-date: "2011-03-20"
+date: 2011-03-20
 categories: 
   - "finland"
   - "it"

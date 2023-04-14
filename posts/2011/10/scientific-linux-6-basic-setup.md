@@ -1,6 +1,6 @@
 ---
 title: "Scientific Linux 6 - Basic Setup"
-date: "2011-10-26"
+date: 2011-10-26
 categories: 
   - "it"
 tags: 

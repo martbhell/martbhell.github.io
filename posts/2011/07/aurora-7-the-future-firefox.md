@@ -1,6 +1,6 @@
 ---
 title: "Aurora 7 - The future Firefox"
-date: "2011-07-08"
+date: 2011-07-08
 categories: 
   - "it"
 tags: 

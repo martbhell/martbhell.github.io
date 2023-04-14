@@ -1,6 +1,6 @@
 ---
 title: "P6000 Firmware & Command View"
-date: "2011-06-17"
+date: 2011-06-17
 categories: 
   - "storage"
 tags: 

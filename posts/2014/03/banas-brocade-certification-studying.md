@@ -1,6 +1,6 @@
 ---
 title: "BANAS - Brocade Certification - Studying"
-date: "2014-03-30"
+date: 2014-03-30
 categories: 
   - "it"
   - "storage"

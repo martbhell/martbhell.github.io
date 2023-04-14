@@ -1,6 +1,6 @@
 ---
 title: "HP P6000 - EVA - Thin Privisioning and Dynamic Lun Migration - XCS 10.000.000"
-date: "2011-05-20"
+date: 2011-05-20
 categories: 
   - "storage"
 tags: 

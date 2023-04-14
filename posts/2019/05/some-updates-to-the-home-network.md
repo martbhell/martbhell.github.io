@@ -1,6 +1,6 @@
 ---
 title: "Some updates to the home network 1/2"
-date: "2019-05-15"
+date: 2019-05-15
 categories: 
   - "it"
 tags: 

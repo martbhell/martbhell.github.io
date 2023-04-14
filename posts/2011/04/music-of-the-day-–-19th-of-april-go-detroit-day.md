@@ -1,6 +1,6 @@
 ---
 title: "Music of the day – 19th of April + Go Detroit Day"
-date: "2011-04-19"
+date: 2011-04-19
 categories: 
   - "finland"
 tags: 

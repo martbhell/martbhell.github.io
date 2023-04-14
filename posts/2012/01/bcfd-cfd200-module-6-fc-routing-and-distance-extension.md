@@ -1,6 +1,6 @@
 ---
 title: "BCFD – CFD200 – Module 6 – FC Routing and Distance Extension"
-date: "2012-01-17"
+date: 2012-01-17
 categories: 
   - "storage"
 tags: 

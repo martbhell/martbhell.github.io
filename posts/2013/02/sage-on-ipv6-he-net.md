@@ -1,6 +1,6 @@
 ---
 title: "sage on ipv6.he.net"
-date: "2013-02-26"
+date: 2013-02-26
 categories: 
   - "it"
 tags: 

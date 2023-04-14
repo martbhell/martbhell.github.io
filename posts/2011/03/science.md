@@ -1,6 +1,6 @@
 ---
 title: "Science!"
-date: "2011-03-02"
+date: 2011-03-02
 categories: 
   - "finland"
 tags: 

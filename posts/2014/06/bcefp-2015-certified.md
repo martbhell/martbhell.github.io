@@ -1,6 +1,6 @@
 ---
 title: "BCEFP 2015 certified!"
-date: "2014-06-30"
+date: 2014-06-30
 categories: 
   - "it"
 tags: 

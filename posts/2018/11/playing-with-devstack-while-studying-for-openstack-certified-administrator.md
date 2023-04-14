@@ -1,6 +1,6 @@
 ---
 title: "Playing with devstack while studying for OpenStack Certified Administrator"
-date: "2018-11-08"
+date: 2018-11-08
 categories: 
   - "it"
 tags: 

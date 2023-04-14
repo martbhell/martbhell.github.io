@@ -1,6 +1,6 @@
 ---
 title: "Sharepoint - Part 3"
-date: "2011-02-04"
+date: 2011-02-04
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Lifehack currency"
-date: "2011-01-18"
+date: 2011-01-18
 categories: 
   - "finland"
   - "it"

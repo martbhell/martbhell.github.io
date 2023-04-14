@@ -1,6 +1,6 @@
 ---
 title: "Factory reset of a Brocade SAN switch"
-date: "2013-07-18"
+date: 2013-07-18
 categories: 
   - "storage"
 tags: 

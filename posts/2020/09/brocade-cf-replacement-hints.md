@@ -1,6 +1,6 @@
 ---
 title: "Brocade CF Replacement Hints"
-date: "2020-09-13"
+date: 2020-09-13
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "EyeOS - Cloud Desktop in your browser - Part 2"
-date: "2011-02-05"
+date: 2011-02-05
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Music of the Day 13th June (Uncut edition)"
-date: "2011-06-13"
+date: 2011-06-13
 categories: 
   - "finland"
 tags: 

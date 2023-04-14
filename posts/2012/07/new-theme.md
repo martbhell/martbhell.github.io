@@ -1,6 +1,6 @@
 ---
 title: "New theme"
-date: "2012-07-19"
+date: 2012-07-19
 categories: 
   - "it"
 tags: 

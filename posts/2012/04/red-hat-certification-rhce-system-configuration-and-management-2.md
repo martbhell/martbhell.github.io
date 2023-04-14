@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – System Configuration and Management"
-date: "2012-04-30"
+date: 2012-04-30
 categories: 
   - "it"
 tags: 

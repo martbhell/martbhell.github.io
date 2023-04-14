@@ -1,6 +1,6 @@
 ---
 title: "Post Updated: Moving to Finland"
-date: "2011-03-27"
+date: 2011-03-27
 categories: 
   - "finland"
 tags: 

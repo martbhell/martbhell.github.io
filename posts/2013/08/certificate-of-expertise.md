@@ -1,6 +1,6 @@
 ---
 title: "Certificate of Expertise"
-date: "2013-08-24"
+date: 2013-08-24
 categories: 
   - "it"
 tags: 

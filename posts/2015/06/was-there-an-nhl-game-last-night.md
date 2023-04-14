@@ -1,6 +1,6 @@
 ---
 title: "Was there an NHL game last night?"
-date: "2015-06-07"
+date: 2015-06-07
 categories: 
   - "it"
 tags: 

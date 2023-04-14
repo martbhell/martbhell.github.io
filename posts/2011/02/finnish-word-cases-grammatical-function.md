@@ -1,6 +1,6 @@
 ---
 title: "Finnish - Word Cases - Grammatical Function"
-date: "2011-02-03"
+date: 2011-02-03
 categories: 
   - "finland"
 tags: 

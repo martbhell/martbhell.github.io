@@ -1,6 +1,6 @@
 ---
 title: "Movie Review - The Man Without a Past"
-date: "2011-03-07"
+date: 2011-03-07
 categories: 
   - "finland"
 tags: 

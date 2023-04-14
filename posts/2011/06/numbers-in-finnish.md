@@ -1,6 +1,6 @@
 ---
 title: "Numbers in Finnish"
-date: "2011-06-02"
+date: 2011-06-02
 categories: 
   - "finland"
 tags: 

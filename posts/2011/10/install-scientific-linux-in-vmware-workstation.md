@@ -1,6 +1,6 @@
 ---
 title: "Install Scientific Linux 6 in VMWare Workstation"
-date: "2011-10-02"
+date: 2011-10-02
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "BCFP - good threads in the brocade forum"
-date: "2011-08-24"
+date: 2011-08-24
 categories: 
   - "storage"
 tags: 

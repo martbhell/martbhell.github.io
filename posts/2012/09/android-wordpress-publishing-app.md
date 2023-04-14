@@ -1,6 +1,6 @@
 ---
 title: "Android wordpress publishing app"
-date: "2012-09-17"
+date: 2012-09-17
 categories: 
   - "it"
 tags: 

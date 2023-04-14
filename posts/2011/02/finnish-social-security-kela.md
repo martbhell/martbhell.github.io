@@ -1,6 +1,6 @@
 ---
 title: "Finnish Social Security - Kela"
-date: "2011-02-04"
+date: 2011-02-04
 categories: 
   - "finland"
 tags: 

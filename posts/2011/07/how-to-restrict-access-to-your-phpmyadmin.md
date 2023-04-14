@@ -1,6 +1,6 @@
 ---
 title: "How to restrict access to your phpmyadmin"
-date: "2011-07-27"
+date: 2011-07-27
 categories: 
   - "it"
 tags: 

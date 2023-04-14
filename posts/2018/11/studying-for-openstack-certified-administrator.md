@@ -1,6 +1,6 @@
 ---
 title: "Studying for Openstack Certified Administrator"
-date: "2018-11-04"
+date: 2018-11-04
 categories: 
   - "it"
 tags: 

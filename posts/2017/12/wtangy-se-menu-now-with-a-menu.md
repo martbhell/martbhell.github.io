@@ -1,6 +1,6 @@
 ---
 title: "wtangy.se/menu - now with a menu!"
-date: "2017-12-06"
+date: 2017-12-06
 categories: 
   - "finland"
   - "it"

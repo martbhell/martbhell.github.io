@@ -1,6 +1,6 @@
 ---
 title: "HEPIX Spring 2011 – Day 5"
-date: "2011-05-10"
+date: 2011-05-10
 categories: 
   - "it"
   - "storage"

@@ -1,6 +1,6 @@
 ---
 title: "Brocade SAN Switch Firmware Upgrades"
-date: "2011-02-01"
+date: 2011-02-01
 categories:
   - "it"
   - "storage"

@@ -1,6 +1,6 @@
 ---
 title: "Nerves of steel: requirement for being a sysadmin?"
-date: "2011-05-27"
+date: 2011-05-27
 categories: 
   - "it"
 tags: 

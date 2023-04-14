@@ -1,6 +1,6 @@
 ---
 title: "rtmpdump and ssh tunnel / socks proxy"
-date: "2011-12-29"
+date: 2011-12-29
 categories: 
   - "it"
 tags: 

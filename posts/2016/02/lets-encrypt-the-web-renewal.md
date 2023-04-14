@@ -1,6 +1,6 @@
 ---
 title: "Let's encrypt the web - renewal"
-date: "2016-02-15"
+date: 2016-02-15
 categories: 
   - "it"
 tags: 

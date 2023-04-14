@@ -1,6 +1,6 @@
 ---
 title: "How to find things in Linux man pages"
-date: "2011-12-20"
+date: 2011-12-20
 categories: 
   - "it"
 tags: 

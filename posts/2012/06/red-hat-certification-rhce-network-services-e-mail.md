@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – e-mail"
-date: "2012-06-04"
+date: 2012-06-04
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "BCFP 16g Exam Studying"
-date: "2011-07-16"
+date: 2011-07-16
 categories: 
   - "storage"
 tags: 

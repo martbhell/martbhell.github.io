@@ -1,6 +1,6 @@
 ---
 title: "Hello Silicon Valley!"
-date: "2012-09-11"
+date: 2012-09-11
 categories: 
   - "storage"
 tags: 

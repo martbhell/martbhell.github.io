@@ -1,6 +1,6 @@
 ---
 title: "cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"
-date: "2012-11-11"
+date: 2012-11-11
 categories: 
   - "it"
 tags: 

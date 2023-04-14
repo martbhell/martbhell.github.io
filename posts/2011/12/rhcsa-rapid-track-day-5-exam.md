@@ -1,6 +1,6 @@
 ---
 title: "RHCSA – Rapid Track – Day 5 - Exam"
-date: "2011-12-16"
+date: 2011-12-16
 categories: 
   - "it"
 tags: 

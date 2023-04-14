@@ -1,6 +1,6 @@
 ---
 title: "Kringlecon 2019 Write-Up"
-date: "2020-01-15"
+date: 2020-01-15
 categories: 
   - "it"
 tags: 

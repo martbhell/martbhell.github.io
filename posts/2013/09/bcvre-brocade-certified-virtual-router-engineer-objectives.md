@@ -1,6 +1,6 @@
 ---
 title: "BCvRE - Brocade Certified virtual Router Engineer - Objectives"
-date: "2013-09-08"
+date: 2013-09-08
 categories: 
   - "it"
 tags: 

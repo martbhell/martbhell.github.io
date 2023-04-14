@@ -1,6 +1,6 @@
 ---
 title: "Fibre Channel SAN - Zoning in Detail"
-date: "2012-01-19"
+date: 2012-01-19
 categories: 
   - "storage"
 tags: 

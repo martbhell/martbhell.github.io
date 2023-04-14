@@ -1,6 +1,6 @@
 ---
 title: "Finnish Sentence of the Day"
-date: "2011-01-28"
+date: 2011-01-28
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "BCFP - Brocade Certified Fabric Professional 16G Beta Exam"
-date: "2011-07-22"
+date: 2011-07-22
 categories: 
   - "storage"
 tags: 

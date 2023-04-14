@@ -1,6 +1,6 @@
 ---
 title: "To create a new user group in Windows 7"
-date: "2012-03-09"
+date: 2012-03-09
 categories: 
   - "it"
   - "storage"

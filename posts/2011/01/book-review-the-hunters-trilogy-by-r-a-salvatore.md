@@ -1,6 +1,6 @@
 ---
 title: "Book Review - The Hunter's Trilogy by R.A. Salvatore"
-date: "2011-01-23"
+date: 2011-01-23
 categories: 
   - "finland"
 tags: 

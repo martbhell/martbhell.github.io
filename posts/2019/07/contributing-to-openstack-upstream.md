@@ -1,6 +1,6 @@
 ---
 title: "Contributing To OpenStack Upstream"
-date: "2019-07-22"
+date: 2019-07-22
 categories: 
   - "it"
 tags: 

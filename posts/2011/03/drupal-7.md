@@ -1,6 +1,6 @@
 ---
 title: "Drupal 7"
-date: "2011-03-09"
+date: 2011-03-09
 categories: 
   - "it"
 tags: 

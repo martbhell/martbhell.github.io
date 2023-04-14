@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Enterprise Linux(RHEL) in VMWare Workstation"
-date: "2011-02-21"
+date: 2011-02-21
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Storage FC HBA Transfer Size Tuning"
-date: "2012-03-06"
+date: 2012-03-06
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "BANAS - Brocade Accredited Network Advisor Specialist"
-date: "2014-02-27"
+date: 2014-02-27
 categories: 
   - "it"
 tags: 

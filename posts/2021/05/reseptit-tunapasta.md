@@ -1,6 +1,6 @@
 ---
 title: "Reseptit: Tunapasta"
-date: "2021-05-23"
+date: 2021-05-23
 categories: 
   - "finland"
 tags: 

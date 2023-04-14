@@ -1,6 +1,6 @@
 ---
 title: "SDN Course - Interview with Google Network Lead"
-date: "2013-07-31"
+date: 2013-07-31
 categories: 
   - "it"
 tags: 

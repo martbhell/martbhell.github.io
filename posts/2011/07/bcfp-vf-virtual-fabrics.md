@@ -1,6 +1,6 @@
 ---
 title: "BCFP - VF - Virtual Fabrics"
-date: "2011-07-30"
+date: 2011-07-30
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Vyatta: a router/vpn/firewall in a VM"
-date: "2013-08-26"
+date: 2013-08-26
 categories: 
   - "it"
   - "storage"

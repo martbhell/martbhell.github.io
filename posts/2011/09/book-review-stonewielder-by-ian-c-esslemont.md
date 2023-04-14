@@ -1,6 +1,6 @@
 ---
 title: "Book Review - Stonewielder by Ian C. Esslemont"
-date: "2011-09-28"
+date: 2011-09-28
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Virtualbox - Free OS Virtualization"
-date: "2011-03-12"
+date: 2011-03-12
 categories: 
   - "it"
 tags: 

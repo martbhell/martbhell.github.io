@@ -1,6 +1,6 @@
 ---
 title: "Reseptti: Pasta Carbonara"
-date: "2021-02-02"
+date: 2021-02-02
 categories: 
   - "finland"
 ---

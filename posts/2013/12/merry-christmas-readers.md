@@ -1,6 +1,6 @@
 ---
 title: "Merry Christmas Readers"
-date: "2013-12-24"
+date: 2013-12-24
 categories: 
   - "finland"
 tags: 

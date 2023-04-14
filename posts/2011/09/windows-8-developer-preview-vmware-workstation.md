@@ -1,6 +1,6 @@
 ---
 title: "Windows 8 Developer Preview + VMWare Workstation"
-date: "2011-09-26"
+date: 2011-09-26
 categories: 
   - "it"
 tags: 

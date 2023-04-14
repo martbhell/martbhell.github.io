@@ -1,6 +1,6 @@
 ---
 title: "Post Frisco"
-date: "2012-09-20"
+date: 2012-09-20
 categories: 
   - "finland"
 tags: 

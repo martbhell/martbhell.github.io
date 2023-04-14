@@ -1,6 +1,6 @@
 ---
 title: "File share from Ubuntu 10.10 with Windows 7 Client"
-date: "2011-02-08"
+date: 2011-02-08
 categories: 
   - "it"
 tags: 

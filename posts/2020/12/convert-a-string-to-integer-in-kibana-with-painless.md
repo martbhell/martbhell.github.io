@@ -1,6 +1,6 @@
 ---
 title: "Convert a string to integer in Kibana with painless"
-date: "2020-12-16"
+date: 2020-12-16
 categories: 
   - "it"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Songs of the day 23st of March - 2011"
-date: "2011-03-23"
+date: 2011-03-23
 categories: 
   - "finland"
 tags: 

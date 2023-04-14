@@ -1,6 +1,6 @@
 ---
 title: "BCFD - SAN Design Best Practices"
-date: "2012-01-23"
+date: 2012-01-23
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "My broken amazon kindle :("
-date: "2012-03-05"
+date: 2012-03-05
 categories: 
   - "finland"
   - "it"

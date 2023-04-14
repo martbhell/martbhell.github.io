@@ -1,6 +1,6 @@
 ---
 title: "Music of the Day 22nd of May"
-date: "2011-05-22"
+date: 2011-05-22
 categories: 
   - "finland"
 tags: 

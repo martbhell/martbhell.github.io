@@ -1,6 +1,6 @@
 ---
 title: "Frustration?"
-date: "2011-06-20"
+date: 2011-06-20
 categories: 
   - "it"
 tags: 

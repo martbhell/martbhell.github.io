@@ -1,6 +1,6 @@
 ---
 title: "Merry Christmas"
-date: "2011-12-24"
+date: 2011-12-24
 categories: 
   - "finland"
 tags: 

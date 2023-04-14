@@ -1,6 +1,6 @@
 ---
 title: "Detroit Red Wings - Boston Bruins 13/2 2010"
-date: "2011-02-14"
+date: 2011-02-14
 categories: 
   - "finland"
 tags: 

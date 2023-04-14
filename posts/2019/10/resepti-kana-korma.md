@@ -1,6 +1,6 @@
 ---
 title: "Resepti: Kana Korma"
-date: "2019-10-06"
+date: 2019-10-06
 categories: 
   - "finland"
 tags: 

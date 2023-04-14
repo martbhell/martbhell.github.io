@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu 11.04 Natty"
-date: "2011-10-16"
+date: 2011-10-16
 categories: 
   - "finland"
 tags: 

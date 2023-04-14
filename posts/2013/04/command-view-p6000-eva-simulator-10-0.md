@@ -1,6 +1,6 @@
 ---
 title: "Command View P6000 EVA Simulator 10.0"
-date: "2013-04-24"
+date: 2013-04-24
 categories: 
   - "it"
   - "storage"

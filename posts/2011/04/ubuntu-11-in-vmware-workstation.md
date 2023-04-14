@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu 11 in VMWare Workstation"
-date: "2011-04-03"
+date: 2011-04-03
 categories: 
   - "it"
 tags: 

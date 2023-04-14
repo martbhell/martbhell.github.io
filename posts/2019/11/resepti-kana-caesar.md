@@ -1,6 +1,6 @@
 ---
 title: "Resepti: Kana Caesar"
-date: "2019-11-12"
+date: 2019-11-12
 categories: 
   - "finland"
 ---

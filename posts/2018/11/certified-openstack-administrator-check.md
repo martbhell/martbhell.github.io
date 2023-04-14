@@ -1,6 +1,6 @@
 ---
 title: "Certified OpenStack administrator - check!"
-date: "2018-11-17"
+date: 2018-11-17
 categories: 
   - "it"
 ---

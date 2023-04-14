@@ -1,6 +1,6 @@
 ---
 title: "Trick with labels in gmail - how to find out who is selling your e-mail address"
-date: "2011-04-29"
+date: 2011-04-29
 categories: 
   - "it"
 tags: 

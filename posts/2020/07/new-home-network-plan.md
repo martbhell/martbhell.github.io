@@ -1,6 +1,6 @@
 ---
 title: "New Home Network Plan!"
-date: "2020-07-05"
+date: 2020-07-05
 categories: 
   - "it"
 ---

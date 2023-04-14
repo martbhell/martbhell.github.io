@@ -1,6 +1,6 @@
 ---
 title: "Exchanging Foreign Drivers License for a Finnish One"
-date: "2012-08-13"
+date: 2012-08-13
 categories: 
   - "finland"
 tags: 

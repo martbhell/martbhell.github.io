@@ -1,6 +1,6 @@
 ---
 title: "Windows 7 Blank Windows Update Screen"
-date: "2011-05-12"
+date: 2011-05-12
 categories: 
   - "it"
 tags: 

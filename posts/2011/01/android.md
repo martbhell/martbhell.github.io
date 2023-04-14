@@ -1,6 +1,6 @@
 ---
 title: "android"
-date: "2011-01-14"
+date: 2011-01-14
 categories: 
   - "it"
 tags: 

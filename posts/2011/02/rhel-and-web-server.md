@@ -1,6 +1,6 @@
 ---
 title: "RHEL and web-server"
-date: "2011-02-28"
+date: 2011-02-28
 categories: 
   - "it"
 tags: 

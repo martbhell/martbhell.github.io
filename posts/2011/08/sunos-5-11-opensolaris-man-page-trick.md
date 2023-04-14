@@ -1,6 +1,6 @@
 ---
 title: "SunOS 5.11 OpenSolaris Man Page Trick"
-date: "2011-08-01"
+date: 2011-08-01
 categories: 
   - "finland"
 tags: 

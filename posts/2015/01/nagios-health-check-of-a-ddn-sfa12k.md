@@ -1,6 +1,6 @@
 ---
 title: "Nagios Health Check of a DDN SFA12K"
-date: "2015-01-18"
+date: 2015-01-18
 categories: 
   - "it"
   - "storage"

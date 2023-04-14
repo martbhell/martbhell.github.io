@@ -1,6 +1,6 @@
 ---
 title: "King in ITRC!"
-date: "2011-04-15"
+date: 2011-04-15
 categories: 
   - "it"
   - "storage"

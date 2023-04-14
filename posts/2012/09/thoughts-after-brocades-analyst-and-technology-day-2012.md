@@ -1,6 +1,6 @@
 ---
 title: "Thoughts after Brocade's Analyst and Technology Day 2012"
-date: "2012-09-13"
+date: 2012-09-13
 categories: 
   - "it"
   - "storage"

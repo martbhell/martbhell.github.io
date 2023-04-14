@@ -1,6 +1,6 @@
 ---
 title: "Songs of the day 28th of April"
-date: "2011-04-28"
+date: 2011-04-28
 categories: 
   - "finland"
 tags: 

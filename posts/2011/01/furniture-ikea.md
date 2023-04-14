@@ -1,6 +1,6 @@
 ---
 title: "furniture - IKEA"
-date: "2011-01-21"
+date: 2011-01-21
 categories: 
   - "finland"
 tags: 

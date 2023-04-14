@@ -1,6 +1,6 @@
 ---
 title: "RHCSA – Rapid Track – Day 3"
-date: "2011-12-14"
+date: 2011-12-14
 categories: 
   - "it"
 tags: 

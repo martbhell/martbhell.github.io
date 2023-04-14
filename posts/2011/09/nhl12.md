@@ -1,6 +1,6 @@
 ---
 title: "NHL12"
-date: "2011-09-26"
+date: 2011-09-26
 categories: 
   - "finland"
 tags: 

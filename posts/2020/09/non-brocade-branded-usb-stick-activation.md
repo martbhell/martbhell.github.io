@@ -1,6 +1,6 @@
 ---
 title: "Non Brocade Branded USB stick activation"
-date: "2020-09-17"
+date: 2020-09-17
 categories: 
   - "storage"
 tags: 

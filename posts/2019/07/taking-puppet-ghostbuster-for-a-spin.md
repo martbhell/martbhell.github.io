@@ -1,6 +1,6 @@
 ---
 title: "Taking puppet-ghostbuster for a spin"
-date: "2019-07-18"
+date: 2019-07-18
 categories: 
   - "it"
 tags: 

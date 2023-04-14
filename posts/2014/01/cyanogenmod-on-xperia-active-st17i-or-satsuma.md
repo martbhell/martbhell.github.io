@@ -1,6 +1,6 @@
 ---
 title: "Cyanogenmod on Xperia Active (ST17i or satsuma)"
-date: "2014-01-12"
+date: 2014-01-12
 categories: 
   - "it"
 tags: 

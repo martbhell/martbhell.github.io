@@ -1,6 +1,6 @@
 ---
 title: "Buying Kindle in Finland"
-date: "2011-06-30"
+date: 2011-06-30
 categories: 
   - "finland"
   - "it"

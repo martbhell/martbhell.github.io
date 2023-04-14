@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Skills Assessment"
-date: "2012-04-26"
+date: 2012-04-26
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Fantasy Book Review - George R.R. Martin - A Game of Thrones"
-date: "2011-02-23"
+date: 2011-02-23
 categories: 
   - "finland"
 tags: 

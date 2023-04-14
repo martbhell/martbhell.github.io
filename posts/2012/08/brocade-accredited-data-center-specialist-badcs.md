@@ -1,6 +1,6 @@
 ---
 title: "Brocade Accredited Data Center Specialist - BADCS"
-date: "2012-08-15"
+date: 2012-08-15
 categories: 
   - "storage"
 tags: 

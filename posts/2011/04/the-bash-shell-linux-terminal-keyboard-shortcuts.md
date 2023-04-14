@@ -1,6 +1,6 @@
 ---
 title: "The bash shell - Linux terminal keyboard shortcuts"
-date: "2011-04-13"
+date: 2011-04-13
 categories: 
   - "it"
 tags: 

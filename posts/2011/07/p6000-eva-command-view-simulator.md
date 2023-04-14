@@ -1,6 +1,6 @@
 ---
 title: "P6000 - EVA - Command View Simulator"
-date: "2011-07-18"
+date: 2011-07-18
 categories: 
   - "storage"
 tags: 

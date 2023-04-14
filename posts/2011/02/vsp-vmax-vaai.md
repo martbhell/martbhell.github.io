@@ -1,6 +1,6 @@
 ---
 title: "VSP / VMAX / VAAI"
-date: "2011-02-10"
+date: 2011-02-10
 categories: 
   - "storage"
 tags: 

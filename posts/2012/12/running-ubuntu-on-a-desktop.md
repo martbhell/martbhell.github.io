@@ -1,6 +1,6 @@
 ---
 title: "Running Ubuntu on a Desktop"
-date: "2012-12-15"
+date: 2012-12-15
 categories: 
   - "it"
 tags: 

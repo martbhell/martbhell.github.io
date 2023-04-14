@@ -1,6 +1,6 @@
 ---
 title: "BCFD - Brocade Certified Fabric Designer"
-date: "2012-04-14"
+date: 2012-04-14
 categories: 
   - "it"
 tags: 

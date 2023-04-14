@@ -1,6 +1,6 @@
 ---
 title: "Making use of IBM Laptop T40 – Part 2"
-date: "2011-04-17"
+date: 2011-04-17
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Ranger - Linux CLI File Browser written by python"
-date: "2011-10-24"
+date: 2011-10-24
 categories: 
   - "finland"
 tags: 

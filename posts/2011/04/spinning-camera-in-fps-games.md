@@ -1,6 +1,6 @@
 ---
 title: "Spinning Camera in FPS games"
-date: "2011-04-21"
+date: 2011-04-21
 categories: 
   - "it"
 tags: 

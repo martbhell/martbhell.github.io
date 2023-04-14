@@ -1,6 +1,6 @@
 ---
 title: "Studying for BCNE - Brocade Certified Network Engineer"
-date: "2013-04-19"
+date: 2013-04-19
 categories: 
   - "it"
   - "storage"

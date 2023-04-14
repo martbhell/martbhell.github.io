@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu 10.10 + VMWare + Irssi"
-date: "2011-02-10"
+date: 2011-02-10
 categories: 
   - "it"
 tags: 

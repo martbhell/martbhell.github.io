@@ -1,6 +1,6 @@
 ---
 title: "Lustre 2.5 + CentOS6 Test in OpenStack"
-date: "2014-05-30"
+date: 2014-05-30
 categories: 
   - "storage"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Brocade Certification - BCFD - Fabric Designer - Preparation"
-date: "2012-01-13"
+date: 2012-01-13
 categories: 
   - "storage"
 tags: 

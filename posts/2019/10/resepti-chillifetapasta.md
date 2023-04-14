@@ -1,6 +1,6 @@
 ---
 title: "Resepti: ChilliFetaPasta"
-date: "2019-10-08"
+date: 2019-10-08
 categories: 
   - "finland"
 tags: 

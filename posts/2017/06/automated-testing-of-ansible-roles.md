@@ -1,6 +1,6 @@
 ---
 title: "Automated testing of ansible roles"
-date: "2017-06-01"
+date: 2017-06-01
 categories: 
   - "it"
 tags: 

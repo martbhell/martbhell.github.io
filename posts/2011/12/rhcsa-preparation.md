@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification - RHCSA - Preparation"
-date: "2011-12-09"
+date: 2011-12-09
 categories: 
   - "it"
 tags: 

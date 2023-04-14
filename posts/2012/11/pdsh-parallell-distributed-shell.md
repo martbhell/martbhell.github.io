@@ -1,6 +1,6 @@
 ---
 title: "pdsh - parallell distributed shell"
-date: "2012-11-10"
+date: 2012-11-10
 categories: 
   - "it"
 tags: 

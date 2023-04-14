@@ -1,6 +1,6 @@
 ---
 title: "NHL 2011 Playoff - Bets on!"
-date: "2011-04-11"
+date: 2011-04-11
 categories: 
   - "finland"
 tags: 

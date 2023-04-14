@@ -1,6 +1,6 @@
 ---
 title: "Sofiero Mörk"
-date: "2011-04-08"
+date: 2011-04-08
 categories: 
   - "finland"
 tags: 

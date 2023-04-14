@@ -1,6 +1,6 @@
 ---
 title: "Upgrade WordPress 3.x"
-date: "2011-02-24"
+date: 2011-02-24
 categories: 
   - "it"
 tags: 

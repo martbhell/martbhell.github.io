@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification - RHCE - Preparation"
-date: "2011-12-18"
+date: 2011-12-18
 categories: 
   - "it"
 tags: 

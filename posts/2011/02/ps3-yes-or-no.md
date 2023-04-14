@@ -1,6 +1,6 @@
 ---
 title: "PS3 - yes or no?"
-date: "2011-02-20"
+date: 2011-02-20
 categories: 
   - "it"
 tags: 

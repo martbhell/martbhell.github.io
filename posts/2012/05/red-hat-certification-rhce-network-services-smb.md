@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – SMB"
-date: "2012-05-14"
+date: 2012-05-14
 categories: 
   - "it"
 tags: 

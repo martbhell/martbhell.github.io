@@ -1,6 +1,6 @@
 ---
 title: "Upgrade Ubuntu 12.04 LTS to 14.04"
-date: "2014-02-03"
+date: 2014-02-03
 categories: 
   - "it"
 tags: 

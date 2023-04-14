@@ -1,6 +1,6 @@
 ---
 title: "PostgreSQL upgrade - compressed dumpfile"
-date: "2011-06-19"
+date: 2011-06-19
 categories: 
   - "it"
 tags: 

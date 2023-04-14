@@ -1,6 +1,6 @@
 ---
 title: "Making use of IBM Laptop T40 – Part 4"
-date: "2011-04-19"
+date: 2011-04-19
 categories: 
   - "finland"
 tags: 

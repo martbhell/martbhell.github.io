@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – ssh"
-date: "2012-06-06"
+date: 2012-06-06
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "RH413 - Red Hat Server Hardening"
-date: "2016-03-18"
+date: 2016-03-18
 categories: 
   - "it"
 tags: 

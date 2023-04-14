@@ -1,6 +1,6 @@
 ---
 title: "Server and Storage Tips from the ITRC"
-date: "2011-05-21"
+date: 2011-05-21
 categories: 
   - "finland"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "OpenIndiana + PostgreSQL + dCache"
-date: "2012-03-01"
+date: 2012-03-01
 categories: 
   - "it"
   - "storage"

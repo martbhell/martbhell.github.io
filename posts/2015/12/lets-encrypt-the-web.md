@@ -1,6 +1,6 @@
 ---
 title: "let's encrypt the web!"
-date: "2015-12-05"
+date: 2015-12-05
 categories: 
   - "it"
 tags: 

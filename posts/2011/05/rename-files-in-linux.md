@@ -1,6 +1,6 @@
 ---
 title: "Rename files in Linux - mv"
-date: "2011-05-02"
+date: 2011-05-02
 categories: 
   - "it"
 tags: 

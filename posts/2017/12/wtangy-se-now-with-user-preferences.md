@@ -1,6 +1,6 @@
 ---
 title: "wtangy.se - now with user preferences!"
-date: "2017-12-11"
+date: 2017-12-11
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Confused by the different interfaces in storage?"
-date: "2012-02-27"
+date: 2012-02-27
 categories: 
   - "storage"
 tags: 

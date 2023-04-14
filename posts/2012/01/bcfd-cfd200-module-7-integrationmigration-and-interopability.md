@@ -1,6 +1,6 @@
 ---
 title: "BCFD – CFD200 – Module 7 – Integration/Migration and Interopability"
-date: "2012-01-18"
+date: 2012-01-18
 categories: 
   - "storage"
 tags: 

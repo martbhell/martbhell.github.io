@@ -1,6 +1,6 @@
 ---
 title: "Ubuntu Server + VMWare Workstation"
-date: "2011-05-30"
+date: 2011-05-30
 categories: 
   - "it"
 tags: 

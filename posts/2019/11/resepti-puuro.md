@@ -1,6 +1,6 @@
 ---
 title: "Resepti: Puuro"
-date: "2019-11-16"
+date: 2019-11-16
 categories: 
   - "finland"
 ---

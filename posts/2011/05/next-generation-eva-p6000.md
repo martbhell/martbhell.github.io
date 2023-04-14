@@ -1,6 +1,6 @@
 ---
 title: "Next Generation EVA - P6000"
-date: "2011-05-03"
+date: 2011-05-03
 categories: 
   - "it"
   - "storage"

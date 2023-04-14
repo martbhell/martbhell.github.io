@@ -1,6 +1,6 @@
 ---
 title: "One month at IQM today!"
-date: "2020-04-17"
+date: 2020-04-17
 categories: 
   - "it"
 ---

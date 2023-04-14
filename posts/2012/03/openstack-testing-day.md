@@ -1,6 +1,6 @@
 ---
 title: "openstack testing day"
-date: "2012-03-10"
+date: 2012-03-10
 categories: 
   - "it"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Job"
-date: "2011-02-16"
+date: 2011-02-16
 categories: 
   - "finland"
 tags: 

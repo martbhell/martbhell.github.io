@@ -1,6 +1,6 @@
 ---
 title: "Bicycling in Helsinki"
-date: "2011-08-08"
+date: 2011-08-08
 categories: 
   - "finland"
 tags: 

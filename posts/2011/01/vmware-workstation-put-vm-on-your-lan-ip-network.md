@@ -1,6 +1,6 @@
 ---
 title: "VMWare Workstation -> Put VM on your LAN IP network"
-date: "2011-01-29"
+date: 2011-01-29
 categories: 
   - "it"
 tags: 

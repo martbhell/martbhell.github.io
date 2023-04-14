@@ -1,6 +1,6 @@
 ---
 title: "Onomatopoeia - who said comics did not teach"
-date: "2011-02-14"
+date: 2011-02-14
 categories: 
   - "finland"
 tags: 

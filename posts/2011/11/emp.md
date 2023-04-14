@@ -1,6 +1,6 @@
 ---
 title: "EMP"
-date: "2011-11-22"
+date: 2011-11-22
 categories: 
   - "finland"
   - "it"

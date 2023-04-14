@@ -1,6 +1,6 @@
 ---
 title: "check_irods - nagios plugin to check the functionality of an iRODS server"
-date: "2015-03-31"
+date: 2015-03-31
 categories: 
   - "it"
   - "storage"

@@ -1,6 +1,6 @@
 ---
 title: "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam"
-date: "2014-04-18"
+date: 2014-04-18
 categories: 
   - "it"
 tags: 

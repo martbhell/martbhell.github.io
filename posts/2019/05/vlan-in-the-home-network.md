@@ -1,6 +1,6 @@
 ---
 title: "VLAN in the home network!"
-date: "2019-05-30"
+date: 2019-05-30
 categories: 
   - "it"
 tags: 

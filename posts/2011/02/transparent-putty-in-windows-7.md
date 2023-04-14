@@ -1,6 +1,6 @@
 ---
 title: "Transparent PuTTY in Windows 7"
-date: "2011-02-18"
+date: 2011-02-18
 categories: 
   - "it"
 tags: 

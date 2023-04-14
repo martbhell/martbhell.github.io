@@ -1,6 +1,6 @@
 ---
 title: "Resepti - kokoos kana keitto"
-date: "2020-09-19"
+date: 2020-09-19
 categories: 
   - "finland"
 ---

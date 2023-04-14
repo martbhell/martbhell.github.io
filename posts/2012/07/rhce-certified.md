@@ -1,6 +1,6 @@
 ---
 title: "RHCE Certified"
-date: "2012-07-02"
+date: 2012-07-02
 categories: 
   - "it"
 tags: 

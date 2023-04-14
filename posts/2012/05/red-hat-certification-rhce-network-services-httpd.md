@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services - httpd"
-date: "2012-05-02"
+date: 2012-05-02
 categories: 
   - "it"
 tags: 

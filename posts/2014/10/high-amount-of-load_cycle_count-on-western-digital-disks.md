@@ -1,6 +1,6 @@
 ---
 title: "High amount of Load_Cycle_Count on Green Western Digital disks"
-date: "2014-10-26"
+date: 2014-10-26
 categories: 
   - "it"
   - "storage"

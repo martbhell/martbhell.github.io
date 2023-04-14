@@ -1,6 +1,6 @@
 ---
 title: "Red Hat Certification - RHCE - KVM via CLI"
-date: "2012-06-16"
+date: 2012-06-16
 categories: 
   - "it"
 tags: 

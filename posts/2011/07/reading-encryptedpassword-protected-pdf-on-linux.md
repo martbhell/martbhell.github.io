@@ -1,6 +1,6 @@
 ---
 title: "Reading encrypted/password protected pdf on Linux"
-date: "2011-07-13"
+date: 2011-07-13
 categories: 
   - "it"
   - "storage"

@@ -1,6 +1,6 @@
 ---
 title: "Finnish - Word Cases - Others"
-date: "2011-02-05"
+date: 2011-02-05
 categories: 
   - "finland"
 tags: 
