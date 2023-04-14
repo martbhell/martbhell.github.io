@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Quadra - Did You Play It?"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="- "it" In my youth I enjoyed the LANs. One fun game we played was Quadra - which is a multiplayer tetris where by playing the game you send more..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/quadra-did-you-play-it.html" rel="bookmark"
+           title="Permalink to "Quadra - Did You Play It?"">"Quadra - Did You Play It?"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-02-06T00:00:00+02:00">
+                Published: "2020-02-06"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>- "it"</h2>
+<p>In my youth I enjoyed the LANs. One fun game we played was Quadra - which is a multiplayer tetris where by playing the game you send more blocks to your opponents making it very stressful :D</p>
+<p><a href="https://github.com/quadra-game/quadra">https://github.com/quadra-game/quadra</a> turns out it is open source and it's out there!</p>
+<p>Does it still build?</p>
+<p>CentOS 7.7:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>git
+$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>github.com/quadra-game/quadra
+$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>groupinstall<span class="w"> </span><span class="s2">&quot;Development Tools&quot;</span><span class="w"> </span>
+$<span class="w"> </span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>SDL2-devel<span class="w"> </span>boost-devel<span class="w"> </span>libpng-devel
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>quadra
+$<span class="w"> </span>autoreconf<span class="w"> </span>-i
+$<span class="w"> </span>./configure
+$<span class="w"> </span>make
+</code></pre></div>
+
+<p><strong>It DOES!</strong></p>
+<p>Does it run!?</p>
+<p><code>$ QUADRADIR=. ./quadra</code></p>
+<p>And I get a very nice window :)</p>
+<p><img alt="" src="images/quadra_2020-1024x466.png"></p>
+<p>Quadra in 2020! (do note that it tries to talk to google and sourceforge for updates and so on, try the ./configure --disable-version-check)</p>
+<p>I could even launch one process to run a server and then another server and connect to localhost :) So multiplayer must sureley durely work!</p>
+<p>It's a big laggy - I recall it being very snappy because I was da bomb at this game :)</p>
+<p>I blame this on that I might have missed some dependency and it now fell back into some easier something and or maybe the graphics card in this laptop is not good (maybe it's too new? It's a Skylake GT2 HD G 520).</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

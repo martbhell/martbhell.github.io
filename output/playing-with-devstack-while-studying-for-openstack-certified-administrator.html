@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Playing with devstack while studying for OpenStack Certified Administrator"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "cloud" Below I'll go through some topics I thought about while reading through the requirements for COA: Users and passwords because..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/playing-with-devstack-while-studying-for-openstack-certified-administrator.html" rel="bookmark"
+           title="Permalink to "Playing with devstack while studying for OpenStack Certified Administrator"">"Playing with devstack while studying for OpenStack Certified Administrator"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-08T00:00:00+02:00">
+                Published: "2018-11-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"cloud"</li>
+</ul>
+<hr>
+<p>Below I'll go through some topics I thought about while reading through the <a href="https://www.openstack.org/coa/requirements/">requirements</a> for COA:</p>
+<ul>
+<li>Users and passwords because we use a LDAP at $dayjob. How to set passwords and stuff?<ul>
+<li>openstack user password set</li>
+<li>openstack role add --user foo member --project demo</li>
+</ul>
+</li>
+<li>Users and quota. Can one set openstack to have user quota? <ul>
+<li><em>guess not :)</em></li>
+</ul>
+</li>
+<li>How to default quota with CLI?<ul>
+<li>nova quota-class commands. Found in operator's guide in the docs.</li>
+</ul>
+</li>
+<li>Create openrc without horizon<ul>
+<li>TIL that OS_AUTH in devstack is http://IP/identity . No separate port :) And couldn't really find a nice way. After it's working there's an $ openstack configuration show though which tells stuff..</li>
+</ul>
+</li>
+<li>Cinder backup<ul>
+<li>cool, but this service is not there by default in devstack.</li>
+</ul>
+</li>
+<li>Cinder encryption <ul>
+<li>another volume type with encryption.  Shouldn't need barbican with a fixed_key but I don't know, cinder in my devstack wasn't really working so couldn't attach and try it out. Have some volumes with a encryption_key_id of "000000..." so maybe? Attaching my LVMs isn't working for some reason. Complaining about initiator ?</li>
+</ul>
+</li>
+<li>Cinder groups.<ul>
+<li>Details found under cinder admin guide under rocky.. not Pike. Using cinder command one can create volume group types and then volume groups and then volumes in the volume group. All with cinder command. After you have added volumes into a group you can take snapshots of a volume group. And also create a volume group (and volumes) from the list of snapshots.</li>
+</ul>
+</li>
+<li>
+<p>Cinder storage pool</p>
+<ul>
+<li>backends. In devstack it's devstack@lvmdriver-1apparently one can set volume_backend_name both as a cinder.conf and as a property</li>
+</ul>
+</li>
+<li>
+<p>Object Expiration. Supported in CEPH rados gateway? Yes, but in <a href="http://docs.ceph.com/docs/luminous/radosgw/s3/">luminous</a></p>
+<ul>
+<li>available in default devstack, done with a <a href="https://docs.openstack.org/ocata/user-guide/cli-swift-set-object-expiration.html">magical header</a> X-Delete-After:epoch</li>
+</ul>
+</li>
+<li>Make a Heat template from scratch using the docs. <ul>
+<li>can be made quite minimal</li>
+</ul>
+</li>
+<li>Update a stack</li>
+<li>Checking status of all the services</li>
+<li>Forget about ctrl+w.</li>
+</ul>
+<h2>Study Environment</h2>
+<p>A <a href="https://docs.openstack.org/devstack/latest/">devstack</a> setup in an Ubuntu 18.04 in a VM in $dayjob cloud. This means no nested virtualization and I wonder how unhappy neutron will be because port security. But it's all within one VM - it started OK, not everything worked but that's fine with me :) Probably just need a local.conf which is not the default!</p>
+<p><em>One thing I got to figure out was the LVM setup for cinder. Always fun to read logs :)</em></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

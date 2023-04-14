@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"How to restrict access to your phpmyadmin"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "apache" "hardening" "linux" "phpmyadmin" "security" "ubuntu" "vm" Went through the apache logs on my web-server and saw some access..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/how-to-restrict-access-to-your-phpmyadmin.html" rel="bookmark"
+           title="Permalink to "How to restrict access to your phpmyadmin"">"How to restrict access to your phpmyadmin"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-27T00:00:00+03:00">
+                Published: "2011-07-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"apache"</li>
+<li>"hardening"</li>
+<li>"linux"</li>
+<li>"phpmyadmin"</li>
+<li>"security"</li>
+<li>"ubuntu"</li>
+<li>"vm"</li>
+</ul>
+<hr>
+<p>Went through the apache logs on my web-server and saw some access requests to my phpmyadmin page.</p>
+<p>It's probably a good idea to restrict access to this web based sql admin interface (in case there is an exploit I don't want somebody to use it on this).</p>
+<h2>How to make phpmyadmin a bit more secure</h2>
+<p>sudo vi /etc/phpmyadmin/apache.conf or sudo nano /etc/phpmyadmin/apache.conf</p>
+<p>Under <strong>"Alias /phpmyadmin /usr/share/phpmyadmin" <Directory /usr/share/phpmyadmin> add this:</strong></p>
+<p>Order Deny,Allow Deny from all Allow from 127.0.0.1 Allow from 192.168.0.0/24</p>
+<p>---</p>
+<p>This will let your vm access the /phpmyadmin part and also anything with an IP on the 192.168.0.0/24 network.</p>
+<p>Also, up there in the alias where it first says /phpmyadmin - change this to something else like <strong>"Alias /youcannotguessthis /usr/share/phpmyadmin"</strong> and it will be a lot harder for automatic scanners to find it.</p>
+<p><a href="http://httpd.apache.org/docs/2.2/howto/access.html" title="on apache.org">Here is some more information.</a></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

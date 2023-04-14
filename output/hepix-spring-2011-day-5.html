@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"HEPIX Spring 2011 – Day 5"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" "storage" tags: "cern" "cern-vm-fs" "cloud" "cloudbursting" "cvmfs" "cvs" "distribution" "git" "hepix" "hepix-spring-2011" "http"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/hepix-spring-2011-day-5.html" rel="bookmark"
+           title="Permalink to "HEPIX Spring 2011 – Day 5"">"HEPIX Spring 2011 – Day 5"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-10T00:00:00+03:00">
+                Published: "2011-05-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"</li>
+<li>"storage"
+tags: </li>
+<li>"cern"</li>
+<li>"cern-vm-fs"</li>
+<li>"cloud"</li>
+<li>"cloudbursting"</li>
+<li>"cvmfs"</li>
+<li>"cvs"</li>
+<li>"distribution"</li>
+<li>"git"</li>
+<li>"hepix"</li>
+<li>"hepix-spring-2011"</li>
+<li>"http"</li>
+<li>"national-grid-service-cloud"</li>
+<li>"software"</li>
+<li>"squid"</li>
+<li>"svn"</li>
+<li>"version-control"</li>
+<li>"virtual-machine"</li>
+<li>"vm"</li>
+</ul>
+<hr>
+<p>What day it is can be told by all the suitcases around the room.</p>
+<h2>Version Control</h2>
+<p>An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to migrate.</p>
+<p>They use DNS load balancing</p>
+<ul>
+<li>Browse code / logging, revisions, branches: WEBSVN – on the fly tar creation.</li>
+<li>TRAC – web SVN browsing tool plus: ticketing system, wiki, plug-ins.</li>
+<li>SVNPlot – generate SVN statsw. No need to <strong>checkout</strong> source code (svnstats do 'co').</li>
+</ul>
+<p><a href="http://mercurial.selenic.com/" title="selenic.com">Mercurial</a> was also suggested at the side of <a href="http://git-scm.com/" title="git-scm.com">Git</a> (which is founded by Linus Torvalds).</p>
+<p>Cern - VM - FS</p>
+<p>Cern-VM-FS (CVMFS) looked very promising. The last one is not intended at the moment for images but more for sending applications around. It uses Squid proxy server and looked really excellent. Gives you a mount point like /cvmfs/ and under there you have the softwares.</p>
+<p><a href="http://twitter.com/cvmfs">http://twitter.com/cvmfs</a></p>
+<p>Requirements needed to set it up:</p>
+<ul>
+<li>Rpms: cvmfs, -init-scripts, -keys, -auto-setup (for tier-3 sites does some system configs), fuse, fuse-libs, autofs</li>
+<li>squid cache – you need to have one. Ideally two or more for resilience. Configured (at least) to accept traffic from your site to one or more cvmfs repository servers. You could use existing frontier-squids.</li>
+</ul>
+<h2>National Grid Service Cloud</h2>
+<p>A Brittish cloud.</p>
+<p>﻿Good for teaching with a VM – if a machine is messed up it can be reinstalled.</p>
+<p>Scalability <strong>- '<a href="https://sites.google.com/site/cloudcomputingwiki/Home/cloud-computing-vocabulary" title="definition">cloudbursting</a>' –</strong> users make use of their local systems/clusters – until they are full – and then if they need to they can do extra work in the cloud. Scalability/cloudbursting is the key feature that users are looking for.</p>
+<p>Easy way to test an application on a number of operating systems/platforms.</p>
+<p>Two cases were not suitable. Intensive – with a lot of number crunching.</p>
+<p><strong>Good:</strong> you don't have to worry about physical assembly or housing. They do have to install the servers and networking etc. Usually this is done by somebody else. Images are key to making this easier.</p>
+<p><strong>Bad:</strong> <a href="http://www.eucalyptus.com/" title=".com">Eucalyptus</a> stability – not so good. Bottlenecks: networking is important. More is required to the whole physical server when it's running vms.</p>
+<p>To put a 5GB vm on a machine you would need 10GB. 5 for the image and 5 for the actual machine. Some were intending to develop the images locally on this cloud and then move it on to Amazon.</p>
+<p>Previous Days: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-4/" title="day4">Day 4</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-3/" title="day3">Day 3</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/" title="day2">Day 2</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-1/" title="day1">Day 1</a></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

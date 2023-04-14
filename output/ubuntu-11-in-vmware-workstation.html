@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Ubuntu 11 in VMWare Workstation"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "11-04" "it-2" "natty" "ubuntu" "virtual-machine" "vmware" "vmware-workstation" Time for another test! This time it's Ubuntu 11.04..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ubuntu-11-in-vmware-workstation.html" rel="bookmark"
+           title="Permalink to "Ubuntu 11 in VMWare Workstation"">"Ubuntu 11 in VMWare Workstation"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-03T00:00:00+03:00">
+                Published: "2011-04-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"11-04"</li>
+<li>"it-2"</li>
+<li>"natty"</li>
+<li>"ubuntu"</li>
+<li>"virtual-machine"</li>
+<li>"vmware"</li>
+<li>"vmware-workstation"</li>
+</ul>
+<hr>
+<p>Time for another test! This time it's Ubuntu 11.04 Natty.</p>
+<p>My setup is a Intel Core i7 920 on Windows 7 x64 with 8GB RAM.</p>
+<p>*** Update 2011-04-29 - I just heard that if you run this in a Virtual Machine you do not get all the shebang on the default graphical user interface. But for me it looks fine. Also when I looked on this video it didn't look much different except for the left side bar. If you want to check out the supposedly nicer graphical user interface I would recommend that you put Ubuntu on a CD/DVD and then boot your desktop with it. That way you can see if it's for you and if it works without doing anything to your hard drives :)</p>
+<p>*** Update 2011-04-29 Also added link where to get Ubuntu 11.04 as now it's not in beta anymore.</p>
+<h3>Installing</h3>
+<ol>
+<li>Install VMWare Workstation</li>
+<li><a href="http://www.ubuntu.com/testing/natty/beta" title="on ubuntu.com">Download the Ubuntu ISO. (I got the x64 / AMD64 one) from http://www.ubuntu.com/testing/natty/beta</a></li>
+<li>As it's public now, you can get it from <a href="http://www.ubuntu.com/download/ubuntu/download" title="get ubuntu">http://www.ubuntu.com/download/ubuntu/download</a></li>
+<li>Add new Virtual Machine (VM) in VMWare Workstation, browse to the .iso and it will with easy install find Ubuntu 64-bit.</li>
+<li>Gogogo! Chose language and set up your user account. That's all. After that you can log on to the desktop. It took quite some time for me to install it - though I wasn't in a rush so did not measure time and just left the PC. Maybe it went sleeping or something.</li>
+</ol>
+<p>Uses 5.2GB effective disk space (checked properties on the directory from Windows) after install and that upgrade below.</p>
+<h2><strong>After install.</strong></h2>
+<p>Looks pretty smooth. Quite different from what I remember. I set it to 2GB  RAM and it's only using 300MB from scratch. This is nice. And it turns off in a couple of seconds.</p>
+<ul>
+<li>Unity thing in VMWare Workstation works from scratch (7.1.3 and 7.1.4). In 7.1.4 even with the VMWare Tools not installed updated.</li>
+<li>First thing I ran was a software update - 160MB already after it being out only a couple of days. Guess some big package got an update.. however, no reboot required for it!</li>
+<li>One thing you should be aware of, is that the program options/menu bar, is at the top of the screen, "File", "View", stuff like that. So quite a bit like Mac OS (if I'm not mistaken).</li>
+<li>Audio is also working from start.</li>
+<li>Resolution/screen proportions are automagically updated so that Ubuntu fits the whole screen. Nice. Ubuntu 10.10 does not do this in Virtualbox on RHEL6.</li>
+</ul>
+<h3>Comes default with these programs:</h3>
+<ul>
+<li>Mozilla Firefox 4.0</li>
+<li>Libreoffice (not openoffice??) - looks like openoffice anyway.</li>
+<li>Evolution Mail/calendar</li>
+<li>Empathy chat cilent</li>
+<li>Gwibber - twitter I guess</li>
+<li>Transmission - torrent client</li>
+<li>Shotwell photo manager</li>
+<li>"ubuntu software manager" - where you download apps. There is still however apt-get and synaptic.</li>
+</ul>
+<p>This "ubuntu software manager" is a bit of a fail. It seems very mainstream.</p>
+<h3>For example:</h3>
+<ul>
+<li>irssi cannot be found there</li>
+</ul>
+<p>That's about all I can think of for now.</p>
+<h3>Adobe Flash:</h3>
+<ul>
+<li>No flash from the start. But! Search for it in the software manager and you can install it. This however failed. I tried to report but it required a login so I skipped.</li>
+<li>After fail the app still has a green check-mark on it.</li>
+<li>Flash still works though. And it's not lagging for me at all. But hey, I just tried it right after starting the browser. Maybe it gets choppier after some heavy browsing :p</li>
+</ul>
+<h3>Unity</h3>
+<p>The unity thing is pretty darn neat. What it does is it gives you an "extra" start-button. It's not visible all the time, only when you go near your normal one - it pops out. With that you can then start a program from the Ubuntu virtual machine and it will look like any other program on your PC.</p>
+<p>Supposedly Unity may work better after upgrading VMWare Tools. I got a little bar at the bottom of the screen, extracted and ran the thing. Then it was gone.</p>
+<h3>Conclusion</h3>
+<p>All in all, feels pretty good! I have some plans to get a laptop of mine up running this. Just need some other work done on it first I believe. There were some bugs, but that's not surprising, considering it is in beta. Always liked ubuntu because installing it is so smooth. Might not be the most awesome for preserving system resources but honestly, only using 300MB from start is pretty ok isn't it? If I get it on my laptop, I'll definitely be trying another window manager, like awesome or dwm -  should bring the memory usage down :)</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

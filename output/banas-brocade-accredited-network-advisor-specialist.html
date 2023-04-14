@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"BANAS - Brocade Accredited Network Advisor Specialist"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "bna" "brocade" "certification" "network-advisor" "studying" Finally got around to start preparing the last certificate/accreditation -..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/banas-brocade-accredited-network-advisor-specialist.html" rel="bookmark"
+           title="Permalink to "BANAS - Brocade Accredited Network Advisor Specialist"">"BANAS - Brocade Accredited Network Advisor Specialist"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-02-27T00:00:00+02:00">
+                Published: "2014-02-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"bna"</li>
+<li>"brocade"</li>
+<li>"certification"</li>
+<li>"network-advisor"</li>
+<li>"studying"</li>
+</ul>
+<hr>
+<p>Finally got around to start preparing the last certificate/accreditation - <a href="http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/curriculum.page" title="curriculum on brocade.com">BANAS</a> - to complete the Brocade Data Center Track (ok, not last. There are plenty more!).</p>
+<p>It looks like it's an accreditation showing that the taker can do some basic tasks in Brocade Network Advisor (BNA). This used to be a certification, so it's probably a bit harder than it might seem!</p>
+<p>Please note, this post is not meant to be a replacement for the official Brocade studying recommendation, just my notes on how I'm practicing for it.</p>
+<h2><strong>Methods:</strong></h2>
+<ul>
+<li>Learn about the different features of BNA.</li>
+<li>Install BNA 12.1.4 in a VM - the "SAN Professional" version is free and there is a <a href="http://www.brocade.com/services-support/drivers-downloads/software-evaluations/index.page">try-out version available too</a>.</li>
+<li>Use it with some switches attached.</li>
+<li>Check out the "BNA 101 - Introduction to BNA" course on Brocade's training page. There is also <a href="http://www.brocade.com/downloads/documents/course_data_sheets/BNA200-WBT-DataSheet.pdf">BNA 200-WBT Brocade Network Advisor Training</a> but I'm gonna try to do it without that.</li>
+<li>Until May 15 2014 there is also this: <a href="http://community.brocade.com/t5/Certification/Free-Training-Through-May-15th-on-Brocade-Network-Advisor/ta-p/56511" title="free training!">http://community.brocade.com/t5/Certification/Free-Training-Through-May-15th-on-Brocade-Network-Advisor/ta-p/56511</a></li>
+<li>Learn about the different licensing options and versions of the software. <a href="http://www.brocade.com/downloads/documents/faqs/brocade-network-advisor-faq.pdf">FAQ</a> is useful.</li>
+<li>Watch youtube videos of BNA</li>
+<li>Good documents<ul>
+<li>BNA FAQ http://www.brocade.com/downloads/documents/faqs/brocade-network-advisor-faq.pdf</li>
+<li>Brocade Network Advisor SAN + IP User Manual</li>
+<li>Brocade Network Advisor Installation and Migration Guide</li>
+</ul>
+</li>
+</ul>
+<h3>Install in a VM</h3>
+<p>Not much can be tested without any switches, but installing it a few times is probably helpful. Also getting acquainted with the UI and some things can still be done in the UI like:</p>
+<ul>
+<li>Set UI options</li>
+<li>Set up a firmware repository (at least import firmwares, release notes and md5 checksums)</li>
+<li>Retrieve a SupportSave</li>
+</ul>
+<p>Either register on Brocade's site and get the download that way. Or get it via HP's public page - for example <a href="http://www8.hp.com/us/en/products/storage-software/product-detail.html?oid=3832744#!tab=features">here</a>. Click on Download. Because I'm lazy I'm installing it in a Windows 7 x64 VM 2 cores and 4GB RAM is much faster than 2GB. For just installing it you'll need 3-4GB disk space. Find install.exe within na1214_hp_windows.zip</p>
+<p>The default user/password is: Administrator/password The user/password you set during installation is for the database.</p>
+<p>FTP/SCP/SFTP, syslog, snmp, https. Uses a postgreSQL database.</p>
+<p>On the http/https page there are MIBs and the BNA client.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

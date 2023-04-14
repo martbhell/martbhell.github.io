@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Factory reset of a Brocade SAN switch"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""storage" tags: "access-gateway" "ag" "brocade" "factory-reset" "licenses" Ever wondered which is the easiest way? Using the "configDefault --all"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/factory-reset-of-a-brocade-san-switch.html" rel="bookmark"
+           title="Permalink to "Factory reset of a Brocade SAN switch"">"Factory reset of a Brocade SAN switch"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-07-18T00:00:00+03:00">
+                Published: "2013-07-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"storage"
+tags: </li>
+<li>"access-gateway"</li>
+<li>"ag"</li>
+<li>"brocade"</li>
+<li>"factory-reset"</li>
+<li>"licenses"</li>
+</ul>
+<hr>
+<p>Ever wondered which is the easiest way?</p>
+<p>Using the "configDefault --all" does not clear everything, for example it doesn't clear: system name, zoning, etc.</p>
+<p>Setting the switch to AG mode (Access Gateway) - will clear more things as it basically dumbs down the switch, it does not remove the licenses, IP and password.</p>
+<p>ag --modeenable
+ag --modedisable</p>
+<p>The 'ag --modedisable' (puts switch back in normal switch mode) command sets the default zones access to No Access, so if you want to merge this switch into a fabric you'll most likely need to change that and disable/enable the E_Ports.</p>
+<p>Quite often there are some good tips on the Brocade's <a href="http://community.brocade.com/" title="http://community.brocade.com/">community forum</a>.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"How-To : Update Spotify on RHEL6 x64 native client"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "red-hat" "red-hat-enterprise-linux" "rhel" "spotify" "spotify-for-linux" See the post for how to install spotify on a Linux Client..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/how-to-update-spotify-on-rhel6-x64-native-client.html" rel="bookmark"
+           title="Permalink to "How-To : Update Spotify on RHEL6 x64 native client"">"How-To : Update Spotify on RHEL6 x64 native client"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-10-14T00:00:00+03:00">
+                Published: "2011-10-14"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"red-hat"</li>
+<li>"red-hat-enterprise-linux"</li>
+<li>"rhel"</li>
+<li>"spotify"</li>
+<li>"spotify-for-linux"</li>
+</ul>
+<hr>
+<p>See <a href="http://www.guldmyr.com/blog/how-to-install-spotify-on-rhel6-x64-native-client/" title="how-to-install-spotify-on-rhel6-x64-native-client/">the post</a> for how to install spotify on a Linux Client (RHEL 6 x64 in my case).</p>
+<p>This post is for how to upgrade.</p>
+<p>2012-02-01: Updated, added --nodeps to the rpm upgrade. 2013-01-08: This has been confirmed to work with spotify-0.8.8, updated typo in symlink part.</p>
+<p>Why? http://repository.spotify.com/pool/non-free/s/spotify/spotify-client-qt_0.6.1.309.gb871a7d-1_amd64.deb is out!</p>
+<p>Is available. Maybe right-click works?? =)</p>
+<ol>
+<li>Get the .deb into a place where you can run the program 'alien'. I have ubuntu in a virtual machine so fired that up, downloaded the .deb</li>
+<li>sudo alien --to-rpm spotify-client-qt_0.6.1.309.gb871a7d-1_amd64.deb</li>
+<li>e-mailed spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64.rpm to myself</li>
+<li>save the .rpm, close spotify,  and hit:</li>
+<li>sudo rpm -Uvh spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64.rpm</li>
+<li>this failed, it needed</li>
+</ol>
+<p>error: Failed dependencies: <em>libcrypto.so.0.9.8()(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64 libcrypto.so.0.9.8(OPENSSL_0.9.8)(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64 libssl.so.0.9.8()(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64 libssl.so.0.9.8(OPENSSL_0.9.8)(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64</em></p>
+<p><a href="http://forums.fedoraforum.org/showthread.php?t=270230" title="on fedoraforum.org">A forum post with some more details about this</a>.</p>
+<p><em>whereis spotify ldd /usr/bin/spotify gives me: libssl.so.10 0&gt; /usr/lib64/libssl.so.10 libcrypto.so.10 0&gt; /usr/lib64/libcrypto.so.10</em></p>
+<p>hit:</p>
+<p>cd /usr/lib64 </p>
+<p>sudo ln -s libcrypto.so.10 libcrypto.so.0.9.8 sudo ln -s libssl.so.10 libssl.so.0.9.8</p>
+<p>If still no go, some advise to rename/delete ~/.config/spotify and ~/.cache/spotify</p>
+<p>If neither of the above still works, run</p>
+<p>rpm -Uvh --nodeps spotify-client-qt-0.6.6.10.gbd39032.58-2.x86_64.rpm</p>
+<p>It's now possible to right-click on playlists! Also to click on 'File' works! Woop!</p>
+<p>Right-click on artist worked a few times. Then after a while it stopped working. AGREGHA!!#45</p>
+<p><em>(still crashes with Spotify 0.6.6.10)</em></p>
+<p>I would guess that the problem lies with qt or webkit.</p>
+<p>Sharing works though. It sucks a bit to not be able to add files to playlists. But clicking the star works so you can find the songs you don't want to forget in there. Scrobble/last.fm also works. Cannot select top list for another country.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

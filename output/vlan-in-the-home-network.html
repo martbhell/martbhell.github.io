@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"VLAN in the home network!"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "cable" "firmware" "home-network" "hyper-v" "internet-service-provider" "modem" "network-interface-controller" "network-switch"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/vlan-in-the-home-network.html" rel="bookmark"
+           title="Permalink to "VLAN in the home network!"">"VLAN in the home network!"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-05-30T00:00:00+03:00">
+                Published: "2019-05-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"cable"</li>
+<li>"firmware"</li>
+<li>"home-network"</li>
+<li>"hyper-v"</li>
+<li>"internet-service-provider"</li>
+<li>"modem"</li>
+<li>"network-interface-controller"</li>
+<li>"network-switch"</li>
+<li>"usb-3-0"</li>
+<li>"user-interface"</li>
+<li>"virtual-lan"</li>
+<li>"windows-10"</li>
+</ul>
+<hr>
+<p>https://www.guldmyr.com/blog/some-updates-to-the-home-network/</p>
+<p>Above is a previous post in this series about some improvements to my home network. With two modems from two ISPs.</p>
+<p>So! On Alibaba I found two Hasivo <a href="https://www.aliexpress.com/item/8-Port-Gigabit-Managed-Switch-Managed-Ethernet-Switch-with-8-port-10-100-1000M-VLAN/1000007360495.html">8x1GbE managed fanless switches</a> with VLAN support. Delivery time to Finland was really quick. It didn't say (ok, I didn't read all or ask seller) if they included European adapters but turns out they did!</p>
+<p>To recap: <strong>The idea was to use the one long cable and transport two VLANs over it. Other than that how I would actually implement it was a bit fuzzy.</strong></p>
+<p><img alt="" src="images/home-net-current-20190516-2.jpg"></p>
+<p>New layout. Numbers in the switchlike boxes are VLAN ids</p>
+<p>Things I've learnt while connecting these:</p>
+<ul>
+<li>Creating a VLAN subinterface in Windows 10 seems to require Hyper-V.. This means if I have one machine and want it in both VLANs I need two NICs. No bother, I found a USB3 1GbE adapter in a box at home when cleaning :)</li>
+<li>I knew about VLAN trunk cables, and the way they are implemented in this Web Interface is to set both VLANs as tagged on the same port.<ul>
+<li>The web interface of this switch has two pages about VLANs. One is a static setup where you say which port is a member of which VLAN and if it's tagged or untagged. Changing the default or removing a port from VLAN 1 was not possible in this the first screen. In the second however one can change the PVID which is the untagged/native VLAN.</li>
+</ul>
+</li>
+<li>Also found a few extra short ethernet cables in old ISP modem boxes, very nice to have with this as this exercise required a few more cables.</li>
+<li>So on the desktop I now need to choose which network interface to use to get to the Internet. I learnt that if I just remove default gateway for IPv4 from ISP A and use the NIC to ISP B then IPv6 from ISP A will still be there and used :)</li>
+</ul>
+<p><img alt="" src="images/static_vlan_setup.png"></p>
+<p>First VLAN config page: The static VLAN/tagged VLAN setup on the other page</p>
+<p><img alt="" src="images/modemb_untagged.png"></p>
+<p>Second VLAN config page: The native VLAN / PVID configuration on one switch</p>
+<p><em>Some <strong>more bits about the switches is in order:</strong></em></p>
+<p>On a related note, the modems have switches builtin and I also had a 6 port fanless unmanaged switch which has been working great for the last 6 years or so but now that got deprecated, yay one less UK plug adapter :). I prefer using an extra switch as opposed to the modem's. The modems sometimes reboot which is annoying as it interrupts anything I'm doing, even if it's only local without going to the Internet.</p>
+<p>They have a very basic looking CGI web interface. The web interface is only accessible on VLAN 1. The firmware is from 2013 and has version v1.0.3, I asked the seller (which was very responsive to all of my questions) and apparently a newer one is in the works but unfortunately, there's no way to subscribe to any news about new firmware coming.. I doubt it'll ever come.  </p>
+<p>One switch-like quality was that to save the running configuration you make in the web interface, you have to click on save.</p>
+<p>There is a manual, one just had to ask the seller on Ali Baba for it - attaching it here for convenience.</p>
+<p><a href="https://www.guldmyr.com/blog/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf">switch manual</a><a href="https://www.guldmyr.com/blog/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf">Download</a></p>
+<p>All in all this worked out quite nicely. We'll see how this keeps up. Some further avenues of interest:</p>
+<ul>
+<li>On my desktop I now use the USB NIC to get to the internet, I tried once to use the system board NIC but then had some issues.. perhaps that's a bit faster. Using a USB 3 port vs a USB 2 port gave about half a millisecond faster latency to this place I usually ping.funet.fi</li>
+<li>Response time on the DSL is a bit higher (17 vs 12) to ping.funet.fi<ul>
+<li>tracert shows 17ms to first hop with the DSL's ISP</li>
+<li>tracepath shows 10ms to first hop with the cable modem's ISP</li>
+<li>pinging the DSL modem is 1ms vs cable modem 3ms</li>
+<li>ping6 to ping.funet.fi is 10ms with DSL</li>
+</ul>
+</li>
+<li>Maybe time to look into a cheap AP to plug in near ISP modem B but connected to VLAN 10 so wifi clients there can reach the server..</li>
+<li>The switches have a bunch of other settings that could be fun to play with too.</li>
+</ul>
+<p>Was the layout diagram above not clear? Try this:</p>
+<p><img alt="" src="https://lh5.googleusercontent.com/ZtYmLJgLMLOlWOvYaNZ47I7KnI0HwTrqWw8u9JlhxVgdJJpt7whfeeccwekT-OcJ_jTP2HqOqkV4Ry0fTd3VAB0YH7pGlcxlUatlWSzpSCFiYhLW2cgc3fDknkY0vJ9xn5fuXqHM"></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

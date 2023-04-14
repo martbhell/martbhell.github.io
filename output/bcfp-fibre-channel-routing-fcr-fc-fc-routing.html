@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"BCFP - Fibre Channel Routing - FCR - FC-FC Routing"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""storage" tags: "bcfp" "brocade" "brocade-certified-fabric-professional" "fc-fc-routing" "fcr" "fibre-channel" "fibre-channel-routing"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/bcfp-fibre-channel-routing-fcr-fc-fc-routing.html" rel="bookmark"
+           title="Permalink to "BCFP - Fibre Channel Routing - FCR - FC-FC Routing"">"BCFP - Fibre Channel Routing - FCR - FC-FC Routing"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-26T00:00:00+03:00">
+                Published: "2011-07-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"storage"
+tags: </li>
+<li>"bcfp"</li>
+<li>"brocade"</li>
+<li>"brocade-certified-fabric-professional"</li>
+<li>"fc-fc-routing"</li>
+<li>"fcr"</li>
+<li>"fibre-channel"</li>
+<li>"fibre-channel-routing"</li>
+<li>"san-network"</li>
+<li>"storage"</li>
+</ul>
+<hr>
+<p>FCR; Fibre Channel Routing; FC-FC Routing; etc; etc.</p>
+<p>This has many names. FC-FC Routing service provides FCR (fibre channel routing). Basically what it does is that it lets you zone devices in two separate fabrics without merging them. These two separate fabrics are called 'edge fabrics' in Brocade lingo, they are otherwise known as SAN islands. The edge fabric is connected to a backbone fabric (an FC router or at least an EX_Port).</p>
+<p>Integrated Routing - is a licensed feature that lets you run FCR on a port that is in a normal port in a normal switch or port blade (so not in a dedicated router switch or router blade).</p>
+<h2>There's a few things required to set up FCR:</h2>
+<ol>
+<li>Verify that you have the proper setup (required licenses/hardware)</li>
+<li>Assign backbone FIDs (<strong>switchdisable; fosConfig --disable fcr; fcrconfigure; fosconfig --enable; switchenable</strong>)</li>
+<li>Configure FCIP tunnel (not required but: <strong>portcfg fciptunnel 8/ge0 create 2 1.1.1.1 1.1.2.1 0 -v 100 -p 3 -P 7</strong> . Remote IP first, tunnel ID, vlan, Classes for layer2 control and data traffic)</li>
+<li>Configure IFLs - inter fabric links - links between edge and backbone fabrics (portcfgvexport, <strong>portcfgexport 7 -a 1 -f 30</strong> . port 7, enable, fabric id 30)</li>
+<li>Modify cost on the EX_ports (not required; <strong>portdisable; portcfgexport 7 -a 1; fcrrouterportcost 7 10000</strong>; for default, set it to 0; <strong>fcrRouteShow</strong> also shows cost)</li>
+<li>Connect cables (if you do it before and they are configured as E_port you may get segmentation).</li>
+<li>Configure trunking on EX_ports (not required but if you have more than one link, please do, same commands as for E_port trunking)</li>
+<li>Configure LSAN zones (same as normal zoning; <strong>zonecreate "lsan_zone_fabric", "wwn; wwn2; wwn3"; cfgadd "zone_cfg", "lsan_zone_fabric"; cfgenable "zone_cfg"</strong>). Use <strong>lsanzoneshow -s</strong>. Shows imported/exist/configured/initializing. <strong>fcrphydevshow, fcrproxydevshow</strong> are also useful.</li>
+<li>Confirm that it's working (<strong>fcrfabricshow, switchshow, portcfgshow, portexport 7, portshow 7</strong>)</li>
+</ol>
+<p>So what you have to do is: assign FIDs, configure IFLs and LSAN zones. </p>
+<h2>A little theory</h2>
+<p>Phantom domains.</p>
+<p><strong>Front domains</strong> -&gt; always there</p>
+<p><strong>Translate domains</strong> (also xlate domains...).  -&gt; only there when devices are online and zoned</p>
+<p>The FC router has a pool of wwns and proxy ids that it assigns to devices. Basically a host that wants to communicate with a target in another fabric communicates with a proxy WWN in its own fabric (so the FC router is like a middle man that passes frames back n forth).</p>
+<h2>A little more information</h2>
+<p>When a PLOGI, PDISC, ADISC frame arrives at the FC router, SID and DID are checked. If they are zoned in both SID and DID edge fabrics (islands), the frame is forwarded to DID. If not, only PLOGI is dropped; edge fabrics' zoning enforcement takes care of the rest.</p>
+<p>I found <a href="http://education.emc.com/main/common/documents/ks_articles/brocade_fibre_channel_routing.pdf" title="on emc.com and it's a pdf">this document</a> on EMC's webpage (it's from 2007 so a bit outdated and it has EMC's names of the Brocade products) but it explains the concept pretty nicely.</p>
+<p>Also, this post is for me to study for the BCFP, I find that I learn better when I write things down with a keyboard ;) There may be mistakes in here but that's just how it is, I tried to keep it as factual as possible and used several sources. There will most likely be more of these posts coming up.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

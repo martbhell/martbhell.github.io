@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Taking puppet-ghostbuster for a spin"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "hiera" "puppet-software" "ssh" We use puppet at $dayjob to configure OpenStack. I wanted to know if there's a lot of unused code in..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/taking-puppet-ghostbuster-for-a-spin.html" rel="bookmark"
+           title="Permalink to "Taking puppet-ghostbuster for a spin"">"Taking puppet-ghostbuster for a spin"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-07-18T00:00:00+03:00">
+                Published: "2019-07-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"hiera"</li>
+<li>"puppet-software"</li>
+<li>"ssh"</li>
+</ul>
+<hr>
+<p>We use puppet at $dayjob to configure OpenStack.</p>
+<p>I wanted to know if there's a lot of unused code in our manifests!</p>
+<p>**From left of stage enters: https://github.com/camptocamp/puppet-ghostbuster **</p>
+<p>Step one is to install the puppet modules and gems and whatnot, this blog post was good about that: <a href="https://codingbee.net/puppet/puppet-identifying-dead-puppet-code-using-puppet-ghostbuster">https://codingbee.net/puppet/puppet-identifying-dead-puppet-code-using-puppet-ghostbuster</a></p>
+<p>Next I needed to get the HTTP forwarding of the puppetdb working, this can apparently (I learnt about ssh -J) be done with:</p>
+<blockquote>
+<p>ssh -J jumphost.example.org INTERNALIPOFPUPPETMASTER -L 8081:localhost:8080</p>
+</blockquote>
+<p>Then for setting some variables pointing to hiera.yaml and setting</p>
+<blockquote>
+<p>PUPPETDB_URL=http://localhost:8081 HIERA_YAML=/tmp/hiera.yaml</p>
+</blockquote>
+<p>Unsure if hiera.yaml works, just copied it in from the puppetmaster</p>
+<p>Then running it</p>
+<blockquote>
+<p>find . -type f -name '*.pp' -exec puppet-lint --only-checks ghostbuster_classes,ghostbuster_defines,ghostbuster_facts,ghostbuster_files,ghostbuster_functions,ghostbuster_hiera_files,ghostbuster_templates,ghostbuster_types {} \+|grep OURMODULE</p>
+</blockquote>
+<p>Got some output! Are they correct?</p>
+<blockquote>
+<p>./modules/OURMODULE/manifests/profile/apache.pp - WARNING: Class OURMODULE::Profile::Apache seems unused on line 6</p>
+</blockquote>
+<p>But actually we have a role that contains:</p>
+<blockquote>
+<p>class { 'OURMODULE::profile::apache': }</p>
+</blockquote>
+<p>So I'm not sure what is up... But if I don't run all the ghostbuster and instead skip the ghostbuster_classes test I get a lot fewer warnings for our module.</p>
+<blockquote>
+<p>/modules/OURMODULE/manifests/profile/keystone/user.pp - WARNING: Define OURMODULE::Profile::Keystone::User seems unused on line 2</p>
+</blockquote>
+<p>Looking in that one we have a "OURMODULE::profile::keystone::user" which calls keystone_user and keystone_user_role. However we do call it but like this:</p>
+<blockquote>
+<p>OURMODULE::Profile::Keystone::User&lt;| title == 'barbican' |&gt;</p>
+</blockquote>
+<p>Or in this other place:</p>
+<blockquote>
+<p>create_resources(OURMODULE::profile::keystone::user, $users)</p>
+</blockquote>
+<p>Let's look at the next. which was also a "create_resources" . Meh. Same same. And if I skip the ghostbuster_defines? No errors :) Well it was worth a shot. Some googling on the topic hints that it might not be possible with the way puppet works.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

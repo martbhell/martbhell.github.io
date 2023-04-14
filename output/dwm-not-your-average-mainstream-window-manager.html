@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"DWM - not your average mainstream window manager"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""finland" tags: "dwm" "gnome" "linux" "rhel" "window-manager" Have been playing around with a new window manager (new as in for me, I've only used..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/dwm-not-your-average-mainstream-window-manager.html" rel="bookmark"
+           title="Permalink to "DWM - not your average mainstream window manager"">"DWM - not your average mainstream window manager"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-03-16T00:00:00+02:00">
+                Published: "2011-03-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"finland"
+tags: </li>
+<li>"dwm"</li>
+<li>"gnome"</li>
+<li>"linux"</li>
+<li>"rhel"</li>
+<li>"window-manager"</li>
+</ul>
+<hr>
+<p>Have been playing around with a new window manager (new as in for me, I've only used fluxbox, kde and gnome before) called DWM - see more information on <a href="http://www.suckless.org" title="suckless.org">www.suckless.org.</a></p>
+<p>I'm running it on a T400 with RHEL6 (which uses gnome login manager - gde).</p>
+<h2>Basically:</h2>
+<ol>
+<li>if you want to make a change like modify keyboard shortcuts, rules, tagging, top bar stuff, you need to <strong>edit config.h and then compile</strong> (make and then make install). Then you need to re-load dwm.</li>
+<li>after that is done, create a properly formatted file under /usr/share/xsession/</li>
+<li>then in the login manager you can chose dwm :)</li>
+</ol>
+<h2>Notes:</h2>
+<ol>
+<li>install dmenu as well, it is neat. ALT+P, then type what you want to run, then hit enter. Also if you type in 'lock' it will find xlock etc.</li>
+<li>ALT+SHIFT+ENTER gives you the terminal, ALT+SHIFT+Q quits dwm and gets you back to the login manager.</li>
+<li>ALT is the default, can be modified to apple- or windows-key</li>
+</ol>
+<h2>My problems :</h2>
+<ol>
+<li>re-load dwm can be done in several ways but I have not found one that works well for me. If you do like me and run dwm in a while loop the only way I've found out so far is to reboot the whole machine. Because I don't know how to log off the session and get back to the gdm login manager. I hope I do find a way around because rebooting kind of sucks ;)</li>
+<li>gnome-session-save --logout does not work -gave some kind of error</li>
+<li>MODKEY+SHIFT+Q only seems to re-fresh the screen, doesn't actually re-load the whole she-bang.</li>
+</ol>
+<p>DWM top bar can be edited to show other things than DWM version. See <a href="http://www.guldmyr.com/blog/dwm-editing-the-bar-to-show-time/" title="editing top bar in dwm">my post here</a> about that.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

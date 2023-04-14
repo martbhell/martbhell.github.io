@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"HP's Brocade firmwares compatible with other switches?"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" "storage" tags: "brocade" "examdiff" "firmware" "gpl" "hds" "hp" "ibm" "san" "san-switches" "storage" After a question in my SAN switch..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/hps-brocade-firmwares-compatible-with-other-switches.html" rel="bookmark"
+           title="Permalink to "HP's Brocade firmwares compatible with other switches?"">"HP's Brocade firmwares compatible with other switches?"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-15T00:00:00+03:00">
+                Published: "2011-05-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"</li>
+<li>"storage"
+tags: </li>
+<li>"brocade"</li>
+<li>"examdiff"</li>
+<li>"firmware"</li>
+<li>"gpl"</li>
+<li>"hds"</li>
+<li>"hp"</li>
+<li>"ibm"</li>
+<li>"san"</li>
+<li>"san-switches"</li>
+<li>"storage"</li>
+</ul>
+<hr>
+<p>After a <a href="http://www.guldmyr.com/blog/brocade-san-switch-firmware-upgrades/#comment-524" title="link to question">question</a> in my <a href="http://www.guldmyr.com/blog/brocade-san-switch-firmware-upgrades/" title="upgrade brocade SAN switches">SAN switch firmware upgrade article</a> I made a comparison of two downloads of 6.3.1b (one via IBM and one from HP) - the only differences were a file called ancillary and one called EULA.pdf. I used <a href="http://www.prestosoft.com/edp_examdiff.asp" title="examdiff">examdiff</a> to find the differences.</p>
+<p>All the sub-directories were the same, only the above two files were added in the HP one. I believe quite strongly that you can use the HP firmwares to upgrade Brocade switches that are branded by other vendors.</p>
+<p>At least <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220" title="Link to &quot;IBM&quot; and Brocade Firmwares">IBM</a> and normal Brocade ones.</p>
+<p>As they are using the very same Brocade firmware that Brocade themself use, it might be hard for the vendors to change the switch that much.</p>
+<p><strong>It would be interesting to investigate if other vendors add something to make theirs not, but I have no way of acquiring such a firmware.</strong></p>
+<p>The EULA looks like a normal HP standard end user license agreement form. The HP ancillary.txt file contains this:</p>
+<h6>"This ancillary.txt file provides information as to how to obtain the open source or other third party licenses in this distribution. To obtain such licenses, run the following CLI command at the prompt, "opensource".</h6>
+<h6>This ancillary.txt file also provides the instructions for customers who require a copy of the machine-readable GPL Source Code by written request.  Upon your written request, HP will provide to You, for a fee covering the cost of distribution, a complete machine-readable copy of the GPL Source Code. Your written request for GPL Source Code can be sent via email to FC_Infrastructure_OpenSourceRequest@hp.com. In the request, include product name, version number, your name, and your shipping address. "</h6>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

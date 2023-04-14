@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Ubuntu 10.10 Minimal Virtual Kernel + VMWare Workstation"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "10-10" "apt-get" "dns" "finland" "it-2" "kernel" "pico" "time-servers" "ubuntu" "virtual-kernel" "virtual-machine" "vm"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ubuntu-1010-minimal-virtual-kernel-vmware-workstation.html" rel="bookmark"
+           title="Permalink to "Ubuntu 10.10 Minimal Virtual Kernel + VMWare Workstation"">"Ubuntu 10.10 Minimal Virtual Kernel + VMWare Workstation"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-07T00:00:00+02:00">
+                Published: "2011-02-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"10-10"</li>
+<li>"apt-get"</li>
+<li>"dns"</li>
+<li>"finland"</li>
+<li>"it-2"</li>
+<li>"kernel"</li>
+<li>"pico"</li>
+<li>"time-servers"</li>
+<li>"ubuntu"</li>
+<li>"virtual-kernel"</li>
+<li>"virtual-machine"</li>
+<li>"vm"</li>
+<li>"vmware-workstation"</li>
+</ul>
+<hr>
+<p>To install Ubuntu 10.10 with a virtual kernel instead of the normal one = good, less stuff installed that you may not need.</p>
+<ol>
+<li>When setting up the install, do not use the easy install. Chose to install an OS later. Set up bridged/nat depending on which one you want.</li>
+<li>Add the install .iso to the CD-drive in the VM</li>
+<li>Select a language</li>
+<li>Press F4 (it didn't work in the first screen)</li>
+<li>Chose - install a minimal virtual machine</li>
+<li>Install Ubuntu Server</li>
+<li>Chose language again</li>
+<li>Chose key map - (I chose English and had to browse to Finland)</li>
+<li>Asked to press some buttons, wanted Swedish (but have an English keyboard) so tried to press the right ones :p</li>
+<li>Then time zone Helsinki/Finland was found.</li>
+<li>Using default (whole disk, no encryption or lvm) for partitioning.</li>
+<li>set up users</li>
+<li>set up encryption on home dir</li>
+<li>proxy setup</li>
+<li>installing security updates automagically</li>
+<li>any extra packages (DNS, LAMP, Mail, OpenSSH, etc)? - I chose no, want to chose this myself later.</li>
+<li>yes I want grub (it finds only one OS on the virtual disk ;)</li>
+</ol>
+<p>Then I see the login prompt! Obviously the easy-install in VMWare Workstation has a lot less steps :)</p>
+<p>But on the other hand you could install OpenSSH directly through the install and then you do not have to log on to the VM via VMWare Workstation, but can do it via your favorite ssh program instead.</p>
+<h2>Post install</h2>
+<p>What I want installed every time after an uninstall. After install it is a very very small installation. Not even 'man' is installed.</p>
+<p><strong>sudo apt-get install openssh-server ntp nano</strong></p>
+<p><strong>edit /etc/network/interfaces - configure static ip edit /etc/ntp.conf - add time servers edit ~/.bashrc - change colors in the prompt and add color</strong></p>
+<p>Kernel difference you can see when running uname: 2.6.35-22-virtual in comparison to 2.6.35-22-generic</p>
+<p>There!</p>
+<p>Now you can set up whatever you want on it! Of course you may want to do more things, set up iptables or you could use it like it is before the things I do after each install. You can use vi instead of nano/pico and use dhcp instead, depends on what you are going to do with your VM.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

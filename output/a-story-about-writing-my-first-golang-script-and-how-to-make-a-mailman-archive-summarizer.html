@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"A story about writing my first golang script and how to make a mailman archive summarizer"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="- "it" Time to try out another programming language! Golang I see quite frequently in my twitters so have been thinking for a while - why not give..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/a-story-about-writing-my-first-golang-script-and-how-to-make-a-mailman-archive-summarizer.html" rel="bookmark"
+           title="Permalink to "A story about writing my first golang script and how to make a mailman archive summarizer"">"A story about writing my first golang script and how to make a mailman archive summarizer"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-12-07T00:00:00+02:00">
+                Published: "2018-12-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>- "it"</h2>
+<p>Time to try out another programming language!  </p>
+<p>Golang I see quite frequently in my twitters so have been thinking for a while - why not give it a shot for the next project!</p>
+<p>TLDR; <a href="https://github.com/martbhell/mailman-summarizer">https://github.com/martbhell/mailman-summarizer</a></p>
+<hr>
+<p>Took a while to figure out what would be a nice small project. Usually my projects involve some kind of web scraping that helps me somehow, <a href="https://wtangy.se/">https://wtangy.se/</a> is one which tells me if there "Was An Nhl Game Yesterday". Also in this case it turned out I wanted something similar, but this time it was work related. I have been tinkering with this for a week or so on and off. Today, the day after Finnish Independence day I thought let's get this going!</p>
+<p>For $dayjob I'm in a team that among many other things manage a CEPH rados gateway object storage service. <a href="http://ceph.com/">CEPH</a> is quite a big (OK, it's quite an active) project and their mailing lists are <em>a decent (OK, I don't know a better)</em> places to stay up to date. For example the <a href="http://lists.ceph.com/pipermail/ceph-users-ceph.com">http://lists.ceph.com/pipermail/ceph-users-ceph.com</a>/ has lots of interesting threads. However it sometimes gets 1000 messages per month! This is way too many for me, especially since most of them are not that interesting to me as I'm not an admin of any CEPH clusters, our services <em>only</em> use them :)</p>
+<p>So the idea of an aggregator or filter was born. The mailing list has a digest option when subscribing, but it doesn't have a filter.</p>
+<h2>Enter "<strong>mailman-summarizer</strong>"! <a href="https://github.com/martbhell/mailman-summarizer">https://github.com/martbhell/mailman-summarizer</a></h2>
+<p>As usual when I play around in my spare time I try to document much more than is necessary. But if I ever need to re-read this code in a year or two because something broke then I want to save myself some time. Most likely I won't be writing much more Go between now and then so the things I learnt while writing this piece will probably have been purged from memory!</p>
+<p>The end result <a href="https://storage.googleapis.com/ceph-rgw-users/feed.xml">https://storage.googleapis.com/ceph-rgw-users/feed.xml</a><br>
+as of right now looks like below in one RSS reader:</p>
+<p><img alt="" src="images/image-1024x339.png"></p>
+<p>In summary the steps to get there were:</p>
+<ul>
+<li>Used https://github.com/bcongdon/colly-example to do some web scraping of the mailman/pipermail web archive of the ceph-users e-mail list. Golang here was quite different from Python and beautifulsoup. It uses callbacks. I didn't look too deeply into those but things did not happen in the same order they were written. Maybe it can be used to speed things up a bit, but the slowest part of this scraping is the 1s+random time delay I have between the HTTP GETs to be nice to the Internet ;)</li>
+<li>It loops over the Months (thread.html) for some of the years and only saves links and their titles which has "GW" in the title.</li>
+<li>Put this in a map (golang is <strong>different</strong> here too. Kind of like a python dictionary but one had to initialize it in advance. Lots of googling involved :)</li>
+<li>Loop over the map and create RSS, JSON, ATOM or HTML output using the <a href="http://www.gorillatoolkit.org/pkg/feeds">gorilla feeds pkg</a>. Use of the <a href="https://golang.org/pkg/time/">time</a> pkg in Golang was needed to have nice fields in the RSS, this was interesting. Not using UNIX 1970 seconds epoch but some date in 2006? Some|most functions?types?interfaces? (I don't know the names of most things) give a value AND an error on the call makes declaring? a variable a bit funny looking:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nx">l</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">keys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">append</span><span class="p">(</span><span class="nx">keys</span><span class="p">,</span><span class="w"> </span><span class="nx">l</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>That was the golang part. I could have just taken the output, stored it in a file and put it in a web server somewhere.</p>
+<p><a href="https://wtangy.se">https://wtangy.se</a> uses google's object store, but it has an appengine python app in front. So I took a break and watched some NHL from yesterday and in the breaks I thought about what would be a slim way of publishing this feed. I did not want to run a virtual machine or container constantly, the feed is a static HTML and can just be put in an object store somewhere. It would need a place to run the code though, to actually generate the RSS feed!</p>
+<p>I'm a big fan of <a href="https://github.com/martbhell/mailman-summarizer/blob/master/.travis.yml">travis-ci</a> and as part of this project the continuous integration does this on every commit:</p>
+<ul>
+<li>spawn a virtual machine with Go configured (this is all part of travis(/any other CI system I've played with), just needs the right words in .travis.yml file in the repo)</li>
+<li>decrypt a file that has the credentials of a service account which has access to a bucket or two in a project in google cloud</li>
+<li>compiles mailman-summarizer</li>
+<li>run <a href="https://github.com/martbhell/mailman-summarizer/blob/master/tools/deploy.sh">a bash script</a> which eventually publishes the RSS feed on a website. It does this to a staging object storage bucket:<ul>
+<li>go runs "mailman-summarizer -rss" and writes the output to a file called feed.xml</li>
+<li>uses the credentials to write feed.xml to the bucket and make the object public-readable</li>
+<li>Then the script does the same to the <a href="https://storage.googleapis.com/ceph-rgw-users/feed.xml">production bucket</a></li>
+</ul>
+</li>
+</ul>
+<p>One could improve the CI part here a few ways:</p>
+<ul>
+<li>Right now it uses the travis <a href="https://docs.travis-ci.com/user/deployment/script/">script provider</a> in the deploy phase. There is a 'gcs' provider, but I couldn't find documentation for how to specify the JSON file with the credentials like with appengine. I get a feel that because it's not easy I should probably use appengine instead..</li>
+<li>One could do more validation, perhaps validate the RSS feed before actually uploading it. But I couldn't find a nice program that would validate the feed. There are websites like https://validator.w3.org/feed/ though so I used that manually. Maybe RSS feeds aren't so cool anymore , I use them <em>a lot</em> though. </li>
+<li>An e2e test would also be cool. For example fetch the feed.xml from the staging and make sure it is the same as what was uploaded.</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

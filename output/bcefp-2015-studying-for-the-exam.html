@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"BCEFP 2015 - Studying for the exam"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "brocade" "brocade-certified" "brocade-certified-ethernet-fabric-professional" "certification" coverImage: "original.gif" In a previous..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/bcefp-2015-studying-for-the-exam.html" rel="bookmark"
+           title="Permalink to "BCEFP 2015 - Studying for the exam"">"BCEFP 2015 - Studying for the exam"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-07T00:00:00+03:00">
+                Published: "2014-05-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"brocade"</li>
+<li>"brocade-certified"</li>
+<li>"brocade-certified-ethernet-fabric-professional"</li>
+<li>"certification"
+coverImage: "original.gif"</li>
+</ul>
+<hr>
+<p>In a <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">previous post</a> I listed a some of the sources Brocade listed that one should use when studying for the BCEFP exam. Here I'm going through a those I found some comments on what what they are and what I think of them.</p>
+<h2>Beta Course Material</h2>
+<p>The first of the <strong>beta</strong> material available is something called "<a href="http://www.brocade.com/forms/getFile?p=documents/course_data_sheets/CEF300-DataSheet.pdf" title="CEFP 300-WBT Course Data Sheet">Brocade Ethernet Fabric Administration</a>". This is a few pdfs/slides with notes on them. Introduction of various features and components. Not much detail in the first 10 modules and basically all the modules are awfully short, some are one slide even. Hopefully this is just because it's a beta. Progressively they become more detailed, which is good to not overwhelm the reader I guess. Checking out the <a href="http://www.brocade.com/downloads/documents/course_data_sheets/CEF300-DataSheet.pdf">data sheet</a> for the CEF 300 course should give you some idea what you should learn after going through the materials. There are free materials available for the <strong><a href="http://www.brocade.com/education/certification-accreditation/accredited-ethernet-fabric-specialist/curriculum.page" title="http://www.brocade.com/education/certification-accreditation/accredited-ethernet-fabric-specialist/curriculum.page">Ethernet Fabric Specialist Accreditation</a></strong> - it's even on <a href="http://www.youtube.com/watch?v=V9tMZgCydYQ" title="http://www.youtube.com/watch?v=V9tMZgCydYQ">the tube</a>. The youtube video is quite long but it's an introduction to the thought behind the Ethernet Fabrics. It's a bit outdated already I hope as they the talk talks about immaturity a lot, less than a year old. The presenter - Chip Copper - also mentions a Fabric Essentials 201 that should be out "later on down the line" - which is not out yet. Boo Urns!</p>
+<p>Questions I got while reading material:</p>
+<ul>
+<li>What is a hard-drop option in an extended ACL?</li>
+<li>What does "override the control packet trap entries" mean? Brocade communities to <a href="http://community.brocade.com/t5/Ethernet-Fabric-VDX-CNA/How-do-you-Enable-Configure-SSH-access-to-VDX-6710/td-p/54389">the rescue</a>. Is for normal transit traffic and traffic to the CPU == the management interface?</li>
+</ul>
+<h2><a href="http://www.brocade.com/downloads/documents/certification_study_tools/bcefp-nutshell.pdf" title="pdf on brocade.com"><strong>BCEFP Nutshell</strong></a></h2>
+<p>I usually print these out, read through a few times and note down anything I don't get so that I can go through the course materials and user guides to completely understand it. This one is <strong>vital</strong>.</p>
+<p>Some really useful sections:</p>
+<ul>
+<li>VCS Data Path</li>
+<li>VCS Fabric - Layer 3 Routing</li>
+</ul>
+<p>Some questions I needed to clarify after reading the BCEFP nutshell guide (page numbers):</p>
+<ul>
+<li>Are there any new hardware represented in the BCEFP 2015 compared to the BCEFP 2013?<ul>
+<li>6740 - 10GbE, 10GbE/FC and 40GbE ports</li>
+<li>6740T - 48 x 1/10GbE</li>
+</ul>
+</li>
+<li>VDX6720:<ul>
+<li>Is the VDX 6720-60 oversubscribed?</li>
+<li>Is the difference between switching and forwarding bandwidth that one is how much the backplane can handle and the other is how much the ports could do?<ul>
+<li>Looks like that, an older version of the <a href="http://www.governmentbigdataforum.com/2012/files/Brocade_VDX_6720_DataSheet_01.pdf" title="GA-DS-1524-01">6720 Data Sheet</a> shows this, it's been removed in a future data sheet.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://www.brocade.com/downloads/documents/html_product_manuals/NOS_410_AG/GUID-5255C5BC-9A1F-4B3B-83E9-3AE6EA37AC00.html" title="NOS Administrator's Guide">VCS / Logical chassis / Distributed</a>:<ul>
+<li>VCS Modes:<ul>
+<li>Logical Chassis: Requires NOS 4.0.0. Data and config paths are distributed. All is configured from the principal node.<ul>
+<li><strong>Distributed</strong></li>
+</ul>
+</li>
+<li>Fabric Cluster Mode: Data paths are distributed. Config is done independently on each node.<ul>
+<li>8770 and 6740* boot up into this mode by default.</li>
+<li><strong>Local Only</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Standalone Mode: Only compact switches support this restricted mode - 6710-6730. Only support NOS 2.1 features. Only IP static routes and in-band management.</li>
+</ul>
+</li>
+<li>VDX 8770 and what does N+1 mean? <a href="http://en.wikipedia.org/wiki/N+1_redundancy" title="on wikipedia">Active passive.</a><ul>
+<li>8770-8 is N+1 with loss of one SFM<ul>
+<li>So it can loose one SFM and it still has a redundant SFM? Aye, this can have up to 6 SFM.</li>
+</ul>
+</li>
+<li>8770-4 is not N+1 if one SFM is lost<ul>
+<li>This can have 3 SFM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NOS 3 requires cold reboot of standby MM during failover &amp; firmware upgrades. Does NOS 4 do too?</li>
+<li>What is an unsigned integer? - Hop Count Field in the trill frame.<ul>
+<li>It cannot be negative.</li>
+</ul>
+</li>
+<li>VCS features:<ul>
+<li>VCS Edge Port config + LACP: With Brocade type are there more models than a CNA, VDX or Brocade 8000?</li>
+<li>With NOS v2.0.0a max 8 ECMP paths per switch. Different with NOS 4?</li>
+</ul>
+</li>
+<li>From show vcs detail (shows switches in the fabric):<ul>
+<li>What is the Internal IP used for? Unclear, the pattern is: 127.1.0.RBRIDGE ID</li>
+<li>What does the state "Testing" indicate? Unclear, perhaps when running "diag *" commands?</li>
+</ul>
+</li>
+<li>show fabric<ul>
+<li>"show fabric islports" is similar to switchshow shows islports only, how to see device ports<ul>
+<li>show interface switchport # shows all ports in L2 mode (VLAN1)</li>
+</ul>
+</li>
+<li>"show fabric all" shows a short list of switches in fabric, similar to fabricshow</li>
+</ul>
+</li>
+<li>What is  "Static MAC Pre-Provisioning on vLAG" ? (p55)</li>
+<li>The fibre length of a link should have deskew value of 7 microseconds. Is this configurable?<ul>
+<li>Looks like it's not. It's not in the NOS 411 cmd reference guide anyway.</li>
+</ul>
+</li>
+<li>FCOE<ul>
+<li>FCF = FCoE Forwarder. A switch that does both Ethernet and FC</li>
+<li>ENode = FCoE Node</li>
+<li>FSB =  FIP Snooping Bridge (Can I get a Yay for nested acronyms?) A FCoE Switch that needs to be connected to an FCF (p67)</li>
+<li>FCoE Profiles = (p84)</li>
+</ul>
+</li>
+<li>priority-table command is just messed up. What do the numbers mean? (p66)<ul>
+<li>It's a mapping of Priority Groups to Classes of Services.</li>
+</ul>
+</li>
+<li>Are Virtual Fabrics on FCoE supported these days?<ul>
+<li>No. FCoE needs to be on VLANs with ID &lt; 4096.</li>
+<li>Btw, Virtual Fabrics is also a feature on Ethernet. Not only FC. Used when one needs overlapping VLAN IDs - multitenancy.</li>
+</ul>
+</li>
+<li>Is the max amount of RBridges in a fabric still 24? (p77)<ul>
+<li>Max 24 in Logical Chassis with VDX 6710-6730. Max 32 for 6740 and 8770.</li>
+<li>It is the recommended amount. Theoretical max in NOS4 is 239. One below 1111000.</li>
+</ul>
+</li>
+<li>Is there a pattern to the MAC addresses of the Switches/RBridges/FD/XD?</li>
+<li>What is a VMWare Port Group?<ul>
+<li>Found in <a href="https://www.vmware.com/files/pdf/virtual_networking_concepts.pdf" title="pdf on vmware.com">VMWare Virtual Networking Concepts</a></li>
+<li>Important with VMotion, makes sure that when a VM moves to a different hypervisor it gets the same network configuration.</li>
+</ul>
+</li>
+<li>In RBAC what does it mean that one can access a command but not execute it? (p86)<ul>
+<li>It means one can view the settings, like a 'show command' works but not 'command' to set the setting.</li>
+<li>Btw: admin/user accounts are locked, only pw can be changed</li>
+</ul>
+</li>
+<li>What are these FRUs: cid-card, compact-flash, mm, SFM? (p89)<ul>
+<li>MM - Management Module</li>
+<li>SFM - Switch Fabric Modules</li>
+<li>Compact-Flash - Supposedly where the firmware/configs are stored.</li>
+<li>CID-Card - Chassis ID - each card has two EEPROM - one critical and a non-critical. The non-critical can be fixed with a "CID Recovery Tool"</li>
+</ul>
+</li>
+<li>oscmd - more details about this, how to run a command? (p96)<ul>
+<li>oscmd arp -a</li>
+<li>oscmd scp localfile remote.server:</li>
+</ul>
+</li>
+</ul>
+<p>The below I'll bring up in a later post:</p>
+<h2><strong>VDX Troubleshooting Course</strong></h2>
+<p>VDX Troubleshooting Course</p>
+<h2><strong>BCEFP practice questions / answers</strong></h2>
+<p>http://community.brocade.com/t5/Certification/BCEFP-2013-Exam-150-180-Practice-Questions/ta-p/4099</p>
+<h2>Other</h2>
+<p>Intro to VCS Fabric Technology: http://www.brocade.com/downloads/documents/white_papers/intro-vcs-fabric-technology-wp.pdf CFP- MSA CFP2 Hardweare Specs: About the 40/100Gbps CFP2 SFP. MSA - multi-source agreement. Code names of switches? Find the NOS firmware and look in the file "platform_names". Quite a few bird names (nighthawk, dragon, superhawk, tomahawk ;), kestrel, falcon, blackbird).</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"RHCSA – Rapid Track – Day 4"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "net" "acl" "automounter" "certification" "kickstart" "linux" "red-hat" "rhcsa" "selinux" "sssd" "storage" "studying" Last day! A..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/rhcsa-rapid-track-day-4.html" rel="bookmark"
+           title="Permalink to "RHCSA – Rapid Track – Day 4"">"RHCSA – Rapid Track – Day 4"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-12-15T00:00:00+02:00">
+                Published: "2011-12-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"net"</li>
+<li>"acl"</li>
+<li>"automounter"</li>
+<li>"certification"</li>
+<li>"kickstart"</li>
+<li>"linux"</li>
+<li>"red-hat"</li>
+<li>"rhcsa"</li>
+<li>"selinux"</li>
+<li>"sssd"</li>
+<li>"storage"</li>
+<li>"studying"</li>
+</ul>
+<hr>
+<p>Last day!</p>
+<p>A little more kickstarting, LVM - logical volume management and File ACL. Then a rehearse of the previous chapters.</p>
+<p>Feeling a bit excited about tomorrow!</p>
+<p>These ACL were a bit more complex than I thought, but they could be made very complicated if you want to. But there's the default ACL and then there's the normal ones. Chmod +s for sticky bits.</p>
+<p>Also got a 4GB USB pen that does about 4.4MB/s :p</p>
+<p>Some important ones:</p>
+<p>mount -o remount,rw /
+/usr/share/doc/initscripts*/sysconfig.txt
+kernel-doc package and /usr/share/doc/kernel-*
+rpm -qd; rpm -qc</p>
+<p>Some important but not importantest:</p>
+<p>getsebool -a
+setsebool -P
+usermod -a
+sssd - service that caches authentication stuff</p>
+<p>Automounter /etc/auto.master -&gt;</p>
+<p>/home/guests    /etc/auto.guests</p>
+<p>/etc/auto.guests -&gt;</p>
+<p>* -rw nfsserver:/path/to/mount/on/home/guests/&amp;</p>
+<p>If on nfsserver there is an nfsshare that is: /path/to/mount/on/home/guests/ and in there you have home directories for users. Then this will automount these directories when anybody tries to access them. Same concept as doing:</p>
+<p>ls /net/nameofnfsserver/</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

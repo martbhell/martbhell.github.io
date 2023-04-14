@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Logging as a Service"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="- "it" Is there an open source thing out there I could use?? So if I only want to use mostly free and open source it there's a bunch of tools one..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/logging-as-a-service.html" rel="bookmark"
+           title="Permalink to "Logging as a Service"">"Logging as a Service"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2019-11-12T00:00:00+02:00">
+                Published: "2019-11-12"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <h2>- "it"</h2>
+<p>Is there an open source thing out there I could use??</p>
+<p>So if I only want to use mostly free and open source it there's a bunch of tools one need to glue together:</p>
+<p>These days I'd like to for primary ingestion have a BGP ECMP/anycast for rsyslog receivers. These also run logstash (or beat?). Or maybe one can have a load balancer up front which redirects traffic based on incoming port (and maybe a syslog tag for some 'authentication' ? ) to a set of logparsing/rsyslog servers.</p>
+<p>These would write to a Kafka cluster.</p>
+<p>Then we would need more readers to stream events on to elastic, siems or Hadoop or for example longer term storage engines.</p>
+<p>For the as a Service bit I'd like to play with Rundeck and have users configure most of the bits themselves. Logstash grokking/parsing though needs outsourcing too. Fewer rules means more throughput so would be good with different logstash processes for different logs. Could like loggly direct users to ship logs with a tag to get them into the correct lane.</p>
+<p>For reading just grafana and kibana should be a good start.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

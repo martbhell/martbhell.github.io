@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"P6000 - EVA - Command View Simulator"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""storage" tags: "command-view" "command-view-simulator" "cv" "cv-simulator" "cvutil" "disk-array" "eva" "firmware" "hp" "hsv300" "p6000"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/p6000-eva-command-view-simulator.html" rel="bookmark"
+           title="Permalink to "P6000 - EVA - Command View Simulator"">"P6000 - EVA - Command View Simulator"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-18T00:00:00+03:00">
+                Published: "2011-07-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"storage"
+tags: </li>
+<li>"command-view"</li>
+<li>"command-view-simulator"</li>
+<li>"cv"</li>
+<li>"cv-simulator"</li>
+<li>"cvutil"</li>
+<li>"disk-array"</li>
+<li>"eva"</li>
+<li>"firmware"</li>
+<li>"hp"</li>
+<li>"hsv300"</li>
+<li>"p6000"</li>
+<li>"simulator"</li>
+<li>"sssu"</li>
+<li>"storage"</li>
+<li>"xcs"</li>
+</ul>
+<hr>
+<p><a href="https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=P6000EVASimulator">https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=P6000EVASimulator</a></p>
+<p>Command View EVA is HP's web based management tool for their EVA/P6000 products. It's been looking the same for quite some time except the quite old ones. It's simple to use compared to other management softwares but sure it has its limitations too. It's not based on JAVA anyway :)</p>
+<h1>Install.</h1>
+<p>Run the install file, this extracted the files but then it said something about it not being correctly installed. I then went to the folder and started the install manually. This completed after a while. After this:</p>
+<p>To run it in Windows 7 x64:</p>
+<p>Go to start menu -&gt; accessories -&gt; right-click on Command Prompt -&gt; choose "run as Administrator".</p>
+<p>In there type: cd C:\Program Files (x86)\Hewlett-Packard\HP P6000 EVA Simulator\evasim</p>
+<p>Then hit: setup_cv_env.bat wait for it to complete</p>
+<p>Then hit: start_bundle.bat</p>
+<p>Which will start the simulation services and open a web browser (IE for me even if Firefox is default). It looks like it works fine in Firefox 7 too - just surf to . There is no password required when logging in manually.</p>
+<p>IE9 will complain about certificate, say that you agree and then you're in!</p>
+<h1>Use</h1>
+<p>Well, this is where you learn how to do the things in Command View.</p>
+<p>For example, create a vdisk, create a replication group, try out continuous access (data replication) and business copy (snapshots, clones). It's really like the real deal except that probably the error logs aren't there and you can't really present any disks to a host. But you can do everything simulated anyway :)</p>
+<p>The firmware in the simulator is 10000090 (or CD1528lesl-10000090 ) on HSV300. A pre-release of the XCS firmware? Also the 6100/8100 EVAs in the simulator is on 6.220 - why not on 6.240?</p>
+<p>Also do try the SSSU it is installed here C:\Program Files (x86)\Hewlett-Packard\HP P6000 EVA Simulator\evasim\cveva and it works. So you can try scripting, try out scripts before you actually run them in your production system and stuff like that.</p>
+<p>Even cvutil is installed. In the same directory as SSSU, just hit 'cvutil paths' for example to see the paths your machine has to the EVAs.</p>
+<p>To shut down the simulator you can type 'exit' in the command windows that are opened by the software. Or just hit CTRL+C or the X in the window :)</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

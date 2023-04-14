@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"commando.io - manage servers"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "cms" "commando" "commando-io" "configuration-management-software" "servers" https://command.io is up for public beta now. It is a page..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/commandoio-manage-servers.html" rel="bookmark"
+           title="Permalink to "commando.io - manage servers"">"commando.io - manage servers"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-11-13T00:00:00+02:00">
+                Published: "2013-11-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"cms"</li>
+<li>"commando"</li>
+<li>"commando-io"</li>
+<li>"configuration-management-software"</li>
+<li>"servers"</li>
+</ul>
+<hr>
+<p><a href="https://command.io" title="https://command.io">https://command.io</a> is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface.</p>
+<p>It uses ssh - you need to allow commando.io's server to ssh into your server. You can specify with which user, which port and then it uses an ssh key to log in.</p>
+<p>When you sign up, first you get to choose your own subdomain, like awesome.commando.io and then add your user into there. The subdomain you get, let's say awesome.commando.io is pointing to an IP. It is with this IP that commando is connecting to your server. So this should be firewalled.</p>
+<p>First thing I noticed was that on a CentOS 6 the command you get to copy-paste does not account for that CentOS6 sets permissions to 775 by default when running mkdir ~/.ssh. I sent a message to commando.io with the built-in messaging tool at 13th of November at 1223. 12 minutes later I had a reply, so quite quick at responding.</p>
+<p>Also sent in a suggestion that they look into ssh-copy-id instead of making ~/.ssh and setting permissions manually :)</p>
+<p>Real easy to add a recipe and then run it on a server.</p>
+<p>I could not find any existing recipes, nor where there any links to a repository or community page where one could share recipes or even example recipes.</p>
+<p>All in all:</p>
+<ul>
+<li>It looks nice and mostly works.</li>
+<li>Is it safe? Do I want to give access to a third party provider that doesn't have any obvious information declaring their high intent of security.</li>
+<li>Some things that would be nice:<ul>
+<li>scheduled executions</li>
+<li>using states - puppet-like, to insure that something that was done in a recipe once is still the current state of the machine.</li>
+<li>group import of servers</li>
+</ul>
+</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

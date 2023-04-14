@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Make your own L2 Firewall!"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "coursera" "firewall" "learning" "linux" "pox" "python" "sdn" "software-defined-networking" "studying" Is what I did this week during..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/make-your-own-l2-firewall.html" rel="bookmark"
+           title="Permalink to "Make your own L2 Firewall!"">"Make your own L2 Firewall!"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-07-17T00:00:00+03:00">
+                Published: "2013-07-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"coursera"</li>
+<li>"firewall"</li>
+<li>"learning"</li>
+<li>"linux"</li>
+<li>"pox"</li>
+<li>"python"</li>
+<li>"sdn"</li>
+<li>"software-defined-networking"</li>
+<li>"studying"</li>
+</ul>
+<hr>
+<p>Is what I did this week during the <a href="https://www.coursera.org/course/sdn" title="https://www.coursera.org/course/sdn">SDN Course</a> on Coursera :)</p>
+<p>Within <a href="http://mininet.org/" title="http://mininet.org/">mininet</a> or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to do.</p>
+<p><a href="http://www.noxrepo.org/pox/about-pox/" title="noxrepo.org">POX</a> is one of these APIs that you can use to create controllers, it's good for learning about controllers as it's not so low level as it's sibling NOX, which is in C++. There are switches in JAVA too (<a href="http://www.projectfloodlight.org/floodlight/" title="http://www.projectfloodlight.org/floodlight/">Floodlight</a>) and many more.</p>
+<p>With POX there are some example switches, for example a basic L2 learning switch. It remembers (among quite a few other things) MAC addresses for hosts and remembers in which ports the MAC addresses can be found. With a simple ping: After L2 broadcast is done to find the MAC of the recipient, the controllers install the MAC_source+port and MAC_destination+port as flows on the switches.</p>
+<p>What we did this week was to right after the switch is executed, run some extra code that parses a .csv file for MAC address pairs that are not allowed to talk and add these pairs into the flow table.</p>
+<p>Pretty cool I think :)</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

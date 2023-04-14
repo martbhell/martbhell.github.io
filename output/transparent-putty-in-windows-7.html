@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Transparent PuTTY in Windows 7"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "appearance" "auto-login" "it-2" "linux" "putty" "set-opacity" "ssh" "terminal-client" "transparency" "tray-icon" "windows" PuTTY is a..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/transparent-putty-in-windows-7.html" rel="bookmark"
+           title="Permalink to "Transparent PuTTY in Windows 7"">"Transparent PuTTY in Windows 7"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-18T00:00:00+02:00">
+                Published: "2011-02-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"appearance"</li>
+<li>"auto-login"</li>
+<li>"it-2"</li>
+<li>"linux"</li>
+<li>"putty"</li>
+<li>"set-opacity"</li>
+<li>"ssh"</li>
+<li>"terminal-client"</li>
+<li>"transparency"</li>
+<li>"tray-icon"</li>
+<li>"windows"</li>
+</ul>
+<hr>
+<p>PuTTY is a terminal client, it does telnet, raw, serial, ssh, <a href="http://en.wikipedia.org/wiki/Rlogin" title="rlogin wikipedia">rlogin</a>. I've only ever used telnet, raw, serial and ssh.</p>
+<p>The normal client can be downloaded from <a href="http://www.putty.nl" title="putty.nl">http://www.putty.nl</a></p>
+<p>But, maybe you want to make PuTTY prettier?</p>
+<p>Like this?:</p>
+<p>[caption id="attachment_414" align="alignnone" width="659"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/putty2.png"><img alt="putty pretty" src="images/putty2.png" title="putty2"></a> putty pretty[/caption]</p>
+<p>Well, there are a couple of ways to get the transparency.</p>
+<ul>
+<li>Get a transparency tool for Windows or your OS that you can use to make anything transparent.</li>
+<li>If you are in Linux eterm does it - you just need to make some changes to the config.</li>
+<li>For Windows you can also download <strong><a href="https://puttytray.goeswhere.com" title="puttytray">PuTTY Tray</a></strong>.</li>
+</ul>
+<p>PuTTY Tray is still developed.</p>
+<p>Go ahead and download PuTTY Tray, it will re-use the profiles you have already configured with normal PuTTY so don't worry about losing them.</p>
+<p>If you have a profile already set up for PuTTY you can load it and then go and make the changes, don't forget to save it afterwards :)</p>
+<p>Settings:</p>
+<p>Window</p>
+<ul>
+<li>Deselect "show scrollbar" - (you can use shift+pageup/pagedown for that anyway)</li>
+<li>Set Opacity to 225 as a start - (you will probably alter this later)</li>
+</ul>
+<p>Windows -&gt; Appearance</p>
+<ul>
+<li>Set "gap between text and window edge" to 0</li>
+</ul>
+<p>Window -&gt; Behavior</p>
+<p>What confused me was that by default PuTTY Tray sends the application to the tray, and not to the activity field. So I thought the program was terminating itself :)</p>
+<ul>
+<li>To have the program in the activity field you need to set the "show tray icon" to "Always"</li>
+<li>Also set "accept single-click to restore from tray".</li>
+<li>Full screen on alt-enter is also handy to enable here.</li>
+</ul>
+<p>That's it!</p>
+<p>Another thing I find handy to write in is to add an "auto-login username" under Connection -&gt; Data. Saves a lot of time if you use the same username a lot.</p>
+<p>I only have Windows 7 but I don't see why this would be different on Windows XP - excepting from the systray behavior then.</p>
+<p>P.s. if you're on Windows 10 you can use Bash on Windows! Do iiit - much nicer than putty!</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

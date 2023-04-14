@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Sharepoint 2010 Foundation - Part 2"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" tags: "it-2" "sharepoint" "vmware-workstation" "windows" Overview See the installation guide which I published recently. This article is a..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/sharepoint-2010-foundation-part-2.html" rel="bookmark"
+           title="Permalink to "Sharepoint 2010 Foundation - Part 2"">"Sharepoint 2010 Foundation - Part 2"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-02T00:00:00+02:00">
+                Published: "2011-02-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"
+tags: </li>
+<li>"it-2"</li>
+<li>"sharepoint"</li>
+<li>"vmware-workstation"</li>
+<li>"windows"</li>
+</ul>
+<hr>
+<h1>Overview</h1>
+<p>See the <a href="http://guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation" title="installation guide">installation guide</a> which I published recently.</p>
+<p>This article is a brief look what to do in Sharepoint after it has been installed!</p>
+<h1>Accounts</h1>
+<p>I don't want to log on with the built-in Administrator account anymore. Still no AD services installed. Created a new standard account with no password - could not log on. Logged on with account and set a password - could log on but</p>
+<p><strong>Error: Access Denied</strong></p>
+<p>In computer management there are three new groups: WSS_ADMIN_WPG - write access to "system resources" for Sharepoint Foundation WSS_WPG - read access to "system resources" for Sharepoint Foundation Added my new user to both - did not work. Neither did if it's in "administrators" group. Then in side the web page, up in the left corner there is something called "site actions". Added my new user as a member/contributor" and whoopsie now it can log in! This account can however not see all the actions under "site actions". So put it in the "owner" group - and now the account can see most of the settings.</p>
+<p>- Now over to the fun stuff! All the things we can do inside the Sharepoint.</p>
+<h1>Site Administration</h1>
+<p>Set locale, RSS (niice! don't think google reader will work for me), search/indexing (presuming robot.txt stuff), workflow(maybe authoring - reviews etc of documents?)</p>
+<h1>Site Features</h1>
+<p>You can create pages (wiki - so Sharepoint is like a wiki as well, never saw that part when I've used it before, I've only used it to upload documents :) - anyway - nice). Calendar, lists, discussions, share documents (libraries), tasks, announcements, links, surveys, subsites and workspaces.</p>
+<h2>Change home page.</h2>
+<p>Apparently some stuff requires me to install another Software - Sharepoint Designer. Free.</p>
+<p>Anyway, you cannot go into pages and then click on Home to edit the front page. To edit the home page: go to the Home Page click on -&gt; site actions and then Edit Page.</p>
+<p>In there it feels free, you can add pictures, write things, change font, size, color, etc and you can drag things around.</p>
+<h1>Galleries</h1>
+<p>Here you can make fancy changes to what appears to be relatively complicated things such as defining content types, columns, templates, themes, master pages (default?) and dom-dom-dom Solutions.</p>
+<h1>Looksie Feelsie</h1>
+<p>Here you can change name of sharepoint, customize the menu on the left or on the top (top appears to only be able to give URL:s)</p>
+<p>Stay tuned, there will be more things coming about Sharepoint! I will look into the RSS updates, how to manually edit the database and look into the underlying structure of the Sharepoint.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

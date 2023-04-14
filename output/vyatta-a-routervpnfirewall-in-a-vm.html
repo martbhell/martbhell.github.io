@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Vyatta: a router/vpn/firewall in a VM"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""it" "storage" tags: "bcvre" "brocade" "certified" "exam" "open-source" "virtualization" Brocade has a beta exam up for BCVRE - Certified vRouter..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/vyatta-a-routervpnfirewall-in-a-vm.html" rel="bookmark"
+           title="Permalink to "Vyatta: a router/vpn/firewall in a VM"">"Vyatta: a router/vpn/firewall in a VM"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-26T00:00:00+03:00">
+                Published: "2013-08-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"it"</li>
+<li>"storage"
+tags: </li>
+<li>"bcvre"</li>
+<li>"brocade"</li>
+<li>"certified"</li>
+<li>"exam"</li>
+<li>"open-source"</li>
+<li>"virtualization"</li>
+</ul>
+<hr>
+<p>Brocade has a beta exam up for <a href="http://community.brocade.com/docs/DOC-3336">BCVRE</a> - Certified vRouter Engineer - which is on the Vyatta software from the company with the same name that Brocade bought last year.</p>
+<p>There is the free open source core. Download from here: <a href="http://vyatta.org/downloads?whence=">http://vyatta.org/downloads</a> (no you don't have to register).  The evaluation/<a href="http://www.vyatta.com/product/vyatta-network-os/get-started">subscriber</a> version has the API and web gui available, I'll probably check those out closer to the exam date.</p>
+<p>I grabbed VC6.6 - Virtualization ISO. Use it in a VM and assign 5GB disk (install only requires 1G, or you could just run it on the iso, but then it doesn't keep state between reboots) and 1GB RAM. Two NICs: One NAT and one private. But to get more acquainted with it you'll likely have to do a bit more configuration on the hypervisor side. Such as turn off dhcpd in your virtual networks.</p>
+<p>To install it to disk: hit "install system" at the CLI after it's booted.</p>
+<p>More documentation: <a href="http://docs.vyatta.com/current/wwhelp/wwhimpl/js/html/wwhelp.htm">http://docs.vyatta.com/current/wwhelp/wwhimpl/js/html/wwhelp.htm</a> - there are descriptions how to get for example ssh management working ( set service ssh ).</p>
+<p>The server is basically Debian with a more recent kernel (6.6 has 3.3) and a shell to make it more switch-like. It actually uses the bash completion to make it look like this. Check out /etc/bash_completion.d/vyatta-*</p>
+<p>To remove a setting use "delete" (comparable to no in other CLIs). There is a web interface, but this is only for subscribers. Core version allows SNMP though if you want to use that :)</p>
+<p><a href="http://www.vyatta.org/documentation">What to do with vyatta</a>? A bunch of tutorials are here: <a href="http://www.vyatta.org/documentation/tips-tricks">http://www.vyatta.org/documentation/tips-tricks</a></p>
+<ul>
+<li>NAT</li>
+<li>VPN (for example connect private cloud &lt;-&gt; Amazon VPN)</li>
+<li>Firewall</li>
+<li>Routing (OSPF, BGP, etc)</li>
+</ul>
+<p>But no SDN stuff (separate data and the control plane). It looks like it's not possible to modify the flow table of a switch via Vyatta. This looks like a software router/VPN/firewall with some extras added to it.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

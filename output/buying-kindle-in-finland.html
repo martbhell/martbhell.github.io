@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Buying Kindle in Finland"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content=""finland" "it" tags: "amazon-kindle" "books" "e-book" "e-book-reader" "e-reader" "ebook" "eject" "ereader" "fantasy" "kindle" "linux" "reading"..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/buying-kindle-in-finland.html" rel="bookmark"
+           title="Permalink to "Buying Kindle in Finland"">"Buying Kindle in Finland"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-06-30T00:00:00+03:00">
+                Published: "2011-06-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>"finland"</li>
+<li>"it"
+tags: </li>
+<li>"amazon-kindle"</li>
+<li>"books"</li>
+<li>"e-book"</li>
+<li>"e-book-reader"</li>
+<li>"e-reader"</li>
+<li>"ebook"</li>
+<li>"eject"</li>
+<li>"ereader"</li>
+<li>"fantasy"</li>
+<li>"kindle"</li>
+<li>"linux"</li>
+<li>"reading"</li>
+<li>"shopping"</li>
+<li>"steven-erikson"</li>
+</ul>
+<hr>
+<p>On the 28th I purchased it around 1900. Today on the 30th at 0820 it arrived in the airport in Helsinki. Also yesterday somebody called and said it would come this week.</p>
+<p>*** Update: It's now on the way to my work! Got it around 12 or so. Less than 48 hours to get the Kindle (and it came from Reno, NV, US!).</p>
+<h3>Purchase</h3>
+<p>I got it from the American amazon.com - where it cost 140$ - totally it came to 240$ (got a black cover without light, shipping and VAT charge as well). Cheapest? Maybe not, but the dollar is pretty weak at the moment.</p>
+<p>The amazon.co.uk price is 111£.</p>
+<p>﻿Currency converted: 140 USD is worth 96.6 EUR. (1 USD : 0.69 EUR) Currency converted: 111 GBP is worth 123.21 EUR. (1 GBP : 1.11 EUR)</p>
+<p>So I'm pretty confident that those 30€ is worth it, it still wouldn't be free shipping it from the UK page. But it's on the way!</p>
+<h3>Thoughts</h3>
+<p>﻿Have been looking forward to this a while now, but after I tried reading a little on a friend's Kindle (larger screen) I just had to go for it. I went with the smaller screen because I don't want to carry something in magazine size. Pocket size now that's more like it.</p>
+<p>But I wonder if I will miss reading large ass 1000 pages books like '<a href="http://www.guldmyr.com/blog/fantasy-book-review-steven-erikson-dust-of-dreams/" title="on guldmyr.com">Dust of Dreams</a>' or '<a href="http://www.guldmyr.com/blog/fantasy-book-review-george-r-r-martin-a-game-of-thrones/" title="on guldmyr.com">Game of Thrones</a>'? What I won't miss is carrying that book around though maybe it does make my arms a little stronger? =) First book I'm going to try is '<a href="http://en.wikipedia.org/wiki/The_Crippled_God_(novel)" title="on wikipedia">The Crippled God</a>' by Steven Erikson.</p>
+<h3>Unwrapping &amp; First sight</h3>
+<p>It comes in nice no-tape boxes (well the larger package does but not the smaller ones inside). Environmentally friendly - I like.  I never held one of this size in my hand before - but it feels pretty good. Not heavy at all (in comparison to my normal books), not too light either.</p>
+<p>﻿It's a little uncomfortable to write things on it (tried to set up wireless access). So I'll have to do that when I come home and are sure of the passwords/logins :) Set the wireless up when I was at home, worked great. No problem at all. I think the writing on it just takes a little bit to get used to. It's not buttons like on a keyboard, it's more like round thin buttons.</p>
+<p>[caption id="attachment_890" align="alignnone" width="300" caption="kindle bottom"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/kindle_bottom.jpg"><img alt="kindle bottom" src="images/kindle_bottom-300x225.jpg" title="kindle_bottom"></a>[/caption]</p>
+<h3>Eject on Linux</h3>
+<p>If you run linux on your PC - you cannot start using it from scratch. It will tell you that you need to eject the Kindle before - and it's not charging. The command you type is:</p>
+<p>eject /dev/sdb1</p>
+<p>/dev/sdb1  can vary. I just hit 'dmesg' and saw that there was a 3GiB device connected on [sdb]. Be careful not to eject your other disks :) You may have to have root access to do this, if so, try: sudo eject /dev/sdb1</p>
+<p>﻿﻿In the end of 'dmesg' you should see this after you connect the kindle:</p>
+<p>scsi 5:0:0:0: Direct-Access <strong>Kindle</strong> Internal Storage 0100 PQ: 0 ANSI: 2 sd 5:0:0:0: Attached scsi generic sg2 type 0 sd 5:0:0:0: [<strong>sdb</strong>] Attached SCSI removable disk sd 5:0:0:0: [<strong>sdb</strong>] 6410688 512-byte logical blocks: (3.28 GB/3.05 GiB) sd 5:0:0:0: [<strong>sdb</strong>] Assuming drive cache: write through sd 5:0:0:0: [<strong>sdb</strong>] Assuming drive cache: write through</p>
+<p>This was on my RHEL 6 - Red Hat workstation. The syntax is the same for <a href="http://iamyouruser.blogspot.com/2009/03/ubuntu-eject-kindle.html" title="on ubuntu">Ubuntu</a> so it sounds more like a Linux thing than a distribution specific thing. Of course you might also be able to do it graphically - depending on your window manager.</p>
+<h3>Reading</h3>
+<p>Also did some reading with it in the sofa and in the bed and it's just perfect. Thinking that maybe when I'm at home I don't need the cover - which would make it less heavy - which is good when lying down.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
