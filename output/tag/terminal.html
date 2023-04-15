@@ -1,116 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - terminal</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #terminal Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/terminal.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/the-bash-shell-linux-terminal-keyboard-shortcuts.html">"The bash shell - Linux terminal keyboard shortcuts"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-04-13T00:00:00+03:00">
-                Published: "2011-04-13"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/bash.html">bash</a> <a href="/tag/shell.html">shell</a> <a href="/tag/console.html">console</a> <a href="/tag/keyboard.html">keyboard</a> <a href="/tag/shortcuts.html">shortcuts</a> <a href="/tag/linux.html">linux</a> <a href="/tag/terminal.html">terminal</a> </p>
-</footer><!-- /.post-info --><p>Hey!</p>
-<p>Recently found out that there are some quite awesome shortcuts available that I've missed - extremely useful if you use the bash shell in *Nix.</p>
-<p>To see which one you are using you can type 'chsh' in a terminal - this will tell you if you are using /bin/bash.</p>
-<p>Go try them out! This can speed up your work in the terminal incredibly.</p>
-<p>** Updated 2011-04-05 - there are many moooore! See this little link: <a href="http://www.faqs.org/docs/bashman/bashref_101.html#SEC108"></a><a href="http://www.faqs.org/docs/bashman/bashref_93.html#SEC100">http://www.faqs.org/docs/bashman/bashref_93.html#SEC100</a></p>
-<p>You can see the bindings by typing "bind -P"</p>
-<h3 id="the-easier-shortcuts">The easier shortcuts:</h3>
-<table><tbody><tr><td>Ctrl + A</td><td>Go to the beginning of the line you are currently typing on. Extremely useful in those scenarios when left/right arrow keys do not work. Same as HOME button.</td></tr><tr><td>Ctrl + E</td><td>Go to the end of the line you are currently typing on. Same as END button.</td></tr><tr><td>Ctrl + L</td><td>Clears the Screen, same as the clear command.</td></tr><tr><td>Ctrl + U</td><td>Clears the line before the cursor position. If you are at the end of the line, clears the entire line.</td></tr><tr><td>Ctrl + H</td><td>Backspace.</td></tr><tr><td>Ctrl + R</td><td>Let’s you search through previously used commands. Hit again to roll through the hits in the history. Searches through .bash_history in the user's home directory.</td></tr><tr><td>Arrowkeys Up/Down</td><td>Same as CTRL + P and CTRL + N. This will browse through the history. Hit enter to execute the command.</td></tr><tr><td>Ctrl + C</td><td>Kill whatever you are running.</td></tr><tr><td>Ctrl + D</td><td>Exit the current shell - logout.</td></tr><tr><td>Ctrl + Z</td><td>Puts whatever you are running into a suspended background process. You can then use the terminal for something else. Type 'fg' in the terminal to restore the process.</td></tr><tr><td>Ctrl + W</td><td>Delete the word before the cursor.</td></tr><tr><td>Ctrl + K</td><td>Clear the line after the cursor.</td></tr><tr><td>Ctrl + T</td><td>Swap the last two characters before the cursor.</td></tr><tr><td>Esc + T</td><td>Swap the last two words before the cursor.</td></tr><tr><td>Alt + F</td><td>Move cursor forward one word on the current line.</td></tr><tr><td>Alt + B</td><td>Move cursor backward one word on the current line.</td></tr><tr><td>Tab</td><td>Auto-complete files and folder names.</td></tr><tr><td>Shift + Page Up / Down</td><td>Scrolls through terminal buffer.</td></tr></tbody></table>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-<h3 id="the-shortcuts-that-are-a-little-trickier">The shortcuts that are a little trickier:</h3>
-<table><tbody><tr><td>Ctrl + X *</td><td>In a directory you have two files: awesomeapp1.deb and notawesomebutneededapp4.deb. You want to install both. In debian the program you call is "dpkg -i filename.deb". If you don't want to write out all the names, you can type this: dpkg -i *.deb <strong>CTRL+x *</strong> (first ctrl+x and then press the * on your numpad or * on your normal, like shift+') and then it will resolve the names so that your command will be "dkpg -i awesomeapp1.deb notawesomebutneededapp4.deb"</td></tr><tr><td>Ctrl + X Ctrl + V</td><td>Prints something like this: GNU bash, version 4.1.2(1)-release (x86_64-redhat-linux-gnu)</td></tr><tr><td>Macros</td><td><span style="color: #ff0000;"><strong>CTRL +X ( </strong></span>to start, <span style="color: #ff0000;"><strong>CTRL +X ) </strong></span>to save. For example: first hit <strong>CTRL+x SHIFT+8</strong> (this is on my keyboard layout) - then put in your commands. Everything you type after this is saved in a macro. Then <strong>CTRL+X SHIFT+9 to</strong> save. Then hit <span style="color: #ff0000;"><strong>CTRL+x e </strong></span>to run the macro.</td></tr></tbody></table>
-
-<p>Have fun!</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/transparent-putty-in-windows-7.html" rel="bookmark"
-                           title="Permalink to "Transparent PuTTY in Windows 7"">"Transparent PuTTY in Windows 7"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-18T00:00:00+02:00">
-                Published: "2011-02-18"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/appearance.html">appearance</a> <a href="/tag/auto.html">auto</a> <a href="/tag/login.html">login</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/linux.html">linux</a> <a href="/tag/putty.html">putty</a> <a href="/tag/set.html">set</a> <a href="/tag/opacity.html">opacity</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/terminal.html">terminal</a> <a href="/tag/client.html">client</a> <a href="/tag/transparency.html">transparency</a> <a href="/tag/tray.html">tray</a> <a href="/tag/icon.html">icon</a> <a href="/tag/windows.html">windows</a> </p>
-</footer><!-- /.post-info -->                <p>PuTTY is a terminal client, it does telnet, raw, serial, ssh, <a href="http://en.wikipedia.org/wiki/Rlogin" title="rlogin wikipedia">rlogin</a>. I've only ever used telnet, raw, serial and ssh.</p>
-<p>The normal client can be downloaded from <a href="http://www.putty.nl" title="putty.nl">http://www.putty.nl</a></p>
-<p>But, maybe you want to make PuTTY prettier?</p>
-<p>Like this?:</p>
-<p>[caption id="attachment_414" align="alignnone" width="659"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/putty2.png"><img alt="putty pretty" src="images/putty2.png" title="putty2"></a> putty …</p>
-                <a class="readmore" href="/transparent-putty-in-windows-7.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #terminal Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-04-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-04-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/the-bash-shell-linux-terminal-keyboard-shortcuts.html">The bash shell - Linux terminal keyboard shortcuts</a>
+        </h4>
+        <div class="content">
+          Hey! Recently found out that there are some quite awesome shortcuts available that I've missed - extremely useful if you use the bash shell in *Nix. To see which one you are using you can type 'chsh' in a terminal - this will tell you if you are using /bin/bash. Go …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-18T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-18
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/transparent-putty-in-windows-7.html">Transparent PuTTY in Windows 7</a>
+        </h4>
+        <div class="content">
+          PuTTY is a terminal client, it does telnet, raw, serial, ssh, rlogin. I've only ever used telnet, raw, serial and ssh. The normal client can be downloaded from http://www.putty.nl But, maybe you want to make PuTTY prettier? Like this?: [caption id="attachment_414" align="alignnone" width="659"] putty …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

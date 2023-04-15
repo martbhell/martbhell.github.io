@@ -1,5 +1,5 @@
 ---
-title: "Reading encrypted/password protected pdf on Linux"
+title: Reading encrypted/password protected pdf on Linux
 date: 2011-07-13
 category: it, storage
 tags: adobe, bcfp, brocade, encryption, evince, exam, foxit, foxitreader, it, 2, learning, linux, pdf, pdftotext, red, hat, rhel, rhel6, san, storage, storage, network, study, study, material

@@ -1,5 +1,5 @@
 ---
-title: "EMC - Symmetrix and CLARiiON - 2"
+title: EMC - Symmetrix and CLARiiON - 2
 date: 2011-01-15
 category: storage
 tags: emc, finland, hp, storage

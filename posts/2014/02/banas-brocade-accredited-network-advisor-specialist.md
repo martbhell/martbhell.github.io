@@ -1,5 +1,5 @@
 ---
-title: "BANAS - Brocade Accredited Network Advisor Specialist"
+title: BANAS - Brocade Accredited Network Advisor Specialist
 date: 2014-02-27
 category: it
 tags: bna, brocade, certification, network, advisor, studying

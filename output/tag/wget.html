@@ -1,117 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - wget</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #wget Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/wget.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/script-to-check-for-an-update-on-a-web-page.html">"Script To Check For an Update on a Web Page"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-10-19T00:00:00+03:00">
-                Published: "2011-10-19"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/bash.html">bash</a> <a href="/tag/scripting.html">scripting</a> <a href="/tag/linux.html">linux</a> <a href="/tag/script.html">script</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/wget.html">wget</a> </p>
-</footer><!-- /.post-info --><p>Hey!</p>
-<p>This is used for me on my Linux workstation to get a notification if there is a new spotify release whenever I open a new terminal.. It would be applicable for other (probably also simple) pages that aren't updated frequently.</p>
-<p>Reason: <a href="http://repository.spotify.com/pool/non-free/s/spotify/">http://repository.spotify.com/pool/non-free/s/spotify/</a></p>
-<p>I wanted to see if there was a new spotify release for Linux/QT.</p>
-<p>Method: The URL is above - but what if I do not want to go there every day and get disappointed?</p>
-<p>Way nicer to have a script do it for me.</p>
-<p>This script saves the index.html from the URL above of each day.</p>
-<p>Then each day when it downloads the .html it checks if it's different from yesterday.</p>
-<p>This has its limitations, if there is an update in the weekend I will never know.</p>
-<p>The script should check the last x amount of days and if any of them are different from today it should tell me. The script checks if any of the files are different from today, if so, it will write something into another file. The script then checks if this file is non-empty, if it has data in it, it will write to this other file that. Tada. :p</p>
-<p>If it is, then it will write to a file that is referenced in $HOME/.bashrc.</p>
-<p>The layout of the blog doesn't like really long lines in <pre>, but you can select below and only get the post (and not the stuff on the right side).</p>
-<p>spot_check.sh:</p>
-<h1 id="binsh">!/bin/sh</h1>
-<p>dat1=$(date +%Y.%m.%d)
-daty=$(perl -MPOSIX=strftime -le 'print strftime "%Y.%m.%d",localtime (time - 86400)')
-dat2=$(perl -MPOSIX=strftime -le 'print strftime "%Y.%m.%d",localtime (time - 172800)')
-dat3=$(perl -MPOSIX=strftime -le 'print strftime "%Y.%m.%d",localtime (time - 259200)')
-dat4=$(perl -MPOSIX=strftime -le 'print strftime "%Y.%m.%d",localtime (time - 345600)')
-dat5=$(perl -MPOSIX=strftime -le 'print strftime "%Y.%m.%d",localtime (time - 432000)')</p>
-<p>path="$HOME/Downloads/Spotify/saved"
-out="$HOME/Downloads/Spotify/diff.log"
-bout="$HOME/.spotcheck"
-wget -q http://repository.spotify.com/pool/non-free/s/spotify/ -O $path/$dat1.html</p>
-<p>diff -q $path/$dat1.html $path/$daty.html &gt; $out
-diff -q $path/$dat1.html $path/$dat2.html &gt;&gt; $out
-diff -q $path/$dat1.html $path/$dat3.html &gt;&gt; $out
-diff -q $path/$dat1.html $path/$dat4.html &gt;&gt; $out
-diff -q $path/$dat1.html $path/$dat5.html &gt;&gt; $out</p>
-<p>if [[ -s $out ]] ; then
-echo $out "is not empty";
-echo "#!/bin/sh" &gt; $bout;
-echo "echo new spotify release" &gt;&gt; $bout;
-chmod +x $bout;
-else
-echo $out "is empty";
-echo "No new spotify release.";
-rm $bout;
-fi;</p>
-<p>Crontab (daily at 0915):</p>
-<p>15 09 * * * /bin/bash /home/username/Downloads/Spotify/spot_check.sh 2&gt;&amp;1</p>
-<p>.bashrc:</p>
-<p>if [ -f ~/.spotcheck ]; then
-cd $HOME
-./.spotcheck
-fi</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #wget Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-19T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-19
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/script-to-check-for-an-update-on-a-web-page.html">Script To Check For an Update on a Web Page</a>
+        </h4>
+        <div class="content">
+          Hey! This is used for me on my Linux workstation to get a notification if there is a new spotify release whenever I open a new terminal.. It would be applicable for other (probably also simple) pages that aren't updated frequently. Reason: http://repository.spotify.com/pool/non-free/s/spotify …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

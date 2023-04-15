@@ -1,5 +1,5 @@
 ---
-title: "Finnish - Word Cases - Grammatical Function"
+title: Finnish - Word Cases - Grammatical Function
 date: 2011-02-03
 category: finland
 tags: finland, finnish, language, study

@@ -1,5 +1,5 @@
 ---
-title: "Tiny Core Linux"
+title: Tiny Core Linux
 date: 2012-03-03
 category: it
 tags: linux, operating, system, testing, tiny, core, linux

@@ -1,5 +1,5 @@
 ---
-title: "A story about writing my first golang script and how to make a mailman archive summarizer"
+title: A story about writing my first golang script and how to make a mailman archive summarizer
 date: 2018-12-07
 category: it
 

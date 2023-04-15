@@ -1,5 +1,5 @@
 ---
-title: "Sharepoint - Part 3"
+title: Sharepoint - Part 3
 date: 2011-02-04
 category: it
 tags: it, 2, sharepoint, vmware, workstation, windows

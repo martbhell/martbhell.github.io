@@ -1,5 +1,5 @@
 ---
-title: "Logging as a Service"
+title: Logging as a Service
 date: 2019-11-12
 category: it
 

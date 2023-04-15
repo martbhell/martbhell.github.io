@@ -1,5 +1,5 @@
 ---
-title: "Resepti: Kana Korma"
+title: Resepti: Kana Korma
 date: 2019-10-06
 category: finland
 tags: korma

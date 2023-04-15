@@ -1,5 +1,5 @@
 ---
-title: "Playstation 3 - it's purty"
+title: Playstation 3 - it's purty
 date: 2011-03-20
 category: finland, it
 tags: gran, turismo, playstation, playstation, 3, ps3, ps3mediaserver, video, games

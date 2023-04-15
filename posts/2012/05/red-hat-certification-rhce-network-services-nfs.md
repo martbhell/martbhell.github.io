@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services – NFS"
+title: Red Hat Certification – RHCE – Network Services – NFS
 date: 2012-05-14
 category: it
 tags: centos, certification, file, transfer, linux, nfs, red, hat, rhce, studying

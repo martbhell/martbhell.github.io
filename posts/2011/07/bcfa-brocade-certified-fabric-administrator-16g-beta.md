@@ -1,5 +1,5 @@
 ---
-title: "BCFA - Brocade Certified Fabric Administrator 16G Beta"
+title: BCFA - Brocade Certified Fabric Administrator 16G Beta
 date: 2011-07-20
 category: storage
 tags: asic, bcfa, bcfp, brocade, brocade, certified, fabric, administrator, brocade, certified, fabric, professional, certification, exam, fos, san, storage, storage, network

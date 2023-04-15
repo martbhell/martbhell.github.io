@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu + Automatic Software Updates"
+title: Ubuntu + Automatic Software Updates
 date: 2011-07-12
 category: finland
 tags: apt, get, cronjob, crontab, linux, script, ubuntu

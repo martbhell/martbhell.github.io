@@ -1,5 +1,5 @@
 ---
-title: "RHEL and web-server"
+title: RHEL and web-server
 date: 2011-02-28
 category: it
 tags: firewall, guide, http, httpd, iptables, port, port, 80, rhel, ssh, sshd

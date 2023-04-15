@@ -1,5 +1,5 @@
 ---
-title: "Book Review - The Hunter's Trilogy by R.A. Salvatore"
+title: Book Review - The Hunter's Trilogy by R.A. Salvatore
 date: 2011-01-23
 category: finland
 tags: book, fantasy, malazan, review

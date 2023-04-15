@@ -1,5 +1,5 @@
 ---
-title: "Songs of the day 17th of May"
+title: Songs of the day 17th of May
 date: 2011-05-17
 category: finland
 tags: felix, fables, free, hayley, sales, ingrid, michaelson, katzenjammer, music, thesixtyone

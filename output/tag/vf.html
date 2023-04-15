@@ -1,93 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - vf</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #vf Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/vf.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/bcfp-vf-virtual-fabrics.html">"BCFP - VF - Virtual Fabrics"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-07-30T00:00:00+03:00">
-                Published: "2011-07-30"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/fabrics.html">fabrics</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/vf.html">vf</a> <a href="/tag/virtual.html">virtual</a> </p>
-</footer><!-- /.post-info --><p>The free material does not go through the virtual fabrics and the <a href="http://community.brocade.com/docs/DOC-2041" title="bcfp 16g exam objectives">exam objectives</a> does not mention them specifically. Even so - it's probably a good idea to get some grip about it anyway as it is mentioned in the BCFP 8G material and there are questions concerning it in the Nutshell Guide and the BCFP 8 knowledge assessment. Also it is mentioned in the pre-requisites for the BCFP (the AFS 141).</p>
-<p><a href="http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/virtual_fabrics.page" title="overview">Brocade's overview page of Virtual Fabrics</a><a href="http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/virtual_fabrics.page" title="overview">.</a></p>
-<p><a href="http://www.brocade.com/downloads/documents/faqs/FOS6%202_Virtual%20Fabrics%20FAQ%201-9-2009%20Final.pdf" title="faq">FAQ on Virtual Fabrics</a></p>
-<p>There is also quite a lot of information about VF in the FOS Administration Guide. You can find this guide in lots of places but it is in the exam objectives in the link above.</p>
-<h2 id="the-theory">The theory</h2>
-<p>It is what it says it is - a way to create independent and logical fabrics and switches that you can use to segment your SAN. It does not require a license.</p>
-<p>There's logical fabrics and logical switches.</p>
-<p>From the FAQ: <em>A Logical Fabric is an implementation of a Fibre Channel fabric with one or more Logical</em> <em>Switches participating in the fabric. A Logical Fabric has its own independent instance of</em> <em>fabric services, name server, zoning database, and so on.</em></p>
-<p>A logical switch needs a fabric id. Default is 128 but can be changed. Same FID cannot be used for same logical switch in the same chassi. You move ports from the default to the new switches. VE_ and EX_ ports needs to be configured after the move. LD, QoS, F_port buffers/trunking may not be enabled on the port.</p>
-<p>Max 8 VFs in the DCX, enabling it is disruptive (requires a reboot).</p>
-<p>DCX uses 10-bit addressing. Uses part of the last part of the ALPA part of the PID. Means that that part of the PID does not always indicate a port area. Increases limit of NPIV, support loop devices.</p>
-<h2 id="hardware">Hardware</h2>
-<p>For 8G products it's available on the DCX, B5100 and the B5300. For 16G it's available on 6510, VA-40FC FC10-6, FS8-18, FCOE10-24 ports can only be part of the default switch.</p>
-<h2 id="xisl-interconnecting-switches">(X)ISL -- interconnecting switches</h2>
-<p>The default switch - is the first logical switch you create.</p>
-<p>To connect a logical switch (henceforth known as LS) to another one you can just have one of the ports in the LS as an E_port, or you can use XISL - extended ISL.</p>
-<p>To use XISL you designate one LS as a <strong>base switch</strong>. This is used for interconnects and you can have ISLs for several fabrics on this one port/cable. It can have E, VE and <strong>EX, VEX</strong> ports. *x_ports can only be in the base switch. One base switch per chassi, on DCX platforms the default cannot be the base switch. You connect the base switch to other base switches and then the other logical switches with the same FID merge. By default the logical switches are enabled to use XISL. You can combine normal ISL and XISL. Normal ISL have a lower cost.</p>
-<p>ISL (between physical switches) DISL (between Logical Switches) IFL (routing, not merging) XISL (several LISLs inside) LISL (part of an XISL)</p>
-<p>With XISL a logical port is created, their WWN start with 5x.</p>
-<h2 id="cli">CLI</h2>
-<p>fosconfig --enable vf lscfg --create FID [-base] [-force]; setcontext FID; swichdisable (set Domain ID etc); configure; switchenable lscfg --config 128 -slot <slot> -port <port> lscfg --delete non-default-logical-switches lscfg --show lscfg --change 5 --newfid 7 (disables switch and sets it); fosexec --fid FID -cmd "switchenable"</p>
-<p>fosexec --fid FID  -cmd "cmd" (how to run a command on another LS) fosexec --fid all -cmd "cmd" (on all logical switches) ipaddrset -ls 123 --add 10.10.10.10/24 (set an IP for a logical switch, to segment management)</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #vf Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-07-30T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-07-30
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-vf-virtual-fabrics.html">BCFP - VF - Virtual Fabrics</a>
+        </h4>
+        <div class="content">
+          The free material does not go through the virtual fabrics and the exam objectives does not mention them specifically. Even so - it's probably a good idea to get some grip about it anyway as it is mentioned in the BCFP 8G material and there are questions concerning it in the …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

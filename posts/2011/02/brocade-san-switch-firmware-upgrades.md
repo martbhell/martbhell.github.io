@@ -1,5 +1,5 @@
 ---
-title: "Brocade SAN Switch Firmware Upgrades"
+title: Brocade SAN Switch Firmware Upgrades
 date: 2011-02-01
 category: it, storage
 tags: brocade, brocade, san, fabric, fabric, os, firmware, guide, hp, hp, support, ibm, san, san, switches, storage, switch, tutorial, update, upgrade

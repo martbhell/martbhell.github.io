@@ -1,5 +1,5 @@
 ---
-title: "rtmpdump and ssh tunnel / socks proxy"
+title: rtmpdump and ssh tunnel / socks proxy
 date: 2011-12-29
 category: it
 tags: flash, video, linux, rtmpdump, rtmpe, ssh, tunnel

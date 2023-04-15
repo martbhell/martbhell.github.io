@@ -1,5 +1,5 @@
 ---
-title: "Netti + Sony Ericsson X10 Mini + DNA"
+title: Netti + Sony Ericsson X10 Mini + DNA
 date: 2011-01-28
 category: finland, it
 tags: access, point, android, apn, dna, internet, netti, sony, ericsson, suomi, x10, mini

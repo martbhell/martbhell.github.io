@@ -1,5 +1,5 @@
 ---
-title: "File share from Ubuntu 10.10 with Windows 7 Client"
+title: File share from Ubuntu 10.10 with Windows 7 Client
 date: 2011-02-08
 category: it
 tags: 10, 10, apt, get, file, share, guide, kernel, linux, samba, ubuntu, virtual, kernel, vm, vmware, vmware, workstation, windows

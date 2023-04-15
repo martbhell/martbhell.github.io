@@ -1,86 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>"Nagios Health Check of a DDN SFA12K"</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-        <meta name="description" content="Part of my $dayjob as a sysadmin is to monitor all things. I'll be publishing my home-made nagios checks on github in the near future. Here is the..." />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Nagios Health Check of a DDN SFA12K | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/nagios-health-check-of-a-ddn-sfa12k.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <meta name="description" content="Part of my $dayjob as a sysadmin is to monitor all things. I'll be publishing my home-made nagios checks on github in the near future. Here is the first one that uses the Web API of a DDN's SFA12K (might work on the 10k too, haven't tried) which is a …">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li class="active"><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Nagios Health Check of a DDN SFA12K
+</h1>
+      <hr>
+  <article class="article">
     <header>
-      <h1 class="entry-title">
-        <a href="/nagios-health-check-of-a-ddn-sfa12k.html" rel="bookmark"
-           title="Permalink to "Nagios Health Check of a DDN SFA12K"">"Nagios Health Check of a DDN SFA12K"</a></h1>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2015-01-18T00:00:00+02:00">
+          <i class="fas fa-clock"></i>
+          2015-01-18
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="/category/it.html">it</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/ddn.html">#ddn</a>,               <a href="/tag/monitoring.html">#monitoring</a>,               <a href="/tag/nagios.html">#nagios</a>,               <a href="/tag/sfa12k.html">#sfa12k</a>          </li>
+      </ul>
     </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-01-18T00:00:00+02:00">
-                Published: "2015-01-18"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/ddn.html">ddn</a> <a href="/tag/monitoring.html">monitoring</a> <a href="/tag/nagios.html">nagios</a> <a href="/tag/sfa12k.html">sfa12k</a> </p>
-</footer><!-- /.post-info -->      <p>Part of my $dayjob as a sysadmin is to monitor all things.</p>
+    <div class="content">
+      <p>Part of my $dayjob as a sysadmin is to monitor all things.</p>
 <p>I'll be publishing my home-made nagios checks on github in the near future.</p>
 <p>Here is the first one that uses the Web API of a DDN's <a href="http://www.ddn.com/products/storage-platform-sfa12kx/" title="ddn.com product info">SFA12K</a> (might work on the 10k too, haven't tried) which is a storage platform.</p>
 <p>The URL to the check is located here: <a href="https://github.com/martbhell/nagios-checks/tree/master/plugins/check_ddn">https://github.com/martbhell/nagios-checks/tree/master/plugins/check_ddn</a></p>
 <p>Unfortunately it seems that the Python Egg (the library / API bindings) is still not available online so one has to ask DDN Support to get that.</p>
 <p>It's not perfect, there's much room for improvement, refactoring, moving the password/username out of a variable and it makes many assumptions. But making it work for you shouldn't be too hard. If you have any questions comment here or on github :)</p>
-    </div><!-- /.entry-content -->
-
+    </div>
   </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    </div>
+  </div>
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'G-H4LG7R6ZGG', 'auto');
-    ga('send', 'pageview');
-    </script>
 </body>
+
 </html>

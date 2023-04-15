@@ -1,5 +1,5 @@
 ---
-title: "Music of the Day 22nd of May"
+title: Music of the Day 22nd of May
 date: 2011-05-22
 category: finland
 tags: elipepsia, free, music, not, morrissey, hurl, portland, ra, ra, riot, the, ascetic, junkies, the, whigs, thesixtyone

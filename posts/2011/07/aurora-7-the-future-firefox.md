@@ -1,5 +1,5 @@
 ---
-title: "Aurora 7 - The future Firefox"
+title: Aurora 7 - The future Firefox
 date: 2011-07-08
 category: it
 tags: aurora, aurora, 7, beta, browser, channel, firefox, internet, mozilla

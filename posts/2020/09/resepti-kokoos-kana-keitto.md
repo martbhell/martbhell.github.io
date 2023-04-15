@@ -1,5 +1,5 @@
 ---
-title: "Resepti - kokoos kana keitto"
+title: Resepti - kokoos kana keitto
 date: 2020-09-19
 category: finland
 ---

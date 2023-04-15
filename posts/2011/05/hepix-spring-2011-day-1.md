@@ -1,5 +1,5 @@
 ---
-title: "HEPIX Spring 2011 - Day 1"
+title: HEPIX Spring 2011 - Day 1
 date: 2011-05-02
 category: it, storage
 tags: activemq, batch, system, cern, cisco, routers, conference, fermilab, frankfurt, gsi, hard, drive, failures, hepix, hepix, spring, 2011, hp, it, 2, kit, lustre, nikhef, pue, super, computing, supermicro, tty, hack

@@ -1,5 +1,5 @@
 ---
-title: "Brocade Certified Professional Data Center Track - Check!"
+title: Brocade Certified Professional Data Center Track - Check!
 date: 2014-04-02
 category: it, storage
 tags: bcfa, bcfd, bcfp, bcpcn, bcpdc, bcpf, bcpi, bna, brocade, brocade, certified, certification, network, advisor, studying

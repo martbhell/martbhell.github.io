@@ -1,5 +1,5 @@
 ---
-title: "IPv6"
+title: IPv6
 date: 2013-01-13
 category: it
 tags: ip, ipv6, networking

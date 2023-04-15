@@ -1,211 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - httpd</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #httpd Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/httpd.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/red-hat-certification-rhce-network-services-httpd.html">"Red Hat Certification – RHCE – Network Services - httpd"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2012-05-02T00:00:00+03:00">
-                Published: "2012-05-02"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/apache.html">apache</a> <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/httpd.html">httpd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info --><p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p>This post is about Network Services.</p>
-<p>During all these exercises I try my hardest not to use google, as that's not available during the exam anyway.</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the service.</li>
-<li>Configure the service to start when the system is booted.</li>
-<li>Configure the service for basic operation.</li>
-<li>Configure host-based and user-based security for the service.</li>
-</ul>
-<p>User should be able to do the following for all these services:</p>
-<ul>
-<li>http/https</li>
-<li>dns</li>
-<li>ftp</li>
-<li>nfs</li>
-<li>smb</li>
-<li>smtp</li>
-<li>ssh</li>
-<li>ntp</li>
-</ul>
-<h2 id="httpd">httpd:</h2>
-<ul>
-<li>Install the packages needed to provide the service.<ul>
-<li>yum install httpd</li>
-</ul>
-</li>
-<li>Configure SELinux to support the service.<ul>
-<li>supports by default, if changing documentroot/defaultroot use:</li>
-<li>chkcon -R --reference /var/www/html /var/newhtmldir</li>
-</ul>
-</li>
-<li>Configure the service to start when the system is booted.<ul>
-<li>chkconfig httpd on</li>
-</ul>
-</li>
-<li>Configure the service for basic operation.<ul>
-<li>rpm -qc httpd (find config file)</li>
-</ul>
-</li>
-<li>Configure host-based and user-based security for the service<ul>
-<li>host-based -&gt; iptables</li>
-<li>user-based -&gt; htpasswd for httpd</li>
-</ul>
-</li>
-</ul>
-<h3 id="htpasswd">htpasswd</h3>
-<p>An htpasswd file contains users/passwords.</p>
-<p>A .htaccess file points to the htpasswd</p>
-<p>The .htaccess file is not the recommended way to set up authentication, instead you should do it in the Directory section of httpd.conf.</p>
-<p>To get more information about httpd in general do:</p>
-<p>yum install httpd-manual</p>
-<p>Then surf to http://hostname/manual.</p>
-<p>To generate a htpasswd:</p>
-<p>[root@rhce webpages]# htpasswd -c /etc/httpd/conf/.htpasswd user
-New password:
-Re-type new password:
-Adding password for user user</p>
-<p>Then add this .htaccess file:</p>
-<p>AuthUserFile /etc/httpd/conf/.htpasswd
-AuthGroupFile /dev/null
-AuthName "Private Area"
-AuthType Basic
-AuthBasicProvider file
-Require user user</p>
-<h2 id="https">https</h2>
-<p>The s - means the httpd uses another port - 443 and that it uses certificates.</p>
-<p>yum install mod_ssl</p>
-<p>This adds /etc/httpd/conf.d/ssl.conf</p>
-<p>That config file actually has a 'listen' directive for port 443.</p>
-<p>So add that port in the firewall and restart httpd.</p>
-<p>After that you can surf to https://ip and it will complain about the certificate (which is a default generated one).</p>
-<h2 id="but-wait-theres-more">But wait, there's more!</h2>
-<h3 id="configure-a-virtual-host">Configure a virtual host.</h3>
-<p>This is can be used when you want to have several hostnames or domains on the same machine.</p>
-<p>There's some info in httpd.conf but there's quite a lot in the manual via httpd-manual package.</p>
-<p>To test this you could either put several IP addresses on the server or point several domains towards it (might be easiest, /etc/hosts). But in VMWare it's very easy to just add another network interface.</p>
-<ol>
-<li>Add another ethernet interface on the same network as the existing one (mine is bridged behind a NAT).</li>
-<li>Edit /etc/hosts on a client and on the server so that ww1.example.com and ww2.example.com points to the IP addresses on the server</li>
-<li>Make sure /etc/nsswitch.conf has 'files' in the hosts row.</li>
-<li>If you have very narrow firewall add the new IP address.</li>
-<li>mkdir /var/www/ww1.example.com; mkdir /var/www/ww2.example.com; chcon -R --reference =/var/www/html /var/www/ww*</li>
-<li>Edit /etc/httpd/conf/httpd.conf</li>
-</ol>
-<p>and add this at the end:</p>
-<p>NameVirtualHost *:80</p>
-<div class="highlight"><pre><span></span><code><span class="n">ServerAdmin</span><span class="w"> </span><span class="n">webmaster</span><span class="err">@</span><span class="n">dummy</span><span class="o">-</span><span class="n">host</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-<span class="n">DocumentRoot</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">ww1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-<span class="n">ServerName</span><span class="w"> </span><span class="n">ww1</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-<span class="n">ServerAdmin</span><span class="w"> </span><span class="n">webmaster</span><span class="err">@</span><span class="n">dummy</span><span class="o">-</span><span class="n">host</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-<span class="n">DocumentRoot</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">ww2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-<span class="n">ServerName</span><span class="w"> </span><span class="n">ww2</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-</code></pre></div>
-
-<p>7. service httpd restart</p>
-<p>Then on the client point your browser to and (add different index.html in each to make it easy to see).</p>
-<h3 id="configure-private-directories">Configure private directories.</h3>
-<p>I'd say this fall under the htpasswd section.</p>
-<h3 id="deploy-a-basic-cgi-application">Deploy a basic CGI application.</h3>
-<p>FOSwiki for example uses CGI. Perhaps it should be a custom CGI application, like a small <a href="http://www.lies.com/begperl/hello_cgi.html" title="simple cgi hello world script">hello-world script.</a></p>
-<p>/var/www/cgi-bin is where CGI scripts are stored by default.</p>
-<p>A simple .cgi script is just a perl script with another extension that outputs .HTML text.</p>
-<h3 id="configure-group-managed-content">Configure group-managed content.</h3>
-<p>Group-managed. So this would be somehow using the AuthGroupFile in .htaccess?</p>
-<p>Or could be done by creating a new directory under www-root and give specific access to this directory. That means it can be managed by a unix group, (access is a different story however).</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/rhel-and-web-server.html" rel="bookmark"
-                           title="Permalink to "RHEL and web-server"">"RHEL and web-server"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-28T00:00:00+02:00">
-                Published: "2011-02-28"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/firewall.html">firewall</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/httpd.html">httpd</a> <a href="/tag/iptables.html">iptables</a> <a href="/tag/port.html">port</a> <a href="/tag/80.html">80</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/sshd.html">sshd</a> </p>
-</footer><!-- /.post-info -->                <p>Another thing you will notice if you are used to debian is that RHEL has iptables enabled by default.</p>
-<p>To alter it you use the 'iptables' command. It is quite complex and there are good guides out there.</p>
-<p>If you just want to let http and ssh through you can …</p>
-                <a class="readmore" href="/rhel-and-web-server.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #httpd Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-02T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-02
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-httpd.html">Red Hat Certification – RHCE – Network Services - httpd</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration This post is about Network Services. During all these exercises I try my hardest not to use google, as that's not available during the exam anyway. Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-28T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-28
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/rhel-and-web-server.html">RHEL and web-server</a>
+        </h4>
+        <div class="content">
+          Another thing you will notice if you are used to debian is that RHEL has iptables enabled by default. To alter it you use the 'iptables' command. It is quite complex and there are good guides out there. If you just want to let http and ssh through you can …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

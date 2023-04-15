@@ -1,5 +1,5 @@
 ---
-title: "Finnish Idioms - not joking!"
+title: Finnish Idioms - not joking!
 date: 2011-04-01
 category: finland
 tags: finland, finnish, finnish, idioms, idioms, language, study

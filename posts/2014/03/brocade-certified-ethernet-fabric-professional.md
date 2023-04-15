@@ -1,5 +1,5 @@
 ---
-title: "Brocade Certified Ethernet Fabric Professional"
+title: Brocade Certified Ethernet Fabric Professional
 date: 2014-03-25
 category: it
 tags: bcefp, brocade, certification, study

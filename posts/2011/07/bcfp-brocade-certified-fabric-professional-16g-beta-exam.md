@@ -1,5 +1,5 @@
 ---
-title: "BCFP - Brocade Certified Fabric Professional 16G Beta Exam"
+title: BCFP - Brocade Certified Fabric Professional 16G Beta Exam
 date: 2011-07-22
 category: storage
 tags: asic, bcfa, bcfp, brocade, brocade, certified, fabric, administrator, brocade, certified, fabric, professional, certification, exam, fos, san, storage, storage, network

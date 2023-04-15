@@ -1,5 +1,5 @@
 ---
-title: "BCFD - Brocade Certified Fabric Designer"
+title: BCFD - Brocade Certified Fabric Designer
 date: 2012-04-14
 category: it
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network

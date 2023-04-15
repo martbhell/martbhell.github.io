@@ -1,5 +1,5 @@
 ---
-title: "Finnish Social Security - Kela"
+title: Finnish Social Security - Kela
 date: 2011-02-04
 category: finland
 tags: finland, fpa, kela, social, security

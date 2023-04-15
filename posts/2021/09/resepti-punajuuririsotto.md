@@ -1,5 +1,5 @@
 ---
-title: "Resepti: punajuuririsotto"
+title: Resepti: punajuuririsotto
 date: 2021-09-12
 category: finland
 tags: food, recipe, recipes, reseptit, risotto

@@ -1,5 +1,5 @@
 ---
-title: "Update to Spotify - An RSS Feed"
+title: Update to Spotify - An RSS Feed
 date: 2012-07-08
 category: it
 tags: bash, feed, ftp, linux, repository, rss, rss, feed, script, spotify, web

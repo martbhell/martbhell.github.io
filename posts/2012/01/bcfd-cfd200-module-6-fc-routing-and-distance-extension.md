@@ -1,5 +1,5 @@
 ---
-title: "BCFD – CFD200 – Module 6 – FC Routing and Distance Extension"
+title: BCFD – CFD200 – Module 6 – FC Routing and Distance Extension
 date: 2012-01-17
 category: storage
 tags: bandwidth, bcfd, bcfp, brocade, brocade, certified, fabric, designer, buffers, certification, design, dwdm, fcip, fiber, latency, long, distance, mtu, packet, loss, routing, sfp, storage, storage, area, network, storage, network

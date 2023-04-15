@@ -1,371 +1,323 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - centos</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #centos Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/centos.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/lustre-25-centos6-test-in-openstack.html">"Lustre 2.5 + CentOS6 Test in OpenStack"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2014-05-30T00:00:00+03:00">
-                Published: "2014-05-30"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/openstack.html">openstack</a> </p>
-</footer><!-- /.post-info --><p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
-<p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc. Hostnames set. /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.</p>
-<p>With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use the latest branch for 2.5 so the instructions are <a href="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821" title="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821">https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821</a></p>
-<h2 id="server-side">Server side</h2>
-<p><strong>MDT/OST:</strong> Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).</p>
-<p>yum localinstall all files from: http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/</p>
-<p>Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next boot: <a href="https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel">https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel</a></p>
-<p>RPMS are here: http://downloads.whamcloud.com/public/lustre/latest-feature-release/el6/server/SRPMS/</p>
-<p>For rebuilding these are also needed:</p>
-<p>yum -y install kernel-devel* kernel-debug* rpm-build make libselinux-devel gcc</p>
-<p>basically:</p>
-<ul>
-<li>git clone -b b2_5 git://git.whamcloud.com/fs/lustre-release.git</li>
-<li>autogen</li>
-<li>install kernel.src from redhat (puts tar.gz in /root/rpmbuild/SOURCES/)</li>
-<li>if rpmbuilding as user build, then copy files from /root/rpmbuild into /home/build/rpmbuild..</li>
-<li>rebuilding kernel requires quite a bit of hard disk space, as I only had 10G for / then I made symlinks under $HOME to the $HOME/kernel and $HOME/lustre-release</li>
-</ul>
-<p>yum -y install expect and install the new kernel with lustre patches and the lustre and lustre modules.</p>
-<p>Not important?: WARNING: /lib/modules/2.6.32-431.17.1.el6.x86_64/weak-updates/kernel/fs/lustre/fsfilt_ldiskfs.ko needs unknown symbol ldiskfs_free_blocks</p>
-<p>/sbin/new-kernel-pkg --package kernel --mkinitrd --dracut --depmod --install 2.6.32.431.17.1.el6_lustre</p>
-<p>chkconfig lustre on</p>
-<p>edit /etc/modprobe.d/lustre.conf and add the lnet parameters</p>
-<p>modprobe lnet lctl network up # lctl list_nids</p>
-<p>creating MDT: mkfs.lustre --mdt --mgs --index=0 --fsname=wrk /dev/vdc1 mounting MDT: mkdir /mnt/MDT; mount.lustre /dev/vdc1 /mnt/MDT</p>
-<p>creating OST: mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1 mounting OST: mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1</p>
-<h2 id="client-side">Client Side</h2>
-<p>rpmbuild --rebuild --without servers</p>
-<p>cd /root/rpmbuild/RPMS/x86_64 rpm -Uvh lustre-client*</p>
-<p>add modprobe.d/lustre.conf modprobe lnet lctl network up lctl list_nids</p>
-<p>mount.lustre lustreserver@tcp:/wrk /wrk</p>
-<p>lfs df!</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/setup-a-3-node-lustre-filesystem.html" rel="bookmark"
-                           title="Permalink to "Setup a 3 Node Lustre Filesystem"">"Setup a 3 Node Lustre Filesystem"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-10-13T00:00:00+03:00">
-                Published: "2012-10-13"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info -->                <h1 id="introduction">Introduction</h1>
-<p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
-<p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
-<p>Basic components:</p>
-<p>VMWare Workstation <a href="http://www.nic.funet.fi" title="finnish mirror">3 x CentOS</a> 6 …</p>
-                <a class="readmore" href="/setup-a-3-node-lustre-filesystem.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-course-outline.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE - Course Outline"">"Red Hat Certification – RHCE - Course Outline"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-06-13T00:00:00+03:00">
-                Published: "2012-06-13"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/authconfig.html">authconfig</a> <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/gnupg.html">gnupg</a> <a href="/tag/gpg.html">gpg</a> <a href="/tag/http.html">http</a> <a href="/tag/proxy.html">proxy</a> <a href="/tag/iptables.html">iptables</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/ldap.html">ldap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/masquerade.html">masquerade</a> <a href="/tag/nat.html">nat</a> <a href="/tag/openssl.html">openssl</a> <a href="/tag/pam.html">pam</a> <a href="/tag/pki.html">pki</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/routing.html">routing</a> <a href="/tag/squid.html">squid</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/keygen.html">keygen</a> <a href="/tag/sssd.html">sssd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/web.html">web</a> </p>
-</footer><!-- /.post-info -->                <p>Howdy!</p>
-<p>In case you saw my previous posts I've been prepping for a RHCE course the last couple of weeks.</p>
-<p>Here are the posts based on the objectives:</p>
-<ul>
-<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd">http/https</a></li>
-<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns">dns</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp">ftp</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-nfs/">nfs</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-smb/">smb</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-e-mail/">smtp</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/">ntp</a></li>
-</ul>
-<p>Odds are quite high that I've missed something or not gone deep enough …</p>
-                <a class="readmore" href="/red-hat-certification-rhce-course-outline.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-ntp.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – NTP"">"Red Hat Certification – RHCE – Network Services – NTP"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-06-08T00:00:00+03:00">
-                Published: "2012-06-08"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/ntpq.html">ntpq</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> <a href="/tag/synchronization.html">synchronization</a> <a href="/tag/tcpdump.html">tcpdump</a> <a href="/tag/time.html">time</a> <a href="/tag/sync.html">sync</a> <a href="/tag/synchronizatino.html">synchronizatino</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-ntp.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-ssh.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – ssh"">"Red Hat Certification – RHCE – Network Services – ssh"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-06-06T00:00:00+03:00">
-                Published: "2012-06-06"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/openssh.html">openssh</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/sshd.html">sshd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/tcp.html">tcp</a> <a href="/tag/wrapper.html">wrapper</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-ssh.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-e-mail.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – e-mail"">"Red Hat Certification – RHCE – Network Services – e-mail"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-06-04T00:00:00+03:00">
-                Published: "2012-06-04"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/dovecot.html">dovecot</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/imap.html">imap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/postfix.html">postfix</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/sendmail.html">sendmail</a> <a href="/tag/smtp.html">smtp</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-e-mail.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-nfs.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – NFS"">"Red Hat Certification – RHCE – Network Services – NFS"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-05-14T00:00:00+03:00">
-                Published: "2012-05-14"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/nfs.html">nfs</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-nfs.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-smb.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – SMB"">"Red Hat Certification – RHCE – Network Services – SMB"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-05-14T00:00:00+03:00">
-                Published: "2012-05-14"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/samba.html">samba</a> <a href="/tag/smb.html">smb</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-smb.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-ftp.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – FTP"">"Red Hat Certification – RHCE – Network Services – FTP"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-05-12T00:00:00+03:00">
-                Published: "2012-05-12"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/ftp.html">ftp</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-ftp.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-certification-rhce-network-services-dns.html" rel="bookmark"
-                           title="Permalink to "Red Hat Certification – RHCE – Network Services – DNS"">"Red Hat Certification – RHCE – Network Services – DNS"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-05-08T00:00:00+03:00">
-                Published: "2012-05-08"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/dns.html">dns</a> <a href="/tag/domain.html">domain</a> <a href="/tag/name.html">name</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the …</li></ul>
-                <a class="readmore" href="/red-hat-certification-rhce-network-services-dns.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 2
-        <a href="/tag/centos2.html">&raquo;</a>
-        <a href="/tag/centos2.html">&#8649;</a>
-</p>
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #centos Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-05-30T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-05-30
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/lustre-25-centos6-test-in-openstack.html">Lustre 2.5 + CentOS6 Test in OpenStack</a>
+        </h4>
+        <div class="content">
+          Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack. Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-10-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-10-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/setup-a-3-node-lustre-filesystem.html">Setup a 3 Node Lustre Filesystem</a>
+        </h4>
+        <div class="content">
+          Introduction Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously. This is a small log/instruction for how to setup Lustre in 3 virtualized machines (one metadata server, one object storage server and one client). Basic components: VMWare Workstation 3 x CentOS 6 …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-06-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-06-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-course-outline.html">Red Hat Certification – RHCE - Course Outline</a>
+        </h4>
+        <div class="content">
+          Howdy! In case you saw my previous posts I've been prepping for a RHCE course the last couple of weeks. Here are the posts based on the objectives: http/https dns ftp nfs smb smtp ssh ntp Odds are quite high that I've missed something or not gone deep enough …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-06-08T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-06-08
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-ntp.html">Red Hat Certification – RHCE – Network Services – NTP</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-06-06T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-06-06
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-ssh.html">Red Hat Certification – RHCE – Network Services – ssh</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-06-04T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-06-04
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-e-mail.html">Red Hat Certification – RHCE – Network Services – e-mail</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-14T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-nfs.html">Red Hat Certification – RHCE – Network Services – NFS</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-14T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-smb.html">Red Hat Certification – RHCE – Network Services – SMB</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-12T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-12
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-ftp.html">Red Hat Certification – RHCE – Network Services – FTP</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-08T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-08
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-dns.html">Red Hat Certification – RHCE – Network Services – DNS</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+  <hr>
+  <ul class="pagination">
+    <li class="page-item">
+      <span class="page-link">1 of 2</span>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="/tag/centos2.html">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+  </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

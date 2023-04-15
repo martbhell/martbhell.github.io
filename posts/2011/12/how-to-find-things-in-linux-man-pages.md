@@ -1,5 +1,5 @@
 ---
-title: "How to find things in Linux man pages"
+title: How to find things in Linux man pages
 date: 2011-12-20
 category: it
 tags: apropos, grep, help, linux, man, man, pages, manual, red, hat, rhel, search, xargs, yum, zgrep

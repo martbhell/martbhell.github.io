@@ -1,5 +1,5 @@
 ---
-title: "Firefox 5 Beta"
+title: Firefox 5 Beta
 date: 2011-05-26
 category: it
 tags: beta, ff5, firefox, firefox, 5, mozilla

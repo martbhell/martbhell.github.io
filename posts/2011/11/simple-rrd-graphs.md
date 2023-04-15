@@ -1,5 +1,5 @@
 ---
-title: "Simple RRD graphs"
+title: Simple RRD graphs
 date: 2011-11-18
 category: it
 tags: bash, dcache, graph, graphs, linux, monitoring, movers, plotting, rrd, rrdtool, script, statistics

@@ -1,5 +1,5 @@
 ---
-title: "Lifehack currency"
+title: Lifehack currency
 date: 2011-01-18
 category: finland, it
 tags: currency, it, 2, lifehack, money, script

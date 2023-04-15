@@ -1,5 +1,5 @@
 ---
-title: "Coffee: Kaffetoria Espresso Flores"
+title: Coffee: Kaffetoria Espresso Flores
 date: 2020-01-21
 category: finland
 tags: coffee

@@ -1,5 +1,5 @@
 ---
-title: "BANAS - Brocade Certification - Studying"
+title: BANAS - Brocade Certification - Studying
 date: 2014-03-30
 category: it, storage
 tags: bna, brocade, certification, network, advisor, studying

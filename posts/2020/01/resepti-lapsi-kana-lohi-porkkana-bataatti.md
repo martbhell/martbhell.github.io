@@ -1,5 +1,5 @@
 ---
-title: "Resepti: Lapsi Kana & Lohi Porkkana Bataatti"
+title: Resepti: Lapsi Kana & Lohi Porkkana Bataatti
 date: 2020-01-12
 category: finland
 tags: resepti

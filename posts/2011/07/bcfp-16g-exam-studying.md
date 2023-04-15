@@ -1,5 +1,5 @@
 ---
-title: "BCFP 16g Exam Studying"
+title: BCFP 16g Exam Studying
 date: 2011-07-16
 category: storage
 tags: bcfa, bcfp, brocade, certification, san, storage, network, training

@@ -1,5 +1,5 @@
 ---
-title: "Songs of the day 23st of March - 2011"
+title: Songs of the day 23st of March - 2011
 date: 2011-03-23
 category: finland
 tags: free, indie, music, streaming, thesixtyone

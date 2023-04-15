@@ -1,89 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - commando</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #commando Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/commando.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/commandoio-manage-servers.html">"commando.io - manage servers"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2013-11-13T00:00:00+02:00">
-                Published: "2013-11-13"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cms.html">cms</a> <a href="/tag/commando.html">commando</a> <a href="/tag/io.html">io</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/management.html">management</a> <a href="/tag/software.html">software</a> <a href="/tag/servers.html">servers</a> </p>
-</footer><!-- /.post-info --><p><a href="https://command.io" title="https://command.io">https://command.io</a> is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface.</p>
-<p>It uses ssh - you need to allow commando.io's server to ssh into your server. You can specify with which user, which port and then it uses an ssh key to log in.</p>
-<p>When you sign up, first you get to choose your own subdomain, like awesome.commando.io and then add your user into there. The subdomain you get, let's say awesome.commando.io is pointing to an IP. It is with this IP that commando is connecting to your server. So this should be firewalled.</p>
-<p>First thing I noticed was that on a CentOS 6 the command you get to copy-paste does not account for that CentOS6 sets permissions to 775 by default when running mkdir ~/.ssh. I sent a message to commando.io with the built-in messaging tool at 13th of November at 1223. 12 minutes later I had a reply, so quite quick at responding.</p>
-<p>Also sent in a suggestion that they look into ssh-copy-id instead of making ~/.ssh and setting permissions manually :)</p>
-<p>Real easy to add a recipe and then run it on a server.</p>
-<p>I could not find any existing recipes, nor where there any links to a repository or community page where one could share recipes or even example recipes.</p>
-<p>All in all:</p>
-<ul>
-<li>It looks nice and mostly works.</li>
-<li>Is it safe? Do I want to give access to a third party provider that doesn't have any obvious information declaring their high intent of security.</li>
-<li>Some things that would be nice:<ul>
-<li>scheduled executions</li>
-<li>using states - puppet-like, to insure that something that was done in a recipe once is still the current state of the machine.</li>
-<li>group import of servers</li>
-</ul>
-</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #commando Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-11-13T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2013-11-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/commandoio-manage-servers.html">commando.io - manage servers</a>
+        </h4>
+        <div class="content">
+          https://command.io is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface. It uses ssh - you need to allow commando.io's server to ssh into your server. You can specify with which user, which port and …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

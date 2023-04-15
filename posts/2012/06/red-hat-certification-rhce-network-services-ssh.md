@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services – ssh"
+title: Red Hat Certification – RHCE – Network Services – ssh
 date: 2012-06-06
 category: it
 tags: centos, certification, file, transfer, linux, openssh, red, hat, rhce, ssh, sshd, studying, tcp, wrapper

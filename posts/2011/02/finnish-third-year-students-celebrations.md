@@ -1,5 +1,5 @@
 ---
-title: "Finnish third year students celebrations"
+title: Finnish third year students celebrations
 date: 2011-02-17
 category: finland
 tags: finland, helsinki, study

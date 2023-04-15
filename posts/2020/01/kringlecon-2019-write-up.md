@@ -1,5 +1,5 @@
 ---
-title: "Kringlecon 2019 Write-Up"
+title: Kringlecon 2019 Write-Up
 date: 2020-01-15
 category: it
 tags: ctf, pdftotext, python, programming, language, security, sudo, trail, of, tears

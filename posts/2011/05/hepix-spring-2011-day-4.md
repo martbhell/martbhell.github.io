@@ -1,5 +1,5 @@
 ---
-title: "HEPIX Spring 2011 - Day 4"
+title: HEPIX Spring 2011 - Day 4
 date: 2011-05-09
 category: it, storage
 tags: eofs, hepix, hepix, spring, 2011, iaas, lustre, ol, open, source, oracle, oracle, linux, virtual, machine, virtual, machine, image, virtualization, vm

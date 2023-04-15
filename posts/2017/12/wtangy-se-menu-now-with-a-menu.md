@@ -1,5 +1,5 @@
 ---
-title: "wtangy.se/menu - now with a menu!"
+title: wtangy.se/menu - now with a menu!
 date: 2017-12-06
 category: finland, it
 tags: wtangy, se

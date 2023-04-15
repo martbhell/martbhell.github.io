@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu Server + VMWare Workstation"
+title: Ubuntu Server + VMWare Workstation
 date: 2011-05-30
 category: it
 tags: chat, eyeos, irssi, linux, sharepoint, ubuntu, virtual, machine, vm, vmware, workstation, windows

@@ -1,5 +1,5 @@
 ---
-title: "sage on ipv6.he.net"
+title: sage on ipv6.he.net
 date: 2013-02-26
 category: it
 tags: certification, dns, he, hurricane, electric, ip, ipv6, smtp

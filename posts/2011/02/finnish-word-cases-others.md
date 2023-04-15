@@ -1,5 +1,5 @@
 ---
-title: "Finnish - Word Cases - Others"
+title: Finnish - Word Cases - Others
 date: 2011-02-05
 category: finland
 tags: finland, finnish, language, study

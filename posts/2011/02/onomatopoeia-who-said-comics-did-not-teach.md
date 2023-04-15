@@ -1,5 +1,5 @@
 ---
-title: "Onomatopoeia - who said comics did not teach"
+title: Onomatopoeia - who said comics did not teach
 date: 2011-02-14
 category: finland
 tags: cyanide, and, happiness, english, explosm, language, onomatopoeia

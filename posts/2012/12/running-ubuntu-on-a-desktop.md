@@ -1,5 +1,5 @@
 ---
-title: "Running Ubuntu on a Desktop"
+title: Running Ubuntu on a Desktop
 date: 2012-12-15
 category: it
 tags: desktop, install, linux, operating, system, tips, ubuntu

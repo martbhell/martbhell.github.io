@@ -1,5 +1,5 @@
 ---
-title: "PS3 - yes or no?"
+title: PS3 - yes or no?
 date: 2011-02-20
 category: it
 tags: gran, turismo, 5, gran, turismo, 5, ps3, ps3, sony, wii, xbox360

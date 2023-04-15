@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification - RHCE - Preparation"
+title: Red Hat Certification - RHCE - Preparation
 date: 2011-12-18
 category: it
 tags: certification, linux, red, hat, rhcsa, studying

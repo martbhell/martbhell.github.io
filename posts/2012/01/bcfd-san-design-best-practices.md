@@ -1,5 +1,5 @@
 ---
-title: "BCFD - SAN Design Best Practices"
+title: BCFD - SAN Design Best Practices
 date: 2012-01-23
 category: storage
 tags: bcfd, best, practices, brocade, brocade, certified, fabric, designer, certification, design, san, design, storage, storage, area, network, storage, network

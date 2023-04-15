@@ -1,5 +1,5 @@
 ---
-title: "cfengine - what's that about?"
+title: cfengine - what's that about?
 date: 2012-11-03
 category: it
 tags: cfengine, cluster, clustering, cms, configuration, management, software

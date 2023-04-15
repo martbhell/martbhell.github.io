@@ -1,5 +1,5 @@
 ---
-title: "HP P6000 - EVA - Thin Privisioning and Dynamic Lun Migration - XCS 10.000.000"
+title: HP P6000 - EVA - Thin Privisioning and Dynamic Lun Migration - XCS 10.000.000
 date: 2011-05-20
 category: storage
 tags: 09534000, 10, 000, 00, command, view, 9, 4, dynamic, lun, migration, eva, eva4400, eva440064008400, firmware, hp, p6000, thin, provisioning, xcs

@@ -1,5 +1,5 @@
 ---
-title: "Customized WebMail Notifier (x-notifier) Script for Squirrelmail"
+title: Customized WebMail Notifier (x-notifier) Script for Squirrelmail
 date: 2011-01-26
 category: it
 tags: firefox, script, squirrelmail, webmail, webmail, notifier

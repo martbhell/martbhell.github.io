@@ -1,5 +1,5 @@
 ---
-title: "EyeOS - Cloud Desktop in your browser - Part 2"
+title: EyeOS - Cloud Desktop in your browser - Part 2
 date: 2011-02-05
 category: it
 tags: 10, 10, activemq, apt, get, cloud, dns, eyeos, http, icloud, kaazing, pico, ubuntu, virtual, desktop, vmware, vmware, workstation, web, 2, 0

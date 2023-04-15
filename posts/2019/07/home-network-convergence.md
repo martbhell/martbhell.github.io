@@ -1,5 +1,5 @@
 ---
-title: "Home Network Convergence"
+title: Home Network Convergence
 date: 2019-07-14
 category: it
 tags: chromecast, dnsmasq, hostapd, linux, media, server, openwrt, raspberry, pi, virtual, lan, wi, fi, wireless, access, point

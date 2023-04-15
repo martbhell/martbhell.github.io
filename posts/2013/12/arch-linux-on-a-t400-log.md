@@ -1,5 +1,5 @@
 ---
-title: "Arch Linux on a T400 - Log"
+title: Arch Linux on a T400 - Log
 date: 2013-12-14
 category: it
 tags: arch, arch, linux, install, laptop, lenovo, linux, t400

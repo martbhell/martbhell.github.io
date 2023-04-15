@@ -1,5 +1,5 @@
 ---
-title: "SDN course on coursera"
+title: SDN course on coursera
 date: 2013-07-07
 category: it
 tags: coursera, sdn, software, defined, networking, studying

@@ -1,5 +1,5 @@
 ---
-title: "Book Review - Stonewielder by Ian C. Esslemont"
+title: Book Review - Stonewielder by Ian C. Esslemont
 date: 2011-09-28
 category: finland
 tags: book, book, review, fantasy, ian, c, esslemont, ice, malaz, malazan, review, steven, erikson, stonewielder

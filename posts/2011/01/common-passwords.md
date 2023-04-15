@@ -1,5 +1,5 @@
 ---
-title: "Common Passwords"
+title: Common Passwords
 date: 2011-01-18
 category: it
 tags: it, 2, lifehack, script

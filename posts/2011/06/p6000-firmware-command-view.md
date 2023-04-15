@@ -1,5 +1,5 @@
 ---
-title: "P6000 Firmware & Command View"
+title: P6000 Firmware & Command View
 date: 2011-06-17
 category: storage
 tags: abm, command, view, disk, array, disks, download, enterprise, virtual, array, eva, fcoe, firmware, hp, management, module, p6000, release, notes, storage, xcs, xcs, 10000000

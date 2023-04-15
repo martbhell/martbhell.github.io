@@ -1,5 +1,5 @@
 ---
-title: "Upgrade Ubuntu 12.04 LTS to 14.04"
+title: Upgrade Ubuntu 12.04 LTS to 14.04
 date: 2014-02-03
 category: it
 tags: 12, 04, 14, 04, dist, upgrade, lts, ubuntu, upgrade

@@ -1,5 +1,5 @@
 ---
-title: "Time Sync for Linux VMs in VMWare Workstation"
+title: Time Sync for Linux VMs in VMWare Workstation
 date: 2011-02-27
 category: it
 tags: 10, 10, linux, ntp, ntpd, red, hat, enterprise, rhel, time, servers, time, sync, ubuntu, vmware, vmware, workstation

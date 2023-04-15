@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services - httpd"
+title: Red Hat Certification – RHCE – Network Services - httpd
 date: 2012-05-02
 category: it
 tags: apache, centos, certification, httpd, linux, red, hat, rhce, studying

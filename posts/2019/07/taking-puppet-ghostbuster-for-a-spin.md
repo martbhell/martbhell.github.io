@@ -1,5 +1,5 @@
 ---
-title: "Taking puppet-ghostbuster for a spin"
+title: Taking puppet-ghostbuster for a spin
 date: 2019-07-18
 category: it
 tags: hiera, puppet, software, ssh

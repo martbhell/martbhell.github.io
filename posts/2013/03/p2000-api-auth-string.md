@@ -1,5 +1,5 @@
 ---
-title: "P2000 API Auth String"
+title: P2000 API Auth String
 date: 2013-03-05
 category: it
 tags: api, dothill, md5, monitoring, p2000, perl

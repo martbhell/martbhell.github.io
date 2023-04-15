@@ -1,5 +1,5 @@
 ---
-title: "Thoughts after Brocade's Analyst and Technology Day 2012"
+title: Thoughts after Brocade's Analyst and Technology Day 2012
 date: 2012-09-13
 category: it, storage
 tags: brcdtechday, bcefe, bcefp, brocade, certifications, dcx, ethernet, fabric, nvgre, frame, striping, juniper, mercury, oem, openflow, openstack, qfabric, sdn, trunks, vcs, vdx, 8770, vxlan

@@ -1,5 +1,5 @@
 ---
-title: "BCFP 16G Beta - I passed!"
+title: BCFP 16G Beta - I passed!
 date: 2011-10-15
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, certification, storage, storage, area, network, storage, network

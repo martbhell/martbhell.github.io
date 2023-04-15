@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services – SMB"
+title: Red Hat Certification – RHCE – Network Services – SMB
 date: 2012-05-14
 category: it
 tags: centos, certification, file, transfer, linux, red, hat, rhce, samba, smb, studying

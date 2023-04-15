@@ -1,5 +1,5 @@
 ---
-title: "DWM - not your average mainstream window manager"
+title: DWM - not your average mainstream window manager
 date: 2011-03-16
 category: finland
 tags: dwm, gnome, linux, rhel, window, manager

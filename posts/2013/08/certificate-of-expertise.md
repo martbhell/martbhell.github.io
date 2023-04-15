@@ -1,5 +1,5 @@
 ---
-title: "Certificate of Expertise"
+title: Certificate of Expertise
 date: 2013-08-24
 category: it
 tags: certification, red, hat, rhce, studying

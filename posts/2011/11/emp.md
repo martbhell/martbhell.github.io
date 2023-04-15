@@ -1,5 +1,5 @@
 ---
-title: "EMP"
+title: EMP
 date: 2011-11-22
 category: finland, it
 tags: emp, online, world, post, apocalypse, printing

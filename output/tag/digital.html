@@ -1,112 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - digital</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #digital Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/digital.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/high-amount-of-load_cycle_count-on-green-western-digital-disks.html">"High amount of Load_Cycle_Count on Green Western Digital disks"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2014-10-26T00:00:00+03:00">
-                Published: "2014-10-26"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/idl3ctl.html">idl3ctl</a> <a href="/tag/llc.html">llc</a> <a href="/tag/load_cycle_count.html">load_cycle_count</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/wd.html">wd</a> <a href="/tag/wdidle3.html">wdidle3</a> <a href="/tag/exe.html">exe</a> <a href="/tag/western.html">western</a> <a href="/tag/digital.html">digital</a> </p>
-</footer><!-- /.post-info --><p>You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive.</p>
-<p>Thought I'd check out the SMART value of the disks in my desktop today (while checking if I had notifications from smartd on).</p>
-<p>Low and behold, the Load_Cycle_Count (LLC) was really high, much higher than power_cycle_count on the 3TB WD disk I have. It turns out this is quite an old problem so there are a few posts about this on the Internets. The Interwebs <a href="http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3%20" title="http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3">says</a> max in the specs are 300k load cycles. Smartctl -a says I'm already at 218602 after 9302 power on hours (387 days but I power off the computer at night).</p>
-<p>Disk:</p>
-<p>Model Family:     Western Digital Caviar Green (AF, SATA 6Gb/s)
-Device Model:     WDC WD30EZRX-00DC0B0</p>
-<p>For Windows there's a wdidle3.exe that is a DOS program that one can put on a bootable floppy (...) and boot a computer on to change some stuff on a disk.</p>
-<p>Fortunately I run Linux (Ubuntu 14.10 since yesterday) and there's a tool called <strong>idl3ctl</strong> - one can grab it from here: <a href="http://idle3-tools.sourceforge.net/" title="http://idle3-tools.sourceforge.net/">http://idle3-tools.sourceforge.net/</a></p>
-<p>I got the latest source code and compiled it myself because there had been some updates to it since the last release (2012 vs 2011 ..). "idl3ctl -g" shows that the disk was set to park itself after 8s. I disabled that with idl3ctl and powered off and on the computer and now the tool says it's disabled.</p>
-<p>Hopefully this should increase the lifetime of my disk.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/wd-buys-hitachi-gst.html" rel="bookmark"
-                           title="Permalink to "WD buys Hitachi GST"">"WD buys Hitachi GST"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-03-10T00:00:00+02:00">
-                Published: "2011-03-10"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/hitachi.html">hitachi</a> <a href="/tag/home.html">home</a> <a href="/tag/storage.html">storage</a> <a href="/tag/slashdotted.html">slashdotted</a> <a href="/tag/wd.html">wd</a> <a href="/tag/western.html">western</a> <a href="/tag/digital.html">digital</a> </p>
-</footer><!-- /.post-info -->                <p>Linky to <a href="http://www.theregister.co.uk/2011/03/07/wd_buys_hitsachi_gst/" title="wd buys hitsachi gst on theregister">the register</a></p>
-<p><em>"Western Digital is buying Hitachi Global Storage Technologies for $4.25bn in a friendly takeover ..."</em></p>
-<p>Hitachi GST has quite a few home-based disk products which do look interesting.</p>
-<p>Hitachi GST's page is very slow at the moment (2011-03-07 22:06 EET) - it even stopped responding. Maybe …</p>
-                <a class="readmore" href="/wd-buys-hitachi-gst.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #digital Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-10-26T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-10-26
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/high-amount-of-load_cycle_count-on-green-western-digital-disks.html">High amount of Load_Cycle_Count on Green Western Digital disks</a>
+        </h4>
+        <div class="content">
+          You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive. Thought I'd check out the SMART value of the disks in my desktop today (while checking if I had notifications from smartd on). Low and behold, the Load_Cycle_Count …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-03-10T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-03-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/wd-buys-hitachi-gst.html">WD buys Hitachi GST</a>
+        </h4>
+        <div class="content">
+          Linky to the register "Western Digital is buying Hitachi Global Storage Technologies for $4.25bn in a friendly takeover ..." Hitachi GST has quite a few home-based disk products which do look interesting. Hitachi GST's page is very slow at the moment (2011-03-07 22:06 EET) - it even stopped responding. Maybe …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

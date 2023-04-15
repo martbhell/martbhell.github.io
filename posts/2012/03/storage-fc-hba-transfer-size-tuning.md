@@ -1,5 +1,5 @@
 ---
-title: "Storage FC HBA Transfer Size Tuning"
+title: Storage FC HBA Transfer Size Tuning
 date: 2012-03-06
 category: storage
 tags: bcu, brocade, emulex, fc, fibre, channel, hba, limtransfersize, performance, performance, tuning, qlfc, qlogic, san, storage, network, transfer, size, tuning

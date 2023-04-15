@@ -1,5 +1,5 @@
 ---
-title: "Finnish - Word Cases - Locative (expressing place)"
+title: Finnish - Word Cases - Locative (expressing place)
 date: 2011-02-04
 category: finland
 tags: finland, finnish, language, study

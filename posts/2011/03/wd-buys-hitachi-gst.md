@@ -1,5 +1,5 @@
 ---
-title: "WD buys Hitachi GST"
+title: WD buys Hitachi GST
 date: 2011-03-10
 category: storage
 tags: hitachi, home, storage, slashdotted, storage, wd, western, digital

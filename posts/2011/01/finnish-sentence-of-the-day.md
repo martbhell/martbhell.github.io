@@ -1,5 +1,5 @@
 ---
-title: "Finnish Sentence of the Day"
+title: Finnish Sentence of the Day
 date: 2011-01-28
 category: finland
 tags: finnish, language

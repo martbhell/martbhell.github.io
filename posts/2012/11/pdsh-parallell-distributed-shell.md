@@ -1,5 +1,5 @@
 ---
-title: "pdsh - parallell distributed shell"
+title: pdsh - parallell distributed shell
 date: 2012-11-10
 category: it
 tags: distributed, shell, hpc, pdsh, rpmforge, shell

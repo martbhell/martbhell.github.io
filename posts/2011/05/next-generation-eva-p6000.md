@@ -1,5 +1,5 @@
 ---
-title: "Next Generation EVA - P6000"
+title: Next Generation EVA - P6000
 date: 2011-05-03
 category: it, storage
 tags: disk, array, enterprise, virtual, array, eva, hp, iscsi, p6000, sas, storage, thin, provisioning

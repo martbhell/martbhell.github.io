@@ -1,5 +1,5 @@
 ---
-title: "BCFP - VF - Virtual Fabrics"
+title: BCFP - VF - Virtual Fabrics
 date: 2011-07-30
 category: finland
 tags: bcfp, brocade, brocade, certified, fabric, professional, fabrics, san, storage, network, vf, virtual, fabrics

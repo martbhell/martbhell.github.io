@@ -1,145 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - irssi</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #irssi Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/irssi.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/ubuntu-server-vmware-workstation.html">"Ubuntu Server + VMWare Workstation"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-05-30T00:00:00+03:00">
-                Published: "2011-05-30"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/chat.html">chat</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/irssi.html">irssi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/sharepoint.html">sharepoint</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
-</footer><!-- /.post-info --><h3 id="0-have-your-own-virtual-machine-in-your-desktop-is-not-hard"><strong>0/ Have your own virtual machine in your desktop is not hard!</strong></h3>
-<h4 id="01-some-terminology">0.1/ Some Terminology</h4>
-<ul>
-<li>OS - Operating System</li>
-<li>Host OS - Underlying OS - in this you install <a href="http://www.vmware.com/products/workstation/" title="vmware workstation">VMWare Workstation</a>.</li>
-</ul>
-<blockquote>
-<ul>
-<li>Host needs to be stared for the guest to be able to start.</li>
-</ul>
-</blockquote>
-<ul>
-<li>Guest OS - The extra OS you install inside the host or in VMWare Workstation.</li>
-<li>VM - Virtual machine.</li>
-</ul>
-<h3 id="1-pre-install"><strong>1/ Pre-install</strong></h3>
-<h4 id="11-storage-space-memory-cpu">1.1/ Storage space, memory, CPU</h4>
-<p>What do you want to do? Do you have enough of it? My desktop has an Intel i7-920, 8GB RAM and two 500GB hard drives. Generally when testing I would give it 1GB or maybe 2GB for Windows. This can be decreased later if you feel the need. You can also increase storage, memory and CPU after you create your virtual machine. It is easy to create a new virtual machine so do not worry if you make it too small or too big.</p>
-<h4 id="12-network-setup-lan-bridged-hidden">1.2/ Network setup, LAN, Bridged, Hidden.</h4>
-<p>Do you want to be able to access your VM from your LAN, Internet or do you want a completely private network between your virtual machines?</p>
-<p>Especially if you do set up a Windows guest OS (perhaps to use as a client in your test environment) please do remember that before you connect it to the Internet (to install patches etc) you should definitely <strong>think about installing an anti-virus solution</strong> on it. I recommend <a href="http://www.microsoft.com/security/pc-security/mse.aspx" title="on microsoft.com">Microsoft Security Essentials</a> (MSE) - it is free and takes up little resources. I read recently that the time you have until your unprotected computer is infected is about 10 seconds. But if your computer is behind a NAT - broadband router (so it has an IP like 192.168.x.x or 10.x.x.x or 172.16.x.x.x) then it is safer, but not safe from other computers on your network.</p>
-<h3 id="2-install-the-os"><strong>2/ Install the OS</strong></h3>
-<h4 id="22-download-ubuntu-easy-setup-wizard">2.2/ Download Ubuntu, easy setup wizard</h4>
-<p>There are two versions of Ubuntu - desktop and <a href="http://www.ubuntu.com/server" title="ubuntu server">server version.</a> If this is your first time with Linux you may be better of starting with the desktop variant. I used the server version (uses less resources - no graphical user interface).</p>
-<p><a href="http://www.guldmyr.com/blog/ubuntu-10-10-minimal-virtual-kernel-vmware-workstation/" title="ubuntu-10-10-minimal-virtual-kernel-vmware-workstation">Here is a guide</a> for using the Ubuntu Virtual Kernel with VMWare Workstation.</p>
-<h4 id="23-windows-2008-r2">2.3/ Windows 2008 R2?</h4>
-<p><a href="http://www.guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/" title="sharepoint-2010-foundation-windows-2008-r2-vmware-workstation">sharepoint-2010-foundation-windows-2008-r2-vmware-workstation</a></p>
-<h3 id="3-set-up-management"><strong>3/ Set up management</strong></h3>
-<h4 id="31-sshd-autostart-if-you-reboot-host-os-windows">3.1/ sshd - autostart if you reboot host OS / Windows.</h4>
-<p>I haven't managed to set up autostart of the VM when rebooting the OS. But then again, I do not run "life-critical" services in the virtual machine, just some cheap bash-script and an EyeOS. Not sure if I want to have it autostart, I like to have a fast reboot.</p>
-<h4 id="32-timezone-time">3.2/ Timezone, time.</h4>
-<p>Quite frustrating, but here is how it worked out in Linux: <a href="http://www.guldmyr.com/blog/time-sync-for-linux-vms-in-vmware-workstation/" title="time-sync-for-linux-vms-in-vmware-workstation/">time-sync-for-linux-vms-in-vmware-workstation</a></p>
-<h3 id="4-post-installation-joy">4/ Post-Installation Joy</h3>
-<h4 id="41-something-simple-like-screen-irssi">4.1/ Something simple like screen + irssi</h4>
-<p>This is really easy to set up. Basically all you need to do is install these in a Debian style Linux (like Ubuntu):</p>
-<p><strong>sudo-apt get screen irssi openssh-server</strong></p>
-<p>then start a screen session called chat and the command 'irssi'</p>
-<p><strong>screen -S chat irssi</strong></p>
-<p>It then starts irssi in a screen. You can hit CTRL+A+D (or, CTRL+A D also works) to detach it and get back to the terminal. You can then close the terminal / log off from the server. Next time you log on you can just type:</p>
-<p><strong>screen -rdx chat</strong></p>
-<p><a href="http://irssi.org/" title=".org">Irssi</a> is my IRC tool of choice, it's slim and well, I've gotten used to it. It has scripts and you can do encryption and lots of nice little things with it if you want to.</p>
-<p>Of course the screen does not resume when you restart the whole server / virtual machine.</p>
-<h4 id="42-other-ideas">4.2 Other ideas:</h4>
-<p><a href="http://www.guldmyr.com/blog/red-hat-enterprise-linuxrhel-in-vmware-workstation/" title="red-hat-enterprise-linuxrhel-in-vmware-workstation/">Red Hat Enterprise Linux in VMWare Workstation.</a> <a href="http://www.guldmyr.com/blog/ubuntu-10-10-vmware-irssi/" title="ubuntu-10-10-vmware-irssi/">How small VM can you have for just IRSSI?</a> <a href="http://www.guldmyr.com/blog/file-share-from-ubuntu-10-10-with-windows-7-client/" title="file-share-from-ubuntu-10-10-with-windows-7-client/">File share from Windows to Ubuntu in a VM.</a> <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser-part-2/" title="eyeos-cloud-desktop-in-your-browser-part-2/">EyeOS</a> - OS in your web browser.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/ubuntu-1010-vmware-irssi.html" rel="bookmark"
-                           title="Permalink to "Ubuntu 10.10 + VMWare + Irssi"">"Ubuntu 10.10 + VMWare + Irssi"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-10T00:00:00+02:00">
-                Published: "2011-02-10"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/guide.html">guide</a> <a href="/tag/irssi.html">irssi</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/networking.html">networking</a> <a href="/tag/ram.html">ram</a> <a href="/tag/swap.html">swap</a> <a href="/tag/space.html">space</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <p>How small VM can you make if you are only going to use it to run <a href="http://irssi.org/" title="irssi.org">Irssi</a> in a <a href="http://www.gnu.org/software/screen/" title="screen">screen</a>?</p>
-<p>OS: Ubuntu 10.10 x64 Virtual Kernel Hypervisor: VMWare Workstation</p>
-<p>Disk - no logs - 1.10GB is what my previous took, with samba, so probably less but 1.1 should be …</p>
-                <a class="readmore" href="/ubuntu-1010-vmware-irssi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #irssi Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-30T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-30
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/ubuntu-server-vmware-workstation.html">Ubuntu Server + VMWare Workstation</a>
+        </h4>
+        <div class="content">
+          0/ Have your own virtual machine in your desktop is not hard! 0.1/ Some Terminology OS - Operating System Host OS - Underlying OS - in this you install VMWare Workstation. Host needs to be stared for the guest to be able to start. Guest OS - The extra OS you install inside …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-10T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/ubuntu-1010-vmware-irssi.html">Ubuntu 10.10 + VMWare + Irssi</a>
+        </h4>
+        <div class="content">
+          How small VM can you make if you are only going to use it to run Irssi in a screen? OS: Ubuntu 10.10 x64 Virtual Kernel Hypervisor: VMWare Workstation Disk - no logs - 1.10GB is what my previous took, with samba, so probably less but 1.1 should be …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

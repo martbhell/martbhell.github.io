@@ -1,182 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - yum</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #yum Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/yum.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/setup-a-3-node-lustre-filesystem.html">"Setup a 3 Node Lustre Filesystem"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2012-10-13T00:00:00+03:00">
-                Published: "2012-10-13"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info --><h1 id="introduction">Introduction</h1>
-<p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
-<p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
-<p>Basic components:</p>
-<p>VMWare Workstation <a href="http://www.nic.funet.fi" title="finnish mirror">3 x CentOS</a> 6.3 VMs. Latest Lustre from <a href="http://www.whamcloud.com/" title="http://www.whamcloud.com/">Whamcloud</a></p>
-<p>To use Lustre your kernel needs to support it. There's a special one for server and one for the client. Some packages are needed on both.</p>
-<p>Besides lustre you'll need an updated version of e2fsprogs as well (because the version that comes from RHEL6.3 does not support large partitions).</p>
-<p>Starting with the MDS. When the basic OS setup is done will make a copy of that to use for OSS and Client.</p>
-<h1 id="setup-basic-services">Setup basic services.</h1>
-<h2 id="install-an-mds">Install an MDS</h2>
-<p>This will run the MDT - the metadata target.</p>
-<p>2GB RAM, 10GB disk, bridged networking, 500GB for /boot, rest for / (watch out, it may create a really large swap). Minimal install. Setup OS networking (static ip for servers, start on boot, open port 988 in firewall, possibly some for outgoing if you decide to restrain that too), run yum update and setup ntp. Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86_64). Lustre also does not support selinux, so disable that (works fine with it in enforcing until time to create mds/mdt, also fine with permissive until it's time to mount). Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set hostname.</p>
-<h2 id="install-an-oss">Install an OSS</h2>
-<p>This will contain the OST (object storage target). This is where the data will be stored.</p>
-<p>Networking may not work (maybe device name changed to eth1 or eth2). You may want to change this afterwards to get the interface back to be called (eth0). <a href="http://www.banym.de/linux/centos/change-network-device-name-from-eth1-back-to-eth0">A blog post</a> about doing that.</p>
-<h2 id="install-a-client">Install a client</h2>
-<p>This will access and use the filesystem.</p>
-<p>Clone of the OSS before installing any lustre services or kernels.</p>
-<h1 id="install-lustre">Install Lustre</h1>
-<p>Before you do this it may be wise to take a snapshot of each server. In case you screw the VM up you can then go back :)</p>
-<h2 id="starting-with-the-mds">Starting with the MDS.</h2>
-<p>Installing e2fsprogs, kernel and lustre-modules.</p>
-<p>Skipping debuginfo and devel packages, installing all the rest.</p>
-<p>yum localinstall \ 
-kernel-2.6.32-220.4.2.el6_lustre.x86_64.rpm kernel-firmware-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
-kernel-headers-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
-lustre-2.2.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm \ 
-lustre-ldiskfs-3.3.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm \
-lustre-modules-2.2.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm</p>
-<p>The above was not the order they were installed. Yum changed the order so that for example kernel-headers was last.</p>
-<p>yum localinstall e2fsprogs-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-debuginfo-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-devel-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-libs-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-static-1.42.3.wc3-7.el6.x86_64.rpm \
-libcom_err-1.42.3.wc3-7.el6.x86_64.rpm \
-libcom_err-devel-1.42.3.wc3-7.el6.x86_64.rpm \
-libss-1.42.3.wc3-7.el6.x86_64.rpm \
-libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
-<p>After boot, confirm that you have lustre kernel installed by typing:</p>
-<p>uname -av</p>
-<p>and</p>
-<p>mkfs.lustre --help</p>
-<p>to see if you have that and</p>
-<p>rpm -qa 'e2fs*'</p>
-<p>to see if that was installed properly too.</p>
-<p>By the way, you probably want to run this to exclude automatic yum kernel updates:</p>
-<p>echo "exclude=kernel*" &gt;&gt; /etc/yum.conf</p>
-<p>After install and reboot into new kernel it's time to modprobe lustre, start creating MDT, OST and then mount things! But hold on to your horses, first we ned to install the client :)</p>
-<h2 id="and-then-the-client">And then the Client</h2>
-<p>Install the e2fsprogs*</p>
-<p>We cannot just install the lustre-client packages, because we run a different kernel than the ones that whamcloud have compiled the lustre-client against.</p>
-<p>We can either back-pedal and install an older kernel. Or we can build (from source / SRPMS) a lustre-client that works on a kernel of our choosing. The later option seems like a better way, because we can then upgrade the kernel if we want to.</p>
-<h3 id="build-custom-linux-client-rpms">Build custom linux-client rpms</h3>
-<p>Because of <a href="http://jira.whamcloud.com/browse/LU-1868">a bug</a> it appears that some ext4 source packages are needed - while they are not. You need to add some parameters to ./configure. This will be the topic of a future post.</p>
-<p>The above rpmbuild should create rpms for the running kernel. If you want to create rpms for a non-running kernel <a href="http://wiki.whamcloud.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel" title="whamcloud wiki">you are supposed to be able to run.</a></p>
-<h1 id="configure-lustre">Configure Lustre</h1>
-<p><a href="http://wiki.whamcloud.com/display/PUB/Create+and+Mount+a+Lustre+Filesystem">Whamcloud have good instructions</a>. Don't be afraid to check out their wiki or use google.</p>
-<p>/var/log/messages is the place to look for more detailed errors.</p>
-<h2 id="on-the-mds">On the MDS</h2>
-<p>Because we do not have infiniband you want to change the parameters slightly for lnet to include tcp(eth0). These changes are not reflected until reboot (quite possibly something else) - but just editing a file under /etc/modprobe.d/ called for example lustre.conf is not enough.</p>
-<p>Added a 5GB disk to the mds.</p>
-<p>fdisk -cu /dev/sdb; n, p, 1, (first-last)</p>
-<p>modprobe lustre lnet</p>
-<p>mkfs.lustre --mdt --mgs</p>
-<p>mount</p>
-<h2 id="on-the-oss">On the OSS</h2>
-<p>Also add the parameters into modprobe.</p>
-<p>mkfs.lustre --ost</p>
-<p>mount</p>
-<h2 id="on-the-client">On the client</h2>
-<p>Add things into modprobe.</p>
-<p>mount!</p>
-<p>Write something.</p>
-<p>Then hit: lfs df -h</p>
-<p>To see usage!</p>
-<h1 id="get-it-all-working-on-boot">Get it all working on boot</h1>
-<p>You want to start the MDS, then the OSS and last the client. But while it's running you can restart any node and eventually it will start working again.</p>
-<p>Fstab on <strong>the client</strong>: ip@tcp:/fsname /mnt lustre defaults,_netdev 0 0</p>
-<p>Fstab on <strong>the OSS and MDS</strong>: /dev/sdb1 /mnt/MDS lustre defaults,_netdev 0 0</p>
-<p>While it's running you can restart any node and eventually it will start working again.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/how-to-find-things-in-linux-man-pages.html" rel="bookmark"
-                           title="Permalink to "How to find things in Linux man pages"">"How to find things in Linux man pages"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-12-20T00:00:00+02:00">
-                Published: "2011-12-20"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/apropos.html">apropos</a> <a href="/tag/grep.html">grep</a> <a href="/tag/help.html">help</a> <a href="/tag/linux.html">linux</a> <a href="/tag/man.html">man</a> <a href="/tag/pages.html">pages</a> <a href="/tag/manual.html">manual</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/search.html">search</a> <a href="/tag/xargs.html">xargs</a> <a href="/tag/yum.html">yum</a> <a href="/tag/zgrep.html">zgrep</a> </p>
-</footer><!-- /.post-info -->                <p>There's a couple of places (naturally).</p>
-<p>It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank.</p>
-<p>In RHEL there is /usr/share …</p>
-                <a class="readmore" href="/how-to-find-things-in-linux-man-pages.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #yum Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-10-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-10-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/setup-a-3-node-lustre-filesystem.html">Setup a 3 Node Lustre Filesystem</a>
+        </h4>
+        <div class="content">
+          Introduction Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously. This is a small log/instruction for how to setup Lustre in 3 virtualized machines (one metadata server, one object storage server and one client). Basic components: VMWare Workstation 3 x CentOS 6 …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-12-20T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-12-20
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/how-to-find-things-in-linux-man-pages.html">How to find things in Linux man pages</a>
+        </h4>
+        <div class="content">
+          There's a couple of places (naturally). It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank. In RHEL there is /usr/share …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

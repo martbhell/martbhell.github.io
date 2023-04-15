@@ -1,5 +1,5 @@
 ---
-title: "P6000 - EVA - Command View Simulator"
+title: P6000 - EVA - Command View Simulator
 date: 2011-07-18
 category: storage
 tags: command, view, command, view, simulator, cv, cv, simulator, cvutil, disk, array, eva, firmware, hp, hsv300, p6000, simulator, sssu, storage, xcs

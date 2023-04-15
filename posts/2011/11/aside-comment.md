@@ -1,5 +1,5 @@
 ---
-title: "Aside comment"
+title: Aside comment
 date: 2011-11-22
 category: it
 tags: aside, hosting, link, titsup

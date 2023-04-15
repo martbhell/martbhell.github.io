@@ -1,5 +1,5 @@
 ---
-title: "Install Open Solaris in VMWare Workstation"
+title: Install Open Solaris in VMWare Workstation
 date: 2011-11-22
 category: it
 tags: openindiana, opensolaris, osol, solaris, vmware, vmware, workstation

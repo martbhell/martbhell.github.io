@@ -1,198 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - cisco</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #cisco Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/cisco.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/air-lap1142n-e-k9-to-autonomous-mode-adventure.html">"AIR-LAP1142N-E-K9 to autonomous Mode Adventure"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2020-02-19T00:00:00+02:00">
-                Published: "2020-02-19"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/aironet.html">aironet</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/https.html">https</a> <a href="/tag/ip.html">ip</a> <a href="/tag/lap1142n.html">lap1142n</a> <a href="/tag/e.html">e</a> <a href="/tag/k9.html">k9</a> <a href="/tag/network.html">network</a> <a href="/tag/vlan.html">vlan</a> <a href="/tag/wifi.html">wifi</a> <a href="/tag/wlan.html">wlan</a> </p>
-</footer><!-- /.post-info --><blockquote>
-<h2 id="_1"><a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"><img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"></a></h2>
-</blockquote>
-<h2 id="some-initial-needful-information">Some initial needful information</h2>
-<ul>
-<li>Reset is done by holding MODE and then powering off and on the device</li>
-<li>Default enable password is Cisco</li>
-<li>Serial ttyUSB0 worked with one usb to rs232 and then a serial to RJ45 adapter, my cheapo ebay USB to rj45 did not work. The colors of the wires are different..<ul>
-<li>working: LL977744 CSA AWM and a "pl2303 converter" Prolific Technology Inc on ttyUSB0</li>
-</ul>
-</li>
-<li>Firmware c1140-k9w7-tar.153-3.JD17.tar found on twitter with checksum d96702caf75442f01359aa9a6cb70d19</li>
-</ul>
-<p>While the AP is in non autonomous mode you need to run a debug command to get the conf t: <em>debug capwap console cli</em></p>
-<p>To change it from using a controller to autonomous mode you need to load a firmware that is like that. The one I got had a firmware loaded that wanted to talk to a controller.</p>
-<ul>
-<li>While looking in serial log indeed the firmware on the AP was "w8" at the end == needs a WLC</li>
-<li>tried to first setup a TFTP server and open firewalls and reboot the access point while holding the mode button (you need to hold it for a long time, like 27s) - it tried to fetch the image from tftp://255.255.255.255/ but didn't work / timed out..</li>
-</ul>
-<h2 id="hunt-goes-on">Hunt goes on:</h2>
-<p>These release notes got me a bit worried: <a href="https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html">https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html</a></p>
-<p>Conversions from an 8.0 Wireless LAN Controller unified release AP image to autonomous 15.3(3) k9w7 image will get aborted with a message “AP image integrity check failed.” To overcome this, load any previous autonomous k9w7 image and then upgrade to the 15.3(3) JAB k9w7 images. <strong>If this is the same as LWAPP version I had was 7.3.x</strong> <em>so the above did not apply.</em></p>
-<p><a href="https://greenwhitehat.blogspot.com/2017/08/how-to-configure-cisco-access-point-air.html">https://greenwhitehat.blogspot.com/2017/08/how-to-configure-cisco-access-point-air.html</a></p>
-<p><a href="https://www.fragmentationneeded.net/2010/08/tftp-oddities.html">https://www.fragmentationneeded.net/2010/08/tftp-oddities.html</a> is talking about changing listening address to 255.255.255.255 instead of 0.0.0.0 ..</p>
-<h2 id="secret-sauze">secret sauze</h2>
-<ul>
-<li>setup static IP on your linux computer, <strong><em>make sure to not just "ip addr add ip/24 dev eth0" because you might still have NetworkManager with DHCP that might revert those changes</em></strong></li>
-<li>setup a dhcpd that has 10.0.0.5 10.0.0.7 range or some such</li>
-<li>setup a linux tftp.service - if you want "--verbose --address 255.255.255.255:69" to the tftp.service CentOS7 edit that file in systemctl cat tftp<ul>
-<li>Not sure if needed but maybe it was useful</li>
-</ul>
-</li>
-<li>systemctl start tftp dhcpd</li>
-<li>sysetmctl disable dhcpd tftp</li>
-<li>make sure to let UDP(&amp; TCP?) 69 through the firewall</li>
-<li>next is to connect the console and login to the AP and run some commands:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">ena</span>
-<span class="c1"># conf t</span>
-<span class="c1"># debug capwap console cli</span>
-<span class="c1"># archive download-sw /force-reload /overwrite tftp://10.0.0.2/c1140-k9w7-tar.153-3.JD17.tar</span>
-</code></pre></div>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-<ul>
-<li><em>Before you disconnect the ethernet cable to the AP, do stop and disable dhcpd and tftp to prevent running some extra dhcp server in some office network.</em></li>
-</ul>
-<h2 id="configuring-it">Configuring it</h2>
-<p>Easiest is probably to use the http on http://IP:80 to configure it</p>
-<p>Username/Password: Cisco/Cisco</p>
-<p><a href="https://www.cisco.com/c/en/us/td/docs/wireless/access_point/1140/autonomous/getting_started/guide/ap1140aut_getstart.html">https://www.cisco.com/c/en/us/td/docs/wireless/access_point/1140/autonomous/getting_starte d/guide/ap1140aut_getstart.html</a></p>
-<p>There's the express setup and I used these settings:</p>
-<ul>
-<li>Only configured the 5GHz</li>
-<li>Set a short SSID and enabled broadcast beacon</li>
-<li>WPA2-PSK key</li>
-<li>Disabled universal admin</li>
-<li>Set VLAN 5 and native VLAN</li>
-</ul>
-<p>Other changes:</p>
-<ul>
-<li>Enable the radio (no shutdown on the interface or in the web ui)</li>
-<li>Create a new user/change default passwords of Cisco user to make it a little bit harder for things to pwn it</li>
-<li>Set clock</li>
-<li>Change hostname and set a banner login banner</li>
-<li>copy run start</li>
-</ul>
-<p>One could enable https, but that used a too weak key by default so I just left it at http. In any case make sure to set the clock before enabling https.</p>
-<h2 id="some-extremely-useful-links">Some extremely useful links</h2>
-<p>Previous post in this blog about my home network: <a href="https://www.guldmyr.com/blog/home-network-convergence/">https://www.guldmyr.com/blog/home-network-convergence/</a></p>
-<p><a href="https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542">https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542</a></p>
-<p><a href="http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux">http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux</a></p>
-<p><a href="http://exchange2013pikasuoh.blogspot.com/2015/08/convert-cisco-air-lap1142n-k9-to.html">http://exchange2013pikasuoh.blogspot.com/2015/08/convert-cisco-air-lap1142n-k9-to.html</a></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/access-gateway-npv-tr.html" rel="bookmark"
-                           title="Permalink to "Access Gateway - NPV - TR"">"Access Gateway - NPV - TR"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-05-11T00:00:00+03:00">
-                Published: "2012-05-11"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/access.html">access</a> <a href="/tag/gateway.html">gateway</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/ipm.html">ipm</a> <a href="/tag/mds.html">mds</a> <a href="/tag/npiv.html">npiv</a> <a href="/tag/npv.html">npv</a> <a href="/tag/qlogic.html">qlogic</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/transparent.html">transparent</a> <a href="/tag/mode.html">mode</a> </p>
-</footer><!-- /.post-info -->                <h2 id="say-what">Say what??</h2>
-<p><a href="http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/access_gateway.page" title="link to brocade.com">Access Gateway</a> - Brocade</p>
-<p><a href="http://datacenteroverlords.com/2012/05/08/npv-and-npiv/" title="great discussion in the comments on this post by the way">NPV</a> (N_port Virtualization (not NPIV) - Cisco</p>
-<p><a href="http://community.brocade.com/thread/6267?start=0&amp;tstart=0" title="on brocade.com">Transparent Mode</a> - QLogic</p>
-<p>These are all names for the basic idea / functionality but as there's no standard the vendors have made up their own names for it.</p>
-<p>A switch in Access Gateway (AG) mode does not consume Domain IDs …</p>
-                <a class="readmore" href="/access-gateway-npv-tr.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-1.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 - Day 1"">"HEPIX Spring 2011 - Day 1"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-02T00:00:00+03:00">
-                Published: "2011-05-02"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/batch.html">batch</a> <a href="/tag/system.html">system</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/routers.html">routers</a> <a href="/tag/conference.html">conference</a> <a href="/tag/fermilab.html">fermilab</a> <a href="/tag/frankfurt.html">frankfurt</a> <a href="/tag/gsi.html">gsi</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/failures.html">failures</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kit.html">kit</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/nikhef.html">nikhef</a> <a href="/tag/pue.html">pue</a> <a href="/tag/super.html">super</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supermicro.html">supermicro</a> <a href="/tag/tty.html">tty</a> <a href="/tag/hack.html">hack</a> </p>
-</footer><!-- /.post-info -->                <p>Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-1.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #cisco Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2020-02-19T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2020-02-19
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/air-lap1142n-e-k9-to-autonomous-mode-adventure.html">AIR-LAP1142N-E-K9 to autonomous Mode Adventure</a>
+        </h4>
+        <div class="content">
+          Some initial needful information Reset is done by holding MODE and then powering off and on the device Default enable password is Cisco Serial ttyUSB0 worked with one usb to rs232 and then a serial to RJ45 adapter, my cheapo ebay USB to rj45 did not work. The colors of …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-11T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-11
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/access-gateway-npv-tr.html">Access Gateway - NPV - TR</a>
+        </h4>
+        <div class="content">
+          Say what?? Access Gateway - Brocade NPV (N_port Virtualization (not NPIV) - Cisco Transparent Mode - QLogic These are all names for the basic idea / functionality but as there's no standard the vendors have made up their own names for it. A switch in Access Gateway (AG) mode does not consume Domain IDs …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-02T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-02
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-1.html">HEPIX Spring 2011 - Day 1</a>
+        </h4>
+        <div class="content">
+          Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

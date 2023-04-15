@@ -1,5 +1,5 @@
 ---
-title: "Music of the Day - 30th of June - poprockindie"
+title: Music of the Day - 30th of June - poprockindie
 date: 2011-06-30
 category: finland
 tags: dublin, ellie, goulding, heartbeats, jose, gonzalez, morrissey, music, resdagboken, the, knife, the, magic, numbers, young, the, giant

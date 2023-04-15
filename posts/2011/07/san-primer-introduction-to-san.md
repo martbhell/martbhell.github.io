@@ -1,5 +1,5 @@
 ---
-title: "SAN Primer - Introduction to Data Storage"
+title: SAN Primer - Introduction to Data Storage
 date: 2011-07-28
 category: storage
 tags: data, storage, introduction, iscsi, san, san, basics, storage, storage, network

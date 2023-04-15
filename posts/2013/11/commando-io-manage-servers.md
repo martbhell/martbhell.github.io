@@ -1,5 +1,5 @@
 ---
-title: "commando.io - manage servers"
+title: commando.io - manage servers
 date: 2013-11-13
 category: it
 tags: cms, commando, commando, io, configuration, management, software, servers

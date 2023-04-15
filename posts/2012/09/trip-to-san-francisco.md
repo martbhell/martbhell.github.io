@@ -1,5 +1,5 @@
 ---
-title: "Trip to San Francisco"
+title: Trip to San Francisco
 date: 2012-09-10
 category: finland
 tags: frisco, hostel, san, francisco, travel, trip, usa

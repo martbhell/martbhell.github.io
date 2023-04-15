@@ -1,5 +1,5 @@
 ---
-title: "Cyanogenmod on Xperia Active (ST17i or satsuma)"
+title: Cyanogenmod on Xperia Active (ST17i or satsuma)
 date: 2014-01-12
 category: it
 tags: android, cyanogenmod, sony, ericsson, xperia, active

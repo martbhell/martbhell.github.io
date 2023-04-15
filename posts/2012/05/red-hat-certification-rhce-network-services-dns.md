@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services – DNS"
+title: Red Hat Certification – RHCE – Network Services – DNS
 date: 2012-05-08
 category: it
 tags: centos, certification, dns, domain, name, linux, red, hat, rhce, studying

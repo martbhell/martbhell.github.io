@@ -1,5 +1,5 @@
 ---
-title: "New theme"
+title: New theme
 date: 2012-07-19
 category: it
 tags: hemingway, hemingwayex, theme, wordpress

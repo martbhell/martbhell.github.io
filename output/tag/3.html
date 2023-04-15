@@ -1,141 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - 3</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #3 Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/3.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/vlan-in-the-home-network.html">"VLAN in the home network!"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-05-30T00:00:00+03:00">
-                Published: "2019-05-30"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cable.html">cable</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/home.html">home</a> <a href="/tag/network.html">network</a> <a href="/tag/hyper.html">hyper</a> <a href="/tag/v.html">v</a> <a href="/tag/internet.html">internet</a> <a href="/tag/service.html">service</a> <a href="/tag/provider.html">provider</a> <a href="/tag/modem.html">modem</a> <a href="/tag/interface.html">interface</a> <a href="/tag/controller.html">controller</a> <a href="/tag/switch.html">switch</a> <a href="/tag/usb.html">usb</a> <a href="/tag/3.html">3</a> <a href="/tag/0.html">0</a> <a href="/tag/user.html">user</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/lan.html">lan</a> <a href="/tag/windows.html">windows</a> <a href="/tag/10.html">10</a> </p>
-</footer><!-- /.post-info --><p>https://www.guldmyr.com/blog/some-updates-to-the-home-network/</p>
-<p>Above is a previous post in this series about some improvements to my home network. With two modems from two ISPs.</p>
-<p>So! On Alibaba I found two Hasivo <a href="https://www.aliexpress.com/item/8-Port-Gigabit-Managed-Switch-Managed-Ethernet-Switch-with-8-port-10-100-1000M-VLAN/1000007360495.html">8x1GbE managed fanless switches</a> with VLAN support. Delivery time to Finland was really quick. It didn't say (ok, I didn't read all or ask seller) if they included European adapters but turns out they did!</p>
-<p>To recap: <strong>The idea was to use the one long cable and transport two VLANs over it. Other than that how I would actually implement it was a bit fuzzy.</strong></p>
-<p><img alt="" src="images/home-net-current-20190516-2.jpg"></p>
-<p>New layout. Numbers in the switchlike boxes are VLAN ids</p>
-<p>Things I've learnt while connecting these:</p>
-<ul>
-<li>Creating a VLAN subinterface in Windows 10 seems to require Hyper-V.. This means if I have one machine and want it in both VLANs I need two NICs. No bother, I found a USB3 1GbE adapter in a box at home when cleaning :)</li>
-<li>I knew about VLAN trunk cables, and the way they are implemented in this Web Interface is to set both VLANs as tagged on the same port.<ul>
-<li>The web interface of this switch has two pages about VLANs. One is a static setup where you say which port is a member of which VLAN and if it's tagged or untagged. Changing the default or removing a port from VLAN 1 was not possible in this the first screen. In the second however one can change the PVID which is the untagged/native VLAN.</li>
-</ul>
-</li>
-<li>Also found a few extra short ethernet cables in old ISP modem boxes, very nice to have with this as this exercise required a few more cables.</li>
-<li>So on the desktop I now need to choose which network interface to use to get to the Internet. I learnt that if I just remove default gateway for IPv4 from ISP A and use the NIC to ISP B then IPv6 from ISP A will still be there and used :)</li>
-</ul>
-<p><img alt="" src="images/static_vlan_setup.png"></p>
-<p>First VLAN config page: The static VLAN/tagged VLAN setup on the other page</p>
-<p><img alt="" src="images/modemb_untagged.png"></p>
-<p>Second VLAN config page: The native VLAN / PVID configuration on one switch</p>
-<p><em>Some <strong>more bits about the switches is in order:</strong></em></p>
-<p>On a related note, the modems have switches builtin and I also had a 6 port fanless unmanaged switch which has been working great for the last 6 years or so but now that got deprecated, yay one less UK plug adapter :). I prefer using an extra switch as opposed to the modem's. The modems sometimes reboot which is annoying as it interrupts anything I'm doing, even if it's only local without going to the Internet.</p>
-<p>They have a very basic looking CGI web interface. The web interface is only accessible on VLAN 1. The firmware is from 2013 and has version v1.0.3, I asked the seller (which was very responsive to all of my questions) and apparently a newer one is in the works but unfortunately, there's no way to subscribe to any news about new firmware coming.. I doubt it'll ever come.  </p>
-<p>One switch-like quality was that to save the running configuration you make in the web interface, you have to click on save.</p>
-<p>There is a manual, one just had to ask the seller on Ali Baba for it - attaching it here for convenience.</p>
-<p><a href="https://www.guldmyr.com/blog/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf">switch manual</a><a href="https://www.guldmyr.com/blog/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf">Download</a></p>
-<p>All in all this worked out quite nicely. We'll see how this keeps up. Some further avenues of interest:</p>
-<ul>
-<li>On my desktop I now use the USB NIC to get to the internet, I tried once to use the system board NIC but then had some issues.. perhaps that's a bit faster. Using a USB 3 port vs a USB 2 port gave about half a millisecond faster latency to this place I usually ping.funet.fi</li>
-<li>Response time on the DSL is a bit higher (17 vs 12) to ping.funet.fi<ul>
-<li>tracert shows 17ms to first hop with the DSL's ISP</li>
-<li>tracepath shows 10ms to first hop with the cable modem's ISP</li>
-<li>pinging the DSL modem is 1ms vs cable modem 3ms</li>
-<li>ping6 to ping.funet.fi is 10ms with DSL</li>
-</ul>
-</li>
-<li>Maybe time to look into a cheap AP to plug in near ISP modem B but connected to VLAN 10 so wifi clients there can reach the server..</li>
-<li>The switches have a bunch of other settings that could be fun to play with too.</li>
-</ul>
-<p>Was the layout diagram above not clear? Try this:</p>
-<p><img alt="" src="https://lh5.googleusercontent.com/ZtYmLJgLMLOlWOvYaNZ47I7KnI0HwTrqWw8u9JlhxVgdJJpt7whfeeccwekT-OcJ_jTP2HqOqkV4Ry0fTd3VAB0YH7pGlcxlUatlWSzpSCFiYhLW2cgc3fDknkY0vJ9xn5fuXqHM"></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/playstation-3-its-purty.html" rel="bookmark"
-                           title="Permalink to "Playstation 3 - it's purty"">"Playstation 3 - it's purty"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-03-20T00:00:00+02:00">
-                Published: "2011-03-20"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/gran.html">gran</a> <a href="/tag/turismo.html">turismo</a> <a href="/tag/playstation.html">playstation</a> <a href="/tag/3.html">3</a> <a href="/tag/ps3.html">ps3</a> <a href="/tag/ps3mediaserver.html">ps3mediaserver</a> <a href="/tag/video.html">video</a> <a href="/tag/games.html">games</a> </p>
-</footer><!-- /.post-info -->                <p>Got one this weekend, together with Gran Turismo 5 and Little Big Planet (or something like that), we've only played GT 5 so far but it's pretty darn amazing! It's quite hard but we do win - complete the challenges in the beginner level at least ;)</p>
-<p>Altogether quite expensive stuff, but …</p>
-                <a class="readmore" href="/playstation-3-its-purty.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #3 Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2019-05-30T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2019-05-30
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/vlan-in-the-home-network.html">VLAN in the home network!</a>
+        </h4>
+        <div class="content">
+          https://www.guldmyr.com/blog/some-updates-to-the-home-network/ Above is a previous post in this series about some improvements to my home network. With two modems from two ISPs. So! On Alibaba I found two Hasivo 8x1GbE managed fanless switches with VLAN support. Delivery time to Finland was really quick. It didn't …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-03-20T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-03-20
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/playstation-3-its-purty.html">Playstation 3 - it's purty</a>
+        </h4>
+        <div class="content">
+          Got one this weekend, together with Gran Turismo 5 and Little Big Planet (or something like that), we've only played GT 5 so far but it's pretty darn amazing! It's quite hard but we do win - complete the challenges in the beginner level at least ;) Altogether quite expensive stuff, but …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

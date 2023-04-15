@@ -1,5 +1,5 @@
 ---
-title: "Transparent PuTTY in Windows 7"
+title: Transparent PuTTY in Windows 7
 date: 2011-02-18
 category: it
 tags: appearance, auto, login, it, 2, linux, putty, set, opacity, ssh, terminal, client, transparency, tray, icon, windows

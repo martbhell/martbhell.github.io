@@ -1,5 +1,5 @@
 ---
-title: "Nagios Health Check of a DDN SFA12K"
+title: Nagios Health Check of a DDN SFA12K
 date: 2015-01-18
 category: it, storage
 tags: ddn, monitoring, nagios, sfa12k

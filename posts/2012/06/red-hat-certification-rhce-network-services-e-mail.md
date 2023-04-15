@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services – e-mail"
+title: Red Hat Certification – RHCE – Network Services – e-mail
 date: 2012-06-04
 category: it
 tags: centos, certification, dovecot, file, transfer, imap, linux, postfix, red, hat, rhce, sendmail, smtp, studying

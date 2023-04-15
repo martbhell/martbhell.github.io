@@ -1,5 +1,5 @@
 ---
-title: "Studying for Openstack Certified Administrator"
+title: Studying for Openstack Certified Administrator
 date: 2018-11-04
 category: it
 tags: certification, cloud, openstack

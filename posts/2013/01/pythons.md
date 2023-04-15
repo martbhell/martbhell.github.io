@@ -1,5 +1,5 @@
 ---
-title: "Pythons"
+title: Pythons
 date: 2013-01-14
 category: it
 tags: programming, python, studying

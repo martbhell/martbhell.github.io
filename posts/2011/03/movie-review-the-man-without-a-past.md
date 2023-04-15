@@ -1,5 +1,5 @@
 ---
-title: "Movie Review - The Man Without a Past"
+title: Movie Review - The Man Without a Past
 date: 2011-03-07
 category: finland
 tags: black, comedy, elokuva, movie, review

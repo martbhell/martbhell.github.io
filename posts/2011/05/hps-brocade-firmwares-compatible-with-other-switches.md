@@ -1,5 +1,5 @@
 ---
-title: "HP's Brocade firmwares compatible with other switches?"
+title: HP's Brocade firmwares compatible with other switches?
 date: 2011-05-15
 category: it, storage
 tags: brocade, examdiff, firmware, gpl, hds, hp, ibm, san, san, switches, storage

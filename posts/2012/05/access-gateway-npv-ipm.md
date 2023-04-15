@@ -1,5 +1,5 @@
 ---
-title: "Access Gateway - NPV - TR"
+title: Access Gateway - NPV - TR
 date: 2012-05-11
 category: storage
 tags: access, gateway, brocade, cisco, ipm, mds, npiv, npv, qlogic, san, storage, transparent, mode

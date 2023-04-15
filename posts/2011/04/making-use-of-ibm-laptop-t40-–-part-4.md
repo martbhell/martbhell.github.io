@@ -1,5 +1,5 @@
 ---
-title: "Making use of IBM Laptop T40 – Part 4"
+title: Making use of IBM Laptop T40 – Part 4
 date: 2011-04-19
 category: finland
 tags: 10, 10, hdd, hdparm, ibm, laptop, linux, pata, replace, hard, drive, synergy, t40, thinkpad

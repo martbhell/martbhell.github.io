@@ -1,5 +1,5 @@
 ---
-title: "Yesterday was my last day at CSCfi"
+title: Yesterday was my last day at CSCfi
 date: 2020-03-08
 category: finland, it
 

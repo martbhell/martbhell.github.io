@@ -1,5 +1,5 @@
 ---
-title: "check_irods - nagios plugin to check the functionality of an iRODS server"
+title: check_irods - nagios plugin to check the functionality of an iRODS server
 date: 2015-03-31
 category: it, storage
 tags: irods, monitoring, nagios

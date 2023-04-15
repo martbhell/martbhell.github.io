@@ -1,153 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - cvmfs</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #cvmfs Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/cvmfs.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/automated-testing-of-ansible-roles.html">"Automated testing of ansible roles"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-06-01T00:00:00+03:00">
-                Published: "2017-06-01"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/ansible.html">ansible</a> <a href="/tag/ci.html">ci</a> <a href="/tag/cvmfs.html">cvmfs</a> <a href="/tag/docker.html">docker</a> <a href="/tag/molecule.html">molecule</a> <a href="/tag/testing.html">testing</a> <a href="/tag/travis.html">travis</a> </p>
-</footer><!-- /.post-info --><h2 id="what-is-this">What is this?</h2>
-<p>Basic idea: whenever most things happen in your ansible repository (for example commit, pull request or release) then you want to automatically test the ansible code.</p>
-<p>The basic tools:</p>
-<ul>
-<li>syntax-checking</li>
-<li>lint / codying style adherence</li>
-<li>actually running the code</li>
-<li>is it idempotent</li>
-<li>does the end result look like you want it to?</li>
-</ul>
-<h2 id="how-it-should-be-done">How it should be done</h2>
-<p>Use something like molecule <a href="https://github.com/metacloud/molecule">https://github.com/metacloud/molecule</a> which can launch your container/virtual machine, run ansible, check for lint and also run some testing framework like serverspec/testinfra.</p>
-<h2 id="how-i-currently-to-do-it">How I currently to do it</h2>
-<p>I use <a href="https://travis-ci.org">travis</a> to test many ansible roles and playbooks. From travis you basically get an Ubuntu machine and in that you can run whatever you want.</p>
-<p>Basic process I've used for ansible testing:</p>
-<ul>
-<li>Configure docker on the Ubuntu machine (or <a href="https://github.com/CSCfi/ansible-role-cuda/blob/master/.travis.yml">LXC</a> in some roles)</li>
-<li>Launch a docker with the OS you want to test on (in my case mostly CentOS 7, but sometimes Debian)</li>
-<li>Run ansible-playbook with --syntax-check, --check and twice to check for idempotency</li>
-<li>Run some manual commands at the end to test whatever was configured / or at least print some config files to make sure they look OK</li>
-</ul>
-<p>All of the above and more should be doable now with molecule, first and <a href="https://github.com/CSCfi/ansible-role-cvmfs/tree/molecule">last time I tried</a> I couldn't get it to work but it's looking better.</p>
-<h2 id="actual-commands-to-test">Actual commands to test</h2>
-<ul>
-<li>ansible-playbook --syntax-check</li>
-<li><a href="https://github.com/willthames/ansible-lint">ansible-lint</a></li>
-<li>ansible-playbook</li>
-<li>ansible-playbook</li>
-<li>ansible-playbook --check</li>
-</ul>
-<h3 id="order-matters">Order Matters</h3>
-<p>Do you want to run it in noop mode ( --check ) before or after the role has first run at least once to configure all the things?</p>
-<h2 id="how-to-actually-set-this-up">How to actually set this up</h2>
-<p><a href="https://docs.travis-ci.com/">Official travis documentation</a></p>
-<p>Login with your github account on travis.org (or travis.com if it's a private repo) ( and connect your github organization ).</p>
-<p>Enable the repository, for example https://travis-ci.org/CSCfi/ansible-role-dhcp_server</p>
-<p>Add some files to your repo. I usually copy .travis.yml and tests/ directory from an existing repository like <a href="https://github.com/CSCfi/ansible-role-cvmfs">ansible-role-cvmfs</a> .</p>
-<p>Modify the test playbook - tests/test.yml to include the new role, maybe change some default variables and have a look in <a href="https://github.com/CSCfi/ansible-role-cvmfs/blob/molecule/tests/test-in-docker-image.sh">test-in-docker-image.sh</a> script if there are anything you want to add or remove from there too.</p>
-<p>Push to github and watch the build log :)</p>
-<h2 id="working-fighting-with-travis">Working Fighting with Travis</h2>
-<p>Fighting with docker took a lot of my time when getting this working the first time. Especially as I use ansible to configure servers that run multiple services and want to have a full systemd inside the container.</p>
-<p>Commands to run on an Ubuntu 14.04 VM to get a kind of similar environment as in travis:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>libssl-dev<span class="w"> </span>libffi-dev<span class="w"> </span>python-dev<span class="w"> </span>git
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker.io<span class="w"> </span>cgroup-lite
-/usr/share/docker.io/contrib/check-config.sh<span class="w"> </span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;DOCKER\_OPTS=&quot;-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -s devicemapper&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/default/docker<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-sudo<span class="w"> </span>cgroups-mount
-</code></pre></div>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-<p>And then from there run the commands you have in .travis.yml</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-5.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 – Day 5"">"HEPIX Spring 2011 – Day 5"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-10T00:00:00+03:00">
-                Published: "2011-05-10"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/vm.html">vm</a> <a href="/tag/fs.html">fs</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/cloudbursting.html">cloudbursting</a> <a href="/tag/cvmfs.html">cvmfs</a> <a href="/tag/cvs.html">cvs</a> <a href="/tag/distribution.html">distribution</a> <a href="/tag/git.html">git</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/http.html">http</a> <a href="/tag/national.html">national</a> <a href="/tag/grid.html">grid</a> <a href="/tag/service.html">service</a> <a href="/tag/software.html">software</a> <a href="/tag/squid.html">squid</a> <a href="/tag/svn.html">svn</a> <a href="/tag/version.html">version</a> <a href="/tag/control.html">control</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> </p>
-</footer><!-- /.post-info -->                <p>What day it is can be told by all the suitcases around the room.</p>
-<h2 id="version-control">Version Control</h2>
-<p>An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-5.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #cvmfs Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2017-06-01T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2017-06-01
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/automated-testing-of-ansible-roles.html">Automated testing of ansible roles</a>
+        </h4>
+        <div class="content">
+          What is this? Basic idea: whenever most things happen in your ansible repository (for example commit, pull request or release) then you want to automatically test the ansible code. The basic tools: syntax-checking lint / codying style adherence actually running the code is it idempotent does the end result look like …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-10T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-5.html">HEPIX Spring 2011 – Day 5</a>
+        </h4>
+        <div class="content">
+          What day it is can be told by all the suitcases around the room. Version Control An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

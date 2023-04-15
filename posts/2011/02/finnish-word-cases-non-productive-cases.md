@@ -1,5 +1,5 @@
 ---
-title: "Finnish - Word Cases - Non-productive Cases"
+title: Finnish - Word Cases - Non-productive Cases
 date: 2011-02-06
 category: finland
 tags: finland, finnish, language, study

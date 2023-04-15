@@ -1,5 +1,5 @@
 ---
-title: "Prometheus and SNMP from a printer"
+title: Prometheus and SNMP from a printer
 date: 2021-04-07
 category: it
 tags: monitoring, printer, prometheus, snmp

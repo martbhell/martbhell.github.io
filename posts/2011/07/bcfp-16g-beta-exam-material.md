@@ -1,5 +1,5 @@
 ---
-title: "BCFP 16G Beta Exam Material"
+title: BCFP 16G Beta Exam Material
 date: 2011-07-14
 category: storage
 tags: bcfp, brocade, certification, learning, san, storage, network, study, study, material

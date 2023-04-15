@@ -1,5 +1,5 @@
 ---
-title: "VSP / VMAX / VAAI"
+title: VSP / VMAX / VAAI
 date: 2011-02-10
 category: storage
 tags: anarchist, arrays, emc, hds, storage, vaai, vm, vmax, vmware, vsp

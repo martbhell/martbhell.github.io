@@ -1,194 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - smb</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #smb Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/smb.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/red-hat-certification-rhce-network-services-smb.html">"Red Hat Certification – RHCE – Network Services – SMB"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2012-05-14T00:00:00+03:00">
-                Published: "2012-05-14"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/samba.html">samba</a> <a href="/tag/smb.html">smb</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info --><p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
-<p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1 id="network-services">Network services</h1>
-<p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
-<ul>
-<li>Install the packages needed to provide the service.</li>
-<li>Configure SELinux to support the service.</li>
-<li>Configure the service to start when the system is booted.</li>
-<li>Configure the service for basic operation.</li>
-<li>Configure host-based and user-based security for the service.</li>
-</ul>
-<p>User should be able to do the following for all these services:</p>
-<ul>
-<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd">http/https</a></li>
-<li><a href="http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns">dns</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp">ftp</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-nfs/">nfs</a></li>
-<li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-smb/">smb</a></li>
-<li>smtp</li>
-<li>ssh</li>
-<li>ntp</li>
-</ul>
-<h2 id="smb">SMB:</h2>
-<p>Testing an SMB server may be quite easy from Windows, but from Linux I suppose it's a bit trickier.</p>
-<p>The CLI client is called 'smbclient'</p>
-<p>The tool to set passwords: 'smbpasswd'</p>
-<p>You can also get some information with commands starting with 'net', for example 'net -U username session'</p>
-<p>testparm is another tool you can use to test that the config file - smb.conf - is not missing anything structural or in syntax.</p>
-<p>The server is called 'samba'.</p>
-<p>There are more packages, for example 'samba-doc', samba4. You can find them by typing: 'yum install samba*'</p>
-<p>samba-doc installs lots of files in /usr/share/doc/samba*</p>
-<ul>
-<li>
-<p>Install the packages needed to provide the service.</p>
-</li>
-<li>
-<p>yum install samba</p>
-</li>
-<li>
-<p>Configure SELinux to support the service</p>
-</li>
-<li>
-<p>getsebool -a |grep smb; getsebool -a|grep samba</p>
-</li>
-<li>
-<p>/etc/samba/smb.conf # has some information about selinux</p>
-</li>
-<li>
-<p>Configure the service to start when the system is booted.</p>
-</li>
-<li>
-<p>chkconfig samba on</p>
-</li>
-<li>
-<p>Configure the service for basic operation.</p>
-</li>
-<li>
-<p>server#: open firewall (check man smb.conf, port 445 and 139 are mentioned)</p>
-</li>
-<li>server#: mkdir /samba; chcon -t type_in_smb_conf /samba</li>
-<li>
-<p>server#: edit /etc/samba/smb.conf:</p>
-</li>
-<li>
-<p>copy an existing share - make it browseable and allow guest to access</p>
-</li>
-<li>
-<p>server#: service smb start</p>
-</li>
-<li>server#: touch /samba/fileonshare</li>
-<li>
-<p>client#: smbclient \\\\ip.to.smb.server\\share</p>
-</li>
-<li>
-<p>hit enter and it will attempt to log in as anonymous (guest)</p>
-</li>
-<li>
-<p>client#: get fileonehsare</p>
-</li>
-<li>
-<p>Configure host-based and user-based security for the service</p>
-</li>
-<li>
-<p>server#: check that 'security = user' in smb.conf.</p>
-</li>
-<li>server#: add" writable = yes" or "read only = no" to the share in smb.conf</li>
-<li>server#: smbpasswd -a username</li>
-<li>server#: mkdir /samba/upload</li>
-<li>server#: chown username /samba/upload</li>
-<li>server#: chmod 777 /samba/upload</li>
-<li>client#: smbclient -U username \\\\ip.to.smb.server\\share</li>
-<li>client#: cd upload; mkdir newfolder; cd newfolder</li>
-<li>client#: put file</li>
-</ul>
-<h2 id="extra">Extra</h2>
-<ul>
-<li>
-<p>Provide network shares to specific clients.</p>
-</li>
-<li>
-<p>things you can set on the share:</p>
-</li>
-<li>
-<p>write list = +staff</p>
-</li>
-<li>invalid users =</li>
-<li>valid users =</li>
-<li>hosts allow = 192.168.0.0/255.255.255.0</li>
-<li>
-<p>hosts deny =</p>
-</li>
-<li>
-<p>Provide network shares suitable for group collaboration.</p>
-</li>
-<li>
-<p>groupadd staff</p>
-</li>
-<li>usermod -a -G staff bosse</li>
-<li>chown root.staff /samba/upload</li>
-<li>chmod 775 /samba/upload</li>
-<li>connect with bosse - do things,</li>
-<li>connect with another user - can you do things?</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #smb Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-05-14T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-05-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhce-network-services-smb.html">Red Hat Certification – RHCE – Network Services – SMB</a>
+        </h4>
+        <div class="content">
+          1st post - System Management and Configuration Objectives Network services Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below: Install the packages needed to provide the service. Configure SELinux to support the …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

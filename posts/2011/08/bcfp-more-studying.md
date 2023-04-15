@@ -1,5 +1,5 @@
 ---
-title: "BCFP - more studying"
+title: BCFP - more studying
 date: 2011-08-23
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, rehearse, san, storage, network, studying

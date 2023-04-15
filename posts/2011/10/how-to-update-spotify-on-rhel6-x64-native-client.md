@@ -1,5 +1,5 @@
 ---
-title: "How-To : Update Spotify on RHEL6 x64 native client"
+title: How-To : Update Spotify on RHEL6 x64 native client
 date: 2011-10-14
 category: it
 tags: red, hat, red, hat, enterprise, linux, rhel, spotify, spotify, for, linux
