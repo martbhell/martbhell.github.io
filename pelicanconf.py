@@ -8,7 +8,7 @@ TIMEZONE = 'Europe/Helsinki'
 
 DEFAULT_LANG = 'en'
 
-DEFAULT_DATE_FORMAT = '"%Y-%m-%d"'
+DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 
 SITEMAP = {
     "format": "xml",
@@ -34,12 +34,24 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
+         ('tags', 'tags/'),
+         ('categories', 'categories/'),
+         )
+
+FOOTER_LINKS = (
          ('Was There an NHL Game Yesterday?', 'https://wtangy.se'),
          )
 
 # Social widget
 SOCIAL = (('martbhell', 'https://twitter.com/martbhell'),
           )
+
+ICONS = (
+        ('twitter', 'https://twitter.com/martbhell'),
+        ('rss', 'atom.xml'),
+        ('github', 'https://github.com/martbhell'),
+          )
+
 
 DEFAULT_PAGINATION = 10
 
@@ -59,3 +71,7 @@ MARKDOWN = {
     },
     'output_format': 'html5',
 }
+
+import alchemy
+THEME = alchemy.path()
+HIDE_AUTHORS = True
