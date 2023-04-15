@@ -7,7 +7,7 @@ content_dir = 'content'
 
 debug = False
 
-EXCLUDE = [ 'images', 'MAKESYMLINKS.py' ]
+EXCLUDE = [ 'images', 'MAKESYMLINKS.py', 'extras' ]
 
 # Get a list of all .md files in the posts directory and its subdirectories
 
@@ -26,7 +26,8 @@ for c_file in content_files:
             BAD.append(c_file)
 
 if len(BAD) > 0:
-    print(f"ERROR: Only symlinks in here yo or exclude them!")
+    print(f"ERROR: Only symlinks in here yo or exclude these!")
+    print(f"{BAD}")
     os._exit(2)
 else:
     print(f"OK: directory {content_dir} is OK")
