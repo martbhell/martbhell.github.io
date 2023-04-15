@@ -47,3 +47,15 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 GOOGLE_ANALYTICS = "G-H4LG7R6ZGG"
+
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        # This is for enabling the TOC generation
+        "markdown.extensions.toc": {"title": "Table of Contents"},
+    },
+    'output_format': 'html5',
+}

@@ -6,7 +6,7 @@ tags: brocade, brocade, san, fabric, fabric, os, firmware, guide, hp, hp, suppor
 
 # Overview
 
-\[toc\]
+[TOC]
 
 This is my guide/template to upgrading Fabric OS (FOS) - Firmware - on the Brocade SAN Switches. If **you** have any additions, comments or questions please go ahead and comment or if you have any questions you can find my e-mail on [https://guldmyr.com](http://guldmyr.com "go to the cv"). The post has been updated over 188 times according to my WordPress revisions, first update in January 2011.
 
