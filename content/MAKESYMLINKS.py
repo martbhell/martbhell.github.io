@@ -6,6 +6,8 @@ import glob
 posts_dir = '../posts'
 content_dir = '.'
 image_dir = './images'
+extras_dir = './extras'
+extras_source_dir = '../extras'
 
 debug = False
 
@@ -13,6 +15,8 @@ debug = False
 
 image_extensions = ['gif', 'jpg', 'png', 'GIF', 'JPG', 'PNG']
 md_files = glob.glob(os.path.join(posts_dir, '**/*.md'), recursive=True)
+extras_files = glob.glob(os.path.join(extras_source_dir, '*'))
+
 image_files = []
 for extension in image_extensions:
   image_files += glob.glob(os.path.join(posts_dir, f'**/*.{extension}'), recursive=True)
@@ -58,4 +62,19 @@ for image_file in image_files:
         os.symlink(image_file_path, symlink_path)
     except FileExistsError:
         if debug: print(f"Skipping {image_file}: symlink already exists.")
+        pass
+
+# Create symlinks for each extras
+for extra_file in extras_files:
+    # Construct the symlink filename by getting the basename of the file
+    symlink_filename = os.path.basename(extra_file)
+
+    # Construct the symlink path by joining the content directory and the symlink filename
+    symlink_path = os.path.join(extras_dir, symlink_filename)
+    extra_file_path = os.path.join('..', extra_file)
+    try:
+        # Create the symlink
+        os.symlink(extra_file_path, symlink_path)
+    except FileExistsError:
+        if debug: print(f"Skipping {extra_file}: symlink already exists.")
         pass
