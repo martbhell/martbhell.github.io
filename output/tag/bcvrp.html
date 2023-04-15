@@ -35,7 +35,7 @@
 </footer><!-- /.post-info --><p>For training these I set up networks. Many. Drawing the networks first in LibreOffice Draw and then setting them up with virtual machine templates and LAN segments.</p>
 <p>The exam I took in October and because it was a beta exam the results aren't out until December :)</p>
 <p>The BCvRP has the below <a href="http://community.brocade.com/docs/DOC-3349" title="http://community.brocade.com/docs/DOC-3349">objectives</a> (included for free are some of my comments on each topic). None of this should be taken as a replacement for taking the actual course and actually doing these things on a vrouter. And honestly, the various concepts and technologies described in the objectives below can become very complex. So before taking this course/exam you at a minimum want to know the basics of BGP and setting up an OSPF network should be a breeze.</p>
-<h1>OSPF Multi-Area Concepts</h1>
+<h1 id="ospf-multi-area-concepts">OSPF Multi-Area Concepts</h1>
 <ul>
 <li>
 <p><strong><em>Describe OSPF routing concepts</em></strong></p>
@@ -58,7 +58,7 @@
 </ul>
 </li>
 </ul>
-<h1>BGP, EBGP and IBGP Concepts</h1>
+<h1 id="bgp-ebgp-and-ibgp-concepts">BGP, EBGP and IBGP Concepts</h1>
 <ul>
 <li>
 <p><strong><em>Describe gateway protocol concepts</em></strong></p>
@@ -84,7 +84,7 @@
 <p>iBGP required settings: local AS number, neighbor address and "update source".</p>
 <p>bgp does not reset advertised routes after an administrator's changes. Changes to eBGP does not come into affect until you run the reset: '<strong>reset ip bgp external out</strong>'. The BGP table can be large - gigabytes. Use the word soft to only request updates and not reset the peer connection.</p>
 <p>reset ip bgp external [ipv4 address]</p>
-<h4>Tuning attributes and priority</h4>
+<h4 id="tuning-attributes-and-priority">Tuning attributes and priority</h4>
 <ol>
 <li>Local preference - only included within an AS. Default is 100. Higher is better.</li>
 <li>AS Path - always forwarded - shorter is better</li>
@@ -95,9 +95,9 @@
 <li>Community # group of prefixes with a common property. Can be used in filters.</li>
 </ol>
 <p>Prepending: insert your AS number in the AS in the beginning of the AS path. Communities are created with: set policy community list</p>
-<h3>BGP troubleshooting</h3>
+<h3 id="bgp-troubleshooting">BGP troubleshooting</h3>
 <p>An active peer - not good. Trying to actively set up a session.</p>
-<h3>iBGP design</h3>
+<h3 id="ibgp-design">iBGP design</h3>
 <ul>
 <li>Does not have to be physically connected (as in BGP).<ul>
 <li>Connectivity over BGP</li>
@@ -116,7 +116,7 @@
 </li>
 </ul>
 <p>Create a peer group, set BGP settings on the peer group. Then assign peers to the group.</p>
-<h2><strong>Route Redistribution</strong></h2>
+<h2 id="route-redistribution"><strong>Route Redistribution</strong></h2>
 <ul>
 <li>
 <p>Describe route redistribution design and configuration</p>
@@ -134,26 +134,26 @@
 <li>OSPF: metric type (increase cost)</li>
 <li>Only active routes are redistributed</li>
 </ul>
-<h2><strong>IPsec VPNs</strong></h2>
+<h2 id="ipsec-vpns"><strong>IPsec VPNs</strong></h2>
 <ul>
 <li>Identify IKE Phase 1 and Phase 2 operations</li>
 <li>Describe how to configure and troubleshoot an IPsec VPN</li>
 </ul>
-<h2><strong>OpenVPN Concepts</strong></h2>
+<h2 id="openvpn-concepts"><strong>OpenVPN Concepts</strong></h2>
 <ul>
 <li>Identify the features of OpenVPN</li>
 <li>Describe OpenVPN configuration</li>
 </ul>
-<h2><strong>VRRP Concepts</strong></h2>
+<h2 id="vrrp-concepts"><strong>VRRP Concepts</strong></h2>
 <ul>
 <li>Describe VRRP concepts and operations</li>
 </ul>
-<h2><strong>Optimization</strong></h2>
+<h2 id="optimization"><strong>Optimization</strong></h2>
 <ul>
 <li>Describe the attributes of WAN load balancing</li>
 <li>Describe QoS features and configuration</li>
 </ul>
-<h1>Policy-Based Routing</h1>
+<h1 id="policy-based-routing">Policy-Based Routing</h1>
 <ul>
 <li>Explain where policy-based routing falls in Brocade Vyatta packet flow</li>
 <li>
@@ -175,7 +175,7 @@
 </li>
 <li>Route-maps has the rules.</li>
 </ul>
-<h1>Multicast Routing</h1>
+<h1 id="multicast-routing">Multicast Routing</h1>
 <ul>
 <li>Describe multicast protocols/elements</li>
 <li>Configure and troubleshoot multicast routing</li>

@@ -39,14 +39,14 @@
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/10.html">10</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/file.html">file</a> <a href="/tag/share.html">share</a> <a href="/tag/guide.html">guide</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/samba.html">samba</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
 </footer><!-- /.post-info -->      <p>Figured I would give this a shot and see how this is done in Linux.</p>
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>1x Ubuntu 10.10 VM in VMWare Workstation. Installed with virtual kernel. 1x Windows 7 VM. All updates.</p>
 <p>Not going to go through the installations in this post, just the domain/LDAP part. See <a href="http://www.guldmyr.com/blog/tag/ubuntu/" title="tag ubuntu">previous post</a>s for installation stuffs.</p>
 <p>Found this article on ubuntu.com -&gt; -&gt; 10.10/serverguide/C/network-authentication.html .. But this does not exist anymore.</p>
 <p>Whoa, quite a lot to do. Think I will read the manuals this time :)</p>
 <p>Basically I think I just need to install and then configure <a href="http://www.samba.org/samba/docs/SambaIntro.html" title="samba intro">Samba</a>. Because it has file-sharing and authentication/authorization.</p>
 <p>So, first step will be to install Samba and try file-sharing.</p>
-<h2>File Sharing</h2>
+<h2 id="file-sharing">File Sharing</h2>
 <p>sudo apt-get install samba</p>
 <p>installs these:</p>
 <p>The following NEW packages will be installed: libavahi-client3 libavahi-common-data libavahi-common3 libcups2 libfile-copy-recursive-perl libgnutls26 libldap-2.4-2 libsasl2-2 libsasl2-modules libtalloc2 libtasn1-3 libwbclient0 samba samba-common samba-common-bin update-inetd</p>

@@ -34,7 +34,7 @@
 <p>tags: <a href="/tag/10.html">10</a> <a href="/tag/hdd.html">hdd</a> <a href="/tag/hdparm.html">hdparm</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/synergy.html">synergy</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> </p>
 </footer><!-- /.post-info --><p>Logging in!</p>
 <p>Wireless worked straight from the start. It says that my battery probably is broken (only 28% capacity). Some 2.6~GB is used by the default installation out of my 40GB disk. 1.6GB for swap.</p>
-<h3>Step 1 - set up Synergy.</h3>
+<h3 id="step-1-set-up-synergy">Step 1 - set up Synergy.</h3>
 <p>This is so I don't have to use the laptop keyboard/mouse but instead can just move the mouse from my desktop and I can then control the laptop. It is pretty awesome. To do this, go to the Applications/ubuntu software center and search for synergy. Then install QuickSynergy. I had to click on "use this source" first.</p>
 <p>Then go to accessories and quicksynergy and put in IP of the machine where you have synergy and a screen name. Tada. I wonder if this works after a reboot. But doesn't matter much, you can just drag the entry in the applications menu to the ubuntu desktop and then you'll see it when you log in.</p>
 <p>You can find more details on the <a href="https://help.ubuntu.com/community/SynergyHowto" title="synergyhowto">Ubuntu community pages</a>.</p>
@@ -43,11 +43,11 @@
 <p>/usr/bin/killall synergyc
 sleep 1
 /usr/bin/synergyc --name identifywithname IP.IP.IP.IP</p>
-<h3>Step 2 - Install Updates.</h3>
+<h3 id="step-2-install-updates">Step 2 - Install Updates.</h3>
 <p>This popped up automagically. 302MB of extra updates does it want to install. I just went with the default, always good to have updates :) The root password is the same as your normal password, unless you've done something special. During the updates the cursor when I was using synergy was lagging behind. But that's because I'm using a poor wirless connection (maxes out at 580kB/s) and the update probably uses all it can get. The normal mouse works fine :)</p>
 <p>You may have heard that 'you don't need to reboot in Linux' this is true unless you make a change to the <a href="http://en.wikipedia.org/wiki/Linux_kernel" title="linux kernel on wikipedia">kernel</a>. Which is what this update updated.</p>
-<h3>The rest - whatever you feel is important :)</h3>
-<h3>hdparm - testing hard drive</h3>
+<h3 id="the-rest-whatever-you-feel-is-important">The rest - whatever you feel is important :)</h3>
+<h3 id="hdparm-testing-hard-drive">hdparm - testing hard drive</h3>
 <p>I have some suspicion that the internal hdd is singing on its last verse. The built-in tool to test IDE/ATA drives is: <a href="http://en.wikipedia.org/wiki/Hdparm" title="hdparm on wikipedia">hdparm</a>. First though you want to find what device name your disk has. If you type 'mount' you will see on top something like this:</p>
 <p><code>/dev/sda1 on / type ext4 (rw,errors=remount-ro,commit=0)</code></p>
 <p>This will tell you that /dev/sda1 is where / is installed. / is root. The file system.</p>
@@ -56,12 +56,12 @@ sleep 1
 <p><code>/dev/sda: Timing cached reads:   688 MB in  2.00 seconds = 343.59 MB/sec martbhell@bottle:~$ sudo hdparm -tT /dev/sda</code></p>
 <p><code>/dev/sda: Timing cached reads:   774 MB in  2.00 seconds = 386.65 MB/sec Timing buffered disk reads:  102 MB in  3.00 seconds =  33.95 MB/sec</code></p>
 <p>So that looks good. I feel better now :)</p>
-<h3>webbrowser - ubuntu 10.10 comes with Firefox 3 and when I search it doesn't find Firefox 4</h3>
+<h3 id="webbrowser-ubuntu-1010-comes-with-firefox-3-and-when-i-search-it-doesnt-find-firefox-4">webbrowser - ubuntu 10.10 comes with Firefox 3 and when I search it doesn't find Firefox 4</h3>
 <p>So we install google chrome!</p>
 <p>All you have to do is go use firefox and find google chrome page. Download the .deb package (ubuntu is based on debian). And open, this will open Ubuntu Software Center. Install.</p>
-<h3>DWM in Ubuntu</h3>
+<h3 id="dwm-in-ubuntu">DWM in Ubuntu</h3>
 <p>find dwm in ubuntu software center, also installing dzen2 with the add-on "i3status". When you install dwm you also get suckless-tools - which include dmenu and more.</p>
-<h4>To start it:</h4>
+<h4 id="to-start-it">To start it:</h4>
 <ul>
 <li>get to the login screen</li>
 <li>select user</li>
@@ -71,7 +71,7 @@ sleep 1
 <li>set that up, and then you can use synergy in there as well</li>
 <li>to log out: ALT+SHIFT+Q</li>
 </ul>
-<h4>To change stuff:</h4>
+<h4 id="to-change-stuff">To change stuff:</h4>
 <p>To change stuff in DWM you need to re-compile the package. Because I found dwm in ubuntu software center I was inclined to use that. But maybe the best option would be to do it manually..</p>
 <p>Then, downloading it from suckless.org Making sure that the config.mk points to where dwm is not currently installed. (Maybe I should have uninstalled it first).</p>
 <p>See /usr/share/xsessions/dwm.desktop That is the file that starts dwm. It's also a good idea to point the xsession startup script to a script that runs xsetroot in a loop, if you want to update 'xsetroot -name' with time, for example.</p>

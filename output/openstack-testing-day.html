@@ -42,10 +42,10 @@
 <p>I actually started installing this on the 8th but I forgot to install it to hdd so the 'yum update' failed and broke the machine with I/O errors :)</p>
 <p>Installing it in a VMWare Workstation (fedora 64-bit type, 2, cores, 4G RAM, 20G disk).</p>
 <p><a href="http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day">http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day</a></p>
-<h1>Basic Setup</h1>
-<h2>1</h2>
+<h1 id="basic-setup">Basic Setup</h1>
+<h2 id="1">1</h2>
 <p><a href="http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages">http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages</a> - No problem.</p>
-<h2>2</h2>
+<h2 id="2">2</h2>
 <p><a href="http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova">http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova</a> -</p>
 <p>Says that if you are doing this in a VM you need to "configure nova to use qemu without KVM and hardware virtualization:". This is not true, as VMWare Workstation 8 has virtualization pass-through.</p>
 <p>[root@localhost mart]# vgcreate nova-volumes $(sudo losetup --show -f /var/lib/nova/nova-volumes.img)
@@ -63,18 +63,18 @@ Asking openstack-nova to sync the databse.
 <p>2012-03-09 07:28:28 WARNING nova.utils [-] /usr/lib/python2.7/site-packages/nova/db/sqlalchemy/migrate_repo/versions/081_drop_instance_id_bw_cache.py:40: SADeprecationWarning: useexisting is deprecated.  Use extend_existing.
   useexisting=True)</p>
 <p>Complete!</p>
-<h2>3</h2>
+<h2 id="3">3</h2>
 <p>[root@localhost nova]# ADMIN_PASSWORD=$OS_PASSWORD openstack-keystone-sample-data
 The default service password has been detected.  Please consider
 setting an actual password in environment variable SERVICE_PASSWORD</p>
 <p>But after that it generates users.</p>
-<h2>4</h2>
+<h2 id="4">4</h2>
 <p>No problems, should 'glance index' return anything at this stage?</p>
-<h2>5</h2>
+<h2 id="5">5</h2>
 <p>No problems.</p>
-<h2>6 Add SSH keypair</h2>
+<h2 id="6-add-ssh-keypair">6 Add SSH keypair</h2>
 <p>No problems, just do exactly what the instructions say (don't try to be smart and put them in .sh files for example :P).</p>
-<h2>7 Register Guest Images</h2>
+<h2 id="7-register-guest-images">7 Register Guest Images</h2>
 <p>At this point the wiki went down :/</p>
 <p>[root@localhost ~]# glance add name=f16 is_public=true disk_format=qcow2 container_format=ovf copy_from=http://berrange.fedorapeople.org/images/2012-02-29/f16-x86_64-openstack-sda.qcow2
 Failed to add image. Got error:

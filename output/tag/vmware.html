@@ -32,7 +32,7 @@
         </address>
 <p>In <a href="/category/storage.html">storage</a>.</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info --><h1>Introduction</h1>
+</footer><!-- /.post-info --><h1 id="introduction">Introduction</h1>
 <p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
 <p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
 <p>Basic components:</p>
@@ -40,19 +40,19 @@
 <p>To use Lustre your kernel needs to support it. There's a special one for server and one for the client. Some packages are needed on both.</p>
 <p>Besides lustre you'll need an updated version of e2fsprogs as well (because the version that comes from RHEL6.3 does not support large partitions).</p>
 <p>Starting with the MDS. When the basic OS setup is done will make a copy of that to use for OSS and Client.</p>
-<h1>Setup basic services.</h1>
-<h2>Install an MDS</h2>
+<h1 id="setup-basic-services">Setup basic services.</h1>
+<h2 id="install-an-mds">Install an MDS</h2>
 <p>This will run the MDT - the metadata target.</p>
 <p>2GB RAM, 10GB disk, bridged networking, 500GB for /boot, rest for / (watch out, it may create a really large swap). Minimal install. Setup OS networking (static ip for servers, start on boot, open port 988 in firewall, possibly some for outgoing if you decide to restrain that too), run yum update and setup ntp. Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86_64). Lustre also does not support selinux, so disable that (works fine with it in enforcing until time to create mds/mdt, also fine with permissive until it's time to mount). Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set hostname.</p>
-<h2>Install an OSS</h2>
+<h2 id="install-an-oss">Install an OSS</h2>
 <p>This will contain the OST (object storage target). This is where the data will be stored.</p>
 <p>Networking may not work (maybe device name changed to eth1 or eth2). You may want to change this afterwards to get the interface back to be called (eth0). <a href="http://www.banym.de/linux/centos/change-network-device-name-from-eth1-back-to-eth0">A blog post</a> about doing that.</p>
-<h2>Install a client</h2>
+<h2 id="install-a-client">Install a client</h2>
 <p>This will access and use the filesystem.</p>
 <p>Clone of the OSS before installing any lustre services or kernels.</p>
-<h1>Install Lustre</h1>
+<h1 id="install-lustre">Install Lustre</h1>
 <p>Before you do this it may be wise to take a snapshot of each server. In case you screw the VM up you can then go back :)</p>
-<h2>Starting with the MDS.</h2>
+<h2 id="starting-with-the-mds">Starting with the MDS.</h2>
 <p>Installing e2fsprogs, kernel and lustre-modules.</p>
 <p>Skipping debuginfo and devel packages, installing all the rest.</p>
 <p>yum localinstall \ 
@@ -81,34 +81,34 @@ libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
 <p>By the way, you probably want to run this to exclude automatic yum kernel updates:</p>
 <p>echo "exclude=kernel*" &gt;&gt; /etc/yum.conf</p>
 <p>After install and reboot into new kernel it's time to modprobe lustre, start creating MDT, OST and then mount things! But hold on to your horses, first we ned to install the client :)</p>
-<h2>And then the Client</h2>
+<h2 id="and-then-the-client">And then the Client</h2>
 <p>Install the e2fsprogs*</p>
 <p>We cannot just install the lustre-client packages, because we run a different kernel than the ones that whamcloud have compiled the lustre-client against.</p>
 <p>We can either back-pedal and install an older kernel. Or we can build (from source / SRPMS) a lustre-client that works on a kernel of our choosing. The later option seems like a better way, because we can then upgrade the kernel if we want to.</p>
-<h3>Build custom linux-client rpms</h3>
+<h3 id="build-custom-linux-client-rpms">Build custom linux-client rpms</h3>
 <p>Because of <a href="http://jira.whamcloud.com/browse/LU-1868">a bug</a> it appears that some ext4 source packages are needed - while they are not. You need to add some parameters to ./configure. This will be the topic of a future post.</p>
 <p>The above rpmbuild should create rpms for the running kernel. If you want to create rpms for a non-running kernel <a href="http://wiki.whamcloud.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel" title="whamcloud wiki">you are supposed to be able to run.</a></p>
-<h1>Configure Lustre</h1>
+<h1 id="configure-lustre">Configure Lustre</h1>
 <p><a href="http://wiki.whamcloud.com/display/PUB/Create+and+Mount+a+Lustre+Filesystem">Whamcloud have good instructions</a>. Don't be afraid to check out their wiki or use google.</p>
 <p>/var/log/messages is the place to look for more detailed errors.</p>
-<h2>On the MDS</h2>
+<h2 id="on-the-mds">On the MDS</h2>
 <p>Because we do not have infiniband you want to change the parameters slightly for lnet to include tcp(eth0). These changes are not reflected until reboot (quite possibly something else) - but just editing a file under /etc/modprobe.d/ called for example lustre.conf is not enough.</p>
 <p>Added a 5GB disk to the mds.</p>
 <p>fdisk -cu /dev/sdb; n, p, 1, (first-last)</p>
 <p>modprobe lustre lnet</p>
 <p>mkfs.lustre --mdt --mgs</p>
 <p>mount</p>
-<h2>On the OSS</h2>
+<h2 id="on-the-oss">On the OSS</h2>
 <p>Also add the parameters into modprobe.</p>
 <p>mkfs.lustre --ost</p>
 <p>mount</p>
-<h2>On the client</h2>
+<h2 id="on-the-client">On the client</h2>
 <p>Add things into modprobe.</p>
 <p>mount!</p>
 <p>Write something.</p>
 <p>Then hit: lfs df -h</p>
 <p>To see usage!</p>
-<h1>Get it all working on boot</h1>
+<h1 id="get-it-all-working-on-boot">Get it all working on boot</h1>
 <p>You want to start the MDS, then the OSS and last the client. But while it's running you can restart any node and eventually it will start working again.</p>
 <p>Fstab on <strong>the client</strong>: ip@tcp:/fsname /mnt lustre defaults,_netdev 0 0</p>
 <p>Fstab on <strong>the OSS and MDS</strong>: /dev/sdb1 /mnt/MDS lustre defaults,_netdev 0 0</p>
@@ -136,7 +136,7 @@ libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/bookmarks.html">bookmarks</a> <a href="/tag/e.html">e</a> <a href="/tag/mail.html">mail</a> <a href="/tag/files.html">files</a> <a href="/tag/ldap.html">ldap</a> <a href="/tag/music.html">music</a> <a href="/tag/opensuse.html">opensuse</a> <a href="/tag/owncloud.html">owncloud</a> <a href="/tag/storage.html">storage</a> <a href="/tag/suse.html">suse</a> <a href="/tag/uploading.html">uploading</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/webdav.html">webdav</a> </p>
-</footer><!-- /.post-info -->                <h1>owncloud</h1>
+</footer><!-- /.post-info -->                <h1 id="owncloud">owncloud</h1>
 <p><a href="http://susestudio.com/a/TadMax/owncloud-in-a-box" title="http://susestudio.com/a/TadMax/owncloud-in-a-box">http://susestudio.com/a/TadMax/owncloud-in-a-box</a></p>
 <p>Based on opensuse 12.1, I tested this out in vmware workstation by downloading the vm version (has a .vmdk file) inside the .tar inside the .tar.gz.</p>
 <p><em>"Run the appliance, go to http://[yourservername]/owncloud and login as admin with the password …</em></p>
@@ -186,7 +186,7 @@ libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/dcache.html">dcache</a> <a href="/tag/esx.html">esx</a> <a href="/tag/esxi.html">esxi</a> <a href="/tag/grid.html">grid</a> <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/postgres.html">postgres</a> <a href="/tag/postgresql.html">postgresql</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h2>This is a test for installing openindiana and set up a working dCache test-vm.</h2>
+</footer><!-- /.post-info -->                <h2 id="this-is-a-test-for-installing-openindiana-and-set-up-a-working-dcache-test-vm">This is a test for installing openindiana and set up a working dCache test-vm.</h2>
 <p>dCache is a storage element of the Grid (scientific computing).</p>
 <p>OI == OpenIndiana. Kind of like opensolaris with an Illumos kernel, not the sun/oracle kernel.</p>
 <p>With <a href="http://www.guldmyr.com/blog/esxi-vmware-workstation/" title="http://www.guldmyr.com/blog/esxi-vmware-workstation/">http://www.guldmyr.com/blog/esxi-vmware-workstation/</a> as a base for …</p>
@@ -233,8 +233,8 @@ libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/bsd.html">bsd</a> <a href="/tag/dragonfly.html">dragonfly</a> <a href="/tag/freebsd.html">freebsd</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/os.html">os</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h1><a href="http://www.dragonflybsd.org/" title="http://www.dragonflybsd.org/">http://www.dragonflybsd.org/</a></h1>
-<h2>Install</h2>
+</footer><!-- /.post-info -->                <h1 id="httpwwwdragonflybsdorg"><a href="http://www.dragonflybsd.org/" title="http://www.dragonflybsd.org/">http://www.dragonflybsd.org/</a></h1>
+<h2 id="install">Install</h2>
 <p>It's based on ... BSD! (FreeBSD 4.8 is apparently what dragonfly span off from)</p>
 <p>What's weird is that while VMWare Workstation scans the iso (to find which OS it is) it stops responding (other VMs are unaffected). It finds FreeBSD 64-bit.</p>
 <p>It has a 'hammer' …</p>
@@ -284,12 +284,12 @@ libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/esx.html">esx</a> <a href="/tag/esxi.html">esxi</a> <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h3>Before</h3>
+</footer><!-- /.post-info -->                <h3 id="before">Before</h3>
 <p>Register and download ESXi here https://www.vmware.com/tryvmware/</p>
 <p>Free license can be found there as well.</p>
 <p>Get ESXi and the vSphere Client.</p>
 <p>Get an OS to install in a VM (I chose openindiana).</p>
-<h3>Install ESXi in VMWare Workstation 8.</h3>
+<h3 id="install-esxi-in-vmware-workstation-8">Install ESXi in VMWare Workstation 8.</h3>
 <p>40G disk, 4GB RAM, 2 cores, enable Virtualization …</p>
                 <a class="readmore" href="/esxi-vmware-workstation-openindiana.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -335,7 +335,7 @@ libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h2>Not allowing root to log in</h2>
+</footer><!-- /.post-info -->                <h2 id="not-allowing-root-to-log-in">Not allowing root to log in</h2>
 <p>By default sshd is running on SL6 and you can ssh in with 'root'.</p>
 <p>Probably a good idea to change this in /etc/ssh/sshd_config</p>
 <p>permitrootlogin no</p>

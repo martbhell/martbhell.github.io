@@ -43,52 +43,52 @@
 <p>The idea for this is for me to write down the things I read about in the modules. As a way for me to learn what they're about and think about them other than just reading them and forgetting them. If I write it down here I need to try to explain it so that somebody else can understand it. But I also try to do it in a condense way and only write down what I feel is important, this is by no means intended to be used instead of the material.</p>
 <p>Module 4 is about software features.</p>
 <p>Discuss considerations for implementing:</p>
-<h2>Fabric Routing</h2>
+<h2 id="fabric-routing">Fabric Routing</h2>
 <p>FSPF - fabric shortest path first, minimum cost paths, routing policies</p>
 <p>Exchange (SID_DID_OXID), also called DPS. Requires DLS to be enabled. Choses a route for each exchange.</p>
 <p>Port Based. Routes are allocated via round-robin. Each route is used until there is a fabric change /device offline.</p>
 <p><strong>DLS:</strong> If you have for example a 4G and an 8G link to the same switch the 8G will get more traffic with DLS enabled.</p>
 <p>Over 4G Exchange Based is default. 1-2G only port-based. Different policy per switch. Some thing may require port-based. Document says port based is needed for HP EVA and HP CA for EVA, but this is not true anymore, CV 9.4 and XCS 09534000 works with exchange based.</p>
 <p>But FICON requires it. See the <a href="http://www.brocade.com/downloads/documents/product_manuals/B_SAN/FICON_AdminGd_v700.pdf" title="for 7.0.0 on brocade.com">FICON Administrator's Guide</a> for details. <em>"In all switches and directors that have FICON devices attached, or where FICON traffic will be carried, the port-based routing policy is required (set aptPolicy option 1). Exchange based routing (set aptPolicy option 3) is only supported when Lossless is specified. It is recommended that you enable Lossless, regardless of the routing policy"</em></p>
-<h2>Trunking</h2>
+<h2 id="trunking">Trunking</h2>
 <p>Combine two or more ISLs into a single logical link: reduce congestion and increase fault-tolerance. Requires a license. Same speed, port group, have trunking enabled, they form automatically, deskew cannot be too large. The port groups vary depending on the ASIC. 2-8 ISLs (2-4 for GoldenEye).</p>
 <p>GoldenEye2: B200 Condor3: 16G</p>
-<h3>Port Groups</h3>
+<h3 id="port-groups">Port Groups</h3>
 <p>Condor (4G): 0-7, 8-15, Condor2(8G): 0-7, 8-15, Condor3: 0-15, 16-31, 32-47, 48-64 (or 0-23, 24-47) GoldenEye (4G): 0-3, 4-7, 8-11, 12-15, GoldenEye2 (8G): 0-7, 8-15,</p>
 <p>Grow existing trunk groups. Keep free ports in port groups (in case you need to add more ISLs). Consider splitting trunk between port blades.</p>
 <p>The M-Series is called Open-Trunking</p>
-<h2>Zoning</h2>
+<h2 id="zoning">Zoning</h2>
 <p>1 x Target 1 x Initiator per zone</p>
 <p>Do some planning, which devices need to be connected? For example don't zone in a tape drive / library with devices that won't use them. Use alias/zone names that  help you.</p>
 <p>1 x Inititator and Many x Targets can cause longer boot times.</p>
 <p>A diagram might help. nszonemember, fcping, webtools, dcfm, san health. Configupload/download.</p>
-<h2>Adaptive Networking</h2>
+<h2 id="adaptive-networking">Adaptive Networking</h2>
 <p>Optimization.</p>
-<h3>TI - dedicate ISLs for specific hosts/targets</h3>
+<h3 id="ti-dedicate-isls-for-specific-hoststargets">TI - dedicate ISLs for specific hosts/targets</h3>
 <p>License needed for FOS &lt;=6.</p>
 <p>Via zoning. Done via a set of N_ and E_Ports. Attempts to exclude traffic not in the TI zone from using the E_ports in that TI Zone. 4 and 8G. Doesn't alter FSPF rules. Dedicate an ISL to high prio traffic Force high-volume traffic into a path, so it doesn't affect other services. Ensure FCIP tape pipelining uses the same VE_Port tunnel across fabrics. Dedicate bandwidth for replication.</p>
-<h3>Ingress Rate Limiting - restrict speed from a device to the port</h3>
+<h3 id="ingress-rate-limiting-restrict-speed-from-a-device-to-the-port">Ingress Rate Limiting - restrict speed from a device to the port</h3>
 <p>ASIC delays return of BB credits to device. Limits traffic from a device.</p>
 <p>Requires license, only on 8G F_ or FL_ports. Avoid congestion (proactively and to remedy). Is enabled even if congestion occurs or not.</p>
 <p>If you have another device that is slow at returning credits, then you can set IRL on the ports on one a device that communicate with this slow-drain device.</p>
 <p>To enforce SLA:s.</p>
-<h3>QoS (SID/DID) Prio - between host and target</h3>
+<h3 id="qos-siddid-prio-between-host-and-target">QoS (SID/DID) Prio - between host and target</h3>
 <p>Default = medium. Done via zoning. Condor2 or GE2 ASICs. License required. Brocade proprietary? FOS 6.0.0 or higher. Zones for QoS do both access and QoS.</p>
 <p>30 (medium) / 10 (low) / 60 (high) %</p>
 <p>If you want to make sure a certain application is always prioritized. Only in effect if there is need. If not all high priority VC are in use then medium priority traffic will use those.</p>
-<h3>Top Talkers - determine highest flows</h3>
+<h3 id="top-talkers-determine-highest-flows">Top Talkers - determine highest flows</h3>
 <p>APM license required. FOS 6.0.x. Determine which SID/DID pair are major users of F_Port bandwidth. Only on specific E_ or F_Ports. Condor, Condor2, GE2. Not on ports in AG.</p>
 <p>Find which VM uses most bandwidth? Find flows that you can enable QoS, TI, etc, on.</p>
-<h2>NPIV</h2>
+<h2 id="npiv">NPIV</h2>
 <p>virtual wwn zone to individual vm instead of to the host there are some restrictions to the amount of NPIVs per port / switch. Max is 255, 127 on FC*-48 blades.</p>
-<h2>AG</h2>
+<h2 id="ag">AG</h2>
 <p>Doesn't use a DID. Focus is on connectivity, not bandwidth. No license. Can be used to connect switches of other vendors without changing the switch  interop mode? Or does it mean a Brocade switch in AG can be joined to another fabric, can other vendors do the same? Has as default port map, this can be altered. It maps which F_port to which N_port (which host to which "isl"). Each connection from an AG to a fabric can handle 255 devices. F_Port trunking: Device PIDs do not change if a link fails in an F_Port trunk. Similar requirements as a normal E_port trunk.</p>
-<h2>Port Fencing</h2>
+<h2 id="port-fencing">Port Fencing</h2>
 <p>Disable a port if it operates outside "normal operation". Uses Fabric Watch = requires license. Only through CLI. User intervention required to enable it. FW classes: Port, E_, F_ and FL_. FW areas: link / sync loss, protocol error, invalid words/CRC.</p>
 <p>'Only the FW "above" event will be monitored for Port Fencing'.</p>
-<h2>Security</h2>
+<h2 id="security">Security</h2>
 <p>passwords (expire, history, strength, etc) authentication (radius/LDAP) - aaa, default accounts (root, factory, admin, user) roles (RBAC) - no need to set admin role on an account used for monitoring for example SCP (use instead of ftp) ACLs (which devices can join a fabric) ipfilters (deny telnet)</p>
-<h2>Ficon</h2>
+<h2 id="ficon">Ficon</h2>
 <p>i/o protocol based on FC used with IBM mainframe/storage. FC layer 4 Successor of ESCON From late 90s.</p>
 <p>Starting FICON Config Utility for a single fabric: (Fabric Manager, old displays, is worth to check how it's done now in new guides). Worth checking out the FICON Admin Guide anyway.</p>
 <ul>

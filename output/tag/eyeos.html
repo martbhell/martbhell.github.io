@@ -32,8 +32,8 @@
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/chat.html">chat</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/irssi.html">irssi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/sharepoint.html">sharepoint</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
-</footer><!-- /.post-info --><h3><strong>0/ Have your own virtual machine in your desktop is not hard!</strong></h3>
-<h4>0.1/ Some Terminology</h4>
+</footer><!-- /.post-info --><h3 id="0-have-your-own-virtual-machine-in-your-desktop-is-not-hard"><strong>0/ Have your own virtual machine in your desktop is not hard!</strong></h3>
+<h4 id="01-some-terminology">0.1/ Some Terminology</h4>
 <ul>
 <li>OS - Operating System</li>
 <li>Host OS - Underlying OS - in this you install <a href="http://www.vmware.com/products/workstation/" title="vmware workstation">VMWare Workstation</a>.</li>
@@ -47,25 +47,25 @@
 <li>Guest OS - The extra OS you install inside the host or in VMWare Workstation.</li>
 <li>VM - Virtual machine.</li>
 </ul>
-<h3><strong>1/ Pre-install</strong></h3>
-<h4>1.1/ Storage space, memory, CPU</h4>
+<h3 id="1-pre-install"><strong>1/ Pre-install</strong></h3>
+<h4 id="11-storage-space-memory-cpu">1.1/ Storage space, memory, CPU</h4>
 <p>What do you want to do? Do you have enough of it? My desktop has an Intel i7-920, 8GB RAM and two 500GB hard drives. Generally when testing I would give it 1GB or maybe 2GB for Windows. This can be decreased later if you feel the need. You can also increase storage, memory and CPU after you create your virtual machine. It is easy to create a new virtual machine so do not worry if you make it too small or too big.</p>
-<h4>1.2/ Network setup, LAN, Bridged, Hidden.</h4>
+<h4 id="12-network-setup-lan-bridged-hidden">1.2/ Network setup, LAN, Bridged, Hidden.</h4>
 <p>Do you want to be able to access your VM from your LAN, Internet or do you want a completely private network between your virtual machines?</p>
 <p>Especially if you do set up a Windows guest OS (perhaps to use as a client in your test environment) please do remember that before you connect it to the Internet (to install patches etc) you should definitely <strong>think about installing an anti-virus solution</strong> on it. I recommend <a href="http://www.microsoft.com/security/pc-security/mse.aspx" title="on microsoft.com">Microsoft Security Essentials</a> (MSE) - it is free and takes up little resources. I read recently that the time you have until your unprotected computer is infected is about 10 seconds. But if your computer is behind a NAT - broadband router (so it has an IP like 192.168.x.x or 10.x.x.x or 172.16.x.x.x) then it is safer, but not safe from other computers on your network.</p>
-<h3><strong>2/ Install the OS</strong></h3>
-<h4>2.2/ Download Ubuntu, easy setup wizard</h4>
+<h3 id="2-install-the-os"><strong>2/ Install the OS</strong></h3>
+<h4 id="22-download-ubuntu-easy-setup-wizard">2.2/ Download Ubuntu, easy setup wizard</h4>
 <p>There are two versions of Ubuntu - desktop and <a href="http://www.ubuntu.com/server" title="ubuntu server">server version.</a> If this is your first time with Linux you may be better of starting with the desktop variant. I used the server version (uses less resources - no graphical user interface).</p>
 <p><a href="http://www.guldmyr.com/blog/ubuntu-10-10-minimal-virtual-kernel-vmware-workstation/" title="ubuntu-10-10-minimal-virtual-kernel-vmware-workstation">Here is a guide</a> for using the Ubuntu Virtual Kernel with VMWare Workstation.</p>
-<h4>2.3/ Windows 2008 R2?</h4>
+<h4 id="23-windows-2008-r2">2.3/ Windows 2008 R2?</h4>
 <p><a href="http://www.guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/" title="sharepoint-2010-foundation-windows-2008-r2-vmware-workstation">sharepoint-2010-foundation-windows-2008-r2-vmware-workstation</a></p>
-<h3><strong>3/ Set up management</strong></h3>
-<h4>3.1/ sshd - autostart if you reboot host OS / Windows.</h4>
+<h3 id="3-set-up-management"><strong>3/ Set up management</strong></h3>
+<h4 id="31-sshd-autostart-if-you-reboot-host-os-windows">3.1/ sshd - autostart if you reboot host OS / Windows.</h4>
 <p>I haven't managed to set up autostart of the VM when rebooting the OS. But then again, I do not run "life-critical" services in the virtual machine, just some cheap bash-script and an EyeOS. Not sure if I want to have it autostart, I like to have a fast reboot.</p>
-<h4>3.2/ Timezone, time.</h4>
+<h4 id="32-timezone-time">3.2/ Timezone, time.</h4>
 <p>Quite frustrating, but here is how it worked out in Linux: <a href="http://www.guldmyr.com/blog/time-sync-for-linux-vms-in-vmware-workstation/" title="time-sync-for-linux-vms-in-vmware-workstation/">time-sync-for-linux-vms-in-vmware-workstation</a></p>
-<h3>4/ Post-Installation Joy</h3>
-<h4>4.1/ Something simple like screen + irssi</h4>
+<h3 id="4-post-installation-joy">4/ Post-Installation Joy</h3>
+<h4 id="41-something-simple-like-screen-irssi">4.1/ Something simple like screen + irssi</h4>
 <p>This is really easy to set up. Basically all you need to do is install these in a Debian style Linux (like Ubuntu):</p>
 <p><strong>sudo-apt get screen irssi openssh-server</strong></p>
 <p>then start a screen session called chat and the command 'irssi'</p>
@@ -74,7 +74,7 @@
 <p><strong>screen -rdx chat</strong></p>
 <p><a href="http://irssi.org/" title=".org">Irssi</a> is my IRC tool of choice, it's slim and well, I've gotten used to it. It has scripts and you can do encryption and lots of nice little things with it if you want to.</p>
 <p>Of course the screen does not resume when you restart the whole server / virtual machine.</p>
-<h4>4.2 Other ideas:</h4>
+<h4 id="42-other-ideas">4.2 Other ideas:</h4>
 <p><a href="http://www.guldmyr.com/blog/red-hat-enterprise-linuxrhel-in-vmware-workstation/" title="red-hat-enterprise-linuxrhel-in-vmware-workstation/">Red Hat Enterprise Linux in VMWare Workstation.</a> <a href="http://www.guldmyr.com/blog/ubuntu-10-10-vmware-irssi/" title="ubuntu-10-10-vmware-irssi/">How small VM can you have for just IRSSI?</a> <a href="http://www.guldmyr.com/blog/file-share-from-ubuntu-10-10-with-windows-7-client/" title="file-share-from-ubuntu-10-10-with-windows-7-client/">File share from Windows to Ubuntu in a VM.</a> <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser-part-2/" title="eyeos-cloud-desktop-in-your-browser-part-2/">EyeOS</a> - OS in your web browser.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
@@ -124,7 +124,7 @@
 <p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/icloud.html">icloud</a> <a href="/tag/kaazing.html">kaazing</a> <a href="/tag/pico.html">pico</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/desktop.html">desktop</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
 </footer><!-- /.post-info -->                <p>Useful? Hopefully! Interesting? Very!</p>
 <p>Download on eyeos.org //update 2011-12-20 : turns out there's been some changes here. 2.5 is the one now and it's found under open-source. There's also professional or other editions.</p>
-<h2>Installation</h2>
+<h2 id="installation">Installation</h2>
 <p>The installation manual can be found in the above link as well - will I try …</p>
                 <a class="readmore" href="/eyeos-cloud-desktop-in-your-browser.html">read more</a>
                 </div><!-- /.entry-content -->

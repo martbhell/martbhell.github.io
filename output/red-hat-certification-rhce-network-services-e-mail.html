@@ -40,7 +40,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/dovecot.html">dovecot</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/imap.html">imap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/postfix.html">postfix</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/sendmail.html">sendmail</a> <a href="/tag/smtp.html">smtp</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->      <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -60,7 +60,7 @@
 <li>ssh</li>
 <li>ntp</li>
 </ul>
-<h2>SMTP:</h2>
+<h2 id="smtp">SMTP:</h2>
 <p>Hackmode has a <a href="http://www.hackmode.net/?page_id=80" title="on hackmode.net">good article</a> about setting postfix for the first time.</p>
 <p>To test that e-mail is working you can - tada - use an e-mail client.</p>
 <p>You have lots of details in /usr/share/doc/postfix-N ( the path should be in /etc/postfix/main.cf )</p>
@@ -113,9 +113,9 @@
 <li>user: postmap</li>
 </ul>
 <p>In CLI (important to use ' and not "):</p>
-<h1>hostname - record the output of this</h1>
+<h1 id="hostname-record-the-output-of-this">hostname - record the output of this</h1>
 <p>postconf -e 'myhostname = output from hostname in here'</p>
-<h1>hostname -d</h1>
+<h1 id="hostname-d">hostname -d</h1>
 <p>postconf -e 'mydomain = output from hostname -d in here'
 postconf -e 'myorigin = $mydomain'
 postconf -e 'inet_interface = all'
@@ -140,7 +140,7 @@ test123
 <p>The . at the end is quite nice, that stops the input.</p>
 <p>Check e-mail:</p>
 <p>cat /home/labber/Maildir/new/*</p>
-<h2>Real E-mail Client</h2>
+<h2 id="real-e-mail-client">Real E-mail Client</h2>
 <p>But, perhaps you want to check this out with a real e-mail client like thunderbird 10.</p>
 <p>For this there needs to be a e-mail server that stores the e-mails on the server.</p>
 <p>For this we can use 'dovecot'</p>
@@ -161,7 +161,7 @@ service dovecot start</p>
 </ol>
 <p>Thunderbird is quite nice, it will often tell you which setting is wrong.</p>
 <p>You can use /var/log/maillog for details on the server-side (to see if you get connections at all for example).</p>
-<h2>Deny a User</h2>
+<h2 id="deny-a-user">Deny a User</h2>
 <p>To illustrate this feature we first need to add a second user/e-mail account:</p>
 <p>useradd -s /sbin/nologin labrat
 passwd labrat
@@ -181,7 +181,7 @@ service postfix restart</p>
 <ul>
 <li>to send an e-mail from and to both accounts</li>
 </ul>
-<h2>Extra</h2>
+<h2 id="extra">Extra</h2>
 <ul>
 <li>
 <p>Configure a mail transfer agent (MTA) to accept inbound email from other systems.</p>

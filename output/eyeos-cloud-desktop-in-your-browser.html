@@ -40,11 +40,11 @@
 <p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/icloud.html">icloud</a> <a href="/tag/kaazing.html">kaazing</a> <a href="/tag/pico.html">pico</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/desktop.html">desktop</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
 </footer><!-- /.post-info -->      <p>Useful? Hopefully! Interesting? Very!</p>
 <p>Download on eyeos.org //update 2011-12-20 : turns out there's been some changes here. 2.5 is the one now and it's found under open-source. There's also professional or other editions.</p>
-<h2>Installation</h2>
+<h2 id="installation">Installation</h2>
 <p>The installation manual can be found in the above link as well - will I try to use it first? No :)  What is the fun in that ;)</p>
-<h3>1st attempt</h3>
+<h3 id="1st-attempt">1st attempt</h3>
 <p>sudo apt-get -d install eyeos - this did not work, no such package.</p>
-<h3>2nd attempt</h3>
+<h3 id="2nd-attempt">2nd attempt</h3>
 <p>- downloading the .tar.gz - surfed to the sourceforge. There is a 2.x and a 1.x of eyeOS - link above goes to 2.x</p>
 <p>Commands: wget/mv (super long file) then</p>
 <p>tar -zxvf (no errors). This extracts the whole archive into the directory you are, so probably best to put the archive in a new and empty directory before doing this.</p>
@@ -55,18 +55,18 @@
 <p>-&gt; a lot nicer, gives a welcome to eyeOS 2 installation!</p>
 <p>You then get to click on "install" and it will check the requirements.</p>
 <p>I did not have these (working php, mysql and apache already installed, quite clean ubuntu 10.10 installation in a VMWare Workstation):</p>
-<h3>Sorting out the pre-requirements</h3>
+<h3 id="sorting-out-the-pre-requirements">Sorting out the pre-requirements</h3>
 <p>if you don't know what to run you can either google or check out <a href="http://packages.ubuntu.com" title="packages ubuntu">packages.ubuntu.com</a></p>
-<h4>curl</h4>
+<h4 id="curl">curl</h4>
 <p>sudo apt-get install php5-curl The following NEW packages will be installed: libcurl3 php5-curl</p>
 <p>Failed to fetch http://us.archive.ubuntu.com/ubuntu/pool/main/p/php5/php5-curl_5.3.3-1ubuntu9.1_amd64.deb  404  Not Found [IP: 91.189.92.171 80] E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?</p>
 <p>sudo apt-get update</p>
 <p>then trying again, working a lot better ;)</p>
 <p>install looked a bit weird, or it went very fast.</p>
 <p>anyway, did a "sudo apachectrl restart" and then curl was OK in the installation (it didn't install any of the others by chance though :/)</p>
-<h4>sqlite extensions and  PDO sqlite driver</h4>
+<h4 id="sqlite-extensions-and-pdo-sqlite-driver">sqlite extensions and  PDO sqlite driver</h4>
 <p>php5-sqlite - this package should do the trick new packages: libsqlite0 php5-sqlite searched for sqlite pdo on packages and it didn't find anything so starting with the above one and it installed both, restarted apache and now it's a lot greener :)</p>
-<h4>python</h4>
+<h4 id="python">python</h4>
 <p>Python simplejson:    Not installed (Needed in collaborative features) - <strong>python-simplejson</strong></p>
 <p>new packages: libjs-jquery python-simplejson</p>
 <p>installed without a hitch - comes up as installed</p>
@@ -78,25 +78,25 @@
 <p>wget that. then</p>
 <p>sudo dpkg -i stomp.py_3.0.2_all.deb</p>
 <p>now it's green in eyeOS pre-req check! Check!</p>
-<h4>php.ini display errors is enabled (eyeos recommends disabled)</h4>
+<h4 id="phpini-display-errors-is-enabled-eyeos-recommends-disabled">php.ini display errors is enabled (eyeos recommends disabled)</h4>
 <p>keeping this as it is for now</p>
-<h4>recoll:    Not Instaled (Needed for document indexation)</h4>
+<h4 id="recoll-not-instaled-needed-for-document-indexation">recoll:    Not Instaled (Needed for document indexation)</h4>
 <p>package name: recoll</p>
 <p>sudo apt-get install recoll</p>
 <p>The following NEW packages will be installed: aspell aspell-en fontconfig libaspell15 libaudio2 libice6 liblcms1 libmng1 libqt4-dbus libqt4-designer libqt4-network libqt4-qt3support libqt4-script libqt4-sql libqt4-sql-mysql libqt4-xml libqtcore4 libqtgui4 libsm6 libtiff4 libxt6 recoll x11-common</p>
 <p>worked fine, no need to restart apache and it showed up as installed</p>
-<h4>exiftool:    Not Instaled (Needed to extract MP3 metadata)</h4>
+<h4 id="exiftool-not-instaled-needed-to-extract-mp3-metadata">exiftool:    Not Instaled (Needed to extract MP3 metadata)</h4>
 <p>found this package: libimage-exiftool-perl</p>
 <p>same story: sudo apt-get install libimage-exiftool-perl</p>
 <p>worked like a charm :)</p>
-<h4>OpenOffice Daemon:    Not running (Needed to convert office documents)</h4>
+<h4 id="openoffice-daemon-not-running-needed-to-convert-office-documents">OpenOffice Daemon:    Not running (Needed to convert office documents)</h4>
 <p>skipping this for now</p>
-<h4>Kaazing gateway:    Not running (Needed for real time notifications)</h4>
+<h4 id="kaazing-gateway-not-running-needed-for-real-time-notifications">Kaazing gateway:    Not running (Needed for real time notifications)</h4>
 <p>no hits in ubuntu packages</p>
 <p>googled and found this:</p>
 <p>sudo wget into /usr/share/kaazing sudo tar -zxvf cd /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin ./gateway.start</p>
 <p>then script shows it as good!</p>
-<h4>ActiveMQ Daemon:    Not running (Needed for real time notifications)</h4>
+<h4 id="activemq-daemon-not-running-needed-for-real-time-notifications">ActiveMQ Daemon:    Not running (Needed for real time notifications)</h4>
 <p>no hits in ubuntu packages</p>
 <p>google found this: http://www.nic.funet.fi/pub/mirrors/apache.org//activemq/apache-activemq/5.4.2/apache-activemq-5.4.2-bin.tar.gz</p>
 <p>found in README - installation guide: <a href="http://activemq.apache.org/version-5-getting-started.html" title="activemq getting started">http://activemq.apache.org/version-5-getting-started.html</a></p>
@@ -127,20 +127,20 @@
 <p>then sudo ./activemq restart</p>
 <p>martbhell@ubuntu:/usr/share/php5/apachemq/apache-activemq-5.4.2/bin$ sudo ./activemq status INFO: Loading '/etc/default/activemq' INFO: Using java '/usr/bin/java' ActiveMQ is running (pid '5995')</p>
 <p>after that it comes up as green ;) adding this to boot as well now</p>
-<h4>autostart activemq and kaazing</h4>
+<h4 id="autostart-activemq-and-kaazing">autostart activemq and kaazing</h4>
 <p>add this to /etc/rc.local</p>
 <p>sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start &amp; sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &amp;</p>
-<h3>Configuration during install</h3>
+<h3 id="configuration-during-install">Configuration during install</h3>
 <p>Clicked on the next, where it asks for mysql login information and eyeOS root password</p>
 <p>this was already filled in so went with that :)</p>
 <p>however, still gives this:</p>
 <p><strong>EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos_20110131.log): failed to open stream: Permission denied</strong> </p>
 <p>/var/www/eyeos$ chmod 777 * -R</p>
-<h2>Logging in!</h2>
+<h2 id="logging-in">Logging in!</h2>
 <p>Login prompt does not show up in FF4 B10 or Chrome. It does show up in IE8. But when I click on new user nothing happens. apachectrl restart trying with both root/martbhell account</p>
 <p>After looking around in the mysql server I didn't see any new stuff. So: To fix it I had to create a db called whatever I filled out in the form ;)</p>
 <p>Creating new user works too!</p>
-<h2>Static IP in Ubuntu Server 10.10</h2>
+<h2 id="static-ip-in-ubuntu-server-1010">Static IP in Ubuntu Server 10.10</h2>
 <p>Changed to static IP on the server by editing /etc/network/interfaces</p>
 <p>to make it look like this :</p>
 <p>auto eth0 iface eth0 inet static address 192.168.1.100 netmask 255.255.255.0 network 192.168.1.0 broadcast 192.168.1.255 gateway 192.168.1.1</p>
@@ -148,7 +148,7 @@
 <p>sudo /etc/init.d/networking restart</p>
 <p>and changing to a bridged ethernet - then it's on my local LAN network :)</p>
 <p>a restart also shows stuff is running (by going back to the installer)</p>
-<h2>Summary</h2>
+<h2 id="summary">Summary</h2>
 <p>It's not really excellent. Documents didn't work (as in I cannot open them), but I suppose that is because I didn't install the OpenOffice stuff. But I just don't like the feel of it. It's not smooth enough. Maybe it's because the VM only has one CPU and 2GB RAM?</p>
 <p>Well just looking at 'top' while clicking around and CPU idle goes down to 18-19% and then goes back to 100% after whatever I started in eyeOS is done.</p>
 <p>Maybe I'll try to install the OO parts and see if that does the trick. I just got the feeling that this is probably something that iCloud can do better (at least the screenshots look nicer on their web page). There's quite a few other hits on 'webos' on the Intarweb and quite a lot of them aren't updated.. Like lucid, some kind of windows4all on sourceforge..</p>

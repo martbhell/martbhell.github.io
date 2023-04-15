@@ -41,16 +41,16 @@
 </footer><!-- /.post-info -->      <p>After <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser/#comment-42" title="eyeOS part 1">my first comment ever</a> by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!</p>
 <p>1/ Because I also tried to install cactii on the same VM the other day - and after that I saw some nasty out of memory messages. I will create a new VM - fresh, and with only 256MB RAM!</p>
 <p>However, the guide is only for 2.x - So I will freestyle this time too. But follow the installation instructions on eyes.org :)</p>
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>1/ Install Ubuntu 10.10 2/ Follow guide Not possible because uh, there is none for Ubuntu. There is one that begins with graphic interface for Debian. 3/ Win!</p>
 <p>Requirements - PHP5</p>
-<h2>Installing Ubuntu</h2>
+<h2 id="installing-ubuntu">Installing Ubuntu</h2>
 <p>I use VMWare Workstation. File -&gt; New VM. Typical, installer disc image. I used ubuntu-10.10-server-amd64 - I have an intel core i7.. (this is the one I used before, tried to find on ubuntu.com which one I should use but it says if you have a 64-bit, you'll get the amd64..). Anyway. and also apparently it's possible to press <a href="https://help.ubuntu.com/community/ServerFaq#What%20are%20the%20differences%20between%20server%20and%20virtual%20kernels?">F4</a> during install and it will install a 'virtual kernel' which is good for when running in a virtualized environment! I had to change memory down to 256MB and then I also set the network type to "bridged" - so that it gets IP/DNS settings from my router instead of from my computer.</p>
 <p>Also found a <a href="http://ubuntuforums.org/showthread.php?t=1423743" title="x86 or amd64?">forum post</a> that confirms, if you have an Intel 64-bit CPU - it is the "amd64" version you want to install.</p>
 <p>So first time when I entered the VM through the VMWare shell everything worked fine. Except that they keyboard was a bit messed up. When I pressed down it sent an enter. In SSH via PuTty it's working so I'll do it that way instead. If you have this problem, check out <a href="http://ubuntuforums.org/showthread.php?t=1116511" title="down arrow not working ubuntu vmware">this post</a> - might be a VMWare bug or you may fix it with some CLI magic.</p>
 <p>sshd is not installed by default -&gt; <strong>sudo apt-get install openssh-server</strong></p>
 <p><em>Also probably good to change IP in the beginning, in case you want it on a static IP. See my <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser/" title="unbuntu static ip">previous post</a> how to set that. It's a at the bottom of the post.</em></p>
-<h3>Time</h3>
+<h3 id="time">Time</h3>
 <p>Another good thing would be to set the time zone on the VM. You can find out how to do that in <a href="http://www.guldmyr.com/blog/lifehack-currency/" title="lifehack / set timezone">this pos</a>t about lifehack/currency exchange rate.</p>
 <p>To sync the time - so that it is up to date (mine was 30mins off) -</p>
 <p>Edit /etc/default/ntpdate Add a pool or use the default one - http://www.pool.ntp.org/zone/fi for Finnish ones. Then run <strong>sudo ntpdate-debian</strong></p>
@@ -89,7 +89,7 @@
 <p>Manually changing this to -346.500</p>
 <p>Also changed the default values to this in /etc/ntp.conf</p>
 <p>restrict -4 default kod notrap nomodify restrict -6 default kod notrap nomodify</p>
-<h1>restrict 127.0.0.1 #restrict ::1</h1>
+<h1 id="restrict-127001-restrict-1">restrict 127.0.0.1 #restrict ::1</h1>
 <p>and rebooting the server, again.</p>
 <p>bbl.</p>
 <p>ok, this is bs.</p>
@@ -104,13 +104,13 @@
 <p>*** a week later</p>
 <p>ok that was an ugly fix and I do not condone doing that, that was me being a little frustrated :)</p>
 <p>See <a href="http://www.guldmyr.com/blog/time-sync-for-linux-vms-in-vmware-workstation/" title="ntpd sync">http://www.guldmyr.com/blog/time-sync-for-linux-vms-in-vmware-workstation/</a> for how it worked out..</p>
-<h2>lamp</h2>
+<h2 id="lamp">lamp</h2>
 <p><a href="http://ubuntuforums.org/showthread.php?t=1116511" title="eyeos1 download">Download 1.x</a></p>
 <p>install LAMP -&gt; <strong>sudo apt-get install lamp-server^</strong> The ^ needs to be there! All you need to do is to insert a mysql root password.</p>
 <p>After this you can surf into http://localhost or http://ip of the VM.</p>
-<h3>phpymadmin</h3>
+<h3 id="phpymadmin">phpymadmin</h3>
 <p>I also want to put in phpmyadmin (sudo apt-get install phpmyadmin) as well, this is nice tool to manage the mysql db. In that installation, choose apache2 by pressing space, then tab to get to the OK button. Then it asks about dbconfig-common, I chose no here because the db(mysql) is already installed. Then surf to http://ip/phpmyadmin/ and log on. If you see any databases there already -&gt; you are now connected to the mysql you created before! Woop!</p>
-<h2>EyeOS Install</h2>
+<h2 id="eyeos-install">EyeOS Install</h2>
 <p>cd - this gets you to your homedir mkdir eyeos cd eyeos wget $URL of eyeOS install unzip -&gt; sudo apt-get install unzip unzip $FILENAME put this in your web dir. by default this is /var/www by default you do not have permission to put files there, so use sudo to put the eyeOS folder in there.</p>
 <p>sudo mv eyeOS /var/www after this the user you have logged on with have ownership inside /var/www/eyeOS - means you don't have to write sudo all the time :)</p>
 <p>point your web browser to http://ip/eyeOS (note that it is case sensitive) it will tell you that you need to chmod 777 some files, do that.</p>
@@ -118,7 +118,7 @@
 <p>sudo apt-get install php5-sqlite (restart apache with 'sudo apachectl restart' and hit F5 on the installation page to see that the installation script now finds it) sudo apt-get install php5-imap (free-styled that, worked out well ;)</p>
 <p>put in a password and then hit install</p>
 <p>then it's installed!</p>
-<h2>eyeOS - nice!</h2>
+<h2 id="eyeos-nice">eyeOS - nice!</h2>
 <p>It's a lot slimmer than eyeOS 2.x and stuff appears to be working just off the bat. Everything runs so fast too, in comparison to 2.x.</p>
 <p><strong>1.9.x for the win!</strong></p>
 <p>Do I really want to use this? Would I find it useful? Honestly I am a little scared by running this on my own pc.</p>

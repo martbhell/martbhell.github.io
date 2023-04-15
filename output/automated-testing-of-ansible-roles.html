@@ -38,7 +38,7 @@
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/ansible.html">ansible</a> <a href="/tag/ci.html">ci</a> <a href="/tag/cvmfs.html">cvmfs</a> <a href="/tag/docker.html">docker</a> <a href="/tag/molecule.html">molecule</a> <a href="/tag/testing.html">testing</a> <a href="/tag/travis.html">travis</a> </p>
-</footer><!-- /.post-info -->      <h2>What is this?</h2>
+</footer><!-- /.post-info -->      <h2 id="what-is-this">What is this?</h2>
 <p>Basic idea: whenever most things happen in your ansible repository (for example commit, pull request or release) then you want to automatically test the ansible code.</p>
 <p>The basic tools:</p>
 <ul>
@@ -48,9 +48,9 @@
 <li>is it idempotent</li>
 <li>does the end result look like you want it to?</li>
 </ul>
-<h2>How it should be done</h2>
+<h2 id="how-it-should-be-done">How it should be done</h2>
 <p>Use something like molecule <a href="https://github.com/metacloud/molecule">https://github.com/metacloud/molecule</a> which can launch your container/virtual machine, run ansible, check for lint and also run some testing framework like serverspec/testinfra.</p>
-<h2>How I currently to do it</h2>
+<h2 id="how-i-currently-to-do-it">How I currently to do it</h2>
 <p>I use <a href="https://travis-ci.org">travis</a> to test many ansible roles and playbooks. From travis you basically get an Ubuntu machine and in that you can run whatever you want.</p>
 <p>Basic process I've used for ansible testing:</p>
 <ul>
@@ -60,7 +60,7 @@
 <li>Run some manual commands at the end to test whatever was configured / or at least print some config files to make sure they look OK</li>
 </ul>
 <p>All of the above and more should be doable now with molecule, first and <a href="https://github.com/CSCfi/ansible-role-cvmfs/tree/molecule">last time I tried</a> I couldn't get it to work but it's looking better.</p>
-<h2>Actual commands to test</h2>
+<h2 id="actual-commands-to-test">Actual commands to test</h2>
 <ul>
 <li>ansible-playbook --syntax-check</li>
 <li><a href="https://github.com/willthames/ansible-lint">ansible-lint</a></li>
@@ -68,16 +68,16 @@
 <li>ansible-playbook</li>
 <li>ansible-playbook --check</li>
 </ul>
-<h3>Order Matters</h3>
+<h3 id="order-matters">Order Matters</h3>
 <p>Do you want to run it in noop mode ( --check ) before or after the role has first run at least once to configure all the things?</p>
-<h2>How to actually set this up</h2>
+<h2 id="how-to-actually-set-this-up">How to actually set this up</h2>
 <p><a href="https://docs.travis-ci.com/">Official travis documentation</a></p>
 <p>Login with your github account on travis.org (or travis.com if it's a private repo) ( and connect your github organization ).</p>
 <p>Enable the repository, for example https://travis-ci.org/CSCfi/ansible-role-dhcp_server</p>
 <p>Add some files to your repo. I usually copy .travis.yml and tests/ directory from an existing repository like <a href="https://github.com/CSCfi/ansible-role-cvmfs">ansible-role-cvmfs</a> .</p>
 <p>Modify the test playbook - tests/test.yml to include the new role, maybe change some default variables and have a look in <a href="https://github.com/CSCfi/ansible-role-cvmfs/blob/molecule/tests/test-in-docker-image.sh">test-in-docker-image.sh</a> script if there are anything you want to add or remove from there too.</p>
 <p>Push to github and watch the build log :)</p>
-<h2>Working Fighting with Travis</h2>
+<h2 id="working-fighting-with-travis">Working Fighting with Travis</h2>
 <p>Fighting with docker took a lot of my time when getting this working the first time. Especially as I use ansible to configure servers that run multiple services and want to have a full systemd inside the container.</p>
 <p>Commands to run on an Ubuntu 14.04 VM to get a kind of similar environment as in travis:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update

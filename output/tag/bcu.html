@@ -33,7 +33,7 @@
 <p>In <a href="/category/storage.html">storage</a>.</p>
 <p>tags: <a href="/tag/bcu.html">bcu</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/emulex.html">emulex</a> <a href="/tag/fc.html">fc</a> <a href="/tag/fibre.html">fibre</a> <a href="/tag/channel.html">channel</a> <a href="/tag/hba.html">hba</a> <a href="/tag/limtransfersize.html">limtransfersize</a> <a href="/tag/performance.html">performance</a> <a href="/tag/tuning.html">tuning</a> <a href="/tag/qlfc.html">qlfc</a> <a href="/tag/qlogic.html">qlogic</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/size.html">size</a> </p>
 </footer><!-- /.post-info --><p>HP just published an advisory describing how to tune some parameters for Emulex, Qlogic and Brocade Fibre Channel HBAs: <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02518189">c02518189</a>. It sounds like these are new, but these changes have been around for at least 6 months in all three vendors' HBAs.</p>
-<h2><strong>Emulex</strong></h2>
+<h2 id="emulex"><strong>Emulex</strong></h2>
 <p>"Emulex driver version 2.42.002 or later, along with OneCommand Manager version 5.1.53.2 or later,"</p>
 <p>Use HBAnywhere to change these.</p>
 <p>Examples to tune the server or port level transfer size:</p>
@@ -42,14 +42,14 @@
 <li>512 kbytes, set the LimTransferSize = 0 (default) and ExtTransferSize = 0 (default)</li>
 <li>1 Mbytes, set the LimTransferSize = 0 (default) and ExtTransferSize = 1</li>
 </ul>
-<h2>Qlogic</h2>
+<h2 id="qlogic">Qlogic</h2>
 <p>This is part of the Qlogic SANSurfer utility.</p>
 <ul>
 <li>c:\&gt;qlfc -tsize /fc</li>
 <li>c:\&gt;qlfc -tsize /fc /set 128</li>
 <li>c:\&gt;qlfc -tsize /fc /set default</li>
 </ul>
-<h2>Brocade</h2>
+<h2 id="brocade">Brocade</h2>
 <ul>
 <li>bcu drvconf --key bfa_max_xfer_len --val 64</li>
 <li>bcu drvconf --key bfa_max_xfer_len --val 128</li>

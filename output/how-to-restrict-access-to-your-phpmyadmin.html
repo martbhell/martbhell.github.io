@@ -40,7 +40,7 @@
 <p>tags: <a href="/tag/apache.html">apache</a> <a href="/tag/hardening.html">hardening</a> <a href="/tag/linux.html">linux</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/security.html">security</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/vm.html">vm</a> </p>
 </footer><!-- /.post-info -->      <p>Went through the apache logs on my web-server and saw some access requests to my phpmyadmin page.</p>
 <p>It's probably a good idea to restrict access to this web based sql admin interface (in case there is an exploit I don't want somebody to use it on this).</p>
-<h2>How to make phpmyadmin a bit more secure</h2>
+<h2 id="how-to-make-phpmyadmin-a-bit-more-secure">How to make phpmyadmin a bit more secure</h2>
 <p>sudo vi /etc/phpmyadmin/apache.conf or sudo nano /etc/phpmyadmin/apache.conf</p>
 <p>Under <strong>"Alias /phpmyadmin /usr/share/phpmyadmin" <Directory /usr/share/phpmyadmin> add this:</strong></p>
 <p>Order Deny,Allow Deny from all Allow from 127.0.0.1 Allow from 192.168.0.0/24</p>

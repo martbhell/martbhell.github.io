@@ -53,7 +53,7 @@
 </ul>
 <p>VMs should see an individual eth interface per subnet. The machines still get an IP assigned to each interface/subnet even if DHCP is disabled. If DHCP is disabled you still have to statically assign only this assigned address on the interface. The interfaces are in order: the IP listed at the top is the IP you need to put on the first interface (eth0).</p>
 <p>Because a lot of the things you can do with a router involves creating networks and assigning IP addresses, which openstack would block for security reasons - it was much easier to do all of these in VMWare Workstation:</p>
-<h2><strong>DHCP/DNS</strong></h2>
+<h2 id="dhcpdns"><strong>DHCP/DNS</strong></h2>
 <ol>
 <li>Install a Vyatta VM - bridged and a private network (without a DHCP).</li>
 <li>Install another OS in a VM - this will be a client - only on the private network.</li>
@@ -78,9 +78,9 @@ commit</p>
 <p>It's possible to set up different kinds of VPNs. For example site-to-site or remote access.</p>
 <p>It is possible to ssh from the vyatta VM - you can even run ssh-keygen. How to add an authorized key you wonder?:</p>
 <p>set system login user vyatta authentication ...</p>
-<h2>Routing</h2>
+<h2 id="routing">Routing</h2>
 <p>Another thing to test: launch a bunch of Vyatta VM and use them to route IP traffic, woop woop! The BCvRE objectives actually mention OSPF so this would be wise to test.</p>
-<h3>Starting with static routing</h3>
+<h3 id="starting-with-static-routing">Starting with static routing</h3>
 <p><em>Key: Network Name (IP subnet, interface on the host)</em></p>
 <ul>
 <li><em>VM hostname - Interface inside the VM: IP address</em></li>
@@ -106,7 +106,7 @@ commit</p>
 V1: set protocol static 10.2.2.0/24 next-hop 10.1.1.20
 V3: set protocol static 10.1.1.0/24 next-hop 10.2.2.20
 V3: ping 10.1.1.10</p>
-<h3>OSPF!</h3>
+<h3 id="ospf">OSPF!</h3>
 <p>Adding host V4 that is in Network B and Network C. Basically Vyatta, V2 and V4 are routers. V1 and V3 do not run OSPF, they have their default gateway to one of their local routers. So V3 has 10.2.2.20 and V1 has 10.1.1.1.</p>
 <p>Public (192.168.1.0/24, bridged):</p>
 <ul>

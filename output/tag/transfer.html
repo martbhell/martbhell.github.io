@@ -34,7 +34,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/ntpq.html">ntpq</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> <a href="/tag/synchronization.html">synchronization</a> <a href="/tag/tcpdump.html">tcpdump</a> <a href="/tag/time.html">time</a> <a href="/tag/sync.html">sync</a> <a href="/tag/synchronizatino.html">synchronizatino</a> </p>
 </footer><!-- /.post-info --><p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -54,7 +54,7 @@
 <li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
 <li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/">ntp</a></li>
 </ul>
-<h2>NTP:</h2>
+<h2 id="ntp">NTP:</h2>
 <p>You could possibly test this from Windows as well.</p>
 <p>On linux it's fairly straight-forward, you can use ntpd both as a client and as a server.</p>
 <p>Check in /var/log/messages for details</p>
@@ -105,7 +105,7 @@
 <p>port 123 (UDP)</p>
 </li>
 </ul>
-<h2>Enable ntpd as a client</h2>
+<h2 id="enable-ntpd-as-a-client">Enable ntpd as a client</h2>
 <p>What's a bit reverse for ntpd is that first you need to configure the server as a client</p>
 <p>So that your local ntp-server gets good time from somewhere else. You can find a good time-server to use on www.pool.ntp.org</p>
 <p>You only need to add one server line but for redundancy you should probably have more than one.</p>
@@ -114,30 +114,30 @@
 <p>server ntp.example.com
 service ntpd restart
 ntpq -p</p>
-<h2>Enable ntpd as a server</h2>
+<h2 id="enable-ntpd-as-a-server">Enable ntpd as a server</h2>
 <p>You need to add a restrict line in ntp.conf.</p>
 <p>You also need to allow port 123 UDP in the firewall.</p>
 <p>restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap
 service ntpd restart</p>
-<h2>Client to use your ntp server</h2>
+<h2 id="client-to-use-your-ntp-server">Client to use your ntp server</h2>
 <p>Basically the same as the above for client, but you specify the address to your NTP-server instead of one from pool.ntp.org.</p>
-<h2>Extra</h2>
+<h2 id="extra">Extra</h2>
 <ul>
 <li>Synchronize time using other NTP peers.</li>
 </ul>
 <p>I believe this has been covered.</p>
-<h2>More Extra</h2>
+<h2 id="more-extra">More Extra</h2>
 <p>One extra thing you may want to check out is the 'tinker' command.</p>
 <p>This is put on top of ntp.conf and more info are available in 'man ntp_misc'.</p>
 <p>However, most of the time you just need to wait a bit for the time change to come through.</p>
-<h2>tcpdump</h2>
+<h2 id="tcpdump">tcpdump</h2>
 <p>There's not much to go in logs on either server or client for ntpd. You'll get messages in /var/log/messages though that says "synchronized" and when the service is starting.</p>
 <p>You can also use tcpdump on the server to see if there are any packets coming in.</p>
 <p>tcpdump -i eth0 -w /tmp/tcmpdump.123 -s0 'udp port 123 and host NTP.CLIENT.IP'</p>
-<h1>wait a while, restart ntpd on client</h1>
+<h1 id="wait-a-while-restart-ntpd-on-client">wait a while, restart ntpd on client</h1>
 <p>tcpdump -r /tmp/tcmpdump.123</p>
-<h1>this will then show some packets if you have a working communication between server and client</h1>
-<h2>To test that it's working</h2>
+<h1 id="this-will-then-show-some-packets-if-you-have-a-working-communication-between-server-and-client">this will then show some packets if you have a working communication between server and client</h1>
+<h2 id="to-test-that-its-working">To test that it's working</h2>
 <p>Start with the server still connecting to an ntp-server with good time.</p>
 <p>You could then set the date and time manually on the server to something else. For example, let's say the current time is 6 JUN 2012 17:15:00.</p>
 <p>Set it to 15 minutes before:</p>
@@ -170,7 +170,7 @@ service ntpd restart</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/openssh.html">openssh</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/sshd.html">sshd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/tcp.html">tcp</a> <a href="/tag/wrapper.html">wrapper</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -198,7 +198,7 @@ service ntpd restart</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/dovecot.html">dovecot</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/imap.html">imap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/postfix.html">postfix</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/sendmail.html">sendmail</a> <a href="/tag/smtp.html">smtp</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -226,7 +226,7 @@ service ntpd restart</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/nfs.html">nfs</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -254,7 +254,7 @@ service ntpd restart</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/samba.html">samba</a> <a href="/tag/smb.html">smb</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -282,7 +282,7 @@ service ntpd restart</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/ftp.html">ftp</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -309,7 +309,7 @@ service ntpd restart</p>
 <p>In <a href="/category/storage.html">storage</a>.</p>
 <p>tags: <a href="/tag/bcu.html">bcu</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/emulex.html">emulex</a> <a href="/tag/fc.html">fc</a> <a href="/tag/fibre.html">fibre</a> <a href="/tag/channel.html">channel</a> <a href="/tag/hba.html">hba</a> <a href="/tag/limtransfersize.html">limtransfersize</a> <a href="/tag/performance.html">performance</a> <a href="/tag/tuning.html">tuning</a> <a href="/tag/qlfc.html">qlfc</a> <a href="/tag/qlogic.html">qlogic</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/size.html">size</a> </p>
 </footer><!-- /.post-info -->                <p>HP just published an advisory describing how to tune some parameters for Emulex, Qlogic and Brocade Fibre Channel HBAs: <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02518189">c02518189</a>. It sounds like these are new, but these changes have been around for at least 6 months in all three vendors' HBAs.</p>
-<h2><strong>Emulex</strong></h2>
+<h2 id="emulex"><strong>Emulex</strong></h2>
 <p>"Emulex driver version 2.42.002 or …</p>
                 <a class="readmore" href="/storage-fc-hba-transfer-size-tuning.html">read more</a>
                 </div><!-- /.entry-content -->

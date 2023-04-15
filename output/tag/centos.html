@@ -35,7 +35,7 @@
 </footer><!-- /.post-info --><p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
 <p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc. Hostnames set. /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.</p>
 <p>With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use the latest branch for 2.5 so the instructions are <a href="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821" title="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821">https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821</a></p>
-<h2>Server side</h2>
+<h2 id="server-side">Server side</h2>
 <p><strong>MDT/OST:</strong> Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).</p>
 <p>yum localinstall all files from: http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/</p>
 <p>Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next boot: <a href="https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel">https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel</a></p>
@@ -58,7 +58,7 @@
 <p>modprobe lnet lctl network up # lctl list_nids</p>
 <p>creating MDT: mkfs.lustre --mdt --mgs --index=0 --fsname=wrk /dev/vdc1 mounting MDT: mkdir /mnt/MDT; mount.lustre /dev/vdc1 /mnt/MDT</p>
 <p>creating OST: mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1 mounting OST: mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1</p>
-<h2>Client Side</h2>
+<h2 id="client-side">Client Side</h2>
 <p>rpmbuild --rebuild --without servers</p>
 <p>cd /root/rpmbuild/RPMS/x86_64 rpm -Uvh lustre-client*</p>
 <p>add modprobe.d/lustre.conf modprobe lnet lctl network up lctl list_nids</p>
@@ -87,7 +87,7 @@
         </address>
 <p>In <a href="/category/storage.html">storage</a>.</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info -->                <h1>Introduction</h1>
+</footer><!-- /.post-info -->                <h1 id="introduction">Introduction</h1>
 <p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
 <p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
 <p>Basic components:</p>
@@ -150,7 +150,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/ntpq.html">ntpq</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> <a href="/tag/synchronization.html">synchronization</a> <a href="/tag/tcpdump.html">tcpdump</a> <a href="/tag/time.html">time</a> <a href="/tag/sync.html">sync</a> <a href="/tag/synchronizatino.html">synchronizatino</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -178,7 +178,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/openssh.html">openssh</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/sshd.html">sshd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/tcp.html">tcp</a> <a href="/tag/wrapper.html">wrapper</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -206,7 +206,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/dovecot.html">dovecot</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/imap.html">imap</a> <a href="/tag/linux.html">linux</a> <a href="/tag/postfix.html">postfix</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/sendmail.html">sendmail</a> <a href="/tag/smtp.html">smtp</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -234,7 +234,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/nfs.html">nfs</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -262,7 +262,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/samba.html">samba</a> <a href="/tag/smb.html">smb</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -290,7 +290,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/ftp.html">ftp</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -318,7 +318,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/dns.html">dns</a> <a href="/tag/domain.html">domain</a> <a href="/tag/name.html">name</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
 </footer><!-- /.post-info -->                <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>

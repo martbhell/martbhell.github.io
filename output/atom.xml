@@ -329,16 +329,16 @@ starts an OS from an USB-stick...&lt;/p&gt;</content><category term="storage"></
 &lt;p&gt;I’ve been involved in some core projects, both for internal users and external ones. I was free to release code as open source. I have solved hard problems, gotten rid of manual work with automation and helped people grow.&lt;/p&gt;
 &lt;p&gt;I’m happy to have met great friends and colleagues at &lt;a href="https://twitter.com/CSCfi"&gt;CSCfi&lt;/a&gt;. I’ve learned so much and many thanks for showing how to work right and that it's not all about 9-5 work.&lt;/p&gt;
 &lt;p&gt;It has been a rewarding experience. I like to think I've come quite some way from where I started. So long, @CSCfi, and thanks for (all the fish) lasting memories!&lt;/p&gt;</content><category term="finland"></category></entry><entry><title>"AIR-LAP1142N-E-K9 to autonomous Mode Adventure"</title><link href="/air-lap1142n-e-k9-to-autonomous-mode-adventure.html" rel="alternate"></link><published>2020-02-19T00:00:00+02:00</published><updated>2020-02-19T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-02-19:/air-lap1142n-e-k9-to-autonomous-mode-adventure.html</id><summary type="html">&lt;blockquote&gt;
-&lt;h2&gt;&lt;a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"&gt;&lt;img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="_1"&gt;&lt;a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"&gt;&lt;img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;Some initial needful information&lt;/h2&gt;
+&lt;h2 id="some-initial-needful-information"&gt;Some initial needful information&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Reset is done by holding MODE and then powering off and on the device&lt;/li&gt;
 &lt;li&gt;Default enable password is Cisco&lt;/li&gt;
 &lt;li&gt;Serial ttyUSB0 worked with one usb to rs232 and then a serial to RJ45 adapter, my cheapo ebay USB to rj45 did not work. The colors of …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;h2&gt;&lt;a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"&gt;&lt;img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="_1"&gt;&lt;a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"&gt;&lt;img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;Some initial needful information&lt;/h2&gt;
+&lt;h2 id="some-initial-needful-information"&gt;Some initial needful information&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Reset is done by holding MODE and then powering off and on the device&lt;/li&gt;
 &lt;li&gt;Default enable password is Cisco&lt;/li&gt;
@@ -354,12 +354,12 @@ starts an OS from an USB-stick...&lt;/p&gt;</content><category term="storage"></
 &lt;li&gt;While looking in serial log indeed the firmware on the AP was "w8" at the end == needs a WLC&lt;/li&gt;
 &lt;li&gt;tried to first setup a TFTP server and open firewalls and reboot the access point while holding the mode button (you need to hold it for a long time, like 27s) - it tried to fetch the image from tftp://255.255.255.255/ but didn't work / timed out..&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Hunt goes on:&lt;/h2&gt;
+&lt;h2 id="hunt-goes-on"&gt;Hunt goes on:&lt;/h2&gt;
 &lt;p&gt;These release notes got me a bit worried: &lt;a href="https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html"&gt;https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Conversions from an 8.0 Wireless LAN Controller unified release AP image to autonomous 15.3(3) k9w7 image will get aborted with a message “AP image integrity check failed.” To overcome this, load any previous autonomous k9w7 image and then upgrade to the 15.3(3) JAB k9w7 images. &lt;strong&gt;If this is the same as LWAPP version I had was 7.3.x&lt;/strong&gt; &lt;em&gt;so the above did not apply.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://greenwhitehat.blogspot.com/2017/08/how-to-configure-cisco-access-point-air.html"&gt;https://greenwhitehat.blogspot.com/2017/08/how-to-configure-cisco-access-point-air.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.fragmentationneeded.net/2010/08/tftp-oddities.html"&gt;https://www.fragmentationneeded.net/2010/08/tftp-oddities.html&lt;/a&gt; is talking about changing listening address to 255.255.255.255 instead of 0.0.0.0 ..&lt;/p&gt;
-&lt;h2&gt;secret sauze&lt;/h2&gt;
+&lt;h2 id="secret-sauze"&gt;secret sauze&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;setup static IP on your linux computer, &lt;strong&gt;&lt;em&gt;make sure to not just "ip addr add ip/24 dev eth0" because you might still have NetworkManager with DHCP that might revert those changes&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;setup a dhcpd that has 10.0.0.5 10.0.0.7 range or some such&lt;/li&gt;
@@ -381,7 +381,7 @@ starts an OS from an USB-stick...&lt;/p&gt;</content><category term="storage"></
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Before you disconnect the ethernet cable to the AP, do stop and disable dhcpd and tftp to prevent running some extra dhcp server in some office network.&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Configuring it&lt;/h2&gt;
+&lt;h2 id="configuring-it"&gt;Configuring it&lt;/h2&gt;
 &lt;p&gt;Easiest is probably to use the http on http://IP:80 to configure it&lt;/p&gt;
 &lt;p&gt;Username/Password: Cisco/Cisco&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.cisco.com/c/en/us/td/docs/wireless/access_point/1140/autonomous/getting_started/guide/ap1140aut_getstart.html"&gt;https://www.cisco.com/c/en/us/td/docs/wireless/access_point/1140/autonomous/getting_starte d/guide/ap1140aut_getstart.html&lt;/a&gt;&lt;/p&gt;
@@ -402,7 +402,7 @@ starts an OS from an USB-stick...&lt;/p&gt;</content><category term="storage"></
 &lt;li&gt;copy run start&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;One could enable https, but that used a too weak key by default so I just left it at http. In any case make sure to set the clock before enabling https.&lt;/p&gt;
-&lt;h2&gt;Some extremely useful links&lt;/h2&gt;
+&lt;h2 id="some-extremely-useful-links"&gt;Some extremely useful links&lt;/h2&gt;
 &lt;p&gt;Previous post in this blog about my home network: &lt;a href="https://www.guldmyr.com/blog/home-network-convergence/"&gt;https://www.guldmyr.com/blog/home-network-convergence/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542"&gt;https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux"&gt;http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux&lt;/a&gt;&lt;/p&gt;
@@ -430,8 +430,8 @@ $&lt;span class="w"&gt; &lt;/span&gt;make
 &lt;p&gt;I could even launch one process to run a server and then another server and connect to localhost :) So multiplayer must sureley durely work!&lt;/p&gt;
 &lt;p&gt;It's a big laggy - I recall it being very snappy because I was da bomb at this game :)&lt;/p&gt;
 &lt;p&gt;I blame this on that I might have missed some dependency and it now fell back into some easier something and or maybe the graphics card in this laptop is not good (maybe it's too new? It's a Skylake GT2 HD G 520).&lt;/p&gt;</content><category term="it"></category></entry><entry><title>"Coffee: Kaffetoria Espresso Flores"</title><link href="/coffee-kaffetoria-espresso-flores.html" rel="alternate"></link><published>2020-01-21T00:00:00+02:00</published><updated>2020-01-21T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-01-21:/coffee-kaffetoria-espresso-flores.html</id><content type="html">&lt;p&gt;&lt;img alt="" src="images/DSC_1367-768x1024.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;Gött. I jämförelse med den jag hade innan så luktade denna mycket mera choklad och mindre bränt..&lt;/p&gt;</content><category term="finland"></category><category term="coffee"></category></entry><entry><title>"Kringlecon 2019 Write-Up"</title><link href="/kringlecon-2019-write-up.html" rel="alternate"></link><published>2020-01-15T00:00:00+02:00</published><updated>2020-01-15T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-01-15:/kringlecon-2019-write-up.html</id><summary type="html">&lt;h2&gt;The challenges!&lt;/h2&gt;
-&lt;p&gt;Hoe the season to be jolly! Been giving a few &lt;a href="https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation)"&gt;CTFs&lt;/a&gt;  lately. It started with the disobey 2020 &lt;a href="https://disobey2020.github.io/"&gt;puzzle&lt;/a&gt; to get the hacker ticket. Then there was the &lt;a href="https://overthewire.org/"&gt;OverTheWire&lt;/a&gt;'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - &lt;a href="https://holidayhackchallenge.com/2019/"&gt;KringleCon&lt;/a&gt; 2019. As of writing I got …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;The challenges!&lt;/h2&gt;
+&lt;p&gt;Gött. I jämförelse med den jag hade innan så luktade denna mycket mera choklad och mindre bränt..&lt;/p&gt;</content><category term="finland"></category><category term="coffee"></category></entry><entry><title>"Kringlecon 2019 Write-Up"</title><link href="/kringlecon-2019-write-up.html" rel="alternate"></link><published>2020-01-15T00:00:00+02:00</published><updated>2020-01-15T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-01-15:/kringlecon-2019-write-up.html</id><summary type="html">&lt;h2 id="the-challenges"&gt;The challenges!&lt;/h2&gt;
+&lt;p&gt;Hoe the season to be jolly! Been giving a few &lt;a href="https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation)"&gt;CTFs&lt;/a&gt;  lately. It started with the disobey 2020 &lt;a href="https://disobey2020.github.io/"&gt;puzzle&lt;/a&gt; to get the hacker ticket. Then there was the &lt;a href="https://overthewire.org/"&gt;OverTheWire&lt;/a&gt;'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - &lt;a href="https://holidayhackchallenge.com/2019/"&gt;KringleCon&lt;/a&gt; 2019. As of writing I got …&lt;/p&gt;</summary><content type="html">&lt;h2 id="the-challenges"&gt;The challenges!&lt;/h2&gt;
 &lt;p&gt;Hoe the season to be jolly! Been giving a few &lt;a href="https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation)"&gt;CTFs&lt;/a&gt;  lately. It started with the disobey 2020 &lt;a href="https://disobey2020.github.io/"&gt;puzzle&lt;/a&gt; to get the hacker ticket. Then there was the &lt;a href="https://overthewire.org/"&gt;OverTheWire&lt;/a&gt;'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - &lt;a href="https://holidayhackchallenge.com/2019/"&gt;KringleCon&lt;/a&gt; 2019. As of writing I got what felt like quite far in the disobey but got real nice stuck in the second keyhole. For OTF I found a similar but slightly easier challenge on the 6th day December, but did not manage to get the key. Most others except the first and challenge-zero I didn't really have time for. So with not so much progress it was very nice to take a step back and try out KringleCon where I managed to get a bit further!&lt;/p&gt;
 &lt;p&gt;[su_accordion] [su_spoiler title="TLDR"]&lt;/p&gt;
 &lt;p&gt;Short tldr of methods to answers to the objectives&lt;/p&gt;
@@ -451,7 +451,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;make
 &lt;li&gt;filter out poisoned: ugh this one was tedious. Actually this and previous I did spend some time trying to learn them, but in the end found a write-up that was published too early (and later removed but still in google cache..)
 [/su_spoiler] [/su_accordion]&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Getting on with it!&lt;/h2&gt;
+&lt;h2 id="getting-on-with-it"&gt;Getting on with it!&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The pdf deobfuscate I could do on my phone in termux just a pkg install pdftotext :)&lt;/li&gt;
 &lt;li&gt;The nyancat took a bit of more time than I should admit, but primarily I forgot how sudo works and what sudo -u does..&lt;/li&gt;
@@ -489,7 +489,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;make
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You'll need to hit CTRL+C when it doesn't find any more solutions. It's not the fastest, has unused bits and I don't know why it has the for digit in range(1) bit.&lt;/p&gt;
-&lt;h2&gt;On to the next challenge!:&lt;/h2&gt;
+&lt;h2 id="on-to-the-next-challenge"&gt;On to the next challenge!:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;The windows events log file I just opened the file on a Windows machine and looked around&lt;/li&gt;
 &lt;li&gt;The sysmon file I printed some interesting keys in the json strings with a tiny python script&lt;/li&gt;
@@ -511,7 +511,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;make
 &lt;li&gt;For the greylog just clicked around. I liked the "quick table" feature and that got me some of the questions fairly quickly without having to write more narrow searches. Quite a few steps needed for this so took some time. It was nice to get to compare greylog and splunk, I've only used a vanilla ELK stack before and last version 5. With that in mind the discover data was for me a bit easier on greylog.&lt;/li&gt;
 &lt;li&gt;Trail of tears I just beat the game on easy :) (&lt;em&gt;/edit turns&lt;/em&gt; one can solve this on hard&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Next one was a powershell one! The laser adjuster :P&lt;/h2&gt;
+&lt;h2 id="next-one-was-a-powershell-one-the-laser-adjuster-p"&gt;Next one was a powershell one! The laser adjuster :P&lt;/h2&gt;
 &lt;p&gt;Finally got to get a bit familiar with powershell. I'm a lurker on &lt;a href="https://www.reddit.com/r/sysadmin/"&gt;r/sysadmin&lt;/a&gt; and very often there are powershell oneliners on display there. This was quite a fun one to be honest :) Kind of like using python directly in the shell.&lt;/p&gt;
 &lt;p&gt;Some things I learnt were:&lt;/p&gt;
 &lt;ul&gt;
@@ -549,7 +549,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;make
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;Invoke-WebRequest&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;-Uri&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;1225&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;api&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;output&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;RawContent&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;iptables&lt;/h2&gt;
+&lt;h2 id="iptables"&gt;iptables&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Iptables/ smart bracelet one: think I was close or did complete this but Kent did not agree? Went back and tried this again slowly by first writing the commands in a text file&lt;/li&gt;
 &lt;/ul&gt;
@@ -584,7 +584,7 @@ Kent TinselTooth: Great, you hardened my IOT Smart Braces firewall!
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Sled Route API : Got the login. Next to figure out which requests were bad and how to fill in 100 on the web page... Maybe one can figure out the firewall API? Hmm played a bit with elasticsearch.. then gave up.. in the meantime went ahead to:&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Sleigh Shop Door&lt;/h2&gt;
+&lt;h2 id="sleigh-shop-door"&gt;Sleigh Shop Door&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Ah this isfun! While poking through the web source after fixing the smartbracelet found the URL to the sleigh shop in teh source. It had a bunch of locks.&lt;/li&gt;
 &lt;/ul&gt;
@@ -687,7 +687,7 @@ You opened the chest in 150.151 seconds
 &lt;ul&gt;
 &lt;li&gt;Next one I managed was the key bitting one to get into the Steam Tunnels! There was a good talk on this topic with a link to &lt;a href="https://github.com/deviantollam/decoding"&gt;https://github.com/deviantollam/decoding&lt;/a&gt; and then just used that and tried maybe 5 keys before finding the right now. GIMP is not my specialty but the decoders helped a bit. The image of the key was not discoverable until one got into the Sleigh Shop.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Image AI&lt;/h2&gt;
+&lt;h2 id="image-ai"&gt;Image AI&lt;/h2&gt;
 &lt;p&gt;And then we get to the CAPTCHA + tensorflow madness! This was real fun, haven't had to do much with tensorflow before. Did not have to read much at all about tensorflow to get this going, could basically just glue together the provided python scripts.&lt;/p&gt;
 &lt;p&gt;Another very good kringlecon talk on this topic: &lt;a href="https://www.youtube.com/watch?v=jmVPLwjm_zs&amp;amp;feature=youtu.be"&gt;https://www.youtube.com/watch?v=jmVPLwjm_zs&amp;amp;feature=youtu.be&lt;/a&gt; led to a github repo. Some other code and training images were found as soon as one got far enough into the Steam Tunnels. I managed to after not too much googling get the python script to store the images in teh CAPTEHA in a directory and then run the predict tensorflow python script on the github repo against it. It was however too slow. Fortunately I had access to a machine with lots of cores so moving all the data there and re-running the python got it working for me. 2 oversubscribed cores and 2GB RAM was too little. 80 dedicated single server skylake cores and 356GB RAM completed it much faster. There were messages about tensorflow from pip not having been compiled with all the things enabled. I could I suppose also have tried this with a GPU :) And the PYTHON:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/env python3&lt;/span&gt;
@@ -879,7 +879,7 @@ You opened the chest in 150.151 seconds
     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;NEEEXT! Student Body finding some scrap papers objective 9&lt;/h2&gt;
+&lt;h2 id="neeext-student-body-finding-some-scrap-papers-objective-9"&gt;NEEEXT! Student Body finding some scrap papers objective 9&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Got some hints in the game talking about sqlmap. Let's play with that and learn about &lt;a href="https://www.owasp.org/index.php/Testing_for_SQL_Injection_(OTG-INPVAL-005)"&gt;SQL injections&lt;/a&gt; :)&lt;ul&gt;
 &lt;li&gt;Started by looking at the page and reading the source code. Identified two forms on two pages that looked interesting.&lt;/li&gt;
@@ -939,7 +939,7 @@ sqlmap&lt;span class="w"&gt; &lt;/span&gt;--url&lt;span class="o"&gt;=&lt;/span&
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now then that looks like an OS path, need to run a shell command.. but on a whim tried &lt;a href="https://studentportal.elfu.org/krampus/"&gt;https://studentportal.elfu.org/krampus/&lt;/a&gt; and yay found them there. Fired up good old GIMP and learnt about the rotate tool :P Yay, &lt;strong&gt;one&lt;/strong&gt; more objective!&lt;/p&gt;
-&lt;h2&gt;Remaining are reversing some crypto windows executable and the ban the IPs in the firewall for the route API&lt;/h2&gt;
+&lt;h2 id="remaining-are-reversing-some-crypto-windows-executable-and-the-ban-the-ips-in-the-firewall-for-the-route-api"&gt;Remaining are reversing some crypto windows executable and the ban the IPs in the firewall for the route API&lt;/h2&gt;
 &lt;p&gt;Crypto then. Hint is &lt;a href="https://www.youtube.com/watch?v=obJdpKDpFBA&amp;amp;feature=youtu.be"&gt;https://www.youtube.com/watch?v=obJdpKDpFBA&amp;amp;feature=youtu.be&lt;/a&gt; &amp;gt; &lt;a href="https://github.com/CounterHack/reversing-crypto-talk-public"&gt;https://github.com/CounterHack/reversing-crypto-talk-public&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Running an encryption tells us it uses unix epoch as a seed and a hint to the challenge was " We know that it was encrypted on December 6, 2019, between 7pm and 9pm UTC. " This is from &lt;strong&gt;1575658800 to 1575666000&lt;/strong&gt; . There are some super_secure_random and super_secure_srand functions found with IDA freeware. Probably they are not super. &lt;a href="https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey"&gt;https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey&lt;/a&gt; for example is one in use. I wonder what the difference with --insecure is? One error talks about &lt;a href="https://crypto.stackexchange.com/questions/62771/is-des-secure-under-cbc"&gt;DES-CBC&lt;/a&gt; which internet says is insecure. It uses 56-bits and 8bytes. Stack of do_encrypt also says "dd 8" so yay?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;00000000&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;00000008&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;BYTES&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;COLLAPSED&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;UNION&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;_LARGE_INTEGER&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PRESS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;CTRL&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;NUMPAD&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kr"&gt;TO&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;EXP&lt;/span&gt;&lt;span class="ow"&gt;AND&lt;/span&gt;&lt;span class="err"&gt;]&lt;/span&gt;
@@ -974,7 +974,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-XP
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Actually what might be doable with just the key is to: setup my own API server that just returns the key.. &lt;em&gt;Change the address in the binary or finally use BURP or local DNS override?&lt;/em&gt; Still need to figure out the key :))&lt;/p&gt;
-&lt;h2&gt;Let's try to read the do_encrypt again&lt;/h2&gt;
+&lt;h2 id="lets-try-to-read-the-do_encrypt-again"&gt;Let's try to read the do_encrypt again&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;call read_file&lt;/li&gt;
 &lt;li&gt;set some crypto vars&lt;/li&gt;
@@ -1007,7 +1007,7 @@ $&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-XP
 &lt;em&gt;something with seed.. really unsure&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;super_secure_srandom does:&lt;br&gt;
 this is doing the rseed, sar, and&lt;/p&gt;
-&lt;h2&gt;The Key Writer&lt;/h2&gt;
+&lt;h2 id="the-key-writer"&gt;The Key Writer&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/usr/bin/python3&lt;/span&gt;
 
 
@@ -1106,7 +1106,7 @@ this is doing the rseed, sar, and&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then to get the key was just a pdf2txt and the 5 word sentence in the beginning of the document!&lt;/p&gt;
-&lt;h2&gt;OK THE ZEEK/BRO Logs is the last one?&lt;/h2&gt;
+&lt;h2 id="ok-the-zeekbro-logs-is-the-last-one"&gt;OK THE ZEEK/BRO Logs is the last one?&lt;/h2&gt;
 &lt;p&gt;The username was found in https://srf.elfu.org/README.md&lt;/p&gt;
 &lt;p&gt;Started on this earlier but stopped because I wasn't feeling it and it was a bit tedious.&lt;br&gt;
 Plan: Make the queries programmatically. Also this time check sizes of requests maybe that's important. Also time when attacks happen could be useful?&lt;/p&gt;

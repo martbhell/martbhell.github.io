@@ -32,7 +32,7 @@
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info --><h2>Not allowing root to log in</h2>
+</footer><!-- /.post-info --><h2 id="not-allowing-root-to-log-in">Not allowing root to log in</h2>
 <p>By default sshd is running on SL6 and you can ssh in with 'root'.</p>
 <p>Probably a good idea to change this in /etc/ssh/sshd_config</p>
 <p>permitrootlogin no</p>
@@ -41,20 +41,20 @@
 passwd mart</p>
 <p>Then you can change sshd_config and 'service sshd reload'.</p>
 <p>Then you can ssh in and either hit' su -' to get root access. Or, if you hit 'visudo' and add your user. You can later just type 'sudo bash' to get a root bash shell.</p>
-<h2>Firewall</h2>
+<h2 id="firewall">Firewall</h2>
 <p>iptables -L to view the firewall setup, note that there is a 'virbr0' interface that has forwarding rules. This is probably for NAT or bridging for potential virtual machines, and was probably created when we chose 'Virtual Host' as the role for the system. iptables-save : another view that may be easier to understand. This you can put in 'file' and then hit iptables-restore &lt; file.</p>
-<h2>Slow before you get the login prompt while ssh-ing?</h2>
+<h2 id="slow-before-you-get-the-login-prompt-while-ssh-ing">Slow before you get the login prompt while ssh-ing?</h2>
 <p>To see what is happening, ssh in with 'ssh -v ip'. In my case I saw</p>
 <blockquote>
 <p>debug1: An invalid name was supplied Cannot determine real for numeric host address</p>
 </blockquote>
 <p>A little googling showed me that this is because your machine doesn't have a name lookup for that IP. So go ahead and add one in /etc/hosts and then it will be fast.</p>
-<h2>Notice that your ssh stops working after a while? Doesn't accept input?</h2>
+<h2 id="notice-that-your-ssh-stops-working-after-a-while-doesnt-accept-input">Notice that your ssh stops working after a while? Doesn't accept input?</h2>
 <p>If so, add this to your ~/.ssh/config file:</p>
 <p>Host *
    ServerAliveInterval 60</p>
 <p>Make sure there is at least a space on the second line. I have three :p You can change the * to a specific domain if you do not want to do this on all your boxes. If the file doesn't exist, create it.</p>
-<h2>Run sshd on a second port.</h2>
+<h2 id="run-sshd-on-a-second-port">Run sshd on a second port.</h2>
 <ol>
 <li>Edit /etc/ssh/sshd_config</li>
 <li>Add a line saying: Port 6666</li>

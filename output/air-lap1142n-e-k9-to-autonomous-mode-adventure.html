@@ -39,9 +39,9 @@
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/aironet.html">aironet</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/https.html">https</a> <a href="/tag/ip.html">ip</a> <a href="/tag/lap1142n.html">lap1142n</a> <a href="/tag/e.html">e</a> <a href="/tag/k9.html">k9</a> <a href="/tag/network.html">network</a> <a href="/tag/vlan.html">vlan</a> <a href="/tag/wifi.html">wifi</a> <a href="/tag/wlan.html">wlan</a> </p>
 </footer><!-- /.post-info -->      <blockquote>
-<h2><a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"><img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"></a></h2>
+<h2 id="_1"><a href="https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg"><img alt="Wifi and PoE injector " src="images/DSC_1469-300x225.jpg"></a></h2>
 </blockquote>
-<h2>Some initial needful information</h2>
+<h2 id="some-initial-needful-information">Some initial needful information</h2>
 <ul>
 <li>Reset is done by holding MODE and then powering off and on the device</li>
 <li>Default enable password is Cisco</li>
@@ -57,12 +57,12 @@
 <li>While looking in serial log indeed the firmware on the AP was "w8" at the end == needs a WLC</li>
 <li>tried to first setup a TFTP server and open firewalls and reboot the access point while holding the mode button (you need to hold it for a long time, like 27s) - it tried to fetch the image from tftp://255.255.255.255/ but didn't work / timed out..</li>
 </ul>
-<h2>Hunt goes on:</h2>
+<h2 id="hunt-goes-on">Hunt goes on:</h2>
 <p>These release notes got me a bit worried: <a href="https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html">https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html</a></p>
 <p>Conversions from an 8.0 Wireless LAN Controller unified release AP image to autonomous 15.3(3) k9w7 image will get aborted with a message “AP image integrity check failed.” To overcome this, load any previous autonomous k9w7 image and then upgrade to the 15.3(3) JAB k9w7 images. <strong>If this is the same as LWAPP version I had was 7.3.x</strong> <em>so the above did not apply.</em></p>
 <p><a href="https://greenwhitehat.blogspot.com/2017/08/how-to-configure-cisco-access-point-air.html">https://greenwhitehat.blogspot.com/2017/08/how-to-configure-cisco-access-point-air.html</a></p>
 <p><a href="https://www.fragmentationneeded.net/2010/08/tftp-oddities.html">https://www.fragmentationneeded.net/2010/08/tftp-oddities.html</a> is talking about changing listening address to 255.255.255.255 instead of 0.0.0.0 ..</p>
-<h2>secret sauze</h2>
+<h2 id="secret-sauze">secret sauze</h2>
 <ul>
 <li>setup static IP on your linux computer, <strong><em>make sure to not just "ip addr add ip/24 dev eth0" because you might still have NetworkManager with DHCP that might revert those changes</em></strong></li>
 <li>setup a dhcpd that has 10.0.0.5 10.0.0.7 range or some such</li>
@@ -84,7 +84,7 @@
 <ul>
 <li><em>Before you disconnect the ethernet cable to the AP, do stop and disable dhcpd and tftp to prevent running some extra dhcp server in some office network.</em></li>
 </ul>
-<h2>Configuring it</h2>
+<h2 id="configuring-it">Configuring it</h2>
 <p>Easiest is probably to use the http on http://IP:80 to configure it</p>
 <p>Username/Password: Cisco/Cisco</p>
 <p><a href="https://www.cisco.com/c/en/us/td/docs/wireless/access_point/1140/autonomous/getting_started/guide/ap1140aut_getstart.html">https://www.cisco.com/c/en/us/td/docs/wireless/access_point/1140/autonomous/getting_starte d/guide/ap1140aut_getstart.html</a></p>
@@ -105,7 +105,7 @@
 <li>copy run start</li>
 </ul>
 <p>One could enable https, but that used a too weak key by default so I just left it at http. In any case make sure to set the clock before enabling https.</p>
-<h2>Some extremely useful links</h2>
+<h2 id="some-extremely-useful-links">Some extremely useful links</h2>
 <p>Previous post in this blog about my home network: <a href="https://www.guldmyr.com/blog/home-network-convergence/">https://www.guldmyr.com/blog/home-network-convergence/</a></p>
 <p><a href="https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542">https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542</a></p>
 <p><a href="http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux">http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux</a></p>

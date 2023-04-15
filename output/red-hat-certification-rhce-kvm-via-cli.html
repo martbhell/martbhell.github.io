@@ -40,7 +40,7 @@
 <p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/libvirt.html">libvirt</a> <a href="/tag/libvirtd.html">libvirtd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/qemu.html">qemu</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/studying.html">studying</a> <a href="/tag/virtualization.html">virtualization</a> </p>
 </footer><!-- /.post-info -->      <p>In a previous <a href="http://www.guldmyr.com/blog/rhcsa-preparation/">post</a> while preparing for RHCSA I installed kvm post-installation, via the GUI.</p>
 <p>But how to install, configure and use it only from the CLI?</p>
-<h2>Virt-Manager</h2>
+<h2 id="virt-manager">Virt-Manager</h2>
 <p><a href="http://virt-manager.org/page/Main_Page">http://virt-manager.org/page/Main_Page</a> has some details</p>
 <p>As a test-machine I'm using a server with Scientific Linux 6.2 (with virtualization enabled as seen by 'cat /proc/cpuinfo|grep vmx').</p>
 <p>None of the Virtualization Groups are installed, as seen by 'yum grouplist'. While doing that you'll find four different groups. You can use</p>
@@ -71,7 +71,7 @@ virt-manager</p>
 <p>Add a new VM called <strong>test</strong>. Using 6.2 net-install and NAT network interface. This may take a while.</p>
 <p>Pointing the VM to kvm-server where a httpd is running (remember firewall rules) and an SL 6.2 is stored. Installing a Basic Server.</p>
 <p>OK, we could use virt-manager, it's quite straight-forward and doesn't require any edits of config files at all.</p>
-<h2>Moving on to <strong>virsh</strong>.</h2>
+<h2 id="moving-on-to-virsh">Moving on to <strong>virsh</strong>.</h2>
 <p>To install a vm you use 'virt-install'.</p>
 <p>You can get lots of info from 'virsh'</p>
 <p>virsh pool-list

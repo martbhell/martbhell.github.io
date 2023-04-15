@@ -35,7 +35,7 @@
 </footer><!-- /.post-info --><p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
 <p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc. Hostnames set. /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.</p>
 <p>With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use the latest branch for 2.5 so the instructions are <a href="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821" title="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821">https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821</a></p>
-<h2>Server side</h2>
+<h2 id="server-side">Server side</h2>
 <p><strong>MDT/OST:</strong> Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).</p>
 <p>yum localinstall all files from: http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/</p>
 <p>Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next boot: <a href="https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel">https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel</a></p>
@@ -58,7 +58,7 @@
 <p>modprobe lnet lctl network up # lctl list_nids</p>
 <p>creating MDT: mkfs.lustre --mdt --mgs --index=0 --fsname=wrk /dev/vdc1 mounting MDT: mkdir /mnt/MDT; mount.lustre /dev/vdc1 /mnt/MDT</p>
 <p>creating OST: mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1 mounting OST: mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1</p>
-<h2>Client Side</h2>
+<h2 id="client-side">Client Side</h2>
 <p>rpmbuild --rebuild --without servers</p>
 <p>cd /root/rpmbuild/RPMS/x86_64 rpm -Uvh lustre-client*</p>
 <p>add modprobe.d/lustre.conf modprobe lnet lctl network up lctl list_nids</p>
@@ -87,7 +87,7 @@
         </address>
 <p>In <a href="/category/storage.html">storage</a>.</p>
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info -->                <h1>Introduction</h1>
+</footer><!-- /.post-info -->                <h1 id="introduction">Introduction</h1>
 <p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
 <p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
 <p>Basic components:</p>
@@ -115,7 +115,7 @@
 <p>tags: <a href="/tag/eofs.html">eofs</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/iaas.html">iaas</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/ol.html">ol</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/image.html">image</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vm.html">vm</a> </p>
 </footer><!-- /.post-info -->                <p>Dinner on the 3rd night was amazing. It was at the hotel Weisse Schwan in Arheilgen outside Darmstadt and it was a nice reception hall with big round tables, waiters with lots of wine and great buffet food. A+</p>
 <p><a href="http://molnmolnmoln.se" title="moln@IDG">Cloudy day</a>!</p>
-<h2>Or - Infrastructure as a Service - IaaS</h2>
+<h2 id="or-infrastructure-as-a-service-iaas">Or - Infrastructure as a Service - IaaS</h2>
 <p>A few had …</p>
                 <a class="readmore" href="/hepix-spring-2011-day-4.html">read more</a>
                 </div><!-- /.entry-content -->

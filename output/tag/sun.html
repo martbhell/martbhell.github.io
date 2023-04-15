@@ -38,7 +38,7 @@
 <p>To make it more readable you can run this: man $1|grep -v 'SunOS 5.11'|grep -v 'System Administration Commands'|less</p>
 <p>With $1 being the command, for example mpathadm.</p>
 <p>You could also put it in a bash script file, for example /usr/bin/man2, :</p>
-<h1>!/bin/sh man $1|grep -v 'SunOS 5.11'|grep -v 'System Administration Commands'|less</h1>
+<h1 id="binsh-man-1grep-v-sunos-511grep-v-system-administration-commandsless">!/bin/sh man $1|grep -v 'SunOS 5.11'|grep -v 'System Administration Commands'|less</h1>
 <p>Don't forget to set executable permissions with chmod 755 on the script file so that normal users can run it. Then instead of running man, run 'man2 mpathadm' and you'll have a much more readable manpage.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">

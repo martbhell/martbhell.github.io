@@ -42,12 +42,12 @@
 <p>Initially I wonder how many of these are Red Hat specific, or how many of these I can accomplish by using the free clones such as CentOS or Scientific Linux. We'll see :) At least a lot of Red Hat's guides will include their <a href="http://www.redhat.com/products/storage-server/">Storage Server</a>.</p>
 <p>I used the course content summary as a template for this post, my notes are made within them.. below.</p>
 <p>For future questions and trolls: this is not a how-to for lazy people who just want to copy and paste. There are plenty of other sites for that. This is just the basics and it might have some pointers so that I know which are the basic steps and names/commands for each task. That way I hope it's possible to figure out how to use the commands and such by RTFM.</p>
-<h2><a href="http://www.redhat.com/training/courses/rh436/" title="http://www.redhat.com/training/courses/rh436/">Course content summary</a> :</h2>
-<h3>Clusters and storage</h3>
+<h2 id="course-content-summary"><a href="http://www.redhat.com/training/courses/rh436/" title="http://www.redhat.com/training/courses/rh436/">Course content summary</a> :</h2>
+<h3 id="clusters-and-storage">Clusters and storage</h3>
 <p><em>Get an overview of storage and cluster technologies.</em></p>
-<h3>ISCSI configuration</h3>
+<h3 id="iscsi-configuration">ISCSI configuration</h3>
 <p><em>Set up and manage iSCSI.</em></p>
-<h4>Step 1: Setup a server that can present iSCSI LUNs. A target.</h4>
+<h4 id="step-1-setup-a-server-that-can-present-iscsi-luns-a-target">Step 1: Setup a server that can present iSCSI LUNs. A target.</h4>
 <ol>
 <li>CentOS 6.4 - minimal. Set up basic stuff like networking, user account, yum update, ntp/time sync then make a clone of the VM.</li>
 <li>Install some useful software like: yum install ntp parted man</li>
@@ -68,7 +68,7 @@
 <p><a href="http://www.server-world.info/en/note?os=CentOS_6&amp;p=iscsi&amp;f=2">http://www.server-world.info/en/note?os=CentOS_6&amp;p=iscsi&amp;f=2</a></p>
 <p>Step 4: <strong>Login</strong> to the target from at least two nodes by running 'iscsiadm' commands.</p>
 <p>Next step would be to put an appropriate file system on the LUN.</p>
-<h3>UDEV</h3>
+<h3 id="udev">UDEV</h3>
 <p><em>Learn basic manipulation and creation of udev rules.</em></p>
 <p>http://www.reactivated.net/writing_udev_rules.html is an old link but just change the commands to "udevadm" instead of "udev*" and at least the sections I read worked the same.</p>
 <p>udevadm info -a -n /dev/sdb</p>
@@ -88,7 +88,7 @@
 <p>SUBSYSTEMS=="usb", KERNEL=="sd*", ATTRS{serial}=="001CC0EC3450BB40E71401C9", SYMLINK+="my_usb_disk%n"</p>
 <p>These things can be useful if you have several USB disks but you always want the disk to be called /dev/my_usb_disk and not sometimes /dev/sdb and sometimes /dev/sdc.</p>
 <p>For testing one can use "udevadm test /sys/class/block/sdc"</p>
-<h3>Multipathing</h3>
+<h3 id="multipathing">Multipathing</h3>
 <p><em>Combine multiple paths to SAN devices into one fault-tolerant virtual device.</em></p>
 <p>Ah, this one I've been in touch with before with fibrechannel, it also works with iSCSI. Multipath is the command and be wary of devices/multipaths vs default settings. Multipathd can be used in case there are actually multiple paths to a LUN (the target is perhaps available on two IP addresses/networks) but it can also be used to set a user_friendly name to a disk, based on its wwid.</p>
 <p>Some good commands:</p>
@@ -96,24 +96,24 @@
 yum provides */multipath.conf # device-mapper-multipath is the package. 
 multipath -ll</p>
 <p>Copy in default multipath.conf to /etc; reload and hit multipath -ll to see what it does. After that the <a href="http://dwarffortresswiki.org/index.php/Fun">Fun</a> begins!</p>
-<h3>Red Hat high-availability overview</h3>
+<h3 id="red-hat-high-availability-overview">Red Hat high-availability overview</h3>
 <p><em>Learn the architecture and component technologies in the Red Hat® High Availability Add-On.</em></p>
 <p><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/index.html">https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/index.html</a></p>
-<h3>Quorum</h3>
+<h3 id="quorum">Quorum</h3>
 <p><em>Understand quorum and quorum calculations.</em></p>
-<h3>Fencing</h3>
+<h3 id="fencing">Fencing</h3>
 <p><em>Understand Fencing and fencing configuration.</em></p>
-<h3>Resources and resource groups</h3>
+<h3 id="resources-and-resource-groups">Resources and resource groups</h3>
 <p><em>Understand rgmanager and the configuration of resources and resource groups.</em></p>
 <p><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/ch.gfscs.cluster-overview-rgmanager.html">https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/ch.gfscs.cluster-overview-rgmanager.html</a></p>
-<h3>Advanced resource management</h3>
+<h3 id="advanced-resource-management">Advanced resource management</h3>
 <p><em>Understand resource dependencies and complex resources.</em></p>
-<h3>Two-node cluster issues</h3>
+<h3 id="two-node-cluster-issues">Two-node cluster issues</h3>
 <p><em>Understand the use and limitations of 2-node clusters.</em></p>
 <p><a href="http://en.wikipedia.org/wiki/Split-brain_(computing)">http://en.wikipedia.org/wiki/Split-brain_(computing)</a></p>
-<h3>LVM management</h3>
+<h3 id="lvm-management">LVM management</h3>
 <p><em>Review LVM commands and Clustered LVM (clvm).</em></p>
-<h4>Create <strong>Normal LVM</strong> and make a <strong>snapshot</strong>:</h4>
+<h4 id="create-normal-lvm-and-make-a-snapshot">Create <strong>Normal LVM</strong> and make a <strong>snapshot</strong>:</h4>
 <p><a href="http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html#.UgtWonUW1Ls">Tutonics</a> has a good "ubuntu" guide for LVMs, but at least the snapshot part works the same.</p>
 <ol>
 <li>yum install lvm2</li>
@@ -137,7 +137,7 @@ multipath -ll</p>
 <li>mount /mnt</li>
 <li>cat /mnt/datehere</li>
 </ol>
-<h3>XFS</h3>
+<h3 id="xfs">XFS</h3>
 <p><em>Explore the Features of the XFS® file system and tools required for creating, maintaining, and troubleshooting.</em></p>
 <p><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/xfsmain.html">https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/xfsmain.html</a></p>
 <p>yum provides */mkfs.xfs</p>
@@ -154,11 +154,11 @@ total 112636
 -rw-rw-r-- 1 user user 52428800 Aug 15 09:29 50M
 -rw-rw-r-- 1 user user 52428800 Aug 15 09:29 50M_1
 -rw-rw-r-- 1 user user 10477568 Aug 15 09:29 50M_2</p>
-<h3>Red Hat Storage</h3>
+<h3 id="red-hat-storage">Red Hat Storage</h3>
 <p><em>Work with Gluster to create and maintain a scale-out storage solution.</em></p>
 <p>http://chauhan-rhce.blogspot.fi/2013/04/gluster-file-system-configuration-steps.html</p>
 <p>http://servicesblog.redhat.com/2012/07/31/updates-to-the-red-hat-enterprise-clustering-and-storage-management-course/</p>
-<h3>Comprehensive review</h3>
+<h3 id="comprehensive-review">Comprehensive review</h3>
 <p><em>Set up high-availability services and storage.</em></p>
     </div><!-- /.entry-content -->
 

@@ -41,14 +41,14 @@
 </ul>
 <p>about the cron jobs, I just installed a ubuntu virtual kernel and only cron job running (as seen in syslog) is this:</p>
 <p>CRON[9141]: (root) CMD (   cd / &amp;&amp; run-parts --report /etc/cron.hourly)</p>
-<h3>Test 1</h3>
+<h3 id="test-1">Test 1</h3>
 <p>1.2GB disk 64MB RAM</p>
 <p>Kernel panic - not syncing: attempted to kill init! ctrl-alt-del in the VM doesn't work, had to hard kill it :p Reboot - same problem. It does this after selecting minimal virtual kernel and pressing install Ubuntu Server.</p>
-<h3>Test2</h3>
+<h3 id="test2">Test2</h3>
 <p>Increased RAM to 96MB and now it passed. However, after selecting keyboard it still crashes. So 96 is also too little.</p>
 <p>Googled around a little and found an <a href="https://help.ubuntu.com/community/Installation/LowMemorySystems" title="ubuntu install lowmemsystems">article on Ubuntu.com</a> that gives some insight.</p>
 <p>For example: if you run out of memory, then it will swap. So if you are not running out of memory then it's probably better to give it a little more to be on the safe side.</p>
-<h3>Test 3</h3>
+<h3 id="test-3">Test 3</h3>
 <p>Increased RAM to 128MB Now it goes even longer.</p>
 <p>Partitioning -&gt; chose manual. There is a device there 'sda' -&gt; SCSI3. Mark that and hit enter. Say yes to create new empty partition. Then it creates a new space pri/log. Create new partition.</p>
 <p>As size, type in: 100MB Primary, beginning, default settings on the filesystem etc but mount point: /var/log. Then done setting up this partition.</p>
@@ -62,7 +62,7 @@
 <p>Hit Alt+F2 (and then enter to get the console) and then df -h. Nothing is over 20% except the SR0/cd-rom which is at 100%. Did a 'more /var/log/syslog' and at the end there are some 'Out of memory' things going on.</p>
 <p>So there we go. 128MB is too little.</p>
 <p>But <a href="https://help.ubuntu.com/community/Installation/SystemRequirements#Ubuntu%20Server%20%28CLI%29%20Installation" title="ubuntu install reqs">here</a>:  it says that 128MB is the requirement..</p>
-<h3>Test 4</h3>
+<h3 id="test-4">Test 4</h3>
 <p>I will try to install again and not mess up with the partitions. 1.2GB and 128MB again. Going pretty well, looks like it's stopped at 75% and "storing language". Patience. Ok, 10mins later still there. Nothing about out of memory in /var/syslog. The Guest was behaving a little slow though when working the console. Left it on over night and when I looked again the following day it was at the next step!</p>
 <p>Installing openssh via the installation menu this time. Taking quite long time this time as well. Like hours. 2 hours now. Nothing happening in syslog. Think I'll give Debian a shot next Test.</p>
 <p>In the meantime did Test 5. However 4 hours later, still configuring 'language-pack-en-base'.</p>
@@ -71,7 +71,7 @@
 <p>user@irssi:~$ df -h Filesystem            Size  Used Avail Use% Mounted on /dev/sda1             1.1G  430M  606M  42% / none                   54M  164K   54M   1% /dev none                   57M  4.0K   57M   1% /dev/shm none                   57M   36K   57M   1% /var/run none                   57M     0   57M   0% /var/lock none                  1.1G  430M  606M  42% /var/lib/ureadahead/debugfs /home/martbhell/.Private 1.1G  430M  606M  42% /home/martbhell</p>
 <p>And the size of the folder in Windows: 750 MB (787 341 312 bytes)</p>
 <p>With 128MB ram there is maybe 10MB free and it swaps a little (just a few kB so far).</p>
-<h3>Test 5</h3>
+<h3 id="test-5">Test 5</h3>
 <p>debian-6.0.0-amd64-netinst Using Debian 5 64-bit.</p>
 <ol>
 <li>graphical menu is seen, no advanced options used</li>
@@ -86,7 +86,7 @@
 </ol>
 <p>Internet works fine from the start. apt-get update; apt-get install irssi Remember, here you have to log in as root to run ifconfig or apt-get.</p>
 <p>It's the same way in Debian as in Ubuntu to set static ip. Just edit /etc/network/interfaces / don't forget you can just restart the networking services by '/etc/init.d/networking start' instead of rebooting ;) Now, I actually forgot to set minimal ram/disk for this one. So we have to do this again ;)</p>
-<h3>Test 6</h3>
+<h3 id="test-6">Test 6</h3>
 <p>debian-6.0.0-amd64-netinst Using Debian 5 64-bit. 128MB RAM</p>
 <p>One thing that's cool about a VM is that you can resize the amount of RAM whenever (probably good to turn off the guest first). So how about just lowering it instead of installing a new one?</p>
 <p>OK, so it now has 512MB. Going down to 64 in one go (listed as minimum in VMWare Workstation).</p>
@@ -97,7 +97,7 @@
 <p>What I might be able to get rid of is rsyslogd and cron. But then again, if I were to connect this to the internet so I could access it and resume the screen/irssi from anywhere, I would want to keep track of what is happening on the machine.</p>
 <p>user@debian:/var/log$ df -h Filesystem            Size  Used Avail Use% Mounted on /dev/sda1             3.8G  638M  3.0G  18% / tmpfs                  28M     0   28M   0% /lib/init/rw udev                   23M  140K   23M   1% /dev tmpfs                  28M     0   28M   0% /dev/shm</p>
 <p>Windows usage: 887 MB (930 816 000 bytes)</p>
-<h3>Summary</h3>
+<h3 id="summary">Summary</h3>
 <p>The Ubuntu Server 10.10 with the minimal virtual kernel took forever to install (maybe it would have been faster to have more mem during install and then lower when it's done) and with 128MB it still swaps a little with only screen and irssi running. But it does use about 130MB or 200MB less space than the Debian6 guest.</p>
 <p>The Debian 6 however runs OK with 64MB, swaps a little at that though so I would probably run this with 96 or 128MB just to be on the safe side if I were to run it.</p>                </article>
             </aside><!-- /#featured -->

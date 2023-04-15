@@ -36,14 +36,14 @@
 <p>My goal would be to make /etc/resolv.conf identical between all the machines.</p>
 <p>The server setup is the lustre cluster we built in a previous post.</p>
 <p>In this post you'll first see two attempts at getting cfengine and then puppet to do my bidding until success was finally accomplished with <a href="http://www.guldmyr.com/blog/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt/#salt">salt</a>.</p>
-<h1>Cfengine</h1>
+<h1 id="cfengine">Cfengine</h1>
 <p>Set up name resolution to be identical on all machines.</p>
 <p>http://blog.normation.com/2011/03/21/why-we-use-cfengine-file-editing/</p>
 <p>Thought about</p>
 <p>Make oss1 and client1 not get the same promises.</p>
 <p>Perhaps some kind of rule / IF-statement in the promise?</p>
 <p>Cfengine feels archaic. Think editing named/bind configs are complicated? They are not even close to setting up basic promises in cfengine.</p>
-<h1>Puppet -&gt;</h1>
+<h1 id="puppet-">Puppet -&gt;</h1>
 <p>http://puppetlabs.com/</p>
 <p>http://www.how2centos.com/centos-6-puppet-install/</p>
 <p>vi /etc/yum.repos.d/puppet.repo
@@ -58,7 +58,7 @@ sudo puppet cert sign --all</p>
 <p>set mysqld password</p>
 <p>create databases (as in the database.yml file)</p>
 <p>after this I didn't get much further... But I did get the web-server up. Although it was quite empty...</p>
-<h1>salt</h1>
+<h1 id="salt">salt</h1>
 <p><a href="http://docs.saltstack.org/en/latest/topics/installation/fedora.html" title="http://docs.saltstack.org/en/latest/topics/installation/fedora.html">Easy startup instructions</a> here for getting a parallel shell going:</p>
 <p>After it's set up you can run a bunch of built-in special commands, see the <a href="http://docs.saltstack.com/en/latest/#salt-in-depth" title="http://docs.saltstack.com/en/latest/#salt-in-depth">help section about modules</a>.</p>
 <p>salt '*' sys.doc|less</p>
@@ -134,7 +134,7 @@ sudo puppet cert sign --all</p>
 </footer><!-- /.post-info -->                <p>This is how to create simple RRD graphs using one data source that can be 0 and above. It is not an "ever increasing" counter.</p>
 <p>It will look like this:</p>
 <p><a href="http://www.guldmyr.com/blog/wp-content/uploads/movers.png"><img alt="example rrd graph" src="images/movers-300x96.png" title="movers"></a></p>
-<h2>1. Create the rrd database</h2>
+<h2 id="1-create-the-rrd-database">1. Create the rrd database</h2>
 <p>I wrote this down in a .sh file so I can go back later and …</p>
                 <a class="readmore" href="/simple-rrd-graphs.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -231,7 +231,7 @@ sudo puppet cert sign --all</p>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/admin.html">admin</a> <a href="/tag/accounts.html">accounts</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/database.html">database</a> <a href="/tag/settings.html">settings</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/script.html">script</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/web.html">web</a> <a href="/tag/server.html">server</a> <a href="/tag/apache.html">apache</a> </p>
 </footer><!-- /.post-info -->                <p>Time for another go!</p>
-<h3>Drupal is ..</h3>
+<h3 id="drupal-is">Drupal is ..</h3>
 <p>.. a pretty famous and widely used CMS out there - so here we go -&gt;</p>
 <p>1. Get sudo <a href="http://wiki.debian.org/sudo" title="configure sudo">configured</a> on debian. Sucks to have to log on as root all the time when installing apps etc.</p>
 <p>2. <a href="http://drupal.org/project/drupal" title="drupal">Download</a> and untar drupal 7</p>

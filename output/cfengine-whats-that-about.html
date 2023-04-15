@@ -43,18 +43,18 @@
 <p>Let's use the <a href="http://www.guldmyr.com/blog/setup-a-3-node-lustre-filesystem/" title="Setup a 3 Node Lustre Filesystem">lustre</a>   machines we set up in a previous post.</p>
 <p>On cfengine.com there are many examples too.</p>
 <p>Inside a policy you have a promise.</p>
-<h3>Install</h3>
+<h3 id="install">Install</h3>
 <p>Installing on an RPM-based distribution is easy, cfengine has their own repository where the community edition is available.</p>
 <p><a href="http://cfengine.com/cfengine-linux-distros" title="http://cfengine.com/cfengine-linux-distros">http://cfengine.com/cfengine-linux-distros</a></p>
 <p>Get the gpg-key, import it, set up the repository-file and install "cfengine-community".</p>
 <p>Check if "cfengine3" is set to start on boot.</p>
-<h3>Test</h3>
+<h3 id="test">Test</h3>
 <p>A small example how to write a promise.</p>
 <ul>
 <li>"cf-promise -f " can be used to test that a promise is valid (syntax and more is OK)</li>
 <li>"cf-agent -f" run the promise, so if we use the example in the link above it echoes a Hello World.</li>
 </ul>
-<h3>Client/Server</h3>
+<h3 id="clientserver">Client/Server</h3>
 <p>Client pulls policies from the server.</p>
 <p>policy-server: mds - 192.168.0.2 client1: client1 - 192.168.0.4 client2: oss1 - 192.168.0.3</p>
 <p>on the policy-server hit: "/var/cfengine/bin/cf-agent --bootstrap --policy-server 192.168.0.2"</p>
@@ -83,9 +83,9 @@
 <p>After that you can run "cf-agent -Kv" on the client, and it will do what is promised in the cftest1.cf file!</p>
 <p>Try to change ownership/permissions on the file, in a while it will have been changed back :)</p>
 <p>In /var/cfengine/promise_summary.log you'll see if it couldn't keep a promise and if it corrected the mistake.</p>
-<h3>Distribute it</h3>
+<h3 id="distribute-it">Distribute it</h3>
 <p>And to get oss1 the same file. Just run the good old "/var/cfengine/bin/cf-agent --bootstrap --policy-server 192.168.0.2" on it and eventually that file /tmp will pop up in there too. Nice!</p>
-<h3>Some useful stuff.</h3>
+<h3 id="some-useful-stuff">Some useful stuff.</h3>
 <p>I'll probably try out some more useful things in the near future.</p>
 <p>Streamline resolv.conf settings, ip routes, config files for software like to make sure /etc/dcache/dcache.conf is the same on all pool servers or why not a kind of user database? Like for /etc/passwd? Check out the solutions on cfengine.com!</p>
     </div><!-- /.entry-content -->

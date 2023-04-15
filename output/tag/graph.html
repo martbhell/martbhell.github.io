@@ -35,13 +35,13 @@
 </footer><!-- /.post-info --><p>This is how to create simple RRD graphs using one data source that can be 0 and above. It is not an "ever increasing" counter.</p>
 <p>It will look like this:</p>
 <p><a href="http://www.guldmyr.com/blog/wp-content/uploads/movers.png"><img alt="example rrd graph" src="images/movers-300x96.png" title="movers"></a></p>
-<h2>1. Create the rrd database</h2>
+<h2 id="1-create-the-rrd-database">1. Create the rrd database</h2>
 <p>I wrote this down in a .sh file so I can go back later and see how it was set up.</p>
-<h1>!/bin/sh rrdfile='/home/$user/rrd/movers.rrd' rrdtool='/usr/bin/rrdtool' $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460</h1>
-<h1>5 minute step (base interval with which data will be fed into the RRD) #10 minute heartbeat for the data source #2 days of 5 minute averages #2 weeks of 1/2 hour averages #2 months of 2 hour averages #2 years of 12 hour averages</h1>
-<h2>2 Add data to the rrd</h2>
+<h1 id="binsh-rrdfilehomeuserrrdmoversrrd-rrdtoolusrbinrrdtool-rrdtool-create-rrdfile-step-300-dsmoversgauge600uu-rraaverage051576-rraaverage056672-rraaverage0524732-rraaverage051441460">!/bin/sh rrdfile='/home/$user/rrd/movers.rrd' rrdtool='/usr/bin/rrdtool' $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460</h1>
+<h1 id="5-minute-step-base-interval-with-which-data-will-be-fed-into-the-rrd-10-minute-heartbeat-for-the-data-source-2-days-of-5-minute-averages-2-weeks-of-12-hour-averages-2-months-of-2-hour-averages-2-years-of-12-hour-averages">5 minute step (base interval with which data will be fed into the RRD) #10 minute heartbeat for the data source #2 days of 5 minute averages #2 weeks of 1/2 hour averages #2 months of 2 hour averages #2 years of 12 hour averages</h1>
+<h2 id="2-add-data-to-the-rrd">2 Add data to the rrd</h2>
 <p>Also done in a bash script. Because the --step above is set to 300, you need to run this script every 300 seconds (or every 5 minutes). The script specified in $allpools prints the path to a file. Then with $output and $movers that file is grepped for 'RUNNING' and then it counts how many lines that was - amount of movers.</p>
-<h1>!/bin/sh</h1>
+<h1 id="binsh">!/bin/sh</h1>
 <p>rrdfile='/home/$user/rrd/movers.rrd'
 rrdtool='/usr/bin/rrdtool'</p>
 <p>allpools='/home/$user/bash_script.sh'
@@ -49,9 +49,9 @@ output=$($allpools)
 movers=$(grep RUNNING $output|wc -l)</p>
 <p>$rrdtool update $rrdfile N:$movers</p>
 <p>The N: is NOW. $movers is the value you want to plot.</p>
-<h2>3. Make a graph</h2>
+<h2 id="3-make-a-graph">3. Make a graph</h2>
 <p>Add this to another .sh script. This you can run at whatever interval you want.</p>
-<h1>!/bin/sh</h1>
+<h1 id="binsh_1">!/bin/sh</h1>
 <p>rrdfile='movers.rrd'
 rrdtool='/usr/bin/rrdtool'
 dpath="/var/www/html/graphs/movers"
@@ -62,15 +62,15 @@ last4hoursimage="$dpath/moversl4h.png"
 last3monthsimage="$dpath/moversl3m.png"
 lastday="$dpath/moversld.png"
 enddate=$(date +%s)</p>
-<h1>enddate is the same as "now"</h1>
+<h1 id="enddate-is-the-same-as-now">enddate is the same as "now"</h1>
 <p>cd /home/$user/rrd</p>
 <p>$rrdtool graph $alltimeimage --end now --start 1321603000 \
         -v from_beginning -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
-<h1>rrdtool graph /path/to/image.png --end now --start when_I_started_capturing -v label_left -t title_top \</h1>
-<h1>DEF: as I only have one I only used movers, maybe you can change the names in case you have several data sources</h1>
-<h1>DEF: you can also use other things than AVERAGE (like MIN/MAX)</h1>
-<h1>LINE: #000000 is black</h1>
+<h1 id="rrdtool-graph-pathtoimagepng-end-now-start-when_i_started_capturing-v-label_left-t-title_top">rrdtool graph /path/to/image.png --end now --start when_I_started_capturing -v label_left -t title_top \</h1>
+<h1 id="def-as-i-only-have-one-i-only-used-movers-maybe-you-can-change-the-names-in-case-you-have-several-data-sources">DEF: as I only have one I only used movers, maybe you can change the names in case you have several data sources</h1>
+<h1 id="def-you-can-also-use-other-things-than-average-like-minmax">DEF: you can also use other things than AVERAGE (like MIN/MAX)</h1>
+<h1 id="line-000000-is-black">LINE: #000000 is black</h1>
 <p>$rrdtool graph $lastweekimage --start -1w \
         -v last_week -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000 \
@@ -79,8 +79,8 @@ enddate=$(date +%s)</p>
         GPRINT:movers:MAX:"Max\: %1.0lf" \
         GPRINT:movers:MIN:"Min\: %1.0lf" \
         GPRINT:movers:AVERAGE:"Avg\: %1.0lf"</p>
-<h1>If you want to make it a little more complex. AREA fills the space between the value and the x-axis.</h1>
-<h1>GPRINT statements print some values relating to the graph.</h1>
+<h1 id="if-you-want-to-make-it-a-little-more-complex-area-fills-the-space-between-the-value-and-the-x-axis">If you want to make it a little more complex. AREA fills the space between the value and the x-axis.</h1>
+<h1 id="gprint-statements-print-some-values-relating-to-the-graph">GPRINT statements print some values relating to the graph.</h1>
 <p>$rrdtool graph $last4hoursimage --end now --start end-4h \
         -v last_4_hours -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
@@ -93,9 +93,9 @@ enddate=$(date +%s)</p>
 <p>$rrdtool graph $lastday --end now --start -1d \
         -v last_day -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
-<h2>4. Crontab - scheduling</h2>
+<h2 id="4-crontab-scheduling">4. Crontab - scheduling</h2>
 <p>*/5 * * * * /bin/bash /home/$user/rrd/rrd.update.sh &gt; /dev/null 2&gt;&amp;1 #every 5 minutes */15 * * * * /bin/bash /home/$user/rrd/rrd.graph.sh &gt; /dev/null 2&gt;&amp;1 #every 15 minutes</p>
-<h2>5. Final Words</h2>
+<h2 id="5-final-words">5. Final Words</h2>
 <p>I am not providing the data gathering script here as you probably won't need it: it lists movers (transfers) on all pools in a dCache system.</p>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">

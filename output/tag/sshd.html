@@ -34,7 +34,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/openssh.html">openssh</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/sshd.html">sshd</a> <a href="/tag/studying.html">studying</a> <a href="/tag/tcp.html">tcp</a> <a href="/tag/wrapper.html">wrapper</a> </p>
 </footer><!-- /.post-info --><p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -54,7 +54,7 @@
 <li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
 <li>ntp</li>
 </ul>
-<h2>SSH:</h2>
+<h2 id="ssh">SSH:</h2>
 <p>To test from windows you can use putty.</p>
 <p>But in linux you just need ssh for client and sshd for server.</p>
 <p>man 5 sshd_config and <a href="http://www.aboutlinux.info/2005/10/using-tcp-wrappers-to-secure-linux.html" title="on aboutlinux.info">this blogpost</a> has an overview.</p>
@@ -96,7 +96,7 @@
 <p>tcp.wrapper</p>
 </li>
 </ul>
-<h3>TCP Wrapper</h3>
+<h3 id="tcp-wrapper">TCP Wrapper</h3>
 <p>More info in man tcpd and man 5 hosts_access</p>
 <p>Check that your daemon supports it:</p>
 <p>which sshd
@@ -115,7 +115,7 @@ sshd: ALL : twist /bin/echo DEATH</p>
 <p>If you add</p>
 <p>sshd: 192.168.1.</p>
 <p>you can log on from localhost to the public IP of the server.</p>
-<h2>Extra</h2>
+<h2 id="extra">Extra</h2>
 <ul>
 <li>
 <p>Configure key-based authentication.</p>

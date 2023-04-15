@@ -41,7 +41,7 @@
 </footer><!-- /.post-info -->      <p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
 <p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc. Hostnames set. /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.</p>
 <p>With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use the latest branch for 2.5 so the instructions are <a href="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821" title="https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821">https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821</a></p>
-<h2>Server side</h2>
+<h2 id="server-side">Server side</h2>
 <p><strong>MDT/OST:</strong> Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).</p>
 <p>yum localinstall all files from: http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/</p>
 <p>Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next boot: <a href="https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel">https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel</a></p>
@@ -64,7 +64,7 @@
 <p>modprobe lnet lctl network up # lctl list_nids</p>
 <p>creating MDT: mkfs.lustre --mdt --mgs --index=0 --fsname=wrk /dev/vdc1 mounting MDT: mkdir /mnt/MDT; mount.lustre /dev/vdc1 /mnt/MDT</p>
 <p>creating OST: mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1 mounting OST: mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1</p>
-<h2>Client Side</h2>
+<h2 id="client-side">Client Side</h2>
 <p>rpmbuild --rebuild --without servers</p>
 <p>cd /root/rpmbuild/RPMS/x86_64 rpm -Uvh lustre-client*</p>
 <p>add modprobe.d/lustre.conf modprobe lnet lctl network up lctl list_nids</p>

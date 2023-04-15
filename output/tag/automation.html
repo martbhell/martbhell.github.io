@@ -36,14 +36,14 @@
 <p>My goal would be to make /etc/resolv.conf identical between all the machines.</p>
 <p>The server setup is the lustre cluster we built in a previous post.</p>
 <p>In this post you'll first see two attempts at getting cfengine and then puppet to do my bidding until success was finally accomplished with <a href="http://www.guldmyr.com/blog/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt/#salt">salt</a>.</p>
-<h1>Cfengine</h1>
+<h1 id="cfengine">Cfengine</h1>
 <p>Set up name resolution to be identical on all machines.</p>
 <p>http://blog.normation.com/2011/03/21/why-we-use-cfengine-file-editing/</p>
 <p>Thought about</p>
 <p>Make oss1 and client1 not get the same promises.</p>
 <p>Perhaps some kind of rule / IF-statement in the promise?</p>
 <p>Cfengine feels archaic. Think editing named/bind configs are complicated? They are not even close to setting up basic promises in cfengine.</p>
-<h1>Puppet -&gt;</h1>
+<h1 id="puppet-">Puppet -&gt;</h1>
 <p>http://puppetlabs.com/</p>
 <p>http://www.how2centos.com/centos-6-puppet-install/</p>
 <p>vi /etc/yum.repos.d/puppet.repo
@@ -58,7 +58,7 @@ sudo puppet cert sign --all</p>
 <p>set mysqld password</p>
 <p>create databases (as in the database.yml file)</p>
 <p>after this I didn't get much further... But I did get the web-server up. Although it was quite empty...</p>
-<h1>salt</h1>
+<h1 id="salt">salt</h1>
 <p><a href="http://docs.saltstack.org/en/latest/topics/installation/fedora.html" title="http://docs.saltstack.org/en/latest/topics/installation/fedora.html">Easy startup instructions</a> here for getting a parallel shell going:</p>
 <p>After it's set up you can run a bunch of built-in special commands, see the <a href="http://docs.saltstack.com/en/latest/#salt-in-depth" title="http://docs.saltstack.com/en/latest/#salt-in-depth">help section about modules</a>.</p>
 <p>salt '*' sys.doc|less</p>

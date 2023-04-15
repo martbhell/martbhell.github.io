@@ -37,15 +37,15 @@
 <p>A person from the UK said yesterday (in the pub Ratkeller) something like this: <em>"A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one if their life depended on it. These are the people we provide IT for."</em></p>
 <p>So no wonder that their IT systems/infrastructure is a little bit complex too!</p>
 <p>Today's topics are: Site Reports, IT Infrastructure (Drupal, Indico, Invenio, Fair 3D cube) and Computing(OpenMP, CMS and Batch nodes).</p>
-<h3>Site reports</h3>
+<h3 id="site-reports">Site reports</h3>
 <p>Some of these institutions have a <a href="http://en.wikipedia.org/wiki/Synchrotron" title="on wikipedia">synchrotron</a> which is a cyclic particle accelerator - looks quite cool on the pictures. Some use <a href="http://en.wikipedia.org/wiki/Cfengine" title="on wikipedia">cfengine</a> for managing the clusters - as in they want to avoid logging on to each node and doing configuration but instead do it from a tool. One such tool that is quite common (<a href="http://en.wikipedia.org/wiki/Puppet_(software)" title="on wikipedia">Puppet</a>) can also be used for Desktops.</p>
 <p>Not many use HP storage stuff, <a href="http://www.datadirectnet.com/" title="datadirect.com">DDN</a> is quite common. <a href="http://www.nexsan.com/" title="nexsan.com">Nexsan</a>, <a href="http://bluearc.com/" title=".com">bluearc</a></p>
 <p>One site had big problems with their Dell servers - caused by misapplied cooling paste on the CPUs - Dell replaced 90% of the heatsinks and fixed this.</p>
 <p>One also had disk failures during high load.They ran the <a href="https://twiki.cern.ch/twiki/bin/view/FIOgroup/TsiBenchHEPSPECWlcg" title="on cern wiki">HS06</a> – Hep Spec 06 – test and while running that disks dropped off.Disk failures traced to anomalously high cooling fan vibration. After replacing all components, and then moving fans to another machine, they saw the error.</p>
-<h3>IT Infrastructure</h3>
+<h3 id="it-infrastructure">IT Infrastructure</h3>
 <p>CERN is working on moving to Drupal for their web sites. Investigating Varnish (good for ddos, caching and load balancing). Drupal is hard to learn.</p>
 <p>Then there were some sessions about programming - CMS 64-bit and OpenMP. One thought here: is it possible to discern the properties of an Intel/AMD CPU based on the name? Like E5530? Maybe <a href="http://www.intel.com/products/processor_number/" title="on intel.com">this link</a> on intel.com can be of some assistance.</p>
-<h4>Fair 3D Tier-0 Green-IT Cube</h4>
+<h4 id="fair-3d-tier-0-green-it-cube">Fair 3D Tier-0 Green-IT Cube</h4>
 <p>Quite cool concept(patented) that they are very soon starting to build here in Germany. Using water vaporization with outside air (and fans in summer) to cool the air, and also water based heat exchangers in each rack to push warm air (by pressure built up by fans, so the racks needs to be quite air tight) from the back of the servers through the heat exchanger that cools the air, and then pushes it over the aisle to the next row of racks. They managed to get down to a PUE of 1.062 at best.</p>
 <p>Next Days: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-5/" title="day5">Day 5</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-4/" title="day4">Day 4</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-3/" title="day3">Day 3</a></p>
 <p><a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/" title="day2"></a></p>
@@ -99,7 +99,7 @@
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/admin.html">admin</a> <a href="/tag/accounts.html">accounts</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/database.html">database</a> <a href="/tag/settings.html">settings</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/script.html">script</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/web.html">web</a> <a href="/tag/server.html">server</a> <a href="/tag/apache.html">apache</a> </p>
 </footer><!-- /.post-info -->                <p>Time for another go!</p>
-<h3>Drupal is ..</h3>
+<h3 id="drupal-is">Drupal is ..</h3>
 <p>.. a pretty famous and widely used CMS out there - so here we go -&gt;</p>
 <p>1. Get sudo <a href="http://wiki.debian.org/sudo" title="configure sudo">configured</a> on debian. Sucks to have to log on as root all the time when installing apps etc.</p>
 <p>2. <a href="http://drupal.org/project/drupal" title="drupal">Download</a> and untar drupal 7</p>

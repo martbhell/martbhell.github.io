@@ -32,7 +32,7 @@
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/ctf.html">ctf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/python.html">python</a> <a href="/tag/programming.html">programming</a> <a href="/tag/language.html">language</a> <a href="/tag/security.html">security</a> <a href="/tag/sudo.html">sudo</a> <a href="/tag/trail.html">trail</a> <a href="/tag/of.html">of</a> <a href="/tag/tears.html">tears</a> </p>
-</footer><!-- /.post-info --><h2>The challenges!</h2>
+</footer><!-- /.post-info --><h2 id="the-challenges">The challenges!</h2>
 <p>Hoe the season to be jolly! Been giving a few <a href="https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation)">CTFs</a>  lately. It started with the disobey 2020 <a href="https://disobey2020.github.io/">puzzle</a> to get the hacker ticket. Then there was the <a href="https://overthewire.org/">OverTheWire</a>'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - <a href="https://holidayhackchallenge.com/2019/">KringleCon</a> 2019. As of writing I got what felt like quite far in the disobey but got real nice stuck in the second keyhole. For OTF I found a similar but slightly easier challenge on the 6th day December, but did not manage to get the key. Most others except the first and challenge-zero I didn't really have time for. So with not so much progress it was very nice to take a step back and try out KringleCon where I managed to get a bit further!</p>
 <p>[su_accordion] [su_spoiler title="TLDR"]</p>
 <p>Short tldr of methods to answers to the objectives</p>
@@ -52,7 +52,7 @@
 <li>filter out poisoned: ugh this one was tedious. Actually this and previous I did spend some time trying to learn them, but in the end found a write-up that was published too early (and later removed but still in google cache..)
 [/su_spoiler] [/su_accordion]</li>
 </ol>
-<h2>Getting on with it!</h2>
+<h2 id="getting-on-with-it">Getting on with it!</h2>
 <ul>
 <li>The pdf deobfuscate I could do on my phone in termux just a pkg install pdftotext :)</li>
 <li>The nyancat took a bit of more time than I should admit, but primarily I forgot how sudo works and what sudo -u does..</li>
@@ -90,7 +90,7 @@
 </code></pre></div>
 
 <p>You'll need to hit CTRL+C when it doesn't find any more solutions. It's not the fastest, has unused bits and I don't know why it has the for digit in range(1) bit.</p>
-<h2>On to the next challenge!:</h2>
+<h2 id="on-to-the-next-challenge">On to the next challenge!:</h2>
 <ul>
 <li>The windows events log file I just opened the file on a Windows machine and looked around</li>
 <li>The sysmon file I printed some interesting keys in the json strings with a tiny python script</li>
@@ -112,7 +112,7 @@
 <li>For the greylog just clicked around. I liked the "quick table" feature and that got me some of the questions fairly quickly without having to write more narrow searches. Quite a few steps needed for this so took some time. It was nice to get to compare greylog and splunk, I've only used a vanilla ELK stack before and last version 5. With that in mind the discover data was for me a bit easier on greylog.</li>
 <li>Trail of tears I just beat the game on easy :) (<em>/edit turns</em> one can solve this on hard</li>
 </ul>
-<h2>Next one was a powershell one! The laser adjuster :P</h2>
+<h2 id="next-one-was-a-powershell-one-the-laser-adjuster-p">Next one was a powershell one! The laser adjuster :P</h2>
 <p>Finally got to get a bit familiar with powershell. I'm a lurker on <a href="https://www.reddit.com/r/sysadmin/">r/sysadmin</a> and very often there are powershell oneliners on display there. This was quite a fun one to be honest :) Kind of like using python directly in the shell.</p>
 <p>Some things I learnt were:</p>
 <ul>
@@ -150,7 +150,7 @@
 <span class="o">(</span><span class="nt">Invoke-WebRequest</span><span class="w"> </span><span class="nt">-Uri</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">localhost</span><span class="p">:</span><span class="nd">1225</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">output</span><span class="o">)</span><span class="p">.</span><span class="nc">RawContent</span>
 </code></pre></div>
 
-<h2>iptables</h2>
+<h2 id="iptables">iptables</h2>
 <ul>
 <li>Iptables/ smart bracelet one: think I was close or did complete this but Kent did not agree? Went back and tried this again slowly by first writing the commands in a text file</li>
 </ul>
@@ -185,7 +185,7 @@ Kent TinselTooth: Great, you hardened my IOT Smart Braces firewall!
 <ul>
 <li><em>Sled Route API : Got the login. Next to figure out which requests were bad and how to fill in 100 on the web page... Maybe one can figure out the firewall API? Hmm played a bit with elasticsearch.. then gave up.. in the meantime went ahead to:</em></li>
 </ul>
-<h2>Sleigh Shop Door</h2>
+<h2 id="sleigh-shop-door">Sleigh Shop Door</h2>
 <ul>
 <li>Ah this isfun! While poking through the web source after fixing the smartbracelet found the URL to the sleigh shop in teh source. It had a bunch of locks.</li>
 </ul>
@@ -288,7 +288,7 @@ You opened the chest in 150.151 seconds
 <ul>
 <li>Next one I managed was the key bitting one to get into the Steam Tunnels! There was a good talk on this topic with a link to <a href="https://github.com/deviantollam/decoding">https://github.com/deviantollam/decoding</a> and then just used that and tried maybe 5 keys before finding the right now. GIMP is not my specialty but the decoders helped a bit. The image of the key was not discoverable until one got into the Sleigh Shop.</li>
 </ul>
-<h2>Image AI</h2>
+<h2 id="image-ai">Image AI</h2>
 <p>And then we get to the CAPTCHA + tensorflow madness! This was real fun, haven't had to do much with tensorflow before. Did not have to read much at all about tensorflow to get this going, could basically just glue together the provided python scripts.</p>
 <p>Another very good kringlecon talk on this topic: <a href="https://www.youtube.com/watch?v=jmVPLwjm_zs&amp;feature=youtu.be">https://www.youtube.com/watch?v=jmVPLwjm_zs&amp;feature=youtu.be</a> led to a github repo. Some other code and training images were found as soon as one got far enough into the Steam Tunnels. I managed to after not too much googling get the python script to store the images in teh CAPTEHA in a directory and then run the predict tensorflow python script on the github repo against it. It was however too slow. Fortunately I had access to a machine with lots of cores so moving all the data there and re-running the python got it working for me. 2 oversubscribed cores and 2GB RAM was too little. 80 dedicated single server skylake cores and 356GB RAM completed it much faster. There were messages about tensorflow from pip not having been compiled with all the things enabled. I could I suppose also have tried this with a GPU :) And the PYTHON:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
@@ -480,7 +480,7 @@ You opened the chest in 150.151 seconds
     <span class="n">main</span><span class="p">()</span>
 </code></pre></div>
 
-<h2>NEEEXT! Student Body finding some scrap papers objective 9</h2>
+<h2 id="neeext-student-body-finding-some-scrap-papers-objective-9">NEEEXT! Student Body finding some scrap papers objective 9</h2>
 <ul>
 <li>Got some hints in the game talking about sqlmap. Let's play with that and learn about <a href="https://www.owasp.org/index.php/Testing_for_SQL_Injection_(OTG-INPVAL-005)">SQL injections</a> :)<ul>
 <li>Started by looking at the page and reading the source code. Identified two forms on two pages that looked interesting.</li>
@@ -540,7 +540,7 @@ sqlmap<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quo
 </code></pre></div>
 
 <p>Now then that looks like an OS path, need to run a shell command.. but on a whim tried <a href="https://studentportal.elfu.org/krampus/">https://studentportal.elfu.org/krampus/</a> and yay found them there. Fired up good old GIMP and learnt about the rotate tool :P Yay, <strong>one</strong> more objective!</p>
-<h2>Remaining are reversing some crypto windows executable and the ban the IPs in the firewall for the route API</h2>
+<h2 id="remaining-are-reversing-some-crypto-windows-executable-and-the-ban-the-ips-in-the-firewall-for-the-route-api">Remaining are reversing some crypto windows executable and the ban the IPs in the firewall for the route API</h2>
 <p>Crypto then. Hint is <a href="https://www.youtube.com/watch?v=obJdpKDpFBA&amp;feature=youtu.be">https://www.youtube.com/watch?v=obJdpKDpFBA&amp;feature=youtu.be</a> &gt; <a href="https://github.com/CounterHack/reversing-crypto-talk-public">https://github.com/CounterHack/reversing-crypto-talk-public</a></p>
 <p>Running an encryption tells us it uses unix epoch as a seed and a hint to the challenge was " We know that it was encrypted on December 6, 2019, between 7pm and 9pm UTC. " This is from <strong>1575658800 to 1575666000</strong> . There are some super_secure_random and super_secure_srand functions found with IDA freeware. Probably they are not super. <a href="https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey">https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey</a> for example is one in use. I wonder what the difference with --insecure is? One error talks about <a href="https://crypto.stackexchange.com/questions/62771/is-des-secure-under-cbc">DES-CBC</a> which internet says is insecure. It uses 56-bits and 8bytes. Stack of do_encrypt also says "dd 8" so yay?</p>
 <div class="highlight"><pre><span></span><code><span class="mf">00000000</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="err">[</span><span class="mf">00000008</span><span class="w"> </span><span class="n">BYTES</span><span class="mf">.</span><span class="w"> </span><span class="n">COLLAPSED</span><span class="w"> </span><span class="n">UNION</span><span class="w">  </span><span class="n">_LARGE_INTEGER</span><span class="mf">.</span><span class="w"> </span><span class="n">PRESS</span><span class="w"> </span><span class="n">CTRL</span><span class="o">-</span><span class="n">NUMPAD</span><span class="o">+</span><span class="w"> </span><span class="kr">TO</span><span class="w"> </span><span class="nb">EXP</span><span class="ow">AND</span><span class="err">]</span>
@@ -575,7 +575,7 @@ $<span class="w"> </span>curl<span class="w"> </span>-XPOST<span class="w"> </sp
 </code></pre></div>
 
 <p>Actually what might be doable with just the key is to: setup my own API server that just returns the key.. <em>Change the address in the binary or finally use BURP or local DNS override?</em> Still need to figure out the key :))</p>
-<h2>Let's try to read the do_encrypt again</h2>
+<h2 id="lets-try-to-read-the-do_encrypt-again">Let's try to read the do_encrypt again</h2>
 <ol>
 <li>call read_file</li>
 <li>set some crypto vars</li>
@@ -608,7 +608,7 @@ $<span class="w"> </span>curl<span class="w"> </span>-XPOST<span class="w"> </sp
 <em>something with seed.. really unsure</em></p>
 <p>super_secure_srandom does:<br>
 this is doing the rseed, sar, and</p>
-<h2>The Key Writer</h2>
+<h2 id="the-key-writer">The Key Writer</h2>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
 
 
@@ -707,7 +707,7 @@ this is doing the rseed, sar, and</p>
 </code></pre></div>
 
 <p>Then to get the key was just a pdf2txt and the 5 word sentence in the beginning of the document!</p>
-<h2>OK THE ZEEK/BRO Logs is the last one?</h2>
+<h2 id="ok-the-zeekbro-logs-is-the-last-one">OK THE ZEEK/BRO Logs is the last one?</h2>
 <p>The username was found in https://srf.elfu.org/README.md</p>
 <p>Started on this earlier but stopped because I wasn't feeling it and it was a bit tedious.<br>
 Plan: Make the queries programmatically. Also this time check sizes of requests maybe that's important. Also time when attacks happen could be useful?</p>
@@ -740,7 +740,7 @@ Plan: Make the queries programmatically. Also this time check sizes of requests 
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/adobe.html">adobe</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/evince.html">evince</a> <a href="/tag/exam.html">exam</a> <a href="/tag/foxit.html">foxit</a> <a href="/tag/foxitreader.html">foxitreader</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pdf.html">pdf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/study.html">study</a> <a href="/tag/material.html">material</a> </p>
 </footer><!-- /.post-info -->                <p><img alt="Brocade Logo" src="images/logo-brocade.gif" title="Brocade Logo"></p>
-<h2>The problematic PDF</h2>
+<h2 id="the-problematic-pdf">The problematic PDF</h2>
 <p>The CFP300 material on <strong><a href="http://community.brocade.com/docs/DOC-2041" title="linky">http://community.brocade.com/docs/DOC-2041</a></strong> is encrypted so that it cannot be printed/re-edited without a password.</p>
 <p>If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite …</p>
                 <a class="readmore" href="/reading-encryptedpassword-protected-pdf-on-linux.html">read more</a>

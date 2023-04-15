@@ -41,7 +41,7 @@
 </footer><!-- /.post-info -->      <p>FCR; Fibre Channel Routing; FC-FC Routing; etc; etc.</p>
 <p>This has many names. FC-FC Routing service provides FCR (fibre channel routing). Basically what it does is that it lets you zone devices in two separate fabrics without merging them. These two separate fabrics are called 'edge fabrics' in Brocade lingo, they are otherwise known as SAN islands. The edge fabric is connected to a backbone fabric (an FC router or at least an EX_Port).</p>
 <p>Integrated Routing - is a licensed feature that lets you run FCR on a port that is in a normal port in a normal switch or port blade (so not in a dedicated router switch or router blade).</p>
-<h2>There's a few things required to set up FCR:</h2>
+<h2 id="theres-a-few-things-required-to-set-up-fcr">There's a few things required to set up FCR:</h2>
 <ol>
 <li>Verify that you have the proper setup (required licenses/hardware)</li>
 <li>Assign backbone FIDs (<strong>switchdisable; fosConfig --disable fcr; fcrconfigure; fosconfig --enable; switchenable</strong>)</li>
@@ -54,12 +54,12 @@
 <li>Confirm that it's working (<strong>fcrfabricshow, switchshow, portcfgshow, portexport 7, portshow 7</strong>)</li>
 </ol>
 <p>So what you have to do is: assign FIDs, configure IFLs and LSAN zones. </p>
-<h2>A little theory</h2>
+<h2 id="a-little-theory">A little theory</h2>
 <p>Phantom domains.</p>
 <p><strong>Front domains</strong> -&gt; always there</p>
 <p><strong>Translate domains</strong> (also xlate domains...).  -&gt; only there when devices are online and zoned</p>
 <p>The FC router has a pool of wwns and proxy ids that it assigns to devices. Basically a host that wants to communicate with a target in another fabric communicates with a proxy WWN in its own fabric (so the FC router is like a middle man that passes frames back n forth).</p>
-<h2>A little more information</h2>
+<h2 id="a-little-more-information">A little more information</h2>
 <p>When a PLOGI, PDISC, ADISC frame arrives at the FC router, SID and DID are checked. If they are zoned in both SID and DID edge fabrics (islands), the frame is forwarded to DID. If not, only PLOGI is dropped; edge fabrics' zoning enforcement takes care of the rest.</p>
 <p>I found <a href="http://education.emc.com/main/common/documents/ks_articles/brocade_fibre_channel_routing.pdf" title="on emc.com and it's a pdf">this document</a> on EMC's webpage (it's from 2007 so a bit outdated and it has EMC's names of the Brocade products) but it explains the concept pretty nicely.</p>
 <p>Also, this post is for me to study for the BCFP, I find that I learn better when I write things down with a keyboard ;) There may be mistakes in here but that's just how it is, I tried to keep it as factual as possible and used several sources. There will most likely be more of these posts coming up.</p>

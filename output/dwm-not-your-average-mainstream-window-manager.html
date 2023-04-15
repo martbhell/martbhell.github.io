@@ -40,19 +40,19 @@
 <p>tags: <a href="/tag/dwm.html">dwm</a> <a href="/tag/gnome.html">gnome</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/window.html">window</a> <a href="/tag/manager.html">manager</a> </p>
 </footer><!-- /.post-info -->      <p>Have been playing around with a new window manager (new as in for me, I've only used fluxbox, kde and gnome before) called DWM - see more information on <a href="http://www.suckless.org" title="suckless.org">www.suckless.org.</a></p>
 <p>I'm running it on a T400 with RHEL6 (which uses gnome login manager - gde).</p>
-<h2>Basically:</h2>
+<h2 id="basically">Basically:</h2>
 <ol>
 <li>if you want to make a change like modify keyboard shortcuts, rules, tagging, top bar stuff, you need to <strong>edit config.h and then compile</strong> (make and then make install). Then you need to re-load dwm.</li>
 <li>after that is done, create a properly formatted file under /usr/share/xsession/</li>
 <li>then in the login manager you can chose dwm :)</li>
 </ol>
-<h2>Notes:</h2>
+<h2 id="notes">Notes:</h2>
 <ol>
 <li>install dmenu as well, it is neat. ALT+P, then type what you want to run, then hit enter. Also if you type in 'lock' it will find xlock etc.</li>
 <li>ALT+SHIFT+ENTER gives you the terminal, ALT+SHIFT+Q quits dwm and gets you back to the login manager.</li>
 <li>ALT is the default, can be modified to apple- or windows-key</li>
 </ol>
-<h2>My problems :</h2>
+<h2 id="my-problems">My problems :</h2>
 <ol>
 <li>re-load dwm can be done in several ways but I have not found one that works well for me. If you do like me and run dwm in a while loop the only way I've found out so far is to reboot the whole machine. Because I don't know how to log off the session and get back to the gdm login manager. I hope I do find a way around because rebooting kind of sucks ;)</li>
 <li>gnome-session-save --logout does not work -gave some kind of error</li>

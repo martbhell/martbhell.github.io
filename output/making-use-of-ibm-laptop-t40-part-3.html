@@ -38,7 +38,7 @@
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/hdd.html">hdd</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> <a href="/tag/ultimatebootcd.html">ultimatebootcd</a> </p>
-</footer><!-- /.post-info -->      <h3>Preface</h3>
+</footer><!-- /.post-info -->      <h3 id="preface">Preface</h3>
 <p>Two previous posts:</p>
 <p><a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/" title="PART1">Part1</a> - thoughts before installing <a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-2/" title="par2">Part2</a> - ultimate boot CD - for diagnostics</p>
 <p>I ran the laptop with google-chrome 10 and two flash-pages loading all night, no blue-screens, no errors in event viewer. No actually it looks and feels pretty ok. It's not very fast, but I suspect this is the hard drive being slow.</p>
@@ -46,9 +46,9 @@
 <p>Starting off easy with ubuntu-10.10-desktop-i386. The reason why I'm not trying the 11.04 is because I tried that in a VM the other day and it gave lots of errors. I also read some post about that 5/11 users managed to crash the Unity VM. So not stable :p</p>
 <p>If that works (maybe even just try live-cd? nah, that's chicken) then maybe later I will can try something else like:</p>
 <p>archlinux (which apparently requires setting up x-servers (required for graphical interface):</p>
-<h3>How to boot:</h3>
+<h3 id="how-to-boot">How to boot:</h3>
 <p>Put in CD, press F12 during boot, chose the ACPI CD0 entry.</p>
-<h3>The install:</h3>
+<h3 id="the-install">The install:</h3>
 <p>Ubuntu loading logo looks like crap during boot (green pixelation around it). However during the actual install it looks fine. It would be good to have an UTP cable so that you can have internet access during install (download updates to packages etc). I did not have a UTP cable so I will hope that the wireless works and that I can update after install. I like that while the CD is copying files, you get to set some settings:</p>
 <p>partition layout/hard disk layout, timezone, keyboard layout, username, passwords, computer name, home directory encryption,</p>
 <p>While setting up the computer name, the installer automagically found out that it is a Thinkpad T40 that I have!</p>

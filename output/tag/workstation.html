@@ -36,10 +36,10 @@
 <p>I actually started installing this on the 8th but I forgot to install it to hdd so the 'yum update' failed and broke the machine with I/O errors :)</p>
 <p>Installing it in a VMWare Workstation (fedora 64-bit type, 2, cores, 4G RAM, 20G disk).</p>
 <p><a href="http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day">http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day</a></p>
-<h1>Basic Setup</h1>
-<h2>1</h2>
+<h1 id="basic-setup">Basic Setup</h1>
+<h2 id="1">1</h2>
 <p><a href="http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages">http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages</a> - No problem.</p>
-<h2>2</h2>
+<h2 id="2">2</h2>
 <p><a href="http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova">http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova</a> -</p>
 <p>Says that if you are doing this in a VM you need to "configure nova to use qemu without KVM and hardware virtualization:". This is not true, as VMWare Workstation 8 has virtualization pass-through.</p>
 <p>[root@localhost mart]# vgcreate nova-volumes $(sudo losetup --show -f /var/lib/nova/nova-volumes.img)
@@ -57,18 +57,18 @@ Asking openstack-nova to sync the databse.
 <p>2012-03-09 07:28:28 WARNING nova.utils [-] /usr/lib/python2.7/site-packages/nova/db/sqlalchemy/migrate_repo/versions/081_drop_instance_id_bw_cache.py:40: SADeprecationWarning: useexisting is deprecated.  Use extend_existing.
   useexisting=True)</p>
 <p>Complete!</p>
-<h2>3</h2>
+<h2 id="3">3</h2>
 <p>[root@localhost nova]# ADMIN_PASSWORD=$OS_PASSWORD openstack-keystone-sample-data
 The default service password has been detected.  Please consider
 setting an actual password in environment variable SERVICE_PASSWORD</p>
 <p>But after that it generates users.</p>
-<h2>4</h2>
+<h2 id="4">4</h2>
 <p>No problems, should 'glance index' return anything at this stage?</p>
-<h2>5</h2>
+<h2 id="5">5</h2>
 <p>No problems.</p>
-<h2>6 Add SSH keypair</h2>
+<h2 id="6-add-ssh-keypair">6 Add SSH keypair</h2>
 <p>No problems, just do exactly what the instructions say (don't try to be smart and put them in .sh files for example :P).</p>
-<h2>7 Register Guest Images</h2>
+<h2 id="7-register-guest-images">7 Register Guest Images</h2>
 <p>At this point the wiki went down :/</p>
 <p>[root@localhost ~]# glance add name=f16 is_public=true disk_format=qcow2 container_format=ovf copy_from=http://berrange.fedorapeople.org/images/2012-02-29/f16-x86_64-openstack-sda.qcow2
 Failed to add image. Got error:
@@ -141,7 +141,7 @@ Details: 401 Unauthorized</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/dcache.html">dcache</a> <a href="/tag/esx.html">esx</a> <a href="/tag/esxi.html">esxi</a> <a href="/tag/grid.html">grid</a> <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/postgres.html">postgres</a> <a href="/tag/postgresql.html">postgresql</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h2>This is a test for installing openindiana and set up a working dCache test-vm.</h2>
+</footer><!-- /.post-info -->                <h2 id="this-is-a-test-for-installing-openindiana-and-set-up-a-working-dcache-test-vm">This is a test for installing openindiana and set up a working dCache test-vm.</h2>
 <p>dCache is a storage element of the Grid (scientific computing).</p>
 <p>OI == OpenIndiana. Kind of like opensolaris with an Illumos kernel, not the sun/oracle kernel.</p>
 <p>With <a href="http://www.guldmyr.com/blog/esxi-vmware-workstation/" title="http://www.guldmyr.com/blog/esxi-vmware-workstation/">http://www.guldmyr.com/blog/esxi-vmware-workstation/</a> as a base for …</p>
@@ -188,8 +188,8 @@ Details: 401 Unauthorized</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/bsd.html">bsd</a> <a href="/tag/dragonfly.html">dragonfly</a> <a href="/tag/freebsd.html">freebsd</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/os.html">os</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h1><a href="http://www.dragonflybsd.org/" title="http://www.dragonflybsd.org/">http://www.dragonflybsd.org/</a></h1>
-<h2>Install</h2>
+</footer><!-- /.post-info -->                <h1 id="httpwwwdragonflybsdorg"><a href="http://www.dragonflybsd.org/" title="http://www.dragonflybsd.org/">http://www.dragonflybsd.org/</a></h1>
+<h2 id="install">Install</h2>
 <p>It's based on ... BSD! (FreeBSD 4.8 is apparently what dragonfly span off from)</p>
 <p>What's weird is that while VMWare Workstation scans the iso (to find which OS it is) it stops responding (other VMs are unaffected). It finds FreeBSD 64-bit.</p>
 <p>It has a 'hammer' …</p>
@@ -239,12 +239,12 @@ Details: 401 Unauthorized</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/esx.html">esx</a> <a href="/tag/esxi.html">esxi</a> <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h3>Before</h3>
+</footer><!-- /.post-info -->                <h3 id="before">Before</h3>
 <p>Register and download ESXi here https://www.vmware.com/tryvmware/</p>
 <p>Free license can be found there as well.</p>
 <p>Get ESXi and the vSphere Client.</p>
 <p>Get an OS to install in a VM (I chose openindiana).</p>
-<h3>Install ESXi in VMWare Workstation 8.</h3>
+<h3 id="install-esxi-in-vmware-workstation-8">Install ESXi in VMWare Workstation 8.</h3>
 <p>40G disk, 4GB RAM, 2 cores, enable Virtualization …</p>
                 <a class="readmore" href="/esxi-vmware-workstation-openindiana.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -290,7 +290,7 @@ Details: 401 Unauthorized</p>
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h2>Not allowing root to log in</h2>
+</footer><!-- /.post-info -->                <h2 id="not-allowing-root-to-log-in">Not allowing root to log in</h2>
 <p>By default sshd is running on SL6 and you can ssh in with 'root'.</p>
 <p>Probably a good idea to change this in /etc/ssh/sshd_config</p>
 <p>permitrootlogin no</p>

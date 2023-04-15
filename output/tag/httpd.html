@@ -36,7 +36,7 @@
 <p>This post is about Network Services.</p>
 <p>During all these exercises I try my hardest not to use google, as that's not available during the exam anyway.</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -56,7 +56,7 @@
 <li>ssh</li>
 <li>ntp</li>
 </ul>
-<h2>httpd:</h2>
+<h2 id="httpd">httpd:</h2>
 <ul>
 <li>Install the packages needed to provide the service.<ul>
 <li>yum install httpd</li>
@@ -81,7 +81,7 @@
 </ul>
 </li>
 </ul>
-<h3>htpasswd</h3>
+<h3 id="htpasswd">htpasswd</h3>
 <p>An htpasswd file contains users/passwords.</p>
 <p>A .htaccess file points to the htpasswd</p>
 <p>The .htaccess file is not the recommended way to set up authentication, instead you should do it in the Directory section of httpd.conf.</p>
@@ -100,15 +100,15 @@ AuthName "Private Area"
 AuthType Basic
 AuthBasicProvider file
 Require user user</p>
-<h2>https</h2>
+<h2 id="https">https</h2>
 <p>The s - means the httpd uses another port - 443 and that it uses certificates.</p>
 <p>yum install mod_ssl</p>
 <p>This adds /etc/httpd/conf.d/ssl.conf</p>
 <p>That config file actually has a 'listen' directive for port 443.</p>
 <p>So add that port in the firewall and restart httpd.</p>
 <p>After that you can surf to https://ip and it will complain about the certificate (which is a default generated one).</p>
-<h2>But wait, there's more!</h2>
-<h3>Configure a virtual host.</h3>
+<h2 id="but-wait-theres-more">But wait, there's more!</h2>
+<h3 id="configure-a-virtual-host">Configure a virtual host.</h3>
 <p>This is can be used when you want to have several hostnames or domains on the same machine.</p>
 <p>There's some info in httpd.conf but there's quite a lot in the manual via httpd-manual package.</p>
 <p>To test this you could either put several IP addresses on the server or point several domains towards it (might be easiest, /etc/hosts). But in VMWare it's very easy to just add another network interface.</p>
@@ -133,13 +133,13 @@ Require user user</p>
 
 <p>7. service httpd restart</p>
 <p>Then on the client point your browser to and (add different index.html in each to make it easy to see).</p>
-<h3>Configure private directories.</h3>
+<h3 id="configure-private-directories">Configure private directories.</h3>
 <p>I'd say this fall under the htpasswd section.</p>
-<h3>Deploy a basic CGI application.</h3>
+<h3 id="deploy-a-basic-cgi-application">Deploy a basic CGI application.</h3>
 <p>FOSwiki for example uses CGI. Perhaps it should be a custom CGI application, like a small <a href="http://www.lies.com/begperl/hello_cgi.html" title="simple cgi hello world script">hello-world script.</a></p>
 <p>/var/www/cgi-bin is where CGI scripts are stored by default.</p>
 <p>A simple .cgi script is just a perl script with another extension that outputs .HTML text.</p>
-<h3>Configure group-managed content.</h3>
+<h3 id="configure-group-managed-content">Configure group-managed content.</h3>
 <p>Group-managed. So this would be somehow using the AuthGroupFile in .htaccess?</p>
 <p>Or could be done by creating a new directory under www-root and give specific access to this directory. That means it can be managed by a unix group, (access is a different story however).</p>                </article>
             </aside><!-- /#featured -->

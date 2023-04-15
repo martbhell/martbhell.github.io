@@ -34,7 +34,7 @@
 <p>tags: <a href="/tag/apache.html">apache</a> <a href="/tag/hardening.html">hardening</a> <a href="/tag/linux.html">linux</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/security.html">security</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/vm.html">vm</a> </p>
 </footer><!-- /.post-info --><p>Went through the apache logs on my web-server and saw some access requests to my phpmyadmin page.</p>
 <p>It's probably a good idea to restrict access to this web based sql admin interface (in case there is an exploit I don't want somebody to use it on this).</p>
-<h2>How to make phpmyadmin a bit more secure</h2>
+<h2 id="how-to-make-phpmyadmin-a-bit-more-secure">How to make phpmyadmin a bit more secure</h2>
 <p>sudo vi /etc/phpmyadmin/apache.conf or sudo nano /etc/phpmyadmin/apache.conf</p>
 <p>Under <strong>"Alias /phpmyadmin /usr/share/phpmyadmin" <Directory /usr/share/phpmyadmin> add this:</strong></p>
 <p>Order Deny,Allow Deny from all Allow from 127.0.0.1 Allow from 192.168.0.0/24</p>
@@ -91,7 +91,7 @@
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/admin.html">admin</a> <a href="/tag/accounts.html">accounts</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/database.html">database</a> <a href="/tag/settings.html">settings</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/script.html">script</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/web.html">web</a> <a href="/tag/server.html">server</a> <a href="/tag/apache.html">apache</a> </p>
 </footer><!-- /.post-info -->                <p>Time for another go!</p>
-<h3>Drupal is ..</h3>
+<h3 id="drupal-is">Drupal is ..</h3>
 <p>.. a pretty famous and widely used CMS out there - so here we go -&gt;</p>
 <p>1. Get sudo <a href="http://wiki.debian.org/sudo" title="configure sudo">configured</a> on debian. Sucks to have to log on as root all the time when installing apps etc.</p>
 <p>2. <a href="http://drupal.org/project/drupal" title="drupal">Download</a> and untar drupal 7</p>

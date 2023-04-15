@@ -41,7 +41,7 @@
 </footer><!-- /.post-info -->      <p>This is a post in a series where I will go through the modules made available for free by Brocade for the beta test of the BCFD 16Gbps exam. If there's any objection to me writing about these in this detail here please let me know.</p>
 <p>First module available (is the third module). Both for BCFA and BCFP 16 Beta the module 1 was not available. Maybe that's just an introduction? I don't remember from when I had access to the real material. This module is also shared top1 in terms of size :)</p>
 <p>The material could be found here: community.brocade.com/docs/DOC-2379</p>
-<h1>Describe B- and M-Series infrastructure for a DCF</h1>
+<h1 id="describe-b-and-m-series-infrastructure-for-a-dcf">Describe B- and M-Series infrastructure for a DCF</h1>
 <p>dcf - data center fabric?</p>
 <p>Before designing, you need to find out what your resources / building blocks are.</p>
 <p>Most highly-used design is a Core/Edge SAN, this has:</p>
@@ -59,36 +59,36 @@
 <li>Do you need to micro-manage the SAN with Adaptive Networking or Routing?</li>
 <li>open systems (Windows/Linux) or <a href="http://en.wikipedia.org/wiki/FICON" title="on wikipedia">FICON</a> (mainframes such as IBM's z/ and high end disk arrays)?</li>
 </ol>
-<h1>Discuss the hw technologies for B- and M-series switches, directors and backbone</h1>
-<h2>HW</h2>
+<h1 id="discuss-the-hw-technologies-for-b-and-m-series-switches-directors-and-backbone">Discuss the hw technologies for B- and M-series switches, directors and backbone</h1>
+<h2 id="hw">HW</h2>
 <p>There's quite a lot about harware in this module. This was in both BCFA and BCFP, so if you've done them you gain a lot. A little repetition is in order though. <strong>Also this module does not have the 16G hardware or the FC8-64 blades. It's quite old. Some stuff in these slides will not be in use anymore. I expect that new features / hw we need to investigate ourselves and read about in the manuals.</strong></p>
 <p>8G Switches: <a href="http://www.brocade.com/products/all/switches/product-details/300-switch/specifications.page" title="on brocade.com">300</a> , <a href="http://www.brocade.com/products/all/switches/product-details/5100-switch/specifications.page" title="on brocade.com">5100</a>, <a href="http://www.brocade.com/products/all/switches/product-details/5300-switch/specifications.page" title="brocade.com">5300</a>. Standalone switches usually don't have all ports enabled when you get them (unless you buy them that way), to enable all you buy POD (ports on demand) licenses.</p>
 <p>Directors: the routing blades (C<strong>R</strong>) are on the oute<strong>R.</strong> The control blades (CP) are on the inner. The DCX (8G) only works with the FR4-18i and FA4-18 blades, the other 4G no. FC8-48 does not support FL_ or FICON, higher oversubscription and more ports = more ports that can lose connectivity.</p>
 <p>The 10G ports on FC10-6 blade are nice if you don't have many fibres/links available and if 16G is not possible because of distance limitations. However, it does not trunk and proprietary. Because it uses 64b/66b encoding you gain a lot compared to the 8/10. 8/10 you miss out on 20% due to encoding, crc, etc. 64/66 you miss about 3%. So out of 10G you miss out on 300Mbit.</p>
-<h2>Technologies</h2>
+<h2 id="technologies">Technologies</h2>
 <p><strong>Oversubscription</strong>: The 48k does 4 and 8 Gbps in ports in 8G port blades, but it has 4G CP ASICs (Condor). Making it easier to oversubscribe, make sure to do local switching as much as possible. Is good for long distance and ingress rate limiting though. The directors can switch within a portgroup, this is when the ports are handled by the same ASIC. FC8-16 - one local switching group. -32 has two. -48 also has two.</p>
 <p><strong>Buffer Credits</strong>: Maximum amount available per port varies between the switches. The 5100 has most, which means it can support longer distances. Calculate with: #buffers per port group - 8(ports in port group). For blades the credits are about the same for FC8 (<strong>also same for FC8-64? they are about 1300 on DCX and 1400 on 48k..).</strong></p>
-<h2>Why get a DCX?</h2>
+<h2 id="why-get-a-dcx">Why get a DCX?</h2>
 <p>lulz, all this has a nice marketing feeling to it. But I guess when you design an IT infrastructure you need to wade through a lot of marketing.</p>
 <p>Besides the obvious ones (DCX is awesome, it has features you need, you need more ports) it's good to cope with faster FICON environments, encryption, CEE or FCoE support when/if, integrated routing (in a normal FC port in a port blade), more QoS features.</p>
-<h1>Distinguish differences between Brocade hw platforms</h1>
-<h2>M-Series.</h2>
+<h1 id="distinguish-differences-between-brocade-hw-platforms">Distinguish differences between Brocade hw platforms</h1>
+<h2 id="m-series">M-Series.</h2>
 <p>In BCFA and BCFD there's been very <strong>very</strong> little focus on the M-series equipment. It appears to be a bit more in the BCFD. But, as far as I can tell they are not sold anymore so hopefully there's not much focus on them. Gamble: should I just browse through the McData sections?</p>
 <p><strong>Mi10k</strong></p>
 <p>hardware partitioning with SAN LPARs, mix FICON/open system in separate LPARs. 1,2,4,10 Gbps FC. Max 256 ports. Comparable to the 48k.</p>
 <p><strong>M6140</strong></p>
 <p>Open Systems and FICON, 140 ports in 4-port increments (each module you add have 4 ports, except 10G that has 1), 1,2,4,10 Gbps FC. M-series Directors are End of Sale.</p>
-<h2>Fabric Routing and Extension</h2>
+<h2 id="fabric-routing-and-extension">Fabric Routing and Extension</h2>
 <p>There was quite a lot about this in the BCFP course. I am not sure if BCFA -&gt; BCFP -&gt; BCFD is the best order to do them in but it is starting to look that way.</p>
 <p>7500E (E - economy, less ports) and 7500. FCIP and FCR. FR4-18i : Blade version of 7500. M3000: interconnect FC and FICON SANs over IP or ATM. Accelerate tape with Tape Piplining. Accelerate disk with Fastwrite and XRC. USD-X: connects and extends mainframe and open systems storage data replication apps for disk/tape. OC-3 ATM and 10/100 and GbE and FC. The USD-X does the same as the others but also does  FICON, ESCON, Bus-and-Tag or mixed environments.</p>
 <p>M3000 and USD-X does not: HW encryption (IPSec), FCR, Call Home, SSH(SSL, RADIUS), inband management via GbE or FastWrite over FC. They both also only operate at 2G speed. This makes me believe they are not included in the 16G BCFD, 2G is just too little?</p>
 <p>Also integrated routing on the DCX, 5300 and 5100.</p>
-<h2>7600 and FA4-18</h2>
+<h2 id="7600-and-fa4-18">7600 and FA4-18</h2>
 <p>They are the same?</p>
 <p>Allows "third party storage apps to run on top of FOS". Uses Brocade's SAS (storage application services) for 'data movement' and 'offload server resources'. EMC, Fujitsu and Brocade has softwares (possibly more now)</p>
-<h2>HBA</h2>
+<h2 id="hba">HBA</h2>
 <p>815, 825, 415, 425.</p>
-<h2>Embedded SAN modules</h2>
+<h2 id="embedded-san-modules">Embedded SAN modules</h2>
 <p>For blades:</p>
 <p>Dell/Fujutsu: 4016 (10 internal, 6 external) IBM/Intel: 4020 (14 int, 6 ext) HP p-class: 4012 (16 int, 4 ext) HP c-class/NEC: 4024 (16 int, 8 ext) HDS: 4016 (10,16) Huawei: 4018 (12 int, 6 ext) IBM:</p>
     </div><!-- /.entry-content -->

@@ -40,7 +40,7 @@
 <p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/certification.html">certification</a> <a href="/tag/file.html">file</a> <a href="/tag/transfer.html">transfer</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/ntpq.html">ntpq</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> <a href="/tag/synchronization.html">synchronization</a> <a href="/tag/tcpdump.html">tcpdump</a> <a href="/tag/time.html">time</a> <a href="/tag/sync.html">sync</a> <a href="/tag/synchronizatino.html">synchronizatino</a> </p>
 </footer><!-- /.post-info -->      <p><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/" title="1st post">1st post</a> - System Management and Configuration</p>
 <p><a href="https://www.redhat.com/training/courses/ex300/examobjective" title="on redhat.com">Objectives</a></p>
-<h1>Network services</h1>
+<h1 id="network-services">Network services</h1>
 <p>Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:</p>
 <ul>
 <li>Install the packages needed to provide the service.</li>
@@ -60,7 +60,7 @@
 <li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/">ssh</a></li>
 <li><a href="http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/">ntp</a></li>
 </ul>
-<h2>NTP:</h2>
+<h2 id="ntp">NTP:</h2>
 <p>You could possibly test this from Windows as well.</p>
 <p>On linux it's fairly straight-forward, you can use ntpd both as a client and as a server.</p>
 <p>Check in /var/log/messages for details</p>
@@ -111,7 +111,7 @@
 <p>port 123 (UDP)</p>
 </li>
 </ul>
-<h2>Enable ntpd as a client</h2>
+<h2 id="enable-ntpd-as-a-client">Enable ntpd as a client</h2>
 <p>What's a bit reverse for ntpd is that first you need to configure the server as a client</p>
 <p>So that your local ntp-server gets good time from somewhere else. You can find a good time-server to use on www.pool.ntp.org</p>
 <p>You only need to add one server line but for redundancy you should probably have more than one.</p>
@@ -120,30 +120,30 @@
 <p>server ntp.example.com
 service ntpd restart
 ntpq -p</p>
-<h2>Enable ntpd as a server</h2>
+<h2 id="enable-ntpd-as-a-server">Enable ntpd as a server</h2>
 <p>You need to add a restrict line in ntp.conf.</p>
 <p>You also need to allow port 123 UDP in the firewall.</p>
 <p>restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap
 service ntpd restart</p>
-<h2>Client to use your ntp server</h2>
+<h2 id="client-to-use-your-ntp-server">Client to use your ntp server</h2>
 <p>Basically the same as the above for client, but you specify the address to your NTP-server instead of one from pool.ntp.org.</p>
-<h2>Extra</h2>
+<h2 id="extra">Extra</h2>
 <ul>
 <li>Synchronize time using other NTP peers.</li>
 </ul>
 <p>I believe this has been covered.</p>
-<h2>More Extra</h2>
+<h2 id="more-extra">More Extra</h2>
 <p>One extra thing you may want to check out is the 'tinker' command.</p>
 <p>This is put on top of ntp.conf and more info are available in 'man ntp_misc'.</p>
 <p>However, most of the time you just need to wait a bit for the time change to come through.</p>
-<h2>tcpdump</h2>
+<h2 id="tcpdump">tcpdump</h2>
 <p>There's not much to go in logs on either server or client for ntpd. You'll get messages in /var/log/messages though that says "synchronized" and when the service is starting.</p>
 <p>You can also use tcpdump on the server to see if there are any packets coming in.</p>
 <p>tcpdump -i eth0 -w /tmp/tcmpdump.123 -s0 'udp port 123 and host NTP.CLIENT.IP'</p>
-<h1>wait a while, restart ntpd on client</h1>
+<h1 id="wait-a-while-restart-ntpd-on-client">wait a while, restart ntpd on client</h1>
 <p>tcpdump -r /tmp/tcmpdump.123</p>
-<h1>this will then show some packets if you have a working communication between server and client</h1>
-<h2>To test that it's working</h2>
+<h1 id="this-will-then-show-some-packets-if-you-have-a-working-communication-between-server-and-client">this will then show some packets if you have a working communication between server and client</h1>
+<h2 id="to-test-that-its-working">To test that it's working</h2>
 <p>Start with the server still connecting to an ntp-server with good time.</p>
 <p>You could then set the date and time manually on the server to something else. For example, let's say the current time is 6 JUN 2012 17:15:00.</p>
 <p>Set it to 15 minutes before:</p>

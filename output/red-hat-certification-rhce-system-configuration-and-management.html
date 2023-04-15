@@ -38,7 +38,7 @@
         </address>
 <p>In <a href="/category/it.html">it</a>.</p>
 <p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->      <h1>RHCE Preparation - System Configuration and Management</h1>
+</footer><!-- /.post-info -->      <h1 id="rhce-preparation-system-configuration-and-management">RHCE Preparation - System Configuration and Management</h1>
 <p>This is post 1 in a series of posts where I will be going through the objectives for the RHCE certifications. It builds on the initial post that has the objectives:</p>
 <p>http://www.guldmyr.com/blog/red-hat-certification-rhce-preparation/</p>
 <p><em>It appears that the objectives have been updated, at least if you compare between my post above and https://www.redhat.com/training/courses/ex300/examobjective</em></p>
@@ -48,9 +48,9 @@
 <p>My setup: Core i7, 8GB RAM, Windows 7 x64, VMWare Workstation with CentOS installed.</p>
 <p>Installing a fresh VM with 4 cores, 5GB RAM, virtualization and CentOS.</p>
 <p>CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86_64/</p>
-<h2>IP Routing and NAT</h2>
+<h2 id="ip-routing-and-nat">IP Routing and NAT</h2>
 <p>The part "Routing / NAT" will be tricky, as I do not have a second computer that I could use for this. Maybe I can get something working inside the virtual machines though, but for now I think I will skip these two and get straight into the other ones.</p>
-<h2>Use /proc/sys and sysctl to modify and set kernel runtime parameters.</h2>
+<h2 id="use-procsys-and-sysctl-to-modify-and-set-kernel-runtime-parameters">Use /proc/sys and sysctl to modify and set kernel runtime parameters.</h2>
 <p>Edit /etc/sysctl.conf</p>
 <p>Or use sysctl -w to set it temporary</p>
 <p>For example one is: vm.overcommit_ratio</p>
@@ -62,9 +62,9 @@ sysctl vm.overcommit_ratio</p>
 sysctl -w vm.overcommit_ratio="50"</p>
 <p>To set each time on boot:</p>
 <p>echo "vm.overcommit_ratio = 50" &gt;&gt; /etc/sysctl.conf</p>
-<h2>Configure a system to authenticate using Kerberos.</h2>
+<h2 id="configure-a-system-to-authenticate-using-kerberos">Configure a system to authenticate using Kerberos.</h2>
 <p>Waiting with this. Need to set up a KDC - kerberos service first.</p>
-<h2>Build a simple RPM that packages a single file.</h2>
+<h2 id="build-a-simple-rpm-that-packages-a-single-file">Build a simple RPM that packages a single file.</h2>
 <p>This appears to be a bit complicated - the details below are about as simple as this can be made. There is a lot more nifty things that you can do with an rpm.</p>
 <p>Would be nice to have a guide of this in for example /usr/share/doc</p>
 <p>yum install rpm-build
@@ -74,7 +74,7 @@ mkdir GetIP
 cd GetIP</p>
 <p>The "program":</p>
 <p>cat getip.sh</p>
-<h1>!/bin/bash</h1>
+<h1 id="binbash">!/bin/bash</h1>
 <p>wget -q http://guldmyr.com/ip.php -O/tmp/ip
 cat /tmp/ip</p>
 <p>chmod +x getip.sh</p>
@@ -122,12 +122,12 @@ rpm -ivh GetIP-1.0-1.el6.x86_64.rpm</p>
 <p>If you wonder about things - check this fairly unreadable blog post out.</p>
 <p>Basically you want to use the $RPM_BUILD_ROOT in front of where you want to install the software. By default there are 'make', 'configure' and nothing in the 'require' entries. I removed the make, configured and just put 'bash' in the require entries, it seemed to do the trick though.</p>
 <p>More info is also available on <a href="http://www.rpm.org/max-rpm/ch-rpm-build.html" title="rpm.org - directories">rpm.org</a> - which recommend to use /usr/src/redhat for building packages.</p>
-<h2>Configure a system as an iSCSI initiator that persistently mounts an iSCSI target.</h2>
+<h2 id="configure-a-system-as-an-iscsi-initiator-that-persistently-mounts-an-iscsi-target">Configure a system as an iSCSI initiator that persistently mounts an iSCSI target.</h2>
 <p>Waiting with this. Need to set up an iSCSI target first.</p>
-<h2>Produce and deliver reports on system utilization (processor, memory, disk, and network).</h2>
+<h2 id="produce-and-deliver-reports-on-system-utilization-processor-memory-disk-and-network">Produce and deliver reports on system utilization (processor, memory, disk, and network).</h2>
 <p>sar -A</p>
 <p>/etc/cron.d/sysstat</p>
-<h2>Use shell scripting to automate system maintenance tasks.</h2>
+<h2 id="use-shell-scripting-to-automate-system-maintenance-tasks">Use shell scripting to automate system maintenance tasks.</h2>
 <p>Well, this can be a lot of things and is quite hard to prepare for.</p>
 <p>But I think a 'for loop' is a good thing to know about and can help with a lot of system maintenance tasks.</p>
 <p>an input file with usernames:</p>
@@ -136,7 +136,7 @@ bengt
 goran</p>
 <p>a scriptfile:</p>
 <p>[root@rhce ~]# cat usersndirs.sh</p>
-<h1>!/bin/sh</h1>
+<h1 id="binsh">!/bin/sh</h1>
 <p>userlist=/tmp/userlist</p>
 <p>for i in `cat $userlist`; do
 echo useradd $i;
@@ -145,7 +145,7 @@ done</p>
 <p>Remove the "echo" to create the users.</p>
 <p>Of course, you could also use the 'newuser' command (interactive or send a file).</p>
 <p>This happens a lot I think: You get an idea that "hey, I can do this with a script". But then a random amount of time later you find out that there is already a command that does this for you. That doesn't mean the time spent is a total waste, hopefully you learned something while doing it. Maybe your script even does a better job than the new one you found.</p>
-<h2>Configure a system to log to a remote system.</h2>
+<h2 id="configure-a-system-to-log-to-a-remote-system">Configure a system to log to a remote system.</h2>
 <p>syslog / rsyslog</p>
 <p>man rsyslog.conf has an example for how to log to a remote machine</p>
 <p>edit /etc/rsyslog.conf</p>
@@ -158,12 +158,12 @@ done</p>
 </code></pre></div>
 
 <p>Set the IP to the machine that will be receiving the logs.</p>
-<h2>Configure a system to accept logging from a remote system.</h2>
+<h2 id="configure-a-system-to-accept-logging-from-a-remote-system">Configure a system to accept logging from a remote system.</h2>
 <p>So this step you may want to do before the previous step (unless you already have a working syslogd server).</p>
 <p>You edit /etc/rsyslog.conf</p>
 <p>and uncomment the "reception" parts (don't forget firewall and restart service).</p>
 <p>To test try to "su -" with the wrong password and then check in /var/log/secure on the loghost.</p>
-<h2>Create a private repository</h2>
+<h2 id="create-a-private-repository">Create a private repository</h2>
 <p>"To create a private repository you should proceed as follows: - Install the createrepo software package - Create a <directory> where files can be shared (via FTP or HTTP) - Create a subdirectory called Packages and copy all packages to be published in Packages - run createrepo -v <directory>"</p>
     </div><!-- /.entry-content -->
 
