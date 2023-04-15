@@ -1,0 +1,1 @@
+../posts/2011/06/p6000-firmware-command-view.md

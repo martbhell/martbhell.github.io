@@ -1,14 +1,8 @@
 ---
 title: "Science!"
-date: "2011-03-02"
-categories: 
-  - "finland"
-tags: 
-  - "kepler"
-  - "lhc"
-  - "planets"
-  - "science"
----
+date: 2011-03-02
+category: finland
+tags: kepler, lhc, planets, science
 
 Linksies!
 

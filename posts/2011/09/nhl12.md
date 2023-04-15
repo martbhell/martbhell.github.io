@@ -1,14 +1,8 @@
 ---
 title: "NHL12"
-date: "2011-09-26"
-categories: 
-  - "finland"
-tags: 
-  - "detroit"
-  - "nhl"
-  - "ps3"
-  - "red-wings"
----
+date: 2011-09-26
+category: finland
+tags: detroit, nhl, ps3, red, wings
 
 Got this for ps3 from verkkokauppa.com when it was released (yay, shipping from Åland = no taxes = lots cheaper games). Great if you live in Finland :)
 

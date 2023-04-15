@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - flash</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/rtmpdump-and-ssh-tunnel-socks-proxy.html">"rtmpdump and ssh tunnel / socks proxy"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-12-29T00:00:00+02:00">
+                Published: "2011-12-29"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/flash.html">flash</a> <a href="/tag/video.html">video</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rtmpdump.html">rtmpdump</a> <a href="/tag/rtmpe.html">rtmpe</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/tunnel.html">tunnel</a> </p>
+</footer><!-- /.post-info --><p>You can use rtmpdump on linux to download videos from a page that uses rtmpe / flash to display the videos. If you want to, you can also run an ssh tunnel. This could be used with benefit if you want to watch videos from a web site that you can't because they're restricting access to it based on IP addresses.</p>
+<p>1. yum install rtmpdump (apt-get install rtmpdump i ubuntu) 2. ssh -D 2001 server-med-sshd 3. rtmpdump -S localhost:2001 -r rtmpe://address.to.mp4 -o /tmp/fil1.mp4</p>
+<p>rtmpe doesn't work with normal http proxy because it doesn't use the web browser's proxy settings. It also operates on port 1935, 443 and lastly it tries on port 80 if I googled right.</p>
+<p>A VPN might be possible to use, but does that only work if you send all traffic through the VPN?</p>
+<p>This tool should work on Windows as well.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

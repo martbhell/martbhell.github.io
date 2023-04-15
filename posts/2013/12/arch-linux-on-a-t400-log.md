@@ -1,17 +1,8 @@
 ---
 title: "Arch Linux on a T400 - Log"
-date: "2013-12-14"
-categories: 
-  - "it"
-tags: 
-  - "arch"
-  - "arch-linux"
-  - "install"
-  - "laptop"
-  - "lenovo"
-  - "linux"
-  - "t400"
----
+date: 2013-12-14
+category: it
+tags: arch, arch, linux, install, laptop, lenovo, linux, t400
 
 Trying out Arch Linux on a Lenovo T400!
 

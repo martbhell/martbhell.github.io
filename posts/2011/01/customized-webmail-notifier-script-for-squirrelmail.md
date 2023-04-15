@@ -1,15 +1,8 @@
 ---
 title: "Customized WebMail Notifier (x-notifier) Script for Squirrelmail"
-date: "2011-01-26"
-categories: 
-  - "it"
-tags: 
-  - "firefox"
-  - "script"
-  - "squirrelmail"
-  - "webmail"
-  - "webmail-notifier"
----
+date: 2011-01-26
+category: it
+tags: firefox, script, squirrelmail, webmail, webmail, notifier
 
 I use the [WebMail Notifier](http://webmailnotifier.mozdev.org/ "webmail notifier") / or as it's nowadays called - the X-notifier plugin in Firefox to see if I have gotten any new e-mails.
 

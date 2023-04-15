@@ -1,19 +1,8 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – SMB"
-date: "2012-05-14"
-categories: 
-  - "it"
-tags: 
-  - "centos"
-  - "certification"
-  - "file-transfer"
-  - "linux"
-  - "red-hat"
-  - "rhce"
-  - "samba"
-  - "smb"
-  - "studying"
----
+date: 2012-05-14
+category: it
+tags: centos, certification, file, transfer, linux, red, hat, rhce, samba, smb, studying
 
 [1st post](http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

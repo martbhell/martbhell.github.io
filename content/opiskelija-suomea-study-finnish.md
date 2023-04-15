@@ -1,0 +1,1 @@
+../posts/2011/01/opiskelija-suomea-study-finnish.md

@@ -1,0 +1,1 @@
+../posts/2018/11/certified-openstack-administrator-check.md

@@ -1,22 +1,8 @@
 ---
 title: "cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"
-date: "2012-11-11"
-categories: 
-  - "it"
-tags: 
-  - "automation"
-  - "cfe"
-  - "cfengine"
-  - "cms"
-  - "linux"
-  - "puppet"
-  - "resolv-conf"
-  - "resolver"
-  - "salt"
-  - "salt-highstate"
-  - "script"
-  - "scripting"
----
+date: 2012-11-11
+category: it
+tags: automation, cfe, cfengine, cms, linux, puppet, resolv, conf, resolver, salt, salt, highstate, script, scripting
 
 Building on the [initial post](http://www.guldmyr.com/blog/cfengine-whats-that-all-about/ "cfengine – what’s that about?") about cfengine we're going to try out some things that may actually be useful.
 

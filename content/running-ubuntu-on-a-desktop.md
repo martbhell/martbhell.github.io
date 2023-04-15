@@ -1,0 +1,1 @@
+../posts/2012/12/running-ubuntu-on-a-desktop.md

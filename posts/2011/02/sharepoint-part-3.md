@@ -1,14 +1,8 @@
 ---
 title: "Sharepoint - Part 3"
-date: "2011-02-04"
-categories: 
-  - "it"
-tags: 
-  - "it-2"
-  - "sharepoint"
-  - "vmware-workstation"
-  - "windows"
----
+date: 2011-02-04
+category: it
+tags: it, 2, sharepoint, vmware, workstation, windows
 
 The previous posts: [Part 1](http://www.guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/ "sharepoint part 1") \- installing Sharepoint 2010 Foundation. [Part 2](http://www.guldmyr.com/blog/sharepoint-2010-foundation-part-2/ "sharepoint par t2") - basic features in the web interface.
 

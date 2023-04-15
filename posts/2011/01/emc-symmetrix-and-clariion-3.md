@@ -1,12 +1,8 @@
 ---
 title: "EMC - Symmetrix and CLARiiON 3"
-date: "2011-01-18"
-categories: 
-  - "storage"
-tags: 
-  - "emc"
-  - "storage"
----
+date: 2011-01-18
+category: storage
+tags: emc, storage
 
 http://thestorageanarchist.typepad.com/weblog/2011/01/3017-vmax-2011-edition-powerful-trusted-smartest.html
 

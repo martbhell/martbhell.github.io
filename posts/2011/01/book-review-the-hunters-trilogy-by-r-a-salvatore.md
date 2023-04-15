@@ -1,14 +1,8 @@
 ---
 title: "Book Review - The Hunter's Trilogy by R.A. Salvatore"
-date: "2011-01-23"
-categories: 
-  - "finland"
-tags: 
-  - "book"
-  - "fantasy"
-  - "malazan"
-  - "review"
----
+date: 2011-01-23
+category: finland
+tags: book, fantasy, malazan, review
 
 Another great thing about being around home is to go find a proper library, I even found a fantasy/sci-fi shelf in the English part of the library on Rikardinkatu.
 

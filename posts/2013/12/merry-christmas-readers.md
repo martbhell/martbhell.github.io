@@ -1,11 +1,8 @@
 ---
 title: "Merry Christmas Readers"
-date: "2013-12-24"
-categories: 
-  - "finland"
-tags: 
-  - "2013"
----
+date: 2013-12-24
+category: finland
+tags: 2013
 
 Merry Christmas!
 

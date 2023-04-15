@@ -1,0 +1,1 @@
+../posts/2011/12/red-hat-certification-rhcsa-exam-results.md

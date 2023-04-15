@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"ESXi + VMWare Workstation + OpenIndiana"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Before Register and download ESXi here https://www.vmware.com/tryvmware/ Free license can be found there as well. Get ESXi and the vSphere Client...." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/esxi-vmware-workstation-openindiana.html" rel="bookmark"
+           title="Permalink to "ESXi + VMWare Workstation + OpenIndiana"">"ESXi + VMWare Workstation + OpenIndiana"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-02-18T00:00:00+02:00">
+                Published: "2012-02-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/esx.html">esx</a> <a href="/tag/esxi.html">esxi</a> <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->      <h3 id="before">Before</h3>
+<p>Register and download ESXi here https://www.vmware.com/tryvmware/</p>
+<p>Free license can be found there as well.</p>
+<p>Get ESXi and the vSphere Client.</p>
+<p>Get an OS to install in a VM (I chose openindiana).</p>
+<h3 id="install-esxi-in-vmware-workstation-8">Install ESXi in VMWare Workstation 8.</h3>
+<p>40G disk, 4GB RAM, 2 cores, enable Virtualization.</p>
+<p>Very fast install.</p>
+<p>Actually, in VMWare Workstation you can do 'connect to server'. So for this you do not need the vSphere Client? Looks like through VMWare Workstation there's a lot less options. Supposedly you can upload stuff to the datastore through the vSphere Client, and possibly more. Basically in VMWare Workstation you can just create a VM and make basically the same settings on it as you would on a normal VM.</p>
+<p>Username: root. No password.</p>
+<p>In the console, enable ssh and stuff. Then you can scp and ssh to the esxi host.</p>
+<p>/vmfs/volumes/datastore is where you want to put isos.</p>
+<p>you can also browse to the datastore via http!</p>
+<h3 id="install-openindiana-in-a-vmware-workstation-vm-running-esxi">Install OpenIndiana in a VMWare Workstation VM running ESXi.</h3>
+<p>Connect to the ESXi server in VMWare Workstation (connect to server, put in the IP of the ESXi VM, the IP is in the console).</p>
+<p>After it's there just create a new VM and select a 'remote location' of the iso when you look under CD. I'm went with <a href="http://openindiana.org/" title="oi.org">openindiana</a>.</p>
+<p>8G disk, 1GB RAM, 1 CPU, "VM Network" (I presume this means the same as the one where the VM is). Nothing else special during install.</p>
+<p>Feels a bit slow, but that could be because of the 1GB RAM. But I increased this to 2GB and still the Grub menu was slow to load.</p>
+<h3 id="using-openindiana">Using OpenIndiana</h3>
+<p>In the console hit: 'pfexec su -' to get to the root shell.</p>
+<p>From the start I can ping a DNS-host on the internets. Great success.</p>
+<h4 id="static-ip-in-oi">Static IP in OI</h4>
+<p>If you don't want to use nwam and you want to have a static IP you do <a href="http://wiki.openindiana.org/oi/4.+System+Administration" title="follow this guide on wiki.openindiana">this in the console</a>:</p>
+<ul>
+<li>Find interface name with 'ifconfig -a' or 'dladm showphys'. If it's not visible with ifconfig, it's not plumbed, so ifconfig devname plumb. For this example, we'll use e1000g0</li>
+<li>Disable NWAM: svcadm disable svc:/network/physical:nwam</li>
+<li>Set IP address in /etc/hostname.e1000g0: echo 1.2.3.4 &gt; /etc/hostname.e1000g0</li>
+<li>Set netmask in /etc/netmasks (there's an example in there)</li>
+<li>Set default gateway in /etc/defaultrouter: echo 1.2.3.1 &gt; /etc/defaultrouter</li>
+<li>Set DNS servers in /etc/resolv.conf (example: printf "nameserver 1.2.3.4\nnameserver 2.3.4.5\n" &gt; /etc/resolv.conf)</li>
+<li>Enable default: svcadm enable svc:/network/physical:default</li>
+<li>Restart networking: svcadm restart svc:/milestone/network:default</li>
+</ul>
+<p>After this, restart the system (init 6) and see if the settings stick. (I had to restart the VM twice but the IP setting stuck). The OI VM stuck at boot a few times after this as well. poweroff/restart got it back without any issues though.</p>
+<h4 id="packages-in-oi">Packages in OI</h4>
+<p>this is how to update your OI (no questions asked, just update everything).</p>
+<p>pkg install pkg:/package/pkg pkg update</p>
+<p>You can of course do a lot more, see <a href="http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management" title="http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management">http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management</a></p>
+<h4 id="installing-stuff">Installing stuff</h4>
+<p>pkg install irssi</p>
+<p>easy peasy, no problems at all (and screen is installed by default!).</p>
+<p>JAVA is already installed by default (1.6.0.26).</p>
+<p>java -version</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

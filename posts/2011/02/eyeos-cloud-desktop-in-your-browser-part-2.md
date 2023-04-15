@@ -1,25 +1,8 @@
 ---
 title: "EyeOS - Cloud Desktop in your browser - Part 2"
-date: "2011-02-05"
-categories: 
-  - "it"
-tags: 
-  - "10-10"
-  - "activemq"
-  - "apt-get"
-  - "cloud"
-  - "dns"
-  - "eyeos"
-  - "http"
-  - "icloud"
-  - "kaazing"
-  - "pico"
-  - "ubuntu"
-  - "virtual-desktop"
-  - "vmware"
-  - "vmware-workstation"
-  - "web-2-0"
----
+date: 2011-02-05
+category: it
+tags: 10, 10, activemq, apt, get, cloud, dns, eyeos, http, icloud, kaazing, pico, ubuntu, virtual, desktop, vmware, vmware, workstation, web, 2, 0
 
 After [my first comment ever](http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser/#comment-42 "eyeOS part 1") by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!
 

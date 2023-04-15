@@ -1,15 +1,8 @@
 ---
 title: "rtmpdump and ssh tunnel / socks proxy"
-date: "2011-12-29"
-categories: 
-  - "it"
-tags: 
-  - "flash-video"
-  - "linux"
-  - "rtmpdump"
-  - "rtmpe"
-  - "ssh-tunnel"
----
+date: 2011-12-29
+category: it
+tags: flash, video, linux, rtmpdump, rtmpe, ssh, tunnel
 
 You can use rtmpdump on linux to download videos from a page that uses rtmpe / flash to display the videos. If you want to, you can also run an ssh tunnel. This could be used with benefit if you want to watch videos from a web site that you can't because they're restricting access to it based on IP addresses.
 

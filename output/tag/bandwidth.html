@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - bandwidth</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/bcfd-cfd200-module-6-fc-routing-and-distance-extension.html">"BCFD – CFD200 – Module 6 – FC Routing and Distance Extension"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-01-17T00:00:00+02:00">
+                Published: "2012-01-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bandwidth.html">bandwidth</a> <a href="/tag/bcfd.html">bcfd</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/designer.html">designer</a> <a href="/tag/buffers.html">buffers</a> <a href="/tag/certification.html">certification</a> <a href="/tag/design.html">design</a> <a href="/tag/dwdm.html">dwdm</a> <a href="/tag/fcip.html">fcip</a> <a href="/tag/fiber.html">fiber</a> <a href="/tag/latency.html">latency</a> <a href="/tag/long.html">long</a> <a href="/tag/distance.html">distance</a> <a href="/tag/mtu.html">mtu</a> <a href="/tag/packet.html">packet</a> <a href="/tag/loss.html">loss</a> <a href="/tag/routing.html">routing</a> <a href="/tag/sfp.html">sfp</a> <a href="/tag/storage.html">storage</a> <a href="/tag/area.html">area</a> <a href="/tag/network.html">network</a> </p>
+</footer><!-- /.post-info --><p>Second Last module! But that's not the end of it, there are more admin guides, best practices to wade through :) This one is a bit more complicated though, a lot to think about when designing FCR and FCIP SAN networks.</p>
+<h1 id="fc-routing">FC Routing</h1>
+<p>This is when you have SAN islands (isolated networks), but then after some time you find that you still have to share resources between the islands.</p>
+<p>If you cannot merge (zoning db too big). SANs with different fabric.ops, different PIDs or overlapping DIDs. If they want to share devices for backups/dr. Autonomous SAN admin teams. Migrating data between fabrics.</p>
+<p>To start routing you need: Physical Connection: FC Fabrics (EX_Ports) Logical Connection: LSAN Zones between devices. Zone in each autonomous fabric.</p>
+<p>Greater resource utilization, scalability and long-distance extension.</p>
+<p>Not as risky as merging fabrics. Interconnect heterogeneous SANs in different interop modes.</p>
+<p>"Extended SAN". FCR is not a replacement for running dual fabrics, each edge fabric still need to be redundant by itself.</p>
+<p>Oversubscription: Do check the bandwidth by the devices that will use the IFL and the size of the IFL(s).</p>
+<h2 id="availability">Availability</h2>
+<p>Same idea as in the previous module about the different availabilities:</p>
+<p>Single BB, single FCR router: Not HA Single Extended SAN, multiple FCR routers: Not HA, because one fabric Two Extended SANs, each has a single FCR router: Highly Available. Two Extended SANs, multiple FCR: HA</p>
+<p>Single BB (one physical router) and multiple edge fabrics. (OK for sharing, not redundant). Dual BB (two routers) and one or more edge fabrics. (gives redundancy, more bandwidth, is a core/edge style, scales well) "two routers" above is two hw routers, like 7500, or two IR enabled ports in two different blades/chassis.</p>
+<h2 id="fid-fd-and-xd">FID, FD and XD</h2>
+<p>Each edge and backbone get a unique Fabric ID. (max 128) EX_Ports are in the backbone (on the router or an Integrated Routing Port). On the edge fabric this is just an E_port. On each EX_Port there is an Front Domain. This domain is the link. When a device is exported (when it's online and zoned) an XD (translate domain) will appear on the EX_Port and that is where the device is. One XD for each edge fabric that exports devices.</p>
+<p>Page 11 and 12 in the FC Routing part of this module has a good picture</p>
+<h2 id="implementation">Implementation</h2>
+<p>Figure out meaningful names and assign FIDs (unique range for BB and a unique range for edge) Same with domain ids. Connect several IFL between FCR and edge fabric, trunking is nice and works the same here as without routing. Use single initiator zoning.</p>
+<h2 id="platforms">Platforms</h2>
+<p>FR4-18i - bladed 7500 - Supported in DCX 8510 16G? Both give 2 x 1GbE for FCIP and up to 8 FCIP tunnels/port. 7500E - cheap one, two FC ports, limited to 50Mbps/GbE port. Can be upgraded. All ports on B5100, 5300 and any FC8-xx blades in DCX can be configured as EX_Ports == integrated routing. FOS 6.1. License required. Advice is to not have any backbone devices when using IR. Problematic when enabling. <strong>Condor2/GE2 performs better than FR4-18i.</strong> However, the FR4-18i does FCIP. There are other/lots of limitations:</p>
+<ul>
+<li>FR4-18i EX_Port and IR EX_Port - not in the same DCX, OK in same fabric though.</li>
+<li>FR4-18i VEX_Port and IR EX_Port - OK in the same DCX</li>
+<li>IR ports can be connected to FR4-18i in another fabric.</li>
+<li>Replacing FR4-18i with FC8-xx retains EX_Port config for the first 16 ports..</li>
+</ul>
+<h2 id="distance">Distance</h2>
+<p>Trunking works. If you're sharing devices with a smaller SAN, smaller switches on the smaller site will suffice.</p>
+<h2 id="consider">Consider</h2>
+<p><strong>Again, this is on FOS 6.3 and 8G platforms.</strong></p>
+<p>No McData Max 128 EX_Ports SCC policy must include FD, but do not include XD) TI is OK after FOS 6.1.0. TI within Edge routes between real and proxy to an EX_Port. TI within BB lock down a route within BB based on EX_Ports and devices. Devices must also be in LSAN zones to enforce TI. Without TI, any traffic can use any ISL according to FSPF and exchange based routing. With TI, only TI zoned traffic uses the isolated route and all non-TI zoned traffic uses the rest of the routes.</p>
+<h1 id="fcip">FCIP</h1>
+<p>interconnect FC switches over IP.</p>
+<p>Merging: VE_Port. Does not support trunking, but they do support Exchange Based Routing.</p>
+<p>7500 and FR4-18i SACK - 'selective acknowledgement'?</p>
+<h2 id="why-fcip">Why FCIP?</h2>
+<p>need to connect sites that are longer than FC can handle. cheaper than FC no fibres available backup, consolidation, mirroring or dr routing (connect islands) FICON over long distance</p>
+<p>Why not: performance, reliability (TCP/IP underlying protocol, not FC). Delays/packet loss, more complicated to troubleshoot.</p>
+<h2 id="performance">Performance</h2>
+<p>Use 'portcmd --ipperf' to check out Effective Bandwidth, Delay, Packet Loss. Also work with the WAN/Telco.</p>
+<h2 id="tools-to-improve-performance">Tools to improve performance</h2>
+<p>SACK, compression, jumbo frames, fastwrite and tape pipeline. FC frames max is 2148 bytes, larger than default Ethernet 1518 .</p>
+<p>Fastwrite - improve synchronous SCSI writes over FCIP. When an initiator sends a SCSI write, the gateway sends an XFR_RDY immediately back to the initiator and then buffers. It always sends back FCP_RSP from target to initiator so the exchange is completed.</p>
+<p>Tape Pipelining - improves sequential SCSI writes over FCIP to tapes. Auto-responds to each SCSI write with an XFR_RDY. Also auto-responds to the last data frame in each SCSI write request with an FCP_RSP. This means the initiator thinks that is complete and will continue to the next.</p>
+<p>With fastwrite and/or tape pipelining you can only have one FCIP tunnel between switches or FDs. Not sharing buffers.</p>
+<h2 id="design-concepts">Design Concepts</h2>
+<p>Connect a tunnel from each GbE port to each edge fabric - higher availability? Higher bandwidth?</p>
+<p>No mix of VEX and VE per GbE Port. In the same tunnel group you can only route or merge.</p>
+<p>If you have EX &lt;&gt; E and VEX &lt;&gt; E connections to the same fabric, only the EX &lt;&gt; E will show up, lower metric/link cost.</p>
+<h2 id="topologies">Topologies</h2>
+<p>VE_ - VE_ (merge) VEX_ - VE_ (routing) EX_ - E_ (routing)</p>
+<p>E_Switch1 <FC> EX_Router1 VE_Router1 <FCIP> VE_router2 EX_Router2 <FC> E_Switch2</p>
+<p>Red = Backbone Fabric Blue = Edge Fabrics </p>
+<p>With this, any device can be shared with any device in any fabric.</p>
+<p>---</p>
+<p>E_Switch3 <FC> EX_Router3 VEX_Router3 &lt;&gt; VE_Router4 E_Router4 <FC> E_Switch4</p>
+<p>You can also make it like below, and you would have the same functionality, except that the router is in the same fabric as the  switches.</p>
+<p>E_Switch3 <FC> E_Router3 VEX_Router3 &lt;&gt; VE_Router4 E_Router4 <FC> E_Switch4</p>
+<h2 id="nonos">nonos</h2>
+<p>1) make up your mind EX -&gt; E and E -&gt; E between two fabrics.</p>
+<p>2) which is the edge/backbone? EX_SW1 -&gt; E_SW2 E_SW1 -&gt; EX_SW2</p>
+<p>3) a switch cannot be both edge and backbone E_SW1 -&gt; EX_R1 E_R1 -&gt; EX_R2</p>
+<p>You cannot share devices over more than one backbone fabric.</p>
+<h1 id="long-distance-connectivity-options">Long Distance Connectivity Options</h1>
+<p><strong>Dark Fiber</strong></p>
+<p>fibre optic that is not used. Long Wavelength SFPs. Allocate extra buffers to the ports. <strong>WDM - Transponder- or SFP-based</strong></p>
+<p>several links on the same fibre optic (at different wave lengths). DWDM - full of win and expensive. CWDM - slower, shorter, less channels - lower cost.</p>
+<p>Transponder based : 850nm or 1310nm. Using Optical-to-Electrical-to-Optical (OE-O). SFP based: uses switch equipment that has special WDM transcveivers (colored optics). Cheaper. CWDM SFPs are like a standard SFP in a FC switch, except they transmit on a particular CWDM frequency.</p>
+<p><strong>TDM</strong></p>
+<p>Time Division Multiplexing takes many client-side data channels and map them onto a single higher-bit-rate channel for transmission on one wavelength. May requires special config on switches (IDLE primitives, R_RDY flow control)</p>
+<p><strong>FC-SONET/SDH</strong></p>
+<p>Synchronous Optical Network and Synch. Digital Hierarchy. Often used across metropolitan networks. FC are mapped onto a SONET or SDH payload. Also special config.</p>
+<p><strong>"Extended Distance Solutions"</strong> Some  of these can participate in buffer-to-buffer flow control. Participate in E_Port initialization with an FC_Switch or "snoop" and that way get the <strong>receive-buffer field</strong> in the ELP. For these R_RDY needs to be enabled (VC_RDY is brocade proprietary?). The R_RDY are returned from the device to the switch in order to maintain performance over very long distances. Flow control and error correction between these extension solutions are not handled by the FC switches.</p>
+<p>Consider bandwidth, delay/latency,packet loss (congestion), MTU sizes, etc.</p>
+<p>Packet loss = congestion. When a router discards packets because it cannot store or pass them on.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,15 +1,8 @@
 ---
 title: "linux.conf.au.2016 and a FreeIPA workshop"
-date: "2016-03-31"
-categories: 
-  - "it"
-tags: 
-  - "redhat"
-  - "rh414"
-  - "rhce"
-  - "vagrant"
-  - "virtualbox"
----
+date: 2016-03-31
+category: it
+tags: redhat, rh414, rhce, vagrant, virtualbox
 
 [https://github.com/freeipa/freeipa-workshop](https://github.com/freeipa/freeipa-workshop)
 

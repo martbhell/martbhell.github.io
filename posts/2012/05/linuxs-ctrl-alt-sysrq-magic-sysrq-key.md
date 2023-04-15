@@ -1,13 +1,8 @@
 ---
 title: "Linux's ctrl-alt-SysRq - Magic SysRq Key"
-date: "2012-05-03"
-categories: 
-  - "it"
-tags: 
-  - "linux"
-  - "operating-system"
-  - "os"
----
+date: 2012-05-03
+category: it
+tags: linux, operating, system, os
 
 [http://en.wikipedia.org/wiki/Magic\_SysRq\_key](http://en.wikipedia.org/wiki/Magic_SysRq_key)
 

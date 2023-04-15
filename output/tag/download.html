@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - download</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/p6000-firmware-command-view.html">"P6000 Firmware & Command View"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-06-17T00:00:00+03:00">
+                Published: "2011-06-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/abm.html">abm</a> <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/disks.html">disks</a> <a href="/tag/download.html">download</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/eva.html">eva</a> <a href="/tag/fcoe.html">fcoe</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/hp.html">hp</a> <a href="/tag/management.html">management</a> <a href="/tag/module.html">module</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/release.html">release</a> <a href="/tag/notes.html">notes</a> <a href="/tag/storage.html">storage</a> <a href="/tag/xcs.html">xcs</a> <a href="/tag/10000000.html">10000000</a> </p>
+</footer><!-- /.post-info --><p>The P6000 firmware XCS <a href="https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=T4256-63141" title="on hp.com">10000000</a> is out, or has been for a while now. You can find it on <a href="http://software.hp.com" title="http://software.hp.com">http://software.hp.com</a> or the link above.</p>
+<p>The Command View 9.4 release notes are <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&amp;lang=en&amp;cc=us&amp;docIndexId=64179&amp;taskId=101&amp;prodTypeId=18964&amp;prodSeriesId=471497" title="cv 9.4 release notes">here</a>.</p>
+<p>Extra nice stuff (besides the obvious ones like new hw support):</p>
+<ul>
+<li>HDD upgrades via management module / ABM</li>
+<li>Disk Drive Remote Power cycling (apparently works after 09500000?)</li>
+<li>Thin Provisioning (requires extra license but with the P6300/6500 it comes with the normal CV license)</li>
+<li>Online migrations (change vraid lvl or disk group without impacting i/o - cool)</li>
+<li>Manage it over FCoE (so via an MPX200 for example)</li>
+<li>EVA3000/5000 events not propogated to Windows Event Log - I knew it!</li>
+<li>SSSU 9.4 - took away the 10s delay when executing commands.</li>
+</ul>
+<p>And release notes for the XCS 10M is <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&amp;lang=en&amp;cc=us&amp;docIndexId=64179&amp;taskId=101&amp;prodTypeId=12169&amp;prodSeriesId=5062117" title="hp.com">here</a>.</p>
+<p>More hw stuff ;)</p>
+<ul>
+<li>For HSV300 and above</li>
+<li>P6300 is HSV340 and P650 is HSV360</li>
+<li>M6612 is LFF (3.5" disks) and M6625 is SFF (2.5" disks)</li>
+<li>So are they smaller than the EVA8400?</li>
+<li>Both P6300 and P6500 have a management module (ABM)</li>
+<li>Events that indicate back-end cabling is incorrect -&gt; NICE</li>
+<li>Some more SPOF fixes</li>
+</ul>
+<p>It's confusing to read the release notes as it says P6000 everywhere but it refers to all EVAs. Also the older generations like EVA3000/5000 are called P6000!</p>
+<p>I also wonder why the P6300/P6500 is named HSV340 and HSV360. So they're not better than the EVA6400?</p>
+<p>This would put them on or slightly above the EVA6400/HSV400 series level:</p>
+<p>"Up to 10 M6612 or M6625 are supported with the P6300 EVA up to 20 M6612 or up to 18 M6625 are supported with the P6500 EVA"</p>
+<p>In terms of sizing it would make more sense to call them HSV420 and HSV440 or something like that :)</p>
+<p>On this <a href="http://h10010.www1.hp.com/wwpc/us/en/sm/WF04a/12169-304616-304648-304648-304648.html" title="comparison">page</a> it says active/active on the redundancy options, but it doesn't say this on the x400. Does this mean it's no longer asymmetrical A/A like it was on the previous EVAs?</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

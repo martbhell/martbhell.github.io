@@ -1,18 +1,8 @@
 ---
 title: "Book Review – The Hunter’s Trilogy by R.A. Salvatore - Part 2"
-date: "2011-01-31"
-categories: 
-  - "finland"
-tags: 
-  - "book"
-  - "crystallization"
-  - "good-omens"
-  - "malazan"
-  - "r-a-salvatore"
-  - "review"
-  - "stephen-erikson"
-  - "terry-pratchett"
----
+date: 2011-01-31
+category: finland
+tags: book, crystallization, good, omens, malazan, r, a, salvatore, review, stephen, erikson, terry, pratchett
 
 [Part 1](http://www.guldmyr.com/blog/book-review-the-hunters-trilogy-by-r-a-salvatore/ "PART 1")
 

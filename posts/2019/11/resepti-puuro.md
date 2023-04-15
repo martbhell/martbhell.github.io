@@ -1,9 +1,7 @@
 ---
 title: "Resepti: Puuro"
-date: "2019-11-16"
-categories: 
-  - "finland"
----
+date: 2019-11-16
+category: finland
 
 Kahdelle
 

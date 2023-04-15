@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - kvm</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/red-hat-certification-rhce-kvm-via-cli.html">"Red Hat Certification - RHCE - KVM via CLI"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-06-16T00:00:00+03:00">
+                Published: "2012-06-16"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/libvirt.html">libvirt</a> <a href="/tag/libvirtd.html">libvirtd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/qemu.html">qemu</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/studying.html">studying</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info --><p>In a previous <a href="http://www.guldmyr.com/blog/rhcsa-preparation/">post</a> while preparing for RHCSA I installed kvm post-installation, via the GUI.</p>
+<p>But how to install, configure and use it only from the CLI?</p>
+<h2 id="virt-manager">Virt-Manager</h2>
+<p><a href="http://virt-manager.org/page/Main_Page">http://virt-manager.org/page/Main_Page</a> has some details</p>
+<p>As a test-machine I'm using a server with Scientific Linux 6.2 (with virtualization enabled as seen by 'cat /proc/cpuinfo|grep vmx').</p>
+<p>None of the Virtualization Groups are installed, as seen by 'yum grouplist'. While doing that you'll find four different groups. You can use</p>
+<p>yum groupinfo "Virtualization Client"</p>
+<p>or correspondingly to get more information about the group.</p>
+<p>yum groupinstall Virtualization "Virtualization Tools" "Virtualization Platform" "Virtualization Client"</p>
+<p>This installs a lot of things. Libvirt, virt-manager, qemu, gnome and python things.</p>
+<p>lsmod|grep kvm
+service libvirtd start
+lsmod|grep kvm</p>
+<p>This also sets up a bridge-interface (virbr0).</p>
+<p>Now, how to install a machine or connect to the hypervisor?</p>
+<p>How to get console?</p>
+<p>ssh -XYC user@kvmserver
+virt-manager</p>
+<p>did not work.</p>
+<p>On the <strong>client</strong> you could try to do:</p>
+<p>yum groupinstall "Virtualization Client"
+yum install libvirt
+virt-manager</p>
+<p>Then start virt-manager and connect to your server. However this didn't work for me either. Is virtualization needed on the client too?</p>
+<p>Noit is not, first: check if Virtualization is enabled on the server. Look in /var/log/messages for</p>
+<p>kernel: kvm: disabled by bios</p>
+<p>If it says that you'll need to go into BIOS / Processor Options / and enable Virtualization.</p>
+<p>Then you can start virt-manager, check that you can connect to the KVMserver.</p>
+<p>Copy a .iso to /var/lib/libvirt/images on the server.</p>
+<p>Re-connect to the kvm-server in virt-manager.</p>
+<p>Add a new VM called <strong>test</strong>. Using 6.2 net-install and NAT network interface. This may take a while.</p>
+<p>Pointing the VM to kvm-server where a httpd is running (remember firewall rules) and an SL 6.2 is stored. Installing a Basic Server.</p>
+<p>OK, we could use virt-manager, it's quite straight-forward and doesn't require any edits of config files at all.</p>
+<h2 id="moving-on-to-virsh">Moving on to <strong>virsh</strong>.</h2>
+<p>To install a vm you use 'virt-install'.</p>
+<p>You can get lots of info from 'virsh'</p>
+<p>virsh pool-list
+virsh vol-list default
+virsh list
+virsh list-all
+virsh dumpxml test &gt; /tmp/test.xml
+cp /tmp/test.xml /tmp/new.xml</p>
+<p>Edit new.xml</p>
+<p>change name to new and remove line with UUID</p>
+<p>virt-xml-validate /tmp/new.xml
+virsh help create
+virsh create --file /tmp/new.xml
+virsh list</p>
+<p>This creates a new VM that uses the same disk and setup. But, if you shut down this new domain, it will disappear from virsh list --all and the list. To keep it you need to define it first:</p>
+<p>virsh define --file /tmp/new.xml
+virsh start new</p>
+<p>This can become quite a bit more complicated. You would probably want to make clones (virt-clone) or snapshots (virsh help snapshot) instead of using the same disk file.</p>
+<p>Making your own .xml from scratch looks fairly complicated. You could use 'virt-install' however.</p>
+<p>virt-install --help
+virt-install -n awesome -r 1024 --vcpus 1 --description=AWESOME --cdrom /var/lib/libvirt/images/CentOS-6.2-x86_64-netinstall.iso --os-type=linux --os-variant=rhel6 --disk path=/var/lib/libvirt/images/awesome,size=8 --hvm</p>
+<p>For this the console actually works while running 'virt-install' over ssh on the kvm-server.</p>
+<p>To make edit to a vm over ssh:</p>
+<p>virsh edit NAMEOFVM</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/red-hat-certification-rhcsa-preparation.html" rel="bookmark"
+                           title="Permalink to "Red Hat Certification - RHCSA - Preparation"">"Red Hat Certification - RHCSA - Preparation"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-12-09T00:00:00+02:00">
+                Published: "2011-12-09"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/boot.html">boot</a> <a href="/tag/booting.html">booting</a> <a href="/tag/certification.html">certification</a> <a href="/tag/chcon.html">chcon</a> <a href="/tag/context.html">context</a> <a href="/tag/iso.html">iso</a> <a href="/tag/kickstart.html">kickstart</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/libvirt.html">libvirt</a> <a href="/tag/linux.html">linux</a> <a href="/tag/network.html">network</a> <a href="/tag/qemu.html">qemu</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/selinux.html">selinux</a> <a href="/tag/studying.html">studying</a> <a href="/tag/virt.html">virt</a> <a href="/tag/manager.html">manager</a> </p>
+</footer><!-- /.post-info -->                <p>[toc]</p>
+<p><a href="https://github.com/mconigliaro/RHCE-Cheat-Sheet" title="https://github.com/mconigliaro/RHCE-Cheat-Sheet">https://github.com/mconigliaro/RHCE-Cheat-Sheet</a></p>
+<p>Found this "cheat sheet" for RHCE. Sure it doesn't specifically say RHCSA but honestly there's a lot of good commands in there. Some things obviously might be too advanced for RHCSA, such configuring an dns/named service. But it might be good as a …</p>
+                <a class="readmore" href="/red-hat-certification-rhcsa-preparation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/scientific-linux-6-basic-setup.html" rel="bookmark"
+                           title="Permalink to "Scientific Linux 6 - Basic Setup"">"Scientific Linux 6 - Basic Setup"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-10-26T00:00:00+03:00">
+                Published: "2011-10-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <h2 id="not-allowing-root-to-log-in">Not allowing root to log in</h2>
+<p>By default sshd is running on SL6 and you can ssh in with 'root'.</p>
+<p>Probably a good idea to change this in /etc/ssh/sshd_config</p>
+<p>permitrootlogin no</p>
+<p>But first, create a user that can log in.</p>
+<p>useradd mart
+passwd mart</p>
+<p>Then you can change …</p>
+                <a class="readmore" href="/scientific-linux-6-basic-setup.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/install-scientific-linux-6-in-vmware-workstation.html" rel="bookmark"
+                           title="Permalink to "Install Scientific Linux 6 in VMWare Workstation"">"Install Scientific Linux 6 in VMWare Workstation"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-10-02T00:00:00+03:00">
+                Published: "2011-10-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>Time for some more Linux testing.</p>
+<p>The reason for this is because I think I will go ahead and try to study for the <a href="http://www.redhat.com/certification/rhcsa/" title="on redhat.com">RHCSA</a> - Red Hat Certified System Administrator. Work might send me to a course in December, probably wise to play around with it before this.</p>
+<p>So here …</p>
+                <a class="readmore" href="/install-scientific-linux-6-in-vmware-workstation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

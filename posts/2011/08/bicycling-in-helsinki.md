@@ -1,12 +1,8 @@
 ---
 title: "Bicycling in Helsinki"
-date: "2011-08-08"
-categories: 
-  - "finland"
-tags: 
-  - "bicycling"
-  - "finland"
----
+date: 2011-08-08
+category: finland
+tags: bicycling, finland
 
 Some things to remember:
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - rest</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/wasthereannhlgamelastnightappspotcom-fixed-working-again.html">"wasthereannhlgamelastnight.appspot.com - fixed - working again!"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-10-04T00:00:00+03:00">
+                Published: "2017-10-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/api.html">api</a> <a href="/tag/gcloud.html">gcloud</a> <a href="/tag/google.html">google</a> <a href="/tag/json.html">json</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/python.html">python</a> <a href="/tag/rest.html">rest</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
+</footer><!-- /.post-info --><p>With NHL 2017-2018 season coming up and I had some extra spare time I thought why not finally fix this great website again :)</p>
+<p>As NHL changed the layout of their schedule page about two seasons ago - there's these days "infinite scrolling" or whatever it's called when the page only loads what you see on the screen. This means it's a bit difficult to scrape the page (but not impossible).</p>
+<p>Lately I've been using REST API and JSON data for quite many things - after a short search I managed to find this hidden gem: https://statsapi.web.nhl.com/api/v1/schedule?startDate=2016-01-31&amp;endDate=2016-02-05&amp;expand=schedule.teams,schedule.linescore,schedule.broadcasts,schedule.ticket,schedule.game.content.media.epg&amp;leaderCategories=&amp;site=en_nhl&amp;teamId=</p>
+<p>Now that's a link to an API provided by NHL where you get the schedule and you can filter it. I'm not sure what all the parameters do, they're not all needed. You just need the startDate and endDate. The API also has standings and results. I have not managed to find any documentation for it. Best so far seems to be <a href="https://www.kevinsidwar.com/iot/2017/7/1/the-undocumented-nhl-stats-api">this blog post</a>.  So I'm not sure about if it's OK to use it or if there are any restrictions.</p>
+<p>p.s. - there is a shorter URL to the main page: <a href="https://rix.fi/nhl">https://rix.fi/nhl</a> - but the commands - like  <a href="https://wasthereannhlgamelastnight.appspot.com/MTL">https://wasthereannhlgamelastnight.appspot.com/MTL</a> - does not work.</p>
+<p>http://www.guldmyr.com/blog/was-there-an-nhl-game-last-night/</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

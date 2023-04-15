@@ -1,14 +1,8 @@
 ---
 title: "Sharepoint 2010 Foundation - Part 2"
-date: "2011-02-02"
-categories: 
-  - "it"
-tags: 
-  - "it-2"
-  - "sharepoint"
-  - "vmware-workstation"
-  - "windows"
----
+date: 2011-02-02
+category: it
+tags: it, 2, sharepoint, vmware, workstation, windows
 
 # Overview
 

@@ -1,17 +1,8 @@
 ---
 title: "The bash shell - Linux terminal keyboard shortcuts"
-date: "2011-04-13"
-categories: 
-  - "it"
-tags: 
-  - "bash"
-  - "bash-shell"
-  - "console"
-  - "keyboard-shortcuts"
-  - "linux"
-  - "shell"
-  - "terminal"
----
+date: 2011-04-13
+category: it
+tags: bash, bash, shell, console, keyboard, shortcuts, linux, shell, terminal
 
 Hey!
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - pox</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/make-your-own-l2-firewall.html">"Make your own L2 Firewall!"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-07-17T00:00:00+03:00">
+                Published: "2013-07-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pox.html">pox</a> <a href="/tag/python.html">python</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info --><p>Is what I did this week during the <a href="https://www.coursera.org/course/sdn" title="https://www.coursera.org/course/sdn">SDN Course</a> on Coursera :)</p>
+<p>Within <a href="http://mininet.org/" title="http://mininet.org/">mininet</a> or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to do.</p>
+<p><a href="http://www.noxrepo.org/pox/about-pox/" title="noxrepo.org">POX</a> is one of these APIs that you can use to create controllers, it's good for learning about controllers as it's not so low level as it's sibling NOX, which is in C++. There are switches in JAVA too (<a href="http://www.projectfloodlight.org/floodlight/" title="http://www.projectfloodlight.org/floodlight/">Floodlight</a>) and many more.</p>
+<p>With POX there are some example switches, for example a basic L2 learning switch. It remembers (among quite a few other things) MAC addresses for hosts and remembers in which ports the MAC addresses can be found. With a simple ping: After L2 broadcast is done to find the MAC of the recipient, the controllers install the MAC_source+port and MAC_destination+port as flows on the switches.</p>
+<p>What we did this week was to right after the switch is executed, run some extra code that parses a .csv file for MAC address pairs that are not allowed to talk and add these pairs into the flow table.</p>
+<p>Pretty cool I think :)</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

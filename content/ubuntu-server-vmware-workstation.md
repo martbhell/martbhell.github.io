@@ -1,0 +1,1 @@
+../posts/2011/05/ubuntu-server-vmware-workstation.md

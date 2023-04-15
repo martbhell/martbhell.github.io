@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Install Scientific Linux 6 in VMWare Workstation"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Time for some more Linux testing. The reason for this is because I think I will go ahead and try to study for the RHCSA - Red Hat Certified System..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/install-scientific-linux-6-in-vmware-workstation.html" rel="bookmark"
+           title="Permalink to "Install Scientific Linux 6 in VMWare Workstation"">"Install Scientific Linux 6 in VMWare Workstation"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-10-02T00:00:00+03:00">
+                Published: "2011-10-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->      <p>Time for some more Linux testing.</p>
+<p>The reason for this is because I think I will go ahead and try to study for the <a href="http://www.redhat.com/certification/rhcsa/" title="on redhat.com">RHCSA</a> - Red Hat Certified System Administrator. Work might send me to a course in December, probably wise to play around with it before this.</p>
+<p>So here we go.</p>
+<p>Scientific Linux (SL) is a free clone of Red Hat Enterprise Linux (RHEL). Historically it's been updated faster than CentOS. It's same as Enterprise Linux (EL) - it's re-compiled from source.</p>
+<p>New VM, \SL-61-x86_64-2011-07-27-Install-DVD.iso, RHEL6 64-bit. 1 Core, 2G RAM, NAT, LSI Logic, New virtual disk, SCSI, 20G. Then boot the VM.</p>
+<p>SL.org has this in pictures.</p>
+<p>First thing you see is the Grub menu:</p>
+<ol>
+<li>Install or Upgrade</li>
+<li>Install with basic video driver</li>
+<li>Rescue</li>
+<li>Boot from local drive</li>
+<li>Memtest (I like that memtest is pretty standard now)</li>
+</ol>
+<p>Chose 1. Next screen is a graphical interface where you click and write, so you need keyboard/mouse. Next screen asks if you want local disks or external storage (fc, iSCSI, or zFCP - for system Z). Hostname: SL1.localdomain.</p>
+<p>Create disks. <strong>Custom/full size. xfs/encryption/lvm cannot be used for boot volumes.</strong></p>
+<p>Role: Virtual Host (I want to try KVM). Enabling SL 6.1 and SL 6.1 Security Updates repositories.</p>
+<p>Pinging to something on the Intertubes work from the start.</p>
+<p>More posts coming with more fun stuff :)</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

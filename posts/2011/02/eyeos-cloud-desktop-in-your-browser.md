@@ -1,20 +1,8 @@
 ---
 title: "EyeOS - Cloud Desktop in your browser"
-date: "2011-02-03"
-categories: 
-  - "it"
-tags: 
-  - "activemq"
-  - "apt-get"
-  - "cloud"
-  - "eyeos"
-  - "icloud"
-  - "kaazing"
-  - "pico"
-  - "ubuntu"
-  - "virtual-desktop"
-  - "vmware-workstation"
----
+date: 2011-02-03
+category: it
+tags: activemq, apt, get, cloud, eyeos, icloud, kaazing, pico, ubuntu, virtual, desktop, vmware, workstation
 
 Useful? Hopefully! Interesting? Very!
 

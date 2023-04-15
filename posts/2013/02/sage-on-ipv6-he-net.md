@@ -1,16 +1,8 @@
 ---
 title: "sage on ipv6.he.net"
-date: "2013-02-26"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "dns"
-  - "he"
-  - "hurricane-electric-ip"
-  - "ipv6"
-  - "smtp"
----
+date: 2013-02-26
+category: it
+tags: certification, dns, he, hurricane, electric, ip, ipv6, smtp
 
 [http://ipv6.he.net/certification/](http://ipv6.he.net/certification/)
 

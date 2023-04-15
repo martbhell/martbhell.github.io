@@ -1,0 +1,1 @@
+../posts/2011/10/scientific-linux-6-basic-setup.md

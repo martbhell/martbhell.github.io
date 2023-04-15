@@ -1,9 +1,7 @@
 ---
 title: "Reseptit: Tuorepuuro Mustikalla"
-date: "2019-10-04"
-categories: 
-  - "finland"
----
+date: 2019-10-04
+category: finland
 
 Ainesosit:
 

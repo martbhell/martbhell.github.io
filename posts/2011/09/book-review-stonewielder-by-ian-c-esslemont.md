@@ -1,20 +1,8 @@
 ---
 title: "Book Review - Stonewielder by Ian C. Esslemont"
-date: "2011-09-28"
-categories: 
-  - "finland"
-tags: 
-  - "book"
-  - "book-review"
-  - "fantasy"
-  - "ian-c-esslemont"
-  - "ice"
-  - "malaz"
-  - "malazan"
-  - "review"
-  - "steven-erikson"
-  - "stonewielder"
----
+date: 2011-09-28
+category: finland
+tags: book, book, review, fantasy, ian, c, esslemont, ice, malaz, malazan, review, steven, erikson, stonewielder
 
 This is the third book in the Malazan world. The previous ones by Ian are Night of Knives and The Return of the Crimson Guard.
 

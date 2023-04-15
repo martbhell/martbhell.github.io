@@ -1,18 +1,8 @@
 ---
 title: "My broken amazon kindle :("
-date: "2012-03-05"
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "amazon"
-  - "ebook"
-  - "game-of-thrones"
-  - "hardware"
-  - "kindle"
-  - "malfunction"
-  - "song-of-ice-and-fire"
-  - "support"
+date: 2012-03-05
+category: finland, it
+tags: amazon, ebook, game, of, thrones, hardware, kindle, malfunction, song, of, ice, and, fire, support
 coverImage: "kindle_screen_error.jpg"
 ---
 

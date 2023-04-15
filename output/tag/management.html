@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - management</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/commandoio-manage-servers.html">"commando.io - manage servers"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-11-13T00:00:00+02:00">
+                Published: "2013-11-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/cms.html">cms</a> <a href="/tag/commando.html">commando</a> <a href="/tag/io.html">io</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/management.html">management</a> <a href="/tag/software.html">software</a> <a href="/tag/servers.html">servers</a> </p>
+</footer><!-- /.post-info --><p><a href="https://command.io" title="https://command.io">https://command.io</a> is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface.</p>
+<p>It uses ssh - you need to allow commando.io's server to ssh into your server. You can specify with which user, which port and then it uses an ssh key to log in.</p>
+<p>When you sign up, first you get to choose your own subdomain, like awesome.commando.io and then add your user into there. The subdomain you get, let's say awesome.commando.io is pointing to an IP. It is with this IP that commando is connecting to your server. So this should be firewalled.</p>
+<p>First thing I noticed was that on a CentOS 6 the command you get to copy-paste does not account for that CentOS6 sets permissions to 775 by default when running mkdir ~/.ssh. I sent a message to commando.io with the built-in messaging tool at 13th of November at 1223. 12 minutes later I had a reply, so quite quick at responding.</p>
+<p>Also sent in a suggestion that they look into ssh-copy-id instead of making ~/.ssh and setting permissions manually :)</p>
+<p>Real easy to add a recipe and then run it on a server.</p>
+<p>I could not find any existing recipes, nor where there any links to a repository or community page where one could share recipes or even example recipes.</p>
+<p>All in all:</p>
+<ul>
+<li>It looks nice and mostly works.</li>
+<li>Is it safe? Do I want to give access to a third party provider that doesn't have any obvious information declaring their high intent of security.</li>
+<li>Some things that would be nice:<ul>
+<li>scheduled executions</li>
+<li>using states - puppet-like, to insure that something that was done in a recipe once is still the current state of the machine.</li>
+<li>group import of servers</li>
+</ul>
+</li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/cfengine-whats-that-about.html" rel="bookmark"
+                           title="Permalink to "cfengine - what's that about?"">"cfengine - what's that about?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-11-03T00:00:00+02:00">
+                Published: "2012-11-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/cfengine.html">cfengine</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/clustering.html">clustering</a> <a href="/tag/cms.html">cms</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/management.html">management</a> <a href="/tag/software.html">software</a> </p>
+</footer><!-- /.post-info -->                <p><a href="http://cfengine.com/what-is-cfengine" title="http://cfengine.com/what-is-cfengine">http://cfengine.com/what-is-cfengine</a></p>
+<p>It's a (old) software that is used to make sure that (for example) the same config files are used on all machines. There are several other CMSs, for example <a href="http://puppetlabs.com/" title="puppetlabs.com">puppet.</a> Wikipedia has a nice <a href="http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#Basic_properties" title="on wikipedia">overview</a> of them.</p>
+<p>Let's use the <a href="http://www.guldmyr.com/blog/setup-a-3-node-lustre-filesystem/" title="Setup a 3 Node Lustre Filesystem">lustre</a>   machines we set up in …</p>
+                <a class="readmore" href="/cfengine-whats-that-about.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/p6000-firmware-command-view.html" rel="bookmark"
+                           title="Permalink to "P6000 Firmware & Command View"">"P6000 Firmware & Command View"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-06-17T00:00:00+03:00">
+                Published: "2011-06-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/abm.html">abm</a> <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/disk.html">disk</a> <a href="/tag/array.html">array</a> <a href="/tag/disks.html">disks</a> <a href="/tag/download.html">download</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/eva.html">eva</a> <a href="/tag/fcoe.html">fcoe</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/hp.html">hp</a> <a href="/tag/management.html">management</a> <a href="/tag/module.html">module</a> <a href="/tag/p6000.html">p6000</a> <a href="/tag/release.html">release</a> <a href="/tag/notes.html">notes</a> <a href="/tag/storage.html">storage</a> <a href="/tag/xcs.html">xcs</a> <a href="/tag/10000000.html">10000000</a> </p>
+</footer><!-- /.post-info -->                <p>The P6000 firmware XCS <a href="https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=T4256-63141" title="on hp.com">10000000</a> is out, or has been for a while now. You can find it on <a href="http://software.hp.com" title="http://software.hp.com">http://software.hp.com</a> or the link above.</p>
+<p>The Command View 9.4 release notes are <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&amp;lang=en&amp;cc=us&amp;docIndexId=64179&amp;taskId=101&amp;prodTypeId=18964&amp;prodSeriesId=471497" title="cv 9.4 release notes">here</a>.</p>
+<p>Extra nice stuff (besides the obvious ones like new hw support):</p>
+<ul>
+<li>HDD upgrades via …</li></ul>
+                <a class="readmore" href="/p6000-firmware-command-view.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

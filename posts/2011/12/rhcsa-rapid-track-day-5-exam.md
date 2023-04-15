@@ -1,16 +1,8 @@
 ---
 title: "RHCSA – Rapid Track – Day 5 - Exam"
-date: "2011-12-16"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "linux"
-  - "red-hat"
-  - "review"
-  - "rhcsa"
-  - "studying"
----
+date: 2011-12-16
+category: it
+tags: certification, linux, red, hat, review, rhcsa, studying
 
 Just did the exam. Not bad at all, I really enjoyed this hands-on exam.
 

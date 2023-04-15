@@ -1,18 +1,8 @@
 ---
 title: "Brocade Certified Fabric Designer - BCFD - Exam"
-date: "2012-02-04"
-categories: 
-  - "storage"
-tags: 
-  - "bcfd"
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-designer"
-  - "certification"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+date: 2012-02-04
+category: storage
+tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
 
 Just took the BCFD (brocade certified fabric designer) exam two days ago.
 

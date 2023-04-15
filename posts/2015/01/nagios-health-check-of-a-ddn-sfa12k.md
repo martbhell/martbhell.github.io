@@ -1,15 +1,8 @@
 ---
 title: "Nagios Health Check of a DDN SFA12K"
-date: "2015-01-18"
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "ddn"
-  - "monitoring"
-  - "nagios"
-  - "sfa12k"
----
+date: 2015-01-18
+category: it, storage
+tags: ddn, monitoring, nagios, sfa12k
 
 Part of my $dayjob as a sysadmin is to monitor all things.
 

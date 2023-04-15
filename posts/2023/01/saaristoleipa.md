@@ -1,16 +1,8 @@
 ---
 title: "saaristoleipä"
-date: "2023-01-18"
-categories: 
-  - "finland"
-tags: 
-  - "baking"
-  - "leipa"
-  - "recipe"
-  - "resepti"
-  - "reseptit"
-  - "saaristolaisleippa"
----
+date: 2023-01-18
+category: finland
+tags: baking, leipa, recipe, resepti, reseptit, saaristolaisleippa
 
 yritys 1:
 

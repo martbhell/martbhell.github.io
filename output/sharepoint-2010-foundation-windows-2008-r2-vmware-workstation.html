@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Sharepoint 2010 Foundation + Windows 2008 R2 + VMWare Workstation"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Overview I just write down notes from the installation. But intended as a guide for how to set up your own sharepoint lab. Guides and..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation.html" rel="bookmark"
+           title="Permalink to "Sharepoint 2010 Foundation + Windows 2008 R2 + VMWare Workstation"">"Sharepoint 2010 Foundation + Windows 2008 R2 + VMWare Workstation"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-01-30T00:00:00+02:00">
+                Published: "2011-01-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/sharepoint.html">sharepoint</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->      <h1 id="overview">Overview</h1>
+<p>I just write down notes from the installation. But intended as a guide for how to set up your own sharepoint lab.</p>
+<h2 id="guides-and-documentation">Guides and Documentation</h2>
+<p>Sharepoint server on technet: <a href="http://technet.microsoft.com/en-us/library/cc303422.aspx" title="sharepoint server technet">http://technet.microsoft.com/en-us/library/cc303422.aspx</a></p>
+<p>SQL Server 2008 R2 and Sharepoint 2010 server I downloaded the trial from Microsoft.</p>
+<h2 id="terminology">Terminology</h2>
+<p>VM - Virtual Machine Host OS - I installed VMWare Workstation on my home desktop, so the Host OS will in my case be Windows 7 as that's what's installed on it. Guest OS - On this host OS I have installed Windows 2008 R2 - this will be running inside VMWare Workstation. NAT - Network Address Translation</p>
+<h1 id="installation">Installation</h1>
+<ol>
+<li>Install VMWare Workstation</li>
+<li>Install Windows 2008 R2</li>
+<li>Install a client - Windows 7 x64 - or connect from the host os.</li>
+<li>Install SQL Server 2008 R2</li>
+<li>Install Sharepoint</li>
+</ol>
+<h2 id="windows-2008-r2">Windows 2008 R2</h2>
+<p>Easy Setup may not be the best choice -&gt; when I did it took the timezone I was in and decided that Ukrainian would be a good language.</p>
+<p>In the beginning it's probably best to have the VMs connected to the Internet (so you can apply patches) - setting is called NAT when setting up the VM. I chose 2GB RAM and 40GB disk space (guide says 4GB RAM and 80GB disk).</p>
+<p>The password/account you specify needs to meet the Windows 2008 password requirements.</p>
+<p>Install patches Set up remote desktop - so you can connect from your host and connect your host OS local disk drive to the guest OS - good way to share files between them.</p>
+<p>I did not read the documentation or find a good step-by-step, figured I would try it out without any of that - this way I would learn better.</p>
+<h3 id="initial-roles">Initial Roles</h3>
+<p>Figured that a domain would be good to start with.</p>
+<p>Select AD Domain Services and install. This installed .net 3.5.1 and then asked me to run dcpromo.</p>
+<p>DCpromo - new forest - fqdn: guldmyr.lan - forest functional level: 2008 R2. Then it examines DNS configuration, takes forever, probably because I don't have a DNS server installed. A while later it asks if you want to install the DNS server. Which recommends having a static IP. Changed ip to 192.168.232.10. Then it asks something about delegation, went to next and there you see a summary - with install DNS selected. That went without a hitch. Restarting. You get to set a special AD password as well. <strong>Reboot</strong>.</p>
+<p>To test that the AD was probably installed - you now can either install a new VM with a client to try to log on. Or you can use the remote desktop and authenticate with a domain account. Also a "ping win2k8" or "ping guldmyr.com" showed that dns might be working as well. After the reboot the DNS server in the ipv4 configuration was changed to localhost - 127.0.0.1.</p>
+<p>This worked for me with only the above steps - pretty easy!</p>
+<p>When I open server manager there are some errors but none seems to awful. There are best practices you can run to improve things / harden the setup - but this is not so important at the moment - I just want to get a sharepoint server up and running.</p>
+<h2 id="sql-server-2008-r2">SQL Server 2008 R2</h2>
+<p>Installing this package: SQLFULL_ia64_ENU of 1.4GB. This extracts everything inside and takes roughly 2GB of space. Turns out the IA64 does not work on an x64 system. So then I tried to download SQL Express 2008 R2 instead, and it's free and only 250MB! http://www.microsoft.com/express/Database/</p>
+<p>Let's see how this goes :) Installing this package: SQLEXPRWT_x64_ENU of 250MB</p>
+<p>New installation, accept, chose default settings in regards to directories and what to install, named instance - default settings,  Create an account - I named it SQL - click on browse to select it - format is GULDMYR\SQL. Then you get to specify SQL Server Admins. After that it's installing. Completed without any hitches. Pathces. <strong>Reboot</strong>.</p>
+<p>SQL Server Management Studio - could not connect.</p>
+<p><strong>Uninstalling SQL Server 2008 R2.</strong> Selected the R2 x64. That took care of most. ALso ENU and native client I uninstalled. Because in the hardware/software requirements this is mentioned Preparation Tool installs "SQL Server 2008 Express with SP1"</p>
+<h2 id="sharepoint-server-2010">Sharepoint Server 2010</h2>
+<p>Couldn't install -  error: "installation of this package failed" Couldn't extract the file either - broken download. Re-downloaded.</p>
+<p>OK, this extracted. Now it says that the language is not supported. Stupid Ukrainian. Reinstalling Win2k8</p>
+<p>Reinstalled win2k8 - chose "install OS later" to get rid of the auto-install. Also changed RAM to 3GB and disk to 40GB (it doesn't use space until it's used).</p>
+<p>Now all is in English!</p>
+<p>Did not install AD services this time. Did not configure a second account, doing the install with the Administrator account.</p>
+<p>Downloading Sharepoint 2010 Foundation instead of the server version.</p>
+<p>Selected "install software pre-requisities". This installed <a href="http://technet.microsoft.com/en-us/library/cc262485.aspx" title="pre-requisities">lots of stuff</a> successfully. <strong>Reboot</strong>. Install continues afterwards. Ran installation file again, chose standalone setup. Completed OK. Then a wizard runs. Completed.</p>
+<p>Opens http://win2k8/ - log on with administrator</p>
+<p>And now we got a sharepoint!</p>
+<h1 id="summary">Summary</h1>
+<p>With the Foundation version there are a minimal amount of settings to configure when following the wizards. No choice in terms of storage, sql server, accounts. Just click-click-click!</p>
+<p>Total size of the VM after all this is 13.6GB (14 661 324 079 bytes).</p>
+<ol>
+<li>Install Windows 2008 R2</li>
+<li>Patch it.</li>
+<li>Run Sharepoint 2010 Foundation pre-requisities install</li>
+<li>Run Sharepoint 2010 Foundation install</li>
+<li>Point your web browser to http://localhost or http://servername. OR http://ip (this will work from the host os).</li>
+</ol>
+<p>Next post will be about what to do inside sharepoint!</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

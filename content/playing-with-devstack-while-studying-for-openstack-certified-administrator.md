@@ -1,0 +1,1 @@
+../posts/2018/11/playing-with-devstack-while-studying-for-openstack-certified-administrator.md

@@ -1,20 +1,8 @@
 ---
 title: "OpenIndiana + PostgreSQL + dCache"
-date: "2012-03-01"
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "dcache"
-  - "esx"
-  - "esxi"
-  - "grid"
-  - "openindiana"
-  - "postgres"
-  - "postgresql"
-  - "vmware"
-  - "vmware-workstation"
----
+date: 2012-03-01
+category: it, storage
+tags: dcache, esx, esxi, grid, openindiana, postgres, postgresql, vmware, vmware, workstation
 
 ## This is a test for installing openindiana and set up a working dCache test-vm.
 

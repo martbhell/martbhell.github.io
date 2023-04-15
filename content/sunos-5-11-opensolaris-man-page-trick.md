@@ -1,0 +1,1 @@
+../posts/2011/08/sunos-5-11-opensolaris-man-page-trick.md

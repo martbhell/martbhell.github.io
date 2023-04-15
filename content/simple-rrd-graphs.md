@@ -1,0 +1,1 @@
+../posts/2011/11/simple-rrd-graphs.md

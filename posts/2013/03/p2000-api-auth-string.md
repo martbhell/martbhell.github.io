@@ -1,16 +1,8 @@
 ---
 title: "P2000 API Auth String"
-date: "2013-03-05"
-categories: 
-  - "it"
-tags: 
-  - "api"
-  - "dothill"
-  - "md5"
-  - "monitoring"
-  - "p2000"
-  - "perl"
----
+date: 2013-03-05
+category: it
+tags: api, dothill, md5, monitoring, p2000, perl
 
 Ever wanted to do monitoring of a P2000 or MSA2000 from HP?
 

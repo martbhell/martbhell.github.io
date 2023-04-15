@@ -1,11 +1,8 @@
 ---
 title: "Job"
-date: "2011-02-16"
-categories: 
-  - "finland"
-tags: 
-  - "job"
----
+date: 2011-02-16
+category: finland
+tags: job
 
 Awaiting job confirmation then I will have more lovely things to write about!
 

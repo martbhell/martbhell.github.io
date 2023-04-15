@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Time Sync for Linux VMs in VMWare Workstation"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="You may have seen in my previous post about EyeOS that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/time-sync-for-linux-vms-in-vmware-workstation.html" rel="bookmark"
+           title="Permalink to "Time Sync for Linux VMs in VMWare Workstation"">"Time Sync for Linux VMs in VMWare Workstation"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-27T00:00:00+02:00">
+                Published: "2011-02-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/time.html">time</a> <a href="/tag/servers.html">servers</a> <a href="/tag/sync.html">sync</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->      <p>You may have seen in my <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser-part-2/" title="eyeos time sync">previous post about EyeO</a>S that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I could not find anything that decidedly fixed it.</p>
+<p>run ntpdate every hour. This is not advised, primarily because it will add a lot of extra load after a while to the public(free) time servers. Especially if I want to have several machines up to date. One thought then was to set up a local ntpd and let other guest OS sync time with that. But then I could not get that in sync so we were back to square one.</p>
+<p>others mention using VMWare tools time sync.</p>
+<h3 id="my-setup">My setup:</h3>
+<p>Intel Quad Core i7-920 8GB RAM Corsair XMS3 DDR3 1333MHz 8GB CL9 Gigabyte GA-EX58-UD3R Windows 7 x64 Vmware Workstation 7.1.1</p>
+<h3 id="what-works-for-me">What works for me</h3>
+<h4 id="for-ubuntu-1010-x64">For <strong>ubuntu 10.10</strong> x64:</h4>
+<p>Make sure vmware tools is installed (type vmware and hit 'tab'). With a .txt editor open up "vmname.vmx" on your host OS. Set tools.syncTime = "FALSE" to "TRUE". Restart vm.</p>
+<p>Now on this particular machine I've had ntpd installed, but it is now uninstalled.</p>
+<h4 id="for-red-hat-enterprise-linux-5-x64-rhel-5">For Red Hat Enterprise Linux  5 x64 - <strong>RHEL 5</strong>:</h4>
+<ul>
+<li>Install vmware-tools (without make/gcc installed).</li>
+<li>Set tools.syncTime = "TRUE"</li>
+<li>Set up ntpd with the below from ntp.conf</li>
+<li>Restart ntpd by getting root shell with 'su -' and then '/etc/init.d/ntpd restart'</li>
+</ul>
+<p>I filled out the ntp-information during installation and then after wards I added the "tinker panic 0" which should let the ntpd make 'big jumps' and by commenting the fudge-line I chose not to use the local clock because this is drifting so much. More than 24 hours after I installed the OS the driftfile is still 0.000.</p>
+<p><strong>ntp.conf:</strong></p>
+<p><code>tinker panic 0 restrict default kod nomodify notrap nopeer noquery</code></p>
+<p><code>restrict 127.0.0.1 restrict -6 ::1</code></p>
+<p><code># Hosts on local network are less restricted. #restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap</code></p>
+<p><code>server 0.rhel.pool.ntp.org server 1.rhel.pool.ntp.org server 2.rhel.pool.ntp.org</code></p>
+<p><code># Undisciplined Local Clock. This is a fake driver intended for backup # and when no outside source of synchronized time is available. #fudge  127.127.1.0 stratum 10</code></p>
+<p><code>driftfile /var/lib/ntp/drift keys /etc/ntp/keys restrict 0.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery restrict 1.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery restrict 2.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery</code></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

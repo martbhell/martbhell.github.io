@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - misc</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+                <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/running-ubuntu-on-a-desktop.html" rel="bookmark"
+                           title="Permalink to "Running Ubuntu on a Desktop"">"Running Ubuntu on a Desktop"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-12-15T00:00:00+02:00">
+                Published: "2012-12-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/desktop.html">desktop</a> <a href="/tag/install.html">install</a> <a href="/tag/linux.html">linux</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/tips.html">tips</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->                <h1>Introduction</h1>
+<p>Recently I've had the pleasure of installing Ubuntu on my desktop. Here are some thoughts and what I initially do:</p>
+<p>Machine is a:</p>
+<p>Motherboard: Gigayte GA-EX58-UD3R CPU: Intel Core i7 Memory: 8GB Disks: Intel i300 SSD, 2x500GB and 1x3TB Western Digital Drives. Graphics Card: AMD HD6800</p>
+<p>Here are some …</p>
+                <a class="readmore" href="/running-ubuntu-on-a-desktop.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt.html" rel="bookmark"
+                           title="Permalink to "cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"">"cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-11-11T00:00:00+02:00">
+                Published: "2012-11-11"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/automation.html">automation</a> <a href="/tag/cfe.html">cfe</a> <a href="/tag/cfengine.html">cfengine</a> <a href="/tag/cms.html">cms</a> <a href="/tag/linux.html">linux</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/resolv.html">resolv</a> <a href="/tag/conf.html">conf</a> <a href="/tag/resolver.html">resolver</a> <a href="/tag/salt.html">salt</a> <a href="/tag/highstate.html">highstate</a> <a href="/tag/script.html">script</a> <a href="/tag/scripting.html">scripting</a> </p>
+</footer><!-- /.post-info -->                <p>Building on the <a href="http://www.guldmyr.com/blog/cfengine-whats-that-all-about/" title="cfengine – what’s that about?">initial post</a> about cfengine we're going to try out some things that may actually be useful.</p>
+<p>My goal would be to make /etc/resolv.conf identical between all the machines.</p>
+<p>The server setup is the lustre cluster we built in a previous post.</p>
+<p>In this post you'll …</p>
+                <a class="readmore" href="/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/pdsh-parallell-distributed-shell.html" rel="bookmark"
+                           title="Permalink to "pdsh - parallell distributed shell"">"pdsh - parallell distributed shell"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-11-10T00:00:00+02:00">
+                Published: "2012-11-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/distributed.html">distributed</a> <a href="/tag/shell.html">shell</a> <a href="/tag/hpc.html">hpc</a> <a href="/tag/pdsh.html">pdsh</a> <a href="/tag/rpmforge.html">rpmforge</a> </p>
+</footer><!-- /.post-info -->                <p><a href="https://code.google.com/p/pdsh/" title="https://code.google.com/p/pdsh/">pdsh</a></p>
+<p>This a software to run commands on a set of servers.</p>
+<p>For example 'pdsh -a uname -av' will give you "uname -av" of all machines.</p>
+<p><a href="http://techsnail.com/howtos-tutorials/installing-pdsh-on-hpc-cluster/" title="http://techsnail.com/howtos-tutorials/installing-pdsh-on-hpc-cluster/">http://techsnail.com/howtos-tutorials/installing-pdsh-on-hpc-cluster/</a></p>
+<p>It can be installed from rpmforge.0</p>
+<p>wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64 …</p>
+                <a class="readmore" href="/pdsh-parallell-distributed-shell.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/cfengine-whats-that-about.html" rel="bookmark"
+                           title="Permalink to "cfengine - what's that about?"">"cfengine - what's that about?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-11-03T00:00:00+02:00">
+                Published: "2012-11-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/cfengine.html">cfengine</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/clustering.html">clustering</a> <a href="/tag/cms.html">cms</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/management.html">management</a> <a href="/tag/software.html">software</a> </p>
+</footer><!-- /.post-info -->                <p><a href="http://cfengine.com/what-is-cfengine" title="http://cfengine.com/what-is-cfengine">http://cfengine.com/what-is-cfengine</a></p>
+<p>It's a (old) software that is used to make sure that (for example) the same config files are used on all machines. There are several other CMSs, for example <a href="http://puppetlabs.com/" title="puppetlabs.com">puppet.</a> Wikipedia has a nice <a href="http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#Basic_properties" title="on wikipedia">overview</a> of them.</p>
+<p>Let's use the <a href="http://www.guldmyr.com/blog/setup-a-3-node-lustre-filesystem/" title="Setup a 3 Node Lustre Filesystem">lustre</a>   machines we set up in …</p>
+                <a class="readmore" href="/cfengine-whats-that-about.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/setup-a-3-node-lustre-filesystem.html" rel="bookmark"
+                           title="Permalink to "Setup a 3 Node Lustre Filesystem"">"Setup a 3 Node Lustre Filesystem"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-10-13T00:00:00+03:00">
+                Published: "2012-10-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <ul>
+<li>"storage"
+tags: </li>
+<li>"centos"</li>
+<li>"cluster"</li>
+<li>"filesystem"</li>
+<li>"install"</li>
+<li>"kernel"</li>
+<li>"linux"</li>
+<li>"lustre"</li>
+<li>"mds"</li>
+<li>"oss"</li>
+<li>"ost"</li>
+<li>"rhel"</li>
+<li>"rpmbuild"</li>
+<li>"san"</li>
+<li>"storage"</li>
+<li>"vmware"</li>
+<li>"yum"</li>
+</ul>
+<hr>
+<h1>Introduction</h1>
+<p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
+<p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines …</p>
+                <a class="readmore" href="/setup-a-3-node-lustre-filesystem.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/post-frisco.html" rel="bookmark"
+                           title="Permalink to "Post Frisco"">"Post Frisco"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-09-20T00:00:00+03:00">
+                Published: "2012-09-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <ul>
+<li>"finland"
+tags: </li>
+<li>"golden-gate"</li>
+<li>"san-francisco"</li>
+<li>"states"</li>
+<li>"travel"</li>
+<li>"usa"</li>
+</ul>
+<hr>
+<ul>
+<li>Bicycle up to and over a fog covered Golden Gate bridge, pretty awesome downhills!</li>
+<li>Eaten at a relative's french gourmet food (not expensive!) - it's name is: sous beurre. It is up on 24th mission street together with a cafe called sugarlump.</li>
+<li>Went to …</li></ul>
+                <a class="readmore" href="/post-frisco.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/android-wordpress-publishing-app.html" rel="bookmark"
+                           title="Permalink to "Android wordpress publishing app"">"Android wordpress publishing app"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-09-17T00:00:00+03:00">
+                Published: "2012-09-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+<p>tags: <a href="/tag/android.html">android</a> <a href="/tag/blogging.html">blogging</a> <a href="/tag/wordpress.html">wordpress</a> </p>
+</footer><!-- /.post-info -->                <p>Enabled! Wonder if there's been lots of exploits for this method of writing posts?</p>
+<p>Turns out there are lots of old exploits for wordpress and xmlrpc, apparently it may also leave the page open for bruteforce attacks.. I'll leave this one disabled.</p>
+<p>But I bet there are other ways to …</p>
+                <a class="readmore" href="/android-wordpress-publishing-app.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/picture-from-silicon-valley.html" rel="bookmark"
+                           title="Permalink to "Picture from Silicon Valley"">"Picture from Silicon Valley"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-09-13T00:00:00+03:00">
+                Published: "2012-09-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <ul>
+<li>"it"
+tags: </li>
+<li>"brocade"</li>
+<li>"picture"</li>
+</ul>
+<hr>
+<p>As promised.</p>
+<p><a href="http://www.guldmyr.com/blog/wp-content/uploads/DSC_0200.jpg"><img alt="" src="images/DSC_0200-300x225.jpg" title="At Brocade Headquarters"></a> Outside sign for building 3</p>
+                <a class="readmore" href="/picture-from-silicon-valley.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/thoughts-after-brocades-analyst-and-technology-day-2012.html" rel="bookmark"
+                           title="Permalink to "Thoughts after Brocade's Analyst and Technology Day 2012"">"Thoughts after Brocade's Analyst and Technology Day 2012"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-09-13T00:00:00+03:00">
+                Published: "2012-09-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <ul>
+<li>"it"</li>
+<li>"storage"
+tags: </li>
+<li>"brcdtechday"</li>
+<li>"bcefe"</li>
+<li>"bcefp"</li>
+<li>"brocade"</li>
+<li>"certifications"</li>
+<li>"dcx"</li>
+<li>"ethernet-fabric-nvgre"</li>
+<li>"frame-striping"</li>
+<li>"juniper"</li>
+<li>"mercury"</li>
+<li>"oem"</li>
+<li>"openflow"</li>
+<li>"openstack"</li>
+<li>"qfabric"</li>
+<li>"sdn"</li>
+<li>"trunks"</li>
+<li>"vcs"</li>
+<li>"vdx-8770"</li>
+<li>"vxlan"</li>
+</ul>
+<hr>
+<p>Thursday today, the day after the Day. It was a real long day, and to my surprise it said 'press' on my pass - so I had to try …</p>
+                <a class="readmore" href="/thoughts-after-brocades-analyst-and-technology-day-2012.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hello-silicon-valley.html" rel="bookmark"
+                           title="Permalink to "Hello Silicon Valley!"">"Hello Silicon Valley!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-09-11T00:00:00+03:00">
+                Published: "2012-09-11"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->                <ul>
+<li>"storage"
+tags: </li>
+<li>"brcdtechday"</li>
+<li>"brocade"</li>
+<li>"silicon-valley"</li>
+<li>"usa"</li>
+</ul>
+<hr>
+<p>Checked in at the hotel, mighty fancy one, it has a pool :)</p>
+<p>Weather is great down here, much warmer than in San Fran. Hotel is basically right next door to where I'm heading tomorrow and it looks like there's quite a lot of people …</p>
+                <a class="readmore" href="/hello-silicon-valley.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="/category/misc.html">&#8647;</a>
+        <a href="/category/misc9.html">&laquo;</a>
+    Page 10 / 33
+        <a href="/category/misc11.html">&raquo;</a>
+        <a href="/category/misc33.html">&#8649;</a>
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

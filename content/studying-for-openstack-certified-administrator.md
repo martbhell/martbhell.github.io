@@ -1,0 +1,1 @@
+../posts/2018/11/studying-for-openstack-certified-administrator.md

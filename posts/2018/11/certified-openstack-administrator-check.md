@@ -1,9 +1,7 @@
 ---
 title: "Certified OpenStack administrator - check!"
-date: "2018-11-17"
-categories: 
-  - "it"
----
+date: 2018-11-17
+category: it
 
 Yay! Took the exam last week after having studied a few days. Nothing seemed to be impossible from the list of requirements at least :)
 

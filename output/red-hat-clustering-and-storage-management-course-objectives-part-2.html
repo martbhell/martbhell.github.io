@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Red Hat – Clustering and Storage Management – Course Objectives - part 2"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Post 1 - http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/ Where I checked out udev, multipathing, iscsi,..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/red-hat-clustering-and-storage-management-course-objectives-part-2.html" rel="bookmark"
+           title="Permalink to "Red Hat – Clustering and Storage Management – Course Objectives - part 2"">"Red Hat – Clustering and Storage Management – Course Objectives - part 2"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-21T00:00:00+03:00">
+                Published: "2013-08-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lvm.html">lvm</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/storage.html">storage</a> </p>
+</footer><!-- /.post-info -->      <p>Post 1 - <a href="http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/">http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/</a> Where I checked out udev, multipathing, iscsi, LVM and xfs.</p>
+<p><strong>This</strong> post is about getting using luci/ricci to get a Red Hat cluster working, but not on a RHEL machine because sadly I do not have one available for practice purposes. So CentOS64 it is. Using openstack for virtualization.</p>
+<p>Topology: Four hosts on all three networks, -a, -b and internal. Three cluster nodes and one management node.</p>
+<p>Get the basic cluster going:</p>
+<ul>
+<li>image four identical nodes</li>
+<li>ssh-key is distributed</li>
+<li>/etc/hosts file has all hosts, IPs and networks<ul>
+<li>network interfaces are configured -</li>
+<li>set a gateway in /etc/sysconfig/network</li>
+</ul>
+</li>
+<li>firewall<ul>
+<li>all traffic allowed from -a and -b networks</li>
+<li>at a minimum allow traffic from the network that the hostname corresponds to that you enter in luci</li>
+</ul>
+</li>
+<li>dns (PEERDNS=no is good with several dhcp interfaces)</li>
+<li>timesync with ntpd</li>
+<li>luci installed on mgmt-node # ricci is a web gui</li>
+<li>ricci installed on all cluster nodes # this is the service talks with corosync<ul>
+<li>password set for user ricci on cluster nodes</li>
+</ul>
+</li>
+<li>create cluster in luci<ul>
+<li>multicast perhaps doesn't work so well in openstack ?</li>
+<li>on cluster nodes this runs "yum -y install cman rgmanager lvm2-cluster sg3_utils gfs2-utils" if shared storage is selected, probably less if not.</li>
+</ul>
+</li>
+<li>fencing is really important, how to do it in openstack would require a bit of work though. Not as easy as with kvm/xvm to send a destroy domain message.</li>
+</ul>
+<p>Tests:</p>
+<ul>
+<li>Update and distribute cluster.conf</li>
+<li>Have a service run on a node on the cluster (doesn't have to have a shared storage for this).</li>
+<li>Commands:<ul>
+<li>clustat</li>
+<li>cman_tool</li>
+<li>rg_test test /etc/cluster/cluster.conf start service name-of-service</li>
+<li>ccs_config_validate</li>
+</ul>
+</li>
+</ul>
+<p>Share an iSCSI target between all nodes:</p>
+<ul>
+<li>Using management node to share the iSCSI LUN.</li>
+<li>tgtd, multipath</li>
+<li>clvmd running on all nodes</li>
+<li>lvmconf - make sure locking is set correctly</li>
+<li>create vg with clustering</li>
+<li>partprobe; multipath -r # do this often</li>
+<li>vgs/lvs and make sure all nodes see the clusterd lv</li>
+<li>minimum GFS filesystem is around 128M - you didn't use all the vg right? =)<ul>
+<li>for testing/small cluster lowering the journal size is goodness</li>
+</ul>
+</li>
+<li>mount!</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

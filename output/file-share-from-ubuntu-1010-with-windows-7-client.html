@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"File share from Ubuntu 10.10 with Windows 7 Client"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Figured I would give this a shot and see how this is done in Linux. Overview 1x Ubuntu 10.10 VM in VMWare Workstation. Installed with virtual..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/file-share-from-ubuntu-1010-with-windows-7-client.html" rel="bookmark"
+           title="Permalink to "File share from Ubuntu 10.10 with Windows 7 Client"">"File share from Ubuntu 10.10 with Windows 7 Client"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-08T00:00:00+02:00">
+                Published: "2011-02-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/file.html">file</a> <a href="/tag/share.html">share</a> <a href="/tag/guide.html">guide</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/samba.html">samba</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->      <p>Figured I would give this a shot and see how this is done in Linux.</p>
+<h2 id="overview">Overview</h2>
+<p>1x Ubuntu 10.10 VM in VMWare Workstation. Installed with virtual kernel. 1x Windows 7 VM. All updates.</p>
+<p>Not going to go through the installations in this post, just the domain/LDAP part. See <a href="http://www.guldmyr.com/blog/tag/ubuntu/" title="tag ubuntu">previous post</a>s for installation stuffs.</p>
+<p>Found this article on ubuntu.com -&gt; -&gt; 10.10/serverguide/C/network-authentication.html .. But this does not exist anymore.</p>
+<p>Whoa, quite a lot to do. Think I will read the manuals this time :)</p>
+<p>Basically I think I just need to install and then configure <a href="http://www.samba.org/samba/docs/SambaIntro.html" title="samba intro">Samba</a>. Because it has file-sharing and authentication/authorization.</p>
+<p>So, first step will be to install Samba and try file-sharing.</p>
+<h2 id="file-sharing">File Sharing</h2>
+<p>sudo apt-get install samba</p>
+<p>installs these:</p>
+<p>The following NEW packages will be installed: libavahi-client3 libavahi-common-data libavahi-common3 libcups2 libfile-copy-recursive-perl libgnutls26 libldap-2.4-2 libsasl2-2 libsasl2-modules libtalloc2 libtasn1-3 libwbclient0 samba samba-common samba-common-bin update-inetd</p>
+<p>After that I can run \\192.168.0.ip which is the IP of the VM running samba - it gives me a login prompt.</p>
+<p>Uncommenting this in /etc/samba/smb.conf</p>
+<p>[homes] comment = Home Directories browseable = yes</p>
+<p>Still asks for a password. Tried with user@ip - this seems to work. It shows a directory called "homes" but it doesn't work to browse into it.</p>
+<p>[2011/02/06 16:30:45.949726,  1] smbd/service.c:678(make_connection_snum) create_connection_server_info failed: NT_STATUS_ACCESS_DENIED</p>
+<p>Set 'share' and set the guest account = nobody  then I got this:</p>
+<p>[2011/02/07 13:22:06.770082,  0] smbd/service.c:988(make_connection_snum) canonicalize_connect_path failed for service foo, path /mnt/foo</p>
+<p>Then what I did was this:</p>
+<ol>
+<li>created a directory called /samba</li>
+<li>sudo chmod +x /samba</li>
+<li>sudo chmod 777 /samba</li>
+<li>sudo chown nobody /samba</li>
+<li>add this to /etc/samba/smb.conf</li>
+<li>[foo] comment = foo path = /samba read only = no guest ok = yes guest only = yes browseable = yes</li>
+<li>security = share</li>
+<li>guest account = nobody</li>
+</ol>
+<p>And then \\ip\foo and woopsie! I can both write and read :)</p>
+<p>[2011/02/07 13:23:14.022980,  1] smbd/service.c:1070(make_connection_snum) 192.168.0.ip (192.168.0.ip) connect to service foo initially as user nobod</p>
+<p>yay!</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

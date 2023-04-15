@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"BCvRE - Brocade Certified virtual Router Engineer - Objectives"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="This post will be continuously updated with my short notes under each concept. It's not meant to be a replacement of the official training..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/bcvre-brocade-certified-virtual-router-engineer-objectives.html" rel="bookmark"
+           title="Permalink to "BCvRE - Brocade Certified virtual Router Engineer - Objectives"">"BCvRE - Brocade Certified virtual Router Engineer - Objectives"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-09-08T00:00:00+03:00">
+                Published: "2013-09-08"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/bcvre.html">bcvre</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/exam.html">exam</a> <a href="/tag/objectives.html">objectives</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/virtualization.html">virtualization</a> </p>
+</footer><!-- /.post-info -->      <p>This post will be continuously updated with my short notes under each concept. It's not meant to be a replacement of the official training materials. I'm just starting out playing with the vRouter Core / open source version and installing it in a VM and set up some networks and firewalls is probably one of the best way to learn this. Learn by doing!</p>
+<p>The <strong>Brocade Certified vRouter Engineer 2013</strong> exam has these <a href="http://community.brocade.com/docs/DOC-3336" title="http://community.brocade.com/docs/DOC-3336">objectives</a>:</p>
+<h2 id="brocade-vyatta-vrouter-system-operations">Brocade Vyatta vRouter System Operations</h2>
+<ul>
+<li>Describe show command system usage<ul>
+<li>show - in operational mode shows status of components</li>
+<li>show - in configurational mode shows the configurations</li>
+<li>run show -  in configurational mode shows status of components</li>
+</ul>
+</li>
+<li>Identify key CLI operations<ul>
+<li>set/delete</li>
+<li>copy (configs)</li>
+<li>renew (new dhcp IP)</li>
+<li>install (to disk)</li>
+</ul>
+</li>
+<li>Describe the commit and save processes</li>
+</ul>
+<h2 id="ethernet-concepts">Ethernet Concepts</h2>
+<ul>
+<li>Identify Ethernet operations</li>
+<li>Identify VLAN operations and settings<ul>
+<li>set interface ethernet eth0 vif <vlanid> # this creates eth0.<vlanid> a subinterface. This looks like a normal ethernet interface.</li>
+<li>set interface pseudo-ethernet # these can be used if you want to set the MAC-address. Some features are not allowed for these peth devices though (VLAN, bonding).</li>
+</ul>
+</li>
+<li>Identify bonded interface operations<ul>
+<li>Two NICs on the same network</li>
+<li>set interface bonding (IP address, mode)</li>
+<li>set interface ethernet (bond-group)</li>
+</ul>
+</li>
+<li>Demonstrate knowledge of configuration and operation using show commands</li>
+</ul>
+<h3 id="tcpip"><strong>TCP/IP</strong></h3>
+<ul>
+<li>Demonstrate knowledge of the relationship between Layer 2, IP and TCP/IP</li>
+<li>Identify TCD and UDP differences</li>
+<li>Identify address subnets</li>
+</ul>
+<h3 id="dhcp-and-dns-troubleshooting"><strong>DHCP and DNS Troubleshooting</strong></h3>
+<p><a href="http://www.guldmyr.com/blog/?p=2022">http://www.guldmyr.com/blog/?p=2022</a> I'm going through how to set it up.</p>
+<ul>
+<li>Describe troubleshooting of DHCP operations<ul>
+<li>show dhcp server leases</li>
+<li>show log dhcp</li>
+</ul>
+</li>
+<li>Describe troubleshooting of DNS forwarding<ul>
+<li>monitor dns forwarding # I could not get anything into the log)</li>
+<li>show dns forwarding # shows cache size for example)</li>
+</ul>
+</li>
+</ul>
+<h3 id="routing"><strong>Routing</strong></h3>
+<p><a href="http://www.guldmyr.com/blog/?p=2022">http://www.guldmyr.com/blog/?p=2022</a> went through how to set up static routes</p>
+<ul>
+<li>Identify uses for routing</li>
+<li>Identify show commands for use with routing</li>
+<li>Identify configuration of different types of static routes</li>
+</ul>
+<h3 id="firewalls"><strong>Firewalls</strong></h3>
+<ul>
+<li>Describe firewall operations and troubleshooting using show commands</li>
+<li>Describe firewall rulebase operations<ul>
+<li>set firewall name <name> default-action</li>
+<li>set firewall name <name> rule 1 destination/source</li>
+<li>set firewall name <name> rule 1 action <action></li>
+<li>set interface bonding bond0 firewall in/local/out name <name><ul>
+<li>in - into the router (matching on destination IP)</li>
+<li>out - out from the router  (matching on source IP)</li>
+<li>local - to the router itself</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nat"><strong>NAT</strong></h3>
+<ul>
+<li>Describe NAT concepts</li>
+</ul>
+<h2 id="upgrades">Upgrades</h2>
+<ul>
+<li>Describe the Brocade Vyatta <a href="http://vyatta.org/getting-started/how-to-update" title="http://vyatta.org/getting-started/how-to-update">upgrade process</a><ul>
+<li>1. Install 6.5R1 to disk.</li>
+<li>2. add system image URL</li>
+<li>3. reboot</li>
+<li>It is also possible to copy the config elsewhere and reinstall</li>
+</ul>
+</li>
+</ul>
+<h2 id="logging-and-packet-captures">Logging and Packet Captures</h2>
+<ul>
+<li>Identify logging options for firewall and NAT operations<ul>
+<li>set firewall name <name> rule <num> log enable</li>
+<li>commit; exit</li>
+<li>monitor firewall .. # and see matches to the rule.</li>
+</ul>
+</li>
+<li>Identify methods to verify operations and troubleshooting</li>
+</ul>
+<h2 id="ospf-single-area">OSPF Single-Area</h2>
+<p><a href="http://www.guldmyr.com/blog/?p=2022">http://www.guldmyr.com/blog/?p=2022</a> set up an area 0 OSPF</p>
+<ul>
+<li>Describe OSPF show command output</li>
+<li>Describe how to configure OSPF</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

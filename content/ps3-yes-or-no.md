@@ -1,0 +1,1 @@
+../posts/2011/02/ps3-yes-or-no.md

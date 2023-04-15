@@ -1,21 +1,8 @@
 ---
 title: "Brocade Accredited Data Center Specialist - BADCS"
-date: "2012-08-15"
-categories: 
-  - "storage"
-tags: 
-  - "bcadc"
-  - "brocade"
-  - "certification"
-  - "certified"
-  - "fc"
-  - "fibre-channel"
-  - "san"
-  - "san-storage"
-  - "storage"
-  - "storage-area-network"
-  - "study"
----
+date: 2012-08-15
+category: storage
+tags: bcadc, brocade, certification, certified, fc, fibre, channel, san, san, storage, storage, storage, area, network, study
 
  
 

@@ -1,0 +1,1 @@
+../posts/2011/02/finnish-word-cases-locative-expressing-place.md

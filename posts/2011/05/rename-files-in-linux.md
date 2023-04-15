@@ -1,17 +1,8 @@
 ---
 title: "Rename files in Linux - mv"
-date: "2011-05-02"
-categories: 
-  - "it"
-tags: 
-  - "cli"
-  - "command-line"
-  - "linux"
-  - "mv"
-  - "rename"
-  - "rename-files"
-  - "shell"
----
+date: 2011-05-02
+category: it
+tags: cli, command, line, linux, mv, rename, rename, files, shell
 
 Hey!
 

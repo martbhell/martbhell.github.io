@@ -1,11 +1,8 @@
 ---
 title: "Moved to Finland"
-date: "2011-01-14"
-categories: 
-  - "finland"
-tags: 
-  - "finland"
----
+date: 2011-01-14
+category: finland
+tags: finland
 
 Just starting the blog off.
 

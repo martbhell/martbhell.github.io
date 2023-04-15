@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Installing Squid 3.2 on CentOS 5.3"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Giving this one a shot :) I will be compiling it myself as well. Squid for those who do not know is a proxy server. Proxys can be used for many..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/installing-squid-32-on-centos-53.html" rel="bookmark"
+           title="Permalink to "Installing Squid 3.2 on CentOS 5.3"">"Installing Squid 3.2 on CentOS 5.3"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-20T00:00:00+03:00">
+                Published: "2011-04-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/linux.html">linux</a> <a href="/tag/proxy.html">proxy</a> <a href="/tag/shell.html">shell</a> <a href="/tag/squid.html">squid</a> <a href="/tag/cache.html">cache</a> </p>
+</footer><!-- /.post-info -->      <p>Giving this one a shot :) I will be compiling it myself as well.</p>
+<p>Squid for those who do not know is a <a href="http://en.wikipedia.org/wiki/Proxy_server" title="on wiki">proxy server.</a> Proxys can be used for many things, but one great thing if you have a thinner connection to the Internet, you can use this to speed things up a bit. What it does is when you surf the web, the things you download are actually first downloaded to the proxy, and then your browser downloads it automagically from the proxy. If you afterwards browse to the same page the proxy should provide you with a cached copy and not re-download the whole page again.</p>
+<h3 id="downloadingcompiling">Downloading/compiling</h3>
+<p>It's a good idea to not run any service as root.</p>
+<ol>
+<li>Download it from http://www.squid-cache.org/ there are many options to chose from. Stable, unstable, 3.2, 3.1 etc. I just took a recent developer build from the 3.2 chain - squid-3.2.0.6.</li>
+<li>Untar this somewhere, doesn't matter where. Move directory and:</li>
+</ol>
+<p>To get the program to install itself in a location where you have access, you need to specify that while running the configure check.</p>
+<p>You do this with:</p>
+<p>./configure --prefix=/home/user/bin/squid-install</p>
+<p>or wherever you want to put it. I just put it directly in /home/user/squid-inst.</p>
+<p>If that completes without errors next step is to: make; make install. This will compile and then install it in the directory you specified above. After that completes sucessfully you can delete/hide the directory. I hide it just in case I want to change something in the configure or whatever.</p>
+<h3 id="then-its-time-to-configure">Then it's time to configure!</h3>
+<p>Now proxy servers you need to put some kind of authentication on. Unless you want a hoard of unwanted visitors.</p>
+<p>There are a gazillion of different settings in the squid.conf.documented.</p>
+<p>Configuration is done via ~/squid-inst/etc/squid.conf</p>
+<p><code>cache_dir ufs /usr/local/squid/cache 100 16 256</code> The value 100 denotes 100MB cache size. This can be adjusted to the required size. <code>http_port 3128</code> This is the port you will be connecting to. Make sure you do not set one that other services on the machine uses. Might be a good idea to use a non-standard as well, to prevent some from "stumbling" onto it and trying to brute-force it.</p>
+<h3 id="starting-squid">Starting squid</h3>
+<ol>
+<li>create cache directories with ~/squid-inst/sbin/squid -z</li>
+<li>run it in debug ~/squid-inst/sbin/squid -NCd1</li>
+</ol>
+<p>If everything is working fine, then your console displays: "Ready to serve requests".</p>
+<p>You can now surf to your http://host:port</p>
+<p>However, you cannot use it as a cache yet.</p>
+<p>You need to set up the http_access part. The ACL - access list.</p>
+<p>This can be complicated.</p>
+<p>See here for some examples of that: <a href="http://wiki.squid-cache.org/SquidFaq/SquidAcl" title="squidacl">http://wiki.squid-cache.org/SquidFaq/SquidAcl</a></p>
+<p>However, all you "need" is as below. First, find out your IP-address. Let's say it's <strong>12.24.48.96</strong> for the fun of it. You can see what it is by surfing to <a href="http://www.ripe.net" title="whatismyip">www.ripe.net</a></p>
+<p>add this somewhere on top near the other "acl" entries:</p>
+<p><code>acl me src 12.24.48.0/24</code></p>
+<p>Then a bit further down</p>
+<p><code>http_access allow me</code></p>
+<p>Now if you want to you can be more tight with the security, and you probably should. The setting above means that everybody on that subnet can use your proxy server. For example you might want to change it to only your IP - if you have a static one.</p>
+<p><code>acl me src 12.24.48.96/32</code></p>
+<p>If you change something in the configuration, you can do this to stop squid:</p>
+<p><code>~/squid-inst/sbin/squid -k kill</code></p>
+<p><code>~/squid-inst/sbin/squid &amp;</code></p>
+<p>is used to start it in a daemon mode (keeps running after you log off your shell).</p>
+<p>There are other ways to set up password checks (used to be with .htpasswd) but I have no need for this today. I'll have a look into it some other day :) Also this proxy is transparent - meaning if you connect somewhere, people can see that you are indeed connecting through a proxy.</p>
+<p>But first you need to set your browser to use the proxy, you do this under network settings.</p>
+<p>Happy proxying!</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

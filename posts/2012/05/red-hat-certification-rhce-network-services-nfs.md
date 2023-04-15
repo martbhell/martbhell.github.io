@@ -1,18 +1,8 @@
 ---
 title: "Red Hat Certification – RHCE – Network Services – NFS"
-date: "2012-05-14"
-categories: 
-  - "it"
-tags: 
-  - "centos"
-  - "certification"
-  - "file-transfer"
-  - "linux"
-  - "nfs"
-  - "red-hat"
-  - "rhce"
-  - "studying"
----
+date: 2012-05-14
+category: it
+tags: centos, certification, file, transfer, linux, nfs, red, hat, rhce, studying
 
 [1st post](http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

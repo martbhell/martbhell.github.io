@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - number</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/red-hat-enterprise-linuxrhel-in-vmware-workstation.html">"Red Hat Enterprise Linux(RHEL) in VMWare Workstation"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-02-21T00:00:00+02:00">
+                Published: "2011-02-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/subscription.html">subscription</a> <a href="/tag/number.html">number</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info --><h2 id="test-with-red-hat-enterprise-linux-rhel">Test with Red Hat Enterprise Linux (RHEL).</h2>
+<p>Download: Sign up for an evaulation on <a href="https://access.redhat.com/downloads/" title="red hat download">https://access.redhat.com/downloads/</a></p>
+<p>rhel-server-5.6-x86_64-disc1.iso</p>
+<p>VMWare Workstation does find this in "easy install". Not doing that this time.</p>
+<p>20GBdisk (default) and 1552MB RAM (default 1024MB)</p>
+<ol>
+<li>install in either graphical or text mode, going with graphical. There are also special modes. Maybe something similar to Ubuntu's minimal virtual kernel is available?</li>
+<li>test cd</li>
+<li>Mouse works!</li>
+<li>Get subscription number with the help of this: https://access.redhat.com/kb/docs/DOC-15404. Copy paste did not work.</li>
+<li>Filesystem stuff. Modify or not. Encrypt or not. I went with default and encryption. For encryption you need to set a boot password (min 8 chars).</li>
+<li>IP/Timezone settings.</li>
+<li>root password (not min 8 chars)</li>
+<li>software sets - software development, virtualization, web server. I went with the two last. You can also customize it deeper. Like: gnome/kde? Printing support? Samba? I chose web server but mysql was not selected, not the php-mysql plugin for apache either. Virtualization is Xen - openfabrics enterprise distribution for RDMA/infiniband stuff.</li>
+<li>cool stuff found: iptraf, hwbrowser, vnc</li>
+<li>/root/install.log for install .. log.</li>
+<li>After this it says that it will require all cds.. but I want to download them instead. How? proceeding anyway, let's see what happens. Maybe it gives the opportunity to download instead. Googling in the meantime. <a href="http://www.techotopia.com/index.php/Performing_an_RHEL_5_Network_Installation" title="rhel network instal">Doesn't look good</a>. One way to do it would be to put the CDS/dvd on a network/http server in your LAN. But it does not mention a public repository etc.</li>
+<li>Formatting, then installing. It asks for CD2. No other buttons. Getting DVD instead. rhel-server-5.6-x86_64-dvd.iso</li>
+<li>DVD went fine, nothing after this, just reboot.</li>
+</ol>
+<h2 id="booting">Booting</h2>
+<ol>
+<li>Insert LUKS password - the encryption password you entered before.</li>
+<li>IPv6 failed during first boot.</li>
+<li>Also some kind of disk monitoring.</li>
+<li>Then a little configuration! This is nice. In ubuntu/debian it just goes into the system with a bunch of default setings.</li>
+<li>Like firewall, enabled/disabled. Trusted srevices.</li>
+<li>SELinux - 'improved' security controls, enforced/permissive/disabled. Keeping default: enforced.</li>
+<li>no kdump</li>
+<li>NTP! Enabling this, using default ntp servers (0.rhel.pool.ntp.org) and disabling 'use local time source'. This part contacts the NTP server during install, which worked, so that looks good.</li>
+<li>Connect to RHN. Said yes. Takes a long time to register? no contact. Trying <a href="https://rhn.redhat.com/rhn/help/reference/rhn500/en/s1-registration-yum.jsp" title="RHN registration red hat">this</a> later.</li>
+<li>Set up a new user. You can use kerberos or NIS too from here.</li>
+<li>Insert additional CDS</li>
+<li>Login prompt!</li>
+</ol>
+<h2 id="after-login">After login</h2>
+<ol>
+<li>VM -&gt; Install VMWare Tools - I want to use "Unity" in Red Hat. I've used it for Windows XP (had a guest os for work) and it was great.</li>
+<li>Right-click the tarball and 'extract to'. You need to have root access when you run it. So open a terminal and type 'su -' - this will give you the root prompt.</li>
+<li>Then go to where you extracted it. ./vmware-install.pl.</li>
+<li>Gives message that I apparently am running a Xen kernel and that this is not supported. Trying anyway. Answering yes as default on the questions.</li>
+<li>Install was successful, opening configuration tool. Some green 'OK' s.</li>
+<li>Before we can compile we need to have make and gcc installed. It also asks for kernel headers that it couldn't find. Going with the default "" on that.</li>
+<li>memory manager, vmhgfs (filesystem driver for shared folders), vmxnet (fast ethernet), vmblock (drag 'n' drop), communication service, vsock, vmxnet3 (virtual network card), pvscsi,  - not installed because no compilation software like make/gcc installed.</li>
+<li>x configuration, host resolution found but vm resolutions max at 800x600!?</li>
+<li>restarting and it said good stuff, but unity does not work and resolution cannot be changed above 800x600.</li>
+<li>accessing via ssh works fine too</li>
+</ol>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

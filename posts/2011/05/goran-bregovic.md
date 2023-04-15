@@ -1,13 +1,8 @@
 ---
 title: "Goran Bregovic"
-date: "2011-05-18"
-categories: 
-  - "finland"
-tags: 
-  - "goran-bregovic"
-  - "gypsy"
-  - "music"
----
+date: 2011-05-18
+category: finland
+tags: goran, bregovic, gypsy, music
 
 Baeutiful!
 

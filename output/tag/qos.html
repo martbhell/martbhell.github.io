@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - qos</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/bcfp-fcip-fibre-channel-over-tcpip.html">"BCFP - FCIP - Fibre Channel over TCP/IP"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-07-28T00:00:00+03:00">
+                Published: "2011-07-28"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/circuits.html">circuits</a> <a href="/tag/extension.html">extension</a> <a href="/tag/fcip.html">fcip</a> <a href="/tag/fibre.html">fibre</a> <a href="/tag/channel.html">channel</a> <a href="/tag/ip.html">ip</a> <a href="/tag/gbe.html">gbe</a> <a href="/tag/qos.html">qos</a> <a href="/tag/routing.html">routing</a> <a href="/tag/trunking.html">trunking</a> <a href="/tag/tunnels.html">tunnels</a> <a href="/tag/ve_port.html">ve_port</a> <a href="/tag/vex_port.html">vex_port</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/fabric.html">fabric</a> </p>
+</footer><!-- /.post-info --><p>Still studying for Brocade's BCFP Exam. This post is to try to put light on some of the terms/technologies you'll be surrounded by when learning about FCIP.</p>
+<p>Guides you should see are the "Fabric OS FCIP Administrator's Guide" and you should probably start with the material for BCFP - part 4 (theory) and 5 (administration).</p>
+<p>Basically the FC frames will be encapsulated in packets over TCP/IP, making the TCP/IP part  invisible/irrelevant to the SAN fabric and the FC frames invisible/irrelevant to the TCP/IP. Except of course for the FC routers that bridge the networks. It is possible to run FCR over FCIP as well via the VEX ports (virtual EX_port). Extension. This means that it's using TCP flow control, no BB credits.</p>
+<h2 id="terminology">Terminology</h2>
+<h3 id="tunnel-ve_port-are-seen-as-ve_ports-in-the-fabric">Tunnel (VE_port) - are seen as VE_ports in the fabric.</h3>
+<h3 id="circuits-gbe-ports-are-inside-a-tunnel-ve_port-is-a-logical-connection-between-two-ip-addresses">Circuits (GbE ports) are inside a tunnel (VE_port) Is a logical connection between two IP addresses.</h3>
+<p>Metric 0 - active (you can have several links at metric 0) Metric 1 - standby</p>
+<p>FCIP tunnels support max two hops.</p>
+<h3 id="multi-gigabit-circuits">Multi-Gigabit Circuits</h3>
+<p>On the FX8-24:</p>
+<p>2x 10GbE 1x 10Gbe and 10x 1GbE 10x 1GbE Not,  all ports at the same time.</p>
+<h3 id="fcip-trunking">FCIP Trunking</h3>
+<p>Basically adding more circuits to a tunnel, not recommended to set up several tunnels (limited anyway) but because ISL trunking is not supported on VE_ports.</p>
+<p>FICON timeout: 1s FC timeout: 4s Consider altering these depending on your setup/latencies.</p>
+<h3 id="virtual-fabric-considerations">Virtual Fabric considerations</h3>
+<p>Define several logical switches inside a physical. You can with FOS 7.0.0 have a VE_port (the GbE ports) defined in the base/default switch and then share it with other logical switches, giving you the possibility to extend/route the fabrics over a shared trunk while they are still isolated. You cannot mix dedicated (in an LS) and a shared (in default) in the same FCIP tunnel.</p>
+<h3 id="qos">QoS</h3>
+<p>Not enforced if there is no contention (there is free bandwidth)</p>
+<p>VC0 (or F_frames - fabric frames) - always first. QoS_High: &gt;50% : : 6 QoS_Medium: &gt;30% : 3 QoS_low: &gt;20% : 1</p>
+<h3 id="dscp-6-bits-of-priorities-64-l2cos-3-bits-of-priorities-8-priority-is-set-in-the-tos-in-the-header">DSCP (6 bits of priorities - 64 ) L2CoS (3 bits of priorities- 8 ) Priority is set in the TOS - in the header.</h3>
+<p>Compression</p>
+<p>(four different ones, hardware, software, mix, auto)</p>
+<h3 id="10gbe">10GbE</h3>
+<p>"lossless" failover only in FOS 7.0.0. (brocade chipset did not share ports) You cannot use both 10GbE and get 20GbE. You can have them active/standby or use both A/A and get 5Gbps on each. Disabling port != failover testing.  Can/will cause disruptions.</p>
+<h4 id="crossport">Crossport</h4>
+<p>Crossports are addresses and routes that belong to the other 10GbE (XGE) port’s DP or VE group.</p>
+<p>The crossport for xge0 is xge1 and for xge1, the crossport is xge0. To use crossports, the port must be configured in 10 Gbps mode.</p>
+<p>The crossport is the non-local XGE port for a VE_Port group. In other words, for
+VE ports 12 through 21, xge1 is the local XGE port and xge0 is the crossport. For VE ports 22
+through 31, xge0 is the local XGE port and xge1 is the crossport.</p>
+<h3 id="sack">SACK</h3>
+<p>(selective acknoledgement - prevent that each lost packet requires an ack, bundles up several lost packets into one, default is <strong>ON</strong>)</p>
+<h3 id="adaptive-rate-limiting">Adaptive Rate Limiting</h3>
+<p>Configure minimum and maximum rates on an FCIP circuit. Let's say you have one FCIP router with two circuits going to two independent IP-routers, these two share a link to another site. The idea is that then you can use ARL to configure minimum half of the shared link on each of the circuits from the FCIP router to the IP router, and a max of the whole one. So if one goes down, you're not stuck with half and you're not oversubscribing. There, easy to explain in words :d</p>
+<h2 id="hardware">Hardware</h2>
+<h3 id="fx8-24">FX8-24</h3>
+<p>2 x 10GbE ports, 12 x 1GbE and 12 x FC8 <a href="http://www.brocade.com/products/all/san-backbone-director-blades/product-details/FX8-24-extension-blade/specifications.page" title="on brocade.com">Link to hardware page on Brocade.</a></p>
+<h3 id="7800">7800</h3>
+<p>6 x 1GbE ports, 16 x FC8 <a href="http://www.brocade.com/products/all/switches/product-details/7800-extension-switch/specifications.page" title="on brocade.com">Link to hardware page on Brocade.</a></p>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>What settings are you going to have on the ports/links/tunnels?</li>
+<li>Configure hw ports (media type, mode etc)</li>
+<li>Disable VE_ports (Virtual FC E_ports) with the tunnel (<strong>portdisable</strong>)</li>
+<li>Create ip intf for each phy Ethernet port that's going to be used (<strong>portcfg ipif</strong>)</li>
+<li>Config IP route for each port to specify an IP Gateway (not required; <strong>portcfg iproute</strong>)</li>
+<li>Verify IP network between the two IP interfaces that will form the tunnel. (<strong>portcmd --ping slot/port</strong>)</li>
+<li>Create an FCIP tunnel (circuit 0; <strong>portcfg fciptunnel; portcfg fcipcircuit</strong>)</li>
+<li>Config FCIP Features (SACK, compression, etc)</li>
+<li>Verify config, enable VE_ports, verify that it's working</li>
+<li>Add more circuits to the tunnel(s).</li>
+</ol>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,18 +1,8 @@
 ---
 title: "BCFD – CFD200 – Module 7 – Integration/Migration and Interopability"
-date: "2012-01-18"
-categories: 
-  - "storage"
-tags: 
-  - "bcfd"
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-designer"
-  - "certification"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+date: 2012-01-18
+category: storage
+tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
 
 # Fabric migration planning and implementation
 

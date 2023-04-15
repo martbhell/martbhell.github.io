@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Update / Install Spotify 0.8.2.637 on RHEL6 x64"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Previous post: http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/ Installed..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/update-install-spotify-082637-on-rhel6-x64.html" rel="bookmark"
+           title="Permalink to "Update / Install Spotify 0.8.2.637 on RHEL6 x64"">"Update / Install Spotify 0.8.2.637 on RHEL6 x64"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-03-26T00:00:00+03:00">
+                Published: "2012-03-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/0.html">0</a> <a href="/tag/8.html">8</a> <a href="/tag/2.html">2</a> <a href="/tag/637.html">637</a> <a href="/tag/alien.html">alien</a> <a href="/tag/qt.html">qt</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info -->      <p>Previous post:</p>
+<p><a href="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/" title="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/">http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/</a></p>
+<p>Installed spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm - this is converted from the .deb package that is downloaded from: <a href="http://repository.spotify.com/pool/non-free/s/spotify/" title="http://repository.spotify.com/pool/non-free/s/spotify/">http://repository.spotify.com/pool/non-free/s/spotify/</a></p>
+<p>you convert with 'alien' and this command:</p>
+<p>alien --to-rpm spotify-client_0.8.2.637.g252b980.486-1_amd64.deb</p>
+<p>To install you need to uninstall first:</p>
+<p>rpm -ev spotify-client
+rpm -ivh Downloads/Spotify/spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm
+error: Failed dependencies:
+libcef.so()(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64
+libcrypto.so.0.9.8()(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64
+libcrypto.so.0.9.8(OPENSSL_0.9.8)(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_
+libssl.so.0.9.8()(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64
+libssl.so.0.9.8(OPENSSL_0.9.8)(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64</p>
+<p>OK, that didn't work so well.</p>
+<p>Install:</p>
+<p># rpm -ivh --nodeps Downloads/Spotify/spotify-client-0.8.2.637.g252b980.486-2.x
+Preparing...                ########################################### [100%]
+   1:spotify-client         ########################################### [100%]</p>
+<p>You'll get errors while trying to start spotify:</p>
+<p>spotify 
+spotify: error while loading shared libraries: libnss3.so.1d: cannot open shared object file: No such file</p>
+<p>What you need to do is create symlinks:</p>
+<p>ln -s /usr/lib64/libnss3.so /usr/lib64/libnss3.so.1d
+ln -s /usr/lib64/libnssutil3.so /usr/lib64/libnssutil3.so.1d
+ln -s /usr/lib64/libsmime3.so /usr/lib64/libsmime3.so.1d
+yum -y install nspr nspr-devel
+ln -s /usr/lib64/libplc4.so /usr/lib64/libplc4.so.0d
+ln -s /usr/lib64/libnspr4.so /usr/lib64/libnspr4.so.0d</p>
+<p>However, it still crashes when I try to right-click on an app - but now it has apps :)</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

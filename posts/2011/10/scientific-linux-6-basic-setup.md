@@ -1,21 +1,8 @@
 ---
 title: "Scientific Linux 6 - Basic Setup"
-date: "2011-10-26"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "kvm"
-  - "learning"
-  - "linux"
-  - "red-hat"
-  - "rhcsa"
-  - "rhel"
-  - "scientifix-linux"
-  - "sl"
-  - "studying"
-  - "vmware-workstation"
----
+date: 2011-10-26
+category: it
+tags: certification, kvm, learning, linux, red, hat, rhcsa, rhel, scientifix, linux, sl, studying, vmware, workstation
 
 ## Not allowing root to log in
 

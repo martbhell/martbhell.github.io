@@ -1,13 +1,8 @@
 ---
 title: "Post Updated: Moving to Finland"
-date: "2011-03-27"
-categories: 
-  - "finland"
-tags: 
-  - "bank"
-  - "finland"
-  - "moving-to-finland"
----
+date: 2011-03-27
+category: finland
+tags: bank, finland, moving, to, finland
 
 Hey!
 

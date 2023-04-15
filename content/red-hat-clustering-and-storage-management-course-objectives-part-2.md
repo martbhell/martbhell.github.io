@@ -1,0 +1,1 @@
+../posts/2013/08/red-hat-clustering-and-storage-management-course-objectives-part-2.md

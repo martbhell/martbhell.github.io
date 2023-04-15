@@ -1,0 +1,1 @@
+../posts/2011/07/bcfa-brocade-certified-fabric-administrator-16g-beta.md

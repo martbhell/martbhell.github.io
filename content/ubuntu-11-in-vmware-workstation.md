@@ -1,0 +1,1 @@
+../posts/2011/04/ubuntu-11-in-vmware-workstation.md

@@ -1,17 +1,8 @@
 ---
 title: "SAN Primer - Introduction to Data Storage"
-date: "2011-07-28"
-categories: 
-  - "storage"
-tags: 
-  - "data-storage"
-  - "introduction"
-  - "iscsi"
-  - "san"
-  - "san-basics"
-  - "storage"
-  - "storage-network"
----
+date: 2011-07-28
+category: storage
+tags: data, storage, introduction, iscsi, san, san, basics, storage, storage, network
 
 You may have heard about this storage or SAN stuff, but what is it? Is it complicated and cool? Yes. Now it doesn't have to be complicated, but it sure can be sometimes. This post is just a brief primer/introduction to storage and what it entails. In case maybe you got a job interview or just would like to know a little bit more about it.
 

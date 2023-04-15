@@ -1,13 +1,8 @@
 ---
 title: "Nerves of steel: requirement for being a sysadmin?"
-date: "2011-05-27"
-categories: 
-  - "it"
-tags: 
-  - "it-2"
-  - "sysadmin"
-  - "system-administrator"
----
+date: 2011-05-27
+category: it
+tags: it, 2, sysadmin, system, administrator
 
 Is it just me?
 

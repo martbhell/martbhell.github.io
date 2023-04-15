@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Mininet - Software Defined Networking"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Mininet Mininet is a network emulator written in Python. With it you can create a test network consisting of many devices, for example inside your..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/mininet-software-defined-networking.html" rel="bookmark"
+           title="Permalink to "Mininet - Software Defined Networking"">"Mininet - Software Defined Networking"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-04-29T00:00:00+03:00">
+                Published: "2013-04-29"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/mininet.html">mininet</a> <a href="/tag/networking.html">networking</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/vm.html">vm</a> </p>
+</footer><!-- /.post-info -->      <h2 id="mininet">Mininet</h2>
+<p>Mininet is a network emulator written in Python. With it you can create a test network consisting of many devices, for example inside your laptop. It's <strong>a lot</strong> more light-weight compared to emulating switches/routers in GSN3. Initially Mininet appears to be more about easily getting working network rather than tinkering with all the features of devices, but OpenFlow has a lot of nifty capabilities that Mininet makes it a lot easier to explore. Anyway I think it's great that there are free software tools to learn how to setup the network. Check out the link below, there are some <a href="https://github.com/mininet/mininet/wiki/Assignments" title="or if lazy click this link">assignments</a> that are used at Stanford about how to create your own link state routing protocol. Cool!</p>
+<p>It's easy to set up a network with many switches, routers and hosts. You can specify packet loss, queue size and delays on links.</p>
+<p><a href="http://reproducingnetworkresearch.wordpress.com/" title="reproducingnetworkresearch">They</a> did some tests between ssh and <a href="http://mosh.mit.edu/" title="http://mosh.mit.edu/">mosh</a>, to see how much better mush was when there were packet loss or delays.</p>
+<p>You could deploy a setup similar to what you've tested inmininet, with real products. <a href="http://en.wikipedia.org/wiki/OpenFlow" title="on wikipedia">OpenFlow</a> is used in both mininet and in the real products :)</p>
+<h2 id="install-the-mininet-vm-and-test-it">Install the mininet VM and test it!</h2>
+<p>There are <a href="https://github.com/mininet/mininet/blob/master/INSTALL" title="INSTALL on the github">many ways</a> to install mininet. They provide a VM that you can boot or you can install it in your OS, but it requires root access.</p>
+<p>They got a <a href="http://mininet.org/walkthrough/">walkthrough</a> that is quite a nice intro to how to set things up mininet.</p>
+<p>A note when using the VM image: If you're already running Linux, for example I run Ubuntu on my machine all I had to do was to "ssh -X mininet@ip-to-vm" to be able to run wireshark in the vm. That's a capital X.</p>
+<h2 id="sdn-software-defined-networking">SDN -  software defined networking</h2>
+<p>Some sources of information:</p>
+<p><a href="http://mininet.org/">http://mininet.org/</a> - The network emulator</p>
+<p><a href="https://github.com/mininet/mininet/wiki/Documentation">https://github.com/mininet/mininet/wiki/Documentation</a> - On the github there are assignments that you can use to learn more about mininet.</p>
+<p><a href="https://www.coursera.org/course/sdn">https://www.coursera.org/course/sdn</a> - On Coursera there is a free introduction course to SDN starting May 27! I'm joining it, are you?</p>
+<p><a href="http://www.opennetsummit.org/archives-april2013/">http://www.opennetsummit.org/archives-april2013/</a> Free presentations about SDN inside.</p>
+<p><a href="http://tech.slashdot.org/story/13/04/29/2324200/inventor-of-openflow-sdn-admits-most-sdn-today-is-hype">http://tech.slashdot.org/story/13/04/29/2324200/inventor-of-openflow-sdn-admits-most-sdn-today-is-hype</a> SDN is just a hype?</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

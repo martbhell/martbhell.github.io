@@ -1,16 +1,8 @@
 ---
 title: "Windows 8 Developer Preview + VMWare Workstation"
-date: "2011-09-26"
-categories: 
-  - "it"
-tags: 
-  - "developer-preview"
-  - "live"
-  - "microsoft"
-  - "vmware"
-  - "vmware-workstation"
-  - "windows-8"
----
+date: 2011-09-26
+category: it
+tags: developer, preview, live, microsoft, vmware, vmware, workstation, windows, 8
 
 VMWare Workstation 8 is required (doesn't work in 7). The [x64 version](http://msdn.microsoft.com/en-us/windows/home/br229518 "go here to get the preview") (without developer tools) installs just fine on my Win7 x64 Core i7 machine with virtualization enabled in BIOS. Just disable the easy install bullcrap (you may have to remove the floppy drive).
 

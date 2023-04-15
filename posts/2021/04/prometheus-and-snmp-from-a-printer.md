@@ -1,14 +1,8 @@
 ---
 title: "Prometheus and SNMP from a printer"
-date: "2021-04-07"
-categories: 
-  - "it"
-tags: 
-  - "monitoring"
-  - "printer"
-  - "prometheus"
-  - "snmp"
----
+date: 2021-04-07
+category: it
+tags: monitoring, printer, prometheus, snmp
 
 The other week I finally for this thing working I've been trying weakly to do every now and then when I had a few minutes free: send an alert before a toner runs out in a printer!
 

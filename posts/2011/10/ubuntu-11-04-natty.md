@@ -1,14 +1,8 @@
 ---
 title: "Ubuntu 11.04 Natty"
-date: "2011-10-16"
-categories: 
-  - "finland"
-tags: 
-  - "linux"
-  - "natty"
-  - "ubuntu"
-  - "ubuntu-11-04"
----
+date: 2011-10-16
+category: finland
+tags: linux, natty, ubuntu, ubuntu, 11, 04
 
 Time for another 'do-release-upgrade'!
 

@@ -1,0 +1,1 @@
+../posts/2011/03/dwm-not-your-average-mainstream-window-manager.md

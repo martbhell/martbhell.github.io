@@ -1,21 +1,8 @@
 ---
 title: "Red Hat Certification - RHCE - KVM via CLI"
-date: "2012-06-16"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "kvm"
-  - "libvirt"
-  - "libvirtd"
-  - "linux"
-  - "qemu"
-  - "red-hat"
-  - "rhce"
-  - "scientific-linux"
-  - "studying"
-  - "virtualization"
----
+date: 2012-06-16
+category: it
+tags: certification, kvm, libvirt, libvirtd, linux, qemu, red, hat, rhce, scientific, linux, studying, virtualization
 
 In a previous [post](http://www.guldmyr.com/blog/rhcsa-preparation/) while preparing for RHCSA I installed kvm post-installation, via the GUI.
 

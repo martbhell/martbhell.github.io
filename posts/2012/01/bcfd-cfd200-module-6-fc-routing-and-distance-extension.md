@@ -1,30 +1,8 @@
 ---
 title: "BCFD – CFD200 – Module 6 – FC Routing and Distance Extension"
-date: "2012-01-17"
-categories: 
-  - "storage"
-tags: 
-  - "bandwidth"
-  - "bcfd"
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-designer"
-  - "buffers"
-  - "certification"
-  - "design"
-  - "dwdm"
-  - "fcip"
-  - "fiber"
-  - "latency"
-  - "long-distance"
-  - "mtu"
-  - "packet-loss"
-  - "routing"
-  - "sfp"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+date: 2012-01-17
+category: storage
+tags: bandwidth, bcfd, bcfp, brocade, brocade, certified, fabric, designer, buffers, certification, design, dwdm, fcip, fiber, latency, long, distance, mtu, packet, loss, routing, sfp, storage, storage, area, network, storage, network
 
 Second Last module! But that's not the end of it, there are more admin guides, best practices to wade through :) This one is a bit more complicated though, a lot to think about when designing FCR and FCIP SAN networks.
 

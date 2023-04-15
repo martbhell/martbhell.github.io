@@ -1,13 +1,8 @@
 ---
 title: "let's encrypt the web!"
-date: "2015-12-05"
-categories: 
-  - "it"
-tags: 
-  - "https"
-  - "letsencrypt"
-  - "nginx"
----
+date: 2015-12-05
+category: it
+tags: https, letsencrypt, nginx
 
 Letsencrypt is finally in public beta!
 

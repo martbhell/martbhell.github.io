@@ -1,15 +1,8 @@
 ---
 title: "How-To : Update Spotify on RHEL6 x64 native client"
-date: "2011-10-14"
-categories: 
-  - "it"
-tags: 
-  - "red-hat"
-  - "red-hat-enterprise-linux"
-  - "rhel"
-  - "spotify"
-  - "spotify-for-linux"
----
+date: 2011-10-14
+category: it
+tags: red, hat, red, hat, enterprise, linux, rhel, spotify, spotify, for, linux
 
 See [the post](http://www.guldmyr.com/blog/how-to-install-spotify-on-rhel6-x64-native-client/ "how-to-install-spotify-on-rhel6-x64-native-client/") for how to install spotify on a Linux Client (RHEL 6 x64 in my case).
 

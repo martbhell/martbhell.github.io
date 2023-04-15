@@ -1,17 +1,8 @@
 ---
 title: "How to restrict access to your phpmyadmin"
-date: "2011-07-27"
-categories: 
-  - "it"
-tags: 
-  - "apache"
-  - "hardening"
-  - "linux"
-  - "phpmyadmin"
-  - "security"
-  - "ubuntu"
-  - "vm"
----
+date: 2011-07-27
+category: it
+tags: apache, hardening, linux, phpmyadmin, security, ubuntu, vm
 
 Went through the apache logs on my web-server and saw some access requests to my phpmyadmin page.
 

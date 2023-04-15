@@ -1,0 +1,1 @@
+../posts/2019/11/logging-as-a-service.md

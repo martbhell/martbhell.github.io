@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - openstack</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/contributing-to-openstack-upstream.html">"Contributing To OpenStack Upstream"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2019-07-22T00:00:00+03:00">
+                Published: "2019-07-22"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/backporting.html">backporting</a> <a href="/tag/gerrit.html">gerrit</a> <a href="/tag/git.html">git</a> <a href="/tag/keystone.html">keystone</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/rdo.html">rdo</a> <a href="/tag/vancouver.html">vancouver</a> </p>
+</footer><!-- /.post-info --><p>Recently I had the pleasure of <strong>contributing</strong> upstream to the <a href="https://www.openstack.org/">OpenStack</a> project!</p>
+<p>A link to my merged patches: <a href="https://review.opendev.org/#/q/owner:+guldmyr+status:merged">https://review.opendev.org/#/q/owner:+guldmyr+status:merged</a></p>
+<p>In a previous <a href="https://www.openstack.org/">OpenStack</a> summit (these days called OpenInfra Summits), (Vancouver 2018) I went there a few days early and attended the <strong>Upstream Institute</strong> <a href="https://docs.openstack.org/upstream-training/">https://docs.openstack.org/upstream-training/</a> .<br>
+It was 1.5 days long or so if I remember right. Looking up my notes from that these were the highlights:</p>
+<ul>
+<li>Best way to start getting involved is to attend weekly meetings of projects</li>
+<li><strong>Stickersssss</strong></li>
+<li>A very similar process to RDO with Gerrit and reviews</li>
+<li>Underlying tests are all done with ansible and they have ARA enabled so one gets a nice Web UI to view results afterward. Logs are saved as part of the <a href="http://zuul.openstack.org">Zuul testing</a> too so one can really dig into and see what is tested and if something breaks when it's being tested.</li>
+</ul>
+<p>Even though my patches were one baby and a bit over 1 year in time after the Upstream Institute I could still f<a href="https://docs.openstack.org/contributors/">igure things out</a> quite quickly with the help of the guides and get bugs created and patches submitted. My general plan when first attending it wasn't to contribute code changes, but rather to start reading code, perhaps find open bugs and so on.</p>
+<p>The thing I wanted to change in puppet-keystone was apparently also possible to change in many other puppet-* modules, and less than a day after my puppet-keystone change got merged into master someone else <strong>picked up the torch</strong> and made PRs to like ~15 other repositories with similar changes :) Pretty cool!</p>
+<p><strong>Testing</strong> is hard! <a href="https://review.opendev.org/#/c/669045/1">https://review.opendev.org/#/c/669045/1</a> is one backport I created for puppet-keystone/rocky, and the Ubuntu testing was not working initially (started with an APT mirror issue and later it was slow and timed out)... After 20 rechecks and two weeks, it still hadn't successfully passed a test. In the end we got there though with the help of a core reviewer that actually updated some mirror and later disabled some tests :)</p>
+<p>Now <strong>the change itself</strong> was about "oslo_middleware/max_request_body_size" So that we can increase it from the default 114688. The Pouta Cloud had issues where our <a href="https://docs.openstack.org/keystone/pike/advanced-topics/federation/configure_federation.html#mapping">Federation User Mappings</a> were larger than 114688 bytes and we coudln't update them anymore, turns out they were blocked by oslo_middleware.</p>
+<blockquote>
+<p>(<strong>does anybody know where 114688bytes comes</strong> <strong>from</strong>? Some internal speculation has been that it is from 128kilobytes minus some headers)</p>
+</blockquote>
+<p>Anyway, the mapping we have now is simplified just a long [ list ] of "local_username": "federation_email", domain: "default". I think next step might be to try to figure out if maybe we can make the rules using something like below instead of hardcoding the values into the rules  </p>
+<p>"name": "{0}" </p>
+<p>It's been quite hard to find examples that are exactly like our use-case (and playing about with is not a priority right now, just something in the backlog, but could be interesting to look at when we start accepting more federations).</p>
+<p>All in all, I'm really happy to have gotten to contribute something to the OpenStack ecosystem!</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/studying-for-openstack-certified-administrator.html" rel="bookmark"
+                           title="Permalink to "Studying for Openstack Certified Administrator"">"Studying for Openstack Certified Administrator"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-11-04T00:00:00+02:00">
+                Published: "2018-11-04"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info -->                <p>The plan : study a bit and then attempt the <a href="https://www.openstack.org/coa#coa-details">coa</a> exam. If I don't pass then attend the course during openstack summit: <a href="https://www.openstack.org/summit/berlin-2018/summit-schedule/events/22735/rsvp-required-suse-two-day-training-openstack-administration-prepare-for-the-certified-exams-day-2﻿">SUSE</a></p>
+<p>And what to study? I've been doing openstack admin work for the last year or two. So I have already done and used most services, except <strong>Swift …</strong></p>
+                <a class="readmore" href="/studying-for-openstack-certified-administrator.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/haproxy-lab-setup.html" rel="bookmark"
+                           title="Permalink to "haproxy lab setup!"">"haproxy lab setup!"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-08-07T00:00:00+03:00">
+                Published: "2017-08-07"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/ansible.html">ansible</a> <a href="/tag/haproxy.html">haproxy</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info -->                <p>Been seeing haproxy more and more lately as it seems even the stuff I work with are moving towards web :)</p>
+<p>So a good time as any to play around with it!</p>
+<p>First setup is the tag "single-node" in <a href="https://github.com/martbhell/haproxy-lab">https://github.com/martbhell/haproxy-lab</a> - this means it just configures one apache …</p>
+                <a class="readmore" href="/haproxy-lab-setup.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/lustre-25-centos6-test-in-openstack.html" rel="bookmark"
+                           title="Permalink to "Lustre 2.5 + CentOS6 Test in OpenStack"">"Lustre 2.5 + CentOS6 Test in OpenStack"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-30T00:00:00+03:00">
+                Published: "2014-05-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/openstack.html">openstack</a> </p>
+</footer><!-- /.post-info -->                <p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
+<p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented …</p>
+                <a class="readmore" href="/lustre-25-centos6-test-in-openstack.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/red-hat-clustering-and-storage-management-course-objectives-part-2.html" rel="bookmark"
+                           title="Permalink to "Red Hat – Clustering and Storage Management – Course Objectives - part 2"">"Red Hat – Clustering and Storage Management – Course Objectives - part 2"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-21T00:00:00+03:00">
+                Published: "2013-08-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lvm.html">lvm</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/storage.html">storage</a> </p>
+</footer><!-- /.post-info -->                <p>Post 1 - <a href="http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/">http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/</a> Where I checked out udev, multipathing, iscsi, LVM and xfs.</p>
+<p><strong>This</strong> post is about getting using luci/ricci to get a Red Hat cluster working, but not on a RHEL machine because sadly I do not have one available for practice purposes …</p>
+                <a class="readmore" href="/red-hat-clustering-and-storage-management-course-objectives-part-2.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/red-hat-clustering-and-storage-management-course-objectives.html" rel="bookmark"
+                           title="Permalink to "Red Hat - Clustering and Storage Management - Course Objectives"">"Red Hat - Clustering and Storage Management - Course Objectives"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-15T00:00:00+03:00">
+                Published: "2013-08-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lvm.html">lvm</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/storage.html">storage</a> </p>
+</footer><!-- /.post-info -->                <p>Attending "Red Hat Enterprise Clustering and Storage Management" in August. Quite a few of these technologies I haven't touched upon before so probably best to go through them before the course.</p>
+<p>Initially I wonder how many of these are Red Hat specific, or how many of these I can accomplish …</p>
+                <a class="readmore" href="/red-hat-clustering-and-storage-management-course-objectives.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/thoughts-after-brocades-analyst-and-technology-day-2012.html" rel="bookmark"
+                           title="Permalink to "Thoughts after Brocade's Analyst and Technology Day 2012"">"Thoughts after Brocade's Analyst and Technology Day 2012"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-09-13T00:00:00+03:00">
+                Published: "2012-09-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/brcdtechday.html">brcdtechday</a> <a href="/tag/bcefe.html">bcefe</a> <a href="/tag/bcefp.html">bcefp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certifications.html">certifications</a> <a href="/tag/dcx.html">dcx</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/nvgre.html">nvgre</a> <a href="/tag/frame.html">frame</a> <a href="/tag/striping.html">striping</a> <a href="/tag/juniper.html">juniper</a> <a href="/tag/mercury.html">mercury</a> <a href="/tag/oem.html">oem</a> <a href="/tag/openflow.html">openflow</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/qfabric.html">qfabric</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/trunks.html">trunks</a> <a href="/tag/vcs.html">vcs</a> <a href="/tag/vdx.html">vdx</a> <a href="/tag/8770.html">8770</a> <a href="/tag/vxlan.html">vxlan</a> </p>
+</footer><!-- /.post-info -->                <p>Thursday today, the day after the Day. It was a real long day, and to my surprise it said 'press' on my pass - so I had to try to ask some questions :)</p>
+<p>Some things picked up:</p>
+<p><strong>* New <a href="http://www.brocade.com/products/all/switches/product-details/vdx-8770-switch/index.page" title="on brocade.com">VDX 8770 product released</a></strong> - a modular Ethernet switch. Room for 384 10GbE ports …</p>
+                <a class="readmore" href="/thoughts-after-brocades-analyst-and-technology-day-2012.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/openstack-testing-day.html" rel="bookmark"
+                           title="Permalink to "openstack testing day"">"openstack testing day"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-03-10T00:00:00+02:00">
+                Published: "2012-03-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/fedora.html">fedora</a> <a href="/tag/linux.html">linux</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/os.html">os</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/testing.html">testing</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>Only one day late!</p>
+<p>I actually started installing this on the 8th but I forgot to install it to hdd so the 'yum update' failed and broke the machine with I/O errors :)</p>
+<p>Installing it in a VMWare Workstation (fedora 64-bit type, 2, cores, 4G RAM, 20G disk).</p>
+<p><a href="http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day">http://fedoraproject …</a></p>
+                <a class="readmore" href="/openstack-testing-day.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

@@ -1,13 +1,8 @@
 ---
 title: "BCEFP 2015 certified!"
-date: "2014-06-30"
-categories: 
-  - "it"
-tags: 
-  - "bcefp"
-  - "brocade"
-  - "brocade-certified"
-  - "certification"
+date: 2014-06-30
+category: it
+tags: bcefp, brocade, brocade, certified, certification
 coverImage: "original.gif"
 ---
 

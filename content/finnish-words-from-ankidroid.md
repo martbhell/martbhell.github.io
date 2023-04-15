@@ -1,0 +1,1 @@
+../posts/2014/07/finnish-words-from-ankidroid.md

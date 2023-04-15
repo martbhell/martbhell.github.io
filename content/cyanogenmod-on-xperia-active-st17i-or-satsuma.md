@@ -1,0 +1,1 @@
+../posts/2014/01/cyanogenmod-on-xperia-active-st17i-or-satsuma.md

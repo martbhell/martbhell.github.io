@@ -1,18 +1,8 @@
 ---
 title: "BCFD - CFD200 - Module 3 - SAN Infrastructure"
-date: "2012-01-14"
-categories: 
-  - "storage"
-tags: 
-  - "bcfd"
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-designer"
-  - "certification"
-  - "storage"
-  - "storage-area-network"
-  - "storage-network"
----
+date: 2012-01-14
+category: storage
+tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
 
 This is a post in a series where I will go through the modules made available for free by Brocade for the beta test of the BCFD 16Gbps exam. If there's any objection to me writing about these in this detail here please let me know.
 

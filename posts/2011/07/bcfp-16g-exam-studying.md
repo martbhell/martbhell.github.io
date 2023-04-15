@@ -1,17 +1,8 @@
 ---
 title: "BCFP 16g Exam Studying"
-date: "2011-07-16"
-categories: 
-  - "storage"
-tags: 
-  - "bcfa"
-  - "bcfp"
-  - "brocade"
-  - "certification"
-  - "san"
-  - "storage-network"
-  - "training"
----
+date: 2011-07-16
+category: storage
+tags: bcfa, bcfp, brocade, certification, san, storage, network, training
 
 Right now I'm reading through the BCFA material and writing what I find useful in a google docs document - later I will take this and send to my Kindle - for some of that memorization :)
 

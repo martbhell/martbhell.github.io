@@ -1,15 +1,8 @@
 ---
 title: "BCFP - How to prepare for the exam"
-date: "2011-09-03"
-categories: 
-  - "storage"
-tags: 
-  - "bcfp"
-  - "brocade-certified-fabric-professional"
-  - "certification"
-  - "exam"
-  - "studying"
----
+date: 2011-09-03
+category: storage
+tags: bcfp, brocade, certified, fabric, professional, certification, exam, studying
 
 Until now I've been just reading the material, when there's something unclear in the material I've looked it up in command reference guides, release notes, user guides or otherwise on the Intertubes.
 

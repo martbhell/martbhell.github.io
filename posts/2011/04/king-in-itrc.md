@@ -1,18 +1,8 @@
 ---
 title: "King in ITRC!"
-date: "2011-04-15"
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "forum"
-  - "hp"
-  - "itrc"
-  - "king"
-  - "servers"
-  - "storage"
-  - "support"
----
+date: 2011-04-15
+category: it, storage
+tags: forum, hp, itrc, king, servers, storage, support
 
 Just got the Royal rank - 2500 points :)
 

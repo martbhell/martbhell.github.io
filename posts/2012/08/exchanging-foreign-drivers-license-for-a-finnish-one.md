@@ -1,16 +1,8 @@
 ---
 title: "Exchanging Foreign Drivers License for a Finnish One"
-date: "2012-08-13"
-categories: 
-  - "finland"
-tags: 
-  - "ajokortti"
-  - "car"
-  - "drive"
-  - "drivers-license"
-  - "finland"
-  - "police"
----
+date: 2012-08-13
+category: finland
+tags: ajokortti, car, drive, drivers, license, finland, police
 
 Today I applied to exchange my Swedish driver's license for a Finnish one.
 

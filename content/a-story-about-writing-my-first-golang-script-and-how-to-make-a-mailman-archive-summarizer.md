@@ -1,0 +1,1 @@
+../posts/2018/12/a-story-about-writing-my-first-golang-script-and-how-to-make-a-mailman-archive-summarizer.md

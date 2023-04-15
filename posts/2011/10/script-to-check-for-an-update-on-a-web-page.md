@@ -1,17 +1,8 @@
 ---
 title: "Script To Check For an Update on a Web Page"
-date: "2011-10-19"
-categories: 
-  - "it"
-tags: 
-  - "bash"
-  - "bash-scripting"
-  - "linux"
-  - "script"
-  - "scripting"
-  - "spotify"
-  - "wget"
----
+date: 2011-10-19
+category: it
+tags: bash, bash, scripting, linux, script, scripting, spotify, wget
 
 Hey!
 

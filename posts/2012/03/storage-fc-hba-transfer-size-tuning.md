@@ -1,25 +1,8 @@
 ---
 title: "Storage FC HBA Transfer Size Tuning"
-date: "2012-03-06"
-categories: 
-  - "storage"
-tags: 
-  - "bcu"
-  - "brocade"
-  - "emulex"
-  - "fc"
-  - "fibre-channel"
-  - "hba"
-  - "limtransfersize"
-  - "performance"
-  - "performance-tuning"
-  - "qlfc"
-  - "qlogic"
-  - "san"
-  - "storage-network"
-  - "transfer-size"
-  - "tuning"
----
+date: 2012-03-06
+category: storage
+tags: bcu, brocade, emulex, fc, fibre, channel, hba, limtransfersize, performance, performance, tuning, qlfc, qlogic, san, storage, network, transfer, size, tuning
 
 HP just published an advisory describing how to tune some parameters for Emulex, Qlogic and Brocade Fibre Channel HBAs: [c02518189](http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02518189). It sounds like these are new, but these changes have been around for at least 6 months in all three vendors' HBAs.
 

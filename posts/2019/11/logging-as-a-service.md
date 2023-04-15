@@ -1,9 +1,7 @@
 ---
 title: "Logging as a Service"
-date: "2019-11-12"
-categories: 
-  - "it"
----
+date: 2019-11-12
+category: it
 
 Is there an open source thing out there I could use??
 

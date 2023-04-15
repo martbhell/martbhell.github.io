@@ -1,15 +1,8 @@
 ---
 title: "cfengine - what's that about?"
-date: "2012-11-03"
-categories: 
-  - "it"
-tags: 
-  - "cfengine"
-  - "cluster"
-  - "clustering"
-  - "cms"
-  - "configuration-management-software"
----
+date: 2012-11-03
+category: it
+tags: cfengine, cluster, clustering, cms, configuration, management, software
 
 [http://cfengine.com/what-is-cfengine](http://cfengine.com/what-is-cfengine "http://cfengine.com/what-is-cfengine")
 

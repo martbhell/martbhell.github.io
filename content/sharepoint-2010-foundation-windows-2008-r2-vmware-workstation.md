@@ -1,0 +1,1 @@
+../posts/2011/01/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation.md

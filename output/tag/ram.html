@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - ram</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/ubuntu-1010-vmware-irssi.html">"Ubuntu 10.10 + VMWare + Irssi"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-02-10T00:00:00+02:00">
+                Published: "2011-02-10"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/guide.html">guide</a> <a href="/tag/irssi.html">irssi</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/networking.html">networking</a> <a href="/tag/ram.html">ram</a> <a href="/tag/swap.html">swap</a> <a href="/tag/space.html">space</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/vm.html">vm</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info --><p>How small VM can you make if you are only going to use it to run <a href="http://irssi.org/" title="irssi.org">Irssi</a> in a <a href="http://www.gnu.org/software/screen/" title="screen">screen</a>?</p>
+<p>OS: Ubuntu 10.10 x64 Virtual Kernel Hypervisor: VMWare Workstation</p>
+<p>Disk - no logs - 1.10GB is what my previous took, with samba, so probably less but 1.1 should be all right, don't want it to run out of space either. Should probably partition /var/log into its own so that if that fills up (maybe after bruteforce ssh logins) then it doesn't fill up the rest of /. RAM -</p>
+<ul>
+<li>turn off cron jobs</li>
+<li>install virtual kernel</li>
+</ul>
+<p>about the cron jobs, I just installed a ubuntu virtual kernel and only cron job running (as seen in syslog) is this:</p>
+<p>CRON[9141]: (root) CMD (   cd / &amp;&amp; run-parts --report /etc/cron.hourly)</p>
+<h3 id="test-1">Test 1</h3>
+<p>1.2GB disk 64MB RAM</p>
+<p>Kernel panic - not syncing: attempted to kill init! ctrl-alt-del in the VM doesn't work, had to hard kill it :p Reboot - same problem. It does this after selecting minimal virtual kernel and pressing install Ubuntu Server.</p>
+<h3 id="test2">Test2</h3>
+<p>Increased RAM to 96MB and now it passed. However, after selecting keyboard it still crashes. So 96 is also too little.</p>
+<p>Googled around a little and found an <a href="https://help.ubuntu.com/community/Installation/LowMemorySystems" title="ubuntu install lowmemsystems">article on Ubuntu.com</a> that gives some insight.</p>
+<p>For example: if you run out of memory, then it will swap. So if you are not running out of memory then it's probably better to give it a little more to be on the safe side.</p>
+<h3 id="test-3">Test 3</h3>
+<p>Increased RAM to 128MB Now it goes even longer.</p>
+<p>Partitioning -&gt; chose manual. There is a device there 'sda' -&gt; SCSI3. Mark that and hit enter. Say yes to create new empty partition. Then it creates a new space pri/log. Create new partition.</p>
+<p>As size, type in: 100MB Primary, beginning, default settings on the filesystem etc but mount point: /var/log. Then done setting up this partition.</p>
+<p>Then we will create another partition for / (or the rest).</p>
+<p>Like this:</p>
+<p>[caption id="attachment_341" align="alignnone" width="150" caption="ubuntu_partition right"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/ubuntu_partition.png"><img alt="ubuntu_partition right" src="images/ubuntu_partition.png" title="ubuntu_partition right"></a>[/caption]</p>
+<p>The above does not include a swap space, and the installation complains that there is no swap space defined and that there may be problems if this is not configured during install.</p>
+<p>Let's see :)</p>
+<p>** maybe Ubuntu is not the slimmest OS to install for this purpose. The guide I linked to above mentions a DSL - damn small linux. But we want a minimal server OS, not a desktop one. Maybe the new Debian 6 would be cool to try.</p>
+<p>During install there was a dialogue about something being already on the disk.. and that this could cause issues. Maybe this was copied there from one of the previous tries with less amount of RAM. Went back and erazed this on each just to be on the safe side. Very slow though. About 1% / s. After this I went into each and set them to format instead. It mentions old installation files anyway. Proceeding. This happened twice? Three times now.. Maybe this is not going so well. Ok happened four times.</p>
+<p>Hit Alt+F2 (and then enter to get the console) and then df -h. Nothing is over 20% except the SR0/cd-rom which is at 100%. Did a 'more /var/log/syslog' and at the end there are some 'Out of memory' things going on.</p>
+<p>So there we go. 128MB is too little.</p>
+<p>But <a href="https://help.ubuntu.com/community/Installation/SystemRequirements#Ubuntu%20Server%20%28CLI%29%20Installation" title="ubuntu install reqs">here</a>:  it says that 128MB is the requirement..</p>
+<h3 id="test-4">Test 4</h3>
+<p>I will try to install again and not mess up with the partitions. 1.2GB and 128MB again. Going pretty well, looks like it's stopped at 75% and "storing language". Patience. Ok, 10mins later still there. Nothing about out of memory in /var/syslog. The Guest was behaving a little slow though when working the console. Left it on over night and when I looked again the following day it was at the next step!</p>
+<p>Installing openssh via the installation menu this time. Taking quite long time this time as well. Like hours. 2 hours now. Nothing happening in syslog. Think I'll give Debian a shot next Test.</p>
+<p>In the meantime did Test 5. However 4 hours later, still configuring 'language-pack-en-base'.</p>
+<p>Now, approximately lots of hours later. It is at configure grub.</p>
+<p>And yay, it finally boots!</p>
+<p>user@irssi:~$ df -h Filesystem            Size  Used Avail Use% Mounted on /dev/sda1             1.1G  430M  606M  42% / none                   54M  164K   54M   1% /dev none                   57M  4.0K   57M   1% /dev/shm none                   57M   36K   57M   1% /var/run none                   57M     0   57M   0% /var/lock none                  1.1G  430M  606M  42% /var/lib/ureadahead/debugfs /home/martbhell/.Private 1.1G  430M  606M  42% /home/martbhell</p>
+<p>And the size of the folder in Windows: 750 MB (787 341 312 bytes)</p>
+<p>With 128MB ram there is maybe 10MB free and it swaps a little (just a few kB so far).</p>
+<h3 id="test-5">Test 5</h3>
+<p>debian-6.0.0-amd64-netinst Using Debian 5 64-bit.</p>
+<ol>
+<li>graphical menu is seen, no advanced options used</li>
+<li>chose languages - look a lot like Ubuntu but there are some differences:</li>
+<li>After choosing a hostname it asks for domain. Put in WORKGROUP.</li>
+<li>Set a root account password (so no more sudoing - probably just add my user to the wheel/root group).</li>
+<li>and you have a few more options in the partitioning, like a separate /home partition</li>
+<li>then you get to chose a debian mirror (becuase I use the netinst). ftp.fi.debian.org is the one I chose</li>
+<li>you can participate in a "most used packages" survey</li>
+<li>software selection: graphical desktop, web, dns, ssh, laptop, standard system utilities. I chose SSH and standard system utilities.</li>
+<li>grub, then reboot and loading!</li>
+</ol>
+<p>Internet works fine from the start. apt-get update; apt-get install irssi Remember, here you have to log in as root to run ifconfig or apt-get.</p>
+<p>It's the same way in Debian as in Ubuntu to set static ip. Just edit /etc/network/interfaces / don't forget you can just restart the networking services by '/etc/init.d/networking start' instead of rebooting ;) Now, I actually forgot to set minimal ram/disk for this one. So we have to do this again ;)</p>
+<h3 id="test-6">Test 6</h3>
+<p>debian-6.0.0-amd64-netinst Using Debian 5 64-bit. 128MB RAM</p>
+<p>One thing that's cool about a VM is that you can resize the amount of RAM whenever (probably good to turn off the guest first). So how about just lowering it instead of installing a new one?</p>
+<p>OK, so it now has 512MB. Going down to 64 in one go (listed as minimum in VMWare Workstation).</p>
+<p>It's swapping after just a few minutes with screen+irssi.</p>
+<p><em>to sort by memory usage in top press SHIFT+m</em></p>
+<p>biggest memory hogs (all over 1% - figures in <strong>bold</strong>) are :</p>
+<p>1474 user 20   0 23388 6220 1572 S  0.0 <strong>11.2</strong> 0:00.25 bash 1503 user 20   0 50084 5228 3824 S  0.0  <strong>9.4</strong> 0:00.06 irssi 1470 root      20   0 70488 3280 2584 S  0.0  <strong>5.9</strong> 0:00.03 sshd 913 root      20   0  117m 1788  904 S  0.0  <strong>3.2</strong> 0:00.01 rsyslogd 1473 user 20   0 70488 1680  964 S  0.0  <strong>3.0</strong> 0:00.06 sshd 1502 user 20   0 25184 1472  992 S  0.0  <strong>2.6</strong> 0:00.01 screen 1546 user 20   0 19040 1300 1004 R 99.9  <strong>2.3</strong> 0:00.01 top 985 root      20   0 22392  712  512 S  0.0  <strong>1.3</strong> 0:00.00 cron 1233 Debian-e  20   0 44140  660  392 S  0.0  <strong>1.2</strong> 0:00.00 exim4 1472 root      20   0  5928  620  520 S  0.0  <strong>1.1</strong> 0:00.00 getty 1 root      20   0  8352  616  560 S  0.0  <strong>1.1</strong> 0:01.42 init 1277 root      20   0 49168  544  428 S  0.0  <strong>1.0</strong> 0:00.00 sshd</p>
+<p>What I might be able to get rid of is rsyslogd and cron. But then again, if I were to connect this to the internet so I could access it and resume the screen/irssi from anywhere, I would want to keep track of what is happening on the machine.</p>
+<p>user@debian:/var/log$ df -h Filesystem            Size  Used Avail Use% Mounted on /dev/sda1             3.8G  638M  3.0G  18% / tmpfs                  28M     0   28M   0% /lib/init/rw udev                   23M  140K   23M   1% /dev tmpfs                  28M     0   28M   0% /dev/shm</p>
+<p>Windows usage: 887 MB (930 816 000 bytes)</p>
+<h3 id="summary">Summary</h3>
+<p>The Ubuntu Server 10.10 with the minimal virtual kernel took forever to install (maybe it would have been faster to have more mem during install and then lower when it's done) and with 128MB it still swaps a little with only screen and irssi running. But it does use about 130MB or 200MB less space than the Debian6 guest.</p>
+<p>The Debian 6 however runs OK with 64MB, swaps a little at that though so I would probably run this with 96 or 128MB just to be on the safe side if I were to run it.</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

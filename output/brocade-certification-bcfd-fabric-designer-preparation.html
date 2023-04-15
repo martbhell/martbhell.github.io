@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Brocade Certification - BCFD - Fabric Designer - Preparation"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="BCFD exam is going into Beta testing in January as well! This post will be updated as I move along through the different objectives / documents...." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li class="active"><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/brocade-certification-bcfd-fabric-designer-preparation.html" rel="bookmark"
+           title="Permalink to "Brocade Certification - BCFD - Fabric Designer - Preparation"">"Brocade Certification - BCFD - Fabric Designer - Preparation"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-01-13T00:00:00+02:00">
+                Published: "2012-01-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/storage.html">storage</a>.</p>
+<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/designer.html">designer</a> <a href="/tag/certification.html">certification</a> <a href="/tag/storage.html">storage</a> <a href="/tag/area.html">area</a> <a href="/tag/network.html">network</a> </p>
+</footer><!-- /.post-info -->      <p>BCFD exam is going into Beta testing in January as well!</p>
+<p>This post will be updated as I move along through the different objectives / documents.</p>
+<p>// Update 2012-01-15: Added the Knowledge Assessment Test. // Update 2012-01-28: Went through each .pdf and updated some in here.</p>
+<p>The link to the Brocade page where it tells you how to register and where to get the material: http://community.brocade.com/docs/DOC-2379</p>
+<p># Note: This link no longer works</p>
+<p>When are these available? On Thursday 12/01/2012 at 0728 EET it was not available. On Thursay 12/01/2012 at 0803 EET it was available.</p>
+<p>So, that would indicate that the time Pearson follows is GMT-6 or Central Time.</p>
+<p>On top of that the only available dates for me was 23rd and 24th of January :( Time to study! // update, that was changed, it was a mistake so now I get some more time to study :)</p>
+<p><strong>Exam Study Resources (page numbers are document page numbers, NOT the PDF page)</strong></p>
+<p>As I see it, the importance of each document could be arranged like this:</p>
+<ol>
+<li>CFD 200 Modules 3-7</li>
+<li>SAN Design Best Practices</li>
+<li>FOS Administrator's Guide</li>
+<li>The rest.</li>
+</ol>
+<p>With 1/2 sharing the top spot. I haven't gone through the modules yet but I presume they all complement each other. The reason for them sharing the top spot is because for this Beta Exam, the CFD200 material is for 8Gbps (and it has quite a lot of details about the M-series McData switches, which the 16Gbps BCFD did not include).</p>
+<p>There is also a Knowledge Assessment on my.brocade.com 'education' page. It's called "CFD 201 8 Gbit/sec BCFD Knowledge Assessment". Again, this is for 8G so beware that some stuff may not be up to date if you are doing the Beta for BCFD 16G. But, the actual type of questions is something that is useful. It mentions EFCM or Fabric Manager some times (this is the previous names of DCFM or what's now called Brocade Network Advisor).</p>
+<p>There is a nutshell guide for BCFD, but this is from November 2008 making it possibly even more outdated than the CFD200 material. But, because most of the topics are still valid it would still work as a refresher, but you can't use it for anything specific.</p>
+<p>I am doubtful that the M-series will be included in the BCFD 16G exam but as it's still in the objectives for the 8G it's probably wise to not skip that part completely. For that 1.5 years (half 2009 and 2010) when I did SAN support I only had one call about a McData switch.</p>
+<p><strong>Exam Study Resources with my comments:</strong></p>
+<h2 id="cfd-200-bcfd-design-course-modules-3-7">CFD 200 BCFD Design Course Modules 3-7</h2>
+<ul>
+<li>Obviously these are the most important. I'll go through these at a later stage.</li>
+</ul>
+<h2 id="brocade-dcx-8510-backbone-family-datasheet">Brocade DCX 8510 Backbone Family Datasheet</h2>
+<p>(GA-DS-1564-01)</p>
+<ul>
+<li>Lots of details about the system specs.</li>
+</ul>
+<h2 id="san-design-best-practices">SAN Design Best Practices</h2>
+<p>(GA-BP-329-02-02)</p>
+<ul>
+<li><strong>Pages</strong> 2,5-16,19-26,31,32-36,40-45,51-53,55,58-62,66,67,72</li>
+</ul>
+<h2 id="fabric-os-administrators-guide-v70">Fabric OS Administrators Guide v7.0</h2>
+<p>(53-1002148-03)</p>
+<ul>
+<li><strong>Pages</strong> 37,43,66-70,102,142,151,153,157,196,199,241,273-286,301,314,315,320,372,383,395-398,402-406,414,417,425,429,437,438-443,449,454-461,464,503,504</li>
+<li>topics<ul>
+<li>256-area addressing</li>
+<li>WWN-based PID assignment</li>
+<li>enabling/disabling a port and port decommissioning</li>
+<li>gateway links, ICL,</li>
+<li>RADIUS/LDAP authentication</li>
+<li>fddcfg / DCC/SCC policies</li>
+<li>device authentication</li>
+<li>ipfilter</li>
+<li>firmwaredownload</li>
+<li>advanced zoning (regular, broadcast, frame redirection, lsan, qos, ti)</li>
+<li>traffic isolation zoning (and VF considerations for TI zones)</li>
+<li>bottleneck detection</li>
+<li>in-flight encryption and compression (technologies, enabling/disabling)</li>
+<li>licensing (enable 10GbE, 7800, QoS, FCIP Extension, FICON acceleration, etc, etc, etc)</li>
+<li>advanced performance monitoring (top talker, frame monitor, end-to-end)</li>
+<li>adaptive networking (ingress rate limiting)</li>
+<li>QoS prioritization (SID/DID or CS_CTL - class specific control)</li>
+<li>trunking (ISL, ICL, EX_Port, F_Port)</li>
+<li>Long Distance (buffer credit allocation, max distance, credit recovery)</li>
+<li>FC-FC Routing (support platforms)</li>
+<li>interopability (FOS vs M-EOS)</li>
+</ul>
+</li>
+</ul>
+<h2 id="fabric-os-command-reference-v70">Fabric OS Command Reference v7.0</h2>
+<p>(53-1002147-01)</p>
+<ul>
+<li><strong>Pages</strong> 302,695,716,721,957,</li>
+<li>commands<ul>
+<li>fcrconfigure  /  fcredgeshow</li>
+<li>portcfgspeed</li>
+<li>portdportest</li>
+<li>portfencing<ul>
+<li>Why is the test for "Invalid Word Transmission" called ITW?</li>
+<li>Ah, on portThConfig it is called "Invalid Transmission Word".</li>
+</ul>
+</li>
+<li>supportshow</li>
+</ul>
+</li>
+</ul>
+<h2 id="fabric-os-fcip-administrators-guide-v70">Fabric OS FCIP Administrators Guide v7.0</h2>
+<p>(53-1002155-01)</p>
+<ul>
+<li><strong>Pages</strong> 1,6</li>
+<li>topics<ul>
+<li>FCIP platforms and supported features<ul>
+<li>7800, FX8-24 and FR4-18i</li>
+<li>FCIP Trunking</li>
+<li>Adaptive Rate Limiting</li>
+<li>10GbE</li>
+<li>8G FC Ports</li>
+<li>Compression (LZ and Deflate)</li>
+<li>Acceleration (FCIP Fastwrite, OSTP)</li>
+<li>QoS</li>
+<li>VLAN Tagging</li>
+<li>FICON</li>
+<li>IPSEC</li>
+<li>VEX</li>
+<li>IPv6</li>
+<li>Jumo Frames</li>
+</ul>
+</li>
+<li>7800 switch hardware overview</li>
+<li>FX8-24 has support for all features above, except: Jumbo frames (only FR4-18i supports those), IPv6 addresses for FCIP tunnels or IPsec, or 3rd WAN optimization hardware (the other do support this pre FOS 7)</li>
+</ul>
+</li>
+</ul>
+<h2 id="monitoring-and-diagnostic-testing-in-todays-high-speed-high-density-networks">Monitoring and Diagnostic Testing in Today's High Speed High Density Networks</h2>
+<ul>
+<li><strong>Pages</strong> 2-4</li>
+<li>topics<ul>
+<li>powerpoint presentation of four pages in total</li>
+<li>fc cable lengths</li>
+<li>measuring loss</li>
+<li>embedded diagnostics (bottleneck detection, fabric watch, frame monitoring, port fencing)<ul>
+<li><strong>fmmonitor</strong> is a CLI that you can use to set up frame monitoring, for example SCSI reservations and aborts.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="brocade-network-advisor-san-user-manual">Brocade Network Advisor SAN User Manual</h2>
+<p>(53-1002355-01)</p>
+<ul>
+<li><strong>Pages</strong> 12,164,186,255,596,770,794,796</li>
+<li>topics<ul>
+<li>"Connectivity Map Toolbar" &amp; "Product List"</li>
+<li>Call Home Feature</li>
+<li>Copying and Deleting Views</li>
+<li>SAN Device Configuration (configuration repository management)</li>
+<li>LSAN Zoning</li>
+<li>Performance Overview</li>
+<li>Bottleneck detection</li>
+</ul>
+</li>
+</ul>
+<h2 id="why-db-loss-matters-for-building-reliable-stable-networks">Why dB Loss Matters for Building Reliable Stable Networks</h2>
+<p>GA-TN-048-01</p>
+<ul>
+<li><strong>Pages</strong> 2,3</li>
+<li>topics<ul>
+<li>total 8 pages</li>
+<li>link lengths and link loss budgets</li>
+</ul>
+</li>
+</ul>
+<h2 id="brocade-6505-hardware-reference">Brocade 6505 Hardware Reference</h2>
+<p>(53-1002449-01)</p>
+<ul>
+<li><strong>Pages</strong> 13,15</li>
+<li>topics<ul>
+<li>ISL trunking</li>
+<li>switchstatuspoolicy</li>
+<li>fos native and AG modes</li>
+</ul>
+</li>
+</ul>
+<h2 id="brocade-access-gateway-administrators-guide">Brocade Access Gateway Administrator’s Guide</h2>
+<p>(53-1002156-01)</p>
+<ul>
+<li><strong>Pages</strong> xiv,72,</li>
+<li>topics<ul>
+<li>supported hardware and software (which switches and FOS)</li>
+<li>enabling NPIV on M-EOS and Cisco switches<ul>
+<li>CISCO: config t; npiv enable</li>
+<li>MEOS:</li>
+</ul>
+</li>
+<li>new features -F_Port static mapping, APM, B6510, Target Aggregation, Direct target attachment, N_Port monitoring</li>
+</ul>
+</li>
+</ul>
+<p><em>"You can run the agshow command to display Access Gateway information registered with the fabric. When an Access Gateway is exclusively connected to non-Fabric-OS-based switches, it will not show up in the agshow output on other Brocade switches in the fabric."</em></p>
+<h2 id="cee-admin-guide-53-1002163-02"><a href="http://www.brocade.com/downloads/documents/product_manuals/B_SAN/CEE_AdminGd_v700.pdf" title="this is not in the resource list on community.brocade.com">CEE Admin Guide 53 1002163-02</a></h2>
+<ul>
+<li><strong>Page</strong> xviii</li>
+<li>topics<ul>
+<li>Supported Hardware: Standalone switch B8000 and the blade FCOE10-24</li>
+<li>IGMP configuring (IGMP is used in multicast, ethernet)</li>
+<li>Replacing the B8000<ul>
+<li>configdownload</li>
+<li>and copy running config and stuff! Looks very similar to the Cisco CLI.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="brocade-adaptors-admin-guide">Brocade Adaptors Admin Guide</h2>
+<p>(53-1002143-01)</p>
+<ul>
+<li><strong>Pages</strong> 3,13,</li>
+<li>topics<ul>
+<li>AnyIO technology on the 1860 Fabric Adapter, just change the SFP and set the mode with <strong>bcu port --mode</strong> or <strong>bcu adapter --mode</strong>.<ul>
+<li>HBA or FC mode (FC)</li>
+<li>Ethernet or NIC mode (GbE)</li>
+<li>CNA mode (FCoE)</li>
+</ul>
+</li>
+<li>Adapter Support (OS + description of adapters)</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-new-data-center-1st-edition">The New Data Center 1st Edition</h2>
+<p>ISBN: 978-1-4507-0195-2</p>
+<ul>
+<li><strong>Pages</strong> 65,66,78</li>
+<li>topics<ul>
+<li>Fabric Based Disaster Recovery (64-67)<ul>
+<li>An overview of some of the extension technologies and reasons behind them.</li>
+</ul>
+</li>
+<li>Network Security (77) + Power, Space and Cooling Efficiency (78)<ul>
+<li>Network Security is not FC related.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

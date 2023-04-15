@@ -1,15 +1,8 @@
 ---
 title: "pdsh - parallell distributed shell"
-date: "2012-11-10"
-categories: 
-  - "it"
-tags: 
-  - "distributed-shell"
-  - "hpc"
-  - "pdsh"
-  - "rpmforge"
-  - "shell"
----
+date: 2012-11-10
+category: it
+tags: distributed, shell, hpc, pdsh, rpmforge, shell
 
 [pdsh](https://code.google.com/p/pdsh/ "https://code.google.com/p/pdsh/")
 

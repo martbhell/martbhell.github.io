@@ -1,20 +1,8 @@
 ---
 title: "Next Generation EVA - P6000"
-date: "2011-05-03"
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "disk-array"
-  - "enterprise-virtual-array"
-  - "eva"
-  - "hp"
-  - "iscsi"
-  - "p6000"
-  - "sas"
-  - "storage"
-  - "thin-provisioning"
----
+date: 2011-05-03
+category: it, storage
+tags: disk, array, enterprise, virtual, array, eva, hp, iscsi, p6000, sas, storage, thin, provisioning
 
 On theregister there was recently [a post](http://www.theregister.co.uk/2011/05/03/hp_fifth_gen_eva/ "on theregister") that maybe HP will announce the new EVA's in Vegas in June - the P6000.
 

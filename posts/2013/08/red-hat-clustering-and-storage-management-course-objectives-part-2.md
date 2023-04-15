@@ -1,19 +1,8 @@
 ---
 title: "Red Hat – Clustering and Storage Management – Course Objectives - part 2"
-date: "2013-08-21"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "cluster"
-  - "iscsi"
-  - "linux"
-  - "lvm"
-  - "openstack"
-  - "red-hat"
-  - "rhce"
-  - "storage"
----
+date: 2013-08-21
+category: it
+tags: certification, cluster, iscsi, linux, lvm, openstack, red, hat, rhce, storage
 
 Post 1 - [http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/](http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/) Where I checked out udev, multipathing, iscsi, LVM and xfs.
 

@@ -1,15 +1,8 @@
 ---
 title: "RHCSA - Rapid Track - Day 1"
-date: "2011-12-12"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "linux"
-  - "red-hat"
-  - "rhcsa"
-  - "studying"
----
+date: 2011-12-12
+category: it
+tags: certification, linux, red, hat, rhcsa, studying
 
 First day done!
 

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Red Hat - Clustering and Storage Management - Course Objectives"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Attending "Red Hat Enterprise Clustering and Storage Management" in August. Quite a few of these technologies I haven't touched upon before so..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/red-hat-clustering-and-storage-management-course-objectives.html" rel="bookmark"
+           title="Permalink to "Red Hat - Clustering and Storage Management - Course Objectives"">"Red Hat - Clustering and Storage Management - Course Objectives"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-15T00:00:00+03:00">
+                Published: "2013-08-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lvm.html">lvm</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/storage.html">storage</a> </p>
+</footer><!-- /.post-info -->      <p>Attending "Red Hat Enterprise Clustering and Storage Management" in August. Quite a few of these technologies I haven't touched upon before so probably best to go through them before the course.</p>
+<p>Initially I wonder how many of these are Red Hat specific, or how many of these I can accomplish by using the free clones such as CentOS or Scientific Linux. We'll see :) At least a lot of Red Hat's guides will include their <a href="http://www.redhat.com/products/storage-server/">Storage Server</a>.</p>
+<p>I used the course content summary as a template for this post, my notes are made within them.. below.</p>
+<p>For future questions and trolls: this is not a how-to for lazy people who just want to copy and paste. There are plenty of other sites for that. This is just the basics and it might have some pointers so that I know which are the basic steps and names/commands for each task. That way I hope it's possible to figure out how to use the commands and such by RTFM.</p>
+<h2 id="course-content-summary"><a href="http://www.redhat.com/training/courses/rh436/" title="http://www.redhat.com/training/courses/rh436/">Course content summary</a> :</h2>
+<h3 id="clusters-and-storage">Clusters and storage</h3>
+<p><em>Get an overview of storage and cluster technologies.</em></p>
+<h3 id="iscsi-configuration">ISCSI configuration</h3>
+<p><em>Set up and manage iSCSI.</em></p>
+<h4 id="step-1-setup-a-server-that-can-present-iscsi-luns-a-target">Step 1: Setup a server that can present iSCSI LUNs. A target.</h4>
+<ol>
+<li>CentOS 6.4 - minimal. Set up basic stuff like networking, user account, yum update, ntp/time sync then make a clone of the VM.</li>
+<li>Install some useful software like: yum install ntp parted man</li>
+<li>Add a new disk to the VM</li>
+</ol>
+<p>Step 2: Make nodes for the cluster.</p>
+<ol>
+<li>yum install iscsi-initiator-utils</li>
+</ol>
+<p>Step 3: Setup an iSCSI target on the iSCSI server.</p>
+<p><a href="http://www.server-world.info/en/note?os=CentOS_6&amp;p=iscsi">http://www.server-world.info/en/note?os=CentOS_6&amp;p=iscsi</a></p>
+<ol>
+<li>yum install scsi-target-utils</li>
+<li>allow <strong>port 3260</strong></li>
+<li>edit /etc/tgt/target.conf</li>
+<li>if you do comment out the ip range and authentication it's free-for-all</li>
+</ol>
+<p><a href="http://www.server-world.info/en/note?os=CentOS_6&amp;p=iscsi&amp;f=2">http://www.server-world.info/en/note?os=CentOS_6&amp;p=iscsi&amp;f=2</a></p>
+<p>Step 4: <strong>Login</strong> to the target from at least two nodes by running 'iscsiadm' commands.</p>
+<p>Next step would be to put an appropriate file system on the LUN.</p>
+<h3 id="udev">UDEV</h3>
+<p><em>Learn basic manipulation and creation of udev rules.</em></p>
+<p>http://www.reactivated.net/writing_udev_rules.html is an old link but just change the commands to "udevadm" instead of "udev*" and at least the sections I read worked the same.</p>
+<p>udevadm info -a -n /dev/sdb</p>
+<p>Above command helps you find properties which you can build rules from. Only use properties from one parent.</p>
+<p>I have a USB key that I can pass through to my VM in VirtualBox, without any modifications it pops up as /dev/sdc.</p>
+<p>By looking in the output of the above command I can create /etc/udev/rules.d/10-usb.rules that contains:</p>
+<p>SUBSYSTEMS=="usb", ATTRS{serial}=="001CC0EC3450BB40E71401C9", NAME="my_usb_disk"</p>
+<p>After "removing" the USB disk from the VM and adding it again the disk (and also all partitions!) will be called /dev/my_usb_disk. This is bad.</p>
+<p>By using SYMLINK+="my_usb_disk" instead of NAME="my_usb_disk" all the /dev/sdc devices are kept and /dev/my_usb_disk points to /dev/sdc5. And on next boot it pointed to sdc6 (and before that sg3 and sdc7..). This is also bad.</p>
+<p>To make one specific partition with a specific size be symlinked to /dev/my_usb_disk I could set this rule:</p>
+<p>SUBSYSTEM=="block", ATTR{partition}=="5", ATTR{size}=="1933312", SYMLINK+="my_usb_disk"</p>
+<p>You could do:</p>
+<p>KERNEL=="sd*" SUBSYSTEM=="block", ATTR{partition}=="5", ATTR{size}=="1933312", SYMLINK+="my_usb_disk%n"</p>
+<p>Which will create /dev/my_usb_disk5 !</p>
+<p>This would perhaps be acceptable, but if you ever want to re-partition the disk then you'd have to change the udev rules accordingly.</p>
+<p>If you want to create symlinks for each partition (based on it being a usb, a disk and have the USB with specified serial number):</p>
+<p>SUBSYSTEMS=="usb", KERNEL=="sd*", ATTRS{serial}=="001CC0EC3450BB40E71401C9", SYMLINK+="my_usb_disk%n"</p>
+<p>These things can be useful if you have several USB disks but you always want the disk to be called /dev/my_usb_disk and not sometimes /dev/sdb and sometimes /dev/sdc.</p>
+<p>For testing one can use "udevadm test /sys/class/block/sdc"</p>
+<h3 id="multipathing">Multipathing</h3>
+<p><em>Combine multiple paths to SAN devices into one fault-tolerant virtual device.</em></p>
+<p>Ah, this one I've been in touch with before with fibrechannel, it also works with iSCSI. Multipath is the command and be wary of devices/multipaths vs default settings. Multipathd can be used in case there are actually multiple paths to a LUN (the target is perhaps available on two IP addresses/networks) but it can also be used to set a user_friendly name to a disk, based on its wwid.</p>
+<p>Some good commands:</p>
+<p>service multipathd status
+yum provides */multipath.conf # device-mapper-multipath is the package. 
+multipath -ll</p>
+<p>Copy in default multipath.conf to /etc; reload and hit multipath -ll to see what it does. After that the <a href="http://dwarffortresswiki.org/index.php/Fun">Fun</a> begins!</p>
+<h3 id="red-hat-high-availability-overview">Red Hat high-availability overview</h3>
+<p><em>Learn the architecture and component technologies in the Red Hat® High Availability Add-On.</em></p>
+<p><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/index.html">https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/index.html</a></p>
+<h3 id="quorum">Quorum</h3>
+<p><em>Understand quorum and quorum calculations.</em></p>
+<h3 id="fencing">Fencing</h3>
+<p><em>Understand Fencing and fencing configuration.</em></p>
+<h3 id="resources-and-resource-groups">Resources and resource groups</h3>
+<p><em>Understand rgmanager and the configuration of resources and resource groups.</em></p>
+<p><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/ch.gfscs.cluster-overview-rgmanager.html">https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/High_Availability_Add-On_Overview/ch.gfscs.cluster-overview-rgmanager.html</a></p>
+<h3 id="advanced-resource-management">Advanced resource management</h3>
+<p><em>Understand resource dependencies and complex resources.</em></p>
+<h3 id="two-node-cluster-issues">Two-node cluster issues</h3>
+<p><em>Understand the use and limitations of 2-node clusters.</em></p>
+<p><a href="http://en.wikipedia.org/wiki/Split-brain_(computing)">http://en.wikipedia.org/wiki/Split-brain_(computing)</a></p>
+<h3 id="lvm-management">LVM management</h3>
+<p><em>Review LVM commands and Clustered LVM (clvm).</em></p>
+<h4 id="create-normal-lvm-and-make-a-snapshot">Create <strong>Normal LVM</strong> and make a <strong>snapshot</strong>:</h4>
+<p><a href="http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html#.UgtWonUW1Ls">Tutonics</a> has a good "ubuntu" guide for LVMs, but at least the snapshot part works the same.</p>
+<ol>
+<li>yum install lvm2</li>
+<li>parted /dev/vda # create two primary large physical partitions. With a CentOS64 VM in openstack I had to reboot after this step.</li>
+<li>pvcreate /dev/vda3 pvcreate /dev/vda4</li>
+<li>vgcreate VG1 /dev/vda3 /dev/vda4</li>
+<li>lvcreate -L 1G VG1 # create a smaller logical volume (to give room for snapshot volume)</li>
+<li>mkfs.ext4 /dev/VG1/</li>
+<li>mount /dev/VG1/lvol0 /mnt</li>
+<li>date &gt;&gt; /mnt/datehere</li>
+<li>lvcreate -L 1G -s -n snap_lvol0 /dev/VG1/lvol0</li>
+<li>date &gt;&gt; /mnt/datehere</li>
+<li>mkdir /snapmount</li>
+<li>mount /dev/VG1/snap_lvol0 /snapmount # mount the snapshot :)</li>
+<li>diff /snapmount/datehere /mnt/datehere</li>
+</ol>
+<p>Revert a Logival Volume to the state of the snapshot:</p>
+<ol>
+<li>umount /mnt /snapmount</li>
+<li>lvconvert --merge /dev/VG1/snap_lvol0 # this also removes the snapshot under /dev/VG1/</li>
+<li>mount /mnt</li>
+<li>cat /mnt/datehere</li>
+</ol>
+<h3 id="xfs">XFS</h3>
+<p><em>Explore the Features of the XFS® file system and tools required for creating, maintaining, and troubleshooting.</em></p>
+<p><a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/xfsmain.html">https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/xfsmain.html</a></p>
+<p>yum provides */mkfs.xfs</p>
+<p>yum install quota</p>
+<p>XFS Quotas:</p>
+<p>mount with uquota for user quotas, mount with uqnoenforce for soft quotas. use xfs_quota -x to set quotas help limit</p>
+<p>To illustrate the quotas: set a limit for user "user":</p>
+<p>xfs -x -c "limit bsoft=100m bhard=110m user"</p>
+<p>Then create two 50M files. While writing the 3rd file the cp command will halt when it is at the hard limit:</p>
+<p>[user@rhce3 home]$ cp 50M 50M_2
+cp: writing `50M_2': Disk quota exceeded
+[user@rhce3 home]$ ls -l
+total 112636
+-rw-rw-r-- 1 user user 52428800 Aug 15 09:29 50M
+-rw-rw-r-- 1 user user 52428800 Aug 15 09:29 50M_1
+-rw-rw-r-- 1 user user 10477568 Aug 15 09:29 50M_2</p>
+<h3 id="red-hat-storage">Red Hat Storage</h3>
+<p><em>Work with Gluster to create and maintain a scale-out storage solution.</em></p>
+<p>http://chauhan-rhce.blogspot.fi/2013/04/gluster-file-system-configuration-steps.html</p>
+<p>http://servicesblog.redhat.com/2012/07/31/updates-to-the-red-hat-enterprise-clustering-and-storage-management-course/</p>
+<h3 id="comprehensive-review">Comprehensive review</h3>
+<p><em>Set up high-availability services and storage.</em></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

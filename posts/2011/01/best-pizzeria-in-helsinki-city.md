@@ -1,12 +1,8 @@
 ---
 title: "Best pizzeria in Helsinki city"
-date: "2011-01-21"
-categories: 
-  - "finland"
-tags: 
-  - "food"
-  - "pizza"
----
+date: 2011-01-21
+category: finland
+tags: food, pizza
 
 Tried a few near us so far.
 

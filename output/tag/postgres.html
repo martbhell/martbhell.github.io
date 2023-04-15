@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - postgres</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/openindiana-postgresql-dcache.html">"OpenIndiana + PostgreSQL + dCache"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-03-01T00:00:00+02:00">
+                Published: "2012-03-01"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/dcache.html">dcache</a> <a href="/tag/esx.html">esx</a> <a href="/tag/esxi.html">esxi</a> <a href="/tag/grid.html">grid</a> <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/postgres.html">postgres</a> <a href="/tag/postgresql.html">postgresql</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info --><h2 id="this-is-a-test-for-installing-openindiana-and-set-up-a-working-dcache-test-vm">This is a test for installing openindiana and set up a working dCache test-vm.</h2>
+<p>dCache is a storage element of the Grid (scientific computing).</p>
+<p>OI == OpenIndiana. Kind of like opensolaris with an Illumos kernel, not the sun/oracle kernel.</p>
+<p>With <a href="http://www.guldmyr.com/blog/esxi-vmware-workstation/" title="http://www.guldmyr.com/blog/esxi-vmware-workstation/">http://www.guldmyr.com/blog/esxi-vmware-workstation/</a> as a base for how to set up ip settings etc in OI.</p>
+<p><a href="http://openindiana.org/" title="get it from openindiana.org">oi-dev-151a-text-x86.iso</a> installed</p>
+<div class="highlight"><pre><span></span><code>pkg<span class="w"> </span>install<span class="w"> </span>package/pkg
+
+pkg<span class="w"> </span>update
+
+java<span class="w"> </span>-version
+
+mkdir<span class="w"> </span>/var/postgres
+
+useradd<span class="w"> </span>postgres
+
+groupadd<span class="w"> </span>postgres
+
+chown<span class="w"> </span>postgres:postgres<span class="w"> </span>/var/postgres
+
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/postgres
+</code></pre></div>
+
+<p>The pkg update makes it into 151a2</p>
+<p>If you do not create the ones above the install of service/postgres will fail and create a new BE.</p>
+<div class="highlight"><pre><span></span><code>pkg<span class="w"> </span>install<span class="w"> </span>pkg:/database/postgres-84
+pkg<span class="w"> </span>install<span class="w"> </span>pkg:/service/database/postgres-84
+
+vi<span class="w"> </span>/etc/passwd
+</code></pre></div>
+
+<p>change postgres to 90:90 and homedir to /export/home/postgres</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/export/home/postgres
+
+chown<span class="w"> </span>postgres.postgres<span class="w"> </span>/export/home/postgres
+root@oi:~#<span class="w"> </span>vi<span class="w"> </span>/export/home/postgres/.profile
+<span class="nv">PATH</span><span class="o">=</span>/usr/postgres/8.4/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nv">PGDATA</span><span class="o">=</span>/var/postgres/8.4/data
+<span class="nb">export</span><span class="w"> </span>PATH<span class="w"> </span>PGDATA
+</code></pre></div>
+
+<p>you probably also want to add these to the root user's path</p>
+<div class="highlight"><pre><span></span><code>svcadm<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql-84:32<span class="se">\_</span>bit
+
+root@oi:/var/log#<span class="w"> </span>svcs<span class="w"> </span>-a<span class="p">|</span>grep<span class="w"> </span>postg
+disabled<span class="w">       </span><span class="m">17</span>:29:37<span class="w"> </span>svc:/application/database/postgresql<span class="se">\_</span><span class="m">84</span>:default<span class="se">\_</span>64bit
+online<span class="w">         </span><span class="m">17</span>:31:35<span class="w"> </span>svc:/application/database/postgresql<span class="se">\_</span><span class="m">84</span>:default<span class="se">\_</span>32bit
+
+su<span class="w"> </span>-<span class="w"> </span>postgres
+
+psql
+
+<span class="se">\\</span>l
+</code></pre></div>
+
+<p>I initially did this in an ESXi VM in VMWare Workstation, but that keept freezing so I went over to a 'real vm' instead. The VM is more responsive.</p>
+<h3 id="dcache-stuff">dCache stuff</h3>
+<p>wget it from <a href="http://www.dcache.org" title="http://www.dcache.org">www.dcache.org</a></p>
+<p><code>pkgadd -d dcache-server-1.9.12-16.pkg</code></p>
+<p>follow <a href="http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml" title="http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml">http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml</a> for the instructions of which postgresql-scripts and users and stuff to create</p>
+<p>It's however not enough :</p>
+<div class="highlight"><pre><span></span><code>root@oi:~#<span class="w"> </span>/opt/d-cache/bin/dcache<span class="w"> </span>start
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">127</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">128</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">129</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">130</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">131</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">132</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+/opt/d-cache/bin/dcache<span class="se">\[</span><span class="m">317</span><span class="se">\]</span>:<span class="w"> </span>.<span class="se">\[</span><span class="m">162</span><span class="se">\]</span>:<span class="w"> </span>local:<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="se">\[</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="se">\]</span>
+</code></pre></div>
+
+<p>so, edit /opt/d-cache/bin/dcache and remove the if in the beginning that will make it use /usr/xpg4/bin/sh - so that it uses /bin/bash instead.</p>
+<p>Like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="se">\[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;%&quot;</span><span class="w"> </span><span class="se">\]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">shift</span>
+<span class="k">elif</span><span class="w"> </span><span class="se">\[</span><span class="w"> </span><span class="s2">&quot;\`uname\`&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SunOS&quot;</span><span class="w"> </span><span class="se">\]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="se">\[</span><span class="w"> </span>-x<span class="w"> </span>/bin/bash<span class="w"> </span><span class="se">\]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">exec</span><span class="w"> </span>/bin/bash<span class="w"> </span><span class="nv">$0</span><span class="w"> </span>%<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Cannot find POSIX compliant shell. This script will&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;probably break, but we attempt to execute it anyway.&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="k">fi</span>
+</code></pre></div>
+
+<p>after I changed this, I noticed in the console that it said:</p>
+<p><code>rpcbind: non-local attempt to set</code></p>
+<p>bad?</p>
+<p>anyway, then start dCache</p>
+<div class="highlight"><pre><span></span><code>root@oi:/opt/d-cache/bin#<span class="w"> </span>/opt/d-cache/bin/dcache<span class="w"> </span>start
+Starting<span class="w"> </span>dCacheDomain<span class="w"> </span><span class="k">done</span>
+</code></pre></div>
+
+<p>in /var/log/dCacheDomain.log you'll find why it's not working:</p>
+<p>touch /etc/exports</p>
+<p>and it appears to be stable, except for some errors about (NFSv3-oi), however, we disregard those for now, we just want to get it running!</p>
+<div class="highlight"><pre><span></span><code>vi<span class="w"> </span>/opt/d-cache/etc/dcache.conf
+dcache.layout<span class="o">=</span>single
+mkdir<span class="w"> </span>/pool1
+</code></pre></div>
+
+<p>and</p>
+<div class="highlight"><pre><span></span><code>vi<span class="w"> </span>/opt/d-cache/etc/layouts/single.conf
+</code></pre></div>
+
+<p>uncomment the pool1 section, set a maxDiskSize=2G to specify max disk space allowed. Specifics are in the installation part on dcache.org in the book.</p>
+<p>Then point your webbrowser to - see any blue buttons?! <strong>yay, it's up!</strong></p>
+<p>Next step is to try it out, this might prove a little bit more difficult (to find dcap/root/srm client for opensolaris/oi).</p>
+<h3 id="postgresql-problem">PostgreSQL problem</h3>
+<p>so maybe next time you restart the vm it gives some errors and puts the postgresql-server in maintenance mode. Look in /var/adm/messages for some tips, it should point you to</p>
+<div class="highlight"><pre><span></span><code>svcs<span class="w"> </span>-xv<span class="w"> </span>svc:/application/database/postgresql<span class="se">\_</span><span class="m">84</span>:default<span class="se">\_</span>32bit
+</code></pre></div>
+
+<p>/var/svc/log/application-database-postgresql_84\:default_32bit.log</p>
+<p>which will tell you more about what's going on and how to fix it</p>
+<p><code>svcadm restart svcadm clear</code></p>
+<h2 id="use-dcache-with-webdav">Use dCache with webdav</h2>
+<p>We'll start with trying to use Webdav (doesn't require anything fancy on the client side, except maybe a browser plugin for uploading).</p>
+<p>go to the layout file and uncomment the webdav part, add</p>
+<div class="highlight"><pre><span></span><code>webdavAnonymousAccess=FULL
+webdavRootPath=/data/world-writable
+</code></pre></div>
+
+<p>The script /opt/d-cache/bin/chimera-cli.sh sadly assumes that you need bash or a special version of bash somehow. So running</p>
+<p>bash /opt/d-cache/bin/chimera-cli.sh mkdir /data</p>
+<p>works, but</p>
+<p>/opt/d-cache/bin/chimera-cli.sh mkdir /data</p>
+<p>does not.</p>
+<p>See http://www.dcache.org/manuals/Book-1.9.12/start/intouch-client.shtml for the rest.</p>
+<p>If you keep the webdav in the same domain you'll need to restart the whole dcache.</p>
+<p>In Windows 7 you can then mount a new network folder and click "Connect to a web site that you can use to store your documents and pictures" and in there type:</p>
+<p>Now you get another folder in your computer where you can create folders. These will also show up if you surf to , sadly however, you cannot write files. <a href="https://www.gridpp.ac.uk/wiki/DCache_Log_Message_Archive#Pool_too_high">gridpp.ac.uk</a> says it's because pool is full. But it's 2048MiB and all free?</p>
+<p>https://twiki.grid.iu.edu/bin/view/Storage/MeetingMinutes2009Sep02</p>
+<p>suggests minimum pool size might be 4G, changed pool maxdiskspace to 8G.</p>
+<p>tada, now the copy starts, or the file creation starts, but I cannot actually write anything to it. So if I create a .txt file, I can give it a name and save it, unless I try to write anything inside it!</p>
+<p>some errors to accompany this:</p>
+<p>(WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] resource is being locked with a null user. This won't really be locked at all...
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] resource is being locked with a null user. This won't really be locked at all...
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
+ (pool1) [00002CBCC971ABC14BDC9E496A0AEAA31FC3] A task was added to queue 'store', however the queue is not configured to execute any tasks.</p>
+<h3 id="trying-dccp">trying dccp</h3>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">root</span><span class="o">]</span><span class="w"> </span><span class="err">#</span>
+</code></pre></div>
+
+<h3 id="nfsv41">NFSv41</h3>
+<p>uncomment the nfsv3 and add nfsv41 then on a system you should be able to 'apt-get install nfs-common'; modprobe nfs; mkdir /nfsv4 mount -t nfs4 ip.to.server:/ /nfsv4'. But for me this stops working with an "cp: closing `./bash': Input/output error". Possibly because I could not specify -o minorversion=1 on this ubuntu install (3.0.0-16).</p>
+<h4 id="nfsv41-with-dcachetogo">NFSv41 with dCacheToGo</h4>
+<p>Download dCache2Go from here:</p>
+<p>To convert it into VMware format:</p>
+<p><code>VBoxManage clonehd source.vdi target.vmdk --format VMDK</code></p>
+<p>Then create new vm and set the new vmdk file as the disk.</p>
+<p>When this VM is up (and the dCache server of course), hit:</p>
+<p><code>mount -t nfs4 -o minorversion ip.to.dcache.host:/ /mnt</code></p>
+<p>then</p>
+<div class="highlight"><pre><span></span><code>cd /mnt/data/world-writable
+mkdir another
+cd another
+cp /bin/bash .
+cp bash /tmp/bash
+diff /tmp/bash /bin/bash
+</code></pre></div>
+
+<h2 id="score-we-have-a-working-dcache-setup-in-a-vm-running-openindiana">SCORE! We have a working dCache setup in a VM running openindiana!</h2>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/postgresql-upgrade-compressed-dumpfile.html" rel="bookmark"
+                           title="Permalink to "PostgreSQL upgrade - compressed dumpfile"">"PostgreSQL upgrade - compressed dumpfile"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-06-19T00:00:00+03:00">
+                Published: "2011-06-19"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/compression.html">compression</a> <a href="/tag/database.html">database</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pgsql.html">pgsql</a> <a href="/tag/postgres.html">postgres</a> <a href="/tag/postgresql.html">postgresql</a> <a href="/tag/sql.html">sql</a> <a href="/tag/upgrade.html">upgrade</a> </p>
+</footer><!-- /.post-info -->                <p>Why does a PostgreSQL upgrade require an export, uninstall, install and then import of the database? That big changes in the database?</p>
+<p>It would be nice to know how to import from a compressed archive, <strong>anybody ever got this working?</strong> If so, please leave a comment! I've been googling my …</p>
+                <a class="readmore" href="/postgresql-upgrade-compressed-dumpfile.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

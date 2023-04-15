@@ -1,24 +1,8 @@
 ---
 title: "password when starting a linux server in single-user mode"
-date: "2012-03-08"
-categories: 
-  - "it"
-tags: 
-  - "hardening"
-  - "init"
-  - "inittab"
-  - "linux"
-  - "red-hat"
-  - "rhel"
-  - "scientific-linux"
-  - "security"
-  - "single-user"
-  - "singleuser"
-  - "slc"
-  - "su"
-  - "sulogin"
-  - "sushell"
----
+date: 2012-03-08
+category: it
+tags: hardening, init, inittab, linux, red, hat, rhel, scientific, linux, security, single, user, singleuser, slc, su, sulogin, sushell
 
 http://www.cromwell-intl.com/unix/linux-break-in-howto.html
 

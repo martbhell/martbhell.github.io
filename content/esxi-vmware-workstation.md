@@ -1,0 +1,1 @@
+../posts/2012/02/esxi-vmware-workstation.md

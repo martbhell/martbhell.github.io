@@ -1,0 +1,1 @@
+../posts/2011/08/bcfp-16g-studying.md

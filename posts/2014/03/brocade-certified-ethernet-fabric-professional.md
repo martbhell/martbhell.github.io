@@ -1,14 +1,8 @@
 ---
 title: "Brocade Certified Ethernet Fabric Professional"
-date: "2014-03-25"
-categories: 
-  - "it"
-tags: 
-  - "bcefp"
-  - "brocade"
-  - "certification"
-  - "study"
----
+date: 2014-03-25
+category: it
+tags: bcefp, brocade, certification, study
 
 Brocade Certified Ethernet Fabric Professional - BCEFP - is available for free right now! I signed up and if you pass it you're in the drawing for a $500 amazon coupon each week/month :)
 

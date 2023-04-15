@@ -1,0 +1,1 @@
+../posts/2011/04/spinning-camera-in-fps-games.md

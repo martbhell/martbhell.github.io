@@ -1,0 +1,1 @@
+../posts/2012/03/tiny-core-linux.md

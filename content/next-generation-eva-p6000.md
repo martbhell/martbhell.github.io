@@ -1,0 +1,1 @@
+../posts/2011/05/next-generation-eva-p6000.md

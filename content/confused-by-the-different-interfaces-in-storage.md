@@ -1,0 +1,1 @@
+../posts/2012/02/confused-by-the-different-interfaces-in-storage.md

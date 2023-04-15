@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"P2000 API Auth String"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Ever wanted to do monitoring of a P2000 or MSA2000 from HP? They are in secret Dot Hill hardware, for example DDN also resells these as for..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/p2000-api-auth-string.html" rel="bookmark"
+           title="Permalink to "P2000 API Auth String"">"P2000 API Auth String"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-03-05T00:00:00+02:00">
+                Published: "2013-03-05"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/api.html">api</a> <a href="/tag/dothill.html">dothill</a> <a href="/tag/md5.html">md5</a> <a href="/tag/monitoring.html">monitoring</a> <a href="/tag/p2000.html">p2000</a> <a href="/tag/perl.html">perl</a> </p>
+</footer><!-- /.post-info -->      <p>Ever wanted to do monitoring of a P2000 or MSA2000 from HP?</p>
+<p>They are in secret Dot Hill hardware, for example DDN also resells these as for example EF3015.</p>
+<p>There is a nice nagios script written by Tom http://www.toms-blog.com/nagios-hp-msa-p2000-status-and-performance-monitor/</p>
+<p>To use that you need an API string which you can get from capturing traffic while logging in to the HTTP interface.</p>
+<p>Another way to get the string is to run this perl code that gets the md5sum out of "manage_!manage" which is the default username and password:</p>
+<h1 id="usrbinperl">!/usr/bin/perl</h1>
+<p>use Digest::MD5 qw(md5_hex);</p>
+<h1 id="generate-md5-hash-using-default-usernamepassword">generate MD5 hash using default username/password</h1>
+<p>my $md5_data = "manage_!manage";</p>
+<h1 id="replace-manage-with-the-new-password-in-case-you-change-the-password">replace !manage with the new password in case you change the password</h1>
+<p>my $md5_hash = md5_hex( $md5_data );
+print "$md5_hash\n";</p>
+<p>Code borrowed from "HP P2000 G3 MSA System CLI Reference Guide" http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02520779/c02520779.pdf</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

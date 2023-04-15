@@ -1,20 +1,8 @@
 ---
 title: "VSP / VMAX / VAAI"
-date: "2011-02-10"
-categories: 
-  - "storage"
-tags: 
-  - "anarchist"
-  - "arrays"
-  - "emc"
-  - "hds"
-  - "storage"
-  - "vaai"
-  - "vm"
-  - "vmax"
-  - "vmware"
-  - "vsp"
----
+date: 2011-02-10
+category: storage
+tags: anarchist, arrays, emc, hds, storage, vaai, vm, vmax, vmware, vsp
 
 Lots of acronyms :)
 

@@ -1,18 +1,8 @@
 ---
 title: "Fantasy Book Review - Steven Erikson - The Crippled God - Part 1"
-date: "2011-07-04"
-categories: 
-  - "finland"
-tags: 
-  - "book"
-  - "crippled-god"
-  - "fantasy"
-  - "malaz"
-  - "malazan"
-  - "reading"
-  - "review"
-  - "steven-eriksson"
----
+date: 2011-07-04
+category: finland
+tags: book, crippled, god, fantasy, malaz, malazan, reading, review, steven, eriksson
 
 **Warning: this post contains spoilers if you haven't read Dust of Dreams or the previous books in the series Malazan Book of the Fallen.**
 

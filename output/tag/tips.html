@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - tips</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/running-ubuntu-on-a-desktop.html">"Running Ubuntu on a Desktop"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-12-15T00:00:00+02:00">
+                Published: "2012-12-15"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/desktop.html">desktop</a> <a href="/tag/install.html">install</a> <a href="/tag/linux.html">linux</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/tips.html">tips</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info --><h1 id="introduction">Introduction</h1>
+<p>Recently I've had the pleasure of installing Ubuntu on my desktop. Here are some thoughts and what I initially do:</p>
+<p>Machine is a:</p>
+<p>Motherboard: Gigayte GA-EX58-UD3R CPU: Intel Core i7 Memory: 8GB Disks: Intel i300 SSD, 2x500GB and 1x3TB Western Digital Drives. Graphics Card: AMD HD6800</p>
+<p>Here are some of the things figured out along the way:</p>
+<ul>
+<li>grub2 does not like keyboard, but if I boot on the Ultimate Boot CD (grub) - the keyboard does work. This is with flipping all the USB keyboard, mouse, storage, legacy .. settings on and off in BIOS.<ul>
+<li>After removing Ubuntu 12.10 and installing 12.04 (this is with USB things enabled in BIOS) - the keyboard works in grub2 menu.</li>
+</ul>
+</li>
+<li>to install better drivers, easiest is to open Ubuntu Software, edit sources and allow post-release things.<ul>
+<li>then go to settings and "additional drivers"</li>
+</ul>
+</li>
+<li>after upgrading to fglrx,<ul>
+<li>to change speed of the GPU fan to 20% hit: aticonfig --pplib-cmd "set fanspeed 0 20"</li>
+<li>to view the speed of the GPU fan hit: aticonfig --pplib-cmd "get fanspeed 0"</li>
+<li>to view the GPU temperature hit: aticonfig --adapter=0 --od-gettemperature</li>
+</ul>
+</li>
+</ul>
+<p>If you do decide to try with newer drivers for the ATI - card, make sure you have the installation CD/DVD handy. Or even better, get it on a USB-drive, way faster.</p>
+<p>To find the devices for / and /boot - at least when I boot up there are these disk icons in the side-bar on the left side. If you hover over the icon you'll see the size, if you click, it mounts and then a folder is opened. Then in the output of 'mount' you can see which device it is. Unmount and then proceed with these to get a working chroot:</p>
+<p>sudo mount /mnt /dev/devicethathasroot
+sudo mount /mnt/boot /dev/devicethathasslashboot</p>
+<p>sudo mount ‐‐bind /dev /mnt/dev
+sudo mount ‐‐bind /proc /mnt/proc
+sudo mount ‐‐bind /sys /mnt/sys
+xhost +local:</p>
+<h1 id="above-xhost-is-to-get-x-things-working-from-within-a-chroot-possibly-unsafe">above xhost is to get x things working from within a chroot (possibly unsafe?).</h1>
+<p>chroot /mnt</p>
+<h1 id="you-can-get-network-working-it-needs-a-good-etcresolvconf-first-either-overwrite-the-existing-one-or-somehow-get-the-local-nameserver-up-and-running">you can get network working, it needs a good /etc/resolv.conf first. Either overwrite the existing one or somehow get the local nameserver up and running</h1>
+<h1 id="install-some-good-software">Install some good software</h1>
+<p>apt-get install screen openssh-server tmux openjdk-6-jre unrar p7zip pidgin vim</p>
+<p>Spotify Repository - http://www.ubuntuupdates.org/ppa/spotify</p>
+<p>Google Chrome Repository - http://www.ubuntuupdates.org/ppa/google_chrome</p>
+<p><a href="http://www.universalmediaserver.com/" title="fork of ps3 media server">Universal Media Server</a></p>
+<p>For UMS you'll also need:</p>
+<p>apt-get install ffmpeg mplayer mencoder libzen-dev mediainfo</p>
+<p>You also need to make sure zen and mediainfo works - check trace log in UMS to see if there are any errors in the beginning that they are not found. If so the hack is to create symlinks. For me the libzen.so and libmediainfo.so are in the /usr/lib/x86_64-linux-gnu/ directory.</p>
+<h2 id="getting-graphite-running-for-graphing-system-monitoring">Getting graphite running (for graphing / system monitoring )</h2>
+<p>One reason was that I wanted to learn more about this tool - but another reason is that it's quite light weight, especially if you're going to be running an httpd anyway.</p>
+<p>To install it, follow this guide: <a href="http://coreygoldberg.blogspot.fi/2012/04/installing-graphite-099-on-ubuntu-1204.html">http://coreygoldberg.blogspot.fi/2012/04/installing-graphite-099-on-ubuntu-1204.html</a></p>
+<p>Carbon-cache initd-script: <a href="https://gist.github.com/1492384">https://gist.github.com/1492384</a></p>
+<h3 id="to-monitor-temperature-and-fan-speed-of-your-amdati-card-put-this-script-in-usrlocalbinatitempsh">To monitor temperature and fan speed of your AMD/ATI card put this script in /usr/local/bin/atitemp.sh:</h3>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="script-to-monitor-temp-and-fanspeed-of-an-amdati-card">Script to monitor temp and fanspeed of an AMD/ATI card.</h1>
+<h1 id="amdccle-required-also-x">amdccle required? Also X?</h1>
+<p>HOST1="$(hostname -s)"
+DEBUG="0"</p>
+<p>CMD="$(which aticonfig)"</p>
+<p>if [ "$?" != "0" ]; then
+        echo "Cannot find aticonfig, check paths and if it's even installed."
+        exit $?
+fi</p>
+<p>while [ 1 ];
+do</p>
+<p>TEMP=$(/usr/bin/aticonfig --adapter=0 --od-gettemperature|grep Sensor|awk '{print $5}'|sed -e 's/\.00//')
+SPEED=$(/usr/bin/aticonfig --adapter=0 --pplib-cmd "get fanspeed 0"|grep Result|awk '{print $4}'|tr -d "%")
+DATU="$(date +%s)"
+LOGF="/tmp/atitemp.log"</p>
+<p>echo "##########" &gt;&gt; $LOGF</p>
+<p>if [ "$TEMP" != "" ]; then
+echo "servers.$HOST1.atitemp $TEMP $DATU"|nc localhost 2003</p>
+<p>if [ "$DEBUG" == "1" ]; then
+echo $TEMP &gt;&gt; $LOGF
+fi</p>
+<p>fi</p>
+<p>sleep 1
+if [ "$SPEED" != "" ]; then
+echo "servers.$HOST1.atifanspeed $SPEED $DATU"|nc localhost 2003</p>
+<p>if [ "$DEBUG" == "1" ]; then
+echo $SPEED &gt;&gt; $LOGF
+fi</p>
+<p>fi</p>
+<p>sleep 60;
+done</p>
+<h3 id="to-graph-useful-system-resources-network-bandwidth-cpumem-usage-disk-space">To graph useful system resources (network bandwidth, cpu/mem-usage, disk space)</h3>
+<p>Would be good to install collectl and just export to graphite. But this does not work well currently because the version of collectl with Ubuntu 12.04 LTS is 3.6.0 (3.6.3 with 12.10). 3.6.1 is needed to make it work with graphite and 3.6.5 to make it work good if you want to group servers.</p>
+<p>There are plenty of other options though. You can write some scripts yourself, use diamond or a few other tools that has graphite-support.</p>
+<p>Diamond is another option, to install follow these two links <a href="https://github.com/BrightcoveOS/Diamond/wiki/Installation">https://github.com/BrightcoveOS/Diamond/wiki/Installation</a> (only addition is first you have to clone the git repository, from in there you run make builddeb).</p>
+<p>How to manually configure a custom collector: <a href="https://github.com/BrightcoveOS/Diamond/wiki/Configuration">https://github.com/BrightcoveOS/Diamond/wiki/Configuration</a></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/trick-with-labels-in-gmail-how-to-find-out-who-is-selling-your-e-mail-address.html" rel="bookmark"
+                           title="Permalink to "Trick with labels in gmail - how to find out who is selling your e-mail address"">"Trick with labels in gmail - how to find out who is selling your e-mail address"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-29T00:00:00+03:00">
+                Published: "2011-04-29"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/e.html">e</a> <a href="/tag/mail.html">mail</a> <a href="/tag/gmail.html">gmail</a> <a href="/tag/google.html">google</a> <a href="/tag/spam.html">spam</a> <a href="/tag/tips.html">tips</a> <a href="/tag/tricks.html">tricks</a> </p>
+</footer><!-- /.post-info -->                <p>I actually read about this in some comment field somewhere else, but here is a great explanation of my intention:</p>
+<p><a href="http://g04.com/misc/GmailTipsComplete.html#Tip-03">http://g04.com/misc/GmailTipsComplete.html#Tip-03</a> I thought first that I could just e-mail to address+label@gmail.com and it would automagically come to that e-mail. That's not …</p>
+                <a class="readmore" href="/trick-with-labels-in-gmail-how-to-find-out-who-is-selling-your-e-mail-address.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

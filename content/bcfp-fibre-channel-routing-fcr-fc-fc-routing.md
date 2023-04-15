@@ -1,0 +1,1 @@
+../posts/2011/07/bcfp-fibre-channel-routing-fcr-fc-fc-routing.md

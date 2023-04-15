@@ -1,19 +1,8 @@
 ---
 title: "Making use of IBM Laptop T40 – Part 3"
-date: "2011-04-18"
-categories: 
-  - "it"
-tags: 
-  - "hdd"
-  - "ibm"
-  - "laptop"
-  - "linux"
-  - "pata"
-  - "replace-hard-drive"
-  - "t40"
-  - "thinkpad"
-  - "ultimatebootcd"
----
+date: 2011-04-18
+category: it
+tags: hdd, ibm, laptop, linux, pata, replace, hard, drive, t40, thinkpad, ultimatebootcd
 
 ### Preface
 

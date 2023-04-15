@@ -1,0 +1,1 @@
+../posts/2011/03/playstation-3-its-purty.md

@@ -1,14 +1,8 @@
 ---
 title: "Cyanogenmod on Xperia Active (ST17i or satsuma)"
-date: "2014-01-12"
-categories: 
-  - "it"
-tags: 
-  - "android"
-  - "cyanogenmod"
-  - "sony-ericsson"
-  - "xperia-active"
----
+date: 2014-01-12
+category: it
+tags: android, cyanogenmod, sony, ericsson, xperia, active
 
 Finally got fed up with the Xperia Active (ST17i or satsuma) - couldn't update anything because all the space was used up and it was rebooting when I wasn't touching it. Solution? Install Cyanogenmod!
 

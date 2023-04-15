@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - appearance</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/transparent-putty-in-windows-7.html">"Transparent PuTTY in Windows 7"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-02-18T00:00:00+02:00">
+                Published: "2011-02-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/appearance.html">appearance</a> <a href="/tag/auto.html">auto</a> <a href="/tag/login.html">login</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/linux.html">linux</a> <a href="/tag/putty.html">putty</a> <a href="/tag/set.html">set</a> <a href="/tag/opacity.html">opacity</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/terminal.html">terminal</a> <a href="/tag/client.html">client</a> <a href="/tag/transparency.html">transparency</a> <a href="/tag/tray.html">tray</a> <a href="/tag/icon.html">icon</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info --><p>PuTTY is a terminal client, it does telnet, raw, serial, ssh, <a href="http://en.wikipedia.org/wiki/Rlogin" title="rlogin wikipedia">rlogin</a>. I've only ever used telnet, raw, serial and ssh.</p>
+<p>The normal client can be downloaded from <a href="http://www.putty.nl" title="putty.nl">http://www.putty.nl</a></p>
+<p>But, maybe you want to make PuTTY prettier?</p>
+<p>Like this?:</p>
+<p>[caption id="attachment_414" align="alignnone" width="659"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/putty2.png"><img alt="putty pretty" src="images/putty2.png" title="putty2"></a> putty pretty[/caption]</p>
+<p>Well, there are a couple of ways to get the transparency.</p>
+<ul>
+<li>Get a transparency tool for Windows or your OS that you can use to make anything transparent.</li>
+<li>If you are in Linux eterm does it - you just need to make some changes to the config.</li>
+<li>For Windows you can also download <strong><a href="https://puttytray.goeswhere.com" title="puttytray">PuTTY Tray</a></strong>.</li>
+</ul>
+<p>PuTTY Tray is still developed.</p>
+<p>Go ahead and download PuTTY Tray, it will re-use the profiles you have already configured with normal PuTTY so don't worry about losing them.</p>
+<p>If you have a profile already set up for PuTTY you can load it and then go and make the changes, don't forget to save it afterwards :)</p>
+<p>Settings:</p>
+<p>Window</p>
+<ul>
+<li>Deselect "show scrollbar" - (you can use shift+pageup/pagedown for that anyway)</li>
+<li>Set Opacity to 225 as a start - (you will probably alter this later)</li>
+</ul>
+<p>Windows -&gt; Appearance</p>
+<ul>
+<li>Set "gap between text and window edge" to 0</li>
+</ul>
+<p>Window -&gt; Behavior</p>
+<p>What confused me was that by default PuTTY Tray sends the application to the tray, and not to the activity field. So I thought the program was terminating itself :)</p>
+<ul>
+<li>To have the program in the activity field you need to set the "show tray icon" to "Always"</li>
+<li>Also set "accept single-click to restore from tray".</li>
+<li>Full screen on alt-enter is also handy to enable here.</li>
+</ul>
+<p>That's it!</p>
+<p>Another thing I find handy to write in is to add an "auto-login username" under Connection -&gt; Data. Saves a lot of time if you use the same username a lot.</p>
+<p>I only have Windows 7 but I don't see why this would be different on Windows XP - excepting from the systray behavior then.</p>
+<p>P.s. if you're on Windows 10 you can use Bash on Windows! Do iiit - much nicer than putty!</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

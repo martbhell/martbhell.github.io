@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Red Hat Certification – RHCE – System Configuration and Management"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="RHCE Preparation - System Configuration and Management This is post 1 in a series of posts where I will be going through the objectives for the..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/red-hat-certification-rhce-system-configuration-and-management.html" rel="bookmark"
+           title="Permalink to "Red Hat Certification – RHCE – System Configuration and Management"">"Red Hat Certification – RHCE – System Configuration and Management"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-04-30T00:00:00+03:00">
+                Published: "2012-04-30"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/studying.html">studying</a> </p>
+</footer><!-- /.post-info -->      <h1 id="rhce-preparation-system-configuration-and-management">RHCE Preparation - System Configuration and Management</h1>
+<p>This is post 1 in a series of posts where I will be going through the objectives for the RHCE certifications. It builds on the initial post that has the objectives:</p>
+<p>http://www.guldmyr.com/blog/red-hat-certification-rhce-preparation/</p>
+<p><em>It appears that the objectives have been updated, at least if you compare between my post above and https://www.redhat.com/training/courses/ex300/examobjective</em></p>
+<p><em>for example build a simple rpm is installs one package is not in the list.</em></p>
+<p>I bet there are <a href="http://b.joaoubaldo.com/?page_id=623" title="for example">many blogs</a> about this topic. I'm doing this quite a lot for myself, but maybe somebody else finds these useful.</p>
+<p>This post will be about the section 'System Configuration and Management'.</p>
+<p>My setup: Core i7, 8GB RAM, Windows 7 x64, VMWare Workstation with CentOS installed.</p>
+<p>Installing a fresh VM with 4 cores, 5GB RAM, virtualization and CentOS.</p>
+<p>CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86_64/</p>
+<h2 id="ip-routing-and-nat">IP Routing and NAT</h2>
+<p>The part "Routing / NAT" will be tricky, as I do not have a second computer that I could use for this. Maybe I can get something working inside the virtual machines though, but for now I think I will skip these two and get straight into the other ones.</p>
+<h2 id="use-procsys-and-sysctl-to-modify-and-set-kernel-runtime-parameters">Use /proc/sys and sysctl to modify and set kernel runtime parameters.</h2>
+<p>Edit /etc/sysctl.conf</p>
+<p>Or use sysctl -w to set it temporary</p>
+<p>For example one is: vm.overcommit_ratio</p>
+<p>You can then do either of these to view the current setting:</p>
+<p>cat /proc/sys/vm/overcommit_ratio
+sysctl vm.overcommit_ratio</p>
+<p>To set it temporarily:</p>
+<p>echo "60" &gt; /proc/sys/vm/overcommit_ratio
+sysctl -w vm.overcommit_ratio="50"</p>
+<p>To set each time on boot:</p>
+<p>echo "vm.overcommit_ratio = 50" &gt;&gt; /etc/sysctl.conf</p>
+<h2 id="configure-a-system-to-authenticate-using-kerberos">Configure a system to authenticate using Kerberos.</h2>
+<p>Waiting with this. Need to set up a KDC - kerberos service first.</p>
+<h2 id="build-a-simple-rpm-that-packages-a-single-file">Build a simple RPM that packages a single file.</h2>
+<p>This appears to be a bit complicated - the details below are about as simple as this can be made. There is a lot more nifty things that you can do with an rpm.</p>
+<p>Would be nice to have a guide of this in for example /usr/share/doc</p>
+<p>yum install rpm-build
+cd $HOME/rpmbuild
+mkdir {BUILD,RPMS,SOURCES,SPECS,SRPMS}
+mkdir GetIP
+cd GetIP</p>
+<p>The "program":</p>
+<p>cat getip.sh</p>
+<h1 id="binbash">!/bin/bash</h1>
+<p>wget -q http://guldmyr.com/ip.php -O/tmp/ip
+cat /tmp/ip</p>
+<p>chmod +x getip.sh</p>
+<p>Make an archive and put it in the SOURCES DIR:</p>
+<p>cd $HOME/rpmbuild
+tar -cf GetIP.tar.gz GetIP
+mv GetIP.tar.gz SOURCES/</p>
+<p>Edit a spec-file (<strong>do this as a normal user instead of root, it will show the default entries</strong>):</p>
+<p>cd SPECS
+vi sample.spec</p>
+<p>Make it look like this:</p>
+<p>Name:GetIP
+Version:1.0
+Release:        1%{?dist}
+Summary: Get an IP wooop</p>
+<p>Group:  Development/Tools
+License:        GPL
+URL:            http://guldmyr.com/blog
+Source0:        %{name}.tar.gz
+BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)</p>
+<p>BuildRequires:bash
+Requires:bash</p>
+<p>%description
+Get an IP woop!</p>
+<p>%prep
+%setup -n GetIP</p>
+<p>%build</p>
+<p>%install
+mkdir -p "$RPM_BUILD_ROOT/opt/GetIP"
+cp -R * "$RPM_BUILD_ROOT/opt/GetIP"</p>
+<p>%clean
+rm -rf "$RPM_BUILD_ROOT"</p>
+<p>%files
+/opt/GetIP
+%defattr(-,root,root,-)
+%doc</p>
+<p>%changelog</p>
+<p>Then make an rpm:</p>
+<p>rpmbuild -v -bb $HOME/rpmbuild/SPECS/sample.spec</p>
+<p>Then as root:</p>
+<p>cd /home/user/rpmbuild/RPMS/x86_64/
+rpm -ivh GetIP-1.0-1.el6.x86_64.rpm</p>
+<p>Then as normal user you can now execute the installed file:</p>
+<p>/opt/getip/getip.sh</p>
+<p>If you wonder about things - check this fairly unreadable blog post out.</p>
+<p>Basically you want to use the $RPM_BUILD_ROOT in front of where you want to install the software. By default there are 'make', 'configure' and nothing in the 'require' entries. I removed the make, configured and just put 'bash' in the require entries, it seemed to do the trick though.</p>
+<p>More info is also available on <a href="http://www.rpm.org/max-rpm/ch-rpm-build.html" title="rpm.org - directories">rpm.org</a> - which recommend to use /usr/src/redhat for building packages.</p>
+<h2 id="configure-a-system-as-an-iscsi-initiator-that-persistently-mounts-an-iscsi-target">Configure a system as an iSCSI initiator that persistently mounts an iSCSI target.</h2>
+<p>Waiting with this. Need to set up an iSCSI target first.</p>
+<h2 id="produce-and-deliver-reports-on-system-utilization-processor-memory-disk-and-network">Produce and deliver reports on system utilization (processor, memory, disk, and network).</h2>
+<p>sar -A</p>
+<p>/etc/cron.d/sysstat</p>
+<h2 id="use-shell-scripting-to-automate-system-maintenance-tasks">Use shell scripting to automate system maintenance tasks.</h2>
+<p>Well, this can be a lot of things and is quite hard to prepare for.</p>
+<p>But I think a 'for loop' is a good thing to know about and can help with a lot of system maintenance tasks.</p>
+<p>an input file with usernames:</p>
+<p>[martbhell@rhce ~]$ cat /tmp/userlist
+bengt
+goran</p>
+<p>a scriptfile:</p>
+<p>[root@rhce ~]# cat usersndirs.sh</p>
+<h1 id="binsh">!/bin/sh</h1>
+<p>userlist=/tmp/userlist</p>
+<p>for i in `cat $userlist`; do
+echo useradd $i;
+echo mkdir $i;
+done</p>
+<p>Remove the "echo" to create the users.</p>
+<p>Of course, you could also use the 'newuser' command (interactive or send a file).</p>
+<p>This happens a lot I think: You get an idea that "hey, I can do this with a script". But then a random amount of time later you find out that there is already a command that does this for you. That doesn't mean the time spent is a total waste, hopefully you learned something while doing it. Maybe your script even does a better job than the new one you found.</p>
+<h2 id="configure-a-system-to-log-to-a-remote-system">Configure a system to log to a remote system.</h2>
+<p>syslog / rsyslog</p>
+<p>man rsyslog.conf has an example for how to log to a remote machine</p>
+<p>edit /etc/rsyslog.conf</p>
+<p>add</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">To</span><span class="w">  </span><span class="n">forward</span><span class="w">  </span><span class="n">messages</span><span class="w">  </span><span class="n">to</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">UDP</span><span class="p">,</span><span class="w"> </span><span class="n">prepend</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">hostname</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">sign</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;@&quot;</span><span class="p">).</span><span class="w">  </span><span class="n">To</span><span class="w"> </span><span class="n">forward</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">plain</span><span class="w"> </span><span class="n">tcp</span><span class="p">,</span><span class="w"> </span><span class="n">prepend</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">at</span>
+<span class="w">   </span><span class="n">signs</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;@@&quot;</span><span class="p">).</span><span class="w"> </span><span class="n">To</span><span class="w"> </span><span class="n">forward</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">RELP</span><span class="p">,</span><span class="w"> </span><span class="n">prepend</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="s">&quot;:omrelp:&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">front</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">hostname</span><span class="p">.</span>
+
+<span class="w">   </span><span class="nl">Example</span><span class="p">:</span>
+<span class="w">          </span><span class="err">\</span><span class="o">*</span><span class="p">.</span><span class="err">\</span><span class="o">*</span><span class="w"> </span><span class="p">@</span><span class="mf">@192.168.0.8</span>
+</code></pre></div>
+
+<p>Set the IP to the machine that will be receiving the logs.</p>
+<h2 id="configure-a-system-to-accept-logging-from-a-remote-system">Configure a system to accept logging from a remote system.</h2>
+<p>So this step you may want to do before the previous step (unless you already have a working syslogd server).</p>
+<p>You edit /etc/rsyslog.conf</p>
+<p>and uncomment the "reception" parts (don't forget firewall and restart service).</p>
+<p>To test try to "su -" with the wrong password and then check in /var/log/secure on the loghost.</p>
+<h2 id="create-a-private-repository">Create a private repository</h2>
+<p>"To create a private repository you should proceed as follows: - Install the createrepo software package - Create a <directory> where files can be shared (via FTP or HTTP) - Create a subdirectory called Packages and copy all packages to be published in Packages - run createrepo -v <directory>"</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

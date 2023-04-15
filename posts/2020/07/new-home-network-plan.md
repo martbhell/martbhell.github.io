@@ -1,9 +1,7 @@
 ---
 title: "New Home Network Plan!"
-date: "2020-07-05"
-categories: 
-  - "it"
----
+date: 2020-07-05
+category: it
 
 Changing apartment again so a pretty decent time to change the network at home.
 

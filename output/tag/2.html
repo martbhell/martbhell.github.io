@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - 2</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/update-install-spotify-082637-on-rhel6-x64.html">"Update / Install Spotify 0.8.2.637 on RHEL6 x64"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2012-03-26T00:00:00+03:00">
+                Published: "2012-03-26"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/0.html">0</a> <a href="/tag/8.html">8</a> <a href="/tag/2.html">2</a> <a href="/tag/637.html">637</a> <a href="/tag/alien.html">alien</a> <a href="/tag/qt.html">qt</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
+</footer><!-- /.post-info --><p>Previous post:</p>
+<p><a href="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/" title="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/">http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/</a></p>
+<p>Installed spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm - this is converted from the .deb package that is downloaded from: <a href="http://repository.spotify.com/pool/non-free/s/spotify/" title="http://repository.spotify.com/pool/non-free/s/spotify/">http://repository.spotify.com/pool/non-free/s/spotify/</a></p>
+<p>you convert with 'alien' and this command:</p>
+<p>alien --to-rpm spotify-client_0.8.2.637.g252b980.486-1_amd64.deb</p>
+<p>To install you need to uninstall first:</p>
+<p>rpm -ev spotify-client
+rpm -ivh Downloads/Spotify/spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm
+error: Failed dependencies:
+libcef.so()(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64
+libcrypto.so.0.9.8()(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64
+libcrypto.so.0.9.8(OPENSSL_0.9.8)(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_
+libssl.so.0.9.8()(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64
+libssl.so.0.9.8(OPENSSL_0.9.8)(64bit) is needed by spotify-client-0.8.2.637.g252b980.486-2.x86_64</p>
+<p>OK, that didn't work so well.</p>
+<p>Install:</p>
+<p># rpm -ivh --nodeps Downloads/Spotify/spotify-client-0.8.2.637.g252b980.486-2.x
+Preparing...                ########################################### [100%]
+   1:spotify-client         ########################################### [100%]</p>
+<p>You'll get errors while trying to start spotify:</p>
+<p>spotify 
+spotify: error while loading shared libraries: libnss3.so.1d: cannot open shared object file: No such file</p>
+<p>What you need to do is create symlinks:</p>
+<p>ln -s /usr/lib64/libnss3.so /usr/lib64/libnss3.so.1d
+ln -s /usr/lib64/libnssutil3.so /usr/lib64/libnssutil3.so.1d
+ln -s /usr/lib64/libsmime3.so /usr/lib64/libsmime3.so.1d
+yum -y install nspr nspr-devel
+ln -s /usr/lib64/libplc4.so /usr/lib64/libplc4.so.0d
+ln -s /usr/lib64/libnspr4.so /usr/lib64/libnspr4.so.0d</p>
+<p>However, it still crashes when I try to right-click on an app - but now it has apps :)</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/reading-encryptedpassword-protected-pdf-on-linux.html" rel="bookmark"
+                           title="Permalink to "Reading encrypted/password protected pdf on Linux"">"Reading encrypted/password protected pdf on Linux"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-07-13T00:00:00+03:00">
+                Published: "2011-07-13"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/adobe.html">adobe</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/evince.html">evince</a> <a href="/tag/exam.html">exam</a> <a href="/tag/foxit.html">foxit</a> <a href="/tag/foxitreader.html">foxitreader</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pdf.html">pdf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/study.html">study</a> <a href="/tag/material.html">material</a> </p>
+</footer><!-- /.post-info -->                <p><img alt="Brocade Logo" src="images/logo-brocade.gif" title="Brocade Logo"></p>
+<h2 id="the-problematic-pdf">The problematic PDF</h2>
+<p>The CFP300 material on <strong><a href="http://community.brocade.com/docs/DOC-2041" title="linky">http://community.brocade.com/docs/DOC-2041</a></strong> is encrypted so that it cannot be printed/re-edited without a password.</p>
+<p>If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite …</p>
+                <a class="readmore" href="/reading-encryptedpassword-protected-pdf-on-linux.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/frustration.html" rel="bookmark"
+                           title="Permalink to "Frustration?"">"Frustration?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-06-20T00:00:00+03:00">
+                Published: "2011-06-20"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/firmware.html">firmware</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/itrc.html">itrc</a> <a href="/tag/learning.html">learning</a> <a href="/tag/upgrade.html">upgrade</a> </p>
+</footer><!-- /.post-info -->                <p>This is from a post on the ITRC forum, I will copy it into here because the forum are moving soon and you never know if the links will work or not :) Also I do want to immortalize it.</p>
+<p>Title: <strong>Is it just me? Or does everything required a fw …</strong></p>
+                <a class="readmore" href="/frustration.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/nerves-of-steel-requirement-for-being-a-sysadmin.html" rel="bookmark"
+                           title="Permalink to "Nerves of steel: requirement for being a sysadmin?"">"Nerves of steel: requirement for being a sysadmin?"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-27T00:00:00+03:00">
+                Published: "2011-05-27"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/sysadmin.html">sysadmin</a> <a href="/tag/system.html">system</a> <a href="/tag/administrator.html">administrator</a> </p>
+</footer><!-- /.post-info -->                <p>Is it just me?</p>
+<p>Whenever I have to restart something or do some actual maintenance on a server - that my heart starts pumping and I get really really nervous.</p>
+<p>I've heard many times people say things like:</p>
+<p>"pain is temporary, glory is forever" (quote from <a href="http://www.imdb.com/title/tt0120201/" title="starship troopers">a movie)</a> when it comes …</p>
+                <a class="readmore" href="/nerves-of-steel-requirement-for-being-a-sysadmin.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/server-and-storage-tips-from-the-itrc.html" rel="bookmark"
+                           title="Permalink to "Server and Storage Tips from the ITRC"">"Server and Storage Tips from the ITRC"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-21T00:00:00+03:00">
+                Published: "2011-05-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/finland.html">finland</a>.</p>
+<p>tags: <a href="/tag/blade.html">blade</a> <a href="/tag/c.html">c</a> <a href="/tag/class.html">class</a> <a href="/tag/command.html">command</a> <a href="/tag/view.html">view</a> <a href="/tag/eva.html">eva</a> <a href="/tag/flexfabric.html">flexfabric</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/itrc.html">itrc</a> <a href="/tag/port.html">port</a> <a href="/tag/mapping.html">mapping</a> <a href="/tag/sc11xe.html">sc11xe</a> <a href="/tag/scsi.html">scsi</a> <a href="/tag/sense.html">sense</a> <a href="/tag/errors.html">errors</a> <a href="/tag/storage.html">storage</a> <a href="/tag/support.html">support</a> </p>
+</footer><!-- /.post-info -->                <p>Just a good howto - tip - solution. It's a little hard to find good threads.</p>
+<p>Hard to find something.. should probably write it in here when I think of it. Also the ITRC are moving to another platform in June 2011 so maybe these won't be available after this.</p>
+<p>** Update 2011-06-27 …</p>
+                <a class="readmore" href="/server-and-storage-tips-from-the-itrc.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/hepix-spring-2011-day-1.html" rel="bookmark"
+                           title="Permalink to "HEPIX Spring 2011 - Day 1"">"HEPIX Spring 2011 - Day 1"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-05-02T00:00:00+03:00">
+                Published: "2011-05-02"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/batch.html">batch</a> <a href="/tag/system.html">system</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/routers.html">routers</a> <a href="/tag/conference.html">conference</a> <a href="/tag/fermilab.html">fermilab</a> <a href="/tag/frankfurt.html">frankfurt</a> <a href="/tag/gsi.html">gsi</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/failures.html">failures</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kit.html">kit</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/nikhef.html">nikhef</a> <a href="/tag/pue.html">pue</a> <a href="/tag/super.html">super</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supermicro.html">supermicro</a> <a href="/tag/tty.html">tty</a> <a href="/tag/hack.html">hack</a> </p>
+</footer><!-- /.post-info -->                <p>Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …</p>
+                <a class="readmore" href="/hepix-spring-2011-day-1.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/spinning-camera-in-fps-games.html" rel="bookmark"
+                           title="Permalink to "Spinning Camera in FPS games"">"Spinning Camera in FPS games"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-21T00:00:00+03:00">
+                Published: "2011-04-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/ati.html">ati</a> <a href="/tag/call.html">call</a> <a href="/tag/of.html">of</a> <a href="/tag/duty.html">duty</a> <a href="/tag/camera.html">camera</a> <a href="/tag/spin.html">spin</a> <a href="/tag/cod.html">cod</a> <a href="/tag/fps.html">fps</a> <a href="/tag/games.html">games</a> <a href="/tag/logitech.html">logitech</a> <a href="/tag/mouse.html">mouse</a> <a href="/tag/pc.html">pc</a> <a href="/tag/portal.html">portal</a> <a href="/tag/2.html">2</a> <a href="/tag/spinning.html">spinning</a> <a href="/tag/steam.html">steam</a> <a href="/tag/windows.html">windows</a> <a href="/tag/7.html">7</a> </p>
+</footer><!-- /.post-info -->                <p>Ever experienced this relatively frustrating phenomena?</p>
+<p>My setup:</p>
+<p>Windows 7 x64 with an ATI Card HD5700 series. A logitech wireless keyboard+mouse.</p>
+<p>Camera just keeps on spinning and if you move the mouse it changes pitch, speed or whatever.</p>
+<p>Things to try:</p>
+<ul>
+<li>Got a joypad/joystick in the vicinity? Plug …</li></ul>
+                <a class="readmore" href="/spinning-camera-in-fps-games.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/ubuntu-11-in-vmware-workstation.html" rel="bookmark"
+                           title="Permalink to "Ubuntu 11 in VMWare Workstation"">"Ubuntu 11 in VMWare Workstation"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-03T00:00:00+03:00">
+                Published: "2011-04-03"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/11.html">11</a> <a href="/tag/04.html">04</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/natty.html">natty</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info -->                <p>Time for another test! This time it's Ubuntu 11.04 Natty.</p>
+<p>My setup is a Intel Core i7 920 on Windows 7 x64 with 8GB RAM.</p>
+<p>*** Update 2011-04-29 - I just heard that if you run this in a Virtual Machine you do not get all the shebang on the default …</p>
+                <a class="readmore" href="/ubuntu-11-in-vmware-workstation.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/transparent-putty-in-windows-7.html" rel="bookmark"
+                           title="Permalink to "Transparent PuTTY in Windows 7"">"Transparent PuTTY in Windows 7"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-18T00:00:00+02:00">
+                Published: "2011-02-18"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/appearance.html">appearance</a> <a href="/tag/auto.html">auto</a> <a href="/tag/login.html">login</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/linux.html">linux</a> <a href="/tag/putty.html">putty</a> <a href="/tag/set.html">set</a> <a href="/tag/opacity.html">opacity</a> <a href="/tag/ssh.html">ssh</a> <a href="/tag/terminal.html">terminal</a> <a href="/tag/client.html">client</a> <a href="/tag/transparency.html">transparency</a> <a href="/tag/tray.html">tray</a> <a href="/tag/icon.html">icon</a> <a href="/tag/windows.html">windows</a> </p>
+</footer><!-- /.post-info -->                <p>PuTTY is a terminal client, it does telnet, raw, serial, ssh, <a href="http://en.wikipedia.org/wiki/Rlogin" title="rlogin wikipedia">rlogin</a>. I've only ever used telnet, raw, serial and ssh.</p>
+<p>The normal client can be downloaded from <a href="http://www.putty.nl" title="putty.nl">http://www.putty.nl</a></p>
+<p>But, maybe you want to make PuTTY prettier?</p>
+<p>Like this?:</p>
+<p>[caption id="attachment_414" align="alignnone" width="659"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/putty2.png"><img alt="putty pretty" src="images/putty2.png" title="putty2"></a> putty …</p>
+                <a class="readmore" href="/transparent-putty-in-windows-7.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/install-drupal-7-in-debian-6.html" rel="bookmark"
+                           title="Permalink to "Install Drupal 7 in Debian 6"">"Install Drupal 7 in Debian 6"</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-02-11T00:00:00+02:00">
+                Published: "2011-02-11"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/admin.html">admin</a> <a href="/tag/accounts.html">accounts</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/database.html">database</a> <a href="/tag/settings.html">settings</a> <a href="/tag/debian.html">debian</a> <a href="/tag/6.html">6</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/guide.html">guide</a> <a href="/tag/http.html">http</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/phpmyadmin.html">phpmyadmin</a> <a href="/tag/script.html">script</a> <a href="/tag/upgrade.html">upgrade</a> <a href="/tag/web.html">web</a> <a href="/tag/server.html">server</a> <a href="/tag/apache.html">apache</a> </p>
+</footer><!-- /.post-info -->                <p>Time for another go!</p>
+<h3 id="drupal-is">Drupal is ..</h3>
+<p>.. a pretty famous and widely used CMS out there - so here we go -&gt;</p>
+<p>1. Get sudo <a href="http://wiki.debian.org/sudo" title="configure sudo">configured</a> on debian. Sucks to have to log on as root all the time when installing apps etc.</p>
+<p>2. <a href="http://drupal.org/project/drupal" title="drupal">Download</a> and untar drupal 7</p>
+<p>3. Read INSTALL.TXT …</p>
+                <a class="readmore" href="/install-drupal-7-in-debian-6.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 3
+        <a href="/tag/22.html">&raquo;</a>
+        <a href="/tag/23.html">&#8649;</a>
+</p>
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

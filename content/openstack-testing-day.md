@@ -1,0 +1,1 @@
+../posts/2012/03/openstack-testing-day.md

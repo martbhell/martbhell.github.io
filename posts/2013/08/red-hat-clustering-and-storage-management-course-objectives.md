@@ -1,20 +1,8 @@
 ---
 title: "Red Hat - Clustering and Storage Management - Course Objectives"
-date: "2013-08-15"
-categories: 
-  - "it"
-  - "storage"
-tags: 
-  - "certification"
-  - "cluster"
-  - "iscsi"
-  - "linux"
-  - "lvm"
-  - "openstack"
-  - "red-hat"
-  - "rhce"
-  - "storage"
----
+date: 2013-08-15
+category: it, storage
+tags: certification, cluster, iscsi, linux, lvm, openstack, red, hat, rhce, storage
 
 Attending "Red Hat Enterprise Clustering and Storage Management" in August. Quite a few of these technologies I haven't touched upon before so probably best to go through them before the course.
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"Making use of IBM Laptop T40 – Part 2"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="Previous post in this series: http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/ I'm going to try to put ubcd on an old USB pen I..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/making-use-of-ibm-laptop-t40-part-2.html" rel="bookmark"
+           title="Permalink to "Making use of IBM Laptop T40 – Part 2"">"Making use of IBM Laptop T40 – Part 2"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-04-17T00:00:00+03:00">
+                Published: "2011-04-17"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/hdd.html">hdd</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pata.html">pata</a> <a href="/tag/replace.html">replace</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/t40.html">t40</a> <a href="/tag/thinkpad.html">thinkpad</a> <a href="/tag/ultimatebootcd.html">ultimatebootcd</a> </p>
+</footer><!-- /.post-info -->      <p>Previous post in this series: <a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/" title="previous post">http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/</a></p>
+<p>I'm going to try to put ubcd on an old USB pen I have, lots easier than burning a CD/DVD. Which I may not even have. It's an old Jens of Sweden 1GB mp3-player, that doesn't start unless plugged in a USB-port..</p>
+<p>On the UBCD (you can mount this on  your pc) there is a tool under x:\ubcd\tools\win32\ubcd2usb</p>
+<p>Open a command prompt on your PC type:</p>
+<ul>
+<li>x:</li>
+<li>cd ubcd/tools/win32/ubcd2usb</li>
+<li>ubcd2usb.cmd CDROM: USBDRIVE: (like ubcd2usb.cmd D: E:)</li>
+</ul>
+<p>Then you need to put in the USB-pen, boot your computer. Check BIOS and put USB drive at the top.</p>
+<p>Turns out I have forgotten my thinkpad supervisor password.. So that is a no-no because apparently to reset that I need to do some soldering. Also there is only a CDRW-drive, and I do not have an empty CD to burn, only DVDs :/</p>
+<p>PXE boots is also an option, but this looks incredibly difficult. It probably isn't (should be just DHCP and tftp server, but gotta make floppy boot disks, etc).</p>
+<p>But, got a hold of my lovely laptop, boots up WinXP just fine. Going to patch it now and keep it going for a while running something, we'll see if it crashes or not. Maybe it is OK?</p>
+<p><a href="http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-3/" title="part3">Next post</a> in this series will be published on the 18th of April. That one is about installing Ubuntu on the Thinkpad T40!</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

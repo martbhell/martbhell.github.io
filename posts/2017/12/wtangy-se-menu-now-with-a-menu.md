@@ -1,12 +1,8 @@
 ---
 title: "wtangy.se/menu - now with a menu!"
-date: "2017-12-06"
-categories: 
-  - "finland"
-  - "it"
-tags: 
-  - "wtangy-se"
----
+date: 2017-12-06
+category: finland, it
+tags: wtangy, se
 
 [https://wtangy.se/menu](https://wtangy.se/menu) has been born!
 

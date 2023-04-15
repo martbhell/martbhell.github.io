@@ -1,22 +1,8 @@
 ---
 title: "BCFA - Brocade Certified Fabric Administrator 16G Beta"
-date: "2011-07-20"
-categories: 
-  - "storage"
-tags: 
-  - "asic"
-  - "bcfa"
-  - "bcfp"
-  - "brocade"
-  - "brocade-certified-fabric-administrator"
-  - "brocade-certified-fabric-professional"
-  - "certification"
-  - "exam"
-  - "fos"
-  - "san"
-  - "storage"
-  - "storage-network"
----
+date: 2011-07-20
+category: storage
+tags: asic, bcfa, bcfp, brocade, brocade, certified, fabric, administrator, brocade, certified, fabric, professional, certification, exam, fos, san, storage, storage, network
 
 I am currently going for the BCFP - fabric professional - exam, but I did the BCFA 6 months ago so I'll re-read the material and of course there's the new stuff with FOS 7, new hardware, 16g, new ASIC that I should probably learn as well.
 

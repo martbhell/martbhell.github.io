@@ -1,16 +1,8 @@
 ---
 title: "Ubuntu + Automatic Software Updates"
-date: "2011-07-12"
-categories: 
-  - "finland"
-tags: 
-  - "apt-get"
-  - "cronjob"
-  - "crontab"
-  - "linux"
-  - "script"
-  - "ubuntu"
----
+date: 2011-07-12
+category: finland
+tags: apt, get, cronjob, crontab, linux, script, ubuntu
 
 How often do you actually log on to your machine - hit sudo apt-get update; sudo apt-get upgrade without reading what the changes are? I do it every time, unless it's a dist-upgrade we're talking about.
 

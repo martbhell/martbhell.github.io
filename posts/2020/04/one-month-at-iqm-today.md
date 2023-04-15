@@ -1,9 +1,7 @@
 ---
 title: "One month at IQM today!"
-date: "2020-04-17"
-categories: 
-  - "it"
----
+date: 2020-04-17
+category: it
 
 Was reminded that today was exactly one calendar month since I joined IQM Finland
 

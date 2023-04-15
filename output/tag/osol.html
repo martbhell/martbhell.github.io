@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - osol</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/install-open-solaris-in-vmware-workstation.html">"Install Open Solaris in VMWare Workstation"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-11-22T00:00:00+02:00">
+                Published: "2011-11-22"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/openindiana.html">openindiana</a> <a href="/tag/opensolaris.html">opensolaris</a> <a href="/tag/osol.html">osol</a> <a href="/tag/solaris.html">solaris</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
+</footer><!-- /.post-info --><p>Trying out osol-dev-134-x86.iso in vmware workstation. You can download it from here: (genunix.org doesn't work anymore - here is another place: http://okcosug.org/. Update 201308 this also broke. You can now use <a href="http://virtualboxes.org/images/opensolaris/">http://virtualboxes.org/images/opensolaris/</a>) Host OS: Core i7 with Windows x64.</p>
+<p>1 core and 1300MB RAM, bridged networking and 16GB disk.</p>
+<p>Installation looks initially very similar to <a href="http://openindiana.org/" title="http://openindiana.org/">openindiana</a> (I guess it is the other way around..). Choose keyboard layout etc.</p>
+<p>When you boot on the disc above you get directly into a desktop. If you only want text you can use the textinstall-134-x86.iso on the same page as above, the openindiana text-based installer had some more options than the ones in this graphical one in opensolaris. From there you can click an icon to install it. It only asks you for user/pw, timezone and partitioning stuff. 3.6GB needed. Nothing more, no packet selection or role customization.</p>
+<p>I was not expecting the graphical desktop. Networking works straight from the box. Flash does not. However you can just download a .so file and get it working. <em><strong>Just</strong></em> find out where firefox is installed and copy it to the plugins directory. But flash is apparently dying now anyway.</p>
+<p>There is an update manager but it doesn't find any updates. Even though this version is from 2010. ? Why? Do I have to register to get updates? Register page takes me to Oracle. Perl version is 5.8.x and latest Perl now is 5.14.x. Supposedly 'pkg image-update' should update but it appears to not work anymore. There is now Solaris Express or whatever Oracle calls it which I presume they want you to update to and pay for. Of course openindiana is still there but it doesn't install on the bl460c.</p>
+<p>Protip: To get root level permissions you type 'pfexec su -' or just 'pfexec bash'.</p>
+<p>The main idea I wanted to do this was to see what 'touch /reconfigure' did. All it did was to add 'configuring devices' during the boot. Also tried this on a bl460c blade where we replaced the system board. Nothing special, it booted up just fine!</p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

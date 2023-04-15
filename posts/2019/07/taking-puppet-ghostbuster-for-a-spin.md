@@ -1,13 +1,8 @@
 ---
 title: "Taking puppet-ghostbuster for a spin"
-date: "2019-07-18"
-categories: 
-  - "it"
-tags: 
-  - "hiera"
-  - "puppet-software"
-  - "ssh"
----
+date: 2019-07-18
+category: it
+tags: hiera, puppet, software, ssh
 
 We use puppet at $dayjob to configure OpenStack.
 

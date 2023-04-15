@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>There is IT in Helsinki - eofs</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/hepix-spring-2011-day-4.html">"HEPIX Spring 2011 - Day 4"</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2011-05-09T00:00:00+03:00">
+                Published: "2011-05-09"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/eofs.html">eofs</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/iaas.html">iaas</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/ol.html">ol</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/image.html">image</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vm.html">vm</a> </p>
+</footer><!-- /.post-info --><p>Dinner on the 3rd night was amazing. It was at the hotel Weisse Schwan in Arheilgen outside Darmstadt and it was a nice reception hall with big round tables, waiters with lots of wine and great buffet food. A+</p>
+<p><a href="http://molnmolnmoln.se" title="moln@IDG">Cloudy day</a>!</p>
+<h2 id="or-infrastructure-as-a-service-iaas">Or - Infrastructure as a Service - IaaS</h2>
+<p>A few had the standpoint that the HEP community is not ready for cloud, not secure enough and we have something that's working. But maybe a mix period would work. At least for now it's quite awesome for non i/o intensive applications.</p>
+<p>There were talks about virtual images and how to (securely) transfer them between sites. Several options about this, <a href="https://twitter.com/#!/@StratusLab" title="on twitter">stratuslab</a> cloud distribution of images and cloudscheduler.</p>
+<p>One great use case for running computing nodes in the cloud is at the moment for when the cluster is maxed out - then you can kick up some more vms in the cloud to help speed up the run. Or when running the jobs it keeps the VM running as long as jobs that require that kind of VMs are in the queue. Or for testing - quite easy to set up several VMs with different operating systems/platforms and then run testing on them. See <a href="http://cloudscheduler.org/" title="cloudscheduler">cloudscheduler.org</a></p>
+<p><a href="http://cloudscheduler.org/" title="cloudscheduler"></a>Infrastructure as a Code - IaaC - see <a href="http://www.opscode.com/chef/" title="opscode.com">Opscode and Chef</a>. A pretty interesting looking  configuration management system.</p>
+<p>﻿Terms: fairshare <a href="http://www.json.org/" title=".org">json</a></p>
+<h2 id="oracle">Oracle</h2>
+<p>Maybe the most interesting presentation at the end of the day - and the debate following was maybe the most - it was the presentations from Oracle Linux and Oracle Open Source.</p>
+<p>Before the presentation they had a nice slide stating that they don't make any promises based on the presentation. That presentation is not available but the <a href="http://indico.cern.ch/getFile.py/access?contribId=27&amp;sessionId=9&amp;resId=0&amp;materialId=slides&amp;confId=118192" title="slide2">other one is</a> - the one about Oracle and Open Source..</p>
+<p><a href="http://oracle.com/linux" title="oracle.com">Oracle Linux</a> (OL) looks pretty good, it's free to download but if you want any updates you need to pay them. They have an upgrade thing so if you're on RHEL6 you can apparently update easily (changes some yum repos). A lot of advertisement - but it was a presentation about the distribution. It's based on RHEL, they take the updates from RHEL, then add their own magic to it. They have a boot setup so if you want to you can boot OL in Red Hat Compatibility mode. Apparently Oracle wants to put Red Hat out of business (after which they were asked: "Where will you get the kernel then?"). x86-64 only.</p>
+<h4 id="on-the-horizon">On the horizon:  ﻿</h4>
+<ul>
+<li>btrfs(fs that supports error detection, CoW, snapshots, ssd optimization, small files are put in metadata)</li>
+<li>vswitch(full network switch, set up virtual network in the OS, ACL, VLAN, QoS, flow monitoring with openFlow)</li>
+<li>Zcache(keep more pages of the fs page cache longer in main memory, more cache using LZO compression and thus fewer I/O operations - a lot faster to compress/uncompress than to access disk)</li>
+<li>storage connect</li>
+<li>linux containers (resource management, jails on bsd, zones on solaris, own apps/libs/root, runs on top of the kernel, not a virtualization).</li>
+</ul>
+<h2 id="from-the-discussion">From the discussion:</h2>
+<p>Pidgin – some wanted Video. Pidgin said: no way. This is how Oracle will run their open source projects like MySQL, Lustre.</p>
+<p><em><strong>“If you don't like how the project is going – fork.” - Gilles Gravier.</strong></em></p>
+<p>Two reasons to fork: proactively (worried) or because they are unhappy with how it's going (how it's going or not going).</p>
+<p>---</p>
+<p>People in the audience are afraid that a lot of times a company acquires an open source project and then closes it down.</p>
+<p>---</p>
+<p><em>“When you acquire a company and it's the projects. You have two options if don't want the project. Drop it or kill it. Kill it does not work for open source.” - Gilles Gravier.</em></p>
+<p>Openoffice is not dropped yet. Lots of other options. Fork and work on closed source (like Grid Engine). Drop it and stop working on it. Drop it and “talk to the community”. ---</p>
+<p>No info about Lustre – when asked about it Oracle did not want to comment. Asked to e-mail <a href="mailto:gilles.gravier@oracle.com">gilles.gravier@oracle.com</a> for more information. --- Will Oracle port debconf to Oracle Linux? Oracle will take a look. --- There was lot of angst against Oracle that surfaced, but Oracle handed it quite well and had good answers. --- From one of the Oracles: “Allow me to be a bit provocative: If Oracle's prices were lower; would you consider buying an Oracle product?” ---</p>
+<p><em>“It takes 25 years to make a good reputation, 5 minutes to loose it.”</em> - CERN employee. <em>“SUN used to make hardware and give away software for free; Oracle is .. the other way around.”</em> - Lenz Grimmer <em>“Laughter”</em> - Audience.</p>
+<h2 id="european-open-file-system-sce">European Open File System SCE</h2>
+<ul>
+<li><a href="http://www.eofs.org/">http://www.eofs.org</a></li>
+<li>one repository of lustre</li>
+<li>hpcfs.org is another lustre open source – this will merge with opensfs.org. Both are American.</li>
+<li>Close work together with eofs.org – the two above have agreed on a set of improvements.</li>
+<li>2.1 lustre will be released by Whamcloud in summer 2011.</li>
+<li>LUG – lustre user group – reports and interviews at <a href="http://insidehpc.com/">http://insidehpc.com</a></li>
+</ul>
+<p>Next Day: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-5/" title="day5">Day 5</a></p>
+<p>Previous Days: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-3/" title="day3">Day 3</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/" title="day2">Day 2</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-1/" title="day1">Day 1</a></p>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

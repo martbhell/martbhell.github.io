@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>"BCEFP 2015 – Studying for the exam - part 2"</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
+        <meta name="description" content="This second post focuses on the NOS Admin Guide. When I make comments to CLI commands I put them after a #. This is part of a series of posts on..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">There is IT in Helsinki</a></h1>
+                <nav><ul>
+                    <li><a href="/category/finland.html">finland</a></li>
+                    <li class="active"><a href="/category/it.html">it</a></li>
+                    <li><a href="/category/storage.html">storage</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/bcefp-2015-studying-for-the-exam-part-2.html" rel="bookmark"
+           title="Permalink to "BCEFP 2015 – Studying for the exam - part 2"">"BCEFP 2015 – Studying for the exam - part 2"</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-05-21T00:00:00+03:00">
+                Published: "2014-05-21"
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
+        </address>
+<p>In <a href="/category/it.html">it</a>.</p>
+<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
+</footer><!-- /.post-info -->      <p>This second post  focuses on the NOS Admin Guide.</p>
+<p>When I make comments to CLI commands I put them after a #.</p>
+<p>This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional.</p>
+<p>The two previous posts: <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">Objectives and reading materials</a> and <a href="http://www.guldmyr.com/blog/bcefp-2015-studying-for-the-exam/" title="BCEFP 2015 – Studying for the exam">course and nutshell guide</a></p>
+<h2 id="the-nos-411-admin-guide">The NOS 4.1.1 Admin Guide</h2>
+<p>I've been reading the pages on paper (together with a highlighter :) that I printed with the help of my script below and there is lots of goodness in there. For sure some topics are brought up without any preamble so for these I just make a note in the paper that I need to check out this other thing later. Especially the Fibre Channel things take up quite a lot of pages. I thought in these devices FC would not be with so much focus but it seems like they do re-use a lot of the things in FC that works.</p>
+<p>Notes and acronyms (page in NOS Admin Guide):</p>
+<ul>
+<li>DCB - lossless. Able to allocate bandwidth on links.</li>
+<li>TRILL - transparent interconnections of lots of links.</li>
+<li>RBridge - Routing Bridge. Lowest WWN or priority.</li>
+<li>Looks like on p54 only the text about Logical Chassis cluster config is applicable.</li>
+<li>Trunking between VDX8770 and B8000 are not supported (B8000 is some early version of FCoE from Brocade, not visible on Brocade's <a href="http://www.brocade.com/products/all/switches/index.page">page</a> where they list their switches)</li>
+<li>ECMP - Equal-cost multi-path routing (p149)</li>
+<li>AG - VCS must be enabled for Access Gateway</li>
+<li>AMPP - Automatic Migration of Port Profiles - some OK pictures around p375</li>
+<li>VRF - Virtual Routing and Forwarding</li>
+</ul>
+<p>Questions:</p>
+<ul>
+<li>There is also a <a href="https://wiki.openstack.org/wiki/Brocade-neutron-plugin" title="https://wiki.openstack.org/wiki/Brocade-neutron-plugin">Openstack Neutron Plugin</a> (p29)</li>
+<li>Would be good to include also page 114 before page 115 to see what they mean with leaf/spine/core (p115)</li>
+<li>OOB access to console is via serial (p115)</li>
+<li>How to reload a group of switches? (p115)<ul>
+<li>reload system rbridge-id all</li>
+</ul>
+</li>
+<li>Does trill use IS-IS type link-state? (p136) <a href="http://en.wikipedia.org/wiki/TRILL_(computing)" title="on wikipedia">Yes</a></li>
+<li>Can VF_Ports be anywhere in the fabric? (p202) Yes, they must be mapped to N_Ports.</li>
+<li>Is there no web interface on the VDX? (p269) Probably not, there are some "http server" and "ip http-server" commands.</li>
+<li>What are valid upgrade paths? Not so clear. 3.0.0 to 4.0.0 is not OK. 3.0.1 to 4.0.0 is OK. (p341)</li>
+<li>What is this netinstall? (p371) - 10 hits on google: brocade "netinstall" vdx</li>
+<li>What does the asterisk mean in the output of "do show vcs" ? (p597) The one you are running the command on? Is not principal RBRidge, that is &gt;.</li>
+</ul>
+<p>Commands (# comments) (page):</p>
+<ul>
+<li>backup config: copy rbridge-running-config rbridge-id rbridge-id location_config<ul>
+<li>copy rbridge-running-config rbridge-id 2 scp://user:pw@host</li>
+</ul>
+</li>
+<li>vcs<ul>
+<li>no vcs logical-chassis enable # remove a node from logical chassis cluster (p76)</li>
+<li>vcs replace rbridge-id 3 # replace RBridge with id 3 (p77)</li>
+<li>enable (p139)</li>
+<li>virtual ip address 10.1.1.1 (p143)</li>
+</ul>
+</li>
+<li>config terminal # to enter global exec mode (p94)</li>
+<li>firmware download (p119)</li>
+<li>logical-chassis principal-switchover (p138)<ul>
+<li>and logical-chassis principal-priority are the only logical-chassis commands</li>
+</ul>
+</li>
+<li>disabling a port:<ul>
+<li>shutdown # on an ISL brings down link and FSPF adjacency.</li>
+<li>no fabric isl enable #  link stays up, shorter reconvergence</li>
+</ul>
+</li>
+<li>show<ul>
+<li>vcs virtual-ip (p143)</li>
+</ul>
+</li>
+<li>vcenter/vnetwork # used to connect to a vcenter and to discover hosts. (p243)</li>
+<li>bind # create persistent binding between logical FCoE port and 10G/40G/LAG port. Port or MAC, not both. (p345)</li>
+<li>enable statistics direction # for VXLAN tunnels to enable statistics on VLANs. (p365)</li>
+<li>no spanning-tree shutdown # default for all VLANs - meaning it's enabled. (p381)</li>
+<li>lacp system-priority 25000 # For deciding which system is in charge of resolving LAG conflicts. (p437)</li>
+<li>nas server-ip IP/PREFIX # Set IPs for AutoQoS for NAS (p506)</li>
+<li>address-family ipv4 unicast # Used to enter IPv4 config in a VRF (p609)</li>
+<li>debug lacp pdu # turn on debug (p714)<ul>
+<li>terminal monitor # view debug messages in terminal</li>
+</ul>
+</li>
+</ul>
+<h3 id="printing-the-nos-admin-guide-relevant-pages">Printing the NOS Admin Guide relevant pages:</h3>
+<p>Because the slides for the BCEFP course were insufficient I would get a lot of the basic information about the NOS from the NOS Admin Guide. In the materials provided the NOS Admin Guide was separated into two documents. The guide is of course available in one pdf. Go to the <a href="http://www.brocade.com/downloads/documents/html_product_manuals/NOS_411_AG/index.html" title="html">web version</a> and click on the <a href="http://www.brocade.com/downloads/documents/product_manuals/B_VDX/NOS_AdminGuide_v411.pdf" title="http://www.brocade.com/downloads/documents/product_manuals/B_VDX/NOS_AdminGuide_v411.pdf">pdf icon</a>. This makes printing based on the numbers provided easier. However the NOS Admin Guide for v4.1.1 referenced was one version below the one on the html version.</p>
+<p>Now the numbers referenced are the numbers in the document, not the one told by the pdf viewer. So actually page 11 is page 13. Page 135 is 137. 311 is 313. 425 is 427. 517 is 519. 661 is 663. 714 is 716. I checked a few to make sure there were no major increase due to version difference or elsewhere. One could with <a href="http://guldmyr.com/scripts/increasevalueofeachentry.py" title="python script">a bit of scripting</a> increase each number with two like:</p>
+<p>1,13-22,28-33,56-58,77-79,96,117,121,137-146,151,152,193,203-205,212,245-249,255,263,271,313-316,323,324,340-347,363-387,402,405,408,427-435,439,467,485,497,506,508,519-523,543,561,565,567,585,595,596,599,605-611,663-665,670,678,684,688,716,717</p>
+<p>Cover page added to make it look nicer when printing. Old numbers:</p>
+<p><strong>Network OS Administrator’s Guide v4.1.1 <em>53-1003225-01</em></strong></p>
+<p>Pages 11-20,26-31,54-56,75-77,94,115,119,135-144,149,150,191,201-203,210,243-247,253,261,269,311-314,321,322,338-345,361-385,400,403,406,425-433,437,465,483,495,504,506,517-521,541,559,563,565,583,593,594,597,603-609,661-663,668,676,682,686,714,715</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

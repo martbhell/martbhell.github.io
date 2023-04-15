@@ -1,0 +1,1 @@
+../posts/2020/03/yesterday-was-my-last-day-at-cscfi.md

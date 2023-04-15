@@ -1,1 +1,25 @@
-[Hello here's a link](https://github.com/martbhell/martbhell.github.io/blob/main/posts/2011/04/the-bash-shell-linux-terminal-keyboard-shortcuts.md)
+Source for the Blog
+
+Directories:
+----
+
+ - content/
+   - symlinks to posts in posts/
+   - cd content; python MAKESYMLINKS.py
+ - Makefile
+ - output/
+   - generated from `pelican content`
+ - pelicanconf.py
+ - posts/
+   - the posts are in here sorted by year
+   - there's also a MODIFYTAGS.py here that was used to modify all the posts
+ - publishconf.py
+ - requirements.txt
+ - security.txt
+ - tag/
+ - tasks.py
+ - tests/
+   - To Be Added:
+     - Ensure only symlinks in content/
+	 - Moar
+	 - Profit

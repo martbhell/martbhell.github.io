@@ -1,0 +1,1 @@
+../posts/2019/07/contributing-to-openstack-upstream.md

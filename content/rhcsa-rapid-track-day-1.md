@@ -1,0 +1,1 @@
+../posts/2011/12/rhcsa-rapid-track-day-1.md

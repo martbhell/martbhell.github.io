@@ -1,15 +1,8 @@
 ---
 title: "RHCE Certified"
-date: "2012-07-02"
-categories: 
-  - "it"
-tags: 
-  - "certification"
-  - "linux"
-  - "red-hat"
-  - "rhce"
-  - "study"
----
+date: 2012-07-02
+category: it
+tags: certification, linux, red, hat, rhce, study
 
 Passed the exam!
 

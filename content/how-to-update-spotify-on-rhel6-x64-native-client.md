@@ -1,0 +1,1 @@
+../posts/2011/10/how-to-update-spotify-on-rhel6-x64-native-client.md
