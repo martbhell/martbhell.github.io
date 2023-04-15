@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Moving from WordPress This | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/moving-from-wordpress-this.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <meta name="description" content="Background Story I had this great webhost https://www.spacedump.se/ They had the first shell I ever used. I learnt a lot about bash scripting there. I ran eggdrops and IRC clients and used screen :D I experienced the hacks when they got pwned, because those things happened back …">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Moving from WordPress This
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2023-04-15T00:00:00+03:00">
+          <i class="fas fa-clock"></i>
+          2023-04-15
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="/category/it.html">it</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/blog.html">#blog</a>,               <a href="/tag/wordpress.html">#wordpress</a>,               <a href="/tag/jekyll.html">#jekyll</a>,               <a href="/tag/pelican.html">#pelican</a>,               <a href="/tag/cloudflare.html">#cloudflare</a>,               <a href="/tag/dns.html">#dns</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <h1 id="background-story">Background Story</h1>
+<p>I had this great webhost https://www.spacedump.se/</p>
+<p>They had the first <code>shell</code> I ever used. I learnt a lot about bash scripting there. I ran eggdrops and IRC clients and used screen :D</p>
+<p>I experienced the hacks when they got pwned, because those things happened back then (2002).</p>
+<p>Anyway, eventually I also had some websites with them and this blog used to live there in a wordpress.</p>
+<p>Until the other day when I think wordpress had gotten auto-updated beyond the now quite old PHP version.</p>
+<h1 id="lets-try-jekyll-they-say">Let's try Jekyll They Say</h1>
+<p>First I thought: hey how can I keep on paying very little money for this? Is exporting and importing the wordpress somewhere that? No. At least not on this one web hotell I checked :)</p>
+<p>Then I thought: hmm how hard is it to export the wordpress into static MD files and server those somewhere? (Turns out not so hard)</p>
+<p>Third: Let's try to use GitHub Pages because that's where I'd like to keep the code anyway?</p>
+<ul>
+<li>Changed nameserver to a service and then pointed guldmyr.com to github pages.</li>
+<li>What pages to use? Uhhh.. jekyll??</li>
+<li>Lots of fighting and it looked quite bad.</li>
+</ul>
+<p>Fourth: Let's not use Ruby because I can't.</p>
+<ul>
+<li>Cloudflare also looks cool and I'd like some experience with that</li>
+<li>Cloudflare has pages too?</li>
+<li>It has support for some Python framework called Pelican!</li>
+<li>To use Cloudflare pages and get guldmyr.com and not just www.guldmyr.com here I need to move my DNS to them :/</li>
+<li>Cloudflare has free DNS? Why did I pay a yearly thing in advance???</li>
+</ul>
+<p>Anyway, here we are and I'm quite happy with this pelican and cloudflare thing. A few things I found annoying with GitHub Pages:</p>
+<ul>
+<li>It took I kid you not 16min for jekyll to render the html from the markdown of this blog.</li>
+<li>No preview built-in so I broke the website several times.</li>
+<li>And because (Rust?) I couldn't easily figure out how to jekyll on my local machine.</li>
+</ul>
+<p>Are now much better with Pelican. And because it's python if I need to modify something it is often relatively easy for me.</p>
+<p>Anyway. Welcome to the blog. Let's see how long until the next post :D</p>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
+</body>
+
+</html>

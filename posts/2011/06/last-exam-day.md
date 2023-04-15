@@ -2,7 +2,7 @@
 title: Last Exam Day
 date: 2011-06-16
 category: finland, it
-tags: bruins, game, 7, graduation, day, stanley, cup
+tags: bruins, game7, graduation, day, stanley, cup
 
 Ever been there **after** your last exam?
 

@@ -2,7 +2,7 @@
 title: How to get an update when a blog has gotten a new post
 date: 2011-01-24
 category: finland, it
-tags: google, it, 2, rss, subscribe
+tags: google, it, rss, subscribe
 
 Hello and welcome to my blog :)
 

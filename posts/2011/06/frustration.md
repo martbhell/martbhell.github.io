@@ -2,7 +2,7 @@
 title: Frustration?
 date: 2011-06-20
 category: it
-tags: firmware, it, 2, itrc, learning, upgrade
+tags: firmware, it, itrc, learning, upgrade
 
 This is from a post on the ITRC forum, I will copy it into here because the forum are moving soon and you never know if the links will work or not :) Also I do want to immortalize it.
 

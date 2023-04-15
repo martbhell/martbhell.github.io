@@ -19,7 +19,7 @@
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="/atom.xml">
   
-  <meta name="description" content="* Updated 2011-01-29 * Updated 2011-03-08 Dtek contributed some more questions from the first interview. * Updated 2011-03-23 - Added question about PCI/PCIe and DOS partitions. Also I have been asking the few who have commented to add their input but not so much feedback yet. Feel free to drop me an e-mail …">
+  <meta name="description" content="Updated 2011-01-29 Updated 2011-03-08 Dtek contributed some more questions from the first interview. Updated 2011-03-23 - Added question about PCI/PCIe and DOS partitions. Also I have been asking the few who have commented to add their input but not so much feedback yet. Feel free to drop me an e-mail …">
   <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
@@ -80,21 +80,62 @@
         </li>
           <li class="list-inline-item">
             <i class="fas fa-tag"></i>
-              <a href="/tag/data.html">#data</a>,               <a href="/tag/center.html">#center</a>,               <a href="/tag/technician.html">#technician</a>,               <a href="/tag/centre.html">#centre</a>,               <a href="/tag/datacenter.html">#datacenter</a>,               <a href="/tag/datacentre.html">#datacentre</a>,               <a href="/tag/google.html">#google</a>,               <a href="/tag/hamina.html">#hamina</a>,               <a href="/tag/interview.html">#interview</a>,               <a href="/tag/it.html">#it</a>,               <a href="/tag/2.html">#2</a>,               <a href="/tag/job.html">#job</a>,               <a href="/tag/questions.html">#questions</a>          </li>
+              <a href="/tag/data.html">#data</a>,               <a href="/tag/center.html">#center</a>,               <a href="/tag/technician.html">#technician</a>,               <a href="/tag/centre.html">#centre</a>,               <a href="/tag/datacenter.html">#datacenter</a>,               <a href="/tag/datacentre.html">#datacentre</a>,               <a href="/tag/google.html">#google</a>,               <a href="/tag/hamina.html">#hamina</a>,               <a href="/tag/interview.html">#interview</a>,               <a href="/tag/it.html">#it</a>,               <a href="/tag/job.html">#job</a>,               <a href="/tag/questions.html">#questions</a>          </li>
       </ul>
     </header>
     <div class="content">
-      <p>* Updated 2011-01-29 * Updated 2011-03-08 Dtek contributed some more questions from the first interview. * Updated 2011-03-23 - Added question about PCI/PCIe and DOS partitions. <strong>Also I have been asking the few who have commented to add their input but not so much feedback yet. Feel free to drop me an e-mail or put in a comment :)</strong> * Updated 2011-03-24 - Wrote a little more about the '100 broken computers' question. * Updated 2011-05-21 - Added some more detail/discussion about the questions in the first section.</p>
+      <ul>
+<li>Updated 2011-01-29</li>
+<li>Updated 2011-03-08 Dtek contributed some more questions from the first interview. </li>
+<li>Updated 2011-03-23 - Added question about PCI/PCIe and DOS partitions. <strong>Also I have been asking the few who have commented to add their input but not so much feedback yet. Feel free to drop me an e-mail or put in a comment :)</strong> </li>
+<li>Updated 2011-03-24 - Wrote a little more about the '100 broken computers' question. </li>
+<li>Updated 2011-05-21 - Added some more detail/discussion about the questions in the first section.</li>
+</ul>
 <p>A little while ago I had an interview for a position with Google as a Data Center IT Technician, I never signed an NDA so should be safe to put them up here :)</p>
 <p>However, if you want to play it safe I'd refrain from posting here until after the interviews are over.</p>
 <p>I didn't get the job, they never answered why I didn't pass when I replied back for some feedback (besides the template e-mail).</p>
 <p>If you read this go ahead and comment, maybe we can figure out a better way to approach the questions :)</p>
 <h1 id="first-interview">First Interview</h1>
 <p>First there was one interview which had 20 questions (I don't remember all) around basic (older - like no SATA) PC stuff: <strong>What are all the components in a PC or Server?</strong> PC: chassi, system board, psu, cpu, ram, hdd, fans, cables, graphics card, dvd, monitor, keyboard/mouse Server: same with deduction of a extra graphics card (is one on the system board), and addition of hdd controller, possibly backplane, no cd/dvd, extra nic, double cpu, ram, psu, fans, remote monitoring/console.</p>
-<p><strong>What protocol is used by ping?</strong> - <a href="http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol" title="ICMP">ICMP</a> (this is a sneaky question - an obvious fault is to go for TCP or UDP) <strong>How many IDE devices can you have in a PC?</strong> - two per channel (usually 4) <strong>How many can you have on each channel? What are they called?</strong> - 2 / master and slave <strong>What is the resolution in Windows 2000 safe mode?</strong> - 800x600 or 640x480?- see <a href="http://www.mydigitallife.info/2008/06/22/how-to-change-screen-resolution-and-display-colors-quality-in-safe-mode-of-windows/" title="windows safe mode resolution">this link</a> on mydigitallife or <a href="http://www.tomshardware.co.uk/forum/34809-35-screen-resolution-safe-mode" title="screen resolutino safe mode">this post</a> on tom's hardware. <strong>What is a MAC address?</strong> - <a href="http://en.wikipedia.org/wiki/MAC_address" title="wikipedia link">Media Access Control</a> - a unique identifier for network devices. Used by many protocols. <strong>What is the name of the Ethernet plug?</strong> - <a href="http://en.wikipedia.org/wiki/RJ45" title="RJ45 on wikipedia">RJ45</a> <strong>How do you recognize a broken hard drive without software or removing it from the machine?</strong> - 1) Noise (tick tack sound of the arm getting stuck/hitting something) 2) Any leds on the disk, system board, controller 3) Any vibration or anything from the disk? <strong>How do you find the first disk in a linux OS?</strong> - Look under /dev/ for a disk like /dev/sda(SATA) /dev/hda (PATA). Then /dev/sda1 is the first partition. <strong>Name two devices needed to make a network:</strong> switch and router (well, network card (NIC) and router should do it, or a switch and network card.. depends how big you want to make it, really i guess you can have a network with a crossover cable and two nics). <strong>What is BIOS?</strong> Basic input/output system. Responsible for initializing hardware, POST/startup diagnostics, boot the OS and varies hardware settings. <strong>What is the bit rate of a serial interface of a network device?</strong> - the default apparently in hyperterminal - 9600 (this might be tricky, in my experience this varies between the devices - max is probably 115200bps). Maybe what they are asking for is what is the <a href="http://www.cisco.com/en/US/products/hw/switches/ps700/products_tech_note09186a008010ff7a.shtml#connecttermtocat" title="cisco catalyst console port">default speed</a> of a Cisco switch's aux or console port? If so, the answer is 9600. <strong>What is the port used for HTTP?</strong> - 80 <strong>What is the difference between PCIe and PCI?</strong> - PCI-e is newer than PCI and PCI-x. The slots look different and they are not compatible. <strong>How many primary partitions can you have in DOS?</strong> - Four primary and maximum one active per disk. See <a href="http://www.pcguide.com/ref/hdd/file/structPartitions-c.html" title="dos partitions">this link</a> for some explanations. Unsure at this stage what the exact question was. <strong>What did you do in your previous jobs?</strong> <strong>Would you be able to re-locate?</strong></p>
-<p><strong>What does HTTP stand for?</strong> Hypertext Transfer Protocol <strong>What controls GPU CPU Mem at boot up? What is ROM?</strong> Read Only Memory - Used for storing data that you do not want somebody to write to.</p>
-<p><strong>Length of cat5 transmission?</strong> 100m <strong>What does NIC stand for?</strong> Network Interface Card</p>
-<p><strong>What is the standard type of filesystems now?</strong> <a href="http://en.wikipedia.org/wiki/Filesystem#Types_of_file_systems">disk filesystem</a> and network filesystems <strong>How would you create an EXT4 filesystem on the first partition of the first SCSI drive?</strong> mkfs.ext4 /dev/sda1 <strong>How would you install lilo? ** </strong>How do you get IP info from Linux or Windows?<strong> "ip addr" or "ifconfig" in Linux and "ipconfig" in Windows. </strong>What is the subnet mask for a Class B Network?** 255.255.0.0</p>
+<ul>
+<li><strong>What protocol is used by ping?</strong> - <a href="http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol" title="ICMP">ICMP</a> (this is a sneaky question - an obvious fault is to go for TCP or UDP)</li>
+<li><strong>How many IDE devices can you have in a PC?</strong> - two per channel (usually 4)</li>
+<li><strong>How many can you have on each channel? What are they called?</strong> - 2 / master and slave</li>
+<li><strong>What is the resolution in Windows 2000 safe mode?</strong> - 800x600 or 640x480?- see <a href="http://www.mydigitallife.info/2008/06/22/how-to-change-screen-resolution-and-display-colors-quality-in-safe-mode-of-windows/" title="windows safe mode resolution">this link</a> on mydigitallife or <a href="http://www.tomshardware.co.uk/forum/34809-35-screen-resolution-safe-mode" title="screen resolutino safe mode">this post</a> on tom's hardware.</li>
+<li><strong>What is a MAC address?</strong> - <a href="http://en.wikipedia.org/wiki/MAC_address" title="wikipedia link">Media Access Control</a> - a unique identifier for network devices. Used by many protocols.</li>
+<li><strong>What is the name of the Ethernet plug?</strong> - <a href="http://en.wikipedia.org/wiki/RJ45" title="RJ45 on wikipedia">RJ45</a></li>
+<li><strong>How do you recognize a broken hard drive without software or removing it from the machine?</strong> - 1) Noise (tick tack sound of the arm getting stuck/hitting something) 2) Any leds on the disk, system board, controller 3) Any vibration or anything from the disk?</li>
+<li><strong>How do you find the first disk in a linux OS?</strong> - Look under /dev/ for a disk like /dev/sda(SATA) /dev/hda (PATA). Then /dev/sda1 is the first partition.</li>
+<li><strong>Name two devices needed to make a network:</strong> switch and router (well, network card (NIC) and router should do it, or a switch and network card.. depends how big you want to make it, really i guess you can have a network with a crossover cable and two nics).</li>
+<li><strong>What is BIOS?</strong> Basic input/output system. Responsible for initializing hardware, POST/startup diagnostics, boot the OS and varies hardware settings.</li>
+<li><strong>What is the bit rate of a serial interface of a network device?</strong> - the default apparently in hyperterminal - 9600 (this might be tricky, in my experience this varies between the devices - max is probably 115200bps). Maybe what they are asking for is what is the <a href="http://www.cisco.com/en/US/products/hw/switches/ps700/products_tech_note09186a008010ff7a.shtml#connecttermtocat" title="cisco catalyst console port">default speed</a> of a Cisco switch's aux or console port? If so, the answer is 9600.</li>
+<li><strong>What is the port used for HTTP?</strong> - 80</li>
+<li><strong>What is the difference between PCIe and PCI?</strong> - PCI-e is newer than PCI and PCI-x. The slots look different and they are not compatible.</li>
+<li><strong>How many primary partitions can you have in DOS?</strong> - Four primary and maximum one active per disk. See <a href="http://www.pcguide.com/ref/hdd/file/structPartitions-c.html" title="dos partitions">this link</a> for some explanations. Unsure at this stage what the exact question was.</li>
+<li><strong>What did you do in your previous jobs?</strong></li>
+<li>
+<p><strong>Would you be able to re-locate?</strong></p>
+</li>
+<li>
+<p><strong>What does HTTP stand for?</strong> Hypertext Transfer Protocol</p>
+</li>
+<li>
+<p><strong>What controls GPU CPU Mem at boot up? What is ROM?</strong> Read Only Memory - Used for storing data that you do not want somebody to write to.</p>
+</li>
+<li>
+<p><strong>Length of cat5 transmission?</strong> 100m</p>
+</li>
+<li>
+<p><strong>What does NIC stand for?</strong> Network Interface Card</p>
+</li>
+<li>
+<p><strong>What is the standard type of filesystems now?</strong> <a href="http://en.wikipedia.org/wiki/Filesystem#Types_of_file_systems">disk filesystem</a> and network filesystems</p>
+</li>
+<li><strong>How would you create an EXT4 filesystem on the first partition of the first SCSI drive?</strong> mkfs.ext4 /dev/sda1</li>
+<li>**How would you install lilo? **</li>
+<li><strong>How do you get IP info from Linux or Windows?</strong> "ip addr" or "ifconfig" in Linux and "ipconfig" in Windows.</li>
+<li><strong>What is the subnet mask for a Class B Network?</strong> 255.255.0.0</li>
+</ul>
 <h1 id="second-interview">Second Interview</h1>
 <p>Then there was a second one that was done by a person who worked in a data center and had questions like these:</p>
 <p><strong>You have 100 broken computers, how do you proceed.</strong> Personally I didn't do very well on this question I think. There are lots of ways to approach this one, how far can you take it? One way to make this a little easier/visible would be to make a tree or <a href="http://en.wikipedia.org/wiki/Mind_map" title="mindmap on wikipedia">mindmap</a> and keep on expanding it.</p>
@@ -111,13 +152,28 @@
 <li>For severe hardware problems you can look in the POST of the machine, check leds on them, but for 100 machines this might be more of a last resort.</li>
 <li>If you suspect the problem is SW - again try to find something they have in common - same manufacturer, same softwares/patches installed. Maybe this software has a monitoring part that can tell you more. Check the logs.</li>
 <li>When did the problem start? At the same time as a power outage, after a patch deployment, etc.</li>
-<li>Are they all physically close? Anything else gone down?</li>
+<li>
+<p>Are they all physically close? Anything else gone down?</p>
+</li>
+<li>
+<p><strong>How do you see what happens during boot of the OS in Linux?</strong> Answer: output of command dmesg and also in /var/log/syslog</p>
+</li>
+<li><strong>Where do you find the logs in Linux?</strong> Answer: /var/log</li>
+<li><strong>How do you mount a disk?</strong> Answer: mount</li>
+<li><strong>Every boot?</strong> Answer: fstab</li>
+<li><strong>How do you see what version of the kernel is running?</strong> Answer:  uname -v (-r gives 2.6.x etc)</li>
+<li><strong>How do you put an image on a pc?</strong> Answer: pxeboot as an example</li>
+<li><strong>How do you turn a room into a data center?</strong></li>
 </ol>
-<p><strong>How do you see what happens during boot of the OS in Linux?</strong> Answer: output of command dmesg and also in /var/log/syslog <strong>Where do you find the logs in Linux?</strong> Answer: /var/log <strong>How do you mount a disk?</strong></p>
-<p>Answer: mount <strong>Every boot?</strong> Answer: fstab <strong>How do you see what version of the kernel is running?</strong> Answer:  uname -v (-r gives 2.6.x etc) <strong>How do you put an image on a pc?</strong> Answer: pxeboot as an example <strong>How do you turn a room into a data center?</strong></p>
 <p>Maybe something like this? If you have any additions please go ahead and let me know :)</p>
 <p>floor strong enough to hold the weight of all the equipment? physical security - bar windows, access control(keys), cameras, guards ventilation - perforated tiles? cooling anti-fire racks UPS - electrical work</p>
-<p><strong>What is the difference between a switch and a router</strong> said that the diff is that switches are closer to the hosts and the routers are further away -&gt; in the core <strong>Did you have experience writing documents - kb?</strong> <strong>Worst job you ever had?</strong> <strong>What do you expect from your colleagues and your boss?</strong> <strong>What do you do outside work? Do you have any questions?</strong></p>
+<ul>
+<li><strong>What is the difference between a switch and a router</strong> said that the diff is that switches are closer to the hosts and the routers are further away -&gt; in the core</li>
+<li><strong>Did you have experience writing documents - kb?</strong></li>
+<li><strong>Worst job you ever had?</strong></li>
+<li><strong>What do you expect from your colleagues and your boss?</strong></li>
+<li><strong>What do you do outside work? Do you have any questions?</strong></li>
+</ul>
     </div>
   </article>
     </div>
