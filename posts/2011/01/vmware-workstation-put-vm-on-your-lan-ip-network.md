@@ -1,5 +1,5 @@
 ---
-title: "VMWare Workstation -> Put VM on your LAN IP network"
+title: VMWare Workstation -> Put VM on your LAN IP network
 date: 2011-01-29
 category: it
 tags: networking, vmware, workstation

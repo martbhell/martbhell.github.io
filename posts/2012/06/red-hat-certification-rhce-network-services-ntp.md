@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification – RHCE – Network Services – NTP"
+title: Red Hat Certification – RHCE – Network Services – NTP
 date: 2012-06-08
 category: it
 tags: centos, certification, file, transfer, linux, ntp, ntpd, ntpq, red, hat, rhce, studying, synchronization, tcpdump, time, time, sync, time, synchronizatino

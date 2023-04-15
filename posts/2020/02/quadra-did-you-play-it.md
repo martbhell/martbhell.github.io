@@ -1,5 +1,5 @@
 ---
-title: "Quadra - Did You Play It?"
+title: Quadra - Did You Play It?
 date: 2020-02-06
 category: it
 

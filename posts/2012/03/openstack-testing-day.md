@@ -1,5 +1,5 @@
 ---
-title: "openstack testing day"
+title: openstack testing day
 date: 2012-03-10
 category: it
 tags: fedora, linux, openstack, operating, system, os, red, hat, testing, virtualization, vmware, workstation

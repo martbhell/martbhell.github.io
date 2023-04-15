@@ -1,5 +1,5 @@
 ---
-title: "SDN Course - Interview with Google Network Lead"
+title: SDN Course - Interview with Google Network Lead
 date: 2013-07-31
 category: it
 tags: coursera, learning, linux, pyretic, python, resonance, sdn, software, defined, networking, studying

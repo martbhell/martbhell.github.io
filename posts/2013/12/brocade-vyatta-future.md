@@ -1,5 +1,5 @@
 ---
-title: "Brocade - Vyatta - Future"
+title: Brocade - Vyatta - Future
 date: 2013-12-26
 category: it
 tags: 5400, 5600, brocade, dpdk, hp, discover, vrouter, vyatta

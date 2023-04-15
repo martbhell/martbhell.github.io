@@ -1,5 +1,5 @@
 ---
-title: "Server and Storage Tips from the ITRC"
+title: Server and Storage Tips from the ITRC
 date: 2011-05-21
 category: finland
 tags: blade, c, class, command, view, eva, flexfabric, hp, it, 2, itrc, port, mapping, sc11xe, scsi, sense, errors, storage, support

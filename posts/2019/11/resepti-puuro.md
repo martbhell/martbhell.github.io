@@ -1,5 +1,5 @@
 ---
-title: "Resepti: Puuro"
+title: Resepti: Puuro
 date: 2019-11-16
 category: finland
 

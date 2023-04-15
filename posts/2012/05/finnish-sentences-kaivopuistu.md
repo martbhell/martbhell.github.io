@@ -1,5 +1,5 @@
 ---
-title: "Finnish Sentences - Kaivopuistu"
+title: Finnish Sentences - Kaivopuistu
 date: 2012-05-06
 category: finland
 tags: finnish, language

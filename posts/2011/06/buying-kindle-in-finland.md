@@ -1,5 +1,5 @@
 ---
-title: "Buying Kindle in Finland"
+title: Buying Kindle in Finland
 date: 2011-06-30
 category: finland, it
 tags: amazon, kindle, books, e, book, e, book, reader, e, reader, ebook, eject, ereader, fantasy, kindle, linux, reading, shopping, steven, erikson

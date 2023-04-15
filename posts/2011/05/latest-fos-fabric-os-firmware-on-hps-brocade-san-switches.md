@@ -1,5 +1,5 @@
 ---
-title: "Latest FOS ( Fabric OS ) Firmware on HP's Brocade SAN switches"
+title: Latest FOS ( Fabric OS ) Firmware on HP's Brocade SAN switches
 date: 2011-05-25
 category: storage
 tags: brocade, compatibility, fabric, fabric, os, firmware, fos, hp, san, san, switch, storage, storage, area, network, switches

@@ -1,105 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - introduction</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #introduction Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/introduction.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/san-primer-introduction-to-data-storage.html">"SAN Primer - Introduction to Data Storage"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-07-28T00:00:00+03:00">
-                Published: "2011-07-28"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/data.html">data</a> <a href="/tag/storage.html">storage</a> <a href="/tag/introduction.html">introduction</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/san.html">san</a> <a href="/tag/basics.html">basics</a> <a href="/tag/network.html">network</a> </p>
-</footer><!-- /.post-info --><p>You may have heard about this storage or SAN stuff, but what is it? Is it complicated and cool? Yes. Now it doesn't have to be complicated, but it sure can be sometimes. This post is just a brief primer/introduction to storage and what it entails. In case maybe you got a job interview or just would like to know a little bit more about it.</p>
-<p>I'll update this post as I go, <strong>last update 2012-07-13 -</strong> added some books and free pdfs and links.</p>
-<p><strong>What is a SAN?</strong> ‘Storage Area Network’ - or storage network. Generally it doesn’t have to be a ‘network’ it could just be direct connected equipment or peer 2 peer. But what it always entails is a shared storage, most often disk or tape.</p>
-<p><strong>What is in a SAN?</strong> When it comes to disk storage on fibre channel there’s a few standard components: FC HBA in the server, SFP and cables, SAN-switch, SFP and cables, FC port in the disk array controller and then there’s something behind the controller that connects disks.</p>
-<p>You can connect the FC HBA directly to the disk array.</p>
-<p><strong>What is storage?</strong> It's somewhere where you can store data. Most common today would be: hard drives, flash drives (ssd), magnetic media (tape) and optical media (dvd/blueray/cd).  In a computer you cannot fit hundred of hard drives, but sometimes there is an application that requires lots and lots of data (maybe for example CAD drawings, video editing). This is when a SAN comes in, with only the help of for example a fibre channel card you can give a server access to lots of storage.</p>
-<p><strong>How do you do it?</strong> If you want to give a server disk space from a fibre channel SAN this is what you do:</p>
-<ol>
-<li>Fullfil the hardware requirements (so fibre channel HBA+drivers and multipath software, SAN-switch, disk array and sfps + cables)</li>
-<li>On the SAN-switch create a zone with the disk array's and the FC HBA's domain id, port id or port wwn. It's possible to do it without zones, but they are good for fault isolation.</li>
-<li>On the disk array you should now see the server/host, create a disk and map/present it to the host.</li>
-<li>On the host you most likely need to do a rescan/reinitialize of the fc-bus.</li>
-<li>After the server sees the LUN it will have a new hard disk available, you can use your normal partitioning/format/filesystem tools to create some usable space.</li>
-</ol>
-<p><strong>Can I use the same disk on two servers?</strong> This is a pretty common question, the answer is sometimes and the sometimes depends on which file system you are using. It needs to support that more than one host can access it at the same time. NTFS does not support this and if you try it anyway you'll corrupt the file system. For Windows you need to look into CSV - clustered shared volumes or other networked file systems like NFS/CIFS.</p>
-<p><strong>What is the difference between fibre channel and iscsi?</strong></p>
-<p>FC is sending SCSI commands over fibre channel, it’s not always fibre or optical cables. While iSCSI is sending SCSI commands over TCP/IP. FC is a whole network technology while iSCSI is running on top of a network technology -&gt; TCP/IP.</p>
-<p><strong>Some literature:</strong></p>
-<p>Both the IBM and the HP one are quite lengthy. The HP one has a lot of HP specific guides, best practices and supported configurations. The FC 101 by Brocade actually goes quite deep into the theory of the FC protocol.</p>
-<ul>
-<li>IBM's "<a href="http://www.redbooks.ibm.com/redpieces/abstracts/sg245470.html" title="a redbook">Introduction to Storage Area Networks and System Networking</a>" :</li>
-<li>Brocade’s <a href="http://www.brocade.com/downloads/documents/course_data_sheets/FC101-DataSheet.pdf" title="link to a pdf with clickable links">FC 101 – Introduction to Fibre Channel Concepts</a>.<ul>
-<li>This is really good because it takes you through the theory. There is also a page where  more books are mentioned.</li>
-</ul>
-</li>
-<li>HPs <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&amp;docIndexId=179911&amp;locale=en_US&amp;prodSeriesId=406734&amp;prodTypeId=12169&amp;taskId=101" title="A version with all parts or each part by itself are available here.">SAN Design Reference Guide</a><ul>
-<li>A pdf that goes through best practices for how to configure HP’s storage and san.</li>
-</ul>
-</li>
-<li><a href="http://www.amazon.com/Evolution-Storage-Brain-transformative-storage/dp/1451577648/" title="on amazon.com">Evolution - Storage Brain -</a> <ul>
-<li>Used to be used to train NetApp's new storage people:</li>
-</ul>
-</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #introduction Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-07-28T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-07-28
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/san-primer-introduction-to-data-storage.html">SAN Primer - Introduction to Data Storage</a>
+        </h4>
+        <div class="content">
+          You may have heard about this storage or SAN stuff, but what is it? Is it complicated and cool? Yes. Now it doesn't have to be complicated, but it sure can be sometimes. This post is just a brief primer/introduction to storage and what it entails. In case maybe …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

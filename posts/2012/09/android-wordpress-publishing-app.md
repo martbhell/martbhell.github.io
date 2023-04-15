@@ -1,5 +1,5 @@
 ---
-title: "Android wordpress publishing app"
+title: Android wordpress publishing app
 date: 2012-09-17
 category: it
 tags: android, blogging, wordpress

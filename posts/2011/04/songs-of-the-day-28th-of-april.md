@@ -1,5 +1,5 @@
 ---
-title: "Songs of the day 28th of April"
+title: Songs of the day 28th of April
 date: 2011-04-28
 category: finland
 tags: free, music, thesixtyone

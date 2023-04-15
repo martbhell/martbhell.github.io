@@ -1,5 +1,5 @@
 ---
-title: "Studying for BCNE - Brocade Certified Network Engineer"
+title: Studying for BCNE - Brocade Certified Network Engineer
 date: 2013-04-19
 category: it, storage
 tags: bcne, brocade, brocade, certified, network, engineer, ccna, certification, ethernet, ip, network, ospf, routing, stp, switching, vlan

@@ -1,394 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - rhel</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #rhel Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/rhel.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/setup-a-3-node-lustre-filesystem.html">"Setup a 3 Node Lustre Filesystem"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2012-10-13T00:00:00+03:00">
-                Published: "2012-10-13"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info --><h1 id="introduction">Introduction</h1>
-<p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
-<p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
-<p>Basic components:</p>
-<p>VMWare Workstation <a href="http://www.nic.funet.fi" title="finnish mirror">3 x CentOS</a> 6.3 VMs. Latest Lustre from <a href="http://www.whamcloud.com/" title="http://www.whamcloud.com/">Whamcloud</a></p>
-<p>To use Lustre your kernel needs to support it. There's a special one for server and one for the client. Some packages are needed on both.</p>
-<p>Besides lustre you'll need an updated version of e2fsprogs as well (because the version that comes from RHEL6.3 does not support large partitions).</p>
-<p>Starting with the MDS. When the basic OS setup is done will make a copy of that to use for OSS and Client.</p>
-<h1 id="setup-basic-services">Setup basic services.</h1>
-<h2 id="install-an-mds">Install an MDS</h2>
-<p>This will run the MDT - the metadata target.</p>
-<p>2GB RAM, 10GB disk, bridged networking, 500GB for /boot, rest for / (watch out, it may create a really large swap). Minimal install. Setup OS networking (static ip for servers, start on boot, open port 988 in firewall, possibly some for outgoing if you decide to restrain that too), run yum update and setup ntp. Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86_64). Lustre also does not support selinux, so disable that (works fine with it in enforcing until time to create mds/mdt, also fine with permissive until it's time to mount). Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set hostname.</p>
-<h2 id="install-an-oss">Install an OSS</h2>
-<p>This will contain the OST (object storage target). This is where the data will be stored.</p>
-<p>Networking may not work (maybe device name changed to eth1 or eth2). You may want to change this afterwards to get the interface back to be called (eth0). <a href="http://www.banym.de/linux/centos/change-network-device-name-from-eth1-back-to-eth0">A blog post</a> about doing that.</p>
-<h2 id="install-a-client">Install a client</h2>
-<p>This will access and use the filesystem.</p>
-<p>Clone of the OSS before installing any lustre services or kernels.</p>
-<h1 id="install-lustre">Install Lustre</h1>
-<p>Before you do this it may be wise to take a snapshot of each server. In case you screw the VM up you can then go back :)</p>
-<h2 id="starting-with-the-mds">Starting with the MDS.</h2>
-<p>Installing e2fsprogs, kernel and lustre-modules.</p>
-<p>Skipping debuginfo and devel packages, installing all the rest.</p>
-<p>yum localinstall \ 
-kernel-2.6.32-220.4.2.el6_lustre.x86_64.rpm kernel-firmware-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
-kernel-headers-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
-lustre-2.2.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm \ 
-lustre-ldiskfs-3.3.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm \
-lustre-modules-2.2.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm</p>
-<p>The above was not the order they were installed. Yum changed the order so that for example kernel-headers was last.</p>
-<p>yum localinstall e2fsprogs-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-debuginfo-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-devel-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-libs-1.42.3.wc3-7.el6.x86_64.rpm \
-e2fsprogs-static-1.42.3.wc3-7.el6.x86_64.rpm \
-libcom_err-1.42.3.wc3-7.el6.x86_64.rpm \
-libcom_err-devel-1.42.3.wc3-7.el6.x86_64.rpm \
-libss-1.42.3.wc3-7.el6.x86_64.rpm \
-libss-devel-1.42.3.wc3-7.el6.x86_64.rpm</p>
-<p>After boot, confirm that you have lustre kernel installed by typing:</p>
-<p>uname -av</p>
-<p>and</p>
-<p>mkfs.lustre --help</p>
-<p>to see if you have that and</p>
-<p>rpm -qa 'e2fs*'</p>
-<p>to see if that was installed properly too.</p>
-<p>By the way, you probably want to run this to exclude automatic yum kernel updates:</p>
-<p>echo "exclude=kernel*" &gt;&gt; /etc/yum.conf</p>
-<p>After install and reboot into new kernel it's time to modprobe lustre, start creating MDT, OST and then mount things! But hold on to your horses, first we ned to install the client :)</p>
-<h2 id="and-then-the-client">And then the Client</h2>
-<p>Install the e2fsprogs*</p>
-<p>We cannot just install the lustre-client packages, because we run a different kernel than the ones that whamcloud have compiled the lustre-client against.</p>
-<p>We can either back-pedal and install an older kernel. Or we can build (from source / SRPMS) a lustre-client that works on a kernel of our choosing. The later option seems like a better way, because we can then upgrade the kernel if we want to.</p>
-<h3 id="build-custom-linux-client-rpms">Build custom linux-client rpms</h3>
-<p>Because of <a href="http://jira.whamcloud.com/browse/LU-1868">a bug</a> it appears that some ext4 source packages are needed - while they are not. You need to add some parameters to ./configure. This will be the topic of a future post.</p>
-<p>The above rpmbuild should create rpms for the running kernel. If you want to create rpms for a non-running kernel <a href="http://wiki.whamcloud.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel" title="whamcloud wiki">you are supposed to be able to run.</a></p>
-<h1 id="configure-lustre">Configure Lustre</h1>
-<p><a href="http://wiki.whamcloud.com/display/PUB/Create+and+Mount+a+Lustre+Filesystem">Whamcloud have good instructions</a>. Don't be afraid to check out their wiki or use google.</p>
-<p>/var/log/messages is the place to look for more detailed errors.</p>
-<h2 id="on-the-mds">On the MDS</h2>
-<p>Because we do not have infiniband you want to change the parameters slightly for lnet to include tcp(eth0). These changes are not reflected until reboot (quite possibly something else) - but just editing a file under /etc/modprobe.d/ called for example lustre.conf is not enough.</p>
-<p>Added a 5GB disk to the mds.</p>
-<p>fdisk -cu /dev/sdb; n, p, 1, (first-last)</p>
-<p>modprobe lustre lnet</p>
-<p>mkfs.lustre --mdt --mgs</p>
-<p>mount</p>
-<h2 id="on-the-oss">On the OSS</h2>
-<p>Also add the parameters into modprobe.</p>
-<p>mkfs.lustre --ost</p>
-<p>mount</p>
-<h2 id="on-the-client">On the client</h2>
-<p>Add things into modprobe.</p>
-<p>mount!</p>
-<p>Write something.</p>
-<p>Then hit: lfs df -h</p>
-<p>To see usage!</p>
-<h1 id="get-it-all-working-on-boot">Get it all working on boot</h1>
-<p>You want to start the MDS, then the OSS and last the client. But while it's running you can restart any node and eventually it will start working again.</p>
-<p>Fstab on <strong>the client</strong>: ip@tcp:/fsname /mnt lustre defaults,_netdev 0 0</p>
-<p>Fstab on <strong>the OSS and MDS</strong>: /dev/sdb1 /mnt/MDS lustre defaults,_netdev 0 0</p>
-<p>While it's running you can restart any node and eventually it will start working again.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/update-install-spotify-082637-on-rhel6-x64.html" rel="bookmark"
-                           title="Permalink to "Update / Install Spotify 0.8.2.637 on RHEL6 x64"">"Update / Install Spotify 0.8.2.637 on RHEL6 x64"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-03-26T00:00:00+03:00">
-                Published: "2012-03-26"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/0.html">0</a> <a href="/tag/8.html">8</a> <a href="/tag/2.html">2</a> <a href="/tag/637.html">637</a> <a href="/tag/alien.html">alien</a> <a href="/tag/qt.html">qt</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
-</footer><!-- /.post-info -->                <p>Previous post:</p>
-<p><a href="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/" title="http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/">http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/</a></p>
-<p>Installed spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm - this is converted from the .deb package that is downloaded from: <a href="http://repository.spotify.com/pool/non-free/s/spotify/" title="http://repository.spotify.com/pool/non-free/s/spotify/">http://repository.spotify.com/pool/non-free/s/spotify/</a></p>
-<p>you convert with 'alien' and this command:</p>
-<p>alien --to-rpm spotify-client_0.8.2.637.g252b980 …</p>
-                <a class="readmore" href="/update-install-spotify-082637-on-rhel6-x64.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/centos-58-released.html" rel="bookmark"
-                           title="Permalink to "CentOS 5.8 Released"">"CentOS 5.8 Released"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-03-08T00:00:00+02:00">
-                Published: "2012-03-08"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/os.html">os</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/slc.html">slc</a> </p>
-</footer><!-- /.post-info -->                <p>CentOS 5.8 was released today 8th of March.</p>
-<p><a href="http://wiki.centos.org/Manuals/ReleaseNotes/CentOS5.8">http://wiki.centos.org/Manuals/ReleaseNotes/CentOS5.8</a></p>
-<p>You can download it from many mirrors, for example from FUNET: <a href="http://ftp.funet.fi/pub/Linux/INSTALL/Centos/">http://ftp.funet.fi/pub/Linux/INSTALL/Centos/</a></p>
-<p>It installs just fine on an HP DL360 G7 with P410 and P411 controller …</p>
-                <a class="readmore" href="/centos-58-released.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/password-when-starting-a-linux-server-in-single-user-mode.html" rel="bookmark"
-                           title="Permalink to "password when starting a linux server in single-user mode"">"password when starting a linux server in single-user mode"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-03-08T00:00:00+02:00">
-                Published: "2012-03-08"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/hardening.html">hardening</a> <a href="/tag/init.html">init</a> <a href="/tag/inittab.html">inittab</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/security.html">security</a> <a href="/tag/single.html">single</a> <a href="/tag/user.html">user</a> <a href="/tag/singleuser.html">singleuser</a> <a href="/tag/slc.html">slc</a> <a href="/tag/su.html">su</a> <a href="/tag/sulogin.html">sulogin</a> <a href="/tag/sushell.html">sushell</a> </p>
-</footer><!-- /.post-info -->                <p>http://www.cromwell-intl.com/unix/linux-break-in-howto.html</p>
-<p>On RHEL 6.2-based systems (like Scientific Linux 6.2): edit /etc/sysconfig/init</p>
-<p># Set to '/sbin/sulogin' to prompt for password on single-user mode # Set to '/sbin/sushell' otherwise</p>
-<p>Like this:</p>
-<p>SINGLE=/sbin/sulogin</p>
-<p>Then if you add an 's' to the …</p>
-                <a class="readmore" href="/password-when-starting-a-linux-server-in-single-user-mode.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/how-to-find-things-in-linux-man-pages.html" rel="bookmark"
-                           title="Permalink to "How to find things in Linux man pages"">"How to find things in Linux man pages"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-12-20T00:00:00+02:00">
-                Published: "2011-12-20"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/apropos.html">apropos</a> <a href="/tag/grep.html">grep</a> <a href="/tag/help.html">help</a> <a href="/tag/linux.html">linux</a> <a href="/tag/man.html">man</a> <a href="/tag/pages.html">pages</a> <a href="/tag/manual.html">manual</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/search.html">search</a> <a href="/tag/xargs.html">xargs</a> <a href="/tag/yum.html">yum</a> <a href="/tag/zgrep.html">zgrep</a> </p>
-</footer><!-- /.post-info -->                <p>There's a couple of places (naturally).</p>
-<p>It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank.</p>
-<p>In RHEL there is /usr/share …</p>
-                <a class="readmore" href="/how-to-find-things-in-linux-man-pages.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/scientific-linux-6-basic-setup.html" rel="bookmark"
-                           title="Permalink to "Scientific Linux 6 - Basic Setup"">"Scientific Linux 6 - Basic Setup"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-10-26T00:00:00+03:00">
-                Published: "2011-10-26"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <h2 id="not-allowing-root-to-log-in">Not allowing root to log in</h2>
-<p>By default sshd is running on SL6 and you can ssh in with 'root'.</p>
-<p>Probably a good idea to change this in /etc/ssh/sshd_config</p>
-<p>permitrootlogin no</p>
-<p>But first, create a user that can log in.</p>
-<p>useradd mart
-passwd mart</p>
-<p>Then you can change …</p>
-                <a class="readmore" href="/scientific-linux-6-basic-setup.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/how-to-update-spotify-on-rhel6-x64-native-client.html" rel="bookmark"
-                           title="Permalink to "How-To : Update Spotify on RHEL6 x64 native client"">"How-To : Update Spotify on RHEL6 x64 native client"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-10-14T00:00:00+03:00">
-                Published: "2011-10-14"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/for.html">for</a> </p>
-</footer><!-- /.post-info -->                <p>See <a href="http://www.guldmyr.com/blog/how-to-install-spotify-on-rhel6-x64-native-client/" title="how-to-install-spotify-on-rhel6-x64-native-client/">the post</a> for how to install spotify on a Linux Client (RHEL 6 x64 in my case).</p>
-<p>This post is for how to upgrade.</p>
-<p>2012-02-01: Updated, added --nodeps to the rpm upgrade. 2013-01-08: This has been confirmed to work with spotify-0.8.8, updated typo in symlink part.</p>
-<p>Why …</p>
-                <a class="readmore" href="/how-to-update-spotify-on-rhel6-x64-native-client.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/install-scientific-linux-6-in-vmware-workstation.html" rel="bookmark"
-                           title="Permalink to "Install Scientific Linux 6 in VMWare Workstation"">"Install Scientific Linux 6 in VMWare Workstation"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-10-02T00:00:00+03:00">
-                Published: "2011-10-02"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <p>Time for some more Linux testing.</p>
-<p>The reason for this is because I think I will go ahead and try to study for the <a href="http://www.redhat.com/certification/rhcsa/" title="on redhat.com">RHCSA</a> - Red Hat Certified System Administrator. Work might send me to a course in December, probably wise to play around with it before this.</p>
-<p>So here …</p>
-                <a class="readmore" href="/install-scientific-linux-6-in-vmware-workstation.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/how-to-install-spotify-on-rhel6-x64-native-client.html" rel="bookmark"
-                           title="Permalink to "How-To : Install Spotify on RHEL6 x64 native client"">"How-To : Install Spotify on RHEL6 x64 native client"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-08-25T00:00:00+03:00">
-                Published: "2011-08-25"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/linux.html">linux</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/spotify.html">spotify</a> <a href="/tag/for.html">for</a> </p>
-</footer><!-- /.post-info -->                <p>Hey!</p>
-<p>You need premium for RHEL6 <strong>native</strong> client to work.</p>
-<p>If you get it to work with WINE it would work for free (as a plus you get it with the very annoying ads).</p>
-<p>My machine is a RHEL 6 64-bit.</p>
-<p>The only requirement I had was that I did …</p>
-                <a class="readmore" href="/how-to-install-spotify-on-rhel6-x64-native-client.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/reading-encryptedpassword-protected-pdf-on-linux.html" rel="bookmark"
-                           title="Permalink to "Reading encrypted/password protected pdf on Linux"">"Reading encrypted/password protected pdf on Linux"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-07-13T00:00:00+03:00">
-                Published: "2011-07-13"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/adobe.html">adobe</a> <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/encryption.html">encryption</a> <a href="/tag/evince.html">evince</a> <a href="/tag/exam.html">exam</a> <a href="/tag/foxit.html">foxit</a> <a href="/tag/foxitreader.html">foxitreader</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pdf.html">pdf</a> <a href="/tag/pdftotext.html">pdftotext</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rhel6.html">rhel6</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/study.html">study</a> <a href="/tag/material.html">material</a> </p>
-</footer><!-- /.post-info -->                <p><img alt="Brocade Logo" src="images/logo-brocade.gif" title="Brocade Logo"></p>
-<h2 id="the-problematic-pdf">The problematic PDF</h2>
-<p>The CFP300 material on <strong><a href="http://community.brocade.com/docs/DOC-2041" title="linky">http://community.brocade.com/docs/DOC-2041</a></strong> is encrypted so that it cannot be printed/re-edited without a password.</p>
-<p>If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite …</p>
-                <a class="readmore" href="/reading-encryptedpassword-protected-pdf-on-linux.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 2
-        <a href="/tag/rhel2.html">&raquo;</a>
-        <a href="/tag/rhel2.html">&#8649;</a>
-</p>
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #rhel Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-10-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-10-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/setup-a-3-node-lustre-filesystem.html">Setup a 3 Node Lustre Filesystem</a>
+        </h4>
+        <div class="content">
+          Introduction Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously. This is a small log/instruction for how to setup Lustre in 3 virtualized machines (one metadata server, one object storage server and one client). Basic components: VMWare Workstation 3 x CentOS 6 …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-03-26T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-03-26
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/update-install-spotify-082637-on-rhel6-x64.html">Update / Install Spotify 0.8.2.637 on RHEL6 x64</a>
+        </h4>
+        <div class="content">
+          Previous post: http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/ Installed spotify-client-0.8.2.637.g252b980.486-2.x86_64.rpm - this is converted from the .deb package that is downloaded from: http://repository.spotify.com/pool/non-free/s/spotify/ you convert with 'alien' and this command: alien --to-rpm spotify-client_0.8.2.637.g252b980 …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-03-08T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2012-03-08
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/centos-58-released.html">CentOS 5.8 Released</a>
+        </h4>
+        <div class="content">
+          CentOS 5.8 was released today 8th of March. http://wiki.centos.org/Manuals/ReleaseNotes/CentOS5.8 You can download it from many mirrors, for example from FUNET: http://ftp.funet.fi/pub/Linux/INSTALL/Centos/ It installs just fine on an HP DL360 G7 with P410 and P411 controller …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-03-08T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2012-03-08
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/password-when-starting-a-linux-server-in-single-user-mode.html">password when starting a linux server in single-user mode</a>
+        </h4>
+        <div class="content">
+          http://www.cromwell-intl.com/unix/linux-break-in-howto.html On RHEL 6.2-based systems (like Scientific Linux 6.2): edit /etc/sysconfig/init # Set to '/sbin/sulogin' to prompt for password on single-user mode # Set to '/sbin/sushell' otherwise Like this: SINGLE=/sbin/sulogin Then if you add an 's' to the …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-12-20T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-12-20
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/how-to-find-things-in-linux-man-pages.html">How to find things in Linux man pages</a>
+        </h4>
+        <div class="content">
+          There's a couple of places (naturally). It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank. In RHEL there is /usr/share …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-26T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-26
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/scientific-linux-6-basic-setup.html">Scientific Linux 6 - Basic Setup</a>
+        </h4>
+        <div class="content">
+          Not allowing root to log in By default sshd is running on SL6 and you can ssh in with 'root'. Probably a good idea to change this in /etc/ssh/sshd_config permitrootlogin no But first, create a user that can log in. useradd mart passwd mart Then you can change …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-14T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/how-to-update-spotify-on-rhel6-x64-native-client.html">How-To : Update Spotify on RHEL6 x64 native client</a>
+        </h4>
+        <div class="content">
+          See the post for how to install spotify on a Linux Client (RHEL 6 x64 in my case). This post is for how to upgrade. 2012-02-01: Updated, added --nodeps to the rpm upgrade. 2013-01-08: This has been confirmed to work with spotify-0.8.8, updated typo in symlink part. Why …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-02T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-02
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/install-scientific-linux-6-in-vmware-workstation.html">Install Scientific Linux 6 in VMWare Workstation</a>
+        </h4>
+        <div class="content">
+          Time for some more Linux testing. The reason for this is because I think I will go ahead and try to study for the RHCSA - Red Hat Certified System Administrator. Work might send me to a course in December, probably wise to play around with it before this. So here …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-08-25T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-08-25
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/how-to-install-spotify-on-rhel6-x64-native-client.html">How-To : Install Spotify on RHEL6 x64 native client</a>
+        </h4>
+        <div class="content">
+          Hey! You need premium for RHEL6 native client to work. If you get it to work with WINE it would work for free (as a plus you get it with the very annoying ads). My machine is a RHEL 6 64-bit. The only requirement I had was that I did …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-07-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-07-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/reading-encryptedpassword-protected-pdf-on-linux.html">Reading encrypted/password protected pdf on Linux</a>
+        </h4>
+        <div class="content">
+          The problematic PDF The CFP300 material on http://community.brocade.com/docs/DOC-2041 is encrypted so that it cannot be printed/re-edited without a password. If you try to open this with evince (default .pdf viewer in Gnome) it will ask for a password. pdftotext (comes with the software suite …
+        </div>
+      </div>
+    </article>
+  <hr>
+  <ul class="pagination">
+    <li class="page-item">
+      <span class="page-link">1 of 2</span>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="/tag/rhel2.html">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+  </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 ---
-title: "Windows 7 Blank Windows Update Screen"
+title: Windows 7 Blank Windows Update Screen
 date: 2011-05-12
 category: it
 tags: blank, update, screen, blank, windows, update, windows, windows, 7, windows, update

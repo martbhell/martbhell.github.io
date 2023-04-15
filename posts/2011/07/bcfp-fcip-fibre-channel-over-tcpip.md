@@ -1,5 +1,5 @@
 ---
-title: "BCFP - FCIP - Fibre Channel over TCP/IP"
+title: BCFP - FCIP - Fibre Channel over TCP/IP
 date: 2011-07-28
 category: storage
 tags: bcfp, brocade, brocade, certified, professional, certification, circuits, extension, fcip, fibre, channel, fibre, channel, ip, gbe, ip, qos, routing, trunking, tunnels, ve_port, vex_port, virtual, fabric

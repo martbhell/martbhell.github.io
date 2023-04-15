@@ -1,5 +1,5 @@
 ---
-title: "SANNASDAS"
+title: SANNASDAS
 date: 2012-05-29
 category: it
 tags: das, nas, performance, postgresql, san, storage

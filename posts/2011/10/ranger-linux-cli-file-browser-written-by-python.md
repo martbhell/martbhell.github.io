@@ -1,5 +1,5 @@
 ---
-title: "Ranger - Linux CLI File Browser written by python"
+title: Ranger - Linux CLI File Browser written by python
 date: 2011-10-24
 category: finland
 tags: browser, linux, ranger

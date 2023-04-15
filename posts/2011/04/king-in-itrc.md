@@ -1,5 +1,5 @@
 ---
-title: "King in ITRC!"
+title: King in ITRC!
 date: 2011-04-15
 category: it, storage
 tags: forum, hp, itrc, king, servers, storage, support

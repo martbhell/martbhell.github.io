@@ -1,5 +1,5 @@
 ---
-title: "Music of the day - 18th of April"
+title: Music of the day - 18th of April
 date: 2011-04-18
 category: finland
 tags: allison, weiss, music, t61, thesixtyone

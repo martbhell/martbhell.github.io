@@ -1,5 +1,5 @@
 ---
-title: "Meta Post: Blog is now also mobile friendly!"
+title: Meta Post: Blog is now also mobile friendly!
 date: 2014-02-24
 category: finland, it
 tags: blogging, metapost, theme

@@ -1,44 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>"Time Sync for Linux VMs in VMWare Workstation"</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-        <meta name="description" content="You may have seen in my previous post about EyeOS that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and..." />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Time Sync for Linux VMs in VMWare Workstation | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/time-sync-for-linux-vms-in-vmware-workstation.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <meta name="description" content="You may have seen in my previous post about EyeOS that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I …">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li class="active"><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Time Sync for Linux VMs in VMWare Workstation
+</h1>
+      <hr>
+  <article class="article">
     <header>
-      <h1 class="entry-title">
-        <a href="/time-sync-for-linux-vms-in-vmware-workstation.html" rel="bookmark"
-           title="Permalink to "Time Sync for Linux VMs in VMWare Workstation"">"Time Sync for Linux VMs in VMWare Workstation"</a></h1>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2011-02-27T00:00:00+02:00">
+          <i class="fas fa-clock"></i>
+          2011-02-27
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="/category/it.html">it</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/10.html">#10</a>,               <a href="/tag/linux.html">#linux</a>,               <a href="/tag/ntp.html">#ntp</a>,               <a href="/tag/ntpd.html">#ntpd</a>,               <a href="/tag/red.html">#red</a>,               <a href="/tag/hat.html">#hat</a>,               <a href="/tag/enterprise.html">#enterprise</a>,               <a href="/tag/rhel.html">#rhel</a>,               <a href="/tag/time.html">#time</a>,               <a href="/tag/servers.html">#servers</a>,               <a href="/tag/sync.html">#sync</a>,               <a href="/tag/ubuntu.html">#ubuntu</a>,               <a href="/tag/vmware.html">#vmware</a>,               <a href="/tag/workstation.html">#workstation</a>          </li>
+      </ul>
     </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-27T00:00:00+02:00">
-                Published: "2011-02-27"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/linux.html">linux</a> <a href="/tag/ntp.html">ntp</a> <a href="/tag/ntpd.html">ntpd</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/enterprise.html">enterprise</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/time.html">time</a> <a href="/tag/servers.html">servers</a> <a href="/tag/sync.html">sync</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->      <p>You may have seen in my <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser-part-2/" title="eyeos time sync">previous post about EyeO</a>S that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I could not find anything that decidedly fixed it.</p>
+    <div class="content">
+      <p>You may have seen in my <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser-part-2/" title="eyeos time sync">previous post about EyeO</a>S that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I could not find anything that decidedly fixed it.</p>
 <p>run ntpdate every hour. This is not advised, primarily because it will add a lot of extra load after a while to the public(free) time servers. Especially if I want to have several machines up to date. One thought then was to set up a local ntpd and let other guest OS sync time with that. But then I could not get that in sync so we were back to square one.</p>
 <p>others mention using VMWare tools time sync.</p>
 <h3 id="my-setup">My setup:</h3>
@@ -62,43 +108,24 @@
 <p><code>server 0.rhel.pool.ntp.org server 1.rhel.pool.ntp.org server 2.rhel.pool.ntp.org</code></p>
 <p><code># Undisciplined Local Clock. This is a fake driver intended for backup # and when no outside source of synchronized time is available. #fudge  127.127.1.0 stratum 10</code></p>
 <p><code>driftfile /var/lib/ntp/drift keys /etc/ntp/keys restrict 0.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery restrict 1.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery restrict 2.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery</code></p>
-    </div><!-- /.entry-content -->
-
+    </div>
   </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    </div>
+  </div>
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'G-H4LG7R6ZGG', 'auto');
-    ga('send', 'pageview');
-    </script>
 </body>
+
 </html>

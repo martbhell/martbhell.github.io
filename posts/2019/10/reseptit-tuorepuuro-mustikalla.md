@@ -1,5 +1,5 @@
 ---
-title: "Reseptit: Tuorepuuro Mustikalla"
+title: Reseptit: Tuorepuuro Mustikalla
 date: 2019-10-04
 category: finland
 

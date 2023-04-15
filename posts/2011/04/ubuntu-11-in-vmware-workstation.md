@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu 11 in VMWare Workstation"
+title: Ubuntu 11 in VMWare Workstation
 date: 2011-04-03
 category: it
 tags: 11, 04, it, 2, natty, ubuntu, virtual, machine, vmware, vmware, workstation

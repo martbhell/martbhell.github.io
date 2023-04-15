@@ -1,5 +1,5 @@
 ---
-title: "EMC - Symmetrix and CLARiiON 3"
+title: EMC - Symmetrix and CLARiiON 3
 date: 2011-01-18
 category: storage
 tags: emc, storage

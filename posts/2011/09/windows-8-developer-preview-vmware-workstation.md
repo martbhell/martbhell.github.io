@@ -1,5 +1,5 @@
 ---
-title: "Windows 8 Developer Preview + VMWare Workstation"
+title: Windows 8 Developer Preview + VMWare Workstation
 date: 2011-09-26
 category: it
 tags: developer, preview, live, microsoft, vmware, vmware, workstation, windows, 8

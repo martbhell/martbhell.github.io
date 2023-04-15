@@ -1,5 +1,5 @@
 ---
-title: "Tails - A LiveCD/USB Linux Distribution"
+title: Tails - A LiveCD/USB Linux Distribution
 date: 2012-02-25
 category: it
 tags: anonymity, anonymous, firefox, linux, privacy, tor, vmware, workstation

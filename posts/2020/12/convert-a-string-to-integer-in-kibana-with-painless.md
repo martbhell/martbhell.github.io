@@ -1,5 +1,5 @@
 ---
-title: "Convert a string to integer in Kibana with painless"
+title: Convert a string to integer in Kibana with painless
 date: 2020-12-16
 category: it
 

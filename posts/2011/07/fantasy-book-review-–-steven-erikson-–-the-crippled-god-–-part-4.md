@@ -1,5 +1,5 @@
 ---
-title: "Fantasy Book Review – Steven Erikson – The Crippled God – Part 4"
+title: Fantasy Book Review – Steven Erikson – The Crippled God – Part 4
 date: 2011-07-23
 category: finland
 tags: book, book, review, malaz, malazan, review, steven, erikson

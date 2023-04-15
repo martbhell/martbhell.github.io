@@ -1,5 +1,5 @@
 ---
-title: "Update by bota!"
+title: Update by bota!
 date: 2011-04-01
 category: finland
 tags: bo7a, canada, island, live, on, an, island, travel

@@ -1,5 +1,5 @@
 ---
-title: "wasthereannhlgamelastnight.appspot.com - fixed - working again!"
+title: wasthereannhlgamelastnight.appspot.com - fixed - working again!
 date: 2017-10-04
 category: finland, it
 tags: api, gcloud, google, json, nhl, python, rest, wasthereannhlgamelastnight

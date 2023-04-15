@@ -1,5 +1,5 @@
 ---
-title: "BCFD - CFD200 - Module 3 - SAN Infrastructure"
+title: BCFD - CFD200 - Module 3 - SAN Infrastructure
 date: 2012-01-14
 category: storage
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network

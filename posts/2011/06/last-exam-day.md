@@ -1,5 +1,5 @@
 ---
-title: "Last Exam Day"
+title: Last Exam Day
 date: 2011-06-16
 category: finland, it
 tags: bruins, game, 7, graduation, day, stanley, cup

@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification - RHCSA - Exam Results"
+title: Red Hat Certification - RHCSA - Exam Results
 date: 2011-12-19
 category: it
 tags: certification, linux, red, hat, rhcsa, studying

@@ -1,5 +1,5 @@
 ---
-title: "BCEFP 2015 - Studying for the exam"
+title: BCEFP 2015 - Studying for the exam
 date: 2014-05-07
 category: it
 tags: brocade, brocade, certified, brocade, certified, ethernet, fabric, professional, certification

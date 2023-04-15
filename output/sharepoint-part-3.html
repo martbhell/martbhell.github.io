@@ -1,44 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>"Sharepoint - Part 3"</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-        <meta name="description" content="The previous posts: Part 1 - installing Sharepoint 2010 Foundation. Part 2 - basic features in the web interface. I said I was going to look into..." />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Sharepoint - Part 3 | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/sharepoint-part-3.html">
+
+
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
+
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <meta name="description" content="The previous posts: Part 1 - installing Sharepoint 2010 Foundation. Part 2 - basic features in the web interface. I said I was going to look into the RSS updates, how to manually edit the database and look into the underlying structure of the Sharepoint. But, only went through the last of …">
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'G-H4LG7R6ZGG', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li class="active"><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Sharepoint - Part 3
+</h1>
+      <hr>
+  <article class="article">
     <header>
-      <h1 class="entry-title">
-        <a href="/sharepoint-part-3.html" rel="bookmark"
-           title="Permalink to "Sharepoint - Part 3"">"Sharepoint - Part 3"</a></h1>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2011-02-04T00:00:00+02:00">
+          <i class="fas fa-clock"></i>
+          2011-02-04
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-folder-open"></i>
+          <a href="/category/it.html">it</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/it.html">#it</a>,               <a href="/tag/2.html">#2</a>,               <a href="/tag/sharepoint.html">#sharepoint</a>,               <a href="/tag/vmware.html">#vmware</a>,               <a href="/tag/workstation.html">#workstation</a>,               <a href="/tag/windows.html">#windows</a>          </li>
+      </ul>
     </header>
-
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-04T00:00:00+02:00">
-                Published: "2011-02-04"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/sharepoint.html">sharepoint</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/windows.html">windows</a> </p>
-</footer><!-- /.post-info -->      <p>The previous posts: <a href="http://www.guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/" title="sharepoint part 1">Part 1</a> - installing Sharepoint 2010 Foundation. <a href="http://www.guldmyr.com/blog/sharepoint-2010-foundation-part-2/" title="sharepoint par t2">Part 2</a> - basic features in the web interface.</p>
+    <div class="content">
+      <p>The previous posts: <a href="http://www.guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/" title="sharepoint part 1">Part 1</a> - installing Sharepoint 2010 Foundation. <a href="http://www.guldmyr.com/blog/sharepoint-2010-foundation-part-2/" title="sharepoint par t2">Part 2</a> - basic features in the web interface.</p>
 <p>I said I was going to look into the RSS updates, how to manually edit the database and look into the underlying structure of the Sharepoint. But, only went through the last of the obvious administration tools :p</p>
 <h2 id="other-management-tools">Other management tools</h2>
 <p>Under the start menu there are three new programs:</p>
@@ -69,43 +115,24 @@
 <p>none by default</p>
 <h2 id="management-shell">Management Shell</h2>
 <p>This did not work, gave me this error: "The local farm is not accessible. Cmdlets with FeatureDependencyId are not registered."</p>
-    </div><!-- /.entry-content -->
-
+    </div>
   </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    </div>
+  </div>
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'G-H4LG7R6ZGG', 'auto');
-    ga('send', 'pageview');
-    </script>
 </body>
+
 </html>

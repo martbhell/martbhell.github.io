@@ -1,5 +1,5 @@
 ---
-title: "RHCSA – Rapid Track – Day 2"
+title: RHCSA – Rapid Track – Day 2
 date: 2011-12-13
 category: it
 tags: certification, linux, red, hat, rhcsa, studying

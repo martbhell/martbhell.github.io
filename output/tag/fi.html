@@ -1,170 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - fi</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #fi Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/fi.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/home-network-convergence.html">"Home Network Convergence"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-07-14T00:00:00+03:00">
-                Published: "2019-07-14"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/chromecast.html">chromecast</a> <a href="/tag/dnsmasq.html">dnsmasq</a> <a href="/tag/hostapd.html">hostapd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/media.html">media</a> <a href="/tag/server.html">server</a> <a href="/tag/openwrt.html">openwrt</a> <a href="/tag/raspberry.html">raspberry</a> <a href="/tag/pi.html">pi</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/lan.html">lan</a> <a href="/tag/wi.html">wi</a> <a href="/tag/fi.html">fi</a> <a href="/tag/wireless.html">wireless</a> <a href="/tag/access.html">access</a> <a href="/tag/point.html">point</a> </p>
-</footer><!-- /.post-info --><p>Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone.</p>
-<p>I've been thinking lately and in previous posts that maybe I should just get an access point and plug it in a port in the correct VLAN near the TV, as mentioned in a previous posts in https://www.guldmyr.com/blog/vlan-in-the-home-network/ or https://www.guldmyr.com/blog/some-updates-to-the-home-network/</p>
-<p>But then the other day I started looking at maybe the raspberry Pi I have as a media player could be turned into an access point? (some googling suggest it could be done, but several talk about basic linux install with hostapd and dnsmasq which maybe openwrt would be more fun).</p>
-<p>Then I realized that I already have an access point over there which is what phones and the chromecast is connected to and I don't want a third wifi network at home!</p>
-<p>Finally the solution is to get the media server onto the same network as the chromecast. This I could now after the VLAN changes do quite easily.</p>
-<p>Steps: - take the desktop's cable and put it in a dumb 1GbE switch I had unused - new cable from my desktop's system board NIC to go same a switch - at this point ssh into media server from internet (because it has no monitor/keyboard) - add usb NIC to the media server and connect to the switch - setup static NIC without default gw etc - update firewalls</p>
-<p>Things learnt: - the USB NIC got a funny and long interface name when I plugged it in. On next reboot it got eth0. So the network interface config I wrote initially didn't really work anymore :)</p>
-<p>Feels good to not have to this this old and unmaintained media player on the raspberry pi anymore. The android app I use even supports EAC3!</p>
-<p>Next I'm wondering what to do with that raspberry pi! retropie maybe?</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/some-updates-to-the-home-network-12.html" rel="bookmark"
-                           title="Permalink to "Some updates to the home network 1/2"">"Some updates to the home network 1/2"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-05-15T00:00:00+03:00">
-                Published: "2019-05-15"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cable.html">cable</a> <a href="/tag/modem.html">modem</a> <a href="/tag/home.html">home</a> <a href="/tag/network.html">network</a> <a href="/tag/isp.html">isp</a> <a href="/tag/nat.html">nat</a> <a href="/tag/ps3.html">ps3</a> <a href="/tag/raspberry.html">raspberry</a> <a href="/tag/pi.html">pi</a> <a href="/tag/server.html">server</a> <a href="/tag/computing.html">computing</a> <a href="/tag/vlan.html">vlan</a> <a href="/tag/wi.html">wi</a> <a href="/tag/fi.html">fi</a> <a href="/tag/wifi.html">wifi</a> </p>
-</footer><!-- /.post-info -->                <p>Current layout:</p>
-<p><img alt="" src="images/home-net-current-20190504-1.jpg"></p>
-<ul>
-<li>The corner:<ul>
-<li>Cable MODEM NAT&amp;WiFi ISP A</li>
-<li>One server</li>
-<li>One desktop who should be on both networks, default gw on one</li>
-<li>Phones and tablets wifi</li>
-</ul>
-</li>
-<li>TV Area:<ul>
-<li>DSL Modem NAT&amp;WiFi ISP B</li>
-<li>One raspberry pi connected to the server</li>
-<li>Phones and tablets wifi</li>
-<li>One chromecast, would …</li></ul></li></ul>
-                <a class="readmore" href="/some-updates-to-the-home-network-12.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/science-fiction-books.html" rel="bookmark"
-                           title="Permalink to "Science-Fiction Books"">"Science-Fiction Books"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-09-13T00:00:00+03:00">
-                Published: "2011-09-13"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/book.html">book</a> <a href="/tag/review.html">review</a> <a href="/tag/reading.html">reading</a> <a href="/tag/sci.html">sci</a> <a href="/tag/fi.html">fi</a> <a href="/tag/science.html">science</a> <a href="/tag/fiction.html">fiction</a> </p>
-</footer><!-- /.post-info -->                <p>Been reading a bit, is nice to get to read something other than fibre channel :)</p>
-<p>1.) <a href="http://en.wikipedia.org/wiki/The_Stainless_Steel_Rat" title="on wikipedia">The Stainless Steel Rat</a> by Harry Harrison</p>
-<p>If you like Douglas Adams this should work for you too. It's quite old books (first one is from '61) but the language does not feel archaic …</p>
-                <a class="readmore" href="/science-fiction-books.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/science-fiction-and-fantasy-books-in-helsinki.html" rel="bookmark"
-                           title="Permalink to "Science-Fiction and Fantasy Books in Helsinki"">"Science-Fiction and Fantasy Books in Helsinki"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-25T00:00:00+02:00">
-                Published: "2011-02-25"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/book.html">book</a> <a href="/tag/fantasy.html">fantasy</a> <a href="/tag/helmet.html">helmet</a> <a href="/tag/kirjakauppa.html">kirjakauppa</a> <a href="/tag/kirjasto.html">kirjasto</a> <a href="/tag/library.html">library</a> <a href="/tag/sci.html">sci</a> <a href="/tag/fi.html">fi</a> <a href="/tag/second.html">second</a> <a href="/tag/hand.html">hand</a> </p>
-</footer><!-- /.post-info -->                <p>Where to find them? Where are some good second hand shops, new book shops, any tips on buying from the Internet.</p>
-<h2 id="number-1-the-library">Number 1: <strong>the library.</strong></h2>
-<p>The library system here in Finland is actually quite awesome. You can go to their <a href="http://helmet.fi" title="helmet">website</a> and search and reserve books (costs 50c this year …</p>
-                <a class="readmore" href="/science-fiction-and-fantasy-books-in-helsinki.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #fi Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2019-07-14T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2019-07-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/home-network-convergence.html">Home Network Convergence</a>
+        </h4>
+        <div class="content">
+          Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone. I've been thinking lately and in previous posts that maybe I should just get …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2019-05-15T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2019-05-15
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/some-updates-to-the-home-network-12.html">Some updates to the home network 1/2</a>
+        </h4>
+        <div class="content">
+          Current layout: The corner: Cable MODEM NAT&WiFi ISP A One server One desktop who should be on both networks, default gw on one Phones and tablets wifi TV Area: DSL Modem NAT&WiFi ISP B One raspberry pi connected to the server Phones and tablets wifi One chromecast, would …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-09-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-09-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/science-fiction-books.html">Science-Fiction Books</a>
+        </h4>
+        <div class="content">
+          Been reading a bit, is nice to get to read something other than fibre channel :) 1.) The Stainless Steel Rat by Harry Harrison If you like Douglas Adams this should work for you too. It's quite old books (first one is from '61) but the language does not feel archaic …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-25T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-25
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/science-fiction-and-fantasy-books-in-helsinki.html">Science-Fiction and Fantasy Books in Helsinki</a>
+        </h4>
+        <div class="content">
+          Where to find them? Where are some good second hand shops, new book shops, any tips on buying from the Internet. Number 1: the library. The library system here in Finland is actually quite awesome. You can go to their website and search and reserve books (costs 50c this year …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

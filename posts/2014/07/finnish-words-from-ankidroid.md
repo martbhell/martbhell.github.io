@@ -1,5 +1,5 @@
 ---
-title: "Finnish words from ankidroid"
+title: Finnish words from ankidroid
 date: 2014-07-05
 category: finland, it
 tags: android, ankidroid, finnish, language, study

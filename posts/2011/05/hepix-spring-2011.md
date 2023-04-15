@@ -1,5 +1,5 @@
 ---
-title: "HEPIX Spring 2011"
+title: HEPIX Spring 2011
 date: 2011-05-01
 category: it, storage
 tags: cern, darmstadt, hepix, hepix, spring, 2011, ipv6, lustre, oracle, linux, scientific, computing, supercomputing

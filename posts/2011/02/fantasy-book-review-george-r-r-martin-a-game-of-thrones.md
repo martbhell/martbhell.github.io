@@ -1,5 +1,5 @@
 ---
-title: "Fantasy Book Review - George R.R. Martin - A Game of Thrones"
+title: Fantasy Book Review - George R.R. Martin - A Game of Thrones
 date: 2011-02-23
 category: finland
 tags: a, game, of, thrones, a, song, of, ice, and, fire, book, fantasy, george, r, r, martin, review

@@ -1,439 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - professional</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #professional Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/professional.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/bcefp-2015-studying-for-the-exam-part-3.html">"BCEFP 2015 – Studying for the exam - part 3"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2014-05-30T00:00:00+03:00">
-                Published: "2014-05-30"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
-</footer><!-- /.post-info --><p>This third post  focuses on the remaining sources of information I had for studying for the BCEPF. At the time this post is published I have taken the exam.</p>
-<p>When I make comments to CLI commands I put them after a #.</p>
-<p>This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional.</p>
-<p>The two previous posts: <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">Objectives and reading materials</a>, <a href="http://www.guldmyr.com/blog/bcefp-2015-studying-for-the-exam/" title="BCEFP 2015 – Studying for the exam">course and nutshell guide</a> and <a href="http://www.guldmyr.com/blog/bcefp-2015-studying-for-the-exam-part-2/" title="BCEFP 2015 – Studying for the exam – part 2">NOS Admin Guide</a></p>
-<h2 id="vdx-troubleshooting-course">VDX Troubleshooting Course</h2>
-<p>The material available also feels very short, same as the beta material available for the CEF300 , like only the parts of the slides that were updated for the BCEFP 2015 beta were included. When a slide says "(cont.)" but there was no previous slides on this topic, that's a hint :) Take the (currently free) course on Brocade's SABA - it's under Education on my.brocade.com. It has way more slides and info.</p>
-<p><strong>Some notes from the course:</strong></p>
-<p>Firmware Upgrade</p>
-<ul>
-<li>Can upgrade all/selected RBridges in a logical chassis: firmware download logical-chassis</li>
-<li>FTP/SCP/SFTP/USB(only local switch with USB)</li>
-<li>By default it stages firmware only - so no reboot or activate. By adding auto-activate it reboots all RBRidges at the same time, not recommended.</li>
-</ul>
-<p>SNMP</p>
-<ul>
-<li>When BNA discovers a switch it automagically configures the switch to send traps (UDP 162) to the BNA server.</li>
-</ul>
-<p>Fabric Formation:</p>
-<ul>
-<li>Requires: Licenses. Same VCS ID, unique RBridge ID and same VCS mode (Fabric Cluster or Logical Chassis)</li>
-<li>Check:<ul>
-<li>ISL ports are operational (show fabric islports)</li>
-<li>Incompatible Firmware Levels</li>
-</ul>
-</li>
-</ul>
-<p>ISLs:</p>
-<ul>
-<li>no fabric isl enable # this disables ISL formation. This makes it an edge port</li>
-<li>CPU could be too busy to send ISL keepalives</li>
-<li>If ISL is segmented and interface is up/up - it's probably a config issue.</li>
-</ul>
-<p>vLAGs:</p>
-<ul>
-<li>show running-config interface TenGigabitEthernet 1/0/2 <em># shows config</em><ul>
-<li>no shutdown</li>
-<li>channel-group $NUMBER mode active type standard <em># active - LACP. Standard/Brocade proprietary.</em></li>
-</ul>
-</li>
-<li>show interface TenGigabitEthernet 1/0/2 <em># shows status</em><ul>
-<li>When counters are non-zero and looking for errors. Clear them and compare the delta.</li>
-</ul>
-</li>
-</ul>
-<p>Other:</p>
-<ul>
-<li>show interface stats brief <em># shows discards, errors and CRC</em></li>
-<li>VRRP:<ul>
-<li>show vrrp detail</li>
-<li>pre-empting : if a virtual router comes online with higher priority than the current it will take over</li>
-<li>VRRPE: Can enable short-path-forwarding. If one of the backup virtual routers (that don't own the Virtual IP) can actually forward traffic if that is advantageous.</li>
-</ul>
-</li>
-</ul>
-<p>FCoE:</p>
-<ul>
-<li>show running-config zoning <em># show FCoE zoning</em></li>
-<li>show fabric all #<ul>
-<li>RBRidge with this name: fcr_fd_160 # this comes online when fabrics are connected and Fibre Channel Routing is used.</li>
-<li>RBRidge with this name: fcr_xd_4_100 # this comes online when devices across FC Fabrics can communicate. Don't see this? Check zoning.</li>
-</ul>
-</li>
-</ul>
-<p>iSCSI:</p>
-<h2 id="bcefp-practice-questions-answers">BCEFP practice questions / answers</h2>
-<p><a href="http://community.brocade.com/t5/Certification/BCEFP-2013-Exam-150-180-Practice-Questions/ta-p/4099">http://community.brocade.com/t5/Certification/BCEFP-2013-Exam-150-180-Practice-Questions/ta-p/4099</a></p>
-<p>These are decent practice questions and is nice because the answers give some explanation to the answers too.</p>
-<h2 id="other">Other</h2>
-<p>Intro to VCS Fabric Technology: <a href="http://www.brocade.com/downloads/documents/white_papers/intro-vcs-fabric-technology-wp.pdf">http://www.brocade.com/downloads/documents/white_papers/intro-vcs-fabric-technology-wp.pdf</a></p>
-<h3 id="cfp-msa-cfp2-hardweare-specs"><strong>CFP- MSA CFP2 Hardweare Specs:</strong></h3>
-<ul>
-<li>about the 40/100Gbps CFP2 SFP. MSA – multi-source agreement.</li>
-<li>CFP2 module shall support LC, MTP12 and MTP24 optical connector types. MPO</li>
-</ul>
-<h3 id="nos-411-release-notes-p4102850"><strong>NOS 4.1.1 release notes (p4,10,28,50):</strong></h3>
-<ul>
-<li>4.1.0 and later support VRRP-E across VCS fabrics.</li>
-<li>4.1.0 and later have vlag ignore split on by default</li>
-<li>clear mac-address-table can clear MAC addresses associated with vLAGs and on other switches</li>
-<li>Page 50 Has a table of scalability numbers for various features such as (6710 VCS, 6740 VCS, 8770 VCS):<ul>
-<li>max members of a LAG (8,16,8)</li>
-<li>max switches in a fabric/logical cluster (24,32,32)</li>
-<li>max ECMP paths (8,8,16)</li>
-<li>max member ports in a vLAG (64)</li>
-<li>max member of VMs (8k)</li>
-<li>max ARP entries (8k,12,50k)</li>
-</ul>
-</li>
-</ul>
-<h3 id="network-os-command-reference-v411-53-1003226-01"><strong>Network OS Command Reference v4.1.1</strong> <strong><em>53-1003226-01</em></strong></h3>
-<p>Pages 299, 1258-1260,1266,1297,1317,1318</p>
-<ul>
-<li>firmware download</li>
-<li>snmp-server user # access</li>
-<li>snmp-server v3host # trap recipients</li>
-<li>spanning-tree edgeport # quickly transitions to forwarding state: only for RSTP/MSTP. Portfast for STP.</li>
-<li>switchport access # only allows untagged and priority tagged</li>
-<li>switchport trunk allowed vlan ${rspan-vlan} # add allowed VLAN on trunks on L2 interfaces in trunk mode</li>
-<li>switchport trunk default-vlan # put all non-matching traffic into this VLAN</li>
-</ul>
-<h3 id="hardware-reference-manuals">Hardware reference manuals</h3>
-<p><strong>VDX 6740 Hardware Reference Manual <em>53-1002829-02:</em></strong> Page 1</p>
-<ul>
-<li>6470: 24 1/10GbE SFP+ ports.</li>
-<li>6740T: 24 RJ-45</li>
-<li>6740-1G: 48 RJ-45 Base-T. 10Gb with license.</li>
-</ul>
-<p><strong>VDX 8770-4 / 8770-8 Hardware Reference Manual <em>53-1002563-03:</em></strong> </p>
-<ul>
-<li>Chapter 1, Page 1:<ul>
-<li>Features CloudPlex.</li>
-<li>Requires NOS 3.0.0 or greater.</li>
-<li>8770-8:<ul>
-<li>Up to 384 10GbE or 96 40GbE. Dual MM. 6 SFM. Max 8 PSU. 4 Fans. SX or LX 1Gbps SFP transceivers.</li>
-</ul>
-</li>
-<li>8770-4:</li>
-</ul>
-</li>
-<li>Chapter 3, Page 32<ul>
-<li>For copper connections to &lt; 1Gbps BaseT switches a crossover cable is needed (but it might not be if MDI/MDIX works..).</li>
-<li>LC connectors for fiber ports</li>
-</ul>
-</li>
-</ul>
-<p><strong>VDX 6730 Hardware Reference Manual <em>53-1002389-06:</em></strong> Pages 1,2,15</p>
-<ul>
-<li>6730-32: 32-ports. 6730-76: 76 ports. 8 or 16 x 8GB FC ports.</li>
-</ul>
-<h3 id="network-os-software-licensing-guide-v41-53-1003164-01"><strong>Network OS Software Licensing Guide v4.1 <em>53-1003164-01</em></strong></h3>
-<p>Pages 11-13</p>
-<ul>
-<li>All have FCoE license (except 6710).</li>
-<li>All have POD licenses (except 8770)</li>
-<li>6740 have 10/40GbE port upgrades</li>
-<li>8770 have L3 and Advanced Services</li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>for multi-hop FCoE it is needed on each node</li>
-<li>L3: OSFP, VRRP, PIM-SM, Route-Maps, prefix list</li>
-<li>Advanced: FCoE and L3</li>
-<li>After installing a time-based license you cannot change system date or time. NTP is however not blocked. If you are using NTP, don't change system date/time when a time-based license is installed.</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcefp-2015-studying-for-the-exam-part-2.html" rel="bookmark"
-                           title="Permalink to "BCEFP 2015 – Studying for the exam - part 2"">"BCEFP 2015 – Studying for the exam - part 2"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-05-21T00:00:00+03:00">
-                Published: "2014-05-21"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
-</footer><!-- /.post-info -->                <p>This second post  focuses on the NOS Admin Guide.</p>
-<p>When I make comments to CLI commands I put them after a #.</p>
-<p>This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional.</p>
-<p>The two previous posts: <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">Objectives and reading materials</a> and <a href="http://www.guldmyr.com/blog/bcefp-2015-studying-for-the-exam/" title="BCEFP 2015 – Studying for the exam">course …</a></p>
-                <a class="readmore" href="/bcefp-2015-studying-for-the-exam-part-2.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcefp-2015-studying-for-the-exam.html" rel="bookmark"
-                           title="Permalink to "BCEFP 2015 - Studying for the exam"">"BCEFP 2015 - Studying for the exam"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-05-07T00:00:00+03:00">
-                Published: "2014-05-07"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
-</footer><!-- /.post-info -->                <p>In a <a href="http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/" title="Brocade Certified Ethernet Fabric Professional 2015 Beta Exam">previous post</a> I listed a some of the sources Brocade listed that one should use when studying for the BCEFP exam. Here I'm going through a those I found some comments on what what they are and what I think of them.</p>
-<h2 id="beta-course-material">Beta Course Material</h2>
-<p>The first of …</p>
-                <a class="readmore" href="/bcefp-2015-studying-for-the-exam.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/brocade-certified-ethernet-fabric-professional-2015-beta-exam.html" rel="bookmark"
-                           title="Permalink to "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam"">"Brocade Certified Ethernet Fabric Professional 2015 Beta Exam"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-04-18T00:00:00+03:00">
-                Published: "2014-04-18"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/ethernet.html">ethernet</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> </p>
-</footer><!-- /.post-info -->                <h2 id="intro">Intro</h2>
-<p><a href="http://community.brocade.com/t5/Certification/BCEFP-2015-Beta-Exam-Information-and-Study-Material/ta-p/58276">http://community.brocade.com/t5/Certification/BCEFP-2015-Beta-Exam-Information-and-Study-Material/ta-p/58276</a></p>
-<p>The course materials, including references to various resources such as the NOS Admin guide are available on the page above.</p>
-<p>The Advanced Ethernet Fabric Troubleshooting (VDX-TS 300-WBT) has the pdf's on the link above, but it's also currently free on …</p>
-                <a class="readmore" href="/brocade-certified-ethernet-fabric-professional-2015-beta-exam.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcfp-16g-beta-i-passed.html" rel="bookmark"
-                           title="Permalink to "BCFP 16G Beta - I passed!"">"BCFP 16G Beta - I passed!"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-10-15T00:00:00+03:00">
-                Published: "2011-10-15"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/storage.html">storage</a> <a href="/tag/area.html">area</a> <a href="/tag/network.html">network</a> </p>
-</footer><!-- /.post-info -->                <p>In a moment of frustration/impatience I posted on 'Brocade Certified' that it was still 3 weeks until the results are posted. Good boss of training Joe Cannata replied that I could e-mail him and get the results before. I did, and I passed! Most excellent and kind of them …</p>
-                <a class="readmore" href="/bcfp-16g-beta-i-passed.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcfp-16g-post-exam.html" rel="bookmark"
-                           title="Permalink to "BCFP 16G : Post-Exam"">"BCFP 16G : Post-Exam"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-09-07T00:00:00+03:00">
-                Published: "2011-09-07"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/storage.html">storage</a> <a href="/tag/area.html">area</a> <a href="/tag/network.html">network</a> </p>
-</footer><!-- /.post-info -->                <p>OK, did the exam. Took 2.5 hours.</p>
-<p>It felt like I was plowing through them pretty fast but after some 80-questions the speed dropped significantly and I started to have trouble focusing. Short unfocus/try to think about something else , stand up a bit helped. This test wasn't as …</p>
-                <a class="readmore" href="/bcfp-16g-post-exam.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcfp-how-to-prepare-for-the-exam.html" rel="bookmark"
-                           title="Permalink to "BCFP - How to prepare for the exam"">"BCFP - How to prepare for the exam"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-09-03T00:00:00+03:00">
-                Published: "2011-09-03"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/exam.html">exam</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>Until now I've been just reading the material, when there's something unclear in the material I've looked it up in command reference guides, release notes, user guides or otherwise on the Intertubes.</p>
-<p>This doesn't really prepare you for the format the exam is in. I mean the exam is in …</p>
-                <a class="readmore" href="/bcfp-how-to-prepare-for-the-exam.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcfp-good-threads-in-the-brocade-forum.html" rel="bookmark"
-                           title="Permalink to "BCFP - good threads in the brocade forum"">"BCFP - good threads in the brocade forum"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-08-24T00:00:00+03:00">
-                Published: "2011-08-24"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/fc.html">fc</a> <a href="/tag/fcip.html">fcip</a> <a href="/tag/fcr.html">fcr</a> <a href="/tag/fibre.html">fibre</a> <a href="/tag/channel.html">channel</a> <a href="/tag/forum.html">forum</a> <a href="/tag/mybrocade.html">mybrocade</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> </p>
-</footer><!-- /.post-info -->                <p>How to set up two FCIP tunnels between two B7500: http://community.brocade.com/message/15261</p>
-<p>Connecting two sites via FCR: http://community.brocade.com/message/16828#16828</p>
-<p>Set up FCIP between two B7800: http://community.brocade.com/message/14216#14216</p>
-<p>Why is there an IP in ipaddrshow on FC …</p>
-                <a class="readmore" href="/bcfp-good-threads-in-the-brocade-forum.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcfp-more-studying.html" rel="bookmark"
-                           title="Permalink to "BCFP - more studying"">"BCFP - more studying"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-08-23T00:00:00+03:00">
-                Published: "2011-08-23"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/rehearse.html">rehearse</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/network.html">network</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>OK, so now you've been studying for a while? Read the material once or twice, made notes. Have you read more details about a command in the command reference guide, or more details about a technique in the FCIP Admin Guide or the FOS guide? <strong>Or how do you do …</strong></p>
-                <a class="readmore" href="/bcfp-more-studying.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/bcfp-16g-studying.html" rel="bookmark"
-                           title="Permalink to "BCFP - 16G Studying"">"BCFP - 16G Studying"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-08-22T00:00:00+03:00">
-                Published: "2011-08-22"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/bcfp.html">bcfp</a> <a href="/tag/brocade.html">brocade</a> <a href="/tag/certified.html">certified</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/professional.html">professional</a> <a href="/tag/certification.html">certification</a> <a href="/tag/data.html">data</a> <a href="/tag/storage.html">storage</a> <a href="/tag/san.html">san</a> <a href="/tag/network.html">network</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>Another studying tip!</p>
-<p>Head over to the forum/community at Brocade. Do it. After you read this post :p</p>
-<p>For example in the BCFP there will be questions about NPIV, so it makes sense to read the forum for threads regarding NPIV. Right? I mean there's bound to be troubleshooting …</p>
-                <a class="readmore" href="/bcfp-16g-studying.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 2
-        <a href="/tag/professional2.html">&raquo;</a>
-        <a href="/tag/professional2.html">&#8649;</a>
-</p>
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #professional Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-05-30T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-05-30
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcefp-2015-studying-for-the-exam-part-3.html">BCEFP 2015 – Studying for the exam - part 3</a>
+        </h4>
+        <div class="content">
+          This third post focuses on the remaining sources of information I had for studying for the BCEPF. At the time this post is published I have taken the exam. When I make comments to CLI commands I put them after a #. This is part of a series of posts on …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-05-21T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-05-21
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcefp-2015-studying-for-the-exam-part-2.html">BCEFP 2015 – Studying for the exam - part 2</a>
+        </h4>
+        <div class="content">
+          This second post focuses on the NOS Admin Guide. When I make comments to CLI commands I put them after a #. This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional. The two previous posts: Objectives and reading materials and course …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-05-07T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-05-07
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcefp-2015-studying-for-the-exam.html">BCEFP 2015 - Studying for the exam</a>
+        </h4>
+        <div class="content">
+          In a previous post I listed a some of the sources Brocade listed that one should use when studying for the BCEFP exam. Here I'm going through a those I found some comments on what what they are and what I think of them. Beta Course Material The first of …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-04-18T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-04-18
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/brocade-certified-ethernet-fabric-professional-2015-beta-exam.html">Brocade Certified Ethernet Fabric Professional 2015 Beta Exam</a>
+        </h4>
+        <div class="content">
+          Intro http://community.brocade.com/t5/Certification/BCEFP-2015-Beta-Exam-Information-and-Study-Material/ta-p/58276 The course materials, including references to various resources such as the NOS Admin guide are available on the page above. The Advanced Ethernet Fabric Troubleshooting (VDX-TS 300-WBT) has the pdf's on the link above, but it's also currently free on …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-15T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-15
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-16g-beta-i-passed.html">BCFP 16G Beta - I passed!</a>
+        </h4>
+        <div class="content">
+          In a moment of frustration/impatience I posted on 'Brocade Certified' that it was still 3 weeks until the results are posted. Good boss of training Joe Cannata replied that I could e-mail him and get the results before. I did, and I passed! Most excellent and kind of them …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-09-07T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-09-07
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-16g-post-exam.html">BCFP 16G : Post-Exam</a>
+        </h4>
+        <div class="content">
+          OK, did the exam. Took 2.5 hours. It felt like I was plowing through them pretty fast but after some 80-questions the speed dropped significantly and I started to have trouble focusing. Short unfocus/try to think about something else , stand up a bit helped. This test wasn't as …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-09-03T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-09-03
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-how-to-prepare-for-the-exam.html">BCFP - How to prepare for the exam</a>
+        </h4>
+        <div class="content">
+          Until now I've been just reading the material, when there's something unclear in the material I've looked it up in command reference guides, release notes, user guides or otherwise on the Intertubes. This doesn't really prepare you for the format the exam is in. I mean the exam is in …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-08-24T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-08-24
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-good-threads-in-the-brocade-forum.html">BCFP - good threads in the brocade forum</a>
+        </h4>
+        <div class="content">
+          How to set up two FCIP tunnels between two B7500: http://community.brocade.com/message/15261 Connecting two sites via FCR: http://community.brocade.com/message/16828#16828 Set up FCIP between two B7800: http://community.brocade.com/message/14216#14216 Why is there an IP in ipaddrshow on FC …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-08-23T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-08-23
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-more-studying.html">BCFP - more studying</a>
+        </h4>
+        <div class="content">
+          OK, so now you've been studying for a while? Read the material once or twice, made notes. Have you read more details about a command in the command reference guide, or more details about a technique in the FCIP Admin Guide or the FOS guide? Or how do you do …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-08-22T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-08-22
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/bcfp-16g-studying.html">BCFP - 16G Studying</a>
+        </h4>
+        <div class="content">
+          Another studying tip! Head over to the forum/community at Brocade. Do it. After you read this post :p For example in the BCFP there will be questions about NPIV, so it makes sense to read the forum for threads regarding NPIV. Right? I mean there's bound to be troubleshooting …
+        </div>
+      </div>
+    </article>
+  <hr>
+  <ul class="pagination">
+    <li class="page-item">
+      <span class="page-link">1 of 2</span>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="/tag/professional2.html">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+  </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

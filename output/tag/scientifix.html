@@ -1,137 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - scientifix</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #scientifix Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/scientifix.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/scientific-linux-6-basic-setup.html">"Scientific Linux 6 - Basic Setup"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-10-26T00:00:00+03:00">
-                Published: "2011-10-26"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info --><h2 id="not-allowing-root-to-log-in">Not allowing root to log in</h2>
-<p>By default sshd is running on SL6 and you can ssh in with 'root'.</p>
-<p>Probably a good idea to change this in /etc/ssh/sshd_config</p>
-<p>permitrootlogin no</p>
-<p>But first, create a user that can log in.</p>
-<p>useradd mart
-passwd mart</p>
-<p>Then you can change sshd_config and 'service sshd reload'.</p>
-<p>Then you can ssh in and either hit' su -' to get root access. Or, if you hit 'visudo' and add your user. You can later just type 'sudo bash' to get a root bash shell.</p>
-<h2 id="firewall">Firewall</h2>
-<p>iptables -L to view the firewall setup, note that there is a 'virbr0' interface that has forwarding rules. This is probably for NAT or bridging for potential virtual machines, and was probably created when we chose 'Virtual Host' as the role for the system. iptables-save : another view that may be easier to understand. This you can put in 'file' and then hit iptables-restore &lt; file.</p>
-<h2 id="slow-before-you-get-the-login-prompt-while-ssh-ing">Slow before you get the login prompt while ssh-ing?</h2>
-<p>To see what is happening, ssh in with 'ssh -v ip'. In my case I saw</p>
-<blockquote>
-<p>debug1: An invalid name was supplied Cannot determine real for numeric host address</p>
-</blockquote>
-<p>A little googling showed me that this is because your machine doesn't have a name lookup for that IP. So go ahead and add one in /etc/hosts and then it will be fast.</p>
-<h2 id="notice-that-your-ssh-stops-working-after-a-while-doesnt-accept-input">Notice that your ssh stops working after a while? Doesn't accept input?</h2>
-<p>If so, add this to your ~/.ssh/config file:</p>
-<p>Host *
-   ServerAliveInterval 60</p>
-<p>Make sure there is at least a space on the second line. I have three :p You can change the * to a specific domain if you do not want to do this on all your boxes. If the file doesn't exist, create it.</p>
-<h2 id="run-sshd-on-a-second-port">Run sshd on a second port.</h2>
-<ol>
-<li>Edit /etc/ssh/sshd_config</li>
-<li>Add a line saying: Port 6666</li>
-<li>look in /etc/hosts.allow (any entries? good)</li>
-<li>iptables-save &gt; ~/fwrules</li>
-<li>vi fwrules</li>
-<li>copy the --dport 22 line and paste a new one above the -j REJECT lines (vi commands: yy and P)</li>
-<li>change the 22 to 6666 (vi commands: x for delete, R for replace mode. :wq! to save and quit)</li>
-<li>iptables-restore &lt; ~/fwrules</li>
-<li>/etc/init.d/sshd restart</li>
-</ol>
-<p>If you want you can hit: iptables -L or iptables-save. These will also show the current iptables rules. See ip6tables for IPv6 rules.</p>
-<p>Now the port is running on another non-standard port (you could set it to whatever you want, as long as it's lower then 65536 and preferably higher than 1024). This might be good for security reasons. You could still have port 22 open for access from your internal network (see adding a -s ip.add.r.ess on the row in the iptables rules) and the other one accessible from the internet or maybe even a specific network / address on the internet for even more security.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/install-scientific-linux-6-in-vmware-workstation.html" rel="bookmark"
-                           title="Permalink to "Install Scientific Linux 6 in VMWare Workstation"">"Install Scientific Linux 6 in VMWare Workstation"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-10-02T00:00:00+03:00">
-                Published: "2011-10-02"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/scientifix.html">scientifix</a> <a href="/tag/sl.html">sl</a> <a href="/tag/studying.html">studying</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <p>Time for some more Linux testing.</p>
-<p>The reason for this is because I think I will go ahead and try to study for the <a href="http://www.redhat.com/certification/rhcsa/" title="on redhat.com">RHCSA</a> - Red Hat Certified System Administrator. Work might send me to a course in December, probably wise to play around with it before this.</p>
-<p>So here …</p>
-                <a class="readmore" href="/install-scientific-linux-6-in-vmware-workstation.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #scientifix Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-26T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-26
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/scientific-linux-6-basic-setup.html">Scientific Linux 6 - Basic Setup</a>
+        </h4>
+        <div class="content">
+          Not allowing root to log in By default sshd is running on SL6 and you can ssh in with 'root'. Probably a good idea to change this in /etc/ssh/sshd_config permitrootlogin no But first, create a user that can log in. useradd mart passwd mart Then you can change …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-10-02T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-10-02
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/install-scientific-linux-6-in-vmware-workstation.html">Install Scientific Linux 6 in VMWare Workstation</a>
+        </h4>
+        <div class="content">
+          Time for some more Linux testing. The reason for this is because I think I will go ahead and try to study for the RHCSA - Red Hat Certified System Administrator. Work might send me to a course in December, probably wise to play around with it before this. So here …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

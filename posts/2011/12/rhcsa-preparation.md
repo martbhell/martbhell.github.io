@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Certification - RHCSA - Preparation"
+title: Red Hat Certification - RHCSA - Preparation
 date: 2011-12-09
 category: it
 tags: boot, booting, certification, chcon, context, iso, kickstart, kvm, libvirt, linux, network, qemu, red, hat, rhcsa, selinux, studying, virt, manager

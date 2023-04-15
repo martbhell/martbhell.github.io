@@ -1,5 +1,5 @@
 ---
-title: "BCFP - How to prepare for the exam"
+title: BCFP - How to prepare for the exam
 date: 2011-09-03
 category: storage
 tags: bcfp, brocade, certified, fabric, professional, certification, exam, studying

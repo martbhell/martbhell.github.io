@@ -1,5 +1,5 @@
 ---
-title: "Red Hat - Clustering and Storage Management - Course Objectives"
+title: Red Hat - Clustering and Storage Management - Course Objectives
 date: 2013-08-15
 category: it, storage
 tags: certification, cluster, iscsi, linux, lvm, openstack, red, hat, rhce, storage

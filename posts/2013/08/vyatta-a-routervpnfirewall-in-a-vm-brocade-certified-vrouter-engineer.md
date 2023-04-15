@@ -1,5 +1,5 @@
 ---
-title: "Vyatta: a router/vpn/firewall in a VM"
+title: Vyatta: a router/vpn/firewall in a VM
 date: 2013-08-26
 category: it, storage
 tags: bcvre, brocade, certified, exam, open, source, virtualization

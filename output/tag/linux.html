@@ -1,306 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - linux</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #linux Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/linux.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/home-network-convergence.html">"Home Network Convergence"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-07-14T00:00:00+03:00">
-                Published: "2019-07-14"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/chromecast.html">chromecast</a> <a href="/tag/dnsmasq.html">dnsmasq</a> <a href="/tag/hostapd.html">hostapd</a> <a href="/tag/linux.html">linux</a> <a href="/tag/media.html">media</a> <a href="/tag/server.html">server</a> <a href="/tag/openwrt.html">openwrt</a> <a href="/tag/raspberry.html">raspberry</a> <a href="/tag/pi.html">pi</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/lan.html">lan</a> <a href="/tag/wi.html">wi</a> <a href="/tag/fi.html">fi</a> <a href="/tag/wireless.html">wireless</a> <a href="/tag/access.html">access</a> <a href="/tag/point.html">point</a> </p>
-</footer><!-- /.post-info --><p>Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone.</p>
-<p>I've been thinking lately and in previous posts that maybe I should just get an access point and plug it in a port in the correct VLAN near the TV, as mentioned in a previous posts in https://www.guldmyr.com/blog/vlan-in-the-home-network/ or https://www.guldmyr.com/blog/some-updates-to-the-home-network/</p>
-<p>But then the other day I started looking at maybe the raspberry Pi I have as a media player could be turned into an access point? (some googling suggest it could be done, but several talk about basic linux install with hostapd and dnsmasq which maybe openwrt would be more fun).</p>
-<p>Then I realized that I already have an access point over there which is what phones and the chromecast is connected to and I don't want a third wifi network at home!</p>
-<p>Finally the solution is to get the media server onto the same network as the chromecast. This I could now after the VLAN changes do quite easily.</p>
-<p>Steps: - take the desktop's cable and put it in a dumb 1GbE switch I had unused - new cable from my desktop's system board NIC to go same a switch - at this point ssh into media server from internet (because it has no monitor/keyboard) - add usb NIC to the media server and connect to the switch - setup static NIC without default gw etc - update firewalls</p>
-<p>Things learnt: - the USB NIC got a funny and long interface name when I plugged it in. On next reboot it got eth0. So the network interface config I wrote initially didn't really work anymore :)</p>
-<p>Feels good to not have to this this old and unmaintained media player on the raspberry pi anymore. The android app I use even supports EAC3!</p>
-<p>Next I'm wondering what to do with that raspberry pi! retropie maybe?</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/lustre-25-centos6-test-in-openstack.html" rel="bookmark"
-                           title="Permalink to "Lustre 2.5 + CentOS6 Test in OpenStack"">"Lustre 2.5 + CentOS6 Test in OpenStack"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-05-30T00:00:00+03:00">
-                Published: "2014-05-30"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/openstack.html">openstack</a> </p>
-</footer><!-- /.post-info -->                <p>Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.</p>
-<p>Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented …</p>
-                <a class="readmore" href="/lustre-25-centos6-test-in-openstack.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/arch-linux-on-a-t400-log.html" rel="bookmark"
-                           title="Permalink to "Arch Linux on a T400 - Log"">"Arch Linux on a T400 - Log"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-12-14T00:00:00+02:00">
-                Published: "2013-12-14"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/arch.html">arch</a> <a href="/tag/linux.html">linux</a> <a href="/tag/install.html">install</a> <a href="/tag/laptop.html">laptop</a> <a href="/tag/lenovo.html">lenovo</a> <a href="/tag/t400.html">t400</a> </p>
-</footer><!-- /.post-info -->                <p>Trying out Arch Linux on a Lenovo T400!</p>
-<p>First step after getting the T400 Dual Core Centrino 2.26GHz 4GB RAM: replace the 160GB spinning rust to a 120GB Samsung 840. Very easy to take out the old disk and put the new SSD in the carrier.</p>
-<p><a href="https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_T400">https://wiki.archlinux …</a></p>
-                <a class="readmore" href="/arch-linux-on-a-t400-log.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-clustering-and-storage-management-course-objectives-part-2.html" rel="bookmark"
-                           title="Permalink to "Red Hat – Clustering and Storage Management – Course Objectives - part 2"">"Red Hat – Clustering and Storage Management – Course Objectives - part 2"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-08-21T00:00:00+03:00">
-                Published: "2013-08-21"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lvm.html">lvm</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/storage.html">storage</a> </p>
-</footer><!-- /.post-info -->                <p>Post 1 - <a href="http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/">http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/</a> Where I checked out udev, multipathing, iscsi, LVM and xfs.</p>
-<p><strong>This</strong> post is about getting using luci/ricci to get a Red Hat cluster working, but not on a RHEL machine because sadly I do not have one available for practice purposes …</p>
-                <a class="readmore" href="/red-hat-clustering-and-storage-management-course-objectives-part-2.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/red-hat-clustering-and-storage-management-course-objectives.html" rel="bookmark"
-                           title="Permalink to "Red Hat - Clustering and Storage Management - Course Objectives"">"Red Hat - Clustering and Storage Management - Course Objectives"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-08-15T00:00:00+03:00">
-                Published: "2013-08-15"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/iscsi.html">iscsi</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lvm.html">lvm</a> <a href="/tag/openstack.html">openstack</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhce.html">rhce</a> <a href="/tag/storage.html">storage</a> </p>
-</footer><!-- /.post-info -->                <p>Attending "Red Hat Enterprise Clustering and Storage Management" in August. Quite a few of these technologies I haven't touched upon before so probably best to go through them before the course.</p>
-<p>Initially I wonder how many of these are Red Hat specific, or how many of these I can accomplish …</p>
-                <a class="readmore" href="/red-hat-clustering-and-storage-management-course-objectives.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/sdn-course-interview-with-google-network-lead.html" rel="bookmark"
-                           title="Permalink to "SDN Course - Interview with Google Network Lead"">"SDN Course - Interview with Google Network Lead"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-07-31T00:00:00+03:00">
-                Published: "2013-07-31"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pyretic.html">pyretic</a> <a href="/tag/python.html">python</a> <a href="/tag/resonance.html">resonance</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>This week in the <a href="https://www.coursera.org/course/sdn">SDN course</a> on coursera there were lots of examples of real use of SDN stuff, for example like the B4 WAN by Google. They got a really <em>interesting</em> and <em>cool</em> interview with the Network Lead at Google - Amin Vahdat. And! They actually put this <a href="http://www.youtube.com/watch?v=8I6YevjRFQ0" title="http://www.youtube.com/watch?v=8I6YevjRFQ0">interview up …</a></p>
-                <a class="readmore" href="/sdn-course-interview-with-google-network-lead.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/make-your-own-l2-firewall.html" rel="bookmark"
-                           title="Permalink to "Make your own L2 Firewall!"">"Make your own L2 Firewall!"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-07-17T00:00:00+03:00">
-                Published: "2013-07-17"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pox.html">pox</a> <a href="/tag/python.html">python</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>Is what I did this week during the <a href="https://www.coursera.org/course/sdn" title="https://www.coursera.org/course/sdn">SDN Course</a> on Coursera :)</p>
-<p>Within <a href="http://mininet.org/" title="http://mininet.org/">mininet</a> or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to …</p>
-                <a class="readmore" href="/make-your-own-l2-firewall.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/running-ubuntu-on-a-desktop.html" rel="bookmark"
-                           title="Permalink to "Running Ubuntu on a Desktop"">"Running Ubuntu on a Desktop"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-12-15T00:00:00+02:00">
-                Published: "2012-12-15"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/desktop.html">desktop</a> <a href="/tag/install.html">install</a> <a href="/tag/linux.html">linux</a> <a href="/tag/operating.html">operating</a> <a href="/tag/system.html">system</a> <a href="/tag/tips.html">tips</a> <a href="/tag/ubuntu.html">ubuntu</a> </p>
-</footer><!-- /.post-info -->                <h1 id="introduction">Introduction</h1>
-<p>Recently I've had the pleasure of installing Ubuntu on my desktop. Here are some thoughts and what I initially do:</p>
-<p>Machine is a:</p>
-<p>Motherboard: Gigayte GA-EX58-UD3R CPU: Intel Core i7 Memory: 8GB Disks: Intel i300 SSD, 2x500GB and 1x3TB Western Digital Drives. Graphics Card: AMD HD6800</p>
-<p>Here are some …</p>
-                <a class="readmore" href="/running-ubuntu-on-a-desktop.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt.html" rel="bookmark"
-                           title="Permalink to "cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"">"cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-11-11T00:00:00+02:00">
-                Published: "2012-11-11"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/automation.html">automation</a> <a href="/tag/cfe.html">cfe</a> <a href="/tag/cfengine.html">cfengine</a> <a href="/tag/cms.html">cms</a> <a href="/tag/linux.html">linux</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/resolv.html">resolv</a> <a href="/tag/conf.html">conf</a> <a href="/tag/resolver.html">resolver</a> <a href="/tag/salt.html">salt</a> <a href="/tag/highstate.html">highstate</a> <a href="/tag/script.html">script</a> <a href="/tag/scripting.html">scripting</a> </p>
-</footer><!-- /.post-info -->                <p>Building on the <a href="http://www.guldmyr.com/blog/cfengine-whats-that-all-about/" title="cfengine – what’s that about?">initial post</a> about cfengine we're going to try out some things that may actually be useful.</p>
-<p>My goal would be to make /etc/resolv.conf identical between all the machines.</p>
-<p>The server setup is the lustre cluster we built in a previous post.</p>
-<p>In this post you'll …</p>
-                <a class="readmore" href="/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/setup-a-3-node-lustre-filesystem.html" rel="bookmark"
-                           title="Permalink to "Setup a 3 Node Lustre Filesystem"">"Setup a 3 Node Lustre Filesystem"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-10-13T00:00:00+03:00">
-                Published: "2012-10-13"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/storage.html">storage</a>.</p>
-<p>tags: <a href="/tag/centos.html">centos</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/filesystem.html">filesystem</a> <a href="/tag/install.html">install</a> <a href="/tag/kernel.html">kernel</a> <a href="/tag/linux.html">linux</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/mds.html">mds</a> <a href="/tag/oss.html">oss</a> <a href="/tag/ost.html">ost</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/rpmbuild.html">rpmbuild</a> <a href="/tag/san.html">san</a> <a href="/tag/storage.html">storage</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/yum.html">yum</a> </p>
-</footer><!-- /.post-info -->                <h1 id="introduction">Introduction</h1>
-<p>Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously.</p>
-<p>This is a small log/instruction for how to setup <a href="http://wiki.whamcloud.com/display/PUB/Documentation" title="whamcloud wiki">Lustre</a> in 3 virtualized machines (one metadata server, one object storage server and one client).</p>
-<p>Basic components:</p>
-<p>VMWare Workstation <a href="http://www.nic.funet.fi" title="finnish mirror">3 x CentOS</a> 6 …</p>
-                <a class="readmore" href="/setup-a-3-node-lustre-filesystem.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 8
-        <a href="/tag/linux2.html">&raquo;</a>
-        <a href="/tag/linux8.html">&#8649;</a>
-</p>
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #linux Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2019-07-14T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2019-07-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/home-network-convergence.html">Home Network Convergence</a>
+        </h4>
+        <div class="content">
+          Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone. I've been thinking lately and in previous posts that maybe I should just get …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2014-05-30T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2014-05-30
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/lustre-25-centos6-test-in-openstack.html">Lustre 2.5 + CentOS6 Test in OpenStack</a>
+        </h4>
+        <div class="content">
+          Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack. Three VMs: two servers, one MDS, one OSS and one Client. CentOS65 on all. An open internal ethernet network for the lustre traffic (don't forget firewalls). Yum updated to latest kernel. Two volumes presented …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-12-14T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2013-12-14
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/arch-linux-on-a-t400-log.html">Arch Linux on a T400 - Log</a>
+        </h4>
+        <div class="content">
+          Trying out Arch Linux on a Lenovo T400! First step after getting the T400 Dual Core Centrino 2.26GHz 4GB RAM: replace the 160GB spinning rust to a 120GB Samsung 840. Very easy to take out the old disk and put the new SSD in the carrier. https://wiki.archlinux …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-08-21T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-08-21
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-clustering-and-storage-management-course-objectives-part-2.html">Red Hat – Clustering and Storage Management – Course Objectives - part 2</a>
+        </h4>
+        <div class="content">
+          Post 1 - http://www.guldmyr.com/blog/red-hat-clustering-and-storage-management-course-objectives/ Where I checked out udev, multipathing, iscsi, LVM and xfs. This post is about getting using luci/ricci to get a Red Hat cluster working, but not on a RHEL machine because sadly I do not have one available for practice purposes …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-08-15T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-08-15
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-clustering-and-storage-management-course-objectives.html">Red Hat - Clustering and Storage Management - Course Objectives</a>
+        </h4>
+        <div class="content">
+          Attending "Red Hat Enterprise Clustering and Storage Management" in August. Quite a few of these technologies I haven't touched upon before so probably best to go through them before the course. Initially I wonder how many of these are Red Hat specific, or how many of these I can accomplish …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-07-31T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-07-31
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/sdn-course-interview-with-google-network-lead.html">SDN Course - Interview with Google Network Lead</a>
+        </h4>
+        <div class="content">
+          This week in the SDN course on coursera there were lots of examples of real use of SDN stuff, for example like the B4 WAN by Google. They got a really interesting and cool interview with the Network Lead at Google - Amin Vahdat. And! They actually put this interview up …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-07-17T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-07-17
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/make-your-own-l2-firewall.html">Make your own L2 Firewall!</a>
+        </h4>
+        <div class="content">
+          Is what I did this week during the SDN Course on Coursera :) Within mininet or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-12-15T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2012-12-15
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/running-ubuntu-on-a-desktop.html">Running Ubuntu on a Desktop</a>
+        </h4>
+        <div class="content">
+          Introduction Recently I've had the pleasure of installing Ubuntu on my desktop. Here are some thoughts and what I initially do: Machine is a: Motherboard: Gigayte GA-EX58-UD3R CPU: Intel Core i7 Memory: 8GB Disks: Intel i300 SSD, 2x500GB and 1x3TB Western Digital Drives. Graphics Card: AMD HD6800 Here are some …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-11-11T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2012-11-11
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt.html">cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?</a>
+        </h4>
+        <div class="content">
+          Building on the initial post about cfengine we're going to try out some things that may actually be useful. My goal would be to make /etc/resolv.conf identical between all the machines. The server setup is the lustre cluster we built in a previous post. In this post you'll …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-10-13T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2012-10-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/storage.html">storage</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/setup-a-3-node-lustre-filesystem.html">Setup a 3 Node Lustre Filesystem</a>
+        </h4>
+        <div class="content">
+          Introduction Lustre is a filesystem often used by clusters because many computers can mount the filesystem simultaneously. This is a small log/instruction for how to setup Lustre in 3 virtualized machines (one metadata server, one object storage server and one client). Basic components: VMWare Workstation 3 x CentOS 6 …
+        </div>
+      </div>
+    </article>
+  <hr>
+  <ul class="pagination">
+    <li class="page-item">
+      <span class="page-link">1 of 8</span>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="/tag/linux2.html">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+  </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

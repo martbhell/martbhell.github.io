@@ -1,5 +1,5 @@
 ---
-title: "Contributing To OpenStack Upstream"
+title: Contributing To OpenStack Upstream
 date: 2019-07-22
 category: it
 tags: backporting, gerrit, git, keystone, openstack, puppet, rdo, vancouver

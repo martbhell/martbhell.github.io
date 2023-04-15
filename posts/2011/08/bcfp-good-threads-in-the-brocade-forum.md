@@ -1,5 +1,5 @@
 ---
-title: "BCFP - good threads in the brocade forum"
+title: BCFP - good threads in the brocade forum
 date: 2011-08-24
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, fc, fcip, fcr, fibre, channel, forum, mybrocade, san, storage

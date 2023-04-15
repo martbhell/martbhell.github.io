@@ -1,5 +1,5 @@
 ---
-title: "saaristoleipä"
+title: saaristoleipä
 date: 2023-01-18
 category: finland
 tags: baking, leipa, recipe, resepti, reseptit, saaristolaisleippa

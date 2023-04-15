@@ -1,5 +1,5 @@
 ---
-title: "Fibre Channel SAN - Zoning in Detail"
+title: Fibre Channel SAN - Zoning in Detail
 date: 2012-01-19
 category: storage
 tags: fibre, channel, san, storage, storage, area, network, storage, network, zoning

@@ -1,5 +1,5 @@
 ---
-title: "Finnish IT Words"
+title: Finnish IT Words
 date: 2011-01-24
 category: finland, it
 tags: finland, finnish, it, 2, language, study

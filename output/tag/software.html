@@ -1,301 +1,293 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - software</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #software Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/software.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/taking-puppet-ghostbuster-for-a-spin.html">"Taking puppet-ghostbuster for a spin"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-07-18T00:00:00+03:00">
-                Published: "2019-07-18"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/hiera.html">hiera</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/software.html">software</a> <a href="/tag/ssh.html">ssh</a> </p>
-</footer><!-- /.post-info --><p>We use puppet at $dayjob to configure OpenStack.</p>
-<p>I wanted to know if there's a lot of unused code in our manifests!</p>
-<p>**From left of stage enters: https://github.com/camptocamp/puppet-ghostbuster **</p>
-<p>Step one is to install the puppet modules and gems and whatnot, this blog post was good about that: <a href="https://codingbee.net/puppet/puppet-identifying-dead-puppet-code-using-puppet-ghostbuster">https://codingbee.net/puppet/puppet-identifying-dead-puppet-code-using-puppet-ghostbuster</a></p>
-<p>Next I needed to get the HTTP forwarding of the puppetdb working, this can apparently (I learnt about ssh -J) be done with:</p>
-<blockquote>
-<p>ssh -J jumphost.example.org INTERNALIPOFPUPPETMASTER -L 8081:localhost:8080</p>
-</blockquote>
-<p>Then for setting some variables pointing to hiera.yaml and setting</p>
-<blockquote>
-<p>PUPPETDB_URL=http://localhost:8081 HIERA_YAML=/tmp/hiera.yaml</p>
-</blockquote>
-<p>Unsure if hiera.yaml works, just copied it in from the puppetmaster</p>
-<p>Then running it</p>
-<blockquote>
-<p>find . -type f -name '*.pp' -exec puppet-lint --only-checks ghostbuster_classes,ghostbuster_defines,ghostbuster_facts,ghostbuster_files,ghostbuster_functions,ghostbuster_hiera_files,ghostbuster_templates,ghostbuster_types {} \+|grep OURMODULE</p>
-</blockquote>
-<p>Got some output! Are they correct?</p>
-<blockquote>
-<p>./modules/OURMODULE/manifests/profile/apache.pp - WARNING: Class OURMODULE::Profile::Apache seems unused on line 6</p>
-</blockquote>
-<p>But actually we have a role that contains:</p>
-<blockquote>
-<p>class { 'OURMODULE::profile::apache': }</p>
-</blockquote>
-<p>So I'm not sure what is up... But if I don't run all the ghostbuster and instead skip the ghostbuster_classes test I get a lot fewer warnings for our module.</p>
-<blockquote>
-<p>/modules/OURMODULE/manifests/profile/keystone/user.pp - WARNING: Define OURMODULE::Profile::Keystone::User seems unused on line 2</p>
-</blockquote>
-<p>Looking in that one we have a "OURMODULE::profile::keystone::user" which calls keystone_user and keystone_user_role. However we do call it but like this:</p>
-<blockquote>
-<p>OURMODULE::Profile::Keystone::User&lt;| title == 'barbican' |&gt;</p>
-</blockquote>
-<p>Or in this other place:</p>
-<blockquote>
-<p>create_resources(OURMODULE::profile::keystone::user, $users)</p>
-</blockquote>
-<p>Let's look at the next. which was also a "create_resources" . Meh. Same same. And if I skip the ghostbuster_defines? No errors :) Well it was worth a shot. Some googling on the topic hints that it might not be possible with the way puppet works.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/commandoio-manage-servers.html" rel="bookmark"
-                           title="Permalink to "commando.io - manage servers"">"commando.io - manage servers"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-11-13T00:00:00+02:00">
-                Published: "2013-11-13"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cms.html">cms</a> <a href="/tag/commando.html">commando</a> <a href="/tag/io.html">io</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/management.html">management</a> <a href="/tag/software.html">software</a> <a href="/tag/servers.html">servers</a> </p>
-</footer><!-- /.post-info -->                <p><a href="https://command.io" title="https://command.io">https://command.io</a> is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface.</p>
-<p>It uses ssh - you need to allow commando.io's server to ssh into your server. You can specify with which user, which port and …</p>
-                <a class="readmore" href="/commandoio-manage-servers.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/sdn-course-interview-with-google-network-lead.html" rel="bookmark"
-                           title="Permalink to "SDN Course - Interview with Google Network Lead"">"SDN Course - Interview with Google Network Lead"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-07-31T00:00:00+03:00">
-                Published: "2013-07-31"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pyretic.html">pyretic</a> <a href="/tag/python.html">python</a> <a href="/tag/resonance.html">resonance</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>This week in the <a href="https://www.coursera.org/course/sdn">SDN course</a> on coursera there were lots of examples of real use of SDN stuff, for example like the B4 WAN by Google. They got a really <em>interesting</em> and <em>cool</em> interview with the Network Lead at Google - Amin Vahdat. And! They actually put this <a href="http://www.youtube.com/watch?v=8I6YevjRFQ0" title="http://www.youtube.com/watch?v=8I6YevjRFQ0">interview up …</a></p>
-                <a class="readmore" href="/sdn-course-interview-with-google-network-lead.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/make-your-own-l2-firewall.html" rel="bookmark"
-                           title="Permalink to "Make your own L2 Firewall!"">"Make your own L2 Firewall!"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-07-17T00:00:00+03:00">
-                Published: "2013-07-17"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/firewall.html">firewall</a> <a href="/tag/learning.html">learning</a> <a href="/tag/linux.html">linux</a> <a href="/tag/pox.html">pox</a> <a href="/tag/python.html">python</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>Is what I did this week during the <a href="https://www.coursera.org/course/sdn" title="https://www.coursera.org/course/sdn">SDN Course</a> on Coursera :)</p>
-<p>Within <a href="http://mininet.org/" title="http://mininet.org/">mininet</a> or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to …</p>
-                <a class="readmore" href="/make-your-own-l2-firewall.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/sdn-course-on-coursera-2.html" rel="bookmark"
-                           title="Permalink to "SDN Course on Coursera-2"">"SDN Course on Coursera-2"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-07-10T00:00:00+03:00">
-                Published: "2013-07-10"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>Halfway now, in week3, and just finished the first programming assignment in the course <a href="https://www.coursera.org/course/sdn" title="on coursera">Software Defined Networking</a>.</p>
-<p>Quite happy with the course so far, the quizzes are not too hard if you actually listen to the video lectures and after taking Coursera's "<a href="https://class.coursera.org/programming2-001/class/index">Learn to Program: Crafting Quality Code</a>" the python …</p>
-                <a class="readmore" href="/sdn-course-on-coursera-2.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/sdn-course-on-coursera.html" rel="bookmark"
-                           title="Permalink to "SDN course on coursera"">"SDN course on coursera"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-07-07T00:00:00+03:00">
-                Published: "2013-07-07"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/networking.html">networking</a> <a href="/tag/studying.html">studying</a> </p>
-</footer><!-- /.post-info -->                <p>Even though I'm on summer holiday I'd squeeze in time for a <a href="http://en.wikipedia.org/wiki/Software-defined_networking" title="on wikipedia">Software-Defined Networking</a> course on coursera! <a href="https://www.coursera.org/course/sdn">https://www.coursera.org/course/sdn</a></p>
-<p>It's given by a professor from Georgia University.</p>
-<p>It's still not too late to register, it's only on the second week (until tomorrow Monday 8/7) and …</p>
-                <a class="readmore" href="/sdn-course-on-coursera.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/mininet-software-defined-networking.html" rel="bookmark"
-                           title="Permalink to "Mininet - Software Defined Networking"">"Mininet - Software Defined Networking"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-04-29T00:00:00+03:00">
-                Published: "2013-04-29"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/coursera.html">coursera</a> <a href="/tag/mininet.html">mininet</a> <a href="/tag/networking.html">networking</a> <a href="/tag/sdn.html">sdn</a> <a href="/tag/software.html">software</a> <a href="/tag/defined.html">defined</a> <a href="/tag/vm.html">vm</a> </p>
-</footer><!-- /.post-info -->                <h2 id="mininet">Mininet</h2>
-<p>Mininet is a network emulator written in Python. With it you can create a test network consisting of many devices, for example inside your laptop. It's <strong>a lot</strong> more light-weight compared to emulating switches/routers in GSN3. Initially Mininet appears to be more about easily getting working network rather …</p>
-                <a class="readmore" href="/mininet-software-defined-networking.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/cfengine-whats-that-about.html" rel="bookmark"
-                           title="Permalink to "cfengine - what's that about?"">"cfengine - what's that about?"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-11-03T00:00:00+02:00">
-                Published: "2012-11-03"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cfengine.html">cfengine</a> <a href="/tag/cluster.html">cluster</a> <a href="/tag/clustering.html">clustering</a> <a href="/tag/cms.html">cms</a> <a href="/tag/configuration.html">configuration</a> <a href="/tag/management.html">management</a> <a href="/tag/software.html">software</a> </p>
-</footer><!-- /.post-info -->                <p><a href="http://cfengine.com/what-is-cfengine" title="http://cfengine.com/what-is-cfengine">http://cfengine.com/what-is-cfengine</a></p>
-<p>It's a (old) software that is used to make sure that (for example) the same config files are used on all machines. There are several other CMSs, for example <a href="http://puppetlabs.com/" title="puppetlabs.com">puppet.</a> Wikipedia has a nice <a href="http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#Basic_properties" title="on wikipedia">overview</a> of them.</p>
-<p>Let's use the <a href="http://www.guldmyr.com/blog/setup-a-3-node-lustre-filesystem/" title="Setup a 3 Node Lustre Filesystem">lustre</a>   machines we set up in …</p>
-                <a class="readmore" href="/cfengine-whats-that-about.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-5.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 – Day 5"">"HEPIX Spring 2011 – Day 5"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-10T00:00:00+03:00">
-                Published: "2011-05-10"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/vm.html">vm</a> <a href="/tag/fs.html">fs</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/cloudbursting.html">cloudbursting</a> <a href="/tag/cvmfs.html">cvmfs</a> <a href="/tag/cvs.html">cvs</a> <a href="/tag/distribution.html">distribution</a> <a href="/tag/git.html">git</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/http.html">http</a> <a href="/tag/national.html">national</a> <a href="/tag/grid.html">grid</a> <a href="/tag/service.html">service</a> <a href="/tag/software.html">software</a> <a href="/tag/squid.html">squid</a> <a href="/tag/svn.html">svn</a> <a href="/tag/version.html">version</a> <a href="/tag/control.html">control</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> </p>
-</footer><!-- /.post-info -->                <p>What day it is can be told by all the suitcases around the room.</p>
-<h2 id="version-control">Version Control</h2>
-<p>An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-5.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #software Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2019-07-18T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2019-07-18
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/taking-puppet-ghostbuster-for-a-spin.html">Taking puppet-ghostbuster for a spin</a>
+        </h4>
+        <div class="content">
+          We use puppet at $dayjob to configure OpenStack. I wanted to know if there's a lot of unused code in our manifests! **From left of stage enters: https://github.com/camptocamp/puppet-ghostbuster ** Step one is to install the puppet modules and gems and whatnot, this blog post was good about …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-11-13T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2013-11-13
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/commandoio-manage-servers.html">commando.io - manage servers</a>
+        </h4>
+        <div class="content">
+          https://command.io is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface. It uses ssh - you need to allow commando.io's server to ssh into your server. You can specify with which user, which port and …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-07-31T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-07-31
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/sdn-course-interview-with-google-network-lead.html">SDN Course - Interview with Google Network Lead</a>
+        </h4>
+        <div class="content">
+          This week in the SDN course on coursera there were lots of examples of real use of SDN stuff, for example like the B4 WAN by Google. They got a really interesting and cool interview with the Network Lead at Google - Amin Vahdat. And! They actually put this interview up …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-07-17T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-07-17
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/make-your-own-l2-firewall.html">Make your own L2 Firewall!</a>
+        </h4>
+        <div class="content">
+          Is what I did this week during the SDN Course on Coursera :) Within mininet or with a real OpenFlow capable switch, you can point the switch to use a controller. The controller would figure out all the smart stuff and the switch only does what the controller tells it to …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-07-10T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-07-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/sdn-course-on-coursera-2.html">SDN Course on Coursera-2</a>
+        </h4>
+        <div class="content">
+          Halfway now, in week3, and just finished the first programming assignment in the course Software Defined Networking. Quite happy with the course so far, the quizzes are not too hard if you actually listen to the video lectures and after taking Coursera's "Learn to Program: Crafting Quality Code" the python …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-07-07T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-07-07
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/sdn-course-on-coursera.html">SDN course on coursera</a>
+        </h4>
+        <div class="content">
+          Even though I'm on summer holiday I'd squeeze in time for a Software-Defined Networking course on coursera! https://www.coursera.org/course/sdn It's given by a professor from Georgia University. It's still not too late to register, it's only on the second week (until tomorrow Monday 8/7) and …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2013-04-29T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2013-04-29
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/mininet-software-defined-networking.html">Mininet - Software Defined Networking</a>
+        </h4>
+        <div class="content">
+          Mininet Mininet is a network emulator written in Python. With it you can create a test network consisting of many devices, for example inside your laptop. It's a lot more light-weight compared to emulating switches/routers in GSN3. Initially Mininet appears to be more about easily getting working network rather …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2012-11-03T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2012-11-03
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/cfengine-whats-that-about.html">cfengine - what's that about?</a>
+        </h4>
+        <div class="content">
+          http://cfengine.com/what-is-cfengine It's a (old) software that is used to make sure that (for example) the same config files are used on all machines. There are several other CMSs, for example puppet. Wikipedia has a nice overview of them. Let's use the lustre machines we set up in …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-10T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-5.html">HEPIX Spring 2011 – Day 5</a>
+        </h4>
+        <div class="content">
+          What day it is can be told by all the suitcases around the room. Version Control An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 ---
-title: "Brocade CF Replacement Hints"
+title: Brocade CF Replacement Hints
 date: 2020-09-13
 category: storage
 tags: brocade, fc, fibre, channel, san, san, network

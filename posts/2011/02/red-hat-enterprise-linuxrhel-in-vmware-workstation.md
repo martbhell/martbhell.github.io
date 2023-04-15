@@ -1,5 +1,5 @@
 ---
-title: "Red Hat Enterprise Linux(RHEL) in VMWare Workstation"
+title: Red Hat Enterprise Linux(RHEL) in VMWare Workstation
 date: 2011-02-21
 category: it
 tags: kernel, linux, red, hat, enterprise, rhel, ssh, subscription, number, ubuntu, vmware, workstation

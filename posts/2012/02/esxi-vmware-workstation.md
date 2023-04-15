@@ -1,5 +1,5 @@
 ---
-title: "ESXi + VMWare Workstation + OpenIndiana"
+title: ESXi + VMWare Workstation + OpenIndiana
 date: 2012-02-18
 category: it
 tags: esx, esxi, openindiana, vmware, vmware, workstation

@@ -1,5 +1,5 @@
 ---
-title: "Songs of the day – 30 of March – 2011"
+title: Songs of the day – 30 of March – 2011
 date: 2011-03-30
 category: finland
 tags: free, music, streaming, thesixtyone

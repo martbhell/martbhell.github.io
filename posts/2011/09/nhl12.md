@@ -1,5 +1,5 @@
 ---
-title: "NHL12"
+title: NHL12
 date: 2011-09-26
 category: finland
 tags: detroit, nhl, ps3, red, wings

@@ -1,5 +1,5 @@
 ---
-title: "HEPIX Spring 2011 – Day 2"
+title: HEPIX Spring 2011 – Day 2
 date: 2011-05-04
 category: it, storage
 tags: cooling, cpu, cpu, naming, dell, disk, failures, drupal, green, it, cube, heat, exchanger, hepix, hepix, spring, 2011, hs06, puppet, scientific, computing, synchrotron

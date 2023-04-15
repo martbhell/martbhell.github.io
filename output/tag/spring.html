@@ -1,225 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - spring</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #spring Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/spring.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/hepix-spring-2011-day-5.html">"HEPIX Spring 2011 – Day 5"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-05-10T00:00:00+03:00">
-                Published: "2011-05-10"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/vm.html">vm</a> <a href="/tag/fs.html">fs</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/cloudbursting.html">cloudbursting</a> <a href="/tag/cvmfs.html">cvmfs</a> <a href="/tag/cvs.html">cvs</a> <a href="/tag/distribution.html">distribution</a> <a href="/tag/git.html">git</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/http.html">http</a> <a href="/tag/national.html">national</a> <a href="/tag/grid.html">grid</a> <a href="/tag/service.html">service</a> <a href="/tag/software.html">software</a> <a href="/tag/squid.html">squid</a> <a href="/tag/svn.html">svn</a> <a href="/tag/version.html">version</a> <a href="/tag/control.html">control</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> </p>
-</footer><!-- /.post-info --><p>What day it is can be told by all the suitcases around the room.</p>
-<h2 id="version-control">Version Control</h2>
-<p>An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to migrate.</p>
-<p>They use DNS load balancing</p>
-<ul>
-<li>Browse code / logging, revisions, branches: WEBSVN – on the fly tar creation.</li>
-<li>TRAC – web SVN browsing tool plus: ticketing system, wiki, plug-ins.</li>
-<li>SVNPlot – generate SVN statsw. No need to <strong>checkout</strong> source code (svnstats do 'co').</li>
-</ul>
-<p><a href="http://mercurial.selenic.com/" title="selenic.com">Mercurial</a> was also suggested at the side of <a href="http://git-scm.com/" title="git-scm.com">Git</a> (which is founded by Linus Torvalds).</p>
-<p>Cern - VM - FS</p>
-<p>Cern-VM-FS (CVMFS) looked very promising. The last one is not intended at the moment for images but more for sending applications around. It uses Squid proxy server and looked really excellent. Gives you a mount point like /cvmfs/ and under there you have the softwares.</p>
-<p><a href="http://twitter.com/cvmfs">http://twitter.com/cvmfs</a></p>
-<p>Requirements needed to set it up:</p>
-<ul>
-<li>Rpms: cvmfs, -init-scripts, -keys, -auto-setup (for tier-3 sites does some system configs), fuse, fuse-libs, autofs</li>
-<li>squid cache – you need to have one. Ideally two or more for resilience. Configured (at least) to accept traffic from your site to one or more cvmfs repository servers. You could use existing frontier-squids.</li>
-</ul>
-<h2 id="national-grid-service-cloud">National Grid Service Cloud</h2>
-<p>A Brittish cloud.</p>
-<p>﻿Good for teaching with a VM – if a machine is messed up it can be reinstalled.</p>
-<p>Scalability <strong>- '<a href="https://sites.google.com/site/cloudcomputingwiki/Home/cloud-computing-vocabulary" title="definition">cloudbursting</a>' –</strong> users make use of their local systems/clusters – until they are full – and then if they need to they can do extra work in the cloud. Scalability/cloudbursting is the key feature that users are looking for.</p>
-<p>Easy way to test an application on a number of operating systems/platforms.</p>
-<p>Two cases were not suitable. Intensive – with a lot of number crunching.</p>
-<p><strong>Good:</strong> you don't have to worry about physical assembly or housing. They do have to install the servers and networking etc. Usually this is done by somebody else. Images are key to making this easier.</p>
-<p><strong>Bad:</strong> <a href="http://www.eucalyptus.com/" title=".com">Eucalyptus</a> stability – not so good. Bottlenecks: networking is important. More is required to the whole physical server when it's running vms.</p>
-<p>To put a 5GB vm on a machine you would need 10GB. 5 for the image and 5 for the actual machine. Some were intending to develop the images locally on this cloud and then move it on to Amazon.</p>
-<p>Previous Days: <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-4/" title="day4">Day 4</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-3/" title="day3">Day 3</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/" title="day2">Day 2</a> <a href="http://www.guldmyr.com/blog/hepix-spring-2011-day-1/" title="day1">Day 1</a></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-4.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 - Day 4"">"HEPIX Spring 2011 - Day 4"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-09T00:00:00+03:00">
-                Published: "2011-05-09"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/eofs.html">eofs</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/iaas.html">iaas</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/ol.html">ol</a> <a href="/tag/open.html">open</a> <a href="/tag/source.html">source</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> <a href="/tag/image.html">image</a> <a href="/tag/virtualization.html">virtualization</a> <a href="/tag/vm.html">vm</a> </p>
-</footer><!-- /.post-info -->                <p>Dinner on the 3rd night was amazing. It was at the hotel Weisse Schwan in Arheilgen outside Darmstadt and it was a nice reception hall with big round tables, waiters with lots of wine and great buffet food. A+</p>
-<p><a href="http://molnmolnmoln.se" title="moln@IDG">Cloudy day</a>!</p>
-<h2 id="or-infrastructure-as-a-service-iaas">Or - Infrastructure as a Service - IaaS</h2>
-<p>A few had …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-4.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-3.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 – Day 3"">"HEPIX Spring 2011 – Day 3"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-05T00:00:00+03:00">
-                Published: "2011-05-05"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/adaptec.html">adaptec</a> <a href="/tag/buffered.html">buffered</a> <a href="/tag/tape.html">tape</a> <a href="/tag/marks.html">marks</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/ermm.html">ermm</a> <a href="/tag/errata.html">errata</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/ioapps.html">ioapps</a> <a href="/tag/ioreplay.html">ioreplay</a> <a href="/tag/ipv4.html">ipv4</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/linux.html">linux</a> <a href="/tag/service.html">service</a> <a href="/tag/now.html">now</a> <a href="/tag/sl.html">sl</a> <a href="/tag/strace.html">strace</a> <a href="/tag/sun.html">sun</a> <a href="/tag/t10000c.html">t10000c</a> <a href="/tag/drive.html">drive</a> <a href="/tag/tsm.html">tsm</a> </p>
-</footer><!-- /.post-info -->                <p>Day 3 woop!</p>
-<p>An evaluation of <a href="http://www.gluster.org/" title="gluster.org">gluster</a>: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot.</p>
-<p>Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and <a href="http://www-935.ibm.com/services/de/igs/pdf/br-stor-enterprise-remove-mm-en.pdf" title="links to pdf on ibm.com">ERMM</a>. Where ERMM manages the libraries, so that TSM only sees …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-3.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-2.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 – Day 2"">"HEPIX Spring 2011 – Day 2"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-04T00:00:00+03:00">
-                Published: "2011-05-04"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cooling.html">cooling</a> <a href="/tag/cpu.html">cpu</a> <a href="/tag/naming.html">naming</a> <a href="/tag/dell.html">dell</a> <a href="/tag/disk.html">disk</a> <a href="/tag/failures.html">failures</a> <a href="/tag/drupal.html">drupal</a> <a href="/tag/green.html">green</a> <a href="/tag/it.html">it</a> <a href="/tag/cube.html">cube</a> <a href="/tag/heat.html">heat</a> <a href="/tag/exchanger.html">exchanger</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hs06.html">hs06</a> <a href="/tag/puppet.html">puppet</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/synchrotron.html">synchrotron</a> </p>
-</footer><!-- /.post-info -->                <p>Guten aben!</p>
-<p>Darmstadt is a very beautiful city. It's quite old and there are lots of parks and eh, cool, houses.</p>
-<p>A person from the UK said yesterday (in the pub Ratkeller) something like this: <em>"A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one …</em></p>
-                <a class="readmore" href="/hepix-spring-2011-day-2.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-1.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 - Day 1"">"HEPIX Spring 2011 - Day 1"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-02T00:00:00+03:00">
-                Published: "2011-05-02"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/batch.html">batch</a> <a href="/tag/system.html">system</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cisco.html">cisco</a> <a href="/tag/routers.html">routers</a> <a href="/tag/conference.html">conference</a> <a href="/tag/fermilab.html">fermilab</a> <a href="/tag/frankfurt.html">frankfurt</a> <a href="/tag/gsi.html">gsi</a> <a href="/tag/hard.html">hard</a> <a href="/tag/drive.html">drive</a> <a href="/tag/failures.html">failures</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/hp.html">hp</a> <a href="/tag/it.html">it</a> <a href="/tag/2.html">2</a> <a href="/tag/kit.html">kit</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/nikhef.html">nikhef</a> <a href="/tag/pue.html">pue</a> <a href="/tag/super.html">super</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supermicro.html">supermicro</a> <a href="/tag/tty.html">tty</a> <a href="/tag/hack.html">hack</a> </p>
-</footer><!-- /.post-info -->                <p>Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-1.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011"">"HEPIX Spring 2011"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-01T00:00:00+03:00">
-                Published: "2011-05-01"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/darmstadt.html">darmstadt</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/linux.html">linux</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/computing.html">computing</a> <a href="/tag/supercomputing.html">supercomputing</a> </p>
-</footer><!-- /.post-info -->                <p>I'm heading to <a href="http://www.hepix.org/" title="hepix.org">Hepix</a> this whole week!</p>
-<p>Looks like there's some really <a href="http://indico.cern.ch/conferenceTimeTable.py?confId=118192#20110502" title="timetable">interesting topics</a> like:</p>
-<p>Lustre, glustre, ipv6, stuff about the CERN it facilities, Scientific Linux report, cloud/grid virtualization, Oracle Linux.</p>
-<p>I'll sure be doing a bit of blogging about what's going down.</p>
-                <a class="readmore" href="/hepix-spring-2011.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #spring Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-10T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-5.html">HEPIX Spring 2011 – Day 5</a>
+        </h4>
+        <div class="content">
+          What day it is can be told by all the suitcases around the room. Version Control An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-09T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-09
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-4.html">HEPIX Spring 2011 - Day 4</a>
+        </h4>
+        <div class="content">
+          Dinner on the 3rd night was amazing. It was at the hotel Weisse Schwan in Arheilgen outside Darmstadt and it was a nice reception hall with big round tables, waiters with lots of wine and great buffet food. A+ Cloudy day! Or - Infrastructure as a Service - IaaS A few had …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-05T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-05
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-3.html">HEPIX Spring 2011 – Day 3</a>
+        </h4>
+        <div class="content">
+          Day 3 woop! An evaluation of gluster: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot. Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and ERMM. Where ERMM manages the libraries, so that TSM only sees …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-04T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-04
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-2.html">HEPIX Spring 2011 – Day 2</a>
+        </h4>
+        <div class="content">
+          Guten aben! Darmstadt is a very beautiful city. It's quite old and there are lots of parks and eh, cool, houses. A person from the UK said yesterday (in the pub Ratkeller) something like this: "A particle physicist's raison d'être is to find complexities, they wouldn't turn away from one …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-02T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-02
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-1.html">HEPIX Spring 2011 - Day 1</a>
+        </h4>
+        <div class="content">
+          Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-01T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-01
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011.html">HEPIX Spring 2011</a>
+        </h4>
+        <div class="content">
+          I'm heading to Hepix this whole week! Looks like there's some really interesting topics like: Lustre, glustre, ipv6, stuff about the CERN it facilities, Scientific Linux report, cloud/grid virtualization, Oracle Linux. I'll sure be doing a bit of blogging about what's going down.
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

@@ -1,118 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - manual</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #manual Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/manual.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/how-to-find-things-in-linux-man-pages.html">"How to find things in Linux man pages"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-12-20T00:00:00+02:00">
-                Published: "2011-12-20"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/apropos.html">apropos</a> <a href="/tag/grep.html">grep</a> <a href="/tag/help.html">help</a> <a href="/tag/linux.html">linux</a> <a href="/tag/man.html">man</a> <a href="/tag/pages.html">pages</a> <a href="/tag/manual.html">manual</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhel.html">rhel</a> <a href="/tag/search.html">search</a> <a href="/tag/xargs.html">xargs</a> <a href="/tag/yum.html">yum</a> <a href="/tag/zgrep.html">zgrep</a> </p>
-</footer><!-- /.post-info --><p>There's a couple of places (naturally).</p>
-<p>It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank.</p>
-<p>In RHEL there is /usr/share/doc where there are some special places, for example /usr/share/doc/initscripts*/sysconfig.txt for all config files that relate to the boot-up process. There is also /usr/share/man. In /usr/share/man/man5 which has all the level 5 man pages in gzip format. For example "man 5 yum.conf" you can find in /usr/share/man/man5/yum.conf.5.gz.</p>
-<p>To open a man page you just type 'man yum'. To get the man page for yum, or 'man man' for the manual for man.</p>
-<p>To search through man-pages you can use either of these (they are the same):</p>
-<p>man -k yum
-apropos yum</p>
-<p>While inside a man-page you can search by typing: / and then what you want to search for and then ENTER. Like this: /priority This will hilight all the matched entries, you move to the next match with 'n'. This might differ between operating systems, it depends on which viewer is used to present the man page.</p>
-<p>Sometimes these don't find what you are looking for. In that case you could manually move into /usr/share/man/man5 and hit:</p>
-<p>zgrep priority *</p>
-<p>to grep through the gzip files looking for any entries that says 'priority'.</p>
-<p>or, if you want to you could use this to search through all directories:</p>
-<p>find . -name "*"|xargs zgrep -i priority</p>
-<p>or even better (if you're not looking for a language specific man page):</p>
-<p>find /usr/share/man* -name "*"|xargs zgrep -i gpgcheck</p>
-<p>These are all relatively slow though, if you read this and have any suggestions please let me know :)</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/sunos-511-opensolaris-man-page-trick.html" rel="bookmark"
-                           title="Permalink to "SunOS 5.11 OpenSolaris Man Page Trick"">"SunOS 5.11 OpenSolaris Man Page Trick"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-08-01T00:00:00+03:00">
-                Published: "2011-08-01"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/finland.html">finland</a>.</p>
-<p>tags: <a href="/tag/bash.html">bash</a> <a href="/tag/script.html">script</a> <a href="/tag/man.html">man</a> <a href="/tag/manpage.html">manpage</a> <a href="/tag/manual.html">manual</a> <a href="/tag/opensolaris.html">opensolaris</a> <a href="/tag/solaris.html">solaris</a> <a href="/tag/sun.html">sun</a> </p>
-</footer><!-- /.post-info -->                <p>Ever had to read a man page on a Solaris system? You'll see these</p>
-<p>SunOS 5.11 System Administration Commands</p>
-<p>on each page in the manpage, making it quite hard to read.</p>
-<p>To make it more readable you can run this: man $1|grep -v 'SunOS 5.11'|grep -v …</p>
-                <a class="readmore" href="/sunos-511-opensolaris-man-page-trick.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #manual Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-12-20T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-12-20
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/how-to-find-things-in-linux-man-pages.html">How to find things in Linux man pages</a>
+        </h4>
+        <div class="content">
+          There's a couple of places (naturally). It's easy to be fooled and think: "anybody can type man man". But in all fairness, you need to figure out which man page to look into, or what command to run and sometimes it's just a blank. In RHEL there is /usr/share …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-08-01T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-08-01
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/finland.html">finland</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/sunos-511-opensolaris-man-page-trick.html">SunOS 5.11 OpenSolaris Man Page Trick</a>
+        </h4>
+        <div class="content">
+          Ever had to read a man page on a Solaris system? You'll see these SunOS 5.11 System Administration Commands on each page in the manpage, making it quite hard to read. To make it more readable you can run this: man $1|grep -v 'SunOS 5.11'|grep -v …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

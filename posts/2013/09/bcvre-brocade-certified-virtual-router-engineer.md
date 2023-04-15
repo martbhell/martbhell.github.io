@@ -1,5 +1,5 @@
 ---
-title: "BCvRE - Brocade Certified virtual Router Engineer"
+title: BCvRE - Brocade Certified virtual Router Engineer
 date: 2013-09-08
 category: it
 tags: bcvre, brocade, certified, exam, open, source, virtualization

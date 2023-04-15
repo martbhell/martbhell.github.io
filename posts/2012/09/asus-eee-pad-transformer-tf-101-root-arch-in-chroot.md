@@ -1,5 +1,5 @@
 ---
-title: "Asus Eee Pad Transformer TF 101 + root + arch in chroot"
+title: Asus Eee Pad Transformer TF 101 + root + arch in chroot
 date: 2012-09-05
 category: it
 tags: android, arch, asus, asus, eee, pad, asus, transformer, chroot, linux, tf101

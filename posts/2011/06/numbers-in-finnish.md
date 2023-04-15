@@ -1,5 +1,5 @@
 ---
-title: "Numbers in Finnish"
+title: Numbers in Finnish
 date: 2011-06-02
 category: finland
 tags: finnish, kielta, language, numbers, suomen

@@ -1,5 +1,5 @@
 ---
-title: "Picture from Silicon Valley"
+title: Picture from Silicon Valley
 date: 2012-09-13
 category: it
 tags: brocade, picture

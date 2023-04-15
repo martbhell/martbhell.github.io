@@ -1,5 +1,5 @@
 ---
-title: "Some updates to the home network 1/2"
+title: Some updates to the home network 1/2
 date: 2019-05-15
 category: it
 tags: cable, modem, home, network, isp, nat, network, ps3, raspberry, pi, server, computing, vlan, wi, fi, wifi

@@ -1,5 +1,5 @@
 ---
-title: "Job"
+title: Job
 date: 2011-02-16
 category: finland
 tags: job

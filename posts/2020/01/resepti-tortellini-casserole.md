@@ -1,5 +1,5 @@
 ---
-title: "Resepti: Tortellini Casserole"
+title: Resepti: Tortellini Casserole
 date: 2020-01-12
 category: finland
 tags: food, pasta, resepti, 2x tortellini 250g, 1x kirsikka tomaatia, 1x tomaatia murska yrtejä, 1x ruokakerma 10%, 1x feta juusto, suola ja pippuri

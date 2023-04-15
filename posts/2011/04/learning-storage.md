@@ -1,5 +1,5 @@
 ---
-title: "Learning Storage"
+title: Learning Storage
 date: 2011-04-28
 category: storage
 tags: disk, drives, infosmack, learning, netapp, podcast, storage, storage, book, storage, brain, theregister

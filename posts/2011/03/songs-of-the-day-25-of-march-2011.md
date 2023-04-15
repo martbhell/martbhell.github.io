@@ -1,5 +1,5 @@
 ---
-title: "Songs of the day - 25 of March - 2011"
+title: Songs of the day - 25 of March - 2011
 date: 2011-03-25
 category: finland
 tags: free, indie, music, stream, thesi

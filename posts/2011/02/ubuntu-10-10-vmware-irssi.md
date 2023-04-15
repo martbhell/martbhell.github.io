@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu 10.10 + VMWare + Irssi"
+title: Ubuntu 10.10 + VMWare + Irssi
 date: 2011-02-10
 category: it
 tags: 10, 10, apt, get, debian, debian, 6, guide, irssi, it, 2, kernel, linux, networking, ram, swap, space, ubuntu, virtual, kernel, vm, vmware, vmware, workstation

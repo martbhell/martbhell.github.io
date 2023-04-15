@@ -1,5 +1,5 @@
 ---
-title: "LSC  - LDAP Synchronization Connector"
+title: LSC  - LDAP Synchronization Connector
 date: 2021-09-28
 category: it
 tags: java, ldap, sync, synchronization

@@ -1,5 +1,5 @@
 ---
-title: "Sharepoint 2010 Foundation + Windows 2008 R2 + VMWare Workstation"
+title: Sharepoint 2010 Foundation + Windows 2008 R2 + VMWare Workstation
 date: 2011-01-30
 category: it
 tags: it, 2, sharepoint, vmware, workstation, windows

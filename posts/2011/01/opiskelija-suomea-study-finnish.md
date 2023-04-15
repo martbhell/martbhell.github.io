@@ -1,5 +1,5 @@
 ---
-title: "Opiskelija suomea - study Finnish"
+title: Opiskelija suomea - study Finnish
 date: 2011-01-17
 category: finland
 tags: finland, study

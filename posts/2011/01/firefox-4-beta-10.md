@@ -1,5 +1,5 @@
 ---
-title: "Firefox 4 Beta 10"
+title: Firefox 4 Beta 10
 date: 2011-01-27
 category: it
 tags: firefox, it, 2, webmail

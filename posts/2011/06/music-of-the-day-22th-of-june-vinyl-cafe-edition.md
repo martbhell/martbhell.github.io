@@ -1,5 +1,5 @@
 ---
-title: "Music of the day 22th of June (vinyl café edition)"
+title: Music of the day 22th of June (vinyl café edition)
 date: 2011-06-22
 category: finland
 tags: canada, cbc, music, podcast, radio, story, exchange, traveling, vinyl, cafe

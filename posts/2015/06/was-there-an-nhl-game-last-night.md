@@ -1,5 +1,5 @@
 ---
-title: "Was there an NHL game last night?"
+title: Was there an NHL game last night?
 date: 2015-06-07
 category: it
 tags: appengine, icehockey, nhl, wasthereannhlgamelastnight

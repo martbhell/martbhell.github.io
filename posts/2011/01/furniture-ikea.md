@@ -1,5 +1,5 @@
 ---
-title: "furniture - IKEA"
+title: furniture - IKEA
 date: 2011-01-21
 category: finland
 tags: furniture

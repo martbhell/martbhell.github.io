@@ -1,5 +1,5 @@
 ---
-title: "Install Drupal 7 in Debian 6"
+title: Install Drupal 7 in Debian 6
 date: 2011-02-11
 category: it
 tags: admin, accounts, apt, get, database, settings, debian, debian, 6, drupal, guide, http, it, 2, phpmyadmin, script, upgrade, web, server, apache

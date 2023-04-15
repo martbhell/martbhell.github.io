@@ -1,406 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - tutorial</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #tutorial Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/tutorial.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/brocade-san-switch-firmware-upgrades.html">"Brocade SAN Switch Firmware Upgrades"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-02-01T00:00:00+02:00">
-                Published: "2011-02-01"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/brocade.html">brocade</a> <a href="/tag/san.html">san</a> <a href="/tag/fabric.html">fabric</a> <a href="/tag/os.html">os</a> <a href="/tag/firmware.html">firmware</a> <a href="/tag/guide.html">guide</a> <a href="/tag/hp.html">hp</a> <a href="/tag/support.html">support</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/switches.html">switches</a> <a href="/tag/storage.html">storage</a> <a href="/tag/switch.html">switch</a> <a href="/tag/tutorial.html">tutorial</a> <a href="/tag/update.html">update</a> <a href="/tag/upgrade.html">upgrade</a> </p>
-</footer><!-- /.post-info --><h1 id="overview">Overview</h1>
-<div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#overview">Overview</a><ul>
-<li><a href="#updates-in-this-article">Updates in this article:</a></li>
-<li><a href="#steps">Steps</a></li>
-</ul>
-</li>
-<li><a href="#decide">Decide</a><ul>
-<li><a href="#download-firmware-links">Download firmware links:</a></li>
-<li><a href="#firmware-upgrade-order">Firmware Upgrade Order</a></li>
-</ul>
-</li>
-<li><a href="#release-notes">Release notes:</a><ul>
-<li><a href="#notes-from-the-release-notes">Notes from the release notes:</a><ul>
-<li><a href="#dcfm-data-centre-fabric-manager-bna-brocade-network-advisor">DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor .</a></li>
-<li><a href="#updates-to-documents">Updates to documents</a></li>
-<li><a href="#fabric-watch-and-maps-with-fos-v73">Fabric Watch and MAPS with FOS v7.3</a></li>
-<li><a href="#interoperability">Interoperability</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#prepare">Prepare</a><ul>
-<li><a href="#download-old-brocade-fabric-os-firmware">Download old Brocade Fabric OS Firmware.</a></li>
-<li><a href="#equivalent-product-names">Equivalent Product Names</a></li>
-<li><a href="#recommendations">Recommendations</a></li>
-<li><a href="#upgrading-tools">Upgrading Tools</a></li>
-<li><a href="#how-to-access-the-san-switch">How to access the SAN-switch</a></li>
-</ul>
-</li>
-<li><a href="#upgrade">Upgrade</a><ul>
-<li><a href="#more-notes-about-the-upgrade">More notes about the upgrade</a><ul>
-<li><a href="#specifying-directory">Specifying Directory</a></li>
-<li><a href="#firmwaredownload-example">firmwaredownload example:</a></li>
-<li><a href="#transfer-protocol-and-connectivity">Transfer Protocol and Connectivity</a></li>
-<li><a href="#passwords">Passwords</a></li>
-<li><a href="#cf-cards">CF Cards</a></li>
-<li><a href="#licenses">Licenses</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<p>This is my guide/template to upgrading Fabric OS (FOS) - Firmware - on the Brocade SAN Switches. If <strong>you</strong> have any additions, comments or questions please go ahead and comment or if you have any questions you can find my e-mail on <a href="http://guldmyr.com" title="go to the cv">https://guldmyr.com</a>. The post has been updated over 188 times according to my WordPress revisions, first update in January 2011.</p>
-<p>This article was originally built from my experience with HP branded Brocade SAN Switches - not with any other OEM or pure Brocade switches. I have however since beginning this document gotten experience with other vendors. I do not think others are different except for licenses and some default fabric.ops. I made a <a href="../hps-brocade-firmwares-compatible-with-other-switches/" title="comparison">comparison</a> of two downloads of the 6.3.1b Fabric OS Firmware (one via IBM and one from HP). You can find a link to the "IBM" firmware and release notes after 6.x in that article too. I found that they are very similar and the HP firmware works on the IBM switch and vice versa. Another example is that firmware gotten from HDS works on an HP branded Brocade switch.</p>
-<p>When you see 7.2.x this means any version in the Fabric OS 7.2.x series. For upgrades, this would generally mean the latest available in that series (like 7.2.1g for 7.2.x or 8.0.2d for 8.0.x) unless of course there is a problem with the latest. Sign up for your vendor's security and update alerts to get notified about new releases.</p>
-<p>Carefully plan the upgrade, it takes time but it is rewarding and worth it.</p>
-<h2 id="updates-in-this-article">Updates in this article:</h2>
-<details><summary>Old Updates < 2013</summary>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-- **2011-02-22:** Updated links because the release notes I had before to 6.1.x and above did not work anymore. Also changed the sub-versions in 6.1.x and above to the latest released one by HP.
-- **2011-02-24:** Found link to [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1 "FOS 6.0.x and 5.1.x") on HP.com with the help of an ITRC thread.
-- **2011-04-21:** Added links for correlating Brocade Product name, model number and HP name. Latest in 6.4.x series is now 6.4.1b
-- **2011-05-05:** Added link to Web Tools for 6.2.x with reference to how to upgrade Firmware via the web tools.
-- **2011-05-15:** A note added about compatibility regarding the 'HP' firmware files and other vendors - as far as I can tell the ones downloaded from HP will work on other non-HP switches. Also posted a [new blog post](http://www.guldmyr.com/blog/hps-brocade-firmwares-compatible-with-other-switches/ "works?") about that. Added [link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "IBM SAN b-type Firmware Version 6.x Release Notes") to IBM.com - for correlating product names and for getting (all Fabric OS) firmwares. EMC [also has Brocade products](http://www.brocade.com/partnerships/oems/index.page "on brocade.com").
-- **2011-05-18:** Added a link to a post on [HP's support forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new HP's ITRC Forum") where the post helped a bit. Also made post a little easier, wrote a little about the release.plist confusion.
-- **2011-05-24:** Added example to show that driver updates are important. Some more restructuring of the article.
-- **2011-07-12:** Added FOS 7.0.0a
-- **2011-07-14:** Added [link](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/mostViewedResults/?d-8034386-p=&d-8034386-o=&sort=updatedDate&tableId=tableA&dir=desc&page=&d-8034386-s=&showSecondTableA=&action=tableAction&sp4ts.oid=3742051 "searching for HP SAN Switch b-series 8/80 advisories") to HP knowledge base and updated a link to an ITRC forum thread to point to the new forum.
-- **2011-09-29:** Added FOS 7.0.0b and section about CF cards.
-- **2011-10-19:** Wrote a bit about firmware upgrade order.
-- **2011-10-24:** The HP links to 6.0.0c and 5.3.x seems to not work anymore. I could not find either of these for download on HP's website. The IBM one still has 6.0.0c (release notes anyway).
-- **2011-12-05:** Went through all links to make sure they worked. Re-wrote some of the steps and re-ordered so that 'decide' is before 'prepare'. Added output from switch when doing the firmware upgrade via CLI.
-- **2011-12-10:** Added table of contents via a plugin.
-- **2012-01-02:** Added FOS 7.0.0c
-- **2012-01-09:** Added EMC branded switches default pw
-- **2012-02-14:** Added HP's [link](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareIndex.jsp?lang=en&cc=us&prodNameId=315080&prodTypeId=12169&prodSeriesId=315078&swLang=8&taskId=135&swEnvOID=54 "on hp.com") to FOS 5.x. firmware.
-- **2012-02-15:** Added [IBM's link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com") to FOS 7 info and downloads.
-- **2012-02-21:** Some notes about which switches can do which firmware. Re-wrote a part of the upgrade order section.
-- **2012-02-27:** Note about licenses.
-- **2012-02-29:** Added note about 5.1.x to 5.3.x, made upgrade path clearer. Also made how to find 5.3.x and 6.x firmwares a little clearer for HP's page.
-- **2012-03-01:** Added 6.2.2f and 7.0.1 and note about plist/ftp for 5.1.x
-- **2012-04-03:** Addeed 6.3.2e
-- **2012-04-24:** Added 7.0.1a
-- **2012-04-27:** Rewrote some part of the upgrade section.
-- **2012-06-07:** Added 6.4.3 and 7.0.1b
-- **2012-06-14:** Added link to [Brocade FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf "on brocade.com") in decide section.
-- **2012-10-27:** Some grammar updates and 16G FOS 7.x requirement. 6.4.3b and 7.0.2.
-- **2012-11-05:** Updated links to release notes. Perhaps it's time to condense the updates list. Notes about passive/active ftp, ifmodeshow|ipaddrshow and java version required (listed in release notes).
-
-</details>
-<details><summary>Old Updates < 2020</summary>
-
-- **2013-03-10:** 7.0.2b and 6.4.3c added some notes about compatibility. Improved list of which FOS works with which FC speeds.
-- **2013-03-29:** Added 7.1.0a and 7.0.2c. Only HP is out with 7.1.0a as of now. Brocade may have it non-publicly, at least I cannot see it in [my brocade](http://my.brocade.com/ "http://my.brocade.com/"). Other minor updates.
-- **2013-04-04:** Added link to 6.4.3d
-- **2013-05-02:** Updated link to FOS Target Path.
-- **2013-06-23:** Changed some ftp:// links to http://
-- **2013-07-16:** Added link to IBM's [pdf](http://www.ibm.com/developerworks/aix/library/au-aix-san-switch-firmware/au-aix-san-switch-firmware-pdf.pdf "pdf") with pictures for firmware upgrade.
-- **2013-08-03:** 6.4.3e by IBM - not available by HP yet. Disruptive upgrades are OK from 6.2 to 6.4.
-- **2013-08-05:** Added 7.1.1, updated some links to release notes.
-- **2013-10-03:** Made it a bit clearer regarding which is the earliest firmware you can upgrade from. Newer revisions of some Brocade release notes. 7.0.2d out and 6.4.3e link to hp.com
-- **2013-11-14:** Removed comment that B300 does not support 6.4.x - it does! It should have been the 200E! Thanks Eugene :)
-- **2014-02-01:** As of 2014-02-01 HP does not allow anybody without a valid support agreement to download firmwares. Release notes and at least some firmware links appears to still be working. Expect difficulty and broken links while hunting for firmwares. Fabric OS firmwares downloaded from IBM's site works on HP switches too, but there might be some differences (although I couldn't find any important ones when I compared 6.3.1b). So far it seems this restriction of access to firmwares only applies to HP servers.
-- **2014-02-07:** Added new link to [HP's page for FOS 5.2 to 6.3](http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm "http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm")  Thanks Leo R!
-- **2014-02-11:** Added 7.2.0b and 7.1.1c (HP have 7.1.1c release notes up but IBM does not - to find Brocade version go to IBM's download the firmware page that's on Brocade.com and get the release notes from there). Also 3 years anniversary on this post on 2014-02-01!
-- **2014-02-17:** But be careful with 7.2.0b - IBM has a note on their [7.x page](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855") about 7.2.0b saying: "_IBM recommends that customers not deploy FOS 7.2.0b if virtual switch capability is needed. Virtual switch users should migrate to an earlier version as soon as possible._"
-- **2014-03-17:** The problem with 7.2.0b was likely DEFECT000491192 fixed in 7.2.0c and later also DEFECT000494570 was fixed in 7.2.0d. 7.2.0x seems a bit unstable at the moment. 7.2.1 is currently available for download via HP's pages but not via IBM/Brocade's. Also no release notes available. Archived 2013 updates.
-- **2014-04-18:** Added 6.4.3f and 7.1.1c and 7.1.2 is out. Updated migration paths a bit. The Brocade release notes of 7.1.x actually have a decent list of the migration path needed now. See the section "Recommended Migration Paths to FOS v7.1.2".
-- **2014-08-06:** 7.2.1a, 7.1.2a, 7.0.2e. Updated some links that had gone bad ([FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf)) and made the "Show/Hide" Updates work again.
-- **2014-09-28:** 7.1.2b and 7.2.1b is out.
-- **2014-10-01:**  7.3.0a is out but can't find any release notes for it.
-- **2014-10-25:** 7.2.1c
-- **2015-01-18:** 7.2.1d, 7.3.0c. "HP's" release notes are too hard to find.. Added a note about FileZilla being a good ftp server. Thanks Harry Redl!
-- **2015-02-20:** 6.2.2g, 6.4.3g
-- **2015-04-06:** 7.3.1a from HP
-- **2015-04-21:** 7.3.1a from IBM
-- **2015-06-19:** Note about FileZilla being hosted off sourceforge - installer might contain malware.
-- **2015-07-07:** 7.4.0a, 7.3.1b, 7.2.1e. Removed link to HP's webkey license page. Doesn't work anymore. Note about BNA version required to manage Fabric OS v7.4 switches.
-- **2015-08-31:** 6.4.3g and 7.3.1b new revision of release notes. 7.2.1f, 7.4.0b
-- **2015-09-01:** 7.3.1c
-- **2015-09-16:** New versions of release notes.
-- **2015-10-25:** [7.4.1](ftp://public.dhe.ibm.com/storage/san/fos7/v7.4.1_ReleaseNotes_v1.0.pdf) is out for the brave and 6.4.3h (Fixes to OpenSSL CVE-2015-0286, CVE-2015-0288, CVE-2015-0289, CVE-2015-0292)
-- **2015-12-05:** 7.2.1g and 7.3.1d. Updated some links. Need to go through a lot of the HP ones here to point to HPE..
-- **2016-02-24:** 7.4.1b
-- **2016-03-15:** 7.3.2
-- **2016-05-17:** 7.4.1c
-- **2016-08-13:** 7.3.2a, 7.4.1d
-- **2016-12-19:** 7.3.2b, 7.4.1e
-- **2017-03-10:** 8.x has been out for a while
-- **2017-04-29:** new links to Brocade FOS target path and better links for where to fetch firmwares
-- **2017-05-03:** 8.0.2b and added links to Upgrade Guides for [8.0](http://www.brocade.com/content/dam/common/documents/content-types/software-upgrade-guide/fos-800-upgradeguide.pdf).0 and [7.4](http://www.brocade.com/content/html/en/software-upgrade-guide/FOS_740_UPGRADE/).0)
-- **2017-05-13:** [7.4.2](ftp://public.dhe.ibm.com/storage/san/fos7/v7.4.2_ReleaseNotes_v2.0.pdf)
-- **2017-08-07:** [8.1.0c](http://public.dhe.ibm.com/storage/san/fos8/v8.1.0c_ReleaseNotes_v1.0.pdf)
-- **2017-11-09:** [8.1.1a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.1a_ReleaseNotes_v1.0.pdf)
-- **2017-12-05:** [8.0.2c](ftp://public.dhe.ibm.com/storage/san/fos8/v8.0.2c_ReleaseNotes_v1.0.pdf)
-- **2018-01-01:** [8.1.2a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.2a_ReleaseNotes_v1.0.pdf) and [7.4.2b](http://:http://service.boulder.ibm.com/storage/san/fos7/v7.4.2b_ReleaseNotes_v1.0.pdf)
-- **2018-02-08:** [7.4.2c](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2c_ReleaseNotes_v1.0.pdf) and [8.0.2d](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2d_ReleaseNotes_v1.0.pdf)
-- **2018-06-15:** [8.2.0a](ftp://public.dhe.ibm.com/storage/san/fos8/v8.2.0a_ReleaseNotes_v1.0.pdf) and [8.1.2d](ftp://public.dhe.ibm.com/storage/san/fos8/v8.1.2d_ReleaseNotes_v1.0.pdf) and [8.0.2e](ftp://public.dhe.ibm.com/storage/san/fos8/v8.0.2e_ReleaseNotes_v1.0.pdf)
-- **2018-10-11:** fixing some links, Brocade is now Broadcom so some links are not working anymore surprise. Some HP links no longer work so removed those too.
-- **2018-12-07:** [7.4.2d](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf) and [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf) and [8.1.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.1.2f_ReleaseNotes_v2.0.pdf)
-- **2019-04-18:** [FOS Target Path](https://docs.broadcom.com/docs/53-1003916) on Broadcom.  From a reader got a link to NetApp's [Brocadeassist portal](http://www.brocadeassist.com/public/NetAppRelease) where **newer firmware** can be found than on IBM's. Some more link updates and link to [8.2.1b](https://portal.broadcom.com/web/support/netapp?p_p_id=AssistPortal&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_resource_id=directDownloadURL&p_p_cacheability=cacheLevelPage&_AssistPortal_mvcRenderCommandName=landingPageURL&downloadURL=/u002/extwebportal/ORACLE/INBOUND/DOCSAFE/TEMPDOWNLOADS/18140880443172713.pdf&filename=v8.2.1b_releasenotes_v1.0.pdf)
-- **2019-04-19:** More link fixes.  FOS 6.x - 8.x firmwares can all be downloaded from the brocadeassist portal.
-- **2019-04-20:** 8.1.2g and 8.2.1b on IBM release notes so updated links
-- **2019-08-23:** 8.2.1c is on NetApp's link but there are no release notes - I'd pass
-- **2019-11-21:** **all** links to firmware downloads don't work right now. Only one I have found is to HPE, but there you need support contract.
-- **2020-05-10:** Also some new releases, 8.2.2 is out.
-- **2020-09-27:** 9.0.0a got released in August
-- **2020-12-12:** 9.0.0b is out
-
-</details>
-
-<p><strong>2023-04-02:</strong> moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days! Also <a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;softwareId=MTX_241cfaab2fed4696a003f38ee0">HPE has them</a>.
-<strong>2023-04-04:</strong> 9.1.1a with link to broadcom</p>
-<h2 id="steps">Steps</h2>
-<ol>
-<li><a href="http://www.guldmyr.com/blog/brocade-san-switch-firmware-upgrades#decide">decide</a></li>
-<li><a href="http://www.guldmyr.com/blog/brocade-san-switch-firmware-upgrades#prepare">prepare</a></li>
-<li><a href="http://www.guldmyr.com/blog/brocade-san-switch-firmware-upgrades#upgrade">upgrade</a></li>
-</ol>
-<h1 id="decide">Decide</h1>
-<p>One major release at a time is required for the upgrades after 5.2.x, see details below at the release notes section.</p>
-<p>If you have to upgrade many steps, you should upgrade to the latest in the series (or if it's very new, probably safest to go with the second newest, just check the release notes of the newest to make sure nothing related is fixed).</p>
-<p>If the switch is on 5.1.x you can go directly to 5.3.x.</p>
-<p>What I usually recommend is this path: <strong>5.0.1d -&gt; 5.2.3 -&gt; 5.3.2c -&gt; 6.0.1a -&gt; 6.1.2c -&gt; 6.2.2g -&gt; 6.3.2e -&gt; 6.4.3h &gt; 7.0.2e &gt; 7.1.2b &gt; 7.2.1g &gt; 7.3.2a &gt; 7.4.2f &gt; 8.0.2f &gt; 8.1.2g &gt; 8.2.2b &gt; 9.0.0b &gt; 9.1.1b</strong></p>
-<p><em>It's also possible to upgrade from a version earlier than 6.4.1b to 7.0.x or from 7.0.x to 7.2.x  - but this is a <strong>disruptive</strong> upgrade (meaning ports will go offline/online during upgrade).</em></p>
-<p>Brocade now has a document that describes a process of determining the 'ideal' version of Fabric OS you should be running. It is called <a href="https://docs.broadcom.com/docs/53-1003916" title="Brocade FOS Target Path">Brocade FOS Target Path</a>.</p>
-<p>Yet one more official document to help is the <a href="https://portal.broadcom.com/web/support/netapp?p_p_id=AssistPortal&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_resource_id=directDownloadURL&amp;p_p_cacheability=cacheLevelPage&amp;_AssistPortal_mvcRenderCommandName=landingPageURL&amp;downloadURL=/u002/extwebportal/ORACLE/INBOUND/DOCSAFE/TEMPDOWNLOADS/15892599006389262.pdf&amp;filename=fos-821-fsm.pdf">Brocade Fabric OS Features and Standards Support Matrix, 8.2.x</a></p>
-<p>There is also a section (Recommended Migration Paths to FOS ) in the release notes describing how to get to the release you're reading notes for. In addition to these, there are Upgrade Guides from Brocade, at least for newer Fabric OS ( <a href="http://www.brocade.com/content/html/en/software-upgrade-guide/FOS_740_UPGRADE/">7.4.0</a> and <a href="http://www.brocade.com/content/dam/common/documents/content-types/software-upgrade-guide/fos-800-upgradeguide.pdf">8.0.0</a>).</p>
-<p>There are newer releases being released every now and then, in several series at the same time. You can think of it as releasing updates for Windows XP and 7 at the same time. For example, in February 2011 6.4.1a <strong>and</strong> 6.2.2e were released by HP. You can see this on HP's site if you look at the date next to the download. Quite often Fabric OS versions are not released by the OEMs at the same time, for example "Customer Notice of 7.1.0a release 25th of March 2013" HP released 7.1.0a before IBM.</p>
-<p>Which is the recommended one? Usually it's the latest one in the highest series that the switch supports. If you have storage from more than one vendor you may want to check with all and see if they all support the version you want to upgrade to. Vendors certify their equipment with different firmware versions. If you have a tape library, ask the vendor if they have a recommended / list of certified versions.</p>
-<p>HP: HP B-series Connectivity stream (available in <a href="https://www.hpe.com/storage/spock">HP SPOCK</a>). Brocade: "<a href="http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf">Brocade FOS Target Path</a>" Other: Contact them for their compatibility matrices, for example IBM, HDS, EMC, Fujitsu. Brocade also has their own "<a href="https://docs.broadcom.com/docs/12379670?eula=true" title="pdf on brocade.com - original link found on Brocade's Compatibility Page">Brocade Fabric OS 7.x Compatibility Matrix</a>" which lists compatibility with other vendors.</p>
-<p>You could in principle also say that (some blades in directors are excepted from these generalizations):</p>
-<p>2G cannot upgrade to Fabric OS 6.x 4G and 8G can be on Fabric OS 6.x All 4G except some 4/8 &amp; 4/16 (that's 200E) and HP's P- and C-class 4G blade switches (4012 &amp; 4024) can run 6.4.x 8G can run Fabric OS 6.4.x 8G and above can run Fabric OS 7.x 16G (Gen5) needs to be on Fabric OS 7.x or Fabric OS 8.x 32G (Gen6) and 64G (Gen7) needs to be on Fabric OS 8.x or Fabric OS 9.x</p>
-<p>Do you want to use the latest one in each series? Probably. Do check for published advisories and the release notes in the firmwares. Some models or blades may work on 7.0.x and not on 7.1.x or vice versa. Fabric OS 7.3.x supports all hardware that supports 7.2.x. Basically you <strong>need</strong> to read the release notes for at least the version you are upgrading to, to confirm that it supports your switch.</p>
-<h2 id="download-firmware-links">Download firmware links:</h2>
-<ul>
-<li>5.x and 6.x at HPE's <a href="http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm">http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm</a><ul>
-<li>New Link for some older 5.3-8.0.x from HPE: <a href="https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX-fd389e31ce584b35911249126f">https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX-fd389e31ce584b35911249126f</a></li>
-<li>6.0.x can also be found here: <a href="ftp://ftp.hp.com/pub/softlib/software10/COL22074/">ftp://ftp.hp.com/pub/softlib/software10/COL22074/</a></li>
-</ul>
-</li>
-<li>For <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855" title="on ibm.com">FOS 7.x</a></li>
-<li>For <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577">FOS 8.x</a></li>
-<li>NetApp's Broadcom/Brocade link: http://www.brocadeassist.com/public/NetAppRelease<ul>
-<li>This has more documents and <strong>newer</strong> firmware than the IBM one.</li>
-</ul>
-</li>
-</ul>
-<p>If you go to downloads for HP's 4/16 there is a link that also takes you to the older FOS firmware. If you don't click through it also only have the firmware that this switch supports. So the latest on there at the moment is 6.2.2f.</p>
-<p>On the link above you can also download HP's branded NA (Network Advisor, previously known as DCFM - Data Center Fabric Manager), see notes about that below.</p>
-<p>If you click on manuals on the left side you will also be able to download release notes and other guides and references.</p>
-<p>5.0.x firmware can also be found at <a href="http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm">http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm</a></p>
-<p>6.x, 7.x and 8.x. can be found in the IBM and NetApp links.</p>
-<h2 id="firmware-upgrade-order">Firmware Upgrade Order</h2>
-<p>You also probably want to decide on an order to upgrade the firmware on the switches. It's possible to do it via DCFM (now called Network Advisor, used to be something else) one switch at a time or even in parallel. I'd advice against doing it in parallel. One at a time and one step at a time seems the most cautious one. It's not too bad to run a SAN with switches in different firmwares. One idea is to have all switches of one model on the same firmware. If you need to upgrade in several steps, do one step at a time.</p>
-<p>Also, switches that are of higher importance like Principal Switch, Core Switches or Seed Switches for DCFM/NA. Should you start with these or perhaps start with another switch of less importance to make sure the upgrade goes smoothly?</p>
-<p>With more recent firmwares (6.4 and 7.x) it's possible to jump more than one hop - if you are ok with disruptions in the network. Nice if you need to upgrade switches that aren't in production.</p>
-<h1 id="release-notes">Release notes:</h1>
-<p><strong>FOS  <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855">7.x</a><a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855" title="IBM/Brocade FOS release notes">IBM_Link</a>&amp; <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577">8.x IBM Link</a></strong></p>
-<p>Brocade release notes in .pdf:</p>
-<ul>
-<li><a href="http://public.dhe.ibm.com/storage/san/fos5/v5.2.3_ReleaseNotes_v1.0.pdf">5.2.3</a></li>
-<li><a href="http://public.dhe.ibm.com/storage/san/fos5/v5.3.2c_ReleaseNotes_v1.0.pdf">5.3.1c</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos6/v6.0.0c_ReleaseNotes_v2.0.pdf" title="on ibm's ftp">6.0.0c</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos6/v6.1.2c_ReleaseNotes_v1.0.pdf" title="on ibm.com">6.1.2c</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos6/v6.2.2g_ReleaseNotes_v1.0.pdf">6.2.2g</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos6/v6.3.2e_ReleaseNotes_v1.0.pdf" title="on ibm.com">6.3.2e</a></li>
-<li><a href="http://public.dhe.ibm.com/storage/san/fos6/v6.4.3h_ReleaseNotes_v1.0.pdf">6.4.3h</a></li>
-<li><a href="http://public.dhe.ibm.com/storage/san/fos7/v7.0.2e_ReleaseNotes_v1.0.pdf" title="release notes">7.0.2e</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf" title="http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf">7.1.2b</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos7/v7.2.1g_ReleaseNotes_v1.0.pdf">7.2.1g</a> <a href="http://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/swdDetails/?spf_p.tpst=swdMain&amp;spf_p.prp_swdMain=wsrp-navigationalState%3Didx%253D1%257CswItem%253Dco_129553_1%257CswEnvOID%253D54%257CitemLocale%253D%257CswLang%253D%257Cmode%253D4%257Caction%253DdriverDocument&amp;javax.portlet.begCacheTok=com.vignette.cachetoken&amp;javax.portlet.endCacheTok=com.vignette.cachetoken" title="html hp.com"></a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf" title="http://service.boulder.ibm.com/storage/san/fos7/v7.3.1a_ReleaseNotes_v1.0.pdf">7.3.2b</a> <a href="http://h20566.www2.hpe.com/hpsc/swd/public/detail?sp4ts.oid=5408611&amp;swItemId=co_150194_1&amp;swEnvOid=54#tab2" title="http://h20565.www2.hp.com/hpsc/swd/public/detail?sp4ts.oid=5111501&amp;swItemId=co_146124_1&amp;swEnvOid=54#_Toc414026474"></a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos7/v7.4.2d_ReleaseNotes_v3.0.pdf">7.4.2</a>d <a href="http://h20565.www2.hpe.com/hpsc/swd/public/detail?sp4ts.oid=5367369&amp;swItemId=co_159155_1&amp;swEnvOid=54#tab2"></a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf">8.0.2f</a></li>
-<li><a href="http://public.dhe.ibm.com/storage/san/fos8/v8.1.2g_ReleaseNotes_v3.0.pdf">8.1.2g</a></li>
-<li><a href="http://public.dhe.ibm.com/storage/san/fos8/v8.2.1a_ReleaseNotes_v1.0.pdf">8.2.1a</a></li>
-<li><a href="http://service.boulder.ibm.com/storage/san/fos8/v8.2.2b_ReleaseNotes_v2.0.pdf">8.2.2b</a></li>
-<li><a href="https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v186294/HPE_FOS_9.0.0a_RN_v1.0.pdf">9.0.0a (hp release notes, thin on information)</a></li>
-<li><a href="https://docs.broadcom.com/doc/FOS-911a-RN">9.1.1a</a> <a href="https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v225909/HPE_FOS_9.1.1b_RN_v1.pdf">9.1.1b HPE</a></li>
-</ul>
-<h2 id="notes-from-the-release-notes">Notes from the release notes:</h2>
-<ul>
-<li>Upgrading from Fabric OS 5.0.x to 5.2.3 is supported</li>
-<li>Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not.</li>
-<li>Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades)</li>
-<li>Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b</li>
-<li>Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later.</li>
-<li>Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later.</li>
-<li>Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2</li>
-<li>Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later.</li>
-<li>Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2.</li>
-<li>Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported.</li>
-<li>Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS_UpgradeGuide_v730.pdf and the Brocade Release notes).</li>
-<li>Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall</li>
-<li>Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s"</li>
-<li>Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s".</li>
-<li>Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s".</li>
-<li>Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0</li>
-<li>Upgrading to Fabric OS 9.1.x "For Brocade X6, G630, X7, and G730 a valid Trusted FOS (TruFOS) Certificate is <em>required</em>"</li>
-</ul>
-<p>About non-disruptively: This means you <strong>can</strong> go to 7.0.xfrom earlier  than 6.4.1a but ports will go offline during the upgrade. See the release notes or Upgrade Guides for more details.</p>
-<h3 id="dcfm-data-centre-fabric-manager-bna-brocade-network-advisor">DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor .</h3>
-<p>From 6.2.2a release notes:</p>
-<p>With the introduction of Fabric OS 6.1.1, certain features and functions were removed from Web Tools (resident in the firmware) and migrated to the DCFM management application. HP recommends that, before you upgrade to Fabric OS 6.1.1x or later, if DCFM is not running on your fabric, you review the Web Tools functionality moved to DCFM, page 29 in these release notes and take note of what has changed so you can assess the impact on your fabric.</p>
-<p>Fabric OS 7.x cannot be managed by DCFM 10.4 or BNA 11.0. You need BNA 11.1.0, see the release notes for 7.x.</p>
-<p>Brocade Network Advisor 12.4.0 or later is required to manage switches running FOS 7.4.0 or later. Brocade Network Advisor 14.0.1 or later is required to manage switches running Fabric OS 8.0.1 or later</p>
-<h3 id="updates-to-documents">Updates to documents</h3>
-<p>Sometimes Brocade releases updates to the manuals without actually updating the manuals. On HP's page you can find them as "Documentation Updates", "Fabric OS Administrator's Guide Update".</p>
-<h3 id="fabric-watch-and-maps-with-fos-v73">Fabric Watch and MAPS with FOS v7.3</h3>
-<p>Users running Fabric Watch for switch monitoring in FOS v7.3 are advised to convert to MAPS monitoring before upgrading to FOS v7.4. If you don't, Fabric Watch will stop working.</p>
-<p>Also the APM have been replaced with Fabric/Flow Vision.</p>
-<h3 id="interoperability">Interoperability</h3>
-<p>See the release notes of the firmware for the specifics. For example Fabric OS 8.0.2 cannot be in the same fabric as for example HP C-Class 4/12 FC switches (4024) and one must use Fibre Channel Routing.</p>
-<h1 id="prepare">Prepare</h1>
-<h2 id="download-old-brocade-fabric-os-firmware">Download old Brocade Fabric OS Firmware.</h2>
-<p>Basically, you need to update in steps.</p>
-<p>To get FOS 5.2.1b and 6.0.0c firmware: Contact OEM Vendor or Brocade. I've found that two vendors have the firmware available online for free: HP and IBM, see below: Eventually after looking around on HP's old pages we found to <a href="http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm">http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm</a> - <a href="http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm">this link sometimes changes</a>.</p>
-<p><a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220" title="get brocade firmwares here">Link to IBM's page for downloading FOS 6 firmwares</a>. This has firmwares going back all the way to FOS 2.6, it even has Fabric OS 6.0.0c and 5.2.3. On the page they have listed release notes and a little further down there is a link called "Release 6 Firmware". Actually, if you click on 'Release 6 Firmware' you are taken to a page on brocade.com where you can find many different firmwares, including 5.x and 7.x IBM also have a <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855" title="on ibm.com">link about FOS 7.x</a> and <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577">FOS 8.x</a></p>
-<p>Also note that some features does not exist/work on older Fabric OS. For example on Fabric OS 5.1.x DHCP and SCP may not work (which forces you to use static IP and ftp).</p>
-<h2 id="equivalent-product-names">Equivalent Product Names</h2>
-<p><a href="http://www.brocade.com/partnerships/oems/hp/products_solutions.page" title="on brocade.com">Page with the equivalent Brocade and HP product names.</a> <a href="https://support.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0100588" title="on hp.com emr_na-c01777657">Page with the model number as seen in switchshow and HP's model and Brocade's model.</a> This is a good one. <a href="http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855" title="on ibm.com">Page for correlating IBM and Brocade product names.</a></p>
-<h2 id="recommendations">Recommendations</h2>
-<p>HP recommend that you upgrade one fabric and one switch at a time. <strong>Waiting a week or at least a couple of days after you upgrade the first fabric is a good idea - gives you time to see if anything went wrong, if you can fix it and if you can do anything different next time.</strong> See <a href="https://www.hpe.com/storage/spock" title="hp spock">HP SPOCK</a> for more details in regards to compatibility and interop modes. The HP B-series Connectivity Stream lists the recommended firmware and all the supported ones for each switch model. It also has a list of the supported SFPs. Find it by clicking on "<a href="http://h20272.www2.hp.com/Pages/spock2Html.aspx?htmlFile=hw_switches.html" title="HP SPOCK - SAN Switches">Switches</a>" in the left-hand navigation pane under the "Other Hardware" section. The Connectivity Stream is great and it is updated often so I will not link directly to it. You need an HP Passport to log on to HP SPOCK - it is free to create and you do not need a contract or product in warranty.</p>
-<p>Other vendors have similar matrices. HP for example does not have a list stating which Fabric OS firmware is supported with which HP P6000 firmware. The idea is that you go with the general recommendation of Fabric OS firmware.</p>
-<p>Do read the release notes for the firmware(s) you decide on: for example not all 4GB SAN-switches can run the 6.4.x FOS. The 8- and 16-port 4Gbps switches (Brocade 200E) do not run 6.4.x or 6.3.x. Only 8Gb and 16Gb switches can run the 7.x.x FOS. The release notes also have the fixes, enhancements, upgrade paths and supported switches. Generally the Brocade versions of the release notes are more verbose when it comes to fixes, but if you have an HP branded it might be easier to use the HP one as that has the HP names of the products. Also it might be hard to find the Brocade release notes if you do not have a contract with Brocade. Other vendors (like IBM/Fujitsu/HDS) provide you with the Brocade version of the release notes. You can find the release notes from their support pages.</p>
-<p>Do  consider updating OS patches, HBA drivers/firmware, management softwares and storage drivers/firmware. <a href="http://community.brocade.com/thread/5751?start=15&amp;tstart=0" title="on the brocade forum">For example</a> Qlogic had driver updates to their drivers that prevent HP blades from getting stuck in G_port after a reboot. Another for Qlogic FC cards was to not write a partition table on Dell servers at 2TB on the LUN (not so nice for &gt; 2TB disks)..</p>
-<h2 id="upgrading-tools">Upgrading Tools</h2>
-<p>SANLoader is an unofficial HP tool to upgrade firmwares. With this you do not have to create an ftpserver etc. Contact HP Support, they may give this to you. This is meant to be used when the other ways does not work, but it helps out a lot as you do not have to set up an FTP/SCP server.</p>
-<p>Sanloader used to (winter 2010) not work well on Windows 7 and may not work flawlessly on the pre 6.x firmwares.</p>
-<p>Other ways:</p>
-<ul>
-<li>Set up a ftp/scp server and upgrade via the CLI (command line interface).</li>
-<li>Use DCFM ( Data Center Fabric Manager - now called Network Advisory ) to upgrade firmware.</li>
-<li>Firmware can also be upgraded through the web interface (click on switch admin and then on firmware download). You will still need an FTP/SCP server for this though. See the <a href="http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c01731559/c01731559.pdf" title="web tools admin guide for fos 6.2.x">web tools admin guide</a> page 73-74 (FOS 6.2.x but it hasn't moved).</li>
-</ul>
-<p>FileZilla is a free FTP-server that works well. There are many alternatives around. But unfortunately some don't work sometimes (not 100% sure but probably combination of older FOS with older ftp client with FTP server that couldn't handle that client) as listed in the comments thread in this post. FileZilla is however still on sourceforge so you may want to be careful about installing that - it might contain malware. Storing them on a Synology NAS works - thanks Henny!</p>
-<p>For FTP clients:</p>
-<ul>
-<li>/usr/bin/ftp in Ubuntu (also in Ubuntu on Windows)</li>
-<li><a href="http://winscp.net/" title=".net">WinSCP</a> for a free opensource Windows alternative that does both ftp and SCP (and more).</li>
-</ul>
-<p>For SCP any machine with Linux and sshd on should work. You can also get an scp-server running on Windows, OpenSSH would work. Both protocols are old, <a href="http://en.wikipedia.org/wiki/Secure_copy" title="on wikipedia">SCP is safer</a> while FTP is sending data in clear text.</p>
-<p>Personally I like doing this via the CLI. The Network Advisor way gives you the possibility to upgrade in parallel, but that's also risky. If you use a Linux server to provide the firmwares via SCP don't forget to let the switches in via firewall or tcp.wrapper ( /etc/hosts.allow ). If you do the upgrade via ftp - make sure that passive and active ftp both works.</p>
-<h2 id="how-to-access-the-san-switch">How to access the SAN-switch</h2>
-<p>The most common way is to access the CLI of a Brocade switch by connect to the IP of it with an ssh- or telnet-client, <a href="http://www.putty.org/" title="putty.nl">PuTTy</a> is the name of a free Windows client. If you are comfortable with CLI, Windows 10 has WSL and a good ssh and scp client built in. Telnet is unsafe so do try to use the ssh at all costs. Windows 10 has Bash which is in my opinion much nicer to use than putty. It's also possible to access the switch CLI via a serial cable, however as the firmware files are several 100MB (approaching 1GB for 6.4.x) that's not really viable when upgrading firmware. Hyperterminal is a free windows tool that comes by default in some Windows versions. You can also use PuTTy for serial access. To access the web interface just point the web browser to . It requires Java. The Java version that's supported is listed in the release notes of the Fabric OS.</p>
-<h1 id="upgrade">Upgrade</h1>
-<p><a href="http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345" title="on new ITRC">Here on HP's Support Forum</a> are some more notes about v6.x. Basic steps:</p>
-<p>Note: version 6 does not require to specify the exact folder location SWBDxx: it just needs the root containing "the install" file</p>
-<p>1) Unpack the downloaded firmware in the FTP or SCP download directory 2) Start the FTP/SCP Server and allow access 3) Connect to the CLI of the switch via telnet or ssh 4) Type this in the CLI: firmwaredownload 5) Answer all questions: when it asks for File Name be sure to write /v6.4.1b, that is the folder under which you find all the SWBDxx folders. Failing to do so makes it impossible to download the firmware 6) Wait for reboot of the switch and reconnect, check the firmware version with the "version" command</p>
-<h2 id="more-notes-about-the-upgrade">More notes about the upgrade</h2>
-<p>CLI Command to start the update process is <strong>firmwaredownload</strong> - this starts the interactive version, it is possible to specify user, directory, host directly via the CLI. See the <a href="http://www.brocade.com/content/html/en/command-reference-guide/fos-741-commandref/wwhelp/wwhimpl/js/html/wwhelp.htm" title="Link to manuals for HP B-series switches on hp.com">Command Reference Guide</a> for details. There are reference guides for each major Fabric OS release.</p>
-<h3 id="specifying-directory">Specifying Directory</h3>
-<p>Please use forward slashes when specifying directories.</p>
-<p>For example when you unzip the firmware file and it creates a sub-folder in the FTP-root that is called v5.3.1a then you need to specify /v5.3.1a as the directory.</p>
-<p>For firmwares prior to 5.3.x you have to specify the release.plist - /v5.2.2a/release.plist. <em>However it says in the release notes for 5.2.3 that release.plist is no longer needed.</em></p>
-<p>In some cases you may have to specify the sub directory. For example the 4/16 HP Switch is a Brocade 200E with switchtype 34. So you would then use directory SWBD34 - /v5.3.1a/SWDB34. You can also try with /v5.3.1a/release.plist, /v5.3.1a/SWDB34/release.plist or /v5.3.1a/install. However with 5.3.1a you <em>should</em> not have to so /v5.3.1a should be enough.</p>
-<h3 id="firmwaredownload-example">firmwaredownload example:</h3>
-<div class="highlight"><pre><span></span><code>switch:admin&gt;<span class="w"> </span>firmwaredownload
-Server<span class="w"> </span>Name<span class="w"> </span>or<span class="w"> </span>IP<span class="w"> </span>Address:<span class="w"> </span>IP.TO.SCP.SERVER
-User<span class="w"> </span>Name:<span class="w"> </span>username
-File<span class="w"> </span>Name:<span class="w"> </span>/path/to/v6.2.2e
-Network<span class="w"> </span>Protocol<span class="o">(</span><span class="m">1</span>-auto-select,<span class="w"> </span><span class="m">2</span>-FTP,<span class="w"> </span><span class="m">3</span>-SCP<span class="o">)</span><span class="w"> </span><span class="se">\[</span><span class="m">1</span><span class="se">\]</span>:<span class="w"> </span><span class="m">3</span>
-Password:
-Server<span class="w"> </span>IP:<span class="w"> </span>IP.TO.SCP.SERVER,<span class="w"> </span>Protocol<span class="w"> </span>IPv4
-Checking<span class="w"> </span>system<span class="w"> </span>settings<span class="w"> </span><span class="k">for</span><span class="w"> </span>firmwaredownload...
-System<span class="w"> </span>settings<span class="w"> </span>check<span class="w"> </span>passed.
-You<span class="w"> </span>can<span class="w"> </span>run<span class="w"> </span>firmwaredownloadstatus<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>the<span class="w"> </span>status
-<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>command.
-This<span class="w"> </span><span class="nb">command</span><span class="w"> </span>will<span class="w"> </span>cause<span class="w"> </span>a<span class="w"> </span>warm/non-disruptive<span class="w"> </span>boot<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>switch,
-<span class="w"> </span>but<span class="w"> </span>will<span class="w"> </span>require<span class="w"> </span>that<span class="w"> </span>existing<span class="w"> </span>telnet,<span class="w"> </span>secure<span class="w"> </span>telnet<span class="w"> </span>or<span class="w"> </span>SSH<span class="w"> </span>sessions
-<span class="w"> </span>be<span class="w"> </span>restarted.
-Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="se">\[</span>Y<span class="se">\]</span>:<span class="w"> </span>y
-<span class="w"> </span>Firmware<span class="w"> </span>is<span class="w"> </span>being<span class="w"> </span>downloaded<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>switch.<span class="w"> </span>This<span class="w"> </span>step<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span><span class="m">30</span><span class="w"> </span>minutes.
-<span class="w"> </span>Preparing<span class="w"> </span><span class="k">for</span><span class="w"> </span>firmwaredownload...
-<span class="w"> </span>Start<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>packages...
-<span class="w"> </span>dir<span class="w"> </span><span class="c1">##################################################</span>
-<span class="w"> </span><span class="se">\[\[</span>lots<span class="w"> </span>of<span class="w"> </span>these<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>packets<span class="se">\]\]</span><span class="w"> </span><span class="c1">##################################################</span>
-<span class="w"> </span><span class="se">\[\[</span>also<span class="w"> </span>stuff<span class="w"> </span>like<span class="w"> </span>these<span class="w"> </span>are<span class="w"> </span>seen<span class="w"> </span>many<span class="w"> </span>times:<span class="se">\]\]</span>
-<span class="w"> </span>warning:<span class="w"> </span>/etc/fabos/pki/switch.0.rootcrt<span class="w"> </span>created<span class="w"> </span>as<span class="w"> </span>/etc/fabos/pki/switch.0.rootcrt.rpmnew
-<span class="w"> </span>kernel-module-ipsec<span class="w"> </span><span class="c1">##################################################</span>
-<span class="w"> </span>Removing<span class="w"> </span>unneeded<span class="w"> </span>files,<span class="w"> </span>please<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>...
-<span class="w"> </span>Finished<span class="w"> </span>removing<span class="w"> </span>unneeded<span class="w"> </span>files.
-All<span class="w"> </span>packages<span class="w"> </span>have<span class="w"> </span>been<span class="w"> </span>downloaded<span class="w"> </span>successfully.
-<span class="w"> </span>Firmware<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>downloaded<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>secondary<span class="w"> </span>partition<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>switch.
-<span class="w"> </span>HA<span class="w"> </span>Rebooting<span class="w"> </span>...
-</code></pre></div>
-
-<h3 id="transfer-protocol-and-connectivity">Transfer Protocol and Connectivity</h3>
-<p>If you are using SCP and that does not work, please try with FTP. If neither works, see if something else can log on to the FTP/SCP server. And of course, make sure the right permissions/root directory are set on the FTP-server. If your FTP/SCP server has log files, check them. If it works from one client but not from the switch, check the logs and see if there's a difference. Sometimes if the SCP doesn't work via CLI it might work by doing SCP (but starting it from the Web Tools, thanks Eric in the comments for this!).</p>
-<p>If you are logged on as root on the SAN-switch you can use the scp- or ssh-client on the switch to confirm connectivity, like this:</p>
-<p><strong>ssh username@server ls /tmp/v6.0.1a</strong> to list the /tmp/v6.0.1a on the SCP server.</p>
-<p><em>You need to be root to run the above command.</em></p>
-<p>If that also does not work, you have some kind of networking problem - you can try direct connecting a laptop to the LAN interface of the switch. To see the network settings on the switch: ifmodeshow and ipaddrshow</p>
-<h3 id="passwords">Passwords</h3>
-<p>Sometimes when upgrading from 6.1.1d to 6.2.2 we have seen that the passwords have gotten reset.</p>
-<p>Default password is then "password" or "fibranne".</p>
-<p>You can reset the password with the CLI command "passwd admin" to reset password on the admin account.</p>
-<p>If you forget all passwords it might be possible to be able to reset it via the serial cable interface while booting the switch.</p>
-<p>On EMC branded switches the default password might be: <a href="http://community.brocade.com/thread/6127" title="link to forum post on brocade.com">Serv4EMC</a></p>
-<h3 id="cf-cards">CF Cards</h3>
-<p>If your switch is out of warranty/contract and it's still working. I'd suggest making a copy(<a href="http://community.brocade.com/thread/6406" title="post about it on brocade's forum">dd  in linux for example</a>) of the CF-card. Then if the CF card decides to fail you can just get a new one from random_electronic store and dd the contents of the flash back.</p>
-<h3 id="licenses">Licenses</h3>
-<p>When replacing a switch make sure that the licenses are correct. If for example you have a switch with 'power pack' - then for HP there is a special spare part number for a switch with power pack and one without. Power pack is a grouping of licenses,  which licenses are in the pack differs between models.</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #tutorial Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-01T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-01
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/brocade-san-switch-firmware-upgrades.html">Brocade SAN Switch Firmware Upgrades</a>
+        </h4>
+        <div class="content">
+          Overview Table of Contents Overview Updates in this article: Steps Decide Download firmware links: Firmware Upgrade Order Release notes: Notes from the release notes: DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor . Updates to documents Fabric Watch and MAPS with FOS v7.3 Interoperability Prepare Download old Brocade Fabric …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 ---
-title: "Music of the day – 19th of April + Go Detroit Day"
+title: Music of the day – 19th of April + Go Detroit Day
 date: 2011-04-19
 category: finland
 tags: florence, and, the, machine, leila, boussard, music, nhl, thesixtyone

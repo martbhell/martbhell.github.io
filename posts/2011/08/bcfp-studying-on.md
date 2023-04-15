@@ -1,5 +1,5 @@
 ---
-title: "BCFP Studying on"
+title: BCFP Studying on
 date: 2011-08-16
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, fcip, top, talkers

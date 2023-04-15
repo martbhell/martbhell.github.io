@@ -1,5 +1,5 @@
 ---
-title: "Windows 8 Consumer Preview in VMWare Workstation"
+title: Windows 8 Consumer Preview in VMWare Workstation
 date: 2012-02-29
 category: it
 tags: beta, preview, testing, vmware, vmware, workstation, windows, windows, 8, windows, 8, preview

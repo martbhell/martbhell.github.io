@@ -1,5 +1,5 @@
 ---
-title: "Frustration?"
+title: Frustration?
 date: 2011-06-20
 category: it
 tags: firmware, it, 2, itrc, learning, upgrade

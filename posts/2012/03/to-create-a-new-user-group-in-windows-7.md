@@ -1,5 +1,5 @@
 ---
-title: "To create a new user group in Windows 7"
+title: To create a new user group in Windows 7
 date: 2012-03-09
 category: it, storage
 tags: command, view, command, view, simulator, cv, cv, simulator, cvutil, disk, array, eva, firmware, hp, hsv300, p6000, simulator, sssu, storage, xcs

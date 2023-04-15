@@ -1,5 +1,5 @@
 ---
-title: "How to restrict access to your phpmyadmin"
+title: How to restrict access to your phpmyadmin
 date: 2011-07-27
 category: it
 tags: apache, hardening, linux, phpmyadmin, security, ubuntu, vm

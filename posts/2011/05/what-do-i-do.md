@@ -1,5 +1,5 @@
 ---
-title: "What do I do?"
+title: What do I do?
 date: 2011-05-16
 category: finland, it
 tags: cern, collider, disk, cache, lhc, particle, physics, work

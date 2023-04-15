@@ -1,378 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - boot</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #boot Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/boot.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/red-hat-certification-rhcsa-preparation.html">"Red Hat Certification - RHCSA - Preparation"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2011-12-09T00:00:00+02:00">
-                Published: "2011-12-09"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/boot.html">boot</a> <a href="/tag/booting.html">booting</a> <a href="/tag/certification.html">certification</a> <a href="/tag/chcon.html">chcon</a> <a href="/tag/context.html">context</a> <a href="/tag/iso.html">iso</a> <a href="/tag/kickstart.html">kickstart</a> <a href="/tag/kvm.html">kvm</a> <a href="/tag/libvirt.html">libvirt</a> <a href="/tag/linux.html">linux</a> <a href="/tag/network.html">network</a> <a href="/tag/qemu.html">qemu</a> <a href="/tag/red.html">red</a> <a href="/tag/hat.html">hat</a> <a href="/tag/rhcsa.html">rhcsa</a> <a href="/tag/selinux.html">selinux</a> <a href="/tag/studying.html">studying</a> <a href="/tag/virt.html">virt</a> <a href="/tag/manager.html">manager</a> </p>
-</footer><!-- /.post-info --><p>[toc]</p>
-<p><a href="https://github.com/mconigliaro/RHCE-Cheat-Sheet" title="https://github.com/mconigliaro/RHCE-Cheat-Sheet">https://github.com/mconigliaro/RHCE-Cheat-Sheet</a></p>
-<p>Found this "cheat sheet" for RHCE. Sure it doesn't specifically say RHCSA but honestly there's a lot of good commands in there. Some things obviously might be too advanced for RHCSA, such configuring an dns/named service. But it might be good as a reference.</p>
-<p>The objectives of the RHCSA exam: <a href="https://www.redhat.com/certification/rhcsa/objectives/" title="https://www.redhat.com/certification/rhcsa/objectives/">https://www.redhat.com/certification/rhcsa/objectives/.</a> I copied the ones I'm unsure about below.</p>
-<p>I think definitely it would be a good idea to go through these objectives before taking the exam, and if you have time - do each step as well!</p>
-<p>There's a bunch of things there that I'm not sure about or know how to do. I'm attending a five day RHCSA rapid track course, so we should be able to go through the stuff I don't know there, but doesn't hurt to do a little preparation!</p>
-<p>This post is about: me going through each objective and trying to accomplish it. Writing it down is for you, but mostly for me :) If you have any questions there is the comment field below.</p>
-<p>The lists are the objectives, first level is the actual objective while the sub-lists are commands, thoughts and comments.</p>
-<p>I'm writing this and updating it as I go along. It's purpose is to prepare for the exam, without using any 'cheats' like trying to find out labs/questions that comes on the exam.</p>
-<h2 id="understand-and-use-essential-tools">Understand and Use Essential Tools</h2>
-<ul>
-<li>
-<p>Access remote systems using ssh and VNC</p>
-</li>
-<li>
-<p>In each VM's setting you can specify port etc to the VM.</p>
-</li>
-<li>
-<p>vnc client:</p>
-</li>
-<li>
-<p>Create hard and soft links</p>
-</li>
-<li>
-<p>ln -s file1 file2 #soft</p>
-</li>
-<li>ln file1 file2 #hard</li>
-<li>ls -lia</li>
-<li>
-<p><a href="http://en.wikipedia.org/wiki/Ln_%28Unix%29#Difference_b.2Fw_Hard_Link_and_Symbolic_.28soft.29_link" title="on wikipedia">wikipedia entry</a></p>
-</li>
-<li>
-<p>adjust process priority with renice,</p>
-</li>
-<li>
-<p>renice</p>
-</li>
-<li>nice</li>
-<li>top #to view, also in ps -fe -o pid,comm,nice</li>
-<li>
-<p>/etc/security/limits.conf</p>
-</li>
-<li>
-<p>Access a virtual machine's console</p>
-</li>
-<li>
-<p>Open virt-manager and open the VM.</p>
-</li>
-<li>
-<p>Start and stop virtual machines</p>
-</li>
-<li>
-<p>Open virt-manager and stop/start there.</p>
-</li>
-<li>CLI: virtsh.</li>
-</ul>
-<h3 id="add-virtualization-post-install">Add virtualization post-install.</h3>
-<p>To test: installing with only Desktop. Packages, modules, services?</p>
-<p>After install 'lsmod|grep kvm' doesn't show anything. Went into Add/Remove Software and added stuff under 'Virtualization'. After install, just trying to start virt-manager doesn't work. It asks if libvirt service is running. 'service libvirtd start'. Then virt-manager starts and finds the qemu. No need to reboot as 'chkconfig --list|grep libv' shows that they start on boot. Booting a machine after this works.</p>
-<h2 id="configure-local-storage">Configure Local Storage</h2>
-<ul>
-<li>
-<p>Create and configure LUKS-encrypted partitions and logical volumes to prompt for password and mount a decrypted file system at boot</p>
-</li>
-<li>
-<p>You can set this up while installing the system.</p>
-</li>
-<li>/etc/crypttab</li>
-<li>
-<p>/etc/fstab still necessary</p>
-</li>
-<li>
-<p>Configure systems to mount file systems at boot by Universally Unique ID (UUID) or label</p>
-</li>
-<li>
-<p>fstab: LABEL= and UUID=</p>
-</li>
-<li>
-<p>Find label/UUID with blkid, set label with e2label.</p>
-</li>
-<li>
-<p>Add new partitions, logical volumes and swap to a system non-destructively</p>
-</li>
-<li>
-<p># non-destructively? so without making the system unbootable?</p>
-</li>
-</ul>
-<p>You can format, partition a drive and encrypt it after install. In desktop you can go to places and find the drive in there, that will open a dialogue where you put in the password and tada. After that you can hit 'df -h' to get the UUID and mountpoint. This you then put in /etc/crypttab. Don't forget to add it to /etc/fsstab too. But, be careful here. I managed to screw it up so much that it wouldn't even boot anymore.</p>
-<p><a href="http://rhce.co/configure-systems-to-mount-ext4-luks-encrypted-and-network-file-systems-automatically.html" title="on rhce.co">This is a great guide for how to set up a LUKS partition and mount it on boot.</a> Works for partitions created outside install.</p>
-<p>When I did 'custom layout' in install and set up encryption, it appears to take a lot longer to encrypt/format. If doing this in the exam I'd consider making a small partition. Especially not a 16GB one. It took ~15minutes in comparison to 5s. It was however fast to create with cryptsetup post-install. If you do decide to split up the filesystem (perhaps one partition per VM) then you'll need to set appropriate selinux settings to make it work.</p>
-<h3 id="create-luks-partition-to-boot-from-post-install">Create LUKS partition to boot from post-install</h3>
-<p>During install:</p>
-<p>vdisk in vmware of 20GB. One partition of 500MB for /boot One swap of 512MB One pg of 10GB, VG of the same, and lv for / Keeping available space of about 9GB.</p>
-<p>After boot:</p>
-<ol>
-<li>fdisk -c -u /dev/sda</li>
-<li>
-<p>n, p, 4, enter, enter, t, 4, 83, w</p>
-</li>
-<li>
-<p>new partition, primary, partition 4, starting, end (space), set type, partition 4, type 83, write</p>
-</li>
-<li>
-<p>some error, but fdisk -l shows the new partition /dev/sda4</p>
-</li>
-<li>rebooted (tool advised to)</li>
-<li>cryptsetup luksFormat /dev/sda4</li>
-<li>cryptsetup luksOpen /dev/sda4 luksdrive</li>
-<li>ls /dev/mapper/ will show luksdrive in there.</li>
-<li>mkfs.ext4 /dev/mapper/luksdrive</li>
-<li>
-<p>edit /etc/crypttab and add: /dev/mapper/luksdrive /dev/sda4</p>
-</li>
-<li>
-<p>man crypttab</p>
-</li>
-<li>
-<p>edit /etc/fstab and add: /dev/mapper/luksdrive /mnt/luksdrive ext4 defaults 1 2</p>
-</li>
-<li>
-<p>man fstab</p>
-</li>
-<li>
-<p>mkdir /mnt/luksdrive</p>
-</li>
-<li>mount -a</li>
-<li>cd /mnt/luksdrive</li>
-<li>try a reboot</li>
-</ol>
-<h3 id="mount-filesystem-based-on-uuid-or-label">Mount filesystem based on UUID or label</h3>
-<p><strong>By UUID:</strong> If you for example like above have created another partition and encrypted it and added it to fstab. You could just hit 'blkid' to get the UUID of the partition. Then you can change the /dev/mapper/luksdrive on the fstab into UUID=12354-515-51-5. To try it out, hit mount -a.</p>
-<p><strong>By label:</strong> set it with 'e2label /dev/mapper/luksdrive lukslabel'. Then in fstab add LABEL=lukslabel instead of /dev/mapper/luksdrive. To view label hit: blkid. If there is none set, it's not shown.</p>
-<h2 id="create-and-configure-file-systems">Create and Configure File Systems</h2>
-<ul>
-<li>
-<p>Mount, unmount and use LUKS-encrypted file systems</p>
-</li>
-<li>
-<p>cryptsetup luksOpen /dev/sda4 luksdrivelabel</p>
-</li>
-<li>mount -t filesystem /dev/mapper/luksdrivelabel /mnt/luksdrive</li>
-<li>touch /mnt/luksdrive</li>
-<li>
-<p>umount /mn/luksdrive</p>
-</li>
-<li>
-<p>Mount and unmount CIFS and NFS network file systems</p>
-</li>
-<li>
-<p>mount -t nfs -o rw host:/remotedir /mnt/nfs</p>
-</li>
-<li>mount -t cifs //server/share /mnt/cifs --verbose -o user=username</li>
-<li>
-<p>umount /mnt/dir</p>
-</li>
-<li>
-<p>Extend existing unencrypted ext4-formatted logical volumes</p>
-</li>
-<li>
-<p>Create and configure set-GID directories for collaboration</p>
-</li>
-<li>
-<p>A chmod on a directory that changes group owner of all files under that directory, into the same as the directory.</p>
-</li>
-<li>mkdir /share</li>
-<li>touch /share/1</li>
-<li>chgrp wheel/share</li>
-<li>chmod g+s /share</li>
-<li>touch /share/2</li>
-<li>
-<p>ls -l /share/</p>
-</li>
-<li>
-<p>Create and manage Access Control Lists (ACLs)</p>
-</li>
-<li>
-<p>first you need to <a href="http://rhce.co/create-and-manage-access-control-lists-acls.html" title="on rhce.co">add acl</a> on the file system in /etc/fstab</p>
-</li>
-<li>getfacl</li>
-<li>setfacl -m g:wheel:rw /path/file</li>
-</ul>
-<h3 id="mount-nfs-file-system">Mount NFS file system</h3>
-<p>First, we need to <a href="http://aaronwalrath.wordpress.com/2011/03/18/configure-nfs-server-v3-and-v4-on-scientific-linux-6-and-red-hat-enterprise-linux-rhel-6/" title="aaronwalrath">set up an nfs server</a>, this is not part of RHCSA though.</p>
-<p><strong>on server:</strong> mkdir /nfs;chmod a+w /nfs Make sure nfs-utils and rpcbind are installed. chkconfig --list  # check nfs, nfslock and rpcbind are on edit /etc/export # /nfs IP/netmask(rw,sync,no_root_squash) setsebool -P nfs_export_all_rw check /etc/hosts.allow and .deny starts services</p>
-<p><strong>on client:</strong> mkdir /mnt/nfs mount.nfs 192.168.0.17:/nfs /mnt/nfs -v -w or mount -t nfs -o rw 192.168.0.17:/nfs /mnt/nfs</p>
-<h3 id="acl-on-filesystem">ACL on filesystem</h3>
-<ul>
-<li>mount # see options on your filesystem</li>
-<li>vi /etc/fstab # change 'defaults' to the what you saw in 'mount' and add acl, comma separated</li>
-<li>mount -o remount / # use this to remount /. Or you could reboot. Hard to unmount / if you are using it.</li>
-<li>mount # now it has rw,acl</li>
-<li>getfacl /root/install.log</li>
-<li>setfacl -m g:wheel:rw /root/install.log</li>
-<li>getafcl /root/install.log</li>
-</ul>
-<h3 id="extend-existing-unencrypted-ext4-formatted-logical-volumes">Extend existing unencrypted ext4-formatted logical volumes</h3>
-<h2 id="deploy-configure-and-maintain-systems">Deploy, Configure and Maintain Systems</h2>
-<ul>
-<li>
-<p>Configure systems to boot into a specific runlevel automatically</p>
-</li>
-<li>
-<p>/etc/inittab</p>
-</li>
-<li>
-<p>Install Red Hat Enterprise Linux automatically using Kickstart</p>
-</li>
-<li>Configure a physical machine to host virtual guests</li>
-<li>Install Red Hat Enterprise Linux systems as virtual guests</li>
-<li>Configure systems to launch virtual machines at boot</li>
-</ul>
-<p>Installed SLC6.1 in a VM. This time I chose both Virtual Host and Desktop Environment and X11 for packages. In VMWare Workstation 8 and the settings for the VM, do enable 'virtualization' in the processor options or you cannot virtualize inside the VM. It's a lot easier to setup/install VM if you have a desktop GUI. Especially the part about you getting access to the console.</p>
-<p>Post-install there is a GUI tool in the menu that you can use to install a VM and configure VM-stuff.</p>
-<p>By default the virtual machine starts on boot. In chkconfig --list. There is an entry called 'libvirt-guests'. This is a fairly complex script that looks where the VMs are installed and boots them. You can go into the settings of the VM in the GUI and enable it to boot when the host boots. <em>By the way, if there are issues during boot, see /var/log/boot.log</em></p>
-<h3 id="install-a-vm-via-an-http-server">Install a VM via an http server.</h3>
-<p>yum install php</p>
-<p>This installs httpd with php-support.</p>
-<h3 id="firewall">firewall</h3>
-<p>Add port 80 in the firewall: iptables-save &gt; fwrules. Copy the one with port 22, paste and add port 80. iptables-restore &lt; fwrules.</p>
-<p>To keep the rules on reboot:</p>
-<p>/etc/init.d/iptables save</p>
-<h3 id="copy-dvd-into-your-web-root">Copy DVD into your web root:</h3>
-<p>This assumes that the DVD is mounted automagically which it does for me.</p>
-<p>sudo mkdir /var/www/html/SL6; sudo cp -pR /media/nameofdisk/* /var/www/html/SL6</p>
-<p>If you use the -p that means it preserves the read/write permissions on the files, beceause it's mounted as a CD/DVD that means the files are read-only. If you want to do changes don't use the -p or you'll have to change that stuff later.</p>
-<h3 id="to-set-selinux-context">To set SELINUX context:</h3>
-<p>chcon -R --reference=/var/www /var/www/html/SL6.</p>
-<h3 id="install-from-http">Install from HTTP</h3>
-<p>Launch the virtualization manager. Create new VM. Name and network transfer, point to your httpd. RAM, disk space. Chose network interface - I only had NAT. (if you follow my guide below you'll need to set static IP settings). After that the machine boots and you get a console. It starts graphical and then install continues as usual. If you want to see which IP your VM in the VM gets you can look in the access_log in /var/log. By default it got an address in 192.168.122.* range. If you set too little memory you cannot get the kdump.</p>
-<h3 id="bridged-networking">Bridged networking</h3>
-<p>follow <a href="http://www.techotopia.com/index.php/Creating_an_RHEL_6_KVM_Networked_Bridge_Interface" title="on techotopia">this guide</a> (incomplete) or one on <a href="http://linuxtopia.org/online_books/rhel6/rhel_6_virtualization/rhel_6_virtualization_sect-Virtualization-Network_Configuration-Bridged_networking_with_libvirt.html" title="linuxtopia">linuxtopia</a> or on <a href="http://wiki.libvirt.org/page/Networking#Bridged_networking_.28aka_.22shared_physical_device.22.29" title="libvirt">libvirt wiki</a></p>
-<ol>
-<li>ifdown eth0</li>
-<li>cd /etc/sysconfig/network-scripts</li>
-<li>cp ifcfg-eth0 ifcfg-bridge0</li>
-<li>edit ifcfg-eth0 and add 'BRIDGE="bridge0" '</li>
-<li>edit ifcfg-bridge0 and set 'DEVICE="bridge0" ', 'TYPE="Bridge" ', 'DELAY="0" '</li>
-<li>TYPE needs to be Bridge, capital B.</li>
-<li>ifup eth0</li>
-<li>ifup bridge0</li>
-<li>ifconfig bridge0 192.168.0.17</li>
-<li>add a rule similar to -A INPUT -i bridge0 -j ACCEPT in the iptables (don't forget to save/restart iptables)</li>
-<li>edit /etc/resolv.conf with 'nameserver ip.ip.ip.ip'.</li>
-<li>/etc/sysctl.conf and enable ip_forwarding. Reboot or sysctl -p /etc/sysctl.conf</li>
-<li>consider adding static IP addresses in ifcfg-bridge0. My DHCP didn't work, probably because of some configration in VMWare Workstation. BOOTPROTO="static", IPADDR, NETMASK, GATEWAY, NM_CONTROLLED="no", ONBOOT="yes".</li>
-</ol>
-<h3 id="installing-with-the-help-of-kickstart">Installing with the help of kickstart</h3>
-<p>First, copy the /root/anaconda-ks.cfg to /var/www/html/SL6/ks.cfg. Also set permissions to the file as appropriate. Then open that file in system-config-kickstart. You probably want to change some stuff. For HTTP server install set server to: 192.168.0.17 and path to SL6. That's if your path is . And of course add the whole URL to the ks.cfg. Remove virtualization packets. Change hdd layout stuff, you probably have less space available this time. Change URL to repository. Mine was still set to CD/ROM so had to manually set that during boot. Got two questions during the install: do you want to overwrite what's on the disk? And, reboot? at the end of install. Consider removing these to speed up install. Also, I could not log on after first reboot. Even though I kept the root password as is.</p>
-<p>In system-config-kickstart: Set it to clear MBR, initialize labels and also to autoreboot upon completion. For root password you need to manually enter, you can set it to plaintext. Set setupagent to disabled for a completely automatic install. Repository you cannot change in system-config-kickstart. Manually edit the ks.cfg.</p>
-<p>repo --name --baseurl=http://192.168.0.17/SL6 user --name user --plaintext --password 112233</p>
-<p>Last one creates a user called user with pw 112233.</p>
-<h3 id="how-to-boot-into-cd-in-vm-in-qemu">How-to Boot into CD in VM in qemu</h3>
-<p>Download the .iso. Add new storage hardware, make it an IDE CD-ROM, hit add existing storage and select the .iso, set type to 'raw'. Change boot order.</p>
-<h2 id="manage-users-and-groups">Manage Users and Groups</h2>
-<ul>
-<li>
-<p>adjust password aging for local user accounts</p>
-</li>
-<li>
-<p>chage</p>
-</li>
-<li>
-<p>Set enforcing and permissive modes for SELinux</p>
-</li>
-<li>
-<p>sestatus to see current setting</p>
-</li>
-<li>/etc/selinux/config # for settings</li>
-<li>
-<p>Command to set it 'on the fly':</p>
-</li>
-<li>
-<p>List and identify SELinux file and process context</p>
-</li>
-<li>
-<p>files: ls -Z</p>
-</li>
-<li>
-<p>processes: ps -e fZ</p>
-</li>
-<li>
-<p>Restore default file contexts</p>
-</li>
-<li>
-<p>chcon -R --reference=/var/www/html /var/www/html/SL6</p>
-</li>
-<li>chon -t usr_t /var/www/html/SL6</li>
-<li>
-<p>restorecon -v /var/www/html/SL6</p>
-</li>
-<li>
-<p>Use boolean settings to modify system SELinux settings</p>
-</li>
-<li>
-<p>setsebool</p>
-</li>
-<li>
-<p>to find the available settings: getsebool -a</p>
-</li>
-<li>
-<p>Diagnose and address routine SELinux policy violations</p>
-</li>
-<li>
-<p>Tool 'sealert'. Logs are in /var/log/audit</p>
-</li>
-<li>There is also a GUI tool.</li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #boot Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-12-09T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-12-09
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/red-hat-certification-rhcsa-preparation.html">Red Hat Certification - RHCSA - Preparation</a>
+        </h4>
+        <div class="content">
+          [toc] https://github.com/mconigliaro/RHCE-Cheat-Sheet Found this "cheat sheet" for RHCE. Sure it doesn't specifically say RHCSA but honestly there's a lot of good commands in there. Some things obviously might be too advanced for RHCSA, such configuring an dns/named service. But it might be good as a …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 ---
-title: "RHCSA – Rapid Track – Day 3"
+title: RHCSA – Rapid Track – Day 3
 date: 2011-12-14
 category: it
 tags: book, certification, kickstart, linux, luks, red, hat, review, rhcsa, selinux, storage, studying

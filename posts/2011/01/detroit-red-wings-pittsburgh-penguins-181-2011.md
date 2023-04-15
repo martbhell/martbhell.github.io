@@ -1,5 +1,5 @@
 ---
-title: "Detroit Red Wings - Pittsburgh Penguins 18/1 2011"
+title: Detroit Red Wings - Pittsburgh Penguins 18/1 2011
 date: 2011-01-19
 category: finland
 tags: nhl

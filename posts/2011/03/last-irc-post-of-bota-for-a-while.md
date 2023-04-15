@@ -1,5 +1,5 @@
 ---
-title: "Last IRC-post of bota for a while"
+title: Last IRC-post of bota for a while
 date: 2011-03-30
 category: finland
 tags: bo7a, canada, island, live, on, an, island, travel

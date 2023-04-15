@@ -1,5 +1,5 @@
 ---
-title: "Setup a 3 Node Lustre Filesystem"
+title: Setup a 3 Node Lustre Filesystem
 date: 2012-10-13
 category: storage
 tags: centos, cluster, filesystem, install, kernel, linux, lustre, mds, oss, ost, rhel, rpmbuild, san, storage, vmware, yum

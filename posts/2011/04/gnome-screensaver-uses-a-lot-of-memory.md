@@ -1,5 +1,5 @@
 ---
-title: "gnome-screensaver uses a lot of memory"
+title: gnome-screensaver uses a lot of memory
 date: 2011-04-14
 category: finland
 tags: dwm, gnome, screensaver, linux, memory, memory, hog, useage

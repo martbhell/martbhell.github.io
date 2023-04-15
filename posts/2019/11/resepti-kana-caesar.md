@@ -1,5 +1,5 @@
 ---
-title: "Resepti: Kana Caesar"
+title: Resepti: Kana Caesar
 date: 2019-11-12
 category: finland
 

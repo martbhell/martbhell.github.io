@@ -1,5 +1,5 @@
 ---
-title: "Brocade Certification - BCFD - Objectives"
+title: Brocade Certification - BCFD - Objectives
 date: 2012-02-02
 category: storage
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network

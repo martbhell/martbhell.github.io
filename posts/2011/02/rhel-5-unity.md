@@ -1,5 +1,5 @@
 ---
-title: "RHEL 5 + Unity"
+title: RHEL 5 + Unity
 date: 2011-02-22
 category: it
 tags: depositories, fedora, linux, red, hat, rhel, unity, vmware, workstation

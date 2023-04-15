@@ -1,5 +1,5 @@
 ---
-title: "Science-Fiction and Fantasy Books in Helsinki"
+title: Science-Fiction and Fantasy Books in Helsinki
 date: 2011-02-25
 category: finland
 tags: book, fantasy, helmet, kirjakauppa, kirjasto, library, sci, fi, second, hand

@@ -1,273 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>There is IT in Helsinki - cloud</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="There is IT in Helsinki Atom Feed" />
-</head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">There is IT in Helsinki</a></h1>
-                <nav><ul>
-                    <li><a href="/category/finland.html">finland</a></li>
-                    <li><a href="/category/it.html">it</a></li>
-                    <li><a href="/category/storage.html">storage</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+  <title>  #cloud Articles | There is IT in Helsinki
+</title>
+  <link rel="canonical" href="/tag/cloud.html">
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/playing-with-devstack-while-studying-for-openstack-certified-administrator.html">"Playing with devstack while studying for OpenStack Certified Administrator"</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-11-08T00:00:00+02:00">
-                Published: "2018-11-08"
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cloud.html">cloud</a> </p>
-</footer><!-- /.post-info --><p>Below I'll go through some topics I thought about while reading through the <a href="https://www.openstack.org/coa/requirements/">requirements</a> for COA:</p>
-<ul>
-<li>Users and passwords because we use a LDAP at $dayjob. How to set passwords and stuff?<ul>
-<li>openstack user password set</li>
-<li>openstack role add --user foo member --project demo</li>
-</ul>
-</li>
-<li>Users and quota. Can one set openstack to have user quota? <ul>
-<li><em>guess not :)</em></li>
-</ul>
-</li>
-<li>How to default quota with CLI?<ul>
-<li>nova quota-class commands. Found in operator's guide in the docs.</li>
-</ul>
-</li>
-<li>Create openrc without horizon<ul>
-<li>TIL that OS_AUTH in devstack is http://IP/identity . No separate port :) And couldn't really find a nice way. After it's working there's an $ openstack configuration show though which tells stuff..</li>
-</ul>
-</li>
-<li>Cinder backup<ul>
-<li>cool, but this service is not there by default in devstack.</li>
-</ul>
-</li>
-<li>Cinder encryption <ul>
-<li>another volume type with encryption.  Shouldn't need barbican with a fixed_key but I don't know, cinder in my devstack wasn't really working so couldn't attach and try it out. Have some volumes with a encryption_key_id of "000000..." so maybe? Attaching my LVMs isn't working for some reason. Complaining about initiator ?</li>
-</ul>
-</li>
-<li>Cinder groups.<ul>
-<li>Details found under cinder admin guide under rocky.. not Pike. Using cinder command one can create volume group types and then volume groups and then volumes in the volume group. All with cinder command. After you have added volumes into a group you can take snapshots of a volume group. And also create a volume group (and volumes) from the list of snapshots.</li>
-</ul>
-</li>
-<li>
-<p>Cinder storage pool</p>
-<ul>
-<li>backends. In devstack it's devstack@lvmdriver-1apparently one can set volume_backend_name both as a cinder.conf and as a property</li>
-</ul>
-</li>
-<li>
-<p>Object Expiration. Supported in CEPH rados gateway? Yes, but in <a href="http://docs.ceph.com/docs/luminous/radosgw/s3/">luminous</a></p>
-<ul>
-<li>available in default devstack, done with a <a href="https://docs.openstack.org/ocata/user-guide/cli-swift-set-object-expiration.html">magical header</a> X-Delete-After:epoch</li>
-</ul>
-</li>
-<li>Make a Heat template from scratch using the docs. <ul>
-<li>can be made quite minimal</li>
-</ul>
-</li>
-<li>Update a stack</li>
-<li>Checking status of all the services</li>
-<li>Forget about ctrl+w.</li>
-</ul>
-<h2 id="study-environment">Study Environment</h2>
-<p>A <a href="https://docs.openstack.org/devstack/latest/">devstack</a> setup in an Ubuntu 18.04 in a VM in $dayjob cloud. This means no nested virtualization and I wonder how unhappy neutron will be because port security. But it's all within one VM - it started OK, not everything worked but that's fine with me :) Probably just need a local.conf which is not the default!</p>
-<p><em>One thing I got to figure out was the LVM setup for cinder. Always fun to read logs :)</em></p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+  <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/theme/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="/theme/css/theme.css">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/studying-for-openstack-certified-administrator.html" rel="bookmark"
-                           title="Permalink to "Studying for Openstack Certified Administrator"">"Studying for Openstack Certified Administrator"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2018-11-04T00:00:00+02:00">
-                Published: "2018-11-04"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/certification.html">certification</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/openstack.html">openstack</a> </p>
-</footer><!-- /.post-info -->                <p>The plan : study a bit and then attempt the <a href="https://www.openstack.org/coa#coa-details">coa</a> exam. If I don't pass then attend the course during openstack summit: <a href="https://www.openstack.org/summit/berlin-2018/summit-schedule/events/22735/rsvp-required-suse-two-day-training-openstack-administration-prepare-for-the-certified-exams-day-2﻿">SUSE</a></p>
-<p>And what to study? I've been doing openstack admin work for the last year or two. So I have already done and used most services, except <strong>Swift …</strong></p>
-                <a class="readmore" href="/studying-for-openstack-certified-administrator.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/wasthereannhlgamelastnightcom-now-using-object-storage.html" rel="bookmark"
-                           title="Permalink to "wasthereannhlgamelastnight.com - now using object storage!"">"wasthereannhlgamelastnight.com - now using object storage!"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2017-10-07T00:00:00+03:00">
-                Published: "2017-10-07"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cloud.html">cloud</a> <a href="/tag/gcloud.html">gcloud</a> <a href="/tag/google.html">google</a> <a href="/tag/nhl.html">nhl</a> <a href="/tag/programming.html">programming</a> <a href="/tag/wasthereannhlgamelastnight.html">wasthereannhlgamelastnight</a> </p>
-</footer><!-- /.post-info -->                <p>To continue this series of blog posts about the awesome <a href="https://wasthereannhlgamelastnight.appspot.com/WINGS">https://wasthereannhlgamelastnight.appspot.com/WINGS</a> web site where you can see if there was in fact, an <a href="http://nhl.com/schedule">NHL</a> game last night :)</p>
-<p>Some background: First I had a python script that scraped the website of nhl.com and later changed that …</p>
-                <a class="readmore" href="/wasthereannhlgamelastnightcom-now-using-object-storage.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-5.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 – Day 5"">"HEPIX Spring 2011 – Day 5"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-10T00:00:00+03:00">
-                Published: "2011-05-10"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/cern.html">cern</a> <a href="/tag/vm.html">vm</a> <a href="/tag/fs.html">fs</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/cloudbursting.html">cloudbursting</a> <a href="/tag/cvmfs.html">cvmfs</a> <a href="/tag/cvs.html">cvs</a> <a href="/tag/distribution.html">distribution</a> <a href="/tag/git.html">git</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/http.html">http</a> <a href="/tag/national.html">national</a> <a href="/tag/grid.html">grid</a> <a href="/tag/service.html">service</a> <a href="/tag/software.html">software</a> <a href="/tag/squid.html">squid</a> <a href="/tag/svn.html">svn</a> <a href="/tag/version.html">version</a> <a href="/tag/control.html">control</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/machine.html">machine</a> </p>
-</footer><!-- /.post-info -->                <p>What day it is can be told by all the suitcases around the room.</p>
-<h2 id="version-control">Version Control</h2>
-<p>An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-5.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/hepix-spring-2011-day-3.html" rel="bookmark"
-                           title="Permalink to "HEPIX Spring 2011 – Day 3"">"HEPIX Spring 2011 – Day 3"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-05-05T00:00:00+03:00">
-                Published: "2011-05-05"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/adaptec.html">adaptec</a> <a href="/tag/buffered.html">buffered</a> <a href="/tag/tape.html">tape</a> <a href="/tag/marks.html">marks</a> <a href="/tag/cern.html">cern</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/ermm.html">ermm</a> <a href="/tag/errata.html">errata</a> <a href="/tag/hepix.html">hepix</a> <a href="/tag/spring.html">spring</a> <a href="/tag/2011.html">2011</a> <a href="/tag/ibm.html">ibm</a> <a href="/tag/ioapps.html">ioapps</a> <a href="/tag/ioreplay.html">ioreplay</a> <a href="/tag/ipv4.html">ipv4</a> <a href="/tag/ipv6.html">ipv6</a> <a href="/tag/lustre.html">lustre</a> <a href="/tag/oracle.html">oracle</a> <a href="/tag/scientific.html">scientific</a> <a href="/tag/linux.html">linux</a> <a href="/tag/service.html">service</a> <a href="/tag/now.html">now</a> <a href="/tag/sl.html">sl</a> <a href="/tag/strace.html">strace</a> <a href="/tag/sun.html">sun</a> <a href="/tag/t10000c.html">t10000c</a> <a href="/tag/drive.html">drive</a> <a href="/tag/tsm.html">tsm</a> </p>
-</footer><!-- /.post-info -->                <p>Day 3 woop!</p>
-<p>An evaluation of <a href="http://www.gluster.org/" title="gluster.org">gluster</a>: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot.</p>
-<p>Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and <a href="http://www-935.ibm.com/services/de/igs/pdf/br-stor-enterprise-remove-mm-en.pdf" title="links to pdf on ibm.com">ERMM</a>. Where ERMM manages the libraries, so that TSM only sees …</p>
-                <a class="readmore" href="/hepix-spring-2011-day-3.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/eyeos-cloud-desktop-in-your-browser-part-2.html" rel="bookmark"
-                           title="Permalink to "EyeOS - Cloud Desktop in your browser - Part 2"">"EyeOS - Cloud Desktop in your browser - Part 2"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-05T00:00:00+02:00">
-                Published: "2011-02-05"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/10.html">10</a> <a href="/tag/activemq.html">activemq</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/dns.html">dns</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/http.html">http</a> <a href="/tag/icloud.html">icloud</a> <a href="/tag/kaazing.html">kaazing</a> <a href="/tag/pico.html">pico</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/desktop.html">desktop</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> <a href="/tag/web.html">web</a> <a href="/tag/2.html">2</a> <a href="/tag/0.html">0</a> </p>
-</footer><!-- /.post-info -->                <p>After <a href="http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser/#comment-42" title="eyeOS part 1">my first comment ever</a> by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!</p>
-<p>1/ Because I also tried to install cactii on the same VM the other day - and after that I saw some nasty …</p>
-                <a class="readmore" href="/eyeos-cloud-desktop-in-your-browser-part-2.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/eyeos-cloud-desktop-in-your-browser.html" rel="bookmark"
-                           title="Permalink to "EyeOS - Cloud Desktop in your browser"">"EyeOS - Cloud Desktop in your browser"</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-02-03T00:00:00+02:00">
-                Published: "2011-02-03"
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/johan-guldmyr.html">Johan Guldmyr</a>
-        </address>
-<p>In <a href="/category/it.html">it</a>.</p>
-<p>tags: <a href="/tag/activemq.html">activemq</a> <a href="/tag/apt.html">apt</a> <a href="/tag/get.html">get</a> <a href="/tag/cloud.html">cloud</a> <a href="/tag/eyeos.html">eyeos</a> <a href="/tag/icloud.html">icloud</a> <a href="/tag/kaazing.html">kaazing</a> <a href="/tag/pico.html">pico</a> <a href="/tag/ubuntu.html">ubuntu</a> <a href="/tag/virtual.html">virtual</a> <a href="/tag/desktop.html">desktop</a> <a href="/tag/vmware.html">vmware</a> <a href="/tag/workstation.html">workstation</a> </p>
-</footer><!-- /.post-info -->                <p>Useful? Hopefully! Interesting? Very!</p>
-<p>Download on eyeos.org //update 2011-12-20 : turns out there's been some changes here. 2.5 is the one now and it's found under open-source. There's also professional or other editions.</p>
-<h2 id="installation">Installation</h2>
-<p>The installation manual can be found in the above link as well - will I try …</p>
-                <a class="readmore" href="/eyeos-cloud-desktop-in-your-browser.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="https://twitter.com/martbhell">martbhell</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+  <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
+        href="/atom.xml">
+  
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o);
+      a.async = 1;
+      a.src = g;
+      m = s.getElementsByTagName(o)[0];
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'G-H4LG7R6ZGG', 'auto');
     ga('send', 'pageview');
-    </script>
+  </script>
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+    <div class="col-sm-4">
+      <a href="/">
+        <img class="img-fluid rounded" src=/images/blog_site_image.png alt="There is IT in Helsinki">
+      </a>
+    </div>
+  <div class="col-sm-8">
+    <h1 class="title"><a href="/">There is IT in Helsinki</a></h1>
+      <ul class="list-inline">
+          <li class="list-inline-item"><a href="/tags/" target="_blank">tags</a></li>
+          <li class="list-inline-item"><a href="/categories/" target="_blank">categories</a></li>
+            <li class=" list-inline-item text-muted">|</li>
+          <li class="list-inline-item"><a class="fab fa-twitter" href="https://twitter.com/martbhell" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fas fa-rss" href="/atom.xml" target="_blank"></a></li>
+          <li class="list-inline-item"><a class="fab fa-github" href="https://github.com/martbhell" target="_blank"></a></li>
+      </ul>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  #cloud Articles
+</h1>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-11-08T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2018-11-08
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/playing-with-devstack-while-studying-for-openstack-certified-administrator.html">Playing with devstack while studying for OpenStack Certified Administrator</a>
+        </h4>
+        <div class="content">
+          Below I'll go through some topics I thought about while reading through the requirements for COA: Users and passwords because we use a LDAP at $dayjob. How to set passwords and stuff? openstack user password set openstack role add --user foo member --project demo Users and quota. Can one set …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2018-11-04T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2018-11-04
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/studying-for-openstack-certified-administrator.html">Studying for Openstack Certified Administrator</a>
+        </h4>
+        <div class="content">
+          The plan : study a bit and then attempt the coa exam. If I don't pass then attend the course during openstack summit: SUSE And what to study? I've been doing openstack admin work for the last year or two. So I have already done and used most services, except Swift …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2017-10-07T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2017-10-07
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/wasthereannhlgamelastnightcom-now-using-object-storage.html">wasthereannhlgamelastnight.com - now using object storage!</a>
+        </h4>
+        <div class="content">
+          To continue this series of blog posts about the awesome https://wasthereannhlgamelastnight.appspot.com/WINGS web site where you can see if there was in fact, an NHL game last night :) Some background: First I had a python script that scraped the website of nhl.com and later changed that …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-10T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-10
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-5.html">HEPIX Spring 2011 – Day 5</a>
+        </h4>
+        <div class="content">
+          What day it is can be told by all the suitcases around the room. Version Control An overview of the version control used in CERN. Quite cool, they're not using Git yet but they are moving away from CVS to SVN (subversion) which is not updated anymore. Apparently hard to …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-05-05T00:00:00+03:00">
+            <i class="fas fa-clock"></i>
+            2011-05-05
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/hepix-spring-2011-day-3.html">HEPIX Spring 2011 – Day 3</a>
+        </h4>
+        <div class="content">
+          Day 3 woop! An evaluation of gluster: uses distributed metadata, so no bottleneck that comes with a metadata server, can or will do do some replication/snapshot. Virtualization of mass storage (tapes). Using IBM's TSM (Tivoli Storage Manager) and ERMM. Where ERMM manages the libraries, so that TSM only sees …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-05T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-05
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/eyeos-cloud-desktop-in-your-browser-part-2.html">EyeOS - Cloud Desktop in your browser - Part 2</a>
+        </h4>
+        <div class="content">
+          After my first comment ever by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide! 1/ Because I also tried to install cactii on the same VM the other day - and after that I saw some nasty …
+        </div>
+      </div>
+    </article>
+      <hr>
+    <article class="row teaser">
+      <header class="col-sm-4 text-muted">
+        <ul>
+          <li title="2011-02-03T00:00:00+02:00">
+            <i class="fas fa-clock"></i>
+            2011-02-03
+          </li>
+          <li>
+            <i class="fas fa-folder-open"></i>
+            <a href="/category/it.html">it</a>
+          </li>
+        </ul>
+      </header>
+      <div class="col-sm-8">
+        <h4 class="title">
+          <a href="/eyeos-cloud-desktop-in-your-browser.html">EyeOS - Cloud Desktop in your browser</a>
+        </h4>
+        <div class="content">
+          Useful? Hopefully! Interesting? Very! Download on eyeos.org //update 2011-12-20 : turns out there's been some changes here. 2.5 is the one now and it's found under open-source. There's also professional or other editions. Installation The installation manual can be found in the above link as well - will I try …
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+    <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+
 </body>
+
 </html>

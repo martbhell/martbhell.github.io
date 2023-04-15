@@ -1,5 +1,5 @@
 ---
-title: "CentOS 5.8 Released"
+title: CentOS 5.8 Released
 date: 2012-03-08
 category: it
 tags: centos, linux, operating, system, os, red, hat, rhel, scientific, linux, slc

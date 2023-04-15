@@ -8,7 +8,7 @@ TIMEZONE = 'Europe/Helsinki'
 
 DEFAULT_LANG = 'en'
 
-DEFAULT_DATE_FORMAT = '"%Y-%m-%d"'
+DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 
 SITEMAP = {
     "format": "xml",
@@ -34,12 +34,24 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
+         ('tags', 'tags/'),
+         ('categories', 'categories/'),
+         )
+
+FOOTER_LINKS = (
          ('Was There an NHL Game Yesterday?', 'https://wtangy.se'),
          )
 
 # Social widget
 SOCIAL = (('martbhell', 'https://twitter.com/martbhell'),
           )
+
+ICONS = (
+        ('twitter', 'https://twitter.com/martbhell'),
+        ('rss', 'atom.xml'),
+        ('github', 'https://github.com/martbhell'),
+          )
+
 
 DEFAULT_PAGINATION = 10
 
@@ -58,4 +70,20 @@ MARKDOWN = {
         "markdown.extensions.toc": {"title": "Table of Contents"},
     },
     'output_format': 'html5',
+}
+
+import alchemy
+THEME = alchemy.path()
+HIDE_AUTHORS = True
+SITEIMAGE = '/images/blog_site_image.png'
+STATIC_PATHS = ['extras']
+
+EXTRA_PATH_METADATA = {
+    'extras/android-chrome-192x192.png': {'path': 'android-chrome-192x192.png'},
+    'extras/android-chrome-512x512.png': {'path': 'android-chrome-512x512.png'},
+    'extras/apple-touch-icon.png': {'path': 'apple-touch-icon.png'},
+    'extras/favicon-16x16.png': {'path': 'favicon-16x16.png'},
+    'extras/favicon-32x32.png': {'path': 'favicon-32x32.png'},
+    'extras/favicon.ico': {'path': 'favicon.ico'},
+    'extras/manifest.json': {'path': 'manifest.json'},
 }

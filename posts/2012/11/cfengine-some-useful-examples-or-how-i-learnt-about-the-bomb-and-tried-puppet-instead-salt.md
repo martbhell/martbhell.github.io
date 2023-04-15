@@ -1,5 +1,5 @@
 ---
-title: "cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?"
+title: cfengine - some useful examples / or how I learn't about the bomb and tried Puppet instead / salt?
 date: 2012-11-11
 category: it
 tags: automation, cfe, cfengine, cms, linux, puppet, resolv, conf, resolver, salt, salt, highstate, script, scripting

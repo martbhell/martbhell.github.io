@@ -1,5 +1,5 @@
 ---
-title: "BCFP 16G : Post-Exam"
+title: BCFP 16G : Post-Exam
 date: 2011-09-07
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, certification, storage, storage, area, network, storage, network

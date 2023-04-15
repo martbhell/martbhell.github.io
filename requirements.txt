@@ -1,3 +1,4 @@
 pelican[markdown]==4.8.0
 pelican-sitemap==1.0.2
 pelican-more-categories==0.1.0
+git+https://github.com/nairobilug/pelican-alchemy.git@fd70e76

@@ -1,5 +1,5 @@
 ---
-title: "One month at IQM today!"
+title: One month at IQM today!
 date: 2020-04-17
 category: it
 

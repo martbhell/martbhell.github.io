@@ -1,5 +1,5 @@
 ---
-title: "RH413 - Red Hat Server Hardening"
+title: RH413 - Red Hat Server Hardening
 date: 2016-03-18
 category: it
 tags: redhat, rh413, security, server, hardening

@@ -1,5 +1,5 @@
 ---
-title: "DWM - start up script that works with GDM login manager"
+title: DWM - start up script that works with GDM login manager
 date: 2011-03-18
 category: it
 tags: dwm, gdm, gnome, linux, rhel, window, manager

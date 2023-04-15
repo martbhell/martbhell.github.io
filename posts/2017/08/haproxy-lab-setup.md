@@ -1,5 +1,5 @@
 ---
-title: "haproxy lab setup!"
+title: haproxy lab setup!
 date: 2017-08-07
 category: it
 tags: ansible, haproxy, openstack
