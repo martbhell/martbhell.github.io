@@ -4,7 +4,7 @@ date: 2012-05-12
 category: it
 tags: centos, certification, file, transfer, ftp, linux, red, hat, rhce, studying
 
-[1st post](http://www.guldmyr.com/blog/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](http://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
@@ -20,9 +20,9 @@ Network services are an important subset of the exam objectives. RHCE candidates
 
 User should be able to do the following for all these services:
 
-- [http/https](http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd)
-- [dns](http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns)
-- [ftp](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp)
+- [http/https](http://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
+- [dns](http://guldmyr.com/red-hat-certification-rhce-network-services-dns)
+- [ftp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
 - nfs
 - smb
 - smtp

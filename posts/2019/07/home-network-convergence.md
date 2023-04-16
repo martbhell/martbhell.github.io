@@ -6,7 +6,7 @@ tags: chromecast, dnsmasq, hostapd, linux, media, server, openwrt, raspberry, pi
 
 Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone.
 
-I've been thinking lately and in previous posts that maybe I should just get an access point and plug it in a port in the correct VLAN near the TV, as mentioned in a previous posts in https://www.guldmyr.com/blog/vlan-in-the-home-network/ or https://www.guldmyr.com/blog/some-updates-to-the-home-network/
+I've been thinking lately and in previous posts that maybe I should just get an access point and plug it in a port in the correct VLAN near the TV, as mentioned in a previous posts in https://www.guldmyr.com/vlan-in-the-home-network/ or https://www.guldmyr.com/some-updates-to-the-home-network/
 
 But then the other day I started looking at maybe the raspberry Pi I have as a media player could be turned into an access point? (some googling suggest it could be done, but several talk about basic linux install with hostapd and dnsmasq which maybe openwrt would be more fun).
 

@@ -69,6 +69,6 @@ _“It takes 25 years to make a good reputation, 5 minutes to loose it.”_ - CE
 
  
 
-Next Day: [Day 5](http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-5/ "day5")
+Next Day: [Day 5](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5")
 
-Previous Days: [Day 3](http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-3/ "day3") [Day 2](http://www.guldmyr.com/blog/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/blog/hepix-spring-2011-day-1/ "day1")
+Previous Days: [Day 3](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3") [Day 2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")

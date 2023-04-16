@@ -4,7 +4,7 @@ date: 2011-04-17
 category: it
 tags: hdd, ibm, laptop, linux, pata, replace, hard, drive, t40, thinkpad, ultimatebootcd
 
-Previous post in this series: [http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/](http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/ "previous post")
+Previous post in this series: [http://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/](http://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/ "previous post")
 
 I'm going to try to put ubcd on an old USB pen I have, lots easier than burning a CD/DVD. Which I may not even have. It's an old Jens of Sweden 1GB mp3-player, that doesn't start unless plugged in a USB-port..
 
@@ -24,4 +24,4 @@ PXE boots is also an option, but this looks incredibly difficult. It probably is
 
 But, got a hold of my lovely laptop, boots up WinXP just fine. Going to patch it now and keep it going for a while running something, we'll see if it crashes or not. Maybe it is OK?
 
-[Next post](http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-3/ "part3") in this series will be published on the 18th of April. That one is about installing Ubuntu on the Thinkpad T40!
+[Next post](http://www.guldmyr.com/making-use-of-ibm-laptop-t40-%E2%80%93-part-3/ "part3") in this series will be published on the 18th of April. That one is about installing Ubuntu on the Thinkpad T40!

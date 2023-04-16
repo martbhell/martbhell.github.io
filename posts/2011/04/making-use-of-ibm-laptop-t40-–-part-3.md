@@ -8,7 +8,7 @@ tags: hdd, ibm, laptop, linux, pata, replace, hard, drive, t40, thinkpad, ultima
 
 Two previous posts:
 
-[Part1](http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-part-1/ "PART1") - thoughts before installing [Part2](http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-2/ "par2") - ultimate boot CD - for diagnostics
+[Part1](http://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/ "PART1") - thoughts before installing [Part2](http://www.guldmyr.com/making-use-of-ibm-laptop-t40-%E2%80%93-part-2/ "par2") - ultimate boot CD - for diagnostics
 
 I ran the laptop with google-chrome 10 and two flash-pages loading all night, no blue-screens, no errors in event viewer. No actually it looks and feels pretty ok. It's not very fast, but I suspect this is the hard drive being slow.
 
@@ -34,4 +34,4 @@ While setting up the computer name, the installer automagically found out that i
 
 When it's done, the CD pops out, take it, press enter, wait, log in!
 
-[Next post](http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-4/ "setting up") is about logging in and doing the initial setup.
+[Next post](http://www.guldmyr.com/making-use-of-ibm-laptop-t40-%E2%80%93-part-4/ "setting up") is about logging in and doing the initial setup.

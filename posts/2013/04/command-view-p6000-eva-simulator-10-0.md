@@ -6,14 +6,14 @@ tags: command, view, command, view, simulator, cv, cv, simulator, cvutil, disk, 
 
 Due to somewhat popular demand here's another post detailing the steps for somewhat successfully installing HP P6000 Command View Simulator on Windows 7 x64. It can be a bitch.
 
-The [older post](http://www.guldmyr.com/blog/p6000-eva-command-view-simulator/) is from 2011 with CV 9.4, this one also has PA - performance advisory bundled.
+The [older post](http://www.guldmyr.com/p6000-eva-command-view-simulator/) is from 2011 with CV 9.4, this one also has PA - performance advisory bundled.
 
 - Download: [http://software.hp.com](http://software.hp.com/ "http://software.hp.com/")
 - Two files: EVA Simulator 10.0 (Z7550-00252\_EvasimInstaller\_100fr\_v1.exe) and a readme
 - There is an e-mail listed in the readme!
     - But if you want to, you can put in a comment below saying how sexy I am :p
 - The readme is quite long but most of it is about how to use the PA (performance analyzer), Appendix B is a required read. It describes how to add the Groups so you can log on to CV.
-    - A [previous blog](http://www.guldmyr.com/blog/to-create-a-new-user-group-in-windows-7/) post by myself truly also goes through how to add a user group :)
+    - A [previous blog](http://www.guldmyr.com/to-create-a-new-user-group-in-windows-7/) post by myself truly also goes through how to add a user group :)
 
 ## For lazy hounds:
 

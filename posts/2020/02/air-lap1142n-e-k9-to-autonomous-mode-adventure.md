@@ -4,7 +4,7 @@ date: 2020-02-19
 category: it
 tags: aironet, cisco, ethernet, https, ip, lap1142n e k9, network, vlan, wifi, wlan
 
-> ## [![Wifi and PoE injector ](images/DSC_1469-300x225.jpg)](https://www.guldmyr.com/blog/wp-content/uploads/DSC_1469-scaled.jpg)
+> ## [![Wifi and PoE injector ](images/DSC_1469-300x225.jpg)](https://www.guldmyr.com/wp-content/uploads/DSC_1469-scaled.jpg)
 
 ## Some initial needful information
 
@@ -79,7 +79,7 @@ One could enable https, but that used a too weak key by default so I just left i
 
 ## Some extremely useful links
 
-Previous post in this blog about my home network: [https://www.guldmyr.com/blog/home-network-convergence/](https://www.guldmyr.com/blog/home-network-convergence/)
+Previous post in this blog about my home network: [https://www.guldmyr.com/home-network-convergence/](https://www.guldmyr.com/home-network-convergence/)
 
 [https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542](https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542)
 

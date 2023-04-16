@@ -4,7 +4,7 @@ date: 2019-05-30
 category: it
 tags: cable, firmware, home, network, hyper-v, internet, service, provider, modem, network, interface, controller, network, switch, usb3.0, user, interface, virtual, lan, windows10
 
-https://www.guldmyr.com/blog/some-updates-to-the-home-network/
+https://www.guldmyr.com/some-updates-to-the-home-network/
 
 Above is a previous post in this series about some improvements to my home network. With two modems from two ISPs.
 
@@ -42,7 +42,7 @@ One switch-like quality was that to save the running configuration you make in t
 
 There is a manual, one just had to ask the seller on Ali Baba for it - attaching it here for convenience.
 
-[switch manual](https://www.guldmyr.com/blog/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf)[Download](https://www.guldmyr.com/blog/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf)
+[switch manual](https://www.guldmyr.com/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf)[Download](https://www.guldmyr.com/wp-content/uploads/SW1008WEB-managed-switch-manual-1.pdf)
 
 All in all this worked out quite nicely. We'll see how this keeps up. Some further avenues of interest:
 

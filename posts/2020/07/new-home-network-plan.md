@@ -15,7 +15,7 @@ First device: A **Raspberry** Pi 3B with openwrt installed. It'll have an extra 
 
 Internal NIC 100Mbps goes to LAN and will have DHCP Server. The external will have the WAN connection. The RPI 3b also has a WiFi, but it's only 2.4GHz so we'll only use that for local admin access.
 
-Second device is a **[Cisco AP](https://www.guldmyr.com/blog/air-lap1142n-e-k9-to-autonomous-mode-adventure/)** that I blogged about not too long ago. That can do 5GHz :) This hasn't been used but I set it up so I can just plug it into an L2 with a DHCP and it should just work.
+Second device is a **[Cisco AP](https://www.guldmyr.com/air-lap1142n-e-k9-to-autonomous-mode-adventure/)** that I blogged about not too long ago. That can do 5GHz :) This hasn't been used but I set it up so I can just plug it into an L2 with a DHCP and it should just work.
 
 Will also use an unmanaged switch to connect stuff on the LAN.
 

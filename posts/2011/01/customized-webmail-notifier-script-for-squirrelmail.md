@@ -18,4 +18,4 @@ I had to change this function in the code to make it work:
 
 The WebMail notifier script [squirrelmail\_guldmyr](../wp-content/uploads/squirrelmail_guldmyr.js)
 
-The X-Notifier script [squirrelmail\_guldmyr\_xnotifier](http://www.guldmyr.com/blog/wp-content/uploads/squirrelmail_guldmyr_xnotifier.js)
+The X-Notifier script [squirrelmail\_guldmyr\_xnotifier](http://www.guldmyr.com/wp-content/uploads/squirrelmail_guldmyr_xnotifier.js)

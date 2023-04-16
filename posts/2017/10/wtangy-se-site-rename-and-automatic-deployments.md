@@ -6,7 +6,7 @@ tags: appengine, google, nhl, travis, wasthereannhlgamelastnight, wtangy, wtangy
 
 This is a good one!
 
-Previous entries in this series: [http://www.guldmyr.com/blog/wasthereannhlgamelastnight-com-now-using-object-storage/](http://www.guldmyr.com/blog/wasthereannhlgamelastnight-com-now-using-object-storage/) and  [http://www.guldmyr.com/blog/wasthereannhlgamelastnight-appspot-com-fixed-working-again/](http://www.guldmyr.com/blog/wasthereannhlgamelastnight-appspot-com-fixed-working-again/)
+Previous entries in this series: [http://www.guldmyr.com/wasthereannhlgamelastnight-com-now-using-object-storage/](http://www.guldmyr.com/wasthereannhlgamelastnight-com-now-using-object-storage/) and  [http://www.guldmyr.com/wasthereannhlgamelastnight-appspot-com-fixed-working-again/](http://www.guldmyr.com/wasthereannhlgamelastnight-appspot-com-fixed-working-again/)
 
 # Renamed to wtangy.se
 

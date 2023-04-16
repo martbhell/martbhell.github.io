@@ -29,4 +29,4 @@ To only update it when there are changes would be cool as then I could notify my
 
  
 
-http://www.guldmyr.com/blog/wasthereannhlgamelastnight-appspot-com-fixed-working-again/
+http://www.guldmyr.com/wasthereannhlgamelastnight-appspot-com-fixed-working-again/

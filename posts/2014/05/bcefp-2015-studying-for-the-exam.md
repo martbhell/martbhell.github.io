@@ -6,7 +6,7 @@ tags: brocade, brocade, certified, brocade, certified, ethernet, fabric, profess
 coverImage: "original.gif"
 ---
 
-In a [previous post](http://www.guldmyr.com/blog/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") I listed a some of the sources Brocade listed that one should use when studying for the BCEFP exam. Here I'm going through a those I found some comments on what what they are and what I think of them.
+In a [previous post](http://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") I listed a some of the sources Brocade listed that one should use when studying for the BCEFP exam. Here I'm going through a those I found some comments on what what they are and what I think of them.
 
 ## Beta Course Material
 

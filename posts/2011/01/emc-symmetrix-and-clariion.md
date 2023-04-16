@@ -6,7 +6,7 @@ tags: emc, storage
 coverImage: "storage.gif"
 ---
 
-\[caption id="attachment\_19" align="alignnone" width="109" caption="storage"\][![box](images/storage.gif "storage")](http://www.guldmyr.com/blog/wp-content/uploads/storage.gif)\[/caption\]
+\[caption id="attachment\_19" align="alignnone" width="109" caption="storage"\][![box](images/storage.gif "storage")](http://www.guldmyr.com/wp-content/uploads/storage.gif)\[/caption\]
 
 So got two calls this week about a storage specialist job.
 

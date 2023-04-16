@@ -4,7 +4,7 @@ date: 2012-01-15
 category: storage
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
 
-[Overview](http://www.guldmyr.com/blog/brocade-certification-bcfd-fabric-designer-preparation/ "overview") / Preparation
+[Overview](http://www.guldmyr.com/brocade-certification-bcfd-fabric-designer-preparation/ "overview") / Preparation
 
 [Module 3](http://www.guldmyr.com/blog/?p=1265 "module 3") / SAN Infrastructure
 

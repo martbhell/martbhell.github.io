@@ -4,7 +4,7 @@ date: 2011-02-04
 category: it
 tags: it, sharepoint, vmware, workstation, windows
 
-The previous posts: [Part 1](http://www.guldmyr.com/blog/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/ "sharepoint part 1") \- installing Sharepoint 2010 Foundation. [Part 2](http://www.guldmyr.com/blog/sharepoint-2010-foundation-part-2/ "sharepoint par t2") - basic features in the web interface.
+The previous posts: [Part 1](http://www.guldmyr.com/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/ "sharepoint part 1") \- installing Sharepoint 2010 Foundation. [Part 2](http://www.guldmyr.com/sharepoint-2010-foundation-part-2/ "sharepoint par t2") - basic features in the web interface.
 
 I said I was going to look into the RSS updates, how to manually edit the database and look into the underlying structure of the Sharepoint. But, only went through the last of the obvious administration tools :p
 

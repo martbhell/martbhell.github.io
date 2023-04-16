@@ -22,7 +22,7 @@ Teacher did not mention chcon at all, only restorecon.
 
 This RHCSA course do assume that you know a bit. For example it assumes that you know scripting, we're not going through that at all. Using vi, less, are also assumed. Parsing, grepping etc. There are people struggling keeping up in class.
 
-[Going through all the objectives](http://www.guldmyr.com/blog/rhcsa-preparation/ "Red Hat Certification – RHCSA – Preparation") before attending is a great idea. It gives you some breathing room while doing the exercises in class and if you have stumbled upon and questions while you were experimenting yourself - you have a great opportunity to ask these in class. Another good thing with this is probably that it makes you faster at doing the task. If you can reset the root password on a VM in 60 seconds, instead of 300s - because you're wondering about what commands to run, what parameters to send and how to send them, etc, that'll save you a lot of time.
+[Going through all the objectives](http://www.guldmyr.com/rhcsa-preparation/ "Red Hat Certification – RHCSA – Preparation") before attending is a great idea. It gives you some breathing room while doing the exercises in class and if you have stumbled upon and questions while you were experimenting yourself - you have a great opportunity to ask these in class. Another good thing with this is probably that it makes you faster at doing the task. If you can reset the root password on a VM in 60 seconds, instead of 300s - because you're wondering about what commands to run, what parameters to send and how to send them, etc, that'll save you a lot of time.
 
 ### Mini Book Review
 

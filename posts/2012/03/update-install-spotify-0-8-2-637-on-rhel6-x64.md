@@ -6,7 +6,7 @@ tags: 0.8.2.637, alien, qt, red, hat, rhel, spotify, ubuntu
 
 Previous post:
 
-[http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/](http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/ "http://www.guldmyr.com/blog/how-to-update-spotify-on-rhel6-x64-native-client/")
+[http://www.guldmyr.com/how-to-update-spotify-on-rhel6-x64-native-client/](http://www.guldmyr.com/how-to-update-spotify-on-rhel6-x64-native-client/ "http://www.guldmyr.com/how-to-update-spotify-on-rhel6-x64-native-client/")
 
 Installed spotify-client-0.8.2.637.g252b980.486-2.x86\_64.rpm - this is converted from the .deb package that is downloaded from: [http://repository.spotify.com/pool/non-free/s/spotify/](http://repository.spotify.com/pool/non-free/s/spotify/ "http://repository.spotify.com/pool/non-free/s/spotify/")
 

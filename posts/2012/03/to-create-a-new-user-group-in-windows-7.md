@@ -4,7 +4,7 @@ date: 2012-03-09
 category: it, storage
 tags: command, view, command, view, simulator, cv, cv, simulator, cvutil, disk, array, eva, firmware, hp, hsv300, p6000, simulator, sssu, storage, xcs
 
-This post is [created upon request](http://www.guldmyr.com/blog/p6000-eva-command-view-simulator/comment-page-1/#comment-6759 "comment") by a reader.
+This post is [created upon request](http://www.guldmyr.com/p6000-eva-command-view-simulator/comment-page-1/#comment-6759 "comment") by a reader.
 
 May or may not be needed for the P6000 Simulator. It is however required when you install the real HP P6000 Command View.
 

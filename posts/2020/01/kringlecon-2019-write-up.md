@@ -682,7 +682,7 @@ done
 and the API.py
 
 ```python
-#https://stoplight.io/blog/python-rest-api/
+#https://stoplight.io/python-rest-api/
 from flask import Flask, json
 import os
 

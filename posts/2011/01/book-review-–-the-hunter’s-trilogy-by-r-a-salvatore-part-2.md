@@ -4,7 +4,7 @@ date: 2011-01-31
 category: finland
 tags: book, crystallization, good, omens, malazan, ra salvatore, review, stephen, erikson, terry, pratchett
 
-[Part 1](http://www.guldmyr.com/blog/book-review-the-hunters-trilogy-by-r-a-salvatore/ "PART 1")
+[Part 1](http://www.guldmyr.com/book-review-the-hunters-trilogy-by-r-a-salvatore/ "PART 1")
 
 As you may have figured out, I sincerely doubt I will ever read another R.A. Salvatore - unless somebody tells me it's worth it and points to another series/trilogy. Thus part 2 will contain the last time I mention this book except for the title: **It** _**is**_ in the process of being returned to the library.
 

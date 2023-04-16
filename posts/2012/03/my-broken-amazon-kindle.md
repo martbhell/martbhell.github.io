@@ -6,7 +6,7 @@ tags: amazon, ebook, game of thrones, hardware, kindle, malfunction, song of ice
 coverImage: "kindle_screen_error.jpg"
 ---
 
-During the weekend the screen on my amazon kindle 6" decided to go partially broken.[![](images/kindle_screen_error-200x300.jpg "kindle_screen_error")](http://www.guldmyr.com/blog/wp-content/uploads/kindle_screen_error.jpg)It happened while it was in my backpack inside a 'leather cover' that I also got from amazon at the time of purchase.
+During the weekend the screen on my amazon kindle 6" decided to go partially broken.[![](images/kindle_screen_error-200x300.jpg "kindle_screen_error")](http://www.guldmyr.com/wp-content/uploads/kindle_screen_error.jpg)It happened while it was in my backpack inside a 'leather cover' that I also got from amazon at the time of purchase.
 
 Usually with these electronic devices it's that if the screen breaks you're on your own / can try to get some help from home insurance. So my hopes were not so high when I sent an e-mail to amazon.
 

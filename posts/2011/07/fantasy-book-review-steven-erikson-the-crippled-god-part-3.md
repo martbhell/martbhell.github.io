@@ -6,7 +6,7 @@ tags: book, book, review, crippled, god, malaz, malazan, reading, review, steven
 
 ## Part 3 Review
 
-[Part 2](http://www.guldmyr.com/blog/fantasy-book-review-%E2%80%93-steven-erikson-%E2%80%93-the-crippled-god-%E2%80%93-part-2/ "part2") [Part 1](http://www.guldmyr.com/blog/fantasy-book-review-steven-erikson-the-crippled-god-part-1/ "part1") I think this book is easier to read than the previous ones. For some reason I kind of like all the thinking, pondering and analyzing that the characters do. They grow on you? I wonder if it's just the book or maybe the Kindle assists me in reading;  I've been reading quite swiftly (in comparison to how fast I read one of the previous Malazan 'real' books).
+[Part 2](http://www.guldmyr.com/fantasy-book-review-%E2%80%93-steven-erikson-%E2%80%93-the-crippled-god-%E2%80%93-part-2/ "part2") [Part 1](http://www.guldmyr.com/fantasy-book-review-steven-erikson-the-crippled-god-part-1/ "part1") I think this book is easier to read than the previous ones. For some reason I kind of like all the thinking, pondering and analyzing that the characters do. They grow on you? I wonder if it's just the book or maybe the Kindle assists me in reading;  I've been reading quite swiftly (in comparison to how fast I read one of the previous Malazan 'real' books).
 
 Of course after 33% there's a lot of stuff about the bonehunters. They're walking through the Glass Desert. Hellian is sober and thinks they're going to Y'Ghatan. They're not.
 

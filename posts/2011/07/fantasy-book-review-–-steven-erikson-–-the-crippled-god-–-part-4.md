@@ -6,7 +6,7 @@ tags: book, book, review, malaz, malazan, review, steven, erikson
 
 From about 2/3 to the end: And as usual -  **there's lots of spoilers below. If you haven't read the book yet, I'd advise you not to read the below.**
 
-[Part1](http://www.guldmyr.com/blog/fantasy-book-review-steven-erikson-the-crippled-god-part-1/ "part1") [Part2](http://www.guldmyr.com/blog/fantasy-book-review-%e2%80%93-steven-erikson-%e2%80%93-the-crippled-god-%e2%80%93-part-2/ "part2") [Part3](http://www.guldmyr.com/blog/fantasy-book-review-steven-erikson-the-crippled-god-part-3/ "part3") 
+[Part1](http://www.guldmyr.com/fantasy-book-review-steven-erikson-the-crippled-god-part-1/ "part1") [Part2](http://www.guldmyr.com/fantasy-book-review-%e2%80%93-steven-erikson-%e2%80%93-the-crippled-god-%e2%80%93-part-2/ "part2") [Part3](http://www.guldmyr.com/fantasy-book-review-steven-erikson-the-crippled-god-part-3/ "part3") 
 
 There is actually quite a lot going on about the First Shore. The malazans found the kids, they're running out of water. How are they going to cross this thing? It needs to be magical! There the Tiste comes back (Nimander). The queen goes crazy. But as with the High Mage of Shadow (where is he by the way? Still in Darujistan?) there are some lucid comments that tell quite a bit. Where is Silchas Ruin going? Well we have the Draconus and then the Kilmandros stuff, maybe he's going there for a visit.
 

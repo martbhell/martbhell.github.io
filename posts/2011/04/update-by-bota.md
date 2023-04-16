@@ -4,7 +4,7 @@ date: 2011-04-01
 category: finland
 tags: bo7a, canada, island, live on an island, travel
 
-[http://www.guldmyr.com/blog/last-irc-post-of-bota-for-a-while/](http://www.guldmyr.com/blog/last-irc-post-of-bota-for-a-while/)
+[http://www.guldmyr.com/last-irc-post-of-bota-for-a-while/](http://www.guldmyr.com/last-irc-post-of-bota-for-a-while/)
 
 They're in Ontario :) Almost the same trip I took in the summer of 2008. Not that you have much choice going east. Also I did not do it in a moving truck :p
 

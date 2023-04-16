@@ -8,7 +8,7 @@ This is how to create simple RRD graphs using one data source that can be 0 and 
 
 It will look like this:
 
-[![example rrd graph](images/movers-300x96.png "movers")](http://www.guldmyr.com/blog/wp-content/uploads/movers.png)
+[![example rrd graph](images/movers-300x96.png "movers")](http://www.guldmyr.com/wp-content/uploads/movers.png)
 
  
 

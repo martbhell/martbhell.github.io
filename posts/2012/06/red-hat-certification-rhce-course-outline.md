@@ -10,14 +10,14 @@ In case you saw my previous posts I've been prepping for a RHCE course the last 
 
 Here are the posts based on the objectives:
 
-- [http/https](http://guldmyr.com/blog/red-hat-certification-rhce-network-services-httpd)
-- [dns](http://guldmyr.com/blog/red-hat-certification-rhce-network-services-dns)
-- [ftp](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ftp)
-- [nfs](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-nfs/)
-- [smb](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-smb/)
-- [smtp](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-e-mail/)
-- [ssh](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ssh/)
-- [ntp](http://www.guldmyr.com/blog/red-hat-certification-rhce-network-services-ntp/)
+- [http/https](http://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
+- [dns](http://guldmyr.com/red-hat-certification-rhce-network-services-dns)
+- [ftp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
+- [nfs](http://www.guldmyr.com/red-hat-certification-rhce-network-services-nfs/)
+- [smb](http://www.guldmyr.com/red-hat-certification-rhce-network-services-smb/)
+- [smtp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-e-mail/)
+- [ssh](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
+- [ntp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
 
 Odds are quite high that I've missed something or not gone deep enough into some subjects and for the record some subjects I decided to skip.
 

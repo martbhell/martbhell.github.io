@@ -6,7 +6,7 @@ tags: disk, drives, infosmack, learning, netapp, podcast, storage, storage, book
 
 \*\* 2011-08-18 Just updated the link to the HP forum.
 
-I also wrote [a primer](http://www.guldmyr.com/blog/san-primer-introduction-to-san/ "guldmyr.com") to Data Storage.
+I also wrote [a primer](http://www.guldmyr.com/san-primer-introduction-to-san/ "guldmyr.com") to Data Storage.
 
 Just listened to this podcast episode #96 of [Infosmack on theregister](http://www.theregister.co.uk/2011/04/26/infosmack_enterprise_tech_podcast_episode_96/ "on theregister - infosmack ep 96") (about storage). Very interesting to hear what some really experienced people say about storage and the
 

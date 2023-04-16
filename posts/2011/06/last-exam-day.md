@@ -14,4 +14,4 @@ I like to think so. And I'm trying to prepare for it like that as well. Stay on 
 
 P.s. Extremely well played Bruins and I do not regret getting up at 3am this morning to watch the game. Also hats off to keeper Thomas.
 
-\[caption id="attachment\_845" align="alignnone" width="224" caption="Bruins"\][![Bruins](images/bruins.jpg "Bruins")](http://www.guldmyr.com/blog/wp-content/uploads/bruins.jpg)\[/caption\]
+\[caption id="attachment\_845" align="alignnone" width="224" caption="Bruins"\][![Bruins](images/bruins.jpg "Bruins")](http://www.guldmyr.com/wp-content/uploads/bruins.jpg)\[/caption\]

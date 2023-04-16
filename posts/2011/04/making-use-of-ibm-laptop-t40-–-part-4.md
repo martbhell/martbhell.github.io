@@ -80,10 +80,10 @@ Then, downloading it from suckless.org Making sure that the config.mk points to 
 
 See /usr/share/xsessions/dwm.desktop That is the file that starts dwm. It's also a good idea to point the xsession startup script to a script that runs xsetroot in a loop, if you want to update 'xsetroot -name' with time, for example.
 
-You can see more details and my scripts in [this blog post](http://www.guldmyr.com/blog/dwm-start-up-script-that-works-with-gdm-login-manager/ "dwm script"):
+You can see more details and my scripts in [this blog post](http://www.guldmyr.com/dwm-start-up-script-that-works-with-gdm-login-manager/ "dwm script"):
 
 When I try to compile dwm, it complains that X11/cursorfont.h is missing. Probably because libx11-dev is not installed. After installing, it complains that X11/extensions/Xinerama.h is missing. Installing libxinerama-dev. After that it compiles just fine and runs just fine.
 
 Previous posts:
 
-[Part1](../making-use-of-ibm-laptop-t40-part-1/ "PART1") – thoughts before installing [Part2](../making-use-of-ibm-laptop-t40-%E2%80%93-part-2/ "par2") – ultimate boot CD – for diagnostics [Part3](http://www.guldmyr.com/blog/making-use-of-ibm-laptop-t40-%E2%80%93-part-3/ "part3") – Installing Ubuntu
+[Part1](../making-use-of-ibm-laptop-t40-part-1/ "PART1") – thoughts before installing [Part2](../making-use-of-ibm-laptop-t40-%E2%80%93-part-2/ "par2") – ultimate boot CD – for diagnostics [Part3](http://www.guldmyr.com/making-use-of-ibm-laptop-t40-%E2%80%93-part-3/ "part3") – Installing Ubuntu
