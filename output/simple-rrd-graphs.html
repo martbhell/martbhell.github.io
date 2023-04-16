@@ -71,7 +71,7 @@
     <div class="content">
       <p>This is how to create simple RRD graphs using one data source that can be 0 and above. It is not an "ever increasing" counter.</p>
 <p>It will look like this:</p>
-<p><a href="http://www.guldmyr.com/blog/wp-content/uploads/movers.png"><img alt="example rrd graph" src="images/movers-300x96.png" title="movers"></a></p>
+<p><a href="http://www.guldmyr.com/wp-content/uploads/movers.png"><img alt="example rrd graph" src="images/movers-300x96.png" title="movers"></a></p>
 <h2 id="1-create-the-rrd-database">1. Create the rrd database</h2>
 <p>I wrote this down in a .sh file so I can go back later and see how it was set up.</p>
 <h1 id="binsh-rrdfilehomeuserrrdmoversrrd-rrdtoolusrbinrrdtool-rrdtool-create-rrdfile-step-300-dsmoversgauge600uu-rraaverage051576-rraaverage056672-rraaverage0524732-rraaverage051441460">!/bin/sh rrdfile='/home/$user/rrd/movers.rrd' rrdtool='/usr/bin/rrdtool' $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460</h1>

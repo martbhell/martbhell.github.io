@@ -70,9 +70,9 @@
     </header>
     <div class="content">
       <p>*** 2011-04-18 Updated with my current dwm config files, see the jg_dwm_conf.tar.gz below.</p>
-<p>My config: <a href="http://www.guldmyr.com/blog/wp-content/uploads/jg_dwm_conf.tar.gz">jg_dwm_conf.tar</a></p>
-<p><a href="http://www.guldmyr.com/blog/wp-content/uploads/backup.tar.gz"></a>Goal: Be able to exit <a href="http://dwm.suckless.org" title="dwm at suckless.org">DWM and</a> get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)</p>
-<p>Finally got this working like I want it to - with some help from #suckless on irc.oftc.net. This works for me with RHEL6, GDM --version 2.30.4 and DWM 5.8.2. My problem was that before (you can see how that looked in <a href="http://www.guldmyr.com/blog/dwm-editing-the-bar-to-show-time/" title="dwm not so good">this post</a>) I ran the dwm also in a loop. But this is not necessary. If you want to keep the statusbar updated with some goodies by running a while loop, you only need to run the xsetroot in a while loop.</p>
+<p>My config: <a href="http://www.guldmyr.com/wp-content/uploads/jg_dwm_conf.tar.gz">jg_dwm_conf.tar</a></p>
+<p><a href="http://www.guldmyr.com/wp-content/uploads/backup.tar.gz"></a>Goal: Be able to exit <a href="http://dwm.suckless.org" title="dwm at suckless.org">DWM and</a> get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)</p>
+<p>Finally got this working like I want it to - with some help from #suckless on irc.oftc.net. This works for me with RHEL6, GDM --version 2.30.4 and DWM 5.8.2. My problem was that before (you can see how that looked in <a href="http://www.guldmyr.com/dwm-editing-the-bar-to-show-time/" title="dwm not so good">this post</a>) I ran the dwm also in a loop. But this is not necessary. If you want to keep the statusbar updated with some goodies by running a while loop, you only need to run the xsetroot in a while loop.</p>
 <p>/usr/share/xsessions/dwm.desktop</p>
 <p>Looks like this:</p>
 <p><code>[Desktop Entry] Encoding=UTF-8 Name=dwm Comment=This session starts dwm Exec=/usr/local/bin/dwm-start Type=Application</code></p>

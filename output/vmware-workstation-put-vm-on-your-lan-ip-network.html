@@ -73,7 +73,7 @@
 <p>Doesn't work?</p>
 <p>In VMWare Workstation go to Edit -&gt; Virtual Network Editor. Then use one of the unused VMNets or just use the top one that is bridged. In the menu below you will see several interfaces -&gt; if you see more than one, that could for example be if you have both a cable and wireless Ethernet connection, Hamachi also pops up in there.</p>
 <p>Like this:</p>
-<p>[caption id="attachment_196" align="alignnone" width="604"]<a href="http://www.guldmyr.com/blog/wp-content/uploads/vmware_vne.png"><img alt="VMWare Network Editor" src="images/vmware_vne.png" title="vmware_vne"></a> VMWare Network Editor[/caption]</p>
+<p>[caption id="attachment_196" align="alignnone" width="604"]<a href="http://www.guldmyr.com/wp-content/uploads/vmware_vne.png"><img alt="VMWare Network Editor" src="images/vmware_vne.png" title="vmware_vne"></a> VMWare Network Editor[/caption]</p>
 <p>So go ahead and change that to the one that gives your host access to the LAN.</p>
 <p>Also make sure that the IP settings on your VM are adequate, DHCP should work but if it doesn't - try with a static setup in the same subnet as your host is (DNS should be the broadband router).</p>
 <p>On Windows the useful commands to troubleshoot this would be: route print, ipconfig /all, ping. I usually ping this host: ping.sunet.se</p>
