@@ -2,7 +2,7 @@
 title: Time Sync for Linux VMs in VMWare Workstation
 date: 2011-02-27
 category: it
-tags: 10, 10, linux, ntp, ntpd, red, hat, enterprise, rhel, time, servers, time, sync, ubuntu, vmware, vmware, workstation
+tags: 10.10, linux, ntp, ntpd, red, hat, enterprise, rhel, time, servers, time, sync, ubuntu, vmware, vmware, workstation
 
 You may have seen in my [previous post about EyeO](http://www.guldmyr.com/blog/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos time sync")S that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I could not find anything that decidedly fixed it.
 

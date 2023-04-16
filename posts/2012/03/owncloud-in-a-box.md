@@ -2,7 +2,7 @@
 title: owncloud in a box!
 date: 2012-03-13
 category: it
-tags: bookmarks, e, mail, files, ldap, music, opensuse, owncloud, storage, suse, uploading, vmware, webdav
+tags: bookmarks, mail, files, ldap, music, opensuse, owncloud, storage, suse, uploading, vmware, webdav
 
 # owncloud
 

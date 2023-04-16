@@ -2,7 +2,7 @@
 title: Trick with labels in gmail - how to find out who is selling your e-mail address
 date: 2011-04-29
 category: it
-tags: e, mail, gmail, google, spam, tips, tricks
+tags: e-mail, gmail, google, spam, tips, tricks
 
 I actually read about this in some comment field somewhere else, but here is a great explanation of my intention:
 

@@ -2,7 +2,7 @@
 title: Upgrade Ubuntu 10.10 to Natty
 date: 2011-05-23
 category: it
-tags: 10, 10, 11, 04, kernel, linux, natty, ubuntu, upgrade, vmware, workstation
+tags: 10.10, 11.04, kernel, linux, natty, ubuntu, upgrade, vmware, workstation
 
 Saw this note today in the MOTD - that I can upgrade with **do-release-upgrade.**
 
