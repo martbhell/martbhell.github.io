@@ -2,7 +2,7 @@
 title: Resepti: Lapsi Kana & Lohi Porkkana Bataatti
 date: 2020-01-12
 category: finland
-tags: resepti
+tags: resepti, reseptit, recipe, recipes, children, chicken, salmon
 
 Ota pakasti lohta pakastimesta.
 

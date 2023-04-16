@@ -2,7 +2,7 @@
 title: Resepti: punajuuririsotto
 date: 2021-09-12
 category: finland
-tags: food, recipe, recipes, reseptit, risotto
+tags: food, recipe, recipes, resepti, reseptit, risotto
 coverImage: "DSC_1963-scaled.jpg"
 ---
 

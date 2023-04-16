@@ -42,6 +42,7 @@ LINKS = (
 
 FOOTER_LINKS = (
          ('Was There an NHL Game Yesterday?', 'https://wtangy.se'),
+         ('Recipes in Finnish', 'tags/resepti'),
          )
 
 # Social widget

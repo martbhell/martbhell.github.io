@@ -21,6 +21,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 <details><summary>Old Updates < 2013</summary>
 
 - **2011-02-22:** Updated links because the release notes I had before to 6.1.x and above did not work anymore. Also changed the sub-versions in 6.1.x and above to the latest released one by HP.
+
 - **2011-02-24:** Found link to [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1 "FOS 6.0.x and 5.1.x") on HP.com with the help of an ITRC thread.
 - **2011-04-21:** Added links for correlating Brocade Product name, model number and HP name. Latest in 6.4.x series is now 6.4.1b
 - **2011-05-05:** Added link to Web Tools for 6.2.x with reference to how to upgrade Firmware via the web tools.
@@ -112,8 +113,9 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
 </details>
 
-**2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days! Also [HPE has them](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_241cfaab2fed4696a003f38ee0).
-**2023-04-04:** 9.1.1a with link to broadcom
+## Recent Updates
+- **2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days! Also [HPE has them](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_241cfaab2fed4696a003f38ee0).
+- **2023-04-04:** 9.1.1a with link to broadcom
 
 ## Steps
 
