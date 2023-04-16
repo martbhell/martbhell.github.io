@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2023-04-16T10:17:54-00:00</lastmod>
+<lastmod>2023-04-16T10:41:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2678,21 +2678,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/lap1142n.html</loc>
-<lastmod>2020-02-19T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/e.html</loc>
-<lastmod>2020-02-19T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/k9.html</loc>
+<loc>/tag/lap1142n-e-k9.html</loc>
 <lastmod>2020-02-19T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -3623,21 +3609,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/12.html</loc>
+<loc>/tag/1204.html</loc>
 <lastmod>2014-02-03T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/04.html</loc>
-<lastmod>2014-02-03T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/14.html</loc>
+<loc>/tag/1404.html</loc>
 <lastmod>2014-02-03T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -4680,21 +4659,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/analyst.html</loc>
-<lastmod>2012-08-24T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/and.html</loc>
-<lastmod>2012-08-24T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/technology.html</loc>
+<loc>/tag/analyst-and-technology.html</loc>
 <lastmod>2012-08-24T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -5450,14 +5415,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/game.html</loc>
-<lastmod>2012-03-05T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/thrones.html</loc>
+<loc>/tag/game-of-thrones.html</loc>
 <lastmod>2012-03-05T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -5485,21 +5443,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/song.html</loc>
-<lastmod>2012-03-05T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/ice.html</loc>
-<lastmod>2012-03-05T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/fire.html</loc>
+<loc>/tag/song-of-ice-and-fire.html</loc>
 <lastmod>2012-03-05T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -6332,7 +6276,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/11.html</loc>
+<loc>/tag/1104.html</loc>
 <lastmod>2011-10-16T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -6360,21 +6304,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/ian.html</loc>
+<loc>/tag/ian-c-esslemont.html</loc>
 <lastmod>2011-09-28T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/c.html</loc>
-<lastmod>2011-09-28T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/esslemont.html</loc>
+<loc>/tag/ice.html</loc>
 <lastmod>2011-09-28T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -6808,7 +6745,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/reader.html</loc>
+<loc>/tag/e-book.html</loc>
+<lastmod>2011-06-30T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/ebook-reader.html</loc>
+<lastmod>2011-06-30T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/e-reader.html</loc>
 <lastmod>2011-06-30T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -6885,28 +6836,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/the.html</loc>
+<loc>/tag/the-knife.html</loc>
 <lastmod>2011-06-30T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/knife.html</loc>
-<lastmod>2011-06-30T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/magic.html</loc>
-<lastmod>2011-06-30T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/numbers.html</loc>
+<loc>/tag/the-magic-numbers.html</loc>
 <lastmod>2011-06-30T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -6920,7 +6857,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/giant.html</loc>
+<loc>/tag/the-giant.html</loc>
 <lastmod>2011-06-30T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7109,14 +7046,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/bob.html</loc>
-<lastmod>2011-06-13T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/dylan.html</loc>
+<loc>/tag/bob-dylan.html</loc>
 <lastmod>2011-06-13T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7130,21 +7060,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/franz.html</loc>
+<loc>/tag/franz-ferdinand.html</loc>
 <lastmod>2011-06-13T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/ferdinand.html</loc>
-<lastmod>2011-06-13T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/indie.html</loc>
+<loc>/tag/indie-music.html</loc>
 <lastmod>2011-06-13T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7158,21 +7081,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/monochrome.html</loc>
+<loc>/tag/the-monochrome-set.html</loc>
 <lastmod>2011-06-13T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/set.html</loc>
-<lastmod>2011-06-13T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/smiths.html</loc>
+<loc>/tag/the-smiths.html</loc>
 <lastmod>2011-06-13T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7187,6 +7103,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/kielta.html</loc>
+<lastmod>2011-06-02T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/numbers.html</loc>
 <lastmod>2011-06-02T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7277,14 +7200,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/douglas.html</loc>
-<lastmod>2011-05-24T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/adams.html</loc>
+<loc>/tag/douglas-adams.html</loc>
 <lastmod>2011-05-24T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7298,28 +7214,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/hitchhikers.html</loc>
-<lastmod>2011-05-24T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/guide.html</loc>
-<lastmod>2011-05-24T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/to.html</loc>
-<lastmod>2011-05-24T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/galaxy.html</loc>
+<loc>/tag/the-hitchhikers-guide-to-the-galaxy.html</loc>
 <lastmod>2011-05-24T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7340,6 +7235,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/towel-day.html</loc>
+<lastmod>2011-05-24T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/the-towel-day.html</loc>
+<lastmod>2011-05-24T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/2011.html</loc>
 <lastmod>2011-05-24T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -7347,7 +7256,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/10.html</loc>
+<loc>/tag/1010.html</loc>
 <lastmod>2011-05-23T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7361,14 +7270,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/free.html</loc>
+<loc>/tag/free-music.html</loc>
 <lastmod>2011-05-22T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/not.html</loc>
+<loc>/tag/not-morrissey.html</loc>
 <lastmod>2011-05-22T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7389,35 +7298,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/ra.html</loc>
+<loc>/tag/ra-ra-riot.html</loc>
 <lastmod>2011-05-22T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/riot.html</loc>
+<loc>/tag/the-ascetic-junkies.html</loc>
 <lastmod>2011-05-22T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tag/ascetic.html</loc>
-<lastmod>2011-05-22T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/junkies.html</loc>
-<lastmod>2011-05-22T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/whigs.html</loc>
+<loc>/tag/the-whigs.html</loc>
 <lastmod>2011-05-22T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -7599,6 +7494,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/free.html</loc>
+<lastmod>2011-05-17T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/hayley.html</loc>
 <lastmod>2011-05-17T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -7706,6 +7608,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/tag/ibm.html</loc>
 <lastmod>2011-05-15T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/1004.html</loc>
+<lastmod>2011-05-14T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -8208,6 +8117,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/e-mail.html</loc>
+<lastmod>2011-04-29T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/gmail.html</loc>
 <lastmod>2011-04-29T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -8404,7 +8320,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/florence.html</loc>
+<loc>/tag/florence-and-the-machine.html</loc>
 <lastmod>2011-04-19T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -8551,13 +8467,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/1104.html</loc>
-<lastmod>2011-04-03T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/tag/idioms.html</loc>
 <lastmod>2011-04-01T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -8579,14 +8488,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/on.html</loc>
-<lastmod>2011-04-01T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/an.html</loc>
+<loc>/tag/live-on-an-island.html</loc>
 <lastmod>2011-04-01T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -8607,8 +8509,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/moving.html</loc>
+<loc>/tag/moving-to-finland.html</loc>
 <lastmod>2011-03-27T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/indie.html</loc>
+<lastmod>2011-03-25T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -8775,6 +8684,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/guide.html</loc>
+<lastmod>2011-02-28T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/tcp80.html</loc>
 <lastmod>2011-02-28T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -8845,28 +8761,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/a.html</loc>
-<lastmod>2011-02-23T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/george.html</loc>
-<lastmod>2011-02-23T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/r.html</loc>
-<lastmod>2011-02-23T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/martin.html</loc>
+<loc>/tag/george-rr-martin.html</loc>
 <lastmod>2011-02-23T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -8957,6 +8852,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/set.html</loc>
+<lastmod>2011-02-18T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/opacity.html</loc>
 <lastmod>2011-02-18T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -9013,14 +8915,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/cyanide.html</loc>
-<lastmod>2011-02-14T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/happiness.html</loc>
+<loc>/tag/cyanide-and-happiness.html</loc>
 <lastmod>2011-02-14T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -9071,13 +8966,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/tag/debian6.html</loc>
 <lastmod>2011-02-11T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/1010.html</loc>
-<lastmod>2011-02-10T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -9223,7 +9111,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/salvatore.html</loc>
+<loc>/tag/ra-salvatore.html</loc>
 <lastmod>2011-01-31T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
