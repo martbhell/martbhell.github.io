@@ -1,6 +1,8 @@
+import os
+
 AUTHOR = 'Johan Guldmyr'
 SITENAME = 'There is IT in Helsinki'
-SITEURL = ''
+SITEURL = os.getenv('SITE_URL', '')
 
 PATH = 'content'
 
@@ -58,7 +60,7 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-GOOGLE_ANALYTICS = "G-H4LG7R6ZGG"
+GOOGLE_ANALYTICS = os.getenv('GOOGLE_ANALYTICS')
 
 
 MARKDOWN = {
