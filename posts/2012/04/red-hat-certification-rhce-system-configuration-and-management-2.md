@@ -102,7 +102,7 @@ Summary: Get an IP wooop
 
 Group:  Development/Tools
 License:        GPL
-URL:            http://guldmyr.com/blog
+URL:            https://guldmyr.com
 Source0:        %{name}.tar.gz
 BuildRoot:      %(mktemp -ud %{\_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 

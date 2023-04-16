@@ -6,7 +6,7 @@ tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, 
 
 [Overview](http://www.guldmyr.com/brocade-certification-bcfd-fabric-designer-preparation/ "overview") / Preparation
 
-[Module 3](http://www.guldmyr.com/blog/?p=1265 "module 3") / SAN Infrastructure
+[Module 3](./bcfd-cfd200-module-3-san-infrastructure "module 3") / SAN Infrastructure
 
 The idea for this is for me to write down the things I read about in the modules. As a way for me to learn what they're about and think about them other than just reading them and forgetting them. If I write it down here I need to try to explain it so that somebody else can understand it. But I also try to do it in a condense way and only write down what I feel is important, this is by no means intended to be used instead of the material.
 

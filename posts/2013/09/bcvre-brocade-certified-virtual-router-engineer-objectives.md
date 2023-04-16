@@ -43,7 +43,7 @@ The **Brocade Certified vRouter Engineer 2013** exam has these [objectives](ht
 
 ### **DHCP and DNS Troubleshooting**
 
-[http://www.guldmyr.com/blog/?p=2022](http://www.guldmyr.com/blog/?p=2022) I'm going through how to set it up.
+[bcvre-brocade-certified-virtual-router-engineer](bcvre-brocade-certified-virtual-router-engineer) I'm going through how to set it up.
 
 - Describe troubleshooting of DHCP operations
     - show dhcp server leases
@@ -54,7 +54,7 @@ The **Brocade Certified vRouter Engineer 2013** exam has these [objectives](ht
 
 ### **Routing**
 
-[http://www.guldmyr.com/blog/?p=2022](http://www.guldmyr.com/blog/?p=2022) went through how to set up static routes
+[bcvre-brocade-certified-virtual-router-engineer](bcvre-brocade-certified-virtual-router-engineer) went through how to set up static routes
 
 - Identify uses for routing
 - Identify show commands for use with routing
@@ -94,7 +94,7 @@ The **Brocade Certified vRouter Engineer 2013** exam has these [objectives](ht
 
 ## OSPF Single-Area
 
-[http://www.guldmyr.com/blog/?p=2022](http://www.guldmyr.com/blog/?p=2022) set up an area 0 OSPF
+[bcvre-brocade-certified-virtual-router-engineer](bcvre-brocade-certified-virtual-router-engineer) set up an area 0 OSPF
 
 - Describe OSPF show command output
 - Describe how to configure OSPF
