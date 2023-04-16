@@ -43,7 +43,7 @@ Then we will create another partition for / (or the rest).
 
 Like this:
 
-\[caption id="attachment\_341" align="alignnone" width="150" caption="ubuntu\_partition right"\][![ubuntu_partition right](images/ubuntu_partition.png "ubuntu_partition right")](http://www.guldmyr.com/wp-content/uploads/ubuntu_partition.png)\[/caption\]
+[![ubuntu partition right](images/ubuntu_partition.png "ubuntu_partition right")](images/ubuntu_partition.png)
 
 The above does not include a swap space, and the installation complains that there is no swap space defined and that there may be problems if this is not configured during install.
 

@@ -22,7 +22,7 @@ I found this package [online](http://rpm.pbone.net/index.php3/stat/4/idpl/15161
 
 I have qt 4.6.2-19 but adding the WebKit in this way hasn't caused any issues (yet).
 
-You'll probably need other qt-stuff installed too (I did an ldd /usr/bin/spotify after install and what it wants you can find in this file: [spotify](http://www.guldmyr.com/wp-content/uploads/spotify.txt) ). There's a lot of them in there but libQtGui.so.4 , libQtCore.so.4 , libQtWebKit.so.4 , libQtDBus.so.4 , libQtNetwork.so.4 , libQtXml.so.4 are the libQt\* ones.
+You'll probably need other qt-stuff installed too (run `ldd /usr/bin/spotify` after install and it will tell you which libraries it need. There's a lot of them in there but libQtGui.so.4 , libQtCore.so.4 , libQtWebKit.so.4 , libQtDBus.so.4 , libQtNetwork.so.4 , libQtXml.so.4 are the libQt\* ones.
 
 To find which qt packages you have installed in a Red Hat based system hit: **sudo yum list '\*qt\*'**
 

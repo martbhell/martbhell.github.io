@@ -17,5 +17,3 @@ Some good stuff:
 Ringo Starr is apparently famous, I liked the interview with him, he sounds like a happy person even though he was in the Beatles and did(present tense?) drugs. It's him and the All Starr band - with lots of great musicians - also he's a drummer. What's up with drummers? They seems to last forever. Music is poppy.
 
 Cornershop (Brimful of Asha - do you remember?) - there is/was a religious Sihk in the band - cool! So that song was about the love for vinyls. Be sure to check out some of their [other](http://www.youtube.com/watch?v=V-S_plBC1BQ "on youtube") songs, there are some really cool remixes with their songs.
-
-\[caption id="" align="alignnone" width="176"\] cover\[/caption\]

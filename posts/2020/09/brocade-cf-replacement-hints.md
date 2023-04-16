@@ -10,7 +10,7 @@ The topic here is how to replace the embedded Compact Flash card if that breaks.
 
 You can read about how to do that in the PDF below:
 
-[brocade\_cf\_replacement](https://www.guldmyr.com/wp-content/uploads/brocade_cf_replacement.pdf)[Download](https://www.guldmyr.com/wp-content/uploads/brocade_cf_replacement.pdf)
+[brocade\_cf\_replacement](https://github.com/sanswitcher/CF-Installer)
 
 If your CF drives are **exactly** the same size (not in GB, in blocks) as the one in Brocade then you could get away with dding the whole /dev/sda - which would simplify the process a little.
 

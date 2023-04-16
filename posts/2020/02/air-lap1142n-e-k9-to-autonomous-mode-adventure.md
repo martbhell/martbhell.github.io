@@ -4,7 +4,7 @@ date: 2020-02-19
 category: it
 tags: aironet, cisco, ethernet, https, ip, lap1142n e k9, network, vlan, wifi, wlan
 
-> ## [![Wifi and PoE injector ](images/DSC_1469-300x225.jpg)](https://www.guldmyr.com/wp-content/uploads/DSC_1469-scaled.jpg)
+> ## [![Wifi and PoE injector ](images/DSC_1469-300x225.jpg)](images/DSC_1469-scaled.jpg)
 
 ## Some initial needful information
 

@@ -4,7 +4,7 @@ date: 2011-06-27
 category: finland
 tags: book, fantasy, malaz, malazan, reading, review, steven, eriksson
 
-\[caption id="" align="alignleft" width="104" caption="Dust of Dreams"\]![Dust of Dreams](images/0593046331.01.jpg "Dust of Dreams")\[/caption\]
+![Dust of Dreams](images/0593046331.01.jpg "Dust of Dreams")
 
 Grabbed this book a week or two ago and have been steadily pulling myself through it. Not done yet, some 300 pages left. I have crappy memory so if I write down what's going on right now, maybe that will help me remember the book later :)
 

@@ -16,7 +16,7 @@ So much unknown going on here. Maybe it will all make sense in the last book? At
 
 ## Crippled God
 
-\[caption id="" align="alignleft" width="300" caption="The Crippled God"\]![Cover](images/51FKUEeqMhL._SL500_AA300_.jpg "The Crippled God")\[/caption\]
+![Cover](images/51FKUEeqMhL._SL500_AA300_.jpg "The Crippled God")
 
 Read the end of Dust of Dreams on the Kindle - liked it a lot. Especially when sometimes there is a word I don’t understand I can just point to it and then get a definition. I will read this book completely on the Kindle - what better way to get a good feel for the e-book reader than to give a behemoth like this a go?
 

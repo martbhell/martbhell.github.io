@@ -12,7 +12,7 @@ tags: elipepsia, free music, not morrissey, hurl, portland, ra ra riot, the asce
 
  
 
-\[caption id="attachment\_768" align="alignnone" width="300" caption="Ascetic Junkies - borrowed from t61.com"\][![Ascetic Junkies](images/whiskeystomp2.jpg "whiskeystomp2")](http://www.guldmyr.com/wp-content/uploads/whiskeystomp2.jpg)\[/caption\]
+[![Ascetic Junkies](images/whiskeystomp2.jpg "whiskeystomp2")](images/whiskeystomp2.jpg)
 
  
 

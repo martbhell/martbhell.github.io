@@ -8,7 +8,7 @@ This is how to create simple RRD graphs using one data source that can be 0 and 
 
 It will look like this:
 
-[![example rrd graph](images/movers-300x96.png "movers")](http://www.guldmyr.com/wp-content/uploads/movers.png)
+[![example rrd graph](images/movers-300x96.png "movers")](images/movers.png)
 
  
 
@@ -16,14 +16,24 @@ It will look like this:
 
 I wrote this down in a .sh file so I can go back later and see how it was set up.
 
-#!/bin/sh rrdfile='/home/$user/rrd/movers.rrd' rrdtool='/usr/bin/rrdtool' $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460
+```bash
+#!/bin/sh 
+rrdfile='/home/$user/rrd/movers.rrd'
+rrdtool='/usr/bin/rrdtool'
+$rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460
+```
 
-#5 minute step (base interval with which data will be fed into the RRD) #10 minute heartbeat for the data source #2 days of 5 minute averages #2 weeks of 1/2 hour averages #2 months of 2 hour averages #2 years of 12 hour averages  
+- #5 minute step (base interval with which data will be fed into the RRD) 
+- #10 minute heartbeat for the data source #2 days of 5 minute averages 
+- #2 weeks of 1/2 hour averages 
+- #2 months of 2 hour averages 
+- #2 years of 12 hour averages  
 
 ## 2 Add data to the rrd
 
 Also done in a bash script. Because the --step above is set to 300, you need to run this script every 300 seconds (or every 5 minutes). The script specified in $allpools prints the path to a file. Then with $output and $movers that file is grepped for 'RUNNING' and then it counts how many lines that was - amount of movers.
 
+```bash
 #!/bin/sh
 rrdfile='/home/$user/rrd/movers.rrd'
 rrdtool='/usr/bin/rrdtool'
@@ -33,6 +43,7 @@ output=$($allpools)
 movers=$(grep RUNNING $output|wc -l)
 
 $rrdtool update $rrdfile N:$movers
+```
 
 The N: is NOW. $movers is the value you want to plot.
 
@@ -40,6 +51,7 @@ The N: is NOW. $movers is the value you want to plot.
 
 Add this to another .sh script. This you can run at whatever interval you want.
 
+```bash
 #!/bin/sh
 rrdfile='movers.rrd'
 rrdtool='/usr/bin/rrdtool'
@@ -89,12 +101,14 @@ $rrdtool graph $last3monthsimage --end now --start -8035200 \\
 $rrdtool graph $lastday --end now --start -1d \\
         -v last\_day -t active\_movers \\
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000
+```
 
 ## 4\. Crontab - scheduling
 
+```
 \*/5 \* \* \* \* /bin/bash /home/$user/rrd/rrd.update.sh > /dev/null 2>&1 #every 5 minutes \*/15 \* \* \* \* /bin/bash /home/$user/rrd/rrd.graph.sh > /dev/null 2>&1 #every 15 minutes
+```
 
- 
 
 ## 5\. Final Words
 

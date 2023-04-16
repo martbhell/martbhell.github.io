@@ -71,67 +71,103 @@
     <div class="content">
       <p>This is how to create simple RRD graphs using one data source that can be 0 and above. It is not an "ever increasing" counter.</p>
 <p>It will look like this:</p>
-<p><a href="http://www.guldmyr.com/wp-content/uploads/movers.png"><img alt="example rrd graph" src="images/movers-300x96.png" title="movers"></a></p>
+<p><a href="images/movers.png"><img alt="example rrd graph" src="images/movers-300x96.png" title="movers"></a></p>
 <h2 id="1-create-the-rrd-database">1. Create the rrd database</h2>
 <p>I wrote this down in a .sh file so I can go back later and see how it was set up.</p>
-<h1 id="binsh-rrdfilehomeuserrrdmoversrrd-rrdtoolusrbinrrdtool-rrdtool-create-rrdfile-step-300-dsmoversgauge600uu-rraaverage051576-rraaverage056672-rraaverage0524732-rraaverage051441460">!/bin/sh rrdfile='/home/$user/rrd/movers.rrd' rrdtool='/usr/bin/rrdtool' $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460</h1>
-<h1 id="5-minute-step-base-interval-with-which-data-will-be-fed-into-the-rrd-10-minute-heartbeat-for-the-data-source-2-days-of-5-minute-averages-2-weeks-of-12-hour-averages-2-months-of-2-hour-averages-2-years-of-12-hour-averages">5 minute step (base interval with which data will be fed into the RRD) #10 minute heartbeat for the data source #2 days of 5 minute averages #2 weeks of 1/2 hour averages #2 months of 2 hour averages #2 years of 12 hour averages</h1>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh </span>
+<span class="nv">rrdfile</span><span class="o">=</span><span class="s1">&#39;/home/$user/rrd/movers.rrd&#39;</span>
+<span class="nv">rrdtool</span><span class="o">=</span><span class="s1">&#39;/usr/bin/rrdtool&#39;</span>
+<span class="nv">$rrdtool</span><span class="w"> </span>create<span class="w"> </span><span class="nv">$rrdfile</span><span class="w"> </span>--step<span class="w"> </span><span class="m">300</span><span class="w"> </span>DS:movers:GAUGE:600:U:U<span class="w"> </span>RRA:AVERAGE:0.5:1:576<span class="w"> </span>RRA:AVERAGE:0.5:6:672<span class="w"> </span>RRA:AVERAGE:0.5:24:732<span class="w"> </span>RRA:AVERAGE:0.5:144:1460
+</code></pre></div>
+
+<ul>
+<li>
+<h1 id="5-minute-step-base-interval-with-which-data-will-be-fed-into-the-rrd">5 minute step (base interval with which data will be fed into the RRD)</h1>
+</li>
+<li>
+<h1 id="10-minute-heartbeat-for-the-data-source-2-days-of-5-minute-averages">10 minute heartbeat for the data source #2 days of 5 minute averages</h1>
+</li>
+<li>
+<h1 id="2-weeks-of-12-hour-averages">2 weeks of 1/2 hour averages</h1>
+</li>
+<li>
+<h1 id="2-months-of-2-hour-averages">2 months of 2 hour averages</h1>
+</li>
+<li>
+<h1 id="2-years-of-12-hour-averages">2 years of 12 hour averages</h1>
+</li>
+</ul>
 <h2 id="2-add-data-to-the-rrd">2 Add data to the rrd</h2>
 <p>Also done in a bash script. Because the --step above is set to 300, you need to run this script every 300 seconds (or every 5 minutes). The script specified in $allpools prints the path to a file. Then with $output and $movers that file is grepped for 'RUNNING' and then it counts how many lines that was - amount of movers.</p>
-<h1 id="binsh">!/bin/sh</h1>
-<p>rrdfile='/home/$user/rrd/movers.rrd'
-rrdtool='/usr/bin/rrdtool'</p>
-<p>allpools='/home/$user/bash_script.sh'
-output=$($allpools)
-movers=$(grep RUNNING $output|wc -l)</p>
-<p>$rrdtool update $rrdfile N:$movers</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="nv">rrdfile</span><span class="o">=</span><span class="s1">&#39;/home/$user/rrd/movers.rrd&#39;</span>
+<span class="nv">rrdtool</span><span class="o">=</span><span class="s1">&#39;/usr/bin/rrdtool&#39;</span>
+
+<span class="nv">allpools</span><span class="o">=</span><span class="s1">&#39;/home/$user/bash\_script.sh&#39;</span>
+<span class="nv">output</span><span class="o">=</span><span class="k">$(</span><span class="nv">$allpools</span><span class="k">)</span>
+<span class="nv">movers</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span>RUNNING<span class="w"> </span><span class="nv">$output</span><span class="p">|</span>wc<span class="w"> </span>-l<span class="k">)</span>
+
+<span class="nv">$rrdtool</span><span class="w"> </span>update<span class="w"> </span><span class="nv">$rrdfile</span><span class="w"> </span>N:<span class="nv">$movers</span>
+</code></pre></div>
+
 <p>The N: is NOW. $movers is the value you want to plot.</p>
 <h2 id="3-make-a-graph">3. Make a graph</h2>
 <p>Add this to another .sh script. This you can run at whatever interval you want.</p>
-<h1 id="binsh_1">!/bin/sh</h1>
-<p>rrdfile='movers.rrd'
-rrdtool='/usr/bin/rrdtool'
-dpath="/var/www/html/graphs/movers"
-alltimeimage="$dpath/movers.png"
-lastweekimage="$dpath/moverslw.png"
-lastmonthimage="$dpath/moverslm.png"
-last4hoursimage="$dpath/moversl4h.png"
-last3monthsimage="$dpath/moversl3m.png"
-lastday="$dpath/moversld.png"
-enddate=$(date +%s)</p>
-<h1 id="enddate-is-the-same-as-now">enddate is the same as "now"</h1>
-<p>cd /home/$user/rrd</p>
-<p>$rrdtool graph $alltimeimage --end now --start 1321603000 \
-        -v from_beginning -t active_movers \
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
-<h1 id="rrdtool-graph-pathtoimagepng-end-now-start-when_i_started_capturing-v-label_left-t-title_top">rrdtool graph /path/to/image.png --end now --start when_I_started_capturing -v label_left -t title_top \</h1>
-<h1 id="def-as-i-only-have-one-i-only-used-movers-maybe-you-can-change-the-names-in-case-you-have-several-data-sources">DEF: as I only have one I only used movers, maybe you can change the names in case you have several data sources</h1>
-<h1 id="def-you-can-also-use-other-things-than-average-like-minmax">DEF: you can also use other things than AVERAGE (like MIN/MAX)</h1>
-<h1 id="line-000000-is-black">LINE: #000000 is black</h1>
-<p>$rrdtool graph $lastweekimage --start -1w \
-        -v last_week -t active_movers \
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000 \
-        AREA:movers#8C2E64 \
-        GPRINT:movers:LAST:"Current\: %1.0lf" \
-        GPRINT:movers:MAX:"Max\: %1.0lf" \
-        GPRINT:movers:MIN:"Min\: %1.0lf" \
-        GPRINT:movers:AVERAGE:"Avg\: %1.0lf"</p>
-<h1 id="if-you-want-to-make-it-a-little-more-complex-area-fills-the-space-between-the-value-and-the-x-axis">If you want to make it a little more complex. AREA fills the space between the value and the x-axis.</h1>
-<h1 id="gprint-statements-print-some-values-relating-to-the-graph">GPRINT statements print some values relating to the graph.</h1>
-<p>$rrdtool graph $last4hoursimage --end now --start end-4h \
-        -v last_4_hours -t active_movers \
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
-<p>$rrdtool graph $lastmonthimage --end now --start -1m \
-        -v last_month -t active_movers \
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
-<p>$rrdtool graph $last3monthsimage --end now --start -8035200 \
-        -v last_3_months -t active_movers \
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
-<p>$rrdtool graph $lastday --end now --start -1d \
-        -v last_day -t active_movers \
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="nv">rrdfile</span><span class="o">=</span><span class="s1">&#39;movers.rrd&#39;</span>
+<span class="nv">rrdtool</span><span class="o">=</span><span class="s1">&#39;/usr/bin/rrdtool&#39;</span>
+<span class="nv">dpath</span><span class="o">=</span><span class="s2">&quot;/var/www/html/graphs/movers&quot;</span>
+<span class="nv">alltimeimage</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$dpath</span><span class="s2">/movers.png&quot;</span>
+<span class="nv">lastweekimage</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$dpath</span><span class="s2">/moverslw.png&quot;</span>
+<span class="nv">lastmonthimage</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$dpath</span><span class="s2">/moverslm.png&quot;</span>
+<span class="nv">last4hoursimage</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$dpath</span><span class="s2">/moversl4h.png&quot;</span>
+<span class="nv">last3monthsimage</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$dpath</span><span class="s2">/moversl3m.png&quot;</span>
+<span class="nv">lastday</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$dpath</span><span class="s2">/moversld.png&quot;</span>
+<span class="nv">enddate</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span>
+<span class="c1">#enddate is the same as &quot;now&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>/home/<span class="nv">$user</span>/rrd
+
+<span class="nv">$rrdtool</span><span class="w"> </span>graph<span class="w"> </span><span class="nv">$alltimeimage</span><span class="w"> </span>--end<span class="w"> </span>now<span class="w"> </span>--start<span class="w"> </span><span class="m">1321603000</span><span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>-v<span class="w"> </span>from<span class="se">\_</span>beginning<span class="w"> </span>-t<span class="w"> </span>active<span class="se">\_</span>movers<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>DEF:movers<span class="o">=</span><span class="nv">$rrdfile</span>:movers:AVERAGE<span class="w"> </span>LINE:movers#000000
+<span class="c1">#rrdtool graph /path/to/image.png --end now --start when\_I\_started\_capturing -v label\_left -t title\_top \\</span>
+<span class="c1">#DEF: as I only have one I only used movers, maybe you can change the names in case you have several data sources</span>
+<span class="c1">#DEF: you can also use other things than AVERAGE (like MIN/MAX)</span>
+<span class="c1">#LINE: #000000 is black</span>
+
+<span class="nv">$rrdtool</span><span class="w"> </span>graph<span class="w"> </span><span class="nv">$lastweekimage</span><span class="w"> </span>--start<span class="w"> </span>-1w<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>-v<span class="w"> </span>last<span class="se">\_</span>week<span class="w"> </span>-t<span class="w"> </span>active<span class="se">\_</span>movers<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>DEF:movers<span class="o">=</span><span class="nv">$rrdfile</span>:movers:AVERAGE<span class="w"> </span>LINE:movers#000000<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>AREA:movers#8C2E64<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>GPRINT:movers:LAST:<span class="s2">&quot;Current\\: %1.0lf&quot;</span><span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>GPRINT:movers:MAX:<span class="s2">&quot;Max\\: %1.0lf&quot;</span><span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>GPRINT:movers:MIN:<span class="s2">&quot;Min\\: %1.0lf&quot;</span><span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>GPRINT:movers:AVERAGE:<span class="s2">&quot;Avg\\: %1.0lf&quot;</span>
+
+<span class="c1">#If you want to make it a little more complex. AREA fills the space between the value and the x-axis.</span>
+<span class="c1">#GPRINT statements print some values relating to the graph.</span>
+
+<span class="nv">$rrdtool</span><span class="w"> </span>graph<span class="w"> </span><span class="nv">$last4hoursimage</span><span class="w"> </span>--end<span class="w"> </span>now<span class="w"> </span>--start<span class="w"> </span>end-4h<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>-v<span class="w"> </span>last<span class="se">\_</span><span class="m">4</span><span class="se">\_</span>hours<span class="w"> </span>-t<span class="w"> </span>active<span class="se">\_</span>movers<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>DEF:movers<span class="o">=</span><span class="nv">$rrdfile</span>:movers:AVERAGE<span class="w"> </span>LINE:movers#000000
+
+<span class="nv">$rrdtool</span><span class="w"> </span>graph<span class="w"> </span><span class="nv">$lastmonthimage</span><span class="w"> </span>--end<span class="w"> </span>now<span class="w"> </span>--start<span class="w"> </span>-1m<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>-v<span class="w"> </span>last<span class="se">\_</span>month<span class="w"> </span>-t<span class="w"> </span>active<span class="se">\_</span>movers<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>DEF:movers<span class="o">=</span><span class="nv">$rrdfile</span>:movers:AVERAGE<span class="w"> </span>LINE:movers#000000
+
+<span class="nv">$rrdtool</span><span class="w"> </span>graph<span class="w"> </span><span class="nv">$last3monthsimage</span><span class="w"> </span>--end<span class="w"> </span>now<span class="w"> </span>--start<span class="w"> </span>-8035200<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>-v<span class="w"> </span>last<span class="se">\_</span><span class="m">3</span><span class="se">\_</span>months<span class="w"> </span>-t<span class="w"> </span>active<span class="se">\_</span>movers<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>DEF:movers<span class="o">=</span><span class="nv">$rrdfile</span>:movers:AVERAGE<span class="w"> </span>LINE:movers#000000
+
+<span class="nv">$rrdtool</span><span class="w"> </span>graph<span class="w"> </span><span class="nv">$lastday</span><span class="w"> </span>--end<span class="w"> </span>now<span class="w"> </span>--start<span class="w"> </span>-1d<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>-v<span class="w"> </span>last<span class="se">\_</span>day<span class="w"> </span>-t<span class="w"> </span>active<span class="se">\_</span>movers<span class="w"> </span><span class="se">\\</span>
+<span class="w">        </span>DEF:movers<span class="o">=</span><span class="nv">$rrdfile</span>:movers:AVERAGE<span class="w"> </span>LINE:movers#000000
+</code></pre></div>
+
 <h2 id="4-crontab-scheduling">4. Crontab - scheduling</h2>
-<p>*/5 * * * * /bin/bash /home/$user/rrd/rrd.update.sh &gt; /dev/null 2&gt;&amp;1 #every 5 minutes */15 * * * * /bin/bash /home/$user/rrd/rrd.graph.sh &gt; /dev/null 2&gt;&amp;1 #every 15 minutes</p>
+<div class="highlight"><pre><span></span><code>\*/5 \* \* \* \* /bin/bash /home/$user/rrd/rrd.update.sh &gt; /dev/null 2&gt;&amp;1 #every 5 minutes \*/15 \* \* \* \* /bin/bash /home/$user/rrd/rrd.graph.sh &gt; /dev/null 2&gt;&amp;1 #every 15 minutes
+</code></pre></div>
+
 <h2 id="5-final-words">5. Final Words</h2>
 <p>I am not providing the data gathering script here as you probably won't need it: it lists movers (transfers) on all pools in a dCache system.</p>
     </div>
@@ -144,7 +180,7 @@ enddate=$(date +%s)</p>
 <div class="row">
   <ul class="col-sm-6 list-inline">
     <li class="list-inline-item"><a href="https://wtangy.se">Was There an NHL Game Yesterday?</a></li>
-    <li class="list-inline-item"><a href="/tags/resepti">Recipes in Finnish</a></li>
+    <li class="list-inline-item"><a href="/tag/resepti">Recipes in Finnish</a></li>
   </ul>
   <p class="col-sm-6 text-sm-right text-muted">
     Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>

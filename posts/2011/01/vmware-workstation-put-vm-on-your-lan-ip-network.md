@@ -12,7 +12,7 @@ In VMWare Workstation go to Edit -> Virtual Network Editor. Then use one of the 
 
 Like this:
 
-\[caption id="attachment\_196" align="alignnone" width="604"\][![VMWare Network Editor](images/vmware_vne.png "vmware_vne")](http://www.guldmyr.com/wp-content/uploads/vmware_vne.png) VMWare Network Editor\[/caption\]
+[![VMWare Network Editor](images/vmware_vne.png "vmware_vne")](images/vmware_vne.png) VMWare Network Editor
 
 So go ahead and change that to the one that gives your host access to the LAN.
 

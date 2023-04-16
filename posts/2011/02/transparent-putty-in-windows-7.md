@@ -12,7 +12,7 @@ But, maybe you want to make PuTTY prettier?
 
 Like this?:
 
-\[caption id="attachment\_414" align="alignnone" width="659"\][![putty pretty](images/putty2.png "putty2")](http://www.guldmyr.com/wp-content/uploads/putty2.png) putty pretty\[/caption\]
+[![putty pretty](images/putty2.png "putty2")](images/putty2.png) putty pretty
 
 Well, there are a couple of ways to get the transparency.
 
