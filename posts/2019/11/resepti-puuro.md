@@ -2,6 +2,7 @@
 title: Resepti: Puuro
 date: 2019-11-16
 category: finland
+tags: recipe, recipes, resepti, reseptit, puuro
 
 Kahdelle
 
@@ -11,4 +12,4 @@ Laittaa puuron kulhoihin, laitta voita keskellä ja silloin sokeria.
 
 Tadaa :)
 
-![](images/DSC_0841-1024x768.jpg)
+![smiley-puuro](images/DSC_0841-1024x768.jpg)

@@ -26,4 +26,4 @@ After this one I decided to give Erikson's Crack Pot Trail a go, but this is one
 
  
 
-![](images/51ias60SrKL._SL500_AA300_.jpg "cover")
+![cover](images/51ias60SrKL._SL500_AA300_.jpg "cover")

@@ -36,6 +36,6 @@ Quite cool concept(patented) that they are very soon starting to build here in G
 
 Next Days: [Day 5](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](http://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3")
 
-[](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")
+[Day-2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")
 
-Previous Day: [](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")
+Previous Day: [Day-2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")

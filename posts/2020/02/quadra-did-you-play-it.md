@@ -30,7 +30,7 @@ Does it run!?
 
 And I get a very nice window :)
 
-![](images/quadra_2020-1024x466.png)
+![screenshot](images/quadra_2020-1024x466.png)
 
 Quadra in 2020! (do note that it tries to talk to google and sourceforge for updates and so on, try the ./configure --disable-version-check)
 

@@ -6,7 +6,18 @@ tags: google, it, rss, subscribe
 
 Hello and welcome to my blog :)
 
-If you want to get an update whenever there is a new post you can subscribe (for free of course) to an RSS feed. This feed is a small page in .XML format that gets updated whenever a post is added on [guldmyr.com](http://guldmyr.com).
+# New Stuff From 2023
+
+ - [All Content Feed](https://guldmyr.com/atom.xml)
+ - [IT](https://guldmyr.com/it.atom.xml)
+ - [Finland](https://guldmyr.com/finland.atom.xml)
+ - [Storage](https://guldmyr.com/storage.atom.xml)
+
+These days I use inoreader.
+
+# Old Stuff From 2011
+
+If you want to get an update whenever there is a new post you can subscribe (for free of course) to an RSS feed. This feed is a small page in .XML format that gets updated whenever a post is added on [guldmyr.com](https://guldmyr.com).
 
 Does it sound a little complicated? - It does not have to be!
 
@@ -14,7 +25,7 @@ What I found amazing about this is that most webpages have a feed, so you can pu
 
 Feeds of my categories - I think this might be a good idea because I tend to write about many things.
 
-The [storage](../category/storage/feed/ "storage feed") category is focusing on storage, SAN and data networks. [](http://www.guldmyr.com/category/finland/feed/ "Finland RSS")The [Finland](../category/finland/feed/ "Finland RSS") category is about anything that is not about IT. The [IT](http://www.guldmyr.com/category/IT/feed/ "IT RSS") category will is about the rest of IT :)
+The [storage](../category/storage/feed/ "storage feed") category is focusing on storage, SAN and data networks. [finland-rss](http://www.guldmyr.com/category/finland/feed/ "Finland RSS")The [Finland](../category/finland/feed/ "Finland RSS") category is about anything that is not about IT. The [IT](http://www.guldmyr.com/category/IT/feed/ "IT RSS") category will is about the rest of IT :)
 
 [http://www.guldmyr.com/category/finland/feed/](http://www.guldmyr.com/category/finland/feed/ "RSS feed Finland") [http://www.guldmyr.com/category/storage/feed/](http://www.guldmyr.com/category/storage/feed/ "RSS feed storage") [http://www.guldmyr.com/category/IT/feed/](http://www.guldmyr.com/category/IT/feed/ "RSS feed IT") [http://www.guldmyr.com/feed/](http://www.guldmyr.com/feed/ "RSS feed all") -  This one has all included.
 

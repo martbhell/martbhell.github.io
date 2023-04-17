@@ -16,7 +16,7 @@ There were talks about virtual images and how to (securely) transfer them betwee
 
 One great use case for running computing nodes in the cloud is at the moment for when the cluster is maxed out - then you can kick up some more vms in the cloud to help speed up the run. Or when running the jobs it keeps the VM running as long as jobs that require that kind of VMs are in the queue. Or for testing - quite easy to set up several VMs with different operating systems/platforms and then run testing on them. See [cloudscheduler.org](http://cloudscheduler.org/ "cloudscheduler")
 
-[](http://cloudscheduler.org/ "cloudscheduler")Infrastructure as a Code - IaaC - see [Opscode and Chef](http://www.opscode.com/chef/ "opscode.com"). A pretty interesting looking  configuration management system.
+[cloudscheduler](http://cloudscheduler.org/ "cloudscheduler")Infrastructure as a Code - IaaC - see [Opscode and Chef](http://www.opscode.com/chef/ "opscode.com"). A pretty interesting looking  configuration management system.
 
 ﻿Terms: fairshare [json](http://www.json.org/ ".org")
 

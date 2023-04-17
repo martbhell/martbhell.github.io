@@ -18,7 +18,8 @@
 
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="/atom.xml">
-  
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="/it.atom.xml">  
   <meta name="description" content="https://www.guldmyr.com/some-updates-to-the-home-network/ Above is a previous post in this series about some improvements to my home network. With two modems from two ISPs. So! On Alibaba I found two Hasivo 8x1GbE managed fanless switches with VLAN support. Delivery time to Finland was really quick. It didn't say …">
 
 
@@ -73,7 +74,7 @@
 <p>Above is a previous post in this series about some improvements to my home network. With two modems from two ISPs.</p>
 <p>So! On Alibaba I found two Hasivo <a href="https://www.aliexpress.com/item/8-Port-Gigabit-Managed-Switch-Managed-Ethernet-Switch-with-8-port-10-100-1000M-VLAN/1000007360495.html">8x1GbE managed fanless switches</a> with VLAN support. Delivery time to Finland was really quick. It didn't say (ok, I didn't read all or ask seller) if they included European adapters but turns out they did!</p>
 <p>To recap: <strong>The idea was to use the one long cable and transport two VLANs over it. Other than that how I would actually implement it was a bit fuzzy.</strong></p>
-<p><img alt="" src="images/home-net-current-20190516-2.jpg"></p>
+<p><img alt="plan" src="images/home-net-current-20190516-2.jpg"></p>
 <p>New layout. Numbers in the switchlike boxes are VLAN ids</p>
 <p>Things I've learnt while connecting these:</p>
 <ul>
@@ -85,9 +86,9 @@
 <li>Also found a few extra short ethernet cables in old ISP modem boxes, very nice to have with this as this exercise required a few more cables.</li>
 <li>So on the desktop I now need to choose which network interface to use to get to the Internet. I learnt that if I just remove default gateway for IPv4 from ISP A and use the NIC to ISP B then IPv6 from ISP A will still be there and used :)</li>
 </ul>
-<p><img alt="" src="images/static_vlan_setup.png"></p>
+<p><img alt="config-in-sw-web-ui-1" src="images/static_vlan_setup.png"></p>
 <p>First VLAN config page: The static VLAN/tagged VLAN setup on the other page</p>
-<p><img alt="" src="images/modemb_untagged.png"></p>
+<p><img alt="config-in-sw-web-ui-2" src="images/modemb_untagged.png"></p>
 <p>Second VLAN config page: The native VLAN / PVID configuration on one switch</p>
 <p><em>Some <strong>more bits about the switches is in order:</strong></em></p>
 <p>On a related note, the modems have switches builtin and I also had a 6 port fanless unmanaged switch which has been working great for the last 6 years or so but now that got deprecated, yay one less UK plug adapter :). I prefer using an extra switch as opposed to the modem's. The modems sometimes reboot which is annoying as it interrupts anything I'm doing, even if it's only local without going to the Internet.</p>
@@ -108,7 +109,7 @@
 <li>The switches have a bunch of other settings that could be fun to play with too.</li>
 </ul>
 <p>Was the layout diagram above not clear? Try this:</p>
-<p><img alt="" src="https://lh5.googleusercontent.com/ZtYmLJgLMLOlWOvYaNZ47I7KnI0HwTrqWw8u9JlhxVgdJJpt7whfeeccwekT-OcJ_jTP2HqOqkV4Ry0fTd3VAB0YH7pGlcxlUatlWSzpSCFiYhLW2cgc3fDknkY0vJ9xn5fuXqHM"></p>
+<p><img alt="after-with-colors!" src="https://lh5.googleusercontent.com/ZtYmLJgLMLOlWOvYaNZ47I7KnI0HwTrqWw8u9JlhxVgdJJpt7whfeeccwekT-OcJ_jTP2HqOqkV4Ry0fTd3VAB0YH7pGlcxlUatlWSzpSCFiYhLW2cgc3fDknkY0vJ9xn5fuXqHM"></p>
     </div>
   </article>
     </div>

@@ -10,7 +10,7 @@ Could not detect which OS was on the disk, set it to Win7 x64. 4G RAM and 25G di
 
 There's a funny fish shown during first install.
 
-[![](images/win8_fish.png "win8_fish")](images/win8_fish.png)
+[![win8](images/win8_fish.png "win8_fish")](images/win8_fish.png)
 
 After this, enter language and hit install, enter license key, custom install, use all disk.
 

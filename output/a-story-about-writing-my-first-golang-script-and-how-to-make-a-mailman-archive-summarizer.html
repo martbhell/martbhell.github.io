@@ -18,7 +18,8 @@
 
   <link rel="alternate" type="application/atom+xml" title="Full Atom Feed"
         href="/atom.xml">
-  
+  <link rel="alternate" type="application/atom+xml" title="Categories Atom Feed"
+        href="/it.atom.xml">  
   <meta name="description" content="Time to try out another programming language! Golang I see quite frequently in my twitters so have been thinking for a while - why not give it a shot for the next project! TLDR; https://github.com/martbhell/mailman-summarizer Took a while to figure out what would be a nice small …">
 
 
@@ -63,6 +64,9 @@
           <i class="fas fa-folder-open"></i>
           <a href="/category/it.html">it</a>
         </li>
+          <li class="list-inline-item">
+            <i class="fas fa-tag"></i>
+              <a href="/tag/ceph.html">#ceph</a>,               <a href="/tag/rss.html">#rss</a>,               <a href="/tag/golang.html">#golang</a>,               <a href="/tag/go.html">#go</a>,               <a href="/tag/mailman.html">#mailman</a>,               <a href="/tag/gcs.html">#GCS</a>,               <a href="/tag/google.html">#google</a>,               <a href="/tag/email.html">#email</a>,               <a href="/tag/mailing-lists.html">#mailing-lists</a>,               <a href="/tag/travis.html">#travis</a>          </li>
       </ul>
     </header>
     <div class="content">
@@ -77,7 +81,7 @@
 <p>As usual when I play around in my spare time I try to document much more than is necessary. But if I ever need to re-read this code in a year or two because something broke then I want to save myself some time. Most likely I won't be writing much more Go between now and then so the things I learnt while writing this piece will probably have been purged from memory!</p>
 <p>The end result <a href="https://storage.googleapis.com/ceph-rgw-users/feed.xml">https://storage.googleapis.com/ceph-rgw-users/feed.xml</a><br>
 as of right now looks like below in one RSS reader:</p>
-<p><img alt="" src="images/image-1024x339.png"></p>
+<p><img alt="RSS Feed Output" src="images/image-1024x339.png"></p>
 <p>In summary the steps to get there were:</p>
 <ul>
 <li>Used https://github.com/bcongdon/colly-example to do some web scraping of the mailman/pipermail web archive of the ceph-users e-mail list. Golang here was quite different from Python and beautifulsoup. It uses callbacks. I didn't look too deeply into those but things did not happen in the same order they were written. Maybe it can be used to speed things up a bit, but the slowest part of this scraping is the 1s+random time delay I have between the HTTP GETs to be nice to the Internet ;)</li>

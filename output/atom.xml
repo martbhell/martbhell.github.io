@@ -96,9 +96,9 @@
 &lt;p&gt;leikkaa&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="" src="images/20230114_102032-scaled.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;uunissa: &lt;img alt="" src="images/20230114_102041-scaled.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;jälkeen: &lt;img alt="" src="images/20230114_110745-scaled.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sokerivesi" src="images/20230114_102032-scaled.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;uunissa: &lt;img alt="uunissa" src="images/20230114_102041-scaled.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;jälkeen: &lt;img alt="valmis" src="images/20230114_110745-scaled.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;yritys 2:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -459,9 +459,9 @@ $&lt;span class="w"&gt; &lt;/span&gt;make
 &lt;p&gt;Does it run!?&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;$ QUADRADIR=. ./quadra&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;And I get a very nice window :)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="images/quadra_2020-1024x466.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="screenshot" src="images/quadra_2020-1024x466.png"&gt;&lt;/p&gt;
 &lt;p&gt;Quadra in 2020! (do note that it tries to talk to google and sourceforge for updates and so on, try the ./configure --disable-version-check)&lt;/p&gt;
 &lt;p&gt;I could even launch one process to run a server and then another server and connect to localhost :) So multiplayer must sureley durely work!&lt;/p&gt;
 &lt;p&gt;It's a big laggy - I recall it being very snappy because I was da bomb at this game :)&lt;/p&gt;
-&lt;p&gt;I blame this on that I might have missed some dependency and it now fell back into some easier something and or maybe the graphics card in this laptop is not good (maybe it's too new? It's a Skylake GT2 HD G 520).&lt;/p&gt;</content><category term="it"></category></entry><entry><title>Coffee: Kaffetoria Espresso Flores</title><link href="/coffee-kaffetoria-espresso-flores.html" rel="alternate"></link><published>2020-01-21T00:00:00+02:00</published><updated>2020-01-21T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-01-21:/coffee-kaffetoria-espresso-flores.html</id><content type="html">&lt;p&gt;&lt;img alt="" src="images/DSC_1367-768x1024.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;I blame this on that I might have missed some dependency and it now fell back into some easier something and or maybe the graphics card in this laptop is not good (maybe it's too new? It's a Skylake GT2 HD G 520).&lt;/p&gt;</content><category term="it"></category></entry><entry><title>Coffee: Kaffetoria Espresso Flores</title><link href="/coffee-kaffetoria-espresso-flores.html" rel="alternate"></link><published>2020-01-21T00:00:00+02:00</published><updated>2020-01-21T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-01-21:/coffee-kaffetoria-espresso-flores.html</id><content type="html">&lt;p&gt;&lt;img alt="bild-på-kaffe" src="images/DSC_1367-768x1024.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Gött. I jämförelse med den jag hade innan så luktade denna mycket mera choklad och mindre bränt..&lt;/p&gt;</content><category term="finland"></category><category term="coffee"></category></entry></feed>

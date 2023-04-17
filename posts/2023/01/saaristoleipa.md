@@ -28,11 +28,11 @@ yritys 1:
 
 - leikkaa
 
-![](images/20230114_102032-scaled.jpg)
+![sokerivesi](images/20230114_102032-scaled.jpg)
 
-uunissa: ![](images/20230114_102041-scaled.jpg)
+uunissa: ![uunissa](images/20230114_102041-scaled.jpg)
 
-jälkeen: ![](images/20230114_110745-scaled.jpg)
+jälkeen: ![valmis](images/20230114_110745-scaled.jpg)
 
 yritys 2:
 

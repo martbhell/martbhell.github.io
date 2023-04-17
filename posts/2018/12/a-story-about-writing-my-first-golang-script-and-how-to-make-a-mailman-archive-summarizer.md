@@ -2,6 +2,7 @@
 title: A story about writing my first golang script and how to make a mailman archive summarizer
 date: 2018-12-07
 category: it
+tags: ceph, rss, golang, go, mailman, GCS, google, email, mailing-lists, travis
 
 Time to try out another programming language!  
   
@@ -24,7 +25,7 @@ As usual when I play around in my spare time I try to document much more than is
 The end result [https://storage.googleapis.com/ceph-rgw-users/feed.xml](https://storage.googleapis.com/ceph-rgw-users/feed.xml)  
 as of right now looks like below in one RSS reader:
 
-![](images/image-1024x339.png)
+![RSS Feed Output](images/image-1024x339.png)
 
 In summary the steps to get there were:
 
