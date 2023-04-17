@@ -1,5 +1,14 @@
 Source for the Blog
 
+Workflow:
+----
+ - Test stuff locally
+ - run "pelican content" without defining SITE_URL
+ - keep changes to output/content in separate commits than ones to:
+   - any config files
+   - posts
+   - tests
+
 Directories:
 ----
 
