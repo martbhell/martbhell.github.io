@@ -20,7 +20,7 @@ I'm going to focus on the below things when studying for BANAS: They are based o
 
 - #### Describe the installation and configuration of Brocade Network Advisor
     
-    - Taken care of in my [previous blog post](http://www.guldmyr.com/banas-brocade-accredited-network-advisor-specialist/ "BANAS – Brocade Accredited Network Advisor Specialist"). Can be installed in a VM for practice.
+    - Taken care of in my [previous blog post](https://www.guldmyr.com/banas-brocade-accredited-network-advisor-specialist/ "BANAS – Brocade Accredited Network Advisor Specialist"). Can be installed in a VM for practice.
 - #### Perform SAN Discovery
     
     - What are seed switches?

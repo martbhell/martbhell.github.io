@@ -12,7 +12,7 @@ When I make comments to CLI commands I put them after a #.
 
 This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional.
 
-The two previous posts: [Objectives and reading materials](http://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") and [course and nutshell guide](http://www.guldmyr.com/bcefp-2015-studying-for-the-exam/ "BCEFP 2015 – Studying for the exam")
+The two previous posts: [Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") and [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/ "BCEFP 2015 – Studying for the exam")
 
 ## The NOS 4.1.1 Admin Guide
 
@@ -82,7 +82,7 @@ Commands (# comments) (page):
 
 Because the slides for the BCEFP course were insufficient I would get a lot of the basic information about the NOS from the NOS Admin Guide. In the materials provided the NOS Admin Guide was separated into two documents. The guide is of course available in one pdf. Go to the [web version](http://www.brocade.com/downloads/documents/html_product_manuals/NOS_411_AG/index.html "html") and click on the [pdf icon](http://www.brocade.com/downloads/documents/product_manuals/B_VDX/NOS_AdminGuide_v411.pdf "http://www.brocade.com/downloads/documents/product_manuals/B_VDX/NOS_AdminGuide_v411.pdf"). This makes printing based on the numbers provided easier. However the NOS Admin Guide for v4.1.1 referenced was one version below the one on the html version.
 
-Now the numbers referenced are the numbers in the document, not the one told by the pdf viewer. So actually page 11 is page 13. Page 135 is 137. 311 is 313. 425 is 427. 517 is 519. 661 is 663. 714 is 716. I checked a few to make sure there were no major increase due to version difference or elsewhere. One could with [a bit of scripting](http://guldmyr.com/scripts/increasevalueofeachentry.py "python script") increase each number with two like:
+Now the numbers referenced are the numbers in the document, not the one told by the pdf viewer. So actually page 11 is page 13. Page 135 is 137. 311 is 313. 425 is 427. 517 is 519. 661 is 663. 714 is 716. I checked a few to make sure there were no major increase due to version difference or elsewhere. One could with [a bit of scripting](https://guldmyr.com/scripts/increasevalueofeachentry.py "python script") increase each number with two like:
 
 1,13-22,28-33,56-58,77-79,96,117,121,137-146,151,152,193,203-205,212,245-249,255,263,271,313-316,323,324,340-347,363-387,402,405,408,427-435,439,467,485,497,506,508,519-523,543,561,565,567,585,595,596,599,605-611,663-665,670,678,684,688,716,717
 

@@ -4,7 +4,7 @@ date: 2012-06-08
 category: it
 tags: centos, certification, file, transfer, linux, ntp, ntpd, ntpq, red, hat, rhce, studying, synchronization, tcpdump, time, time, sync, time, synchronizatino
 
-[1st post](http://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
@@ -20,14 +20,14 @@ Network services are an important subset of the exam objectives. RHCE candidates
 
 User should be able to do the following for all these services:
 
-- [http/https](http://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
-- [dns](http://guldmyr.com/red-hat-certification-rhce-network-services-dns)
-- [ftp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
-- [nfs](http://www.guldmyr.com/red-hat-certification-rhce-network-services-nfs/)
-- [smb](http://www.guldmyr.com/red-hat-certification-rhce-network-services-smb/)
-- [smtp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-e-mail/)
-- [ssh](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
-- [ntp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
+- [http/https](https://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
+- [dns](https://guldmyr.com/red-hat-certification-rhce-network-services-dns)
+- [ftp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
+- [nfs](https://www.guldmyr.com/red-hat-certification-rhce-network-services-nfs/)
+- [smb](https://www.guldmyr.com/red-hat-certification-rhce-network-services-smb/)
+- [smtp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-e-mail/)
+- [ssh](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
+- [ntp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
 
 ## NTP:
 

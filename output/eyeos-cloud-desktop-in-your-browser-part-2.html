@@ -70,7 +70,7 @@
       </ul>
     </header>
     <div class="content">
-      <p>After <a href="http://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/#comment-42" title="eyeOS part 1">my first comment ever</a> by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!</p>
+      <p>After <a href="https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/#comment-42" title="eyeOS part 1">my first comment ever</a> by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!</p>
 <p>1/ Because I also tried to install cactii on the same VM the other day - and after that I saw some nasty out of memory messages. I will create a new VM - fresh, and with only 256MB RAM!</p>
 <p>However, the guide is only for 2.x - So I will freestyle this time too. But follow the installation instructions on eyes.org :)</p>
 <h2 id="overview">Overview</h2>
@@ -81,9 +81,9 @@
 <p>Also found a <a href="http://ubuntuforums.org/showthread.php?t=1423743" title="x86 or amd64?">forum post</a> that confirms, if you have an Intel 64-bit CPU - it is the "amd64" version you want to install.</p>
 <p>So first time when I entered the VM through the VMWare shell everything worked fine. Except that they keyboard was a bit messed up. When I pressed down it sent an enter. In SSH via PuTty it's working so I'll do it that way instead. If you have this problem, check out <a href="http://ubuntuforums.org/showthread.php?t=1116511" title="down arrow not working ubuntu vmware">this post</a> - might be a VMWare bug or you may fix it with some CLI magic.</p>
 <p>sshd is not installed by default -&gt; <strong>sudo apt-get install openssh-server</strong></p>
-<p><em>Also probably good to change IP in the beginning, in case you want it on a static IP. See my <a href="http://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/" title="unbuntu static ip">previous post</a> how to set that. It's a at the bottom of the post.</em></p>
+<p><em>Also probably good to change IP in the beginning, in case you want it on a static IP. See my <a href="https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/" title="unbuntu static ip">previous post</a> how to set that. It's a at the bottom of the post.</em></p>
 <h3 id="time">Time</h3>
-<p>Another good thing would be to set the time zone on the VM. You can find out how to do that in <a href="http://www.guldmyr.com/lifehack-currency/" title="lifehack / set timezone">this pos</a>t about lifehack/currency exchange rate.</p>
+<p>Another good thing would be to set the time zone on the VM. You can find out how to do that in <a href="https://www.guldmyr.com/lifehack-currency/" title="lifehack / set timezone">this pos</a>t about lifehack/currency exchange rate.</p>
 <p>To sync the time - so that it is up to date (mine was 30mins off) -</p>
 <p>Edit /etc/default/ntpdate Add a pool or use the default one - http://www.pool.ntp.org/zone/fi for Finnish ones. Then run <strong>sudo ntpdate-debian</strong></p>
 <p>Do I really need to run this anymore? I'll just let it be and try to keep track of it :p</p>
@@ -135,7 +135,7 @@
 <p>don't forget to add that to the root user crontab, with 'sudo crontab -e'</p>
 <p>*** a week later</p>
 <p>ok that was an ugly fix and I do not condone doing that, that was me being a little frustrated :)</p>
-<p>See <a href="http://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/" title="ntpd sync">http://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/</a> for how it worked out..</p>
+<p>See <a href="https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/" title="ntpd sync">https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/</a> for how it worked out..</p>
 <h2 id="lamp">lamp</h2>
 <p><a href="http://ubuntuforums.org/showthread.php?t=1116511" title="eyeos1 download">Download 1.x</a></p>
 <p>install LAMP -&gt; <strong>sudo apt-get install lamp-server^</strong> The ^ needs to be there! All you need to do is to insert a mysql root password.</p>

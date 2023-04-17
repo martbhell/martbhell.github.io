@@ -26,4 +26,4 @@ I'm running it on a T400 with RHEL6 (which uses gnome login manager - gde).
 2. gnome-session-save --logout does not work -gave some kind of error
 3. MODKEY+SHIFT+Q only seems to re-fresh the screen, doesn't actually re-load the whole she-bang.
 
-DWM top bar can be edited to show other things than DWM version. See [my post here](http://www.guldmyr.com/dwm-editing-the-bar-to-show-time/ "editing top bar in dwm") about that.
+DWM top bar can be edited to show other things than DWM version. See [my post here](https://www.guldmyr.com/dwm-editing-the-bar-to-show-time/ "editing top bar in dwm") about that.

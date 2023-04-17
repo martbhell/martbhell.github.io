@@ -24,7 +24,7 @@ So I'm pretty confident that those 30€ is worth it, it still wouldn't be free 
 
 Have been looking forward to this a while now, but after I tried reading a little on a friend's Kindle (larger screen) I just had to go for it. I went with the smaller screen because I don't want to carry something in magazine size. Pocket size now that's more like it.
 
-But I wonder if I will miss reading large ass 1000 pages books like '[Dust of Dreams](http://www.guldmyr.com/fantasy-book-review-steven-erikson-dust-of-dreams/ "on guldmyr.com")' or '[Game of Thrones](http://www.guldmyr.com/fantasy-book-review-george-r-r-martin-a-game-of-thrones/ "on guldmyr.com")'? What I won't miss is carrying that book around though maybe it does make my arms a little stronger? =) First book I'm going to try is '[The Crippled God](http://en.wikipedia.org/wiki/The_Crippled_God_(novel) "on wikipedia")' by Steven Erikson.
+But I wonder if I will miss reading large ass 1000 pages books like '[Dust of Dreams](https://www.guldmyr.com/fantasy-book-review-steven-erikson-dust-of-dreams/ "on guldmyr.com")' or '[Game of Thrones](https://www.guldmyr.com/fantasy-book-review-george-r-r-martin-a-game-of-thrones/ "on guldmyr.com")'? What I won't miss is carrying that book around though maybe it does make my arms a little stronger? =) First book I'm going to try is '[The Crippled God](http://en.wikipedia.org/wiki/The_Crippled_God_(novel) "on wikipedia")' by Steven Erikson.
 
 ### Unwrapping & First sight
 

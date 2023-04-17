@@ -6,7 +6,7 @@ tags: bcvre, brocade, certified, exam, open, source, virtualization
 
 Been checking out the Vyatta vRouter a bit closer. Mostly because of the BCvRE exam but I'm slowly starting to think there might be some benefits to using it elsewhere too.
 
-1. See [vyatta-a-routervpnfirewall-in-a-vm-brocade-certified-vrouter-engineer/](http://www.guldmyr.com/vyatta-a-routervpnfirewall-in-a-vm) for where to find manuals or training materials.
+1. See [vyatta-a-routervpnfirewall-in-a-vm-brocade-certified-vrouter-engineer/](https://www.guldmyr.com/vyatta-a-routervpnfirewall-in-a-vm) for where to find manuals or training materials.
 2. See [the objectives](bcvre-brocade-certified-virtual-router-engineer-objectives).
 
 I tried installing [Vyatta](http://vyatta.com/ "http://vyatta.com/") vRouter 6.6 amd64 Live ISO to disk first in a Virtualbox VDI file and then uploading said file to openstack. This works, but:

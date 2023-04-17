@@ -4,13 +4,13 @@ date: 2012-11-11
 category: it
 tags: automation, cfe, cfengine, cms, linux, puppet, resolv, conf, resolver, salt, salt, highstate, script, scripting
 
-Building on the [initial post](http://www.guldmyr.com/cfengine-whats-that-all-about/ "cfengine – what’s that about?") about cfengine we're going to try out some things that may actually be useful.
+Building on the [initial post](https://www.guldmyr.com/cfengine-whats-that-all-about/ "cfengine – what’s that about?") about cfengine we're going to try out some things that may actually be useful.
 
 My goal would be to make /etc/resolv.conf identical between all the machines.
 
 The server setup is the lustre cluster we built in a previous post.
 
-In this post you'll first see two attempts at getting cfengine and then puppet to do my bidding until success was finally accomplished with [salt](http://www.guldmyr.com/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt/#salt).
+In this post you'll first see two attempts at getting cfengine and then puppet to do my bidding until success was finally accomplished with [salt](https://www.guldmyr.com/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt/#salt).
 
 # Cfengine
 

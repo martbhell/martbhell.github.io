@@ -8,7 +8,7 @@ tags: cfengine, cluster, clustering, cms, configuration, management, software
 
 It's a (old) software that is used to make sure that (for example) the same config files are used on all machines. There are several other CMSs, for example [puppet.](http://puppetlabs.com/ "puppetlabs.com") Wikipedia has a nice [overview](http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#Basic_properties "on wikipedia") of them.
 
-Let's use the [lustre](http://www.guldmyr.com/setup-a-3-node-lustre-filesystem/ "Setup a 3 Node Lustre Filesystem")   machines we set up in a previous post.
+Let's use the [lustre](https://www.guldmyr.com/setup-a-3-node-lustre-filesystem/ "Setup a 3 Node Lustre Filesystem")   machines we set up in a previous post.
 
 On cfengine.com there are many examples too.
 

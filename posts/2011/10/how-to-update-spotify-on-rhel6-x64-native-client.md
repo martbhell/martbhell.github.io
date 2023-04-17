@@ -4,7 +4,7 @@ date: 2011-10-14
 category: it
 tags: red, hat, red, hat, enterprise, linux, rhel, spotify, spotify, for, linux
 
-See [the post](http://www.guldmyr.com/how-to-install-spotify-on-rhel6-x64-native-client/ "how-to-install-spotify-on-rhel6-x64-native-client/") for how to install spotify on a Linux Client (RHEL 6 x64 in my case).
+See [the post](https://www.guldmyr.com/how-to-install-spotify-on-rhel6-x64-native-client/ "how-to-install-spotify-on-rhel6-x64-native-client/") for how to install spotify on a Linux Client (RHEL 6 x64 in my case).
 
 This post is for how to upgrade.
 

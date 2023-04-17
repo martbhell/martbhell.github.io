@@ -4,7 +4,7 @@ date: 2011-02-05
 category: it
 tags: 10.10, activemq, apt, get, cloud, dns, eyeos, http, icloud, kaazing, pico, ubuntu, virtual, desktop, vmware, vmware, workstation, web2.0
 
-After [my first comment ever](http://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/#comment-42 "eyeOS part 1") by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!
+After [my first comment ever](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/#comment-42 "eyeOS part 1") by Adrian from the eyeOS forum I will now try this again and try not to install eyeOS wrongly by following a guide!
 
 1/ Because I also tried to install cactii on the same VM the other day - and after that I saw some nasty out of memory messages. I will create a new VM - fresh, and with only 256MB RAM!
 
@@ -26,11 +26,11 @@ So first time when I entered the VM through the VMWare shell everything worked f
 
 sshd is not installed by default -> **sudo apt-get install openssh-server**
 
-_Also probably good to change IP in the beginning, in case you want it on a static IP. See my [previous post](http://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/ "unbuntu static ip") how to set that. It's a at the bottom of the post._
+_Also probably good to change IP in the beginning, in case you want it on a static IP. See my [previous post](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser/ "unbuntu static ip") how to set that. It's a at the bottom of the post._
 
 ### Time
 
-Another good thing would be to set the time zone on the VM. You can find out how to do that in [this pos](http://www.guldmyr.com/lifehack-currency/ "lifehack / set timezone")t about lifehack/currency exchange rate.
+Another good thing would be to set the time zone on the VM. You can find out how to do that in [this pos](https://www.guldmyr.com/lifehack-currency/ "lifehack / set timezone")t about lifehack/currency exchange rate.
 
 To sync the time - so that it is up to date (mine was 30mins off) -
 
@@ -134,7 +134,7 @@ don't forget to add that to the root user crontab, with 'sudo crontab -e'
 
 ok that was an ugly fix and I do not condone doing that, that was me being a little frustrated :)
 
-See [http://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/](http://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/ "ntpd sync") for how it worked out..
+See [https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/](https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/ "ntpd sync") for how it worked out..
 
 ## lamp
 

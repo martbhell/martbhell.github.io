@@ -6,7 +6,7 @@ tags: accreditation, basp, brocade, certification, certified, fc, fibre, channel
 
 http://www.brocade.com/education/certification-accreditation/accredited\_server\_connectivity/curriculum.page
 
-I'm currently preparing for yet another accreditation, the previous one I took was the [BADCS](http://www.guldmyr.com/brocade-accredited-data-center-specialist-badcs/ "Brocade Accredited Data Center Specialist – BADCS"),
+I'm currently preparing for yet another accreditation, the previous one I took was the [BADCS](https://www.guldmyr.com/brocade-accredited-data-center-specialist-badcs/ "Brocade Accredited Data Center Specialist – BADCS"),
 
 The BASP (Brocade Accredited Server Specialist) appear to focus on the server side. Things like:
 

@@ -49,4 +49,4 @@ Two cases were not suitable. Intensive – with a lot of number crunching.
 
 To put a 5GB vm on a machine you would need 10GB. 5 for the image and 5 for the actual machine. Some were intending to develop the images locally on this cloud and then move it on to Amazon.
 
-Previous Days: [Day 4](http://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3") [Day 2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")
+Previous Days: [Day 4](https://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3") [Day 2](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](https://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")

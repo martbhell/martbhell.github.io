@@ -14,4 +14,4 @@ Now that's a link to an API provided by NHL where you get the schedule and you c
 
 p.s. - there is a shorter URL to the main page: [https://rix.fi/nhl](https://rix.fi/nhl) - but the commands - like  [https://wasthereannhlgamelastnight.appspot.com/MTL](https://wasthereannhlgamelastnight.appspot.com/MTL) \- does not work.
 
-http://www.guldmyr.com/was-there-an-nhl-game-last-night/
+https://www.guldmyr.com/was-there-an-nhl-game-last-night/

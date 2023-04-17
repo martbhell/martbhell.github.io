@@ -8,7 +8,7 @@ So easy!
 
 just:
 
-As I ran the letsencrypt-auto [last time](http://www.guldmyr.com/lets-encrypt-the-web/), I did again.
+As I ran the letsencrypt-auto [last time](https://www.guldmyr.com/lets-encrypt-the-web/), I did again.
 
 - sudo systemctl stop nginx
 - cd letsencrypt

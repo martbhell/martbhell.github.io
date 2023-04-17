@@ -4,7 +4,7 @@ date: 2012-09-05
 category: it
 tags: android, arch, asus, asus, eee, pad, asus, transformer, chroot, linux, tf101
 
-Just got one of these - thought it would be a great tool when going to [conferences](http://www.guldmyr.com/brocade-analyst-and-technology-day-2012/ "Like Brocade Analyst and Technology Day 2012 for example") for example or somewhere where I would need a small computer but don't want to bring a long my normal heavy laptop.
+Just got one of these - thought it would be a great tool when going to [conferences](https://www.guldmyr.com/brocade-analyst-and-technology-day-2012/ "Like Brocade Analyst and Technology Day 2012 for example") for example or somewhere where I would need a small computer but don't want to bring a long my normal heavy laptop.
 
 Normally I prefer pen and paper when going to meetings or conferences, but if there's a lot of information needed to be written down or if I want to check something online it sounds quite nice.
 

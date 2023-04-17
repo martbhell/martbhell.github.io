@@ -38,4 +38,4 @@ There was also a lengthier (longest of the day) 1h-1.5h presentation of a French
 
 Next Days:
 
-[Day 5](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](http://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3") [Day 2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")
+[Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](https://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3") [Day 2](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")

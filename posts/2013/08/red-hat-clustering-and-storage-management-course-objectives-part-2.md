@@ -4,7 +4,7 @@ date: 2013-08-21
 category: it
 tags: certification, cluster, iscsi, linux, lvm, openstack, red, hat, rhce, storage
 
-Post 1 - [http://www.guldmyr.com/red-hat-clustering-and-storage-management-course-objectives/](http://www.guldmyr.com/red-hat-clustering-and-storage-management-course-objectives/) Where I checked out udev, multipathing, iscsi, LVM and xfs.
+Post 1 - [https://www.guldmyr.com/red-hat-clustering-and-storage-management-course-objectives/](https://www.guldmyr.com/red-hat-clustering-and-storage-management-course-objectives/) Where I checked out udev, multipathing, iscsi, LVM and xfs.
 
 **This** post is about getting using luci/ricci to get a Red Hat cluster working, but not on a RHEL machine because sadly I do not have one available for practice purposes. So CentOS64 it is. Using openstack for virtualization.
 

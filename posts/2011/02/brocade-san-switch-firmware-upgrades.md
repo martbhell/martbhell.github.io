@@ -8,7 +8,7 @@ tags: brocade, brocade, san, fabric, fabric, os, firmware, guide, hp, hp, suppor
 
 [TOC]
 
-This is my guide/template to upgrading Fabric OS (FOS) - Firmware - on the Brocade SAN Switches. If **you** have any additions, comments or questions please go ahead and comment or if you have any questions you can find my e-mail on [https://guldmyr.com](http://guldmyr.com "go to the cv"). The post has been updated over 188 times according to my WordPress revisions, first update in January 2011.
+This is my guide/template to upgrading Fabric OS (FOS) - Firmware - on the Brocade SAN Switches. If **you** have any additions, comments or questions please go ahead and comment or if you have any questions you can find my e-mail on [https://guldmyr.com](https://guldmyr.com "go to the cv"). The post has been updated over 188 times according to my WordPress revisions, first update in January 2011.
 
 This article was originally built from my experience with HP branded Brocade SAN Switches - not with any other OEM or pure Brocade switches. I have however since beginning this document gotten experience with other vendors. I do not think others are different except for licenses and some default fabric.ops. I made a [comparison](../hps-brocade-firmwares-compatible-with-other-switches/ "comparison") of two downloads of the 6.3.1b Fabric OS Firmware (one via IBM and one from HP). You can find a link to the "IBM" firmware and release notes after 6.x in that article too. I found that they are very similar and the HP firmware works on the IBM switch and vice versa. Another example is that firmware gotten from HDS works on an HP branded Brocade switch.
 
@@ -25,7 +25,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2011-02-24:** Found link to [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1 "FOS 6.0.x and 5.1.x") on HP.com with the help of an ITRC thread.
 - **2011-04-21:** Added links for correlating Brocade Product name, model number and HP name. Latest in 6.4.x series is now 6.4.1b
 - **2011-05-05:** Added link to Web Tools for 6.2.x with reference to how to upgrade Firmware via the web tools.
-- **2011-05-15:** A note added about compatibility regarding the 'HP' firmware files and other vendors - as far as I can tell the ones downloaded from HP will work on other non-HP switches. Also posted a [new blog post](http://www.guldmyr.com/hps-brocade-firmwares-compatible-with-other-switches/ "works?") about that. Added [link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "IBM SAN b-type Firmware Version 6.x Release Notes") to IBM.com - for correlating product names and for getting (all Fabric OS) firmwares. EMC [also has Brocade products](http://www.brocade.com/partnerships/oems/index.page "on brocade.com").
+- **2011-05-15:** A note added about compatibility regarding the 'HP' firmware files and other vendors - as far as I can tell the ones downloaded from HP will work on other non-HP switches. Also posted a [new blog post](https://www.guldmyr.com/hps-brocade-firmwares-compatible-with-other-switches/ "works?") about that. Added [link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "IBM SAN b-type Firmware Version 6.x Release Notes") to IBM.com - for correlating product names and for getting (all Fabric OS) firmwares. EMC [also has Brocade products](http://www.brocade.com/partnerships/oems/index.page "on brocade.com").
 - **2011-05-18:** Added a link to a post on [HP's support forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new HP's ITRC Forum") where the post helped a bit. Also made post a little easier, wrote a little about the release.plist confusion.
 - **2011-05-24:** Added example to show that driver updates are important. Some more restructuring of the article.
 - **2011-07-12:** Added FOS 7.0.0a
@@ -119,9 +119,9 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
 ## Steps
 
-1. [decide](http://www.guldmyr.com/brocade-san-switch-firmware-upgrades#decide)
-2. [prepare](http://www.guldmyr.com/brocade-san-switch-firmware-upgrades#prepare)
-3. [upgrade](http://www.guldmyr.com/brocade-san-switch-firmware-upgrades#upgrade)
+1. [decide](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades#decide)
+2. [prepare](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades#prepare)
+3. [upgrade](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades#upgrade)
 
 # Decide
 
