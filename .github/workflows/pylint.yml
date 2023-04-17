@@ -26,3 +26,7 @@ jobs:
       - name: Convention Checking content/ dir
         run: |
            python tests/test_symlinks.py
+      - name: Look for broken errors in production (a bit too late no?)
+        run: |
+          pip install -r tests/requirements.txt
+          python tests/find_broken_links.py
