@@ -4,7 +4,7 @@ date: 2011-02-27
 category: it
 tags: 10.10, linux, ntp, ntpd, red, hat, enterprise, rhel, time, servers, time, sync, ubuntu, vmware, vmware, workstation
 
-You may have seen in my [previous post about EyeO](http://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos time sync")S that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I could not find anything that decidedly fixed it.
+You may have seen in my [previous post about EyeO](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos time sync")S that I tried many things to get time in sync on the virtual OS. It was drifting lots of time and after a few hours it was an hour behind. Google tells me this is quite common but I could not find anything that decidedly fixed it.
 
 run ntpdate every hour. This is not advised, primarily because it will add a lot of extra load after a while to the public(free) time servers. Especially if I want to have several machines up to date. One thought then was to set up a local ntpd and let other guest OS sync time with that. But then I could not get that in sync so we were back to square one.
 

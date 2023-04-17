@@ -10,7 +10,7 @@ Figured I would give this a shot and see how this is done in Linux.
 
 1x Ubuntu 10.10 VM in VMWare Workstation. Installed with virtual kernel. 1x Windows 7 VM. All updates.
 
-Not going to go through the installations in this post, just the domain/LDAP part. See [previous post](http://www.guldmyr.com/tag/ubuntu/ "tag ubuntu")s for installation stuffs.
+Not going to go through the installations in this post, just the domain/LDAP part. See [previous post](https://www.guldmyr.com/tag/ubuntu/ "tag ubuntu")s for installation stuffs.
 
 Found this article on ubuntu.com -> -> 10.10/serverguide/C/network-authentication.html .. But this does not exist anymore.
 

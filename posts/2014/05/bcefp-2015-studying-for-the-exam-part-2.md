@@ -12,7 +12,7 @@ When I make comments to CLI commands I put them after a #.
 
 This is part of a series of posts on the topic of studying for Brocade's Certified Ethernet Fabric Professional.
 
-The two previous posts: [Objectives and reading materials](http://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") and [course and nutshell guide](http://www.guldmyr.com/bcefp-2015-studying-for-the-exam/ "BCEFP 2015 – Studying for the exam")
+The two previous posts: [Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") and [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/ "BCEFP 2015 – Studying for the exam")
 
 ## The NOS 4.1.1 Admin Guide
 

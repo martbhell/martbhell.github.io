@@ -4,7 +4,7 @@ date: 2012-07-08
 category: it
 tags: bash, feed, ftp, linux, repository, rss, rss, feed, script, spotify, web
 
-After some time the solution I devised on [http://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/](http://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/) just did not elegant enough (also it stopped working).
+After some time the solution I devised on [https://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/](https://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/) just did not elegant enough (also it stopped working).
 
 Instead of getting some kind of output in a terminal sometimes somewhere I decided to make an RSS feed that updates [https://guldmyr.com/spotify/spot.xml](https://guldmyr.com/spotify/spot.xml) instead :)
 

@@ -34,8 +34,8 @@ Then there were some sessions about programming - CMS 64-bit and OpenMP. One tho
 
 Quite cool concept(patented) that they are very soon starting to build here in Germany. Using water vaporization with outside air (and fans in summer) to cool the air, and also water based heat exchangers in each rack to push warm air (by pressure built up by fans, so the racks needs to be quite air tight) from the back of the servers through the heat exchanger that cools the air, and then pushes it over the aisle to the next row of racks. They managed to get down to a PUE of 1.062 at best.
 
-Next Days: [Day 5](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](http://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3")
+Next Days: [Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](https://www.guldmyr.com/hepix-spring-2011-day-4/ "day4") [Day 3](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3")
 
-[Day-2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")
+[Day-2](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")
 
-Previous Day: [Day-2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")
+Previous Day: [Day-2](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](https://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")

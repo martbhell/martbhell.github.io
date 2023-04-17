@@ -34,6 +34,6 @@ Dinner later today!
 
  
 
-Next Days: [Day 5](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](http://www.guldmyr.com/hepix-spring-2011-day-4/ "day4")
+Next Days: [Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](https://www.guldmyr.com/hepix-spring-2011-day-4/ "day4")
 
-Previous Days: [Day 2](http://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](http://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")
+Previous Days: [Day 2](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2") [Day 1](https://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")

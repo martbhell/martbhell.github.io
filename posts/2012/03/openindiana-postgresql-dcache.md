@@ -10,7 +10,7 @@ dCache is a storage element of the Grid (scientific computing).
 
 OI == OpenIndiana. Kind of like opensolaris with an Illumos kernel, not the sun/oracle kernel.
 
-With [http://www.guldmyr.com/esxi-vmware-workstation/](http://www.guldmyr.com/esxi-vmware-workstation/ "http://www.guldmyr.com/esxi-vmware-workstation/") as a base for how to set up ip settings etc in OI.
+With [https://www.guldmyr.com/esxi-vmware-workstation/](https://www.guldmyr.com/esxi-vmware-workstation/ "https://www.guldmyr.com/esxi-vmware-workstation/") as a base for how to set up ip settings etc in OI.
 
 [oi-dev-151a-text-x86.iso](http://openindiana.org/ "get it from openindiana.org") installed
 

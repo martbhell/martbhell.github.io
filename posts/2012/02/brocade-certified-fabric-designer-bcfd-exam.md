@@ -16,4 +16,4 @@ Also, isn't easy to confuse Brocade Certified Fabric Designer with somebody who 
 
 Check out my other posts on the BCFD subject:
 
-[http://www.guldmyr.com/tag/bcfd/](http://www.guldmyr.com/tag/bcfd/)
+[https://www.guldmyr.com/tag/bcfd/](https://www.guldmyr.com/tag/bcfd/)

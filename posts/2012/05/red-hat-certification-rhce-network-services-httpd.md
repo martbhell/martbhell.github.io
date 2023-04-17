@@ -4,7 +4,7 @@ date: 2012-05-02
 category: it
 tags: apache, centos, certification, httpd, linux, red, hat, rhce, studying
 
-[1st post](http://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 
 This post is about Network Services.
 

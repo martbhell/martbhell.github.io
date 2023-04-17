@@ -4,7 +4,7 @@ date: 2012-06-16
 category: it
 tags: certification, kvm, libvirt, libvirtd, linux, qemu, red, hat, rhce, scientific, linux, studying, virtualization
 
-In a previous [post](http://www.guldmyr.com/rhcsa-preparation/) while preparing for RHCSA I installed kvm post-installation, via the GUI.
+In a previous [post](https://www.guldmyr.com/rhcsa-preparation/) while preparing for RHCSA I installed kvm post-installation, via the GUI.
 
 But how to install, configure and use it only from the CLI?
 

@@ -4,7 +4,7 @@ date: 2012-05-08
 category: it
 tags: centos, certification, dns, domain, name, linux, red, hat, rhce, studying
 
-[1st post](http://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 

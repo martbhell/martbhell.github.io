@@ -8,7 +8,7 @@ tags: certification, linux, red, hat, rhce, studying
 
 This is post 1 in a series of posts where I will be going through the objectives for the RHCE certifications. It builds on the initial post that has the objectives:
 
-http://www.guldmyr.com/red-hat-certification-rhce-preparation/
+https://www.guldmyr.com/red-hat-certification-rhce-preparation/
 
 _It appears that the objectives have been updated, at least if you compare between my post above and https://www.redhat.com/training/courses/ex300/examobjective_
 

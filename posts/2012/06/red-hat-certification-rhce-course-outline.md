@@ -12,12 +12,12 @@ Here are the posts based on the objectives:
 
 - [http/https](https://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
 - [dns](https://guldmyr.com/red-hat-certification-rhce-network-services-dns)
-- [ftp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
-- [nfs](http://www.guldmyr.com/red-hat-certification-rhce-network-services-nfs/)
-- [smb](http://www.guldmyr.com/red-hat-certification-rhce-network-services-smb/)
-- [smtp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-e-mail/)
-- [ssh](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
-- [ntp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
+- [ftp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
+- [nfs](https://www.guldmyr.com/red-hat-certification-rhce-network-services-nfs/)
+- [smb](https://www.guldmyr.com/red-hat-certification-rhce-network-services-smb/)
+- [smtp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-e-mail/)
+- [ssh](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
+- [ntp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
 
 Odds are quite high that I've missed something or not gone deep enough into some subjects and for the record some subjects I decided to skip.
 

@@ -25,9 +25,9 @@ What I found amazing about this is that most webpages have a feed, so you can pu
 
 Feeds of my categories - I think this might be a good idea because I tend to write about many things.
 
-The [storage](../category/storage/feed/ "storage feed") category is focusing on storage, SAN and data networks. [finland-rss](http://www.guldmyr.com/category/finland/feed/ "Finland RSS")The [Finland](../category/finland/feed/ "Finland RSS") category is about anything that is not about IT. The [IT](http://www.guldmyr.com/category/IT/feed/ "IT RSS") category will is about the rest of IT :)
+The [storage](../category/storage/feed/ "storage feed") category is focusing on storage, SAN and data networks. [finland-rss](https://www.guldmyr.com/category/finland/feed/ "Finland RSS")The [Finland](../category/finland/feed/ "Finland RSS") category is about anything that is not about IT. The [IT](https://www.guldmyr.com/category/IT/feed/ "IT RSS") category will is about the rest of IT :)
 
-[http://www.guldmyr.com/category/finland/feed/](http://www.guldmyr.com/category/finland/feed/ "RSS feed Finland") [http://www.guldmyr.com/category/storage/feed/](http://www.guldmyr.com/category/storage/feed/ "RSS feed storage") [http://www.guldmyr.com/category/IT/feed/](http://www.guldmyr.com/category/IT/feed/ "RSS feed IT") [http://www.guldmyr.com/feed/](http://www.guldmyr.com/feed/ "RSS feed all") -  This one has all included.
+[https://www.guldmyr.com/category/finland/feed/](https://www.guldmyr.com/category/finland/feed/ "RSS feed Finland") [https://www.guldmyr.com/category/storage/feed/](https://www.guldmyr.com/category/storage/feed/ "RSS feed storage") [https://www.guldmyr.com/category/IT/feed/](https://www.guldmyr.com/category/IT/feed/ "RSS feed IT") [https://www.guldmyr.com/feed/](https://www.guldmyr.com/feed/ "RSS feed all") -  This one has all included.
 
 **Google Reader** Personally I use [google reader](http://reader.google.com "google reader") - [http://reader.google.com](http://reader.google.com "Google Reader") - to view the RSS. Pro's: Works from my android phone from the built-in web browser, works from any computer with Internet access, all it takes is for me to log in to the address above with my gmail account. Automatic translations of feeds, tags, sharing and more. Con's: I haven't actually tried any other. :)
 
@@ -35,7 +35,7 @@ The [storage](../category/storage/feed/ "storage feed") category is focusing on 
 
 1. Point your web browser to: [http://www.google.com/reader/](http://www.google.com/reader/ "Google Reader")
 2. Click on "Add a subscription"
-3. Add one of my RSS feeds - for example [http://www.guldmyr.com/feed/](http://www.guldmyr.com/feed/ "RSS feed all") - and click on add.
+3. Add one of my RSS feeds - for example [https://www.guldmyr.com/feed/](https://www.guldmyr.com/feed/ "RSS feed all") - and click on add.
 4. Done!
 
 Now every time you log on you will see a number next to the name of the feed which shows how many new posts there has been since last time. To read them just click on them. It is possible to use keyboard shortcuts in google reader too:
