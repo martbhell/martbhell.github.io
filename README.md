@@ -1,4 +1,4 @@
-Source for the Blog
+Source for the Blog where I blog about IT, Finnish Things and sometimes about Storage (but not so much anymore on this topic).
 
 Workflow:
 ----
