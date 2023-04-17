@@ -6,7 +6,7 @@ tags: it, sharepoint, vmware, workstation, windows
 
 # Overview
 
-See the [installation guide](http://guldmyr.com/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation "installation guide") which I published recently.
+See the [installation guide](https://guldmyr.com/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation "installation guide") which I published recently.
 
 This article is a brief look what to do in Sharepoint after it has been installed!
 

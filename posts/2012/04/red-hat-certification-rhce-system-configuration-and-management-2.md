@@ -77,7 +77,7 @@ The "program":
 cat getip.sh
 #!/bin/bash
 
-wget -q http://guldmyr.com/ip.php -O/tmp/ip
+wget -q https://guldmyr.com/ip.php -O/tmp/ip
 cat /tmp/ip
 
 chmod +x getip.sh

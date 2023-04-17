@@ -4,7 +4,7 @@ date: 2011-02-06
 category: finland
 tags: finland, finnish, language, study
 
-Part one of this article - describing the Cases expressing [Grammatical Functions](http://guldmyr.com/finnish-word-cases-grammatical-function "grammatical functions"). Part two: [Locative Cases](http://guldmyr.com/finnish-word-cases-locative-expressing-place "locative cases") Part three: [Others](../finnish-word-cases-others "others")
+Part one of this article - describing the Cases expressing [Grammatical Functions](https://guldmyr.com/finnish-word-cases-grammatical-function "grammatical functions"). Part two: [Locative Cases](https://guldmyr.com/finnish-word-cases-locative-expressing-place "locative cases") Part three: [Others](../finnish-word-cases-others "others")
 
 ## Non-productive Cases
 

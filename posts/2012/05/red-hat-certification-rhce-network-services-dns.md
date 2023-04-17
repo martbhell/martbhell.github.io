@@ -20,8 +20,8 @@ Network services are an important subset of the exam objectives. RHCE candidates
 
 User should be able to do the following for all these services:
 
-- [http/https](http://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
-- [dns](http://guldmyr.com/red-hat-certification-rhce-network-services-dns)
+- [http/https](https://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
+- [dns](https://guldmyr.com/red-hat-certification-rhce-network-services-dns)
 - ftp
 - nfs
 - smb

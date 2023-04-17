@@ -36,4 +36,4 @@ Meaning/function: vage amount, negative complement, greetings, etc Ending: -a/-�
 
 I have **(some) money**. - Minulla on **rahaa**. I do not know **him/her**. - Minä en tunne **häntä**. I do not have a room yet. - Minulla ei ole vielä huonetta. There aren't any taxis in the street. - Kadulla ei ole vielä taksia. Hyvää **päivää**! - Good **day**!
 
-Part two: [Locative Cases](http://guldmyr.com/finnish-word-cases-locative-expressing-place "locative cases") Part three: [Others](../finnish-word-cases-others "others") Part four: [Non-productive](../finnish-word-cases-non-productive-cases "non-productive")
+Part two: [Locative Cases](https://guldmyr.com/finnish-word-cases-locative-expressing-place "locative cases") Part three: [Others](../finnish-word-cases-others "others") Part four: [Non-productive](../finnish-word-cases-non-productive-cases "non-productive")

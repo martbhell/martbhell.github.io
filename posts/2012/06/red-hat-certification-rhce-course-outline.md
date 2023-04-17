@@ -10,8 +10,8 @@ In case you saw my previous posts I've been prepping for a RHCE course the last 
 
 Here are the posts based on the objectives:
 
-- [http/https](http://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
-- [dns](http://guldmyr.com/red-hat-certification-rhce-network-services-dns)
+- [http/https](https://guldmyr.com/red-hat-certification-rhce-network-services-httpd)
+- [dns](https://guldmyr.com/red-hat-certification-rhce-network-services-dns)
 - [ftp](http://www.guldmyr.com/red-hat-certification-rhce-network-services-ftp)
 - [nfs](http://www.guldmyr.com/red-hat-certification-rhce-network-services-nfs/)
 - [smb](http://www.guldmyr.com/red-hat-certification-rhce-network-services-smb/)

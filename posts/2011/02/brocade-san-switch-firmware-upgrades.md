@@ -8,7 +8,7 @@ tags: brocade, brocade, san, fabric, fabric, os, firmware, guide, hp, hp, suppor
 
 [TOC]
 
-This is my guide/template to upgrading Fabric OS (FOS) - Firmware - on the Brocade SAN Switches. If **you** have any additions, comments or questions please go ahead and comment or if you have any questions you can find my e-mail on [https://guldmyr.com](http://guldmyr.com "go to the cv"). The post has been updated over 188 times according to my WordPress revisions, first update in January 2011.
+This is my guide/template to upgrading Fabric OS (FOS) - Firmware - on the Brocade SAN Switches. If **you** have any additions, comments or questions please go ahead and comment or if you have any questions you can find my e-mail on [https://guldmyr.com](https://guldmyr.com "go to the cv"). The post has been updated over 188 times according to my WordPress revisions, first update in January 2011.
 
 This article was originally built from my experience with HP branded Brocade SAN Switches - not with any other OEM or pure Brocade switches. I have however since beginning this document gotten experience with other vendors. I do not think others are different except for licenses and some default fabric.ops. I made a [comparison](../hps-brocade-firmwares-compatible-with-other-switches/ "comparison") of two downloads of the 6.3.1b Fabric OS Firmware (one via IBM and one from HP). You can find a link to the "IBM" firmware and release notes after 6.x in that article too. I found that they are very similar and the HP firmware works on the IBM switch and vice versa. Another example is that firmware gotten from HDS works on an HP branded Brocade switch.
 

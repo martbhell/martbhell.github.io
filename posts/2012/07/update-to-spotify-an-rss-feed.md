@@ -6,7 +6,7 @@ tags: bash, feed, ftp, linux, repository, rss, rss, feed, script, spotify, web
 
 After some time the solution I devised on [http://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/](http://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/) just did not elegant enough (also it stopped working).
 
-Instead of getting some kind of output in a terminal sometimes somewhere I decided to make an RSS feed that updates [http://guldmyr.com/spotify/spot.xml](http://guldmyr.com/spotify/spot.xml) instead :)
+Instead of getting some kind of output in a terminal sometimes somewhere I decided to make an RSS feed that updates [https://guldmyr.com/spotify/spot.xml](https://guldmyr.com/spotify/spot.xml) instead :)
 
 I suspect that the repository itself could be used to see if there's an update to it. It has all these nice looking files in here: http://repository.spotify.com/dists/stable/ - but I also suspect this is a repository for debian/ubuntu which I cannot use on my RHEL-based workstation.
 
@@ -16,9 +16,9 @@ A bash script was written. It uploads the spot.xml whenever there is an update. 
 
 But, I hope it works :) Guess we'll see next time there's an update to spotify!
 
-The script itself is a bit long and I hope not too badly documented, so it's available in the link below: [http://guldmyr.com/spotify/update.spotify.rss.feed.sh](http://guldmyr.com/spotify/update.spotify.rss.feed.sh "the script")
+The script itself is a bit long and I hope not too badly documented, so it's available in the link below: [https://guldmyr.com/spotify/update.spotify.rss.feed.sh](https://guldmyr.com/spotify/update.spotify.rss.feed.sh "the script")
 
-Or, more easily, you can just add [http://guldmyr.com/spotify/spot.xml](http://guldmyr.com/spotify/spot.xml "put this in an RSS reader") to your RSS reader (google's reader, mozilla's thunderbird, there are many of them).
+Or, more easily, you can just add [https://guldmyr.com/spotify/spot.xml](https://guldmyr.com/spotify/spot.xml "put this in an RSS reader") to your RSS reader (google's reader, mozilla's thunderbird, there are many of them).
 
 Some things I learned:
 
