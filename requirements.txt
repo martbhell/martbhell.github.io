@@ -1,4 +1,4 @@
 pelican[markdown]==4.8.0
 pelican-sitemap==1.0.2
 pelican-more-categories==0.1.0
-git+https://github.com/martbhell/pelican-alchemy.git@94e078c72bb5befb39bcb5221b2aef073d85f7c7
+git+https://github.com/martbhell/pelican-alchemy.git@bd530f11a6b77baaef6cfd46050a3b7afa0bfe8f
