@@ -16,8 +16,8 @@ Laita kaikki kahteen kattilaan. Joka painee noin 800g. Vesimäärä tarvitset on
 
 Kun se in valmis laita 400g lohta yhteen kattilaan ja 400g kanaa toiseen.
 
-![](images/DSC_1338-1024x768.jpg)
+![boiling](images/DSC_1338-1024x768.jpg)
 
-![](images/DSC_1337-1024x768.jpg)
+![still-boiling](images/DSC_1337-1024x768.jpg)
 
-![](images/DSC_1339-1024x768.jpg)
+![packaged](images/DSC_1339-1024x768.jpg)

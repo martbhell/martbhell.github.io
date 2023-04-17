@@ -8,4 +8,4 @@ Miksata kerma, tomaatimurska ja mausteet. Kaada sose formille jossa on jo tortel
 
 Versiolle kaksille: ehkä parempi rikottajuusto, penaati ja ilman tomaatimurska?
 
-![](images/DSC_1345-768x1024.jpg)
+![valmis](images/DSC_1345-768x1024.jpg)

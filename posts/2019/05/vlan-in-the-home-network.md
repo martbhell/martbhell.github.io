@@ -12,7 +12,7 @@ So! On Alibaba I found two Hasivo [8x1GbE managed fanless switches](https://www.
 
 To recap: **The idea was to use the one long cable and transport two VLANs over it. Other than that how I would actually implement it was a bit fuzzy.**
 
-![](images/home-net-current-20190516-2.jpg)
+![plan](images/home-net-current-20190516-2.jpg)
 
 New layout. Numbers in the switchlike boxes are VLAN ids
 
@@ -24,11 +24,11 @@ Things I've learnt while connecting these:
 - Also found a few extra short ethernet cables in old ISP modem boxes, very nice to have with this as this exercise required a few more cables.
 - So on the desktop I now need to choose which network interface to use to get to the Internet. I learnt that if I just remove default gateway for IPv4 from ISP A and use the NIC to ISP B then IPv6 from ISP A will still be there and used :)
 
-![](images/static_vlan_setup.png)
+![config-in-sw-web-ui-1](images/static_vlan_setup.png)
 
 First VLAN config page: The static VLAN/tagged VLAN setup on the other page
 
-![](images/modemb_untagged.png)
+![config-in-sw-web-ui-2](images/modemb_untagged.png)
 
 Second VLAN config page: The native VLAN / PVID configuration on one switch
 
@@ -55,4 +55,4 @@ All in all this worked out quite nicely. We'll see how this keeps up. Some furth
 
 Was the layout diagram above not clear? Try this:
 
-![](https://lh5.googleusercontent.com/ZtYmLJgLMLOlWOvYaNZ47I7KnI0HwTrqWw8u9JlhxVgdJJpt7whfeeccwekT-OcJ_jTP2HqOqkV4Ry0fTd3VAB0YH7pGlcxlUatlWSzpSCFiYhLW2cgc3fDknkY0vJ9xn5fuXqHM)
+![after-with-colors!](https://lh5.googleusercontent.com/ZtYmLJgLMLOlWOvYaNZ47I7KnI0HwTrqWw8u9JlhxVgdJJpt7whfeeccwekT-OcJ_jTP2HqOqkV4Ry0fTd3VAB0YH7pGlcxlUatlWSzpSCFiYhLW2cgc3fDknkY0vJ9xn5fuXqHM)

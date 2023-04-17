@@ -5,7 +5,7 @@ category: it
 
 Yay! Took the exam last week after having studied a few days. Nothing seemed to be impossible from the list of requirements at least :)
 
-![](images/Screenshot_20181117-211026-512x1024.png)
+![I Got Cert'd](images/Screenshot_20181117-211026-512x1024.png)
 
 Thought because it's done online it can be scheduled almost on demand, but one had to wait at least 24h for the exam environment to get provisioned.
 

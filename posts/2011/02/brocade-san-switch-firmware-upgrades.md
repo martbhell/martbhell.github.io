@@ -183,6 +183,8 @@ With more recent firmwares (6.4 and 7.x) it's possible to jump more than one hop
 
 # Release notes:
 
+Please note. Most of these no longer works. But maybe just having the filenames help?
+
 **FOS  [7.x](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855)[IBM\_Link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "IBM/Brocade FOS release notes")& [8.x IBM Link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577)**
 
 Brocade release notes in .pdf:
@@ -196,9 +198,9 @@ Brocade release notes in .pdf:
  - [6.4.3h](http://public.dhe.ibm.com/storage/san/fos6/v6.4.3h_ReleaseNotes_v1.0.pdf)
  - [7.0.2e](http://public.dhe.ibm.com/storage/san/fos7/v7.0.2e_ReleaseNotes_v1.0.pdf "release notes")
  - [7.1.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf")
- - [7.2.1g](http://service.boulder.ibm.com/storage/san/fos7/v7.2.1g_ReleaseNotes_v1.0.pdf) [](http://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/psi/swdDetails/?spf_p.tpst=swdMain&spf_p.prp_swdMain=wsrp-navigationalState%3Didx%253D1%257CswItem%253Dco_129553_1%257CswEnvOID%253D54%257CitemLocale%253D%257CswLang%253D%257Cmode%253D4%257Caction%253DdriverDocument&javax.portlet.begCacheTok=com.vignette.cachetoken&javax.portlet.endCacheTok=com.vignette.cachetoken "html hp.com")
- - [7.3.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.3.1a_ReleaseNotes_v1.0.pdf") [](http://h20566.www2.hpe.com/hpsc/swd/public/detail?sp4ts.oid=5408611&swItemId=co_150194_1&swEnvOid=54#tab2 "http://h20565.www2.hp.com/hpsc/swd/public/detail?sp4ts.oid=5111501&swItemId=co_146124_1&swEnvOid=54#_Toc414026474")
- - [7.4.2](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2d_ReleaseNotes_v3.0.pdf)d [](http://h20565.www2.hpe.com/hpsc/swd/public/detail?sp4ts.oid=5367369&swItemId=co_159155_1&swEnvOid=54#tab2)
+ - [7.2.1g](http://service.boulder.ibm.com/storage/san/fos7/v7.2.1g_ReleaseNotes_v1.0.pdf) 
+ - [7.3.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.3.1a_ReleaseNotes_v1.0.pdf")
+ - [7.4.2](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2d_ReleaseNotes_v3.0.pdf)
  - [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf)
  - [8.1.2g](http://public.dhe.ibm.com/storage/san/fos8/v8.1.2g_ReleaseNotes_v3.0.pdf)
  - [8.2.1a](http://public.dhe.ibm.com/storage/san/fos8/v8.2.1a_ReleaseNotes_v1.0.pdf)

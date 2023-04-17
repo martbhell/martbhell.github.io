@@ -6,7 +6,7 @@ tags: cable, modem, home, network, isp, nat, network, ps3, raspberry, pi, server
 
 Current layout:
 
-![](images/home-net-current-20190504-1.jpg)
+![Before](images/home-net-current-20190504-1.jpg)
 
 - The corner:
     - Cable MODEM NAT&WiFi ISP A
@@ -27,6 +27,6 @@ It would be cool to: **A)** be able to connect the desktop to the modem out by t
 
 Stay tuned for another post in the hopefully near future when I've got something working to help with A/B :)
 
-Update : another graphical representation of the netwirjs:
+Update : another graphical representation of the networks:
 
-![](https://lh5.googleusercontent.com/aUuKseUdXT87v4A5lfBYPcyAykhygf2_5MJGveTSKEvzgmOh509-6_NA2gALnRQ5YEXAQqNp4Sh2_PLcrYEyh3LVVemDXLXwFFDBAz3-ii-n7drfh5TezQd9Y7GF131WFnKFYN-M)
+![Before-with-colors](https://lh5.googleusercontent.com/aUuKseUdXT87v4A5lfBYPcyAykhygf2_5MJGveTSKEvzgmOh509-6_NA2gALnRQ5YEXAQqNp4Sh2_PLcrYEyh3LVVemDXLXwFFDBAz3-ii-n7drfh5TezQd9Y7GF131WFnKFYN-M)
