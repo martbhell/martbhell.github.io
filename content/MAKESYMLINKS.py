@@ -3,6 +3,13 @@
 import os
 import glob
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--test", action="store_true", help="only test and fail if a link is missing")
+args = parser.parse_args()
+
+test_mode = args.test
+
 posts_dir = '../posts'
 content_dir = '.'
 image_dir = './images'
@@ -38,6 +45,10 @@ for md_file in md_files:
 
     # Construct the symlink path by joining the content directory and the symlink filename
     symlink_path = os.path.join(content_dir, symlink_filename)
+
+    if not os.path.islink(symlink_path) and test_mode:
+        print(f"ERROR: {symlink_path} is not a link")
+        os._exit(3)
     try:
         # Create the symlink
         os.symlink(md_file, symlink_path)
@@ -57,6 +68,10 @@ for image_file in image_files:
     # Construct the symlink path by joining the content directory and the symlink filename
     symlink_path = os.path.join(image_dir, symlink_filename)
     image_file_path = os.path.join('..', image_file)
+
+    if not os.path.islink(symlink_path) and test_mode:
+        print(f"ERROR: {symlink_path} is not a link")
+        os._exit(3)
     try:
         # Create the symlink
         os.symlink(image_file_path, symlink_path)
@@ -72,6 +87,10 @@ for extra_file in extras_files:
     # Construct the symlink path by joining the content directory and the symlink filename
     symlink_path = os.path.join(extras_dir, symlink_filename)
     extra_file_path = os.path.join('..', extra_file)
+    if not os.path.islink(symlink_path) and test_mode:
+        print(f"ERROR: {symlink_path} is not a link")
+        os._exit(3)
+
     try:
         # Create the symlink
         os.symlink(extra_file_path, symlink_path)
