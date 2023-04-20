@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>There is IT in Helsinki</title><link href="/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>/</id><updated>2023-04-15T21:57:00+03:00</updated><entry><title>Moving from WordPress to This</title><link href="/moving-from-wordpress-to-this.html" rel="alternate"></link><published>2023-04-15T21:57:00+03:00</published><updated>2023-04-15T21:57:00+03:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2023-04-15:/moving-from-wordpress-to-this.html</id><summary type="html">&lt;h1 id="background-story"&gt;Background Story&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>There is IT in Helsinki</title><link href="/" rel="alternate"></link><link href="/atom.xml" rel="self"></link><id>/</id><updated>2023-04-20T22:03:00+03:00</updated><entry><title>Using Chat GPT or other LLM at for hobby projects</title><link href="/using-chat-gpt-or-other-llm-at-for-hobby-projects.html" rel="alternate"></link><published>2023-04-20T22:03:00+03:00</published><updated>2023-04-20T22:03:00+03:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2023-04-20:/using-chat-gpt-or-other-llm-at-for-hobby-projects.html</id><summary type="html">&lt;p&gt;I find myself using chatGPT or similar like &lt;a href="https://www.phind.com/"&gt;phind&lt;/a&gt; recently to help with some computer programming tasks.&lt;/p&gt;
+&lt;p&gt;I'll probably post more about what I'm using it for at work too.&lt;/p&gt;
+&lt;p&gt;It's a thing that's up-and-coming so seems like something useful I could learn!&lt;/p&gt;
+&lt;h2 id="some-reasons-why-i-used-it-during-the-migration-of-this-blog-post-from-jekyll-to-pelica"&gt;Some reasons why I used it during …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;I find myself using chatGPT or similar like &lt;a href="https://www.phind.com/"&gt;phind&lt;/a&gt; recently to help with some computer programming tasks.&lt;/p&gt;
+&lt;p&gt;I'll probably post more about what I'm using it for at work too.&lt;/p&gt;
+&lt;p&gt;It's a thing that's up-and-coming so seems like something useful I could learn!&lt;/p&gt;
+&lt;h2 id="some-reasons-why-i-used-it-during-the-migration-of-this-blog-post-from-jekyll-to-pelica"&gt;Some reasons why I used it during the migration of this blog post from jekyll to pelica:&lt;/h2&gt;
+&lt;p&gt;I had some real needs where I maybe didn't want to write the whole script from scratch, or I thought I could get there quicker by making a few tweaks and instead ask for one of these bots? to make the first attempt for me.&lt;/p&gt;
+&lt;p&gt;First was a:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python script that recursively loops through all .md files inside a folder called "posts" and creates symlinks to all those files inside a single directory called "content"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:
+  - adding follow-ups like "The symlink should not have any directories in them, just the filename."
+  - 'the symlink need to have a ".." in the path' because the symlinks weren't working for me&lt;/p&gt;
+&lt;p&gt;Another was to help with some changes like:
+- use python re.findall to replace all http://guldmyr.com with https://guldmyr.com&lt;/p&gt;
+&lt;h2 id="as-part-of-testing-the-site"&gt;As part of testing the site:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;a python script that crawls a single url front page only and exits with non-zero return code if there are any broken links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:
+- I have hundreds of these files. I want to modify the files not make new files.
+- The files have *.md file extension and are not 100% yaml so cannot be loaded.
+- Can you make it look recursively for md files too?
+- The elements in the list are quoted with double quotes, can we strip those too?
+- re.error: unbalanced parenthesis at position 537 (line 12, column 117)
+  - This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??&lt;/p&gt;
+&lt;p&gt;And in the end I needed to remove some double-quotes around the tags so rather than typing&lt;/p&gt;
+&lt;p&gt;"in bash Remove double quotes from any .md files recursively for lines that start with categories: or tags:"&lt;/p&gt;
+&lt;p&gt;It returned this pretty quickly, which I TBH could have figured out myself :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;find&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;md&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;sed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;/^&lt;/span&gt;&lt;span class="nx"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;//g&amp;#39; {} +&lt;/span&gt;
+&lt;span class="s"&gt;find . -name &amp;#39;*.md&amp;#39; -type f -exec sed -i &amp;#39;/^tags:/ s/&amp;quot;&lt;/span&gt;&lt;span class="c1"&gt;//g&amp;#39; {} +&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="formatting"&gt;Formatting&lt;/h2&gt;
+&lt;p&gt;I had a blog post which used poor syntax and stuff was all in a single line. So I pasted the thing to it and asked it to create a bash script out of it (basically figure out where the newlines should be). Worked very nicely :D&lt;/p&gt;</content><category term="it"></category><category term="it"></category><category term="llm"></category><category term="chatgpt"></category><category term="phind"></category></entry><entry><title>Great Android Apps 2023</title><link href="/great-android-apps-2023.html" rel="alternate"></link><published>2023-04-20T00:00:00+03:00</published><updated>2023-04-20T00:00:00+03:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2023-04-20:/great-android-apps-2023.html</id><summary type="html">&lt;p&gt;My phone is a Samsung and I no longer have a tablet like in &lt;a href="https://guldmyr.com/great-android-apps"&gt;2013&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To compare, in 2013 I liked:
+ - a flashlight
+ - mybookdroid
+ - goodreads
+ - andropas
+ - realcalc
+ - irssi stuff
+ - some different launcher
+ - a task killer..&lt;/p&gt;
+&lt;p&gt;In 2023:
+ - flashlight is built-in
+ - I just use goodreads - not scanning any books :)
+ - and mostly …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My phone is a Samsung and I no longer have a tablet like in &lt;a href="https://guldmyr.com/great-android-apps"&gt;2013&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To compare, in 2013 I liked:
+ - a flashlight
+ - mybookdroid
+ - goodreads
+ - andropas
+ - realcalc
+ - irssi stuff
+ - some different launcher
+ - a task killer..&lt;/p&gt;
+&lt;p&gt;In 2023:
+ - flashlight is built-in
+ - I just use goodreads - not scanning any books :)
+ - and mostly use stuff from the browser
+ - the local public transport company app &lt;a href="https://play.google.com/store/apps/details?id=fi.hsl.app"&gt;HSL&lt;/a&gt; is pretty good
+ - i don't calculate
+ - but I use pushbullet!
+ - default launcher and no task killer in use, but I think that's because the one inside android is pretty good now no?&lt;/p&gt;
+&lt;h1 id="anything-else-great"&gt;Anything else great?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.ovelin.guitartuna"&gt;Guitartuna&lt;/a&gt; for tuning guitar/bass/ukulele&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://play.google.com/store/apps/details?id=mdmt.sabp.free"&gt;Simple ABP Free&lt;/a&gt; really good audio book player&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://inoreader.com/"&gt;inoreader&lt;/a&gt; For that RSS juice&lt;/li&gt;
+&lt;li&gt;spotify &lt;/li&gt;
+&lt;li&gt;google keep&lt;/li&gt;
+&lt;li&gt;all kinds of chat stuff like keybase.io&lt;/li&gt;
+&lt;li&gt;vivino/untappd&lt;/li&gt;
+&lt;li&gt;ankdroid (supposedly good for training / vocabulary, but I never had the patience for it to do it consistently)&lt;/li&gt;
+&lt;li&gt;fdroid&amp;amp;&lt;a href="https://f-droid.org/packages/com.termux/"&gt;termux&lt;/a&gt; so nice to have a good terminal in the phone sometimes&lt;/li&gt;
+&lt;/ul&gt;</content><category term="it"></category><category term="android"></category><category term="apps"></category><category term="it"></category></entry><entry><title>Moving from WordPress to This</title><link href="/moving-from-wordpress-to-this.html" rel="alternate"></link><published>2023-04-15T21:57:00+03:00</published><updated>2023-04-15T21:57:00+03:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2023-04-15:/moving-from-wordpress-to-this.html</id><summary type="html">&lt;h1 id="background-story"&gt;Background Story&lt;/h1&gt;
 &lt;p&gt;I had this great webhost.&lt;/p&gt;
 &lt;p&gt;They had the first &lt;code&gt;$SHELL&lt;/code&gt; I ever used. I learnt a lot about bash scripting there. I ran eggdrops and IRC clients and used screen :D&lt;/p&gt;
 &lt;p&gt;I experienced the hacks when they got pwned, because those things happened back then (2001-2002 probably).&lt;/p&gt;
@@ -440,28 +518,4 @@ starts an OS from an USB-stick...&lt;/p&gt;</content><category term="storage"></
 &lt;p&gt;Previous post in this blog about my home network: &lt;a href="https://www.guldmyr.com/home-network-convergence/"&gt;https://www.guldmyr.com/home-network-convergence/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542"&gt;https://community.cisco.com/t5/wireless-mobility-documents/lwapp-to-autonomous-conversion-and-vice-versa-on-access-points/ta-p/3121542&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux"&gt;http://wiki.r1soft.com/display/ServerBackup/Configure+a+TFTP+server+on+Linux&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://exchange2013pikasuoh.blogspot.com/2015/08/convert-cisco-air-lap1142n-k9-to.html"&gt;http://exchange2013pikasuoh.blogspot.com/2015/08/convert-cisco-air-lap1142n-k9-to.html&lt;/a&gt;&lt;/p&gt;</content><category term="it"></category><category term="aironet"></category><category term="cisco"></category><category term="ethernet"></category><category term="https"></category><category term="ip"></category><category term="lap1142n e k9"></category><category term="network"></category><category term="vlan"></category><category term="wifi"></category><category term="wlan"></category></entry><entry><title>Quadra - Did You Play It?</title><link href="/quadra-did-you-play-it.html" rel="alternate"></link><published>2020-02-06T00:00:00+02:00</published><updated>2020-02-06T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-02-06:/quadra-did-you-play-it.html</id><summary type="html">&lt;p&gt;In my youth I enjoyed the LANs. One fun game we played was Quadra - which is a multiplayer tetris where by playing the game you send more blocks to your opponents making it very stressful :D&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/quadra-game/quadra"&gt;https://github.com/quadra-game/quadra&lt;/a&gt; turns out it is open source and it's out …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In my youth I enjoyed the LANs. One fun game we played was Quadra - which is a multiplayer tetris where by playing the game you send more blocks to your opponents making it very stressful :D&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/quadra-game/quadra"&gt;https://github.com/quadra-game/quadra&lt;/a&gt; turns out it is open source and it's out there!&lt;/p&gt;
-&lt;p&gt;Does it still build?&lt;/p&gt;
-&lt;p&gt;CentOS 7.7:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;yum&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;git
-$&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;github.com/quadra-game/quadra
-$&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;yum&lt;span class="w"&gt; &lt;/span&gt;groupinstall&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Development Tools&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-$&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;yum&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;SDL2-devel&lt;span class="w"&gt; &lt;/span&gt;boost-devel&lt;span class="w"&gt; &lt;/span&gt;libpng-devel
-$&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;quadra
-$&lt;span class="w"&gt; &lt;/span&gt;autoreconf&lt;span class="w"&gt; &lt;/span&gt;-i
-$&lt;span class="w"&gt; &lt;/span&gt;./configure
-$&lt;span class="w"&gt; &lt;/span&gt;make
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;It DOES!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Does it run!?&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$ QUADRADIR=. ./quadra&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;And I get a very nice window :)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="screenshot" src="images/quadra_2020-1024x466.png"&gt;&lt;/p&gt;
-&lt;p&gt;Quadra in 2020! (do note that it tries to talk to google and sourceforge for updates and so on, try the ./configure --disable-version-check)&lt;/p&gt;
-&lt;p&gt;I could even launch one process to run a server and then another server and connect to localhost :) So multiplayer must sureley durely work!&lt;/p&gt;
-&lt;p&gt;It's a big laggy - I recall it being very snappy because I was da bomb at this game :)&lt;/p&gt;
-&lt;p&gt;I blame this on that I might have missed some dependency and it now fell back into some easier something and or maybe the graphics card in this laptop is not good (maybe it's too new? It's a Skylake GT2 HD G 520).&lt;/p&gt;</content><category term="it"></category></entry><entry><title>Coffee: Kaffetoria Espresso Flores</title><link href="/coffee-kaffetoria-espresso-flores.html" rel="alternate"></link><published>2020-01-21T00:00:00+02:00</published><updated>2020-01-21T00:00:00+02:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2020-01-21:/coffee-kaffetoria-espresso-flores.html</id><content type="html">&lt;p&gt;&lt;img alt="bild-på-kaffe" src="images/DSC_1367-768x1024.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;Gött. I jämförelse med den jag hade innan så luktade denna mycket mera choklad och mindre bränt..&lt;/p&gt;</content><category term="finland"></category><category term="coffee"></category></entry></feed>
+&lt;p&gt;&lt;a href="http://exchange2013pikasuoh.blogspot.com/2015/08/convert-cisco-air-lap1142n-k9-to.html"&gt;http://exchange2013pikasuoh.blogspot.com/2015/08/convert-cisco-air-lap1142n-k9-to.html&lt;/a&gt;&lt;/p&gt;</content><category term="it"></category><category term="aironet"></category><category term="cisco"></category><category term="ethernet"></category><category term="https"></category><category term="ip"></category><category term="lap1142n e k9"></category><category term="network"></category><category term="vlan"></category><category term="wifi"></category><category term="wlan"></category></entry></feed>
