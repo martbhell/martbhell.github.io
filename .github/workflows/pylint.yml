@@ -26,7 +26,7 @@ jobs:
       - name: Convention Checking content/ dir
         run: |
            python tests/test_symlinks.py
-      - name: Look for broken errors in production (a bit too late no?)
+      - name: Look for missing symlinks
         run: |
           cd content
           python MAKESYMLINKS.py --test
