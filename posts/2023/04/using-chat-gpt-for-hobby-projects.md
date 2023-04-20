@@ -19,8 +19,8 @@ First was a:
 - python script that recursively loops through all .md files inside a folder called "posts" and creates symlinks to all those files inside a single directory called "content"
 
 this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:
-  - adding follow-ups like "The symlink should not have any directories in them, just the filename."
-  - 'the symlink need to have a ".." in the path' because the symlinks weren't working for me
+- adding follow-ups like "The symlink should not have any directories in them, just the filename."
+- 'the symlink need to have a ".." in the path' because the symlinks weren't working for me
 
 Another was to help with some changes like:
 - use python re.findall to replace all http://guldmyr.com with https://guldmyr.com
@@ -29,12 +29,13 @@ Another was to help with some changes like:
 - a python script that crawls a single url front page only and exits with non-zero return code if there are any broken links
 
 Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:
+
 - I have hundreds of these files. I want to modify the files not make new files.
 - The files have *.md file extension and are not 100% yaml so cannot be loaded.
 - Can you make it look recursively for md files too?
 - The elements in the list are quoted with double quotes, can we strip those too?
 - re.error: unbalanced parenthesis at position 537 (line 12, column 117)
-  - This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??
+- This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??
 
 
 And in the end I needed to remove some double-quotes around the tags so rather than typing
