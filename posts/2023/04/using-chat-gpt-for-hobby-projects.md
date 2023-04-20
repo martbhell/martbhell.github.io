@@ -19,13 +19,16 @@ First was a:
 - python script that recursively loops through all .md files inside a folder called "posts" and creates symlinks to all those files inside a single directory called "content"
 
 this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:
+
 - adding follow-ups like "The symlink should not have any directories in them, just the filename."
 - 'the symlink need to have a ".." in the path' because the symlinks weren't working for me
 
 Another was to help with some changes like:
+
 - use python re.findall to replace all http://guldmyr.com with https://guldmyr.com
 
 ## As part of testing the site:
+
 - a python script that crawls a single url front page only and exits with non-zero return code if there are any broken links
 
 Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:
