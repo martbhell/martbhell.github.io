@@ -5,8 +5,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2023-04-20T21:19:39-00:00</lastmod>
+<lastmod>2023-04-20T21:55:14-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/using-chat-gpt-or-other-llm-at-for-hobby-projects.html</loc>
+<lastmod>2023-04-25T00:00:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/great-android-apps-2023.html</loc>
+<lastmod>2023-04-20T00:00:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -2301,7 +2315,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/it.html</loc>
-<lastmod>2023-04-15T21:57:00+01:40</lastmod>
+<lastmod>2023-04-25T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2309,6 +2323,48 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/category/storage.html</loc>
 <lastmod>2020-09-17T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/it.html</loc>
+<lastmod>2023-04-25T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/llm.html</loc>
+<lastmod>2023-04-25T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/chatgpt.html</loc>
+<lastmod>2023-04-25T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/phind.html</loc>
+<lastmod>2023-04-25T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/android.html</loc>
+<lastmod>2023-04-20T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/apps.html</loc>
+<lastmod>2023-04-20T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -3534,13 +3590,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/tag/digital.html</loc>
 <lastmod>2014-10-26T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/android.html</loc>
-<lastmod>2014-07-05T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -6738,13 +6787,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/it.html</loc>
-<lastmod>2011-07-13T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/tag/pdf.html</loc>
 <lastmod>2011-07-13T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -9286,13 +9328,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/apps.html</loc>
-<lastmod>2011-01-26T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/tag/subscribe.html</loc>
 <lastmod>2011-01-24T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -9399,7 +9434,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/johan-guldmyr.html</loc>
-<lastmod>2023-04-15T21:57:00+01:40</lastmod>
+<lastmod>2023-04-25T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

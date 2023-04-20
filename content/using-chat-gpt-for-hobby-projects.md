@@ -1,0 +1,1 @@
+../posts/2023/04/using-chat-gpt-for-hobby-projects.md
