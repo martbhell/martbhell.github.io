@@ -19,7 +19,7 @@ for md_file in md_files:
         data = f.read()
 
     # Modify URLs in the format "https://example.com/blog/post-sdf"
-    url_match = re.findall(r"http://www.guldmyr\.com", data)
+    url_match = re.findall(r"http://www\.guldmyr\.com", data)
     for url in url_match:
         new_url = url.replace(url, "https://www.guldmyr.com")
         data = data.replace(url, new_url)

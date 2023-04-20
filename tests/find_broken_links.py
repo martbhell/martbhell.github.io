@@ -14,7 +14,7 @@ links = soup.find_all("a")
 
 for link in links:
     href = link.get("href")
-    if href and href.startswith("http") and "guldmyr.com" in href:
+    if href and href.startswith("http") and "https://guldmyr.com" in href:
         response = requests.get(href)
         if response.status_code != 200:
             print("Error: Broken link", href)
