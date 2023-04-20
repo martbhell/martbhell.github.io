@@ -1,6 +1,6 @@
 ---
 title: Using Chat GPT or other LLM at for hobby projects
-date: 2023-04-25
+date: 2023-04-20 22:03
 category: it
 tags: it, llm, chatgpt, phind
 
