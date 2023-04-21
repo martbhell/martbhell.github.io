@@ -11,22 +11,28 @@
 &lt;ul&gt;
 &lt;li&gt;python script that recursively loops through all .md files inside a folder called "posts" and creates symlinks to all those files inside a single directory called "content"&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:
-  - adding follow-ups like "The symlink should not have any directories in them, just the filename."
-  - 'the symlink need to have a ".." in the path' because the symlinks weren't working for me&lt;/p&gt;
-&lt;p&gt;Another was to help with some changes like:
-- use python re.findall to replace all http://guldmyr.com with https://guldmyr.com&lt;/p&gt;
+&lt;p&gt;this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;adding follow-ups like "The symlink should not have any directories in them, just the filename."&lt;/li&gt;
+&lt;li&gt;'the symlink need to have a ".." in the path' because the symlinks weren't working for me&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another was to help with some changes like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use python re.findall to replace all http://guldmyr.com with https://guldmyr.com&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="as-part-of-testing-the-site"&gt;As part of testing the site:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;a python script that crawls a single url front page only and exits with non-zero return code if there are any broken links&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:
-- I have hundreds of these files. I want to modify the files not make new files.
-- The files have *.md file extension and are not 100% yaml so cannot be loaded.
-- Can you make it look recursively for md files too?
-- The elements in the list are quoted with double quotes, can we strip those too?
-- re.error: unbalanced parenthesis at position 537 (line 12, column 117)
-  - This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??&lt;/p&gt;
+&lt;p&gt;Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have hundreds of these files. I want to modify the files not make new files.&lt;/li&gt;
+&lt;li&gt;The files have *.md file extension and are not 100% yaml so cannot be loaded.&lt;/li&gt;
+&lt;li&gt;Can you make it look recursively for md files too?&lt;/li&gt;
+&lt;li&gt;The elements in the list are quoted with double quotes, can we strip those too?&lt;/li&gt;
+&lt;li&gt;re.error: unbalanced parenthesis at position 537 (line 12, column 117)&lt;/li&gt;
+&lt;li&gt;This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;And in the end I needed to remove some double-quotes around the tags so rather than typing&lt;/p&gt;
 &lt;p&gt;"in bash Remove double quotes from any .md files recursively for lines that start with categories: or tags:"&lt;/p&gt;
 &lt;p&gt;It returned this pretty quickly, which I TBH could have figured out myself :)&lt;/p&gt;
@@ -35,38 +41,41 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id="formatting"&gt;Formatting&lt;/h2&gt;
-&lt;p&gt;I had a blog post which used poor syntax and stuff was all in a single line. So I pasted the thing to it and asked it to create a bash script out of it (basically figure out where the newlines should be). Worked very nicely :D&lt;/p&gt;</content><category term="it"></category><category term="it"></category><category term="llm"></category><category term="chatgpt"></category><category term="phind"></category></entry><entry><title>Great Android Apps 2023</title><link href="/great-android-apps-2023.html" rel="alternate"></link><published>2023-04-20T00:00:00+03:00</published><updated>2023-04-20T00:00:00+03:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2023-04-20:/great-android-apps-2023.html</id><summary type="html">&lt;p&gt;My phone is a Samsung and I no longer have a tablet like in &lt;a href="https://guldmyr.com/great-android-apps"&gt;2013&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To compare, in 2013 I liked:
- - a flashlight
- - mybookdroid
- - goodreads
- - andropas
- - realcalc
- - irssi stuff
- - some different launcher
- - a task killer..&lt;/p&gt;
-&lt;p&gt;In 2023:
- - flashlight is built-in
- - I just use goodreads - not scanning any books :)
- - and mostly …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My phone is a Samsung and I no longer have a tablet like in &lt;a href="https://guldmyr.com/great-android-apps"&gt;2013&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To compare, in 2013 I liked:
- - a flashlight
- - mybookdroid
- - goodreads
- - andropas
- - realcalc
- - irssi stuff
- - some different launcher
- - a task killer..&lt;/p&gt;
-&lt;p&gt;In 2023:
- - flashlight is built-in
- - I just use goodreads - not scanning any books :)
- - and mostly use stuff from the browser
- - the local public transport company app &lt;a href="https://play.google.com/store/apps/details?id=fi.hsl.app"&gt;HSL&lt;/a&gt; is pretty good
- - i don't calculate
- - but I use pushbullet!
- - default launcher and no task killer in use, but I think that's because the one inside android is pretty good now no?&lt;/p&gt;
-&lt;h1 id="anything-else-great"&gt;Anything else great?&lt;/h1&gt;
+&lt;p&gt;I had a blog post which used poor syntax and stuff was all in a single line. So I pasted the thing to it and asked it to create a bash script out of it (basically figure out where the newlines should be). Worked very nicely :D&lt;/p&gt;</content><category term="it"></category><category term="it"></category><category term="llm"></category><category term="chatgpt"></category><category term="phind"></category></entry><entry><title>Great Android Apps 2023</title><link href="/great-android-apps-2023.html" rel="alternate"></link><published>2023-04-20T00:00:00+03:00</published><updated>2023-04-20T00:00:00+03:00</updated><author><name>Johan Guldmyr</name></author><id>tag:None,2023-04-20:/great-android-apps-2023.html</id><summary type="html">&lt;h1 id="are-you-ready-to-take-your-android-experience-to-the-next-level-then-buckle-up-and-get-ready-to-discover-some-of-the-best-android-apps-of-2023"&gt;Are you ready to take your Android experience to the next level? Then buckle up and get ready to discover some of the best Android apps of 2023!&lt;/h1&gt;
+&lt;p&gt;We all remember the days of using clunky task killers and relying on third-party apps to perform basic functions on our phones …&lt;/p&gt;</summary><content type="html">&lt;h1 id="are-you-ready-to-take-your-android-experience-to-the-next-level-then-buckle-up-and-get-ready-to-discover-some-of-the-best-android-apps-of-2023"&gt;Are you ready to take your Android experience to the next level? Then buckle up and get ready to discover some of the best Android apps of 2023!&lt;/h1&gt;
+&lt;p&gt;We all remember the days of using clunky task killers and relying on third-party apps to perform basic functions on our phones. But now, things have changed, and Android is better than ever. In fact, some of the apps we once relied on have become obsolete as Android has improved its own features.&lt;/p&gt;
+&lt;p&gt;But fear not, there are still plenty of amazing apps out there that can enhance your Android experience. Let's dive in and take a look at some of the best apps for Android in 2023!&lt;/p&gt;
+&lt;p&gt;First up, we have Guitartuna, the ultimate app for tuning your guitar, bass, or ukulele. Whether you're a seasoned musician or just starting out, Guitartuna makes tuning your instrument a breeze.&lt;/p&gt;
+&lt;p&gt;Next on our list is Simple ABP Free, an incredible audio book player that makes listening to your favorite books a joy. With a sleek and intuitive interface, Simple ABP Free is the perfect way to enjoy your favorite books on the go.&lt;/p&gt;
+&lt;p&gt;If you're a fan of keeping up with the latest news and trends, then you'll love inoreader. This powerful RSS reader makes it easy to stay on top of all the latest news and stories from your favorite sources.&lt;/p&gt;
+&lt;p&gt;And of course, we can't forget about the classics like Spotify and Google Keep. These apps have been around for years, but they continue to be some of the most popular and useful apps out there.&lt;/p&gt;
+&lt;p&gt;But that's not all! There are plenty of other amazing apps out there, like chat apps such as keybase.io, wine and beer tracking apps like vivino and untappd, and even vocabulary training apps like ankdroid.&lt;/p&gt;
+&lt;p&gt;And for those of you who love to tinker with your phone, don't miss out on fdroid&amp;amp;termux, a powerful combination that gives you a great terminal experience on your Android device.&lt;/p&gt;
+&lt;p&gt;So what are you waiting for? Head to the Google Play Store and start downloading these amazing apps today!&lt;/p&gt;
+&lt;p&gt;My phone is a Samsung and I no longer have a tablet like in &lt;a href="https://guldmyr.com/great-android-apps"&gt;2013&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="to-compare-in-2013-i-liked"&gt;To compare, in 2013 I liked:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;a flashlight&lt;/li&gt;
+&lt;li&gt;mybookdroid&lt;/li&gt;
+&lt;li&gt;goodreads&lt;/li&gt;
+&lt;li&gt;andropas&lt;/li&gt;
+&lt;li&gt;realcalc&lt;/li&gt;
+&lt;li&gt;irssi stuff&lt;/li&gt;
+&lt;li&gt;some different launcher&lt;/li&gt;
+&lt;li&gt;a task killer..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="in-2023"&gt;In 2023:&lt;/h2&gt;
+&lt;p&gt;My phone is a Samsung and I no longer have a tablet like in &lt;a href="https://guldmyr.com/great-android-apps"&gt;2013&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;flashlight is built-in&lt;/li&gt;
+&lt;li&gt;I just use goodreads - not scanning any books :)&lt;/li&gt;
+&lt;li&gt;and mostly use stuff from the browser&lt;/li&gt;
+&lt;li&gt;the local public transport company app &lt;a href="https://play.google.com/store/apps/details?id=fi.hsl.app"&gt;HSL&lt;/a&gt; is pretty good&lt;/li&gt;
+&lt;li&gt;i don't calculate&lt;/li&gt;
+&lt;li&gt;but I use pushbullet!&lt;/li&gt;
+&lt;li&gt;default launcher and no task killer in use, but I think that's because the one inside android is pretty good now no?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="links"&gt;Links&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.ovelin.guitartuna"&gt;Guitartuna&lt;/a&gt; for tuning guitar/bass/ukulele&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://play.google.com/store/apps/details?id=mdmt.sabp.free"&gt;Simple ABP Free&lt;/a&gt; really good audio book player&lt;/li&gt;
