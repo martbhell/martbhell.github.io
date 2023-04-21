@@ -79,22 +79,28 @@
 <ul>
 <li>python script that recursively loops through all .md files inside a folder called "posts" and creates symlinks to all those files inside a single directory called "content"</li>
 </ul>
-<p>this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:
-  - adding follow-ups like "The symlink should not have any directories in them, just the filename."
-  - 'the symlink need to have a ".." in the path' because the symlinks weren't working for me</p>
-<p>Another was to help with some changes like:
-- use python re.findall to replace all http://guldmyr.com with https://guldmyr.com</p>
+<p>this worked quite well, but I needed to refine the script a few times by adding exception handling and creating directories:</p>
+<ul>
+<li>adding follow-ups like "The symlink should not have any directories in them, just the filename."</li>
+<li>'the symlink need to have a ".." in the path' because the symlinks weren't working for me</li>
+</ul>
+<p>Another was to help with some changes like:</p>
+<ul>
+<li>use python re.findall to replace all http://guldmyr.com with https://guldmyr.com</li>
+</ul>
 <h2 id="as-part-of-testing-the-site">As part of testing the site:</h2>
 <ul>
 <li>a python script that crawls a single url front page only and exits with non-zero return code if there are any broken links</li>
 </ul>
-<p>Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:
-- I have hundreds of these files. I want to modify the files not make new files.
-- The files have *.md file extension and are not 100% yaml so cannot be loaded.
-- Can you make it look recursively for md files too?
-- The elements in the list are quoted with double quotes, can we strip those too?
-- re.error: unbalanced parenthesis at position 537 (line 12, column 117)
-  - This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??</p>
+<p>Turning the yaml lists in all the blog posts into a comma separated one I need to clarify a few times:</p>
+<ul>
+<li>I have hundreds of these files. I want to modify the files not make new files.</li>
+<li>The files have *.md file extension and are not 100% yaml so cannot be loaded.</li>
+<li>Can you make it look recursively for md files too?</li>
+<li>The elements in the list are quoted with double quotes, can we strip those too?</li>
+<li>re.error: unbalanced parenthesis at position 537 (line 12, column 117)</li>
+<li>This is tried to fix. But in the end the error was a bad blog post that looked too closely like yaml??</li>
+</ul>
 <p>And in the end I needed to remove some double-quotes around the tags so rather than typing</p>
 <p>"in bash Remove double quotes from any .md files recursively for lines that start with categories: or tags:"</p>
 <p>It returned this pretty quickly, which I TBH could have figured out myself :)</p>
