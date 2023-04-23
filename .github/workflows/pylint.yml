@@ -34,8 +34,8 @@ jobs:
       - name: Look for broken links in this branch
         run: |
           pip install -r tests/requirements.txt
-          SITE_URL=http://localhost:8000 pelican -l -r &
-          python tests/find_broken_links.py --host http://localhost:8000
+          SITE_URL=http://127.0.0.1:8000 pelican -l -r &
+          python tests/find_broken_links.py --host http://127.0.0.1:8000
       - name: Look for broken links in production (a bit too late no?)
         run: |
           pip install -r tests/requirements.txt
