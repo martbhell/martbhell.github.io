@@ -77,7 +77,7 @@ MARKDOWN = {
 import alchemy
 THEME = alchemy.path()
 HIDE_AUTHORS = True
-SITEIMAGE = '/images/blog_site_image.png'
+SITEIMAGE = '/images/blog_site_image_small.webp'
 STATIC_PATHS = ['extras']
 
 EXTRA_PATH_METADATA = {
@@ -89,3 +89,5 @@ EXTRA_PATH_METADATA = {
     'extras/favicon.ico': {'path': 'favicon.ico'},
     'extras/manifest.json': {'path': 'manifest.json'},
 }
+
+#TEMPLATE_PAGES = {'src/tag-cloud.html': 'posts/tag-cloud.html'}

@@ -20,7 +20,7 @@ debug = False
 
 # Get a list of all .md files in the posts directory and its subdirectories
 
-image_extensions = ['gif', 'jpg', 'png', 'GIF', 'JPG', 'PNG']
+image_extensions = ['gif', 'jpg', 'png', 'GIF', 'JPG', 'PNG', 'webp', 'WEBP']
 md_files = glob.glob(os.path.join(posts_dir, '**/*.md'), recursive=True)
 extras_files = glob.glob(os.path.join(extras_source_dir, '*'))
 
