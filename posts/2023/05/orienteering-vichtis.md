@@ -10,3 +10,12 @@ Mitä?
 ===
 
 Yritän kirjoittaa allas miten se meni tämä kertaa ja mitä oli vaikea ja miten meni väärin.
+
+ - A
+ - 6.3km
+ - Leipsuo
+
+Miten
+===
+
+ * K-1: ihan sekaisin. Tosi monta kiviä.
