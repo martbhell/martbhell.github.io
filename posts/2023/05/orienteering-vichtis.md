@@ -21,7 +21,7 @@ Miten
 K-7: ihan sekaisin osa.
 ---
 
-  * K-1: uhhh tosi monta kiviä, en tienyt missä olin yhtään siellä avakalliolla. 13min. Yhden sijaintin parempi minulta oti 4.5min.
+  * K-1: uhhh tosi monta kiviä, en tienyt missä olin yhtään siellä avakalliolla. 13min. Yhden sijaintin parempi minulta oti 4.5min. Eli 9min bummi!
   * 2-3: katsoin maailmankuppi ja luulin että "mä juoksen polkulla ympäri". En jaksanut juosta mäen alle, ja se oli mun mielestä hyvä idea. 17min. 12:09 oli toiseksi viimeinen.
   * 5-6: sama idea kuin 2-3. Juoksin ympäri ja se kesti 22:28 min. 17:20. Yksi ongelma oli etä yritin ota suunta yksi kumpare siellä pentolta mutta en tehnyt se kärsivällistä. Juoksin liikaa oikealle.
   * 6-7: tä meni niin hyvin! Suora linjalla. Näen avokallio puiten välillä ja näin hyviä seuravia tavoitteet koko ajan.
