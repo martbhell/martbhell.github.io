@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2023-04-25T20:23:34-00:00</lastmod>
+<lastmod>2023-05-03T20:47:42-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/suunnistus-vihdissa-fi.html</loc>
+<lastmod>2023-05-03T21:57:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -2308,7 +2315,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/finland.html</loc>
-<lastmod>2023-01-18T00:00:00+01:40</lastmod>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2323,6 +2330,48 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/category/storage.html</loc>
 <lastmod>2020-09-17T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/orienteering.html</loc>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/suunnistus.html</loc>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/espoorastit.html</loc>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/a-rata.html</loc>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/leipsuo.html</loc>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/vihti.html</loc>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -9434,7 +9483,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/johan-guldmyr.html</loc>
-<lastmod>2023-04-20T22:03:00+01:40</lastmod>
+<lastmod>2023-05-03T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
