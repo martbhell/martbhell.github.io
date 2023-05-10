@@ -20,7 +20,7 @@ K-13: ihan okay
 ---
 
   * K-1-2: tien kautta. Juostin vähän enemmän ympäri kuin tarvitsen mutta juoksu tuntui hyvältä. Olin karhu metsässä!
-  * 3-4: menin myös ympäri. Etsin tuo polku ja pikku hilja löysin se ja nuo pienet polkut, jotka menivät ylös avokallioon.
+  * 3-4: menin myös ympäri. Etsin tuo polku koska luulin että se oli helpomppi sieltä löytää rastia kuin mennä ylös. Ja pikku hilja löysin se ja nuo pienet polkut jotka menivät ylös avokallioon ennen rastia.
   * 4-5-6: kiersin ja menin alas ja ylös mäen. Löysin aika kiva reitti ylös. Huomasin että jyrkännelinja oli hampaaton eli pitäisi olla joku hyvä reitti.
   * 6-7-8: ilmeisesti mun paras osia, paitsi menin vähän väärin kahdeksaan just vierestä liian vasemalle ja S kurva sinne mutta hyvä aika :D
   * 9-10: tunsin aika hyvältä. Juostin suora ja löysin merkkeja karta ja mastossa. Avokallio tällä. Iso kumpare tällä.
