@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2023-05-03T21:06:56-00:00</lastmod>
+<lastmod>2023-05-10T21:00:13-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/dungeon-crawl-stone-soup-030-tournament.html</loc>
+<lastmod>2023-05-10T21:57:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -2315,7 +2322,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/finland.html</loc>
-<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2330,6 +2337,41 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/category/storage.html</loc>
 <lastmod>2020-09-17T00:00:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/games.html</loc>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/dcss.html</loc>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/stone-soup.html</loc>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/crawl.html</loc>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/rogue-like.html</loc>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -8404,13 +8446,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/games.html</loc>
-<lastmod>2011-04-21T00:00:00+01:40</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>/tag/logitech.html</loc>
 <lastmod>2011-04-21T00:00:00+01:40</lastmod>
 <changefreq>daily</changefreq>
@@ -9483,7 +9518,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/johan-guldmyr.html</loc>
-<lastmod>2023-05-03T21:57:00+01:40</lastmod>
+<lastmod>2023-05-10T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
