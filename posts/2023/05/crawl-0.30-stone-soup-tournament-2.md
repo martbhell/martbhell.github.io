@@ -17,6 +17,7 @@ Try to win first with my usual MiBe. Each bullet is roughly 1 or a few deaths.
 - Gnolls again. They are bad.
 - "Let's drink some mutation potions". It'll be fun they said. (clumsy and rf- on first..)
   - But have made it quite deep down! Have RN+++ and doing axe + shield. Got a venom broad axe and an antimagic war axe for the mages.
+  - There is a manual of axes though that I could buy. Get quickly to 24 if I get an execution axe? There are some nice shields and battle axes lying around too.. :S :S :S :S :S
 
 
 [![MiBe](images/crawl_030_1.png "2 runes")](images/crawl_030_1.png)
