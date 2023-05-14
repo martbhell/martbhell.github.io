@@ -5,8 +5,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2023-05-10T21:44:17-00:00</lastmod>
+<lastmod>2023-05-14T23:02:20-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/dungeon-crawl-stone-soup-030-tournament-2n.html</loc>
+<lastmod>2023-05-16T21:57:00+03:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -2329,7 +2336,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/finland.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -2350,35 +2357,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/games.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/dcss.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/stone-soup.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/crawl.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tag/rogue-like.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -9539,7 +9546,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/johan-guldmyr.html</loc>
-<lastmod>2023-05-10T21:57:00+01:40</lastmod>
+<lastmod>2023-05-16T21:57:00+01:40</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
