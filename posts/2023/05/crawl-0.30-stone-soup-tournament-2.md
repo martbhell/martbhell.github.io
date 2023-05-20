@@ -21,10 +21,11 @@ Try to win first with my usual MiBe. Each bullet is roughly 1 or a few deaths.
     - maybe get it early and train a bit towards just in case?
   - Chose abyss over slime beacause I didn't have any good rcorr and had RN+++. Died right next to the abyssmal rune because I got a mutation that didn't allow drinking any potions and got poisoned :D:D Fuuuu
 
-- Plenty and plenty other deaths after this during the week. Died for many Fun reasons:
-  - ran out of intelligence
-  - possibly too little dodge?
-  - no rpois anywhere??? and swamp and snake branches??
-  - I have RC++ what could go wrong??
+Plenty and plenty other deaths after this during the week. Died for many Fun reasons:
+
+- ran out of intelligence
+- possibly too little dodge?
+- no rpois anywhere??? and swamp and snake branches??
+- I have RC++ what could go wrong??
 
 [![MiBe](images/crawl_030_1.png "2 runes")](images/crawl_030_1.png)
