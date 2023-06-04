@@ -1,0 +1,1 @@
+../posts/2023/06/kiinotrasti-leppavaara.md
