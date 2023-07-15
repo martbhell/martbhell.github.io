@@ -32,34 +32,34 @@ Valmistautuminen
 
 Olen pitänyt lista missä olen kirjoitanyt:
 
- - mitä otan mukaan
-   - sauna kassi 
-   - varusteet
- - miten sää oli ja minkalaisia vaateet minulla oli päällä
- - mitä söin
- - miten sunnistus meni ja mitä voin parentaa
+   - mitä otan mukaan
+     - sauna kassi 
+     - varusteet
+   - miten sää oli ja minkalaisia vaateet minulla oli päällä
+   - mitä söin
+   - miten sunnistus meni ja mitä voin parentaa
 
 
 Vinkkeja olen kirjoitanut itseleen:
 ===
 
- - 2015: et tarvitse leimata k-pisteessä
- - 2019: 
-   - et tarvitse mennä emit tsekki ennen IN portti, se on vaan oma tarkastus!
-   - käyttä korkeuseroa! Ihmiset menee suora ja ympäri, urat ovat myös ympäri 
- - 2021:
-   - soiden on myös muodot!
-   - käytää kieletty alue jos on tarve
-   - käyttää pidempi matka ja tie olisi hyvä, hävisin 20 sijainti pitkä välimatka koska menin suora
- - 2022:
-   - lukekaa rastitaulu
-   - yleislähdössä? Ota juna
-   - kävellä kun asiat alkaa mennä huonosti
- - 2023 (ensimmäinen yö):
-   - uta juna
-   - uta urat
-   - ihmiset enemmän ottavat polkut ja halua enemmän varmempi rastin otaminen. 
-   - ota huomio että et juoksee k-pisten ohi!
+   - 2015: et tarvitse leimata k-pisteessä
+   - 2019: 
+     - et tarvitse mennä emit tsekki ennen IN portti, se on vaan oma tarkastus!
+     - käyttä korkeuseroa! Ihmiset menee suora ja ympäri, urat ovat myös ympäri 
+   - 2021:
+     - soiden on myös muodot!
+     - käytää kieletty alue jos on tarve
+     - käyttää pidempi matka ja tie olisi hyvä, hävisin 20 sijainti pitkä välimatka koska menin suora
+   - 2022:
+     - lukekaa rastitaulu
+     - yleislähdössä? Ota juna
+     - kävellä kun asiat alkaa mennä huonosti
+   - 2023 (ensimmäinen yö):
+     - uta juna
+     - uta urat
+     - ihmiset enemmän ottavat polkut ja halua enemmän varmempi rastin otaminen. 
+     - ota huomio että et juoksee k-pisten ohi!
 
 
 
