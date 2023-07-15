@@ -28,14 +28,14 @@ It also had some link to a cable but unfortunately I couldn't order it. Maybe my
 
 ## Next
 
- - before powering off the old server I vgexported the LVM
- - usb active plus right SATA to USB cables with controller? That RPI 4 likes.
-   - [startech](https://www.startech.com/en-us/hdd/usb312sat3cb) had some overpowered 10Gb cables
-   - firmware for the cable was not needed to update
- - Why was i Lazy with the lvm raid0 stripe lol of course first disk dies
- - always running out of more power extension at home, but now I think we're OK again
- - Got an Active USB hub from TPlink(TP-LINK UH720 active 7-port USB3.0) (needed because the RPi4 cannot power these disks)
-   - Doesn't exactly match the 3.1 USB of the USB to SATA cables.
+   - before powering off the old server I vgexported the LVM
+   - usb active plus right SATA to USB cables with controller? That RPI 4 likes.
+     - [startech](https://www.startech.com/en-us/hdd/usb312sat3cb) had some overpowered 10Gb cables
+     - firmware for the cable was not needed to update
+   - Why was i Lazy with the lvm raid0 stripe lol of course first disk dies
+   - always running out of more power extension at home, but now I think we're OK again
+   - Got an Active USB hub from TPlink(TP-LINK UH720 active 7-port USB3.0) (needed because the RPi4 cannot power these disks)
+     - Doesn't exactly match the 3.1 USB of the USB to SATA cables.
 
 ### I tried to recover some of the data just for the practice
 
