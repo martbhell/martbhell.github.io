@@ -70,7 +70,7 @@ for image_file in image_files:
     symlink_filename = os.path.basename(image_file)
     if symlink_filename in posts:
         print(f"ERROR: {symlink_filename} is a duplicate. Stop it!")
-        os._exit(2)
+        os._exit(4)
     posts.append(symlink_filename)
 
     # Construct the symlink path by joining the content directory and the symlink filename
@@ -80,7 +80,7 @@ for image_file in image_files:
 
     if not os.path.islink(symlink_path) and test_mode:
         print(f"ERROR: {symlink_path} is not a link")
-        os._exit(3)
+        os._exit(5)
     try:
         # Create the symlink
         os.symlink(image_file_path, symlink_path)
@@ -103,7 +103,7 @@ for extra_file in extras_files:
     extra_file_path = os.path.join("..", extra_file)
     if not os.path.islink(symlink_path) and test_mode:
         print(f"ERROR: {symlink_path} is not a link")
-        os._exit(3)
+        os._exit(6)
 
     try:
         # Create the symlink
