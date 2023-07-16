@@ -1,1 +1,0 @@
-../posts/2011/10/ubuntu-11-04-natty.md

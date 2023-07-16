@@ -1,1 +1,0 @@
-../posts/2011/10/install-scientific-linux-in-vmware-workstation.md

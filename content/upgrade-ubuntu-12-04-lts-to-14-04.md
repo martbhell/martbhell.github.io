@@ -1,1 +1,0 @@
-../posts/2014/02/upgrade-ubuntu-12-04-lts-to-14-04.md

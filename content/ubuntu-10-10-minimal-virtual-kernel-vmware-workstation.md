@@ -1,1 +1,0 @@
-../posts/2011/02/ubuntu-10-10-minimal-virtual-kernel-vmware-workstation.md

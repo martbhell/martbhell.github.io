@@ -1,1 +1,0 @@
-../posts/2011/12/how-to-find-things-in-linux-man-pages.md

@@ -1,1 +1,0 @@
-../posts/2016/03/linux-conf-au-2016-and-a-freeipa-workshop.md

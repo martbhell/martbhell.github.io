@@ -1,1 +1,0 @@
-../posts/2021/04/prometheus-and-snmp-from-a-printer.md

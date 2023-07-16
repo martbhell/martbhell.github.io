@@ -1,1 +1,0 @@
-../posts/2014/05/lustre-2-5-centos6-test-in-openstack.md

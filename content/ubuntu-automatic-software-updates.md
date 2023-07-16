@@ -1,1 +1,0 @@
-../posts/2011/07/ubuntu-automatic-software-updates.md

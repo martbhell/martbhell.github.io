@@ -1,1 +1,0 @@
-../posts/2023/05/orienteering-firmaliiga-1.md

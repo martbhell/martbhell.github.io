@@ -1,1 +1,0 @@
-../posts/2013/12/arch-linux-on-a-t400-log.md

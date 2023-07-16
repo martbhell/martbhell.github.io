@@ -1,1 +1,0 @@
-../posts/2015/01/nagios-health-check-of-a-ddn-sfa12k.md

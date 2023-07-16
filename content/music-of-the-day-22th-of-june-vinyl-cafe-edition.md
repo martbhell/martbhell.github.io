@@ -1,1 +1,0 @@
-../posts/2011/06/music-of-the-day-22th-of-june-vinyl-cafe-edition.md

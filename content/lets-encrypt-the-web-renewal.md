@@ -1,1 +1,0 @@
-../posts/2016/02/lets-encrypt-the-web-renewal.md

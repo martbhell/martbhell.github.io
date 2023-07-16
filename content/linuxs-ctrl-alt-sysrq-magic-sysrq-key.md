@@ -1,1 +1,0 @@
-../posts/2012/05/linuxs-ctrl-alt-sysrq-magic-sysrq-key.md

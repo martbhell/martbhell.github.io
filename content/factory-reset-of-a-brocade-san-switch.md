@@ -1,1 +1,0 @@
-../posts/2013/07/factory-reset-of-a-brocade-san-switch.md

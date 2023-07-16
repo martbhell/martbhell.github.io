@@ -1,1 +1,0 @@
-../posts/2011/02/file-share-from-ubuntu-10-10-with-windows-7-client.md

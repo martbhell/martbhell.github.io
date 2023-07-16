@@ -1,1 +1,0 @@
-../posts/2013/07/sdn-course-on-coursera-2.md

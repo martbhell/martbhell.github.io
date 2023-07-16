@@ -1,1 +1,0 @@
-../posts/2011/06/buying-kindle-in-finland.md

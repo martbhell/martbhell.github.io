@@ -1,1 +1,0 @@
-../posts/2011/02/red-hat-enterprise-linuxrhel-in-vmware-workstation.md

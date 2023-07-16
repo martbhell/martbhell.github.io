@@ -1,1 +1,0 @@
-../posts/2019/07/home-network-convergence.md

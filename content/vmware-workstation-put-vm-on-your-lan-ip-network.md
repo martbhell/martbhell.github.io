@@ -1,1 +1,0 @@
-../posts/2011/01/vmware-workstation-put-vm-on-your-lan-ip-network.md

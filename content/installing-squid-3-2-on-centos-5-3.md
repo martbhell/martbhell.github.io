@@ -1,1 +1,0 @@
-../posts/2011/04/installing-squid-3-2-on-centos-5-3.md

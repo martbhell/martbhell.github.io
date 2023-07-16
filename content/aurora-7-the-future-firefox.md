@@ -1,1 +1,0 @@
-../posts/2011/07/aurora-7-the-future-firefox.md

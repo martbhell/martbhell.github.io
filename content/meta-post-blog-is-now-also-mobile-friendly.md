@@ -1,1 +1,0 @@
-../posts/2014/02/meta-post-blog-is-now-also-mobile-friendly.md

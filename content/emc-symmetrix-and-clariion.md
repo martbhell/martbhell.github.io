@@ -1,1 +1,0 @@
-../posts/2011/01/emc-symmetrix-and-clariion.md

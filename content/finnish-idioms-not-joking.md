@@ -1,1 +1,0 @@
-../posts/2011/04/finnish-idioms-not-joking.md

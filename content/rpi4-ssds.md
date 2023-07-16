@@ -1,1 +1,0 @@
-../posts/2023/06/rpi4-ssds.md

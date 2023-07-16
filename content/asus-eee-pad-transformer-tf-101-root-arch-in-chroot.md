@@ -1,1 +1,0 @@
-../posts/2012/09/asus-eee-pad-transformer-tf-101-root-arch-in-chroot.md

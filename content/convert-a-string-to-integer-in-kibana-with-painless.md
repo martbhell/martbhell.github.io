@@ -1,1 +1,0 @@
-../posts/2020/12/convert-a-string-to-integer-in-kibana-with-painless.md

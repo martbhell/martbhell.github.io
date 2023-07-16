@@ -1,1 +1,0 @@
-../posts/2011/08/bicycling-in-helsinki.md

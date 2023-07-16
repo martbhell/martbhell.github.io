@@ -1,1 +1,0 @@
-../posts/2012/03/update-install-spotify-0-8-2-637-on-rhel6-x64.md

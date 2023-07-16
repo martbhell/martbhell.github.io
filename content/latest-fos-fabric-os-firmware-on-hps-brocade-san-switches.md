@@ -1,1 +1,0 @@
-../posts/2011/05/latest-fos-fabric-os-firmware-on-hps-brocade-san-switches.md

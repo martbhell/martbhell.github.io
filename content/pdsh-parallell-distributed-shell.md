@@ -1,1 +1,0 @@
-../posts/2012/11/pdsh-parallell-distributed-shell.md

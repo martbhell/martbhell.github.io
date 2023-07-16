@@ -1,1 +1,0 @@
-../posts/2011/02/finnish-word-cases-grammatical-function.md

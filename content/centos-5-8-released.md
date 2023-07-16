@@ -1,1 +1,0 @@
-../posts/2012/03/centos-5-8-released.md

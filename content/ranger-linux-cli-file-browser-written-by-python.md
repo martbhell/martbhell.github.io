@@ -1,1 +1,0 @@
-../posts/2011/10/ranger-linux-cli-file-browser-written-by-python.md

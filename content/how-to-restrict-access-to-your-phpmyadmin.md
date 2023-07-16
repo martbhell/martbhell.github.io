@@ -1,1 +1,0 @@
-../posts/2011/07/how-to-restrict-access-to-your-phpmyadmin.md
