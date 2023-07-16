@@ -19,7 +19,7 @@ Directories:
 ----
 
    - content/
-     - symlinks to posts in posts/
+     - symlinks to posts and images in posts/ # populated by `MAKESYMLINKS.py`
      - cd content; python MAKESYMLINKS.py # done by `build.sh`
    - Makefile
    - output/
