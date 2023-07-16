@@ -3,23 +3,17 @@
 build_content () {
   echo "branch: $CF_PAGES_BRANCH"
   echo "site_url: $SITEURL"
+  echo "Creating symlinks of posts in posts/ into content/"
+  cd content && python MAKESYMLINKS.py && cd ..
   pelican content
 }
 
-if [ "$CF_PAGES_BRANCH" == "production" ]; then
-  # Run the "production" script in `package.json` on the "production" branch
-  # "production" should be replaced with the name of your Production branch
+if [ "$CF_PAGES_BRANCH" == "main" ]; then
 
-  build_content
-
-elif [ "$CF_PAGES_BRANCH" == "staging" ]; then
-  # Run the "staging" script in `package.json` on the "staging" branch
-  # "staging" should be replaced with the name of your specific branch
-
+  # In ase we want to do something special for deploys to main
   build_content
 
 else
-  # Else run the dev script
 
   build_content
 
