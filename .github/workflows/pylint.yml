@@ -29,6 +29,7 @@ jobs:
       - name: Look for missing symlinks
         run: |
           cd content
+          python MAKESYMLINKS.py
           python MAKESYMLINKS.py --test
           cd ..
       - name: Look for broken links in this branch
