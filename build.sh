@@ -2,7 +2,7 @@
 
 build_content () {
   echo "branch: $CF_PAGES_BRANCH"
-  echo "site_url: $SITE_URL"
+  echo "site_url: $SITEURL"
   pelican content
 }
 
