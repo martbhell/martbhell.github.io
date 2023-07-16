@@ -1,1 +1,0 @@
-../posts/2017/10/wtangy-se-site-rename-and-automatic-deployments.md

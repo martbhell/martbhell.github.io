@@ -1,1 +1,0 @@
-../posts/2011/01/detroit-red-wings-pittsburgh-penguins-181-2011.md

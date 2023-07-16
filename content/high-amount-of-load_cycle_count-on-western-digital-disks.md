@@ -1,1 +1,0 @@
-../posts/2014/10/high-amount-of-load_cycle_count-on-western-digital-disks.md

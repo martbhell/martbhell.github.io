@@ -1,1 +1,0 @@
-../posts/2023/04/wordpress-jekyll-pelican.md

@@ -1,1 +1,0 @@
-../posts/2012/02/brocade-certified-fabric-designer-bcfd-exam.md

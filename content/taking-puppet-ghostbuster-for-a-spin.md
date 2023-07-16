@@ -1,1 +1,0 @@
-../posts/2019/07/taking-puppet-ghostbuster-for-a-spin.md

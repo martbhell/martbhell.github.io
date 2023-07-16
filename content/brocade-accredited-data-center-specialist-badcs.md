@@ -1,1 +1,0 @@
-../posts/2012/08/brocade-accredited-data-center-specialist-badcs.md

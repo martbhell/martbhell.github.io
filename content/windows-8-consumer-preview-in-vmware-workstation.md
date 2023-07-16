@@ -1,1 +1,0 @@
-../posts/2012/02/windows-8-consumer-preview-in-vmware-workstation.md

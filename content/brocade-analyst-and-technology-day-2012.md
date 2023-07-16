@@ -1,1 +1,0 @@
-../posts/2012/08/brocade-analyst-and-technology-day-2012.md

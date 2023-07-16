@@ -1,1 +1,0 @@
-../posts/2012/09/hello-silicon-valley.md

@@ -1,1 +1,0 @@
-../posts/2019/10/reseptit-avokado-pasta.md

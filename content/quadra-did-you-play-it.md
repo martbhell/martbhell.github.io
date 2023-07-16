@@ -1,1 +1,0 @@
-../posts/2020/02/quadra-did-you-play-it.md

@@ -1,1 +1,0 @@
-../posts/2020/07/new-home-network-plan.md

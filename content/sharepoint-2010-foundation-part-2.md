@@ -1,1 +1,0 @@
-../posts/2011/02/sharepoint-2010-foundation-part-2.md

@@ -1,1 +1,0 @@
-../posts/2011/03/last-irc-post-of-bota-for-a-while.md

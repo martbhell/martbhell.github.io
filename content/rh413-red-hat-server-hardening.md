@@ -1,1 +1,0 @@
-../posts/2016/03/rh413-red-hat-server-hardening.md

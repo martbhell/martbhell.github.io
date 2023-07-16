@@ -1,1 +1,0 @@
-../posts/2017/06/automated-testing-of-ansible-roles.md

@@ -1,1 +1,0 @@
-../posts/2011/08/bcfp-studying-on.md

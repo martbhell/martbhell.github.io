@@ -1,1 +1,0 @@
-../posts/2017/10/wasthereannhlgamelastnight-com-now-using-object-storage.md

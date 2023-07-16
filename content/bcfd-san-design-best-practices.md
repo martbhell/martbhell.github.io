@@ -1,1 +1,0 @@
-../posts/2012/01/bcfd-san-design-best-practices.md

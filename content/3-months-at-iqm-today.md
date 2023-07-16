@@ -1,1 +1,0 @@
-../posts/2020/06/3-months-at-iqm-today.md

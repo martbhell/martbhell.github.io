@@ -1,1 +1,0 @@
-../posts/2012/03/my-broken-amazon-kindle.md

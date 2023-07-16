@@ -1,1 +1,0 @@
-../posts/2020/02/air-lap1142n-e-k9-to-autonomous-mode-adventure.md

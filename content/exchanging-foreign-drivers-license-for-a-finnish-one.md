@@ -1,1 +1,0 @@
-../posts/2012/08/exchanging-foreign-drivers-license-for-a-finnish-one.md

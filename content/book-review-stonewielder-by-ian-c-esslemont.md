@@ -1,1 +1,0 @@
-../posts/2011/09/book-review-stonewielder-by-ian-c-esslemont.md

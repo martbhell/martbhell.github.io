@@ -1,1 +1,0 @@
-../posts/2012/04/red-hat-certification-rhce-system-configuration-and-management-2.md
