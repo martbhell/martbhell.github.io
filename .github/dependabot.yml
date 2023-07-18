@@ -11,4 +11,3 @@ updates:
       interval: "weekly"
     labels: 
       - "dependabot"
-      - "install_to_lib"
