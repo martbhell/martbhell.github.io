@@ -1,5 +1,5 @@
 ---
-title: Magnets 47 - suunnistus Latviassa 
+title: Magnets 47 - suunnistus Latviassa
 date: 2023-07-19 23:57
 category: finland
 lang: fi
@@ -14,11 +14,11 @@ Magnets 47
 
 [reittihärveli](https://www.magnets.lv/routegadget/cgi-bin/reitti.cgi?act=map&afrom=0&atype=0&atime=0&aspeed=1&zoom=20&dim=1&id=1305&cID=5&aID=50149)!
 
-miten meni 
+miten meni
 ===
 
 
 tba
 
 
-   
+
