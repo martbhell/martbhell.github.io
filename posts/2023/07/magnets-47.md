@@ -3,7 +3,7 @@ title: Magnets 47 - suunnistus Latviassa
 date: 2023-07-19 23:57
 category: finland
 lang: fi
-tags: orienteering, suunnistus, riiga, latvia, Ložmetējkalns
+tags: orienteering, suunnistus, riiga, latvia, Ložmetējkalns, M21AK, kiviton 
 ---
 
 Magnets 47
