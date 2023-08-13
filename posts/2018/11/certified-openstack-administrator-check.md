@@ -2,6 +2,7 @@
 title: Certified OpenStack administrator - check!
 date: 2018-11-17
 category: it
+tags: openstack, certified, administrator, coa, certification
 
 Yay! Took the exam last week after having studied a few days. Nothing seemed to be impossible from the list of requirements at least :)
 

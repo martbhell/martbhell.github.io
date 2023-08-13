@@ -2,6 +2,8 @@
 title: Reseptit: Avokado pasta
 date: 2019-10-29
 category: finland
+lang: fi
+tags: reseptit, recipe, avokado, pasta
 
 Kahdelle
 
