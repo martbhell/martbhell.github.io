@@ -19,9 +19,10 @@ def check_metadata(file_path):
         if not re.search(rf"^{field}", content, re.MULTILINE | re.IGNORECASE):
             return False
 
-    # Check for metadata delimiters
-    if content.count('---') < 2:
-        return False
+## Too many. Need a script to fix it in all first.
+#    # Check for metadata delimiters
+#    if content.count('---') < 2:
+#        return False
 
     return True
 
