@@ -13,7 +13,7 @@ def check_metadata(file_path):
     return True
 
 def main():
-    posts_directory = '/path/to/your/posts/directory'  # Replace with your actual directory path
+    posts_directory = 'posts'  # Replace with your actual directory path
 
     for root, dirs, files in os.walk(posts_directory):
         for file in files:
@@ -23,6 +23,9 @@ def main():
                 if not check_metadata(file_path):
                     print(f"Metadata missing in {file_path}")
 
+        if len(files) == 0:
+            print("No files found")
+            return False
 if __name__ == '__main__':
     main()
   
