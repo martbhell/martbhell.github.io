@@ -1,6 +1,6 @@
 ---
 title: fixing sad servers in challenges!
-date: 2023-08-19 23:57
+date: 2023-08-13 23:44
 category: it
 lang: en
 tags: ctf, sadservers, linux, servers, sadservers.com, 
