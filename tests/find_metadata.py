@@ -1,7 +1,6 @@
 """ Make sure we got metadata in the markdowns """
 import os
 import re
-from pprint import pprint
 
 
 def check_metadata(file_path):
@@ -29,7 +28,8 @@ def search_in_subdirectories(directory):
             if file.lower().endswith(".md"):
                 file_path = os.path.join(root, file)
                 if not check_metadata(file_path):
-                    BAD_FILES.append(file_path)
+                    if file_path not in BAD_FILES:
+                        BAD_FILES.append(file_path)
 
         for dire in dirs:
             dir_path = os.path.join(root, dire)
@@ -47,5 +47,6 @@ if __name__ == "__main__":
     main()
     if len(BAD_FILES) != 0:
         print("ERROR: BAD files:")
-        pprint(sorted(BAD_FILES))
+        for bad_ in sorted(BAD_FILES):
+            print(bad_)
         os._exit(2)
