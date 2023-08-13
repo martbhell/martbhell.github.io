@@ -2,6 +2,8 @@
 title: 3 months at IQM today!
 date: 2020-06-17
 category: it
+tags: work, iqm
+---
 
 And I'm on holiday :)
 

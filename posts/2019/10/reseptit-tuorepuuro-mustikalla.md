@@ -2,6 +2,9 @@
 title: Reseptit: Tuorepuuro Mustikalla
 date: 2019-10-04
 category: finland
+lang: fi
+tags: reseptit, recipe, tuorepuuro, puuro
+---
 
 Ainesosit:
 

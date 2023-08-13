@@ -2,7 +2,9 @@
 title: Raspberry Pi 4 with external SSDs
 date: 2023-06-13 22:03
 category: it
+lang: en
 tags: it, ssd, rpi, raspberry pi, raspberry pi 4, sata, usb
+---
 
 ## Why This Exercise?
 

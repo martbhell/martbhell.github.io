@@ -3,6 +3,7 @@ title: Dungeon Crawl Stone Soup 0.30 Tournament - 2/N
 date: 2023-05-16 21:57
 category: finland
 tags: games, dcss, stone-soup, crawl, rogue-like
+lang: en
 ---
 
 0.30 Tournament!

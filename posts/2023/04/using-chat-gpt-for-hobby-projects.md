@@ -3,6 +3,8 @@ title: Using Chat GPT or other LLM at for hobby projects
 date: 2023-04-20 22:03
 category: it
 tags: it, llm, chatgpt, phind
+lang: en
+---
 
 I find myself using chatGPT or similar like [phind](https://www.phind.com/) recently to help with some computer programming tasks.
 
