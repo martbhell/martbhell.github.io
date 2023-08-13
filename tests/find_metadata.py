@@ -19,6 +19,7 @@ def main():
         for file in files:
             if file.lower().endswith('.md'):
                 file_path = os.path.join(root, file)
+                print(f"Testing {file} for presence of all metadata.")
                 if not check_metadata(file_path):
                     print(f"Metadata missing in {file_path}")
 
