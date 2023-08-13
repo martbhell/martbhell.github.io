@@ -18,6 +18,11 @@ def check_metadata(file_path):
     for field in required_fields:
         if not re.search(rf"^{field}", content, re.MULTILINE | re.IGNORECASE):
             return False
+
+    # Check for metadata delimiters
+    if content.count('---') < 2:
+        return False
+
     return True
 
 
@@ -50,3 +55,5 @@ if __name__ == "__main__":
         for bad_ in sorted(BAD_FILES):
             print(bad_)
         os._exit(2)
+    else:
+        print("OK: Metadata in all files")
