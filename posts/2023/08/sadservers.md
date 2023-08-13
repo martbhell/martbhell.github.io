@@ -1,3 +1,11 @@
-have been trying this out for a while. seems to be a young service. They have a Linux World Cup coming up soon.
+---
+title: fixing sad servers 
+date: 2023-08-19 23:57
+category: it
+lang: en
+tags: ctf, sadservers, linux, servers, sadservers.com, 
+---
 
-after participating in CTF these challenges were not so hard but interesting with new scenarios! Wonder how this stays afloat. Hoping it uses containers a lot :)
+Have been trying these web based Linux servers challenges out for a little while. seems to be a young service. They have a Linux World Cup coming up soon. Today is the last day to [register](https://linuxworldcup.com/)!
+
+After participating in CTF these challenges were not so hard but interesting with new scenarios! Wonder how this stays afloat. Maybe it uses containers a lot :)
