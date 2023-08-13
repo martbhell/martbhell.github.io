@@ -1,31 +1,51 @@
+""" Make sure we got metadata in the markdowns """
 import os
 import re
+from pprint import pprint
+
 
 def check_metadata(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
+    """with some exceptions, like only require lang if actually in Finnish?"""
+    with open(file_path, "r", encoding="utf-8") as file:
         content = file.read()
 
     # Check for required metadata fields
-    required_fields = ['title:', 'tags:', 'lang:', 'date:', 'category:' ]
+    required_fields = ["title:", "tags:", "date:", "category:"]
+    path_split = file_path.split("/")
+    year = int(path_split[1])
+    if year >= 2023:
+        # Because in 2023 I started doing Finnish posts
+        required_fields.append("lang:")
     for field in required_fields:
-        if not re.search(rf'^{field}', content, re.MULTILINE | re.IGNORECASE):
+        if not re.search(rf"^{field}", content, re.MULTILINE | re.IGNORECASE):
             return False
     return True
 
-def main():
-    posts_directory = 'posts'  # Replace with your actual directory path
 
-    for root, dirs, files in os.walk(posts_directory):
+def search_in_subdirectories(directory):
+    """traverse!"""
+    for root, dirs, files in os.walk(directory):
         for file in files:
-            if file.lower().endswith('.md'):
+            if file.lower().endswith(".md"):
                 file_path = os.path.join(root, file)
-                print(f"Testing {file} for presence of all metadata.")
                 if not check_metadata(file_path):
-                    print(f"Metadata missing in {file_path}")
+                    BAD_FILES.append(file_path)
 
-        if len(files) == 0:
-            print("No files found")
-            return False
-if __name__ == '__main__':
+        for dire in dirs:
+            dir_path = os.path.join(root, dire)
+            search_in_subdirectories(dir_path)
+
+
+def main():
+    """the main"""
+    posts_directory = "posts/"  # Replace with your actual directory path
+    search_in_subdirectories(posts_directory)
+
+
+if __name__ == "__main__":
+    BAD_FILES = []
     main()
-  
+    if len(BAD_FILES) != 0:
+        print("ERROR: BAD files:")
+        pprint(sorted(BAD_FILES))
+        os._exit(2)
