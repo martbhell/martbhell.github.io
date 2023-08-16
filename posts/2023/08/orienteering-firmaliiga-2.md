@@ -25,6 +25,11 @@ Miten
 
 [![from rasti 10 to 11](images/10-11.20230815.firmaliiga.png "10-11")](images/10-11.20230815.firmaliiga.png)
 
+  * 11-12: menin ylös liian aikaisin (siellä oli joku toinen radan rastti).
+
+Lopussa
+===
+
 Mutta lopussa oli tosi hauskaa olla takaisin metsässä ja firmaliiga. Velskolla oli remontti ja saimme limosiinikuljetus Luukista :D
 
 Firman joukkue oli D-lohkossa koska voitimme E-lohkossa kevällä. Katsotaan jos se menee parempi meille seurava kaksi vuoroa!
