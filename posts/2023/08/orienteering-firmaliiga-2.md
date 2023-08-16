@@ -23,7 +23,7 @@ Miten
   * 10-11: seurava iso bummi. Minulla ei ollut hyvä sunitelma ja lisäks valitsin reitti mikä tuntui varmempi - ympäri ja polulla mutta kun tulin lähellä ei ollu varmempi. Varmasti mennä suorempi olisi paljon nopeampi.
   * 11-12: menin ylös liian aikaisin (siellä oli joku toinen radan rastti).
 
-[![from rasti 10 to 11](10-11.20230815.firmaliiga.png "10-11")](10-11.20230815.firmaliiga.png)
+[![from rasti 10 to 11](images/10-11.20230815.firmaliiga.png "10-11")](images/10-11.20230815.firmaliiga.png)
 
 Mutta lopussa oli tosi hauskaa olla takaisin metsässä ja firmaliiga. Velskolla oli remontti ja saimme limosiinikuljetus Luukista :D
 
