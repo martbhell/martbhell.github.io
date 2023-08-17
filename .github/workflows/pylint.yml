@@ -26,11 +26,10 @@ jobs:
       - name: Convention Checking content/ dir
         run: |
            python tests/test_symlinks.py
-      - name: Look for missing symlinks
+      - name: Create symlinks and copy things to the right places
         run: |
           cd content
           python MAKESYMLINKS.py
-          python MAKESYMLINKS.py --test
           cd ..
       - name: Look for broken links in this branch
         run: |
