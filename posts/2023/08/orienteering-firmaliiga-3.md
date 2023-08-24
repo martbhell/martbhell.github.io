@@ -3,7 +3,7 @@ title: Suunnistus - Firmaliiga Haukkalampi
 date: 2023-08-24 22:57
 category: finland
 lang: fi
-tags: orienteering, suunnistus, hs, d-rata, haukkalampi, firmaliiga, d-lohko, lippukallio
+tags: orienteering, suunnistus, hs, d-rata, haukkalampi, firmaliiga, d-lohko, rastianalyysi, firmaliiga2023
 ---
 
 Suunnistaa
@@ -17,14 +17,13 @@ Suunnistaa
 Miten
 ===
 
-  * K-2: tuntui hyvin ja juoksin suora
-  * 2-3: käänsin liikaa vasemalle ja ei riitäväks alle suolle ja pyörin siellä aika pahasti. ehkä 4 minuutia bummi. Juoksin aika kovin K-2 välillä eli pitäisin otta se hitaampi tällä.
-  * 3-4: en katsonut kartassa ja juoksin suoraa yksi jyrkänne ja tarvitsin ota se rennosti ja melkein juostaa takaisin
-  * 4-5: pidempi väli, tyksäin tämä ja hyvä olisi tällä katsoa mitä tulee seuravalla rastivälillä.
-  * 5-6: pitkäää, pysähtyin mutama kertaa pohtimaan mitä reitti. Juostin polulla liikaa. Ja ehkä oikea reitti siellä olisi parempi hyöäkkäys - eli lyhyempi reitti missä menin pois jotain iso ja helpo tunnistava. Ehkä myös korkeusero oli noin sama, vasemalle juostin polulla ja just lammen vieressä että se meni aika paljon ylös ja alas. Mutta yhteensä löysin se aika helposti.
-  * 6-7: 
-  * 7-8: menin oikealle mutta siellä oli paljon katoneitä puita. Hirveä hitaasti. Vasemalle ja polku siellä olisi paljon parempi
-  * 8-9: pitää korkeusero ja olla ylhällä ja ei alaspäin olisi parempi tällä.
+  * K-2: Tuntui hyvältä ja juoksin suoraan.
+  * 2-3: Käännyin liikaa vasemmalle ja enkä löytänyt väylää suolle, joten pyörisin siellä aika pahasti. Menetin noin 4 minuuttia. Juoksin aika kovaa K-2 välillä, joten harkitsisin ehkä hieman rauhallisempaa vauhtia.
+  * 3-4: En tarkistanut kartasta mitä tulee ja juoksin suoraan jyrkänteen ja tarvitsin juosta takaisin ja ympäri siitä.
+  * 4-5: Pidempi väli, nautin tästä, ja olisi hyvä sunnitella seuraava rastiväli tarkemmin.
+  * 5-6: Pitkä väli, pysähdyin muutaman kerran miettimään reittiä. Juoksin polulla liian pitkään. Ehkä parempi olisi valita suoremmin ja hyökätä lähempää rastia, jolloin olisin voinut välttää ison ja helposti tunnistettavan kohteen. Myös korkeuserot olivat suuret, ja vaikka vasemmalla oleva polku oli lähellä lampea, se vei minut paljon ylös ja alas. Löysin kuitenkin rastin suhteellisen helposti.
+  * 7-8: Valitsin oikeanpuoleisen reitin, mutta alueella oli paljon kaatuneita puita, mikä hidasti etenemistäni. Vasemmalla olisi ollut parempi vaihtoehto, sillä siellä oli polku.
+  * 8-9: Korkeuseroa piti ottaa huomioon ja pysyä korkealla; alasmeno ei ollut paras vaihtoehto.
 
 [![from rasti 2 to 3](images/2-3.20230822.firmaliiga.png "2-3")](images/2-3.20230822.firmaliiga.png)
 
@@ -32,4 +31,4 @@ Miten
 Lopussa
 ===
 
-Hyvä tunnelma. Meni paljon parempi kuin viime viikkon kisa.
+Hyvä tunnelma. Meni paljon paremmin kuin viime viikon kilpailussa.
