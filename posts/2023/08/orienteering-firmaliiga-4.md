@@ -17,9 +17,9 @@ Suunnistaa
 Miten
 ===
 
-  * K-1: Tuntui hyvältä ja juoksin suoraan.
-  * 1-2: Halusin mennä aavokalliolla, näin kuutosen rasti mutta meni liian oikealle. Näin tuo vihreämpi alue mutta en uskonut että se oli siitä ja juoksin sen ohi.
-  * 3-4: Ehkä paras. Kiersin mäkeä ja juoskin pellon yli ja iso tiellä.
+  * K-1: Tuntui hyvältä ja juoksin suoraa rastiin.
+  * 1-2: Halusin mennää avokalliolla, näin kuutosen rasti mutta meni sen jälkeen liian oikealle ja ei pitää korkeusero kuin halusin. Näin tuo vihreämpi alue mutta en uskonut että se oli siitä ja juoksin vihreä alue ja rastin ohi.
+  * 3-4: Ehkä paras. Kiersin mäkeä ja juoksin pellon yli ja iso tiellä.
   * 4-5: "pitää korkeusero!" oli mun päässä, ja meni aika OK.
   * 5-6: Suora vaan, ei oli mitään mitä voin otta kiini. Pysähtyin liian aikaisin ja vasemalle. Pitäisin huoammnut että avokalliot lopuneet.
   * 6-7: Tä tuntui myös hyvältä, otin suorempi ja vasen reittivalinta. Pysyin linjalla aika hyvin koko ajan mutta löysin jonkin muun rastin ennen mun ja se oti ehkä minuutin.
@@ -29,7 +29,7 @@ Miten
   * 10-11: aika nopea
   * 11-12: Ai mikä bummi. Tosi paljon liikaa vasemalle. Näin että tä oli keltainen, mutta en katsonut tuolla aluella kartalla (myös koska se oli alle nro 12 :D). Kiersin melkein maaliin ja ylös rastille ja takaisin. Bah!
 
-[![from rasti 4 to 5](images/4-5.20230829.firmaliiga.png "4-5")](images/4-5.20230829.firmaliiga.png)
+[![from rasti 3 to 4](images/3-4.20230829.firmaliiga.png "3-4")](images/3-4.20230829.firmaliiga.png)
 
 
 Lopussa
