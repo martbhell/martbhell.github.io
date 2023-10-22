@@ -32,5 +32,6 @@ Lopussa
 
 Yösuunnistus vinkit:
 
-  * Kun suunnistaan muun kanssa, muistakaa sovitta loppuaika ja että kaikilla on kaikien puhelinumerot.
-  * Itse en ymmärtää miksi en laitaa lampun asetuksen; että näen pidempi.. Mutta se heiastaa kartasta.. Ehkä minus ja en pitäisi käyttää muovipussi.
+ - Kun suunnistaan muun kanssa, muistakaa sovitta loppuaika ja että kaikilla on kaikien puhelinumerot.
+ - Itse en ymmärtää miksi en laitaa lampun asetuksen; että näen pidempi.. Mutta se heiastaa kartasta.. Ehkä minus ja en pitäisi käyttää muovipussi.
+
