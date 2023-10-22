@@ -1,5 +1,5 @@
 ---
-title: Suunnistus - Yö Nurmijärvi
+title: Suunnistus - Yö Sääksi, Nurmijärvi
 date: 2023-10-17 22:57
 category: finland
 lang: fi
@@ -10,19 +10,26 @@ Suunnistaa
 ===
 
  - Lohko: b
- - 5.4km (juoksin 6.2km, 56min, 28/31)
+ - 5.4km (juoksin 6.4km, 56min, 28/31)
  - Kiljavannummi, Sääksi, Nurmijärvi 
- - [routegadget](TBA)
+ - [routegadget](https://rajamaenrykmentti.fi/kilpailut/reittiharveli/cgi-bin/reitti.cgi?act=map&id=157&cID=7&pID=50150)
  - [tulokset](https://rajamaenrykmentti.fi/irtulokset2023/v20231017yo.html)
 
 Miten
 ===
 
-  * K-1:
-  * 1-
-  * 
-[![from rasti 3 to 4](images/fix.png "3-4")](images/fix.png)
+  * K-2: OK
+  * 2-3: Isoin bummi. En valitsinut parempi otaminen olisi löytää tuo talo / mäki just ennen rastia ja mennä sieltä rastiin.
+  * 4-5: En katsonut kompassi tarkasti. Oli parempi jos menisin enemmän vasemalle.
+  * 5-6: Menin liikaa mäen alle.
+  * 7-8: OK mutta ei uskonut mennä mihin muut olivat siellä eli meni rastin ohi.
+  
+[![from rasti 2 to 3](images/rajamaen.saaksi.2-3.png "2-3")](images/rajamaen.saaksi.2-3.png)
 
 
 Lopussa
 ===
+
+Yösuunnistus vinkit:
+  * Kun suunnistaan muun kanssa, muistakaa sovitta loppuaika ja että kaikilla on kaikien puhelinumerot.
+  * Itse en ymmärtää miksi en laitaa lampun asetuksen; että näen pidempi.. Mutta se heiastaa kartasta.. Ehkä minus ja en pitäisi käyttää muovipussi.
