@@ -21,7 +21,7 @@ Miten
   * K-2: OK
   * 2-3: Isoin bummi. En valitsinut parempi otaminen olisi löytää tuo talo / mäki just ennen rastia ja mennä sieltä rastiin.
   * 4-5: En katsonut kompassi tarkasti. Oli parempi jos menisin enemmän vasemalle.
-  * 5-6: Menin liikaa mäen alle.
+  * 5-6: Menin liikaa mäen alle. Silti tä oli mun paras rasti?? 16/31 ??
   * 7-8: OK mutta ei uskonut mennä mihin muut olivat siellä eli meni rastin ohi.
   
 [![from rasti 2 to 3](images/rajamaen.saaksi.2-3.png "2-3")](images/rajamaen.saaksi.2-3.png)
