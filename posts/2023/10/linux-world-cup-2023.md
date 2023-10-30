@@ -40,7 +40,7 @@ Also best. [3mins 46seconds](https://sadservers.com/replay/i-0ee2f3007d5494cc2) 
 
 Quite a lot slower. 11m 26secs vs 2m32 for winner.
 
-Winner: Used some AWS (typed it in painstaikingly slowly) to parse very elegantly.
+Winner: Used some awk (typed it in without copying, so could have prepared a bit better :) to parse. Very elegantly and small compared to .. my python.
 
 I wrote some python to read it. Had it prepared. But still managed to introduce typos and indentation issues. Could have prepared the csv reader much more in advance. But OK, I wanted a challenge under pressure. Keep forgetting that it's all strings.. vim recover file.
 
