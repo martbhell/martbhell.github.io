@@ -6,6 +6,8 @@ lang: fi
 tags: linux, ctf, world cup
 ---
 
+spoiler alert!
+
 ##  Top 3
 
 | | | |
@@ -44,11 +46,11 @@ Winner: Used some awk (typed it in without copying, so could have prepared a bit
 
 I wrote some python to read it. Had it prepared. But still managed to introduce typos and indentation issues. Could have prepared the csv reader much more in advance. But OK, I wanted a challenge under pressure. Keep forgetting that it's all strings.. vim recover file.
 
-While typing figured out how I wanted to solve it instead of thinking it through beforehand. What I did was to 
+While typing figured out how I wanted to solve it instead of thinking it through beforehand. 
 
 ### Unimak
 
-Also lsower. 3mins 14s vs 1min 31s.
+Also slower. 3mins 14s vs 1min 31s.
 
 Winner: jq . the_json and printed top 10 lines and took the first one??
 
@@ -60,9 +62,9 @@ I:
 
 ### Taipei
 
-Ridcon. I took 7mins 18 vs 31s.
+Ridonc. I took 7mins 18 vs 31s of winner.
 
-Hahha. So this challenge was a port knocker. tust **nmapped** all ports and then curled to localhost!
+Hahha. So this challenge was a port knocker. The fastest just **nmapped** all ports and then curled to localhost!
 
 Whereas I:
  - downloaded some knocker.py
