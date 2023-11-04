@@ -2,7 +2,7 @@
 title: Linux World Cup - 2023
 date: 2023-10-30 22:57
 category: it
-lang: fi
+lang: en
 tags: linux, ctf, world cup
 ---
 
