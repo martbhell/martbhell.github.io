@@ -21,7 +21,7 @@ I should not have used the default gunicorn settings of 4 workers, but rather fo
 
 Massive speedup seen, from always >300ms and frequently over 5 seconds to respond, it's now down to just a few milliseconds. Probably because the instance was I guess using all the memory. But when memory really was exceeded the app was killed and restarted resulting in even higher latency.
 
-## before
+## before (the Y axis is in seconds)
 [![before](images/wtangy_before.png "before_latency")](images/wtangy_before.png)
 wtangy_before.png
 
