@@ -33,7 +33,6 @@ Näin massiivi nopeutus! Ennen oli aina > 300ms ja yleensä yli 5s per request. 
 
 ## ennen (Y on sekunttia)
 [![before](images/wtangy_before.png "before_latency")](images/wtangy_before.png)
-wtangy_before.png
 
 ## jälkeen
 
