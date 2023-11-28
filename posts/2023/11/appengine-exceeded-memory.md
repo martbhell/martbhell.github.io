@@ -23,7 +23,6 @@ Massive speedup seen, from always >300ms and frequently over 5 seconds to respon
 
 ## before (the Y axis is in seconds)
 [![before](images/wtangy_before.png "before_latency")](images/wtangy_before.png)
-wtangy_before.png
 
 ## after
 
