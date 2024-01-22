@@ -30,6 +30,6 @@ Yleensä mun reitti on:
 1.  Vaults levels 1-4
 1.  Elven Halls (ainoastaan yhden kerroksen)
 1.  Depths
-1.  # Oikeasti Älä menee Crypt:iin yritämistä "vaan vähän lisää kokemusta ennen kolmas [riimun](http://crawl.chaosforge.org/Rune)"
+1.  **Oikeasti Älä menee Crypt:iin yritämistä "vaan vähän lisää kokemusta ennen kolmas [riimun](http://crawl.chaosforge.org/Rune)"**
 1.  Kolmas Riimu (Abyss, Slime or Vault 5)
 1.  Zot 1-5

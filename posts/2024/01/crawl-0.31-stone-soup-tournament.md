@@ -29,6 +29,6 @@ My current usual route:
 - Vaults levels 1-4
 - Elven Halls (optional)
 - Depths
-- # Do not Go to say the Crypt or some Pandemonium to try to "get some more exp before 3rd rune"
+- **Do not Go to say the Crypt or some Pandemonium to try to "get some more exp before 3rd rune"**
 - 3rd Rune (Abyss, Slime or Vault 5)
 - Zot 1-5
