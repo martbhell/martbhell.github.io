@@ -2,8 +2,8 @@
 title: Raspberry Pi 4 network disconnects
 date: 2024-01-29 22:03
 category: it
-lang: en
 tags: it, network, rpi, raspberry pi, raspberry pi 4, eee, bcmgenet, eth0
+lang: en
 ---
 
 ## What was going on?
@@ -26,7 +26,7 @@ This was visible in `dmesg -T` output:
 dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
- - disable eee, done by adding this to /etc/rc.local:
+ - disable eee (Energy-Efficient Ethernet), done by adding this to /etc/rc.local:
 
 ```
 /usr/sbin/ethtool --set-eee eth0 eee off

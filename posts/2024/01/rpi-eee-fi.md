@@ -2,8 +2,8 @@
 title: Raspberry Pi 4 verkkoyhteyden katkeaminen
 date: 2024-01-29 22:03
 category: it
-lang: fi
 tags: it, network, rpi, raspberry pi, raspberry pi 4, eee, bcmgenet, eth0
+lang: fi
 ---
 
 ## Mitä tapahtui
