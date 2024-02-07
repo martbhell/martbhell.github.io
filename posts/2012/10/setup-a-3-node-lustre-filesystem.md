@@ -12,7 +12,8 @@ This is a small log/instruction for how to setup [Lustre](http://wiki.whamcloud.
 
 Basic components:
 
-VMWare Workstation [3 x CentOS](http://www.nic.funet.fi "finnish mirror") 6.3 VMs. Latest Lustre from [Whamcloud](http://www.whamcloud.com/ "http://www.whamcloud.com/")
+- VMWare Workstation [3 x CentOS](http://www.nic.funet.fi "finnish mirror") 6.3 VMs.
+- Latest Lustre from [Whamcloud](http://www.whamcloud.com/ "http://www.whamcloud.com/")
 
 To use Lustre your kernel needs to support it. There's a special one for server and one for the client. Some packages are needed on both.
 
@@ -26,13 +27,29 @@ Starting with the MDS. When the basic OS setup is done will make a copy of that 
 
 This will run the MDT - the metadata target.
 
-2GB RAM, 10GB disk, bridged networking, 500GB for /boot, rest for / (watch out, it may create a really large swap). Minimal install. Setup OS networking (static ip for servers, start on boot, open port 988 in firewall, possibly some for outgoing if you decide to restrain that too), run yum update and setup ntp. Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86\_64). Lustre also does not support selinux, so disable that (works fine with it in enforcing until time to create mds/mdt, also fine with permissive until it's time to mount). Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set hostname.
+- 2GB RAM, 10GB disk, bridged networking
+- 500GB for /boot, rest for / (watch out, it may create a really large swap).
+
+Minimal install.
+
+Setup OS networking (static ip for servers, start on boot, open port 988 in firewall, possibly some for outgoing if you decide to restrain that too), run yum update and setup ntp.
+
+Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86\_64).
+
+Lustre also does not support selinux, so disable that.
+
+ - works fine with it in enforcing until time to create mds/mdt
+ - also fine with permissive until it's time to mount.
+
+Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set hostname.
 
 ## Install an OSS
 
 This will contain the OST (object storage target). This is where the data will be stored.
 
-Networking may not work (maybe device name changed to eth1 or eth2). You may want to change this afterwards to get the interface back to be called (eth0). [A blog post](http://www.banym.de/linux/centos/change-network-device-name-from-eth1-back-to-eth0) about doing that.
+- Networking may not work (maybe device name changed to eth1 or eth2).
+- You may want to change this afterwards to get the interface back to be called (eth0).
+- [A blog post](http://www.banym.de/linux/centos/change-network-device-name-from-eth1-back-to-eth0) about doing that.
 
 ## Install a client
 
@@ -50,15 +67,18 @@ Installing e2fsprogs, kernel and lustre-modules.
 
 Skipping debuginfo and devel packages, installing all the rest.
 
+```
 yum localinstall \\ 
 kernel-2.6.32-220.4.2.el6\_lustre.x86\_64.rpm kernel-firmware-2.6.32-220.4.2.el6\_lustre.x86\_64.rpm \\
 kernel-headers-2.6.32-220.4.2.el6\_lustre.x86\_64.rpm \\
 lustre-2.2.0-2.6.32\_220.4.2.el6\_lustre.x86\_64.x86\_64.rpm \\ 
 lustre-ldiskfs-3.3.0-2.6.32\_220.4.2.el6\_lustre.x86\_64.x86\_64.rpm \\
 lustre-modules-2.2.0-2.6.32\_220.4.2.el6\_lustre.x86\_64.x86\_64.rpm
+```
 
 The above was not the order they were installed. Yum changed the order so that for example kernel-headers was last.
 
+```
 yum localinstall e2fsprogs-1.42.3.wc3-7.el6.x86\_64.rpm \\
 e2fsprogs-debuginfo-1.42.3.wc3-7.el6.x86\_64.rpm \\
 e2fsprogs-devel-1.42.3.wc3-7.el6.x86\_64.rpm \\
@@ -68,27 +88,24 @@ libcom\_err-1.42.3.wc3-7.el6.x86\_64.rpm \\
 libcom\_err-devel-1.42.3.wc3-7.el6.x86\_64.rpm \\
 libss-1.42.3.wc3-7.el6.x86\_64.rpm \\
 libss-devel-1.42.3.wc3-7.el6.x86\_64.rpm
+```
 
 After boot, confirm that you have lustre kernel installed by typing:
 
-uname -av
+`uname -av` and `mkfs.lustre --help`
 
-and
-
-mkfs.lustre --help
-
-to see if you have that and
-
-rpm -qa 'e2fs\*'
-
-to see if that was installed properly too.
+to see if you have that and `rpm -qa 'e2fs\*'` to see if that was installed properly too.
 
 By the way, you probably want to run this to exclude automatic yum kernel updates:
 
-echo "exclude=kernel\*" >> /etc/yum.conf
+`echo "exclude=kernel\*" >> /etc/yum.conf`
 
-After install and reboot into new kernel it's time to modprobe lustre, start creating MDT, OST and then mount things! But hold on to your horses, first we ned to install the client :)
+After install and reboot into new kernel it's time to
 
+1. `modprobe lustre`
+1. start creating MDT, OST
+1. then mount things!
+1. But hold on to your horses, first we ned to install the client :)
  
 
 ## And then the Client
@@ -119,21 +136,18 @@ Because we do not have infiniband you want to change the parameters slightly for
 
 Added a 5GB disk to the mds.
 
+```bash
 fdisk -cu /dev/sdb; n, p, 1, (first-last)
-
 modprobe lustre lnet
-
 mkfs.lustre --mdt --mgs
-
 mount
+```
 
 ## On the OSS
 
 Also add the parameters into modprobe.
 
-mkfs.lustre --ost
-
-mount
+`mkfs.lustre --ost` and `mount`
 
 ## On the client
 
@@ -143,7 +157,7 @@ mount!
 
 Write something.
 
-Then hit: lfs df -h
+Then hit: `lfs df -h`
 
 To see usage!
 
@@ -153,8 +167,8 @@ To see usage!
 
 You want to start the MDS, then the OSS and last the client. But while it's running you can restart any node and eventually it will start working again.
 
-Fstab on **the client**: ip@tcp:/fsname /mnt lustre defaults,\_netdev 0 0
+Fstab on **the client**: `ip@tcp:/fsname /mnt lustre defaults,\_netdev 0 0`
 
-Fstab on **the OSS and MDS**: /dev/sdb1 /mnt/MDS lustre defaults,\_netdev 0 0
+Fstab on **the OSS and MDS**: `/dev/sdb1 /mnt/MDS lustre defaults,\_netdev 0 0`
 
 While it's running you can restart any node and eventually it will start working again.
