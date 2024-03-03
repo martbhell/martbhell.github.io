@@ -12,7 +12,7 @@ The wired network connection lost connection every now and then. Most of the tim
 
 This was visible in `dmesg -T` output:
 
-```
+```bash
 [Mon Jan 22 20:48:23 2024] bcmgenet fd580000.ethernet eth0: Link is Down
 [Mon Jan 22 20:48:34 2024] bcmgenet fd580000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
 ```
@@ -21,14 +21,14 @@ This was visible in `dmesg -T` output:
 
  - disabling wifi and bluetooth (done by setting this in /boot/config.txt):
 
-```
+```bash
 [all]
 dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
  - disable eee (Energy-Efficient Ethernet), done by adding this to /etc/rc.local:
 
-```
+```bash
 /usr/sbin/ethtool --set-eee eth0 eee off
 exit 0
 ```
