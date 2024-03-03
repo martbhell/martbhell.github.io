@@ -1,7 +1,10 @@
-Four Years of Learning and Growth at IQM
-Date: 2024-03-15
-Category: IT
-Tags: it, iqm
+---
+title: Four Years of Learning and Growth at IQM
+date: 2024-03-15
+category: it
+tags: it, iqm, career, development
+lang: en
+---
 
 It's hard to believe that it's already been four years since I first joined the team at IQM,
 completely new to the exciting world of Quantum Computing.
