@@ -12,7 +12,7 @@ Langalla verkkoyhteys kotona katkkeili usein. Yleensä ei ollut ongelmä mutta p
 
 Tämä oli näkyvissä `dmesg -T`:
 
-```
+```bash
 [Mon Jan 22 20:48:23 2024] bcmgenet fd580000.ethernet eth0: Link is Down
 [Mon Jan 22 20:48:34 2024] bcmgenet fd580000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
 ```
@@ -21,14 +21,14 @@ Tämä oli näkyvissä `dmesg -T`:
 
  - Poista wifi ja bluetooth käytöstä (lisää seuraava /boot/config.txt-tiedostoon):
 
-```
+```bash
 [all]
 dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
  - Poista eee käytöstä, muokkaa /etc/rc.local-tiedostoa:
 
-```
+```bash
 /usr/sbin/ethtool --set-eee eth0 eee off
 exit 0
 ```

@@ -6,8 +6,7 @@ tags: games, dcss, stone-soup, crawl, rogue-like
 lang: fi
 ---
 
-0.31 Turnaus!
-===
+## 0.31 Turnaus!
 
 Minun [statsit](https://crawl.develz.org/tournament/0.31/players/martbhell.html). 
 En ole suorittanut pelin monta kertaa. Se on vaikea. Luulen että alkuperäinen idea oli että joku pelasi [nethack](https://www.nethack.org/) ja se oli liian helpo.
