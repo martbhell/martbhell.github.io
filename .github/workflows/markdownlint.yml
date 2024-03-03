@@ -1,3 +1,14 @@
-- uses: DavidAnson/markdownlint-cli2-action@510b996878fc0d1a46c8a04ec86b06dbfba09de7 # v15
-  with:
-    globs: 'posts/**/*.md'
+---
+name: markdownlint
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: DavidAnson/markdownlint-cli2-action@510b996878fc0d1a46c8a04ec86b06dbfba09de7 # v15
+      with:
+        globs: |
+          README.md
+          posts/**/*.md
