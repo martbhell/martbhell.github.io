@@ -3,6 +3,8 @@ title: wtangy.se/menu - now with a menu!
 date: 2017-12-06
 category: finland, it
 tags: wtangy, se
+<!-- prettier-ignore -->
+---
 
 [https://wtangy.se/menu](https://wtangy.se/menu) has been born!
 

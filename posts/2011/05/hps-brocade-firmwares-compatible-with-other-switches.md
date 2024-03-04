@@ -3,6 +3,8 @@ title: HP's Brocade firmwares compatible with other switches?
 date: 2011-05-15
 category: it, storage
 tags: brocade, examdiff, firmware, gpl, hds, hp, ibm, san, san, switches, storage
+<!-- prettier-ignore -->
+---
 
 After a [question](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades/#comment-524 "link to question") in my [SAN switch firmware upgrade article](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades/ "upgrade brocade SAN switches") I made a comparison of two downloads of 6.3.1b (one via IBM and one from HP) - the only differences were a file called ancillary and one called EULA.pdf. I used [examdiff](http://www.prestosoft.com/edp_examdiff.asp "examdiff") to find the differences.
 

@@ -3,6 +3,8 @@ title: Android wordpress publishing app
 date: 2012-09-17
 category: it
 tags: android, blogging, wordpress
+<!-- prettier-ignore -->
+---
 
 Enabled! Wonder if there's been lots of exploits for this method of writing posts?
 

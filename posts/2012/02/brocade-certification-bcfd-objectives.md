@@ -3,6 +3,8 @@ title: Brocade Certification - BCFD - Objectives
 date: 2012-02-02
 category: storage
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
+<!-- prettier-ignore -->
+---
 
 [http://brocade.com/education/certification-accreditation/certified-fabric-designer/index.page](http://brocade.com/education/certification-accreditation/certified-fabric-designer/index.page "http://brocade.com/education/certification-accreditation/certified-fabric-designer/index.page")
 

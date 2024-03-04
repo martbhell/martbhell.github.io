@@ -3,6 +3,8 @@ title: Detroit Red Wings - Boston Bruins 13/2 2010
 date: 2011-02-14
 category: finland
 tags: boston, bruins, detroit, red, wings, icehockey, nhl
+<!-- prettier-ignore -->
+---
 
 Ah, finally. That felt good.
 

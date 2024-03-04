@@ -3,6 +3,8 @@ title: HEPIX Spring 2011 – Day 5
 date: 2011-05-10
 category: it, storage
 tags: cern, cern, vm, fs, cloud, cloudbursting, cvmfs, cvs, distribution, git, hepix, hepix, spring, 2011, http, national, grid, service, cloud, software, squid, svn, version, control, virtual, machine, vm
+<!-- prettier-ignore -->
+---
 
 What day it is can be told by all the suitcases around the room.
 

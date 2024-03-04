@@ -3,6 +3,8 @@ title: Home Network Convergence
 date: 2019-07-14
 category: it
 tags: chromecast, dnsmasq, hostapd, linux, media, server, openwrt, raspberry, pi, virtual, lan, wi, fi, wireless, access, point
+<!-- prettier-ignore -->
+---
 
 Finally got around to sorting out an issue which basically was that the TV+Chromecast near the TV was on another network than the media server and thus I couldn't stream videos by using my phone.
 

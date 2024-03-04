@@ -3,6 +3,8 @@ title: BCvRP – Brocade Certified virtual Router Professional – Objectives
 date: 2013-11-10
 category: it
 tags: bcvrp, brocade, certified, exam, objectives, open, source, virtualization
+<!-- prettier-ignore -->
+---
 
 For training these I set up networks. Many. Drawing the networks first in LibreOffice Draw and then setting them up with virtual machine templates and LAN segments.
 

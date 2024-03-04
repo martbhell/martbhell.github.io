@@ -3,6 +3,8 @@ title: How-To : Install Spotify on RHEL6 x64 native client
 date: 2011-08-25
 category: it
 tags: red, hat, red, hat, enterprise, linux, rhel, spotify, spotify, for, linux
+<!-- prettier-ignore -->
+---
 
 Hey!
 

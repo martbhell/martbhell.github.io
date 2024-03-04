@@ -3,6 +3,8 @@ title: Ranger - Linux CLI File Browser written by python
 date: 2011-10-24
 category: finland
 tags: browser, linux, ranger
+<!-- prettier-ignore -->
+---
 
 Here's a great CLI file browser for Linux. It also gives a preview of text files. It's called Ranger. Do check it out.
 

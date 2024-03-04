@@ -3,6 +3,8 @@ title: Reseptit: Tunapasta
 date: 2021-05-23
 category: finland
 tags: pasta, recipe, recipes, resepti, reseptit, tonnikala, tuna
+<!-- prettier-ignore -->
+---
 
 Ainesosat 2.5 lle:
 

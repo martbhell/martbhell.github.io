@@ -3,6 +3,8 @@ title: Ubuntu 10.10 + VMWare + Irssi
 date: 2011-02-10
 category: it
 tags: 10.10, apt, get, debian, debian6, guide, irssi, it, kernel, linux, networking, ram, swap, space, ubuntu, virtual, kernel, vm, vmware, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 How small VM can you make if you are only going to use it to run [Irssi](http://irssi.org/ "irssi.org") in a [screen](http://www.gnu.org/software/screen/ "screen")?
 

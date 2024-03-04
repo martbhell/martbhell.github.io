@@ -3,6 +3,8 @@ title: BCFP - Fibre Channel Routing - FCR - FC-FC Routing
 date: 2011-07-26
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, fc, fc, routing, fcr, fibre, channel, fibre, channel, routing, san, network, storage
+<!-- prettier-ignore -->
+---
 
 FCR; Fibre Channel Routing; FC-FC Routing; etc; etc.
 

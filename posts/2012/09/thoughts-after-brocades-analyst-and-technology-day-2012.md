@@ -3,6 +3,8 @@ title: Thoughts after Brocade's Analyst and Technology Day 2012
 date: 2012-09-13
 category: it, storage
 tags: brcdtechday, bcefe, bcefp, brocade, certifications, dcx, ethernet, fabric, nvgre, frame, striping, juniper, mercury, oem, openflow, openstack, qfabric, sdn, trunks, vcs, vdx, 8770, vxlan
+<!-- prettier-ignore -->
+---
 
 Thursday today, the day after the Day. It was a real long day, and to my surprise it said 'press' on my pass - so I had to try to ask some questions :)
 

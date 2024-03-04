@@ -3,6 +3,8 @@ title: Red Hat Certification – RHCE – Network Services – DNS
 date: 2012-05-08
 category: it
 tags: centos, certification, dns, domain, name, linux, red, hat, rhce, studying
+<!-- prettier-ignore -->
+---
 
 [1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

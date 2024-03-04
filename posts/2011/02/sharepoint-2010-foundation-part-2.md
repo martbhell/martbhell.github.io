@@ -3,6 +3,8 @@ title: Sharepoint 2010 Foundation - Part 2
 date: 2011-02-02
 category: it
 tags: it, sharepoint, vmware, workstation, windows
+<!-- prettier-ignore -->
+---
 
 ## Overview
 

@@ -3,6 +3,8 @@ title: RH413 - Red Hat Server Hardening
 date: 2016-03-18
 category: it
 tags: redhat, rh413, security, server, hardening
+<!-- prettier-ignore -->
+---
 
 I'm attending this training in a week or so. This post will be updated as I go through the sections I want to check out before the training starts.
 

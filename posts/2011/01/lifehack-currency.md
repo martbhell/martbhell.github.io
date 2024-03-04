@@ -3,6 +3,8 @@ title: Lifehack currency
 date: 2011-01-18
 category: finland, it
 tags: currency, it, lifehack, money, script
+<!-- prettier-ignore -->
+---
 
 Haven't gotten around to the e-mail script yet, what would qualify? I check it so regularly often anyway that that is not something I want, I also don't get that many e-mails.
 

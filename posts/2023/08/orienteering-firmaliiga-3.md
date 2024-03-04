@@ -4,6 +4,7 @@ date: 2023-08-24 22:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, hs, d-rata, haukkalampi, firmaliiga, d-lohko, rastianalyysi, firmaliiga2023
+<!-- prettier-ignore -->
 ---
 
 Suunnistaa

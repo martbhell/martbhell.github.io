@@ -3,6 +3,8 @@ title: Automated testing of ansible roles
 date: 2017-06-01
 category: it
 tags: ansible, ci, cvmfs, docker, molecule, testing, travis
+<!-- prettier-ignore -->
+---
 
 ## What is this?
 

@@ -3,6 +3,8 @@ title: Finnish third year students celebrations
 date: 2011-02-17
 category: finland
 tags: finland, helsinki, study
+<!-- prettier-ignore -->
+---
 
 Walked through a peaceful and frosty Helsinki today, when we stumbled on the Boulevard we were showered in candy and various songs on the theme 'we are the best'!
 

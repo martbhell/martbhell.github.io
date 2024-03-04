@@ -3,6 +3,8 @@ title: Red Hat Certification – RHCE – Network Services – e-mail
 date: 2012-06-04
 category: it
 tags: centos, certification, dovecot, file, transfer, imap, linux, postfix, red, hat, rhce, sendmail, smtp, studying
+<!-- prettier-ignore -->
+---
 
 [1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
 

@@ -3,6 +3,8 @@ title: Post Frisco
 date: 2012-09-20
 category: finland
 tags: goldengate, sanfrancisco, states, travel, usa
+<!-- prettier-ignore -->
+---
 
 Bicycling Is Fun!
 

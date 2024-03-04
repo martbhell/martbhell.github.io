@@ -3,6 +3,8 @@ title: EMC - Symmetrix and CLARiiON - 2
 date: 2011-01-15
 category: storage
 tags: emc, finland, hp, storage
+<!-- prettier-ignore -->
+---
 
 So we reserved two green old chairs. Just might need a nut and a metal plate for a bolt that's missing one then they'll do nicely!
 

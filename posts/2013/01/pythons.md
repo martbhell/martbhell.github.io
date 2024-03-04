@@ -3,6 +3,8 @@ title: Pythons
 date: 2013-01-14
 category: it
 tags: programming, python, studying
+<!-- prettier-ignore -->
+---
 
 Ever thought about studying a bit of programming? Thought it was a too daunting task?
 

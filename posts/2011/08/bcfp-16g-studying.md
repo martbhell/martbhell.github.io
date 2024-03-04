@@ -3,6 +3,8 @@ title: BCFP - 16G Studying
 date: 2011-08-22
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, certification, data, storage, san, storage, storage, network, studying
+<!-- prettier-ignore -->
+---
 
 Another studying tip!
 

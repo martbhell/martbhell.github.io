@@ -3,6 +3,8 @@ title: Goran Bregovic
 date: 2011-05-18
 category: finland
 tags: goran, bregovic, gypsy, music
+<!-- prettier-ignore -->
+---
 
 Baeutiful!
 

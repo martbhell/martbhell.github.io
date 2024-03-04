@@ -3,6 +3,8 @@ title: Music of the Day 13th June (Uncut edition)
 date: 2011-06-13
 category: finland
 tags: bob dylan, cornershop, finland, franz ferdinand, indie music, starr, the monochrome set, the smiths, uncut
+<!-- prettier-ignore -->
+---
 
 Another round of applauds please!
 

@@ -3,6 +3,8 @@ title: commando.io - manage servers
 date: 2013-11-13
 category: it
 tags: cms, commando, commando, io, configuration, management, software, servers
+<!-- prettier-ignore -->
+---
 
 [https://command.io](https://command.io "https://command.io") is up for public beta now. It is a page from where you can manage your servers online in a pretty web interface.
 

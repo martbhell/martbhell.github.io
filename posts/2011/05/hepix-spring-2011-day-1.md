@@ -3,6 +3,8 @@ title: HEPIX Spring 2011 - Day 1
 date: 2011-05-02
 category: it, storage
 tags: activemq, batch, system, cern, cisco, routers, conference, fermilab, frankfurt, gsi, hard, drive, failures, hepix, hepix, spring, 2011, hp, it, kit, lustre, nikhef, pue, super, computing, supermicro, tty, hack
+<!-- prettier-ignore -->
+---
 
 Morning. Got in last night at around 2140 local time. I should've done a little more exact research for how to find my hotel. Had to walk some 30 minutes (parts of it the wrong way) to get to it. But at least I made it to see some ice hockey.. . to bad Detroit lost.
 

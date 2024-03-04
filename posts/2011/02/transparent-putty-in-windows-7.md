@@ -3,6 +3,8 @@ title: Transparent PuTTY in Windows 7
 date: 2011-02-18
 category: it
 tags: appearance, auto, login, it, linux, putty, set, opacity, ssh, terminal, client, transparency, tray, icon, windows
+<!-- prettier-ignore -->
+---
 
 PuTTY is a terminal client, it does telnet, raw, serial, ssh, [rlogin](http://en.wikipedia.org/wiki/Rlogin "rlogin wikipedia"). I've only ever used telnet, raw, serial and ssh.
 

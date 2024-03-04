@@ -3,6 +3,8 @@ title: Job
 date: 2011-02-16
 category: finland
 tags: job
+<!-- prettier-ignore -->
+---
 
 Awaiting job confirmation then I will have more lovely things to write about!
 

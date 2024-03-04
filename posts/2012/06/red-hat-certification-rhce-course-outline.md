@@ -3,6 +3,8 @@ title: Red Hat Certification – RHCE - Course Outline
 date: 2012-06-13
 category: it
 tags: authconfig, centos, certification, encryption, firewall, gnupg, gpg, http, proxy, iptables, ipv6, ldap, linux, masquerade, nat, openssl, pam, pki, proxy, red, hat, rhce, routing, squid, ssh, keygen, sssd, studying, web, proxy
+<!-- prettier-ignore -->
+---
 
 Howdy!
 

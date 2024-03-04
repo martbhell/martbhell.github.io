@@ -3,6 +3,8 @@ title: Brocade CF Replacement Hints
 date: 2020-09-13
 category: storage
 tags: brocade, fc, fibre, channel, san, san, network
+<!-- prettier-ignore -->
+---
 
 This post is based on a submission from a reader of this blog **Eberhard**, maybe primarily of the popular [Brocade SAN upgrades](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades/) post. Many thanks for this, hoping it will help someone out there!
 

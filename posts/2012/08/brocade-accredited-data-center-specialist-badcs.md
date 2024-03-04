@@ -3,6 +3,8 @@ title: Brocade Accredited Data Center Specialist - BADCS
 date: 2012-08-15
 category: storage
 tags: bcadc, brocade, certification, certified, fc, fibre, channel, san, san, storage, storage, storage, area, network, study
+<!-- prettier-ignore -->
+---
 
 Time to study for another one :) Working my way towards the "Data Center Track". To complete it it would be enough for me to complete 5 accreditations.
 

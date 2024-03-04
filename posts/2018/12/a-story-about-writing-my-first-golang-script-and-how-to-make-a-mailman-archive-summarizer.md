@@ -3,6 +3,8 @@ title: A story about writing my first golang script and how to make a mailman ar
 date: 2018-12-07
 category: it
 tags: ceph, rss, golang, go, mailman, GCS, google, email, mailing-lists, travis
+<!-- prettier-ignore -->
+---
 
 Time to try out another programming language!  
   

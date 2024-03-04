@@ -3,6 +3,8 @@ title: RHEL 5 + Unity
 date: 2011-02-22
 category: it
 tags: depositories, fedora, linux, red, hat, rhel, unity, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 See my [previous post](https://www.guldmyr.com/red-hat-enterprise-linuxrhel-in-vmware-workstation/) for how to install it.
 

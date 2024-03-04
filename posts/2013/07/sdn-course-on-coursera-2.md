@@ -3,6 +3,8 @@ title: SDN Course on Coursera-2
 date: 2013-07-10
 category: it
 tags: coursera, sdn, software, defined, networking, studying
+<!-- prettier-ignore -->
+---
 
 Halfway now, in week3, and just finished the first programming assignment in the course [Software Defined Networking](https://www.coursera.org/course/sdn "on coursera").
 

@@ -3,6 +3,9 @@ title: Vyatta: a router/vpn/firewall in a VM
 date: 2013-08-26
 category: it, storage
 tags: bcvre, brocade, certified, exam, open, source, virtualization
+<!-- prettier-ignore -->
+<!-- prettier-ignore -->
+---
 
 Brocade has a beta exam up for [BCVRE](http://community.brocade.com/docs/DOC-3336) - Certified vRouter Engineer - which is on the Vyatta software from the company with the same name that Brocade bought last year.
 

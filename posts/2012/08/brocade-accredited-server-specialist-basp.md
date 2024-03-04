@@ -3,6 +3,8 @@ title: Brocade Accredited Server Specialist - BASP
 date: 2012-08-18
 category: it
 tags: accreditation, basp, brocade, certification, certified, fc, fibre, channel, san, san, storage, storage, storage, area, network, study
+<!-- prettier-ignore -->
+---
 
 <http://www.brocade.com/education/certification-accreditation/accredited\_server\_connectivity/curriculum.page>
 

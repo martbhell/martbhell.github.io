@@ -3,6 +3,8 @@ title: Movie Review - The Man Without a Past
 date: 2011-03-07
 category: finland
 tags: black, comedy, elokuva, movie, review
+<!-- prettier-ignore -->
+---
 
 Kotimainen Elokuva- Mies vailla menneisyyttä \[by Aki Kaurismäki\]
 

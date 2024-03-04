@@ -3,6 +3,8 @@ title: Install Scientific Linux 6 in VMWare Workstation
 date: 2011-10-02
 category: finland
 tags: certification, kvm, learning, linux, red, hat, rhcsa, rhel, scientifix, linux, sl, studying, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 Time for some more Linux testing.
 

@@ -3,6 +3,8 @@ title: Red Hat Certification – RHCE – Network Services – NTP
 date: 2012-06-08
 category: it
 tags: centos, certification, file, transfer, linux, ntp, ntpd, ntpq, red, hat, rhce, studying, synchronization, tcpdump, time, time, sync, time, synchronizatino
+<!-- prettier-ignore -->
+---
 
 [1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
 

@@ -3,6 +3,8 @@ title: Fantasy Book Review - Steven Erikson - Dust of Dreams
 date: 2011-06-27
 category: finland
 tags: book, fantasy, malaz, malazan, reading, review, steven, eriksson
+<!-- prettier-ignore -->
+---
 
 ![Dust of Dreams](images/0593046331.01.jpg "Dust of Dreams")
 

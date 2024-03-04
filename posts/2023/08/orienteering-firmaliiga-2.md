@@ -4,6 +4,7 @@ date: 2023-08-16 22:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, hs, d-rata, velskola, firmaliiga, d-lohko, lippukallio
+<!-- prettier-ignore -->
 ---
 
 Suunnistaa

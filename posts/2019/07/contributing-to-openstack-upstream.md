@@ -3,6 +3,8 @@ title: Contributing To OpenStack Upstream
 date: 2019-07-22
 category: it
 tags: backporting, gerrit, git, keystone, openstack, puppet, rdo, vancouver
+<!-- prettier-ignore -->
+---
 
 Recently I had the pleasure of **contributing** upstream to the [OpenStack](https://www.openstack.org/) project!
 

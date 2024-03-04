@@ -3,6 +3,8 @@ title: Brocade Analyst and Technology Day 2012
 date: 2012-08-24
 category: storage
 tags: brcdtechday, brocade, brocade, analyst and technology, day, 2012, san, jose, usa
+<!-- prettier-ignore -->
+---
 
 I've been invited by Brocade to their Brocade Analyst and Technology Day 2012!
 

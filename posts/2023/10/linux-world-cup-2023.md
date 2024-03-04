@@ -4,6 +4,7 @@ date: 2023-10-30 22:57
 category: it
 lang: en
 tags: linux, ctf, world cup
+<!-- prettier-ignore -->
 ---
 
 spoiler alert!

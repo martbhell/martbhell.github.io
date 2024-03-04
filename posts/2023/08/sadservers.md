@@ -4,6 +4,7 @@ date: 2023-08-13 23:44
 category: it
 lang: en
 tags: ctf, sadservers, linux, servers, sadservers.com, 
+<!-- prettier-ignore -->
 ---
 
 Have been trying these web based Linux servers challenges out for a little while. seems to be a young service. They have a Linux World Cup coming up soon. Today is the last day to [register](https://linuxworldcup.com/)!

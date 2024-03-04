@@ -3,6 +3,8 @@ title: Tiny Core Linux
 date: 2012-03-03
 category: it
 tags: linux, operating, system, testing, tiny, core, linux
+<!-- prettier-ignore -->
+---
 
 [http://distro.ibiblio.org/tinycorelinux/welcome.html](http://distro.ibiblio.org/tinycorelinux/welcome.html "http://distro.ibiblio.org/tinycorelinux/welcome.html")
 

@@ -3,6 +3,8 @@ title: PostgreSQL upgrade - compressed dumpfile
 date: 2011-06-19
 category: it
 tags: compression, database, linux, pgsql, postgres, postgresql, sql, upgrade
+<!-- prettier-ignore -->
+---
 
 Why does a PostgreSQL upgrade require an export, uninstall, install and then import of the database? That big changes in the database?
 

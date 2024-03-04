@@ -4,6 +4,7 @@ date: 2023-10-17 22:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, sääksi, rykmentti, b-rata, Nurmijärvi, kunto, rastianalyysi
+<!-- prettier-ignore -->
 ---
 
 Suunnistaa

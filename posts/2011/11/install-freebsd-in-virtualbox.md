@@ -3,6 +3,8 @@ title: Install FreeBSD in VirtualBox
 date: 2011-11-24
 category: it
 tags: bash, freebsd, install, operatingsystem, os, ports, virtualbox, virtualization
+<!-- prettier-ignore -->
+---
 
 ## The Past
 

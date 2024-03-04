@@ -3,6 +3,8 @@ title: BCFD – CFD200 – Module 5 – Data Center Design Concepts
 date: 2012-01-16
 category: storage
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
+<!-- prettier-ignore -->
+---
 
 **Objectives:** Discuss general considerations such as attachment, availability, performance and scalability. But also solutions for needs: replication, tape backup, application and databases.
 

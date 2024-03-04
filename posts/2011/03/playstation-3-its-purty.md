@@ -3,6 +3,8 @@ title: Playstation 3 - it's purty
 date: 2011-03-20
 category: finland, it
 tags: gran, turismo, playstation, playstation3, ps3, ps3mediaserver, video, games
+<!-- prettier-ignore -->
+---
 
 Got one this weekend, together with Gran Turismo 5 and Little Big Planet (or something like that), we've only played GT 5 so far but it's pretty darn amazing! It's quite hard but we do win - complete the challenges in the beginner level at least ;)
 

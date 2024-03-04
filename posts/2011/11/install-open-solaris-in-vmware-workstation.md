@@ -3,6 +3,8 @@ title: Install Open Solaris in VMWare Workstation
 date: 2011-11-22
 category: it
 tags: openindiana, opensolaris, osol, solaris, vmware, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 Trying out osol-dev-134-x86.iso in vmware workstation. You can download it from here: (genunix.org doesn't work anymore - here is another place: <http://okcosug.org/>. Update 201308 this also broke. You can now use [http://virtualboxes.org/images/opensolaris/](http://virtualboxes.org/images/opensolaris/)) Host OS: Core i7 with Windows x64.
 

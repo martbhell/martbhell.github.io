@@ -4,6 +4,7 @@ date: 2023-05-20 21:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, hs, e-rata, röylä, sorvalampi, firmaliiga, e-lohko
+<!-- prettier-ignore -->
 ---
 
 Suunnistaa

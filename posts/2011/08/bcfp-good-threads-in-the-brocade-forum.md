@@ -3,6 +3,8 @@ title: BCFP - good threads in the brocade forum
 date: 2011-08-24
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, fc, fcip, fcr, fibre, channel, forum, mybrocade, san, storage
+<!-- prettier-ignore -->
+---
 
 How to set up two FCIP tunnels between two B7500: <http://community.brocade.com/message/15261>
 

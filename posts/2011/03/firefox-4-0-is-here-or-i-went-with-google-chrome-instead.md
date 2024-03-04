@@ -3,6 +3,8 @@ title: Firefox 4.0 is here! - Or - I went with Google-Chrome instead
 date: 2011-03-22
 category: it
 tags: chrome, firefox, firefox4.0, google, google, chrome, linux, red, hat, rhel6
+<!-- prettier-ignore -->
+---
 
 Firefox download links:
 

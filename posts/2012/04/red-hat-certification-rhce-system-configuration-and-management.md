@@ -3,6 +3,8 @@ title: Red Hat Certification – RHCE – Skills Assessment
 date: 2012-04-26
 category: it
 tags: certification, linux, red, hat, rhce
+<!-- prettier-ignore -->
+---
 
 Just tried out the "[Red Hat Skills Assessment](http://www.redhat.com/training/assessment.html "redhat.com")" for RHCE.
 
