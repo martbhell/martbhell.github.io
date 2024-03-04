@@ -48,9 +48,10 @@ fine. Except that they keyboard was a bit messed up. When I pressed down it sent
 an enter. In SSH via PuTty it's working so I'll do it that way instead. If you
 have this problem, check out
 [this post](http://ubuntuforums.org/showthread.php?t=1116511 "down arrow not working ubuntu vmware")
-\- might be a VMWare bug or you may fix it with some CLI magic.
 
-sshd is not installed by default -> **sudo apt-get install openssh-server**
+- might be a VMWare bug or you may fix it with some CLI magic.
+
+sshd is not installed by default -> `sudo apt-get install openssh-server`
 
 _Also probably good to change IP in the beginning, in case you want it on a
 static IP. See my
@@ -67,16 +68,16 @@ about lifehack/currency exchange rate.
 To sync the time - so that it is up to date (mine was 30mins off) -
 
 Edit /etc/default/ntpdate Add a pool or use the default one -
-<http://www.pool.ntp.org/zone/fi> for Finnish ones. Then run **sudo
-ntpdate-debian**
+<http://www.pool.ntp.org/zone/fi> for Finnish ones. Then run
+`sudo ntpdate-debian`
 
 Do I really need to run this anymore? I'll just let it be and try to keep track
 of it :p
 
-\*\*\* Update: Just checked in on the time some 2 hours later and:
+**Update:** Just checked in on the time some 2 hours later and:
 
-4 Feb 14:43:45 ntpdate\[2494\]: step time server 194.100.2.198 offset 910.266238
-sec
+> 4 Feb 14:43:45 ntpdate[2494]: step time server 194.100.2.198 offset 910.266238
+> sec
 
 So we need to have this executed every now and then, especially if it's off
 15minutes in just a couple of hours!!
@@ -86,7 +87,10 @@ Also found post on
 which clearly says that ntpd is awesome for fixing this. Especially in my case
 where the clock appears to be going slowly.
 
-sudo apt-get install ntp sudo pico /etc/ntp.conf
+```bash
+sudo apt-get install ntp
+sudo pico /etc/ntp.conf
+```
 
 add your NTP-servers in there, I added those from the link above on ntp.org
 
@@ -95,14 +99,15 @@ running or not
 
 I'll check back tomorrow to see if this improved things ;)
 
-\*\*\* 0847 unfortunately time is by now almost an hour off (0757).
+**0847 unfortunately** time is by now almost an hour off (0757).
 
-martbhell@ubuntu:/var/www$ sudo /etc/init.d/ntp status \* NTP server is running
-
+```bash
+martbhell@ubuntu:/var/www$ sudo /etc/init.d/ntp status # NTP server is running
 martbhell@ubuntu:/var/log$ ntpq --peers remote           refid      st t when
 poll reach   delay   offset  jitter
 ==============================================================================
 europium.canoni 193.79.237.14    2 u   12   64  377   44.012  2995645 13778.9
+```
 
 but supposedly this only runs once a day?
 
@@ -110,41 +115,45 @@ there is a program called ntp under /etc/cron.daily/
 
 i'll wait until today afternoon
 
-\*\* 2045  - it is now over an hour late.. \*\* rebooted, now time is 2215.. 23
-minutes too much! \*\* rebooted again, now time is good, 2054. :s
+**2045**  - it is now over an hour late..
 
-\*\* a day later (maybe more)- and now it's 3 hours behind.
+**rebooted**, now time is 2215.. 23 minutes too much! \*\* rebooted again, now
+time is good, 2054. :s
 
-[supposedly](http://serverfault.com/questions/220836/why-is-ntpd-not-updating-the-time-on-my-server "why ntpd doesn't update")
+**a day later** (maybe more)- and now it's 3 hours behind.
+
+[supposedly](http://serverfault.com/questions/220836/why-is-ntpd-not-updating-the-time-on-my-server)
 ntpd will catch the drift after a while.
 
 stopped VM and made a copy of hostname.vmx
 
 then edited this with pspad and and changed
 
-tools.syncTime = "FALSE"
+`tools.syncTime = "FALSE"`
 
 to
 
-tools.syncTime = "TRUE"
+`tools.syncTime = "TRUE"`
 
 now time is good (Tue Feb  8 15:12:34 EET 2011), is that because of the reboot?
 Probably. That's how it looks in syslog anyway.
 
 Checking back in a day or two.
 
-\*\*\* Wed Feb  9 06:45:09 EET 2011 - now 45minutes late.
+**Wed Feb  9 06:45:09 EET 2011** - now 45minutes late.
 
-\*\*\* Set up a script that monitors the offset. Looks like this:
+**Set up** a script that monitors the offset. Looks like this:
 
+```text
 offset = 3287.419925,;Tue Feb 15 04:30:01 EET 2011; offset = 3634.005591,;Tue
 Feb 15 06:30:01 EET 2011; offset = 3980.517817,;Tue Feb 15 08:30:01 EET 2011;
+```
 
 347,346,374
 
 From /etc/ntp.conf I found that the drift file is this:
 
-/var/lib/ntp/ntp.drift
+`/var/lib/ntp/ntp.drift`
 
 it contains this value: 0.000
 
@@ -152,9 +161,10 @@ Manually changing this to -346.500
 
 Also changed the default values to this in /etc/ntp.conf
 
+```text
 restrict -4 default kod notrap nomodify restrict -6 default kod notrap nomodify
-
 # restrict 127.0.0.1 #restrict ::1
+```
 
 and rebooting the server, again.
 
@@ -162,15 +172,15 @@ bbl.
 
 ok, this is bs.
 
-sudo apt-get remove ntp
+`sudo apt-get remove ntp`
 
 then running this:
 
-sudo ntpdate 0.fi.pool.ntp.org
+`sudo ntpdate 0.fi.pool.ntp.org`
 
 confirmed it updates time
 
-44 \* \* \* \* /usr/sbin/ntpdate 0.fi.pool.ntp.org >> /home/user/tid/tid.log
+`44 * * * * /usr/sbin/ntpdate 0.fi.pool.ntp.org >> /home/user/tid/tid.log`
 
 bbl
 
@@ -179,21 +189,21 @@ that tid.log file instead :)
 
 don't forget to add that to the root user crontab, with 'sudo crontab -e'
 
-\*\*\* a week later
+**a week** later
 
 ok that was an ugly fix and I do not condone doing that, that was me being a
 little frustrated :)
 
 See
-[https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/](https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/ "ntpd sync")
+[this_other_post](https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/ "ntpd sync")
 for how it worked out..
 
 ## lamp
 
 [Download 1.x](http://ubuntuforums.org/showthread.php?t=1116511 "eyeos1 download")
 
-install LAMP -> **sudo apt-get install lamp-server^** The ^ needs to be there!
-All you need to do is to insert a mysql root password.
+install LAMP -> `sudo apt-get install lamp-server^` The ^ needs to be there! All
+you need to do is to insert a mysql root password.
 
 After this you can surf into `http://localhost` or `http://ip` of the VM.
 
@@ -209,9 +219,9 @@ already -> you are now connected to the mysql you created before! Woop!
 ## EyeOS Install
 
 cd - this gets you to your homedir mkdir eyeos cd eyeos wget $URL of eyeOS
-install unzip -> sudo apt-get install unzip unzip $FILENAME put this in your web
-dir. by default this is /var/www by default you do not have permission to put
-files there, so use sudo to put the eyeOS folder in there.
+install unzip -> `sudo apt-get install unzip` and `unzip $FILENAME` put this in
+your web dir. by default this is /var/www by default you do not have permission
+to put files there, so use sudo to put the eyeOS folder in there.
 
 sudo mv eyeOS /var/www after this the user you have logged on with have
 ownership inside /var/www/eyeOS - means you don't have to write sudo all the
@@ -223,9 +233,11 @@ will tell you that you need to chmod 777 some files, do that.
 Then it will tell you to install these packages: SQLite and IMAP if you want
 mail client.
 
-sudo apt-get install php5-sqlite (restart apache with 'sudo apachectl restart'
+`sudo apt-get install php5-sqlite` (restart apache with `sudo apachectl restart`
 and hit F5 on the installation page to see that the installation script now
-finds it) sudo apt-get install php5-imap (free-styled that, worked out well ;)
+finds it)
+
+`sudo apt-get install php5-imap` (free-styled that, worked out well ;)
 
 put in a password and then hit install
 
