@@ -88,7 +88,7 @@ the end there are some 'Out of memory' things going on.
 So there we go. 128MB is too little.
 
 But
-[here](https://help.ubuntu.com/community/Installation/SystemRequirements#Ubuntu%20Server%20%28CLI%29%20Installation "ubuntu install reqs"): 
+[here](https://help.ubuntu.com/community/Installation/SystemRequirements#Ubuntu%20Server%20%28CLI%29%20Installation "ubuntu install reqs"):
 it says that 128MB is the requirement..
 
 ### Test 4
@@ -111,13 +111,15 @@ Now, approximately lots of hours later. It is at configure grub.
 
 And yay, it finally boots!
 
+```text
 user@irssi:~$ df -h Filesystem            Size  Used Avail Use% Mounted on
 /dev/sda1             1.1G  430M  606M  42% / none                   54M  164K  
 54M   1% /dev none                   57M  4.0K   57M   1% /dev/shm
-none                   57M   36K   57M   1% /var/run none                  
+none                   57M   36K   57M   1% /var/run none 
 57M     0   57M   0% /var/lock none                  1.1G  430M  606M  42%
 /var/lib/ureadahead/debugfs /home/martbhell/.Private 1.1G  430M  606M  42%
 /home/martbhell
+```
 
 And the size of the folder in Windows: 750 MB (787 341 312 bytes)
 

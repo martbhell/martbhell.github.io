@@ -18,8 +18,10 @@ with nginx (without using the experimental nginx plugin of letsencrypt).
 
 on the webhost (not as root):
 
-git clone <https://github.com/letsencrypt/letsencrypt> letsencrypt-auto
-#eventually this generates some certificates into /etc/letsencrypt #of course
+`git clone <https://github.com/letsencrypt/letsencrypt> letsencrypt-auto`
+
+**eventually** this generates some certificates into /etc/letsencrypt _of course_
+
 you should read scripts before running anything, there are for
 example [acme-tiny](https://github.com/diafygi/acme-tiny),
 [gethttpsforfree.com](https://gethttpsforfree.com/) and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that

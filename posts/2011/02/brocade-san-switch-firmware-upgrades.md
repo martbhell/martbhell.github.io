@@ -380,9 +380,11 @@ switches that aren't in production.
 Please note. Most of these no longer works. But maybe just having the filenames
 help?
 
-**FOS 
-[7.x](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855)[IBM_Link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "IBM/Brocade FOS release notes")&
-[8.x IBM Link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577)**
+### FOS
+
+- [7.x](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855)
+- [IBM_Link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "IBM/Brocade FOS release notes")
+- [8.x IBM Link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577)
 
 Brocade release notes in .pdf:
 
