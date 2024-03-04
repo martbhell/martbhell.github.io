@@ -19,14 +19,15 @@ Tämä oli näkyvissä `dmesg -T`:
 
 ## Yritetään
 
- - Poista wifi ja bluetooth käytöstä (lisää seuraava /boot/config.txt-tiedostoon):
+- Poista wifi ja bluetooth käytöstä (lisää seuraava /boot/config.txt-tiedostoon):
 
 ```bash
 [all]
 dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
- - Poista eee käytöstä, muokkaa /etc/rc.local-tiedostoa:
+
+- Poista eee käytöstä, muokkaa /etc/rc.local-tiedostoa:
 
 ```bash
 /usr/sbin/ethtool --set-eee eth0 eee off
@@ -37,4 +38,4 @@ exit 0
 
 _Muut keinot auttoivat myös, mutta lopulta ongelma ratkesi seuraavasti:_
 
- - Varimsta, että kaapeli on hyvin kiinnitetty kytkimeen; omassa kaapelissani muovien lukitusklipsi oli ilmeisesti rikki, ja kaapeli pääsi liukumaan ulos portista!
+- Varimsta, että kaapeli on hyvin kiinnitetty kytkimeen; omassa kaapelissani muovien lukitusklipsi oli ilmeisesti rikki, ja kaapeli pääsi liukumaan ulos portista!

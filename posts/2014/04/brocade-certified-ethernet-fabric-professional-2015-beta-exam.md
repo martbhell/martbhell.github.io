@@ -12,8 +12,6 @@ The course materials, including references to various resources such as the NOS 
 
 The Advanced Ethernet Fabric Troubleshooting (VDX-TS 300-WBT) has the pdf's on the link above, but it's also currently free on brocade's saba education page.
 
- 
-
 ## Objectives for 2013 exam
 
 [Objectives](http://www.brocade.com/education/certification-accreditation/certified-ethernet-fabric-professional/index.page "on brocade.com") for the exam (2013 version, so might be different for 2015) are:
@@ -53,11 +51,7 @@ The Advanced Ethernet Fabric Troubleshooting (VDX-TS 300-WBT) has the pdf's on 
 - Demonstrate knowledge how to troubleshoot native FCoE and VCS to FC SAN bridging
 - Demonstrate knowledge how to troubleshoot VCS to an IP network
 
- 
-
- 
-
-## Page numbers for 2015 beta exam below:
+## Page numbers for 2015 beta exam below
 
 **Network OS Administrator’s Guide v4.1.1 _53-1003225-01_**
 
@@ -67,25 +61,17 @@ Pages 11-20,26-31,54-56,75-77,94,115,119,135-144,149,150,191,201-203,210,243-247
 
 603-609,661-663,668,676,682,686,714,715
 
- 
-
 **Network OS Command Reference v4.1.1** **_53-1003226-01_**
 
 Pages 299, 1258-1260,1266,1297,1317,1318
-
- 
 
 **Network OS v4.1.1 Brocade VDX Release Notes**
 
 Pages 4,10,28,50
 
- 
-
 **Network OS Software Licensing Guide v4.1 _53-1003164-01_**
 
 Pages 11-13
-
- 
 
 **VDX 6740 Hardware Reference Manual _53-1002829-02_**
 
@@ -93,19 +79,13 @@ Page 1 **VDX 8770-4 Hardware Reference Manual _53-1002563-03_**
 
 Chapter 1, Page 1; Chapter 3, Page 32
 
- 
-
 ****VDX 8770-8 Hardware Reference Manual** _53-1002564-03_**
 
 Chapter 1, Page 1 **VDX 6730 Hardware Reference Manual _53-1002389-06_**
 
 Pages 1,2,15
 
- 
-
 **Brocade VDX 8770 Switch Data Sheet _GA-DS-1701-04_**
-
- 
 
 **CFP2 Hardware Specification _Draft Revision 0.3_**
 

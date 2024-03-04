@@ -14,12 +14,12 @@ Murskata:
 - korianteri
 - sipuli
 
-Lisätä: 
+Lisätä:
 
 - tahini
 - öljy
 - cumin, salt ja cayenne
-- grayham jauho 
+- grayham jauho
 
 salsa
 

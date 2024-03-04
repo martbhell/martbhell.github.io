@@ -9,16 +9,16 @@ Current layout:
 ![Before](images/home-net-current-20190504-1.jpg)
 
 - The corner:
-    - Cable MODEM NAT&WiFi ISP A
-    - One server
-    - One desktop who should be on both networks, default gw on one
-    - Phones and tablets wifi
+  - Cable MODEM NAT&WiFi ISP A
+  - One server
+  - One desktop who should be on both networks, default gw on one
+  - Phones and tablets wifi
 - TV Area:
-    - DSL Modem NAT&WiFi ISP B
-    - One raspberry pi connected to the server
-    - Phones and tablets wifi
-    - One chromecast, would be nice to have connected to the server too
-    - One ps3
+  - DSL Modem NAT&WiFi ISP B
+  - One raspberry pi connected to the server
+  - Phones and tablets wifi
+  - One chromecast, would be nice to have connected to the server too
+  - One ps3
 - 20m, a microwave, and walls in between the two areas (and most importantly the server and the raspberry pi) so wifi is spotty.
 
 Most import factor: **One long ass 30m UTP cable connecting the raspberry pi to the same network as the server**

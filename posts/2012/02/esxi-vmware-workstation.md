@@ -6,7 +6,7 @@ tags: esx, esxi, openindiana, vmware, vmware, workstation
 
 ### Before
 
-Register and download ESXi here https://www.vmware.com/tryvmware/
+Register and download ESXi here <https://www.vmware.com/tryvmware/>
 
 Free license can be found there as well.
 
@@ -14,7 +14,7 @@ Get ESXi and the vSphere Client.
 
 Get an OS to install in a VM (I chose openindiana).
 
-### Install ESXi in VMWare Workstation 8.
+### Install ESXi in VMWare Workstation 8
 
 40G disk, 4GB RAM, 2 cores, enable Virtualization.
 
@@ -30,7 +30,7 @@ In the console, enable ssh and stuff. Then you can scp and ssh to the esxi host.
 
 you can also browse to the datastore via http!
 
-### Install OpenIndiana in a VMWare Workstation VM running ESXi.
+### Install OpenIndiana in a VMWare Workstation VM running ESXi
 
 Connect to the ESXi server in VMWare Workstation (connect to server, put in the IP of the ESXi VM, the IP is in the console).
 

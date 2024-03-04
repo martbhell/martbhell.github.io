@@ -14,15 +14,13 @@ It's easy to set up a network with many switches, routers and hosts. You can spe
 
 You could deploy a setup similar to what you've tested inmininet, with real products. [OpenFlow](http://en.wikipedia.org/wiki/OpenFlow "on wikipedia") is used in both mininet and in the real products :)
 
-## Install the mininet VM and test it!
+## Install the mininet VM and test it
 
 There are [many ways](https://github.com/mininet/mininet/blob/master/INSTALL "INSTALL on the github") to install mininet. They provide a VM that you can boot or you can install it in your OS, but it requires root access.
 
 They got a [walkthrough](http://mininet.org/walkthrough/) that is quite a nice intro to how to set things up mininet.
 
 A note when using the VM image: If you're already running Linux, for example I run Ubuntu on my machine all I had to do was to "ssh -X mininet@ip-to-vm" to be able to run wireshark in the vm. That's a capital X.
-
- 
 
 ## SDN -  software defined networking
 

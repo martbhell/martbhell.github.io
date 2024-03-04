@@ -8,8 +8,6 @@ On the 28th I purchased it around 1900. Today on the 30th at 0820 it arrived in 
 
 \*\*\* Update: It's now on the way to my work! Got it around 12 or so. Less than 48 hours to get the Kindle (and it came from Reno, NV, US!).
 
- 
-
 ### Purchase
 
 I got it from the American amazon.com - where it cost 140$ - totally it came to 240$ (got a black cover without light, shipping and VAT charge as well). Cheapest? Maybe not, but the dollar is pretty weak at the moment.

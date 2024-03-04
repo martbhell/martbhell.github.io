@@ -20,11 +20,9 @@ Some notes about the contents:
 - Some translations are not awesome or the first word that shows up is the archaic meaning. So for those you'd want to click the edit card and change the meaning to something modern.
 - Some erisnimi words are just fairly useless unless you want to learn a city /person name, like NATO, Salo, Joensuu, Jorma or Jukka. They might have a different meaning besides the city name but they're rarely/never used for that meaning.
 
- 
-
 Making changes to the template:
 
-On each card there is this "info" and sometimes hints. I found myself wanting to change the URL to wiktionary on the cards because google chrome didn't redirect wiktionary.org to en.wiktionary org but to www.m.wiktionary.org which doesn't exist. It's quite easy to change this, because that part is done with a template and is not added in each card. To change:
+On each card there is this "info" and sometimes hints. I found myself wanting to change the URL to wiktionary on the cards because google chrome didn't redirect wiktionary.org to en.wiktionary org but to <www.m.wiktionary.org> which doesn't exist. It's quite easy to change this, because that part is done with a template and is not added in each card. To change:
 
 - synch your decks
 - install anki on your compute

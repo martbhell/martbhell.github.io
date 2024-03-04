@@ -10,8 +10,6 @@ The free material does not go through the virtual fabrics and the [exam objectiv
 
  [FAQ on Virtual Fabrics](http://www.brocade.com/downloads/documents/faqs/FOS6%202_Virtual%20Fabrics%20FAQ%201-9-2009%20Final.pdf "faq")
 
- 
-
 There is also quite a lot of information about VF in the FOS Administration Guide. You can find this guide in lots of places but it is in the exam objectives in the link above.
 
 ## The theory
@@ -31,8 +29,6 @@ DCX uses 10-bit addressing. Uses part of the last part of the ALPA part of the P
 ## Hardware
 
 For 8G products it's available on the DCX, B5100 and the B5300. For 16G it's available on 6510, VA-40FC FC10-6, FS8-18, FCOE10-24 ports can only be part of the default switch.
-
- 
 
 ## (X)ISL -- interconnecting switches
 

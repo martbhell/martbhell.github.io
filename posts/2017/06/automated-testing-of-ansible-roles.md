@@ -51,7 +51,7 @@ Do you want to run it in noop mode ( --check ) before or after the role has fi
 
 Login with your github account on travis.org (or travis.com if it's a private repo) ( and connect your github organization ).
 
-Enable the repository, for example https://travis-ci.org/CSCfi/ansible-role-dhcp\_server
+Enable the repository, for example <https://travis-ci.org/CSCfi/ansible-role-dhcp\_server>
 
 Add some files to your repo. I usually copy .travis.yml and tests/ directory from an existing repository like [ansible-role-cvmfs](https://github.com/CSCfi/ansible-role-cvmfs) .
 

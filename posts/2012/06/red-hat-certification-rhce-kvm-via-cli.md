@@ -65,7 +65,7 @@ Pointing the VM to kvm-server where a httpd is running (remember firewall rules)
 
 OK, we could use virt-manager, it's quite straight-forward and doesn't require any edits of config files at all.
 
-## Moving on to **virsh**.
+## Moving on to **virsh**
 
 To install a vm you use 'virt-install'.
 

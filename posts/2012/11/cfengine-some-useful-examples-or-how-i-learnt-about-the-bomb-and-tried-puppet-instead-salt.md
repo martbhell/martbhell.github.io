@@ -16,7 +16,7 @@ In this post you'll first see two attempts at getting cfengine and then puppet t
 
 Set up name resolution to be identical on all machines.
 
-http://blog.normation.com/2011/03/21/why-we-use-cfengine-file-editing/
+<http://blog.normation.com/2011/03/21/why-we-use-cfengine-file-editing/>
 
 Thought about
 
@@ -28,9 +28,9 @@ Cfengine feels archaic. Think editing named/bind configs are complicated? They a
 
 # Puppet ->
 
-http://puppetlabs.com/
+<http://puppetlabs.com/>
 
-http://www.how2centos.com/centos-6-puppet-install/
+<http://www.how2centos.com/centos-6-puppet-install/>
 
 vi /etc/yum.repos.d/puppet.repo
 pdcp -w oss1,client1 /etc/yum.repos.d/puppet.repo /etc/yum.repos.d/puppet.repo
@@ -38,7 +38,7 @@ pdcp -w oss1,client1 /etc/yum.repos.d/puppet.repo /etc/yum.repos.d/puppet.repo
 Sign certificates:
 
 puppet cert list
-puppet cert sign 
+puppet cert sign
 sudo puppet cert sign --all
 
 For puppet there's a dashboard. This sounds interesting. Perhaps I won't have to write these .pp files which at a glancelooks scarily similar to the cfengine promises.
@@ -77,20 +77,20 @@ On to [states](http://docs.saltstack.org/en/latest/topics/tutorials/states_pt1.h
 2. create /srv/salt and ln -s /etc/resolv.conf /srv/salt/resolv.conf
 3. create a /srv/salt/top.sls and a /srv/salt/resolver.sls
 
- 
-
 In top.sls put:
 
 base:
  '\*':
-   - resolver
+
+- resolver
 
 In resolver.sls put:
 
 /etc/resolv.conf:
  file:
-  - managed
-  - source: salt://resolv.conf
+
+- managed
+- source: salt://resolv.conf
 
 Then run: salt '\*' salt.highstate
 

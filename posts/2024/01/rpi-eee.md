@@ -19,14 +19,15 @@ This was visible in `dmesg -T` output:
 
 ## What was tried
 
- - disabling wifi and bluetooth (done by setting this in /boot/config.txt):
+- disabling wifi and bluetooth (done by setting this in /boot/config.txt):
 
 ```bash
 [all]
 dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
- - disable eee (Energy-Efficient Ethernet), done by adding this to /etc/rc.local:
+
+- disable eee (Energy-Efficient Ethernet), done by adding this to /etc/rc.local:
 
 ```bash
 /usr/sbin/ethtool --set-eee eth0 eee off
@@ -35,4 +36,4 @@ exit 0
 
 ## What really really helped
 
- - making sure the cable is properly connected into the switch, the plastic flap that keeps it in is apparently broken
+- making sure the cable is properly connected into the switch, the plastic flap that keeps it in is apparently broken

@@ -29,7 +29,7 @@ iptables -L to view the firewall setup, note that there is a 'virbr0' interface 
 
 To see what is happening, ssh in with 'ssh -v ip'. In my case I saw
 
->  debug1: An invalid name was supplied Cannot determine real for numeric host address
+> debug1: An invalid name was supplied Cannot determine real for numeric host address
 
 A little googling showed me that this is because your machine doesn't have a name lookup for that IP. So go ahead and add one in /etc/hosts and then it will be fast.
 
@@ -42,7 +42,7 @@ Host \*
 
 Make sure there is at least a space on the second line. I have three :p You can change the \* to a specific domain if you do not want to do this on all your boxes. If the file doesn't exist, create it.
 
-## Run sshd on a second port.
+## Run sshd on a second port
 
 1. Edit /etc/ssh/sshd\_config
 2. Add a line saying: Port 6666

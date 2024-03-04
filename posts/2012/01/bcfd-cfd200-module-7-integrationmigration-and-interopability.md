@@ -68,8 +68,6 @@ Use two routers for redundancy. LSAN zoning used to connect hosts between fabric
 
 migrate one device at a time, after it's migrated confirm connectivity with 'nsshow, fcrproxydevshow, fcrphydevshow'. Record and track FID, PID and WWN. lsanshow -s.
 
- 
-
 # Interopability between B- and M-series SAN
 
 M- to B-Series migration: for non-disruptive migration redundant fabrics are required. New FOS fabric should also be redundant. Postmigration you will have two SANs of identical topology. Using routers and the 'dual fabrics'.
@@ -85,8 +83,6 @@ In the FOS 7.x admin guide it says **that the only way to mix FOS and M-EOS is v
 FOS 7.x a switch has to be in interopmode 0.
 
 When you do routing between a B- and M-series the FD DID needs to be in the range of the M-EOS fabric (DID offset).
-
- 
 
 # Considerations when migration from 4G to 8G
 
@@ -114,8 +110,6 @@ Is there a single director that can accomodate all the ports? Replace existing h
 
 you have to switches that are connected, you are running out of ports. put a DCX in the middle
 
- 
-
 # Interopability modes
 
 Interop 0: Brocade Native. Interop 2: McData - M-EOS 9.6.2+ in **Fabric Mode** Interop 3: McData - M-EOS 9.6.2+ in **Open Fabric Mode**
@@ -130,8 +124,6 @@ Worry about:
 - upgrade/downgrade
 - zone management
 - moving from B- to M-series.
-
- 
 
 Basically you're not missing anything vital in interopmode, only special features. In IM3: FICON, TI Zones, Frame Redirection and SCC policies. Both miss out on: DCC policies, broadcast zoning, APM - top talkers, QoS, IRL, Alias Server, "Domain Offset"
 

@@ -10,8 +10,6 @@ It will look like this:
 
 [![example rrd graph](images/movers-300x96.png "movers")](images/movers.png)
 
- 
-
 ## 1\. Create the rrd database
 
 I wrote this down in a .sh file so I can go back later and see how it was set up.
@@ -23,10 +21,10 @@ rrdtool='/usr/bin/rrdtool'
 $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460
 ```
 
-- #5 minute step (base interval with which data will be fed into the RRD) 
-- #10 minute heartbeat for the data source #2 days of 5 minute averages 
-- #2 weeks of 1/2 hour averages 
-- #2 months of 2 hour averages 
+- #5 minute step (base interval with which data will be fed into the RRD)
+- #10 minute heartbeat for the data source #2 days of 5 minute averages
+- #2 weeks of 1/2 hour averages
+- #2 months of 2 hour averages
 - #2 years of 12 hour averages  
 
 ## 2 Add data to the rrd
@@ -108,7 +106,6 @@ $rrdtool graph $lastday --end now --start -1d \\
 ```
 \*/5 \* \* \* \* /bin/bash /home/$user/rrd/rrd.update.sh > /dev/null 2>&1 #every 5 minutes \*/15 \* \* \* \* /bin/bash /home/$user/rrd/rrd.graph.sh > /dev/null 2>&1 #every 15 minutes
 ```
-
 
 ## 5\. Final Words
 

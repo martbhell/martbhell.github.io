@@ -8,10 +8,10 @@ Hello and welcome to my blog :)
 
 # New Stuff From 2023
 
- - [All Content Feed](https://guldmyr.com/atom.xml)
- - [IT](https://guldmyr.com/it.atom.xml)
- - [Finland](https://guldmyr.com/finland.atom.xml)
- - [Storage](https://guldmyr.com/storage.atom.xml)
+- [All Content Feed](https://guldmyr.com/atom.xml)
+- [IT](https://guldmyr.com/it.atom.xml)
+- [Finland](https://guldmyr.com/finland.atom.xml)
+- [Storage](https://guldmyr.com/storage.atom.xml)
 
 These days I use inoreader.
 

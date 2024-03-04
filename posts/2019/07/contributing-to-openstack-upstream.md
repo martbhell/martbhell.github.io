@@ -28,7 +28,7 @@ Now **the change itself** was about "oslo\_middleware/max\_request\_body\_size" 
 
 Anyway, the mapping we have now is simplified just a long \[ list \] of "local\_username": "federation\_email", domain: "default". I think next step might be to try to figure out if maybe we can make the rules using something like below instead of hardcoding the values into the rules  
 
-"name": "{0}" 
+"name": "{0}"
 
 It's been quite hard to find examples that are exactly like our use-case (and playing about with is not a priority right now, just something in the backlog, but could be interesting to look at when we start accepting more federations).
 

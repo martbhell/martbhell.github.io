@@ -20,8 +20,6 @@ GSI here in Darmstadt (which is where some of the heaviest elements have been di
 
 Other reports: [Fermilab](http://fnal.gov "fermilab") (loots of storage, their Enstore has for example 26PB of data on tape), KIT, Nikhef (moved to ManageEngine for patch and OS deployment, and Brocade for IP routers), CERN (lots of hard drives had to be replaced.. around 7000.. what vendor? HP, Dell, SM?), DESY (replaced Cisco routers with Juniper for better performance, RAL (problem with LSI controllers, replaced with adaptec), SLAC (FUDForum for communication).
 
- 
-
 Rest of the day was about:
 
 ### Messaging

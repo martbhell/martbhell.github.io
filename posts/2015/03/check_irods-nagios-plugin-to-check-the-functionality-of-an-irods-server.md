@@ -6,7 +6,7 @@ tags: irods, monitoring, nagios
 
 Part of my $dayjob as a sysadmin is to monitor all things.
 
-Today I felt like checking if the users on our servers could use the local iRODS storage and thus check\_irods was born!
+Today I felt like checking if the users on our servers could use the local iRODS storage and thus `check_irods` was born!
 
 It checks if it can:
 
@@ -22,4 +22,4 @@ Dependencies:
 -  iRODS 3.2 with OS trusted authentication
 - mktemp
 
-Source: https://github.com/martbhell/nagios-checks/tree/master/plugins/check\_irods
+Source: <https://github.com/martbhell/nagios-checks/tree/master/plugins/check_irods>

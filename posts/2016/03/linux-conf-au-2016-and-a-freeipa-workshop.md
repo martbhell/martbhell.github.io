@@ -12,8 +12,6 @@ During linux.conf.au.2016 there was a [workshop](https://linux.conf.au/schedule
 
 There is a video to accompany it: [https://www.youtube.com/watch?v=VLhNcirKFDs](https://www.youtube.com/watch?v=VLhNcirKFDs)
 
- 
-
 ## Notes
 
 - Bonus feature: get acquainted with vagrant too!

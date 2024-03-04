@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - [ssh](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
 - ntp
 
-## SSH:
+## SSH
 
 To test from windows you can use putty.
 
@@ -60,8 +60,6 @@ man 5 sshd\_config and [this blogpost](http://www.aboutlinux.info/2005/10/using-
 - port 22 (TCP)
 
 - tcp.wrapper
-
- 
 
 ### TCP Wrapper
 

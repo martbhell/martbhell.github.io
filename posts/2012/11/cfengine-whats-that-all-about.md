@@ -31,8 +31,6 @@ A small example how to write a promise.
 - "cf-promise -f " can be used to test that a promise is valid (syntax and more is OK)
 - "cf-agent -f" run the promise, so if we use the example in the link above it echoes a Hello World.
 
- 
-
 ### Client/Server
 
 Client pulls policies from the server.
@@ -60,11 +58,11 @@ bundle agent test
 
 Then in /var/cfengine/masterfiles/promises.cf you can't follow the guide verbatim, the promises.cf needs to look like this (really important to have ", " as a separator between the bundles, notice the space after the ",".
 
-   body common control 
+   body common control
      {
      bundlesequence => { "main", "test" };
-             inputs => { 
-                       "cfengine\_stdlib.cf", 
+             inputs => {
+                       "cfengine\_stdlib.cf",
                        "cftest1.cf",
                        };
             version => "Community Promises.cf 1.0.0";
@@ -80,7 +78,7 @@ In /var/cfengine/promise\_summary.log you'll see if it couldn't keep a promise a
 
 And to get oss1 the same file. Just run the good old "/var/cfengine/bin/cf-agent --bootstrap --policy-server 192.168.0.2" on it and eventually that file /tmp will pop up in there too. Nice!
 
-### Some useful stuff.
+### Some useful stuff
 
 I'll probably try out some more useful things in the near future.
 

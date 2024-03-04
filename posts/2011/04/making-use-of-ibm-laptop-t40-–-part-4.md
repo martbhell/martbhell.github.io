@@ -8,7 +8,7 @@ Logging in!
 
 Wireless worked straight from the start. It says that my battery probably is broken (only 28% capacity). Some 2.6~GB is used by the default installation out of my 40GB disk. 1.6GB for swap.
 
-### Step 1 - set up Synergy.
+### Step 1 - set up Synergy
 
 This is so I don't have to use the laptop keyboard/mouse but instead can just move the mouse from my desktop and I can then control the laptop. It is pretty awesome. To do this, go to the Applications/ubuntu software center and search for synergy. Then install QuickSynergy. I had to click on "use this source" first.
 
@@ -24,7 +24,7 @@ Anyway, follow that guide. But you do not have to have the while thing when putt
 sleep 1
 /usr/bin/synergyc --name identifywithname IP.IP.IP.IP
 
-### Step 2 - Install Updates.
+### Step 2 - Install Updates
 
 This popped up automagically. 302MB of extra updates does it want to install. I just went with the default, always good to have updates :) The root password is the same as your normal password, unless you've done something special. During the updates the cursor when I was using synergy was lagging behind. But that's because I'm using a poor wirless connection (maxes out at 580kB/s) and the update probably uses all it can get. The normal mouse works fine :)
 
@@ -46,8 +46,6 @@ The syntax to test the hard drive cache:
 
 `/dev/sda: Timing cached reads:   688 MB in  2.00 seconds = 343.59 MB/sec martbhell@bottle:~$ sudo hdparm -tT /dev/sda`
 
- 
-
 `/dev/sda: Timing cached reads:   774 MB in  2.00 seconds = 386.65 MB/sec Timing buffered disk reads:  102 MB in  3.00 seconds =  33.95 MB/sec`
 
 So that looks good. I feel better now :)
@@ -62,7 +60,7 @@ All you have to do is go use firefox and find google chrome page. Download the .
 
 find dwm in ubuntu software center, also installing dzen2 with the add-on "i3status". When you install dwm you also get suckless-tools - which include dmenu and more.
 
-#### To start it:
+#### To start it
 
 - get to the login screen
 - select user
@@ -72,7 +70,7 @@ find dwm in ubuntu software center, also installing dzen2 with the add-on "i3sta
 - set that up, and then you can use synergy in there as well
 - to log out: ALT+SHIFT+Q
 
-#### To change stuff:
+#### To change stuff
 
 To change stuff in DWM you need to re-compile the package. Because I found dwm in ubuntu software center I was inclined to use that. But maybe the best option would be to do it manually..
 

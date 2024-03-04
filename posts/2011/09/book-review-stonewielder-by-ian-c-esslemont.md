@@ -24,6 +24,4 @@ I almost like this book more than the Steven Erikson books, but that I think is 
 
 After this one I decided to give Erikson's Crack Pot Trail a go, but this is one weird book. There is a narrator who is **very** present. At least in the beginning. This is one odd duck, but I suppose after so many books in normal 'Malazan' style this ought to be refreshing.
 
- 
-
 ![cover](images/51ias60SrKL._SL500_AA300_.jpg "cover")

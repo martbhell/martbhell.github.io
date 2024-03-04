@@ -22,4 +22,4 @@ Test -x (file exists and execute permission is granted) Second one runs it (but 
 
 Please note that the cron-apt also runs "apt-get dist-upgrade" which would upgrade your distribution. So be careful. It also runs autoclean :)
 
-If you want more details - it's possible to do this other ways (for example with anacron and /or bash scripts). See this link: https://help.ubuntu.com/community/AutoWeeklyUpdateHowTo
+If you want more details - it's possible to do this other ways (for example with anacron and /or bash scripts). See this link: <https://help.ubuntu.com/community/AutoWeeklyUpdateHowTo>

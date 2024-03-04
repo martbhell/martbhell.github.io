@@ -15,13 +15,13 @@ Motherboard: Gigayte GA-EX58-UD3R CPU: Intel Core i7 Memory: 8GB Disks: Intel i3
 Here are some of the things figured out along the way:
 
 - grub2 does not like keyboard, but if I boot on the Ultimate Boot CD (grub) - the keyboard does work. This is with flipping all the USB keyboard, mouse, storage, legacy .. settings on and off in BIOS.
-    - After removing Ubuntu 12.10 and installing 12.04 (this is with USB things enabled in BIOS) - the keyboard works in grub2 menu.
+  - After removing Ubuntu 12.10 and installing 12.04 (this is with USB things enabled in BIOS) - the keyboard works in grub2 menu.
 - to install better drivers, easiest is to open Ubuntu Software, edit sources and allow post-release things.
-    - then go to settings and "additional drivers"
+  - then go to settings and "additional drivers"
 - after upgrading to fglrx,
-    - to change speed of the GPU fan to 20% hit: aticonfig --pplib-cmd "set fanspeed 0 20"
-    - to view the speed of the GPU fan hit: aticonfig --pplib-cmd "get fanspeed 0"
-    - to view the GPU temperature hit: aticonfig --adapter=0 --od-gettemperature
+  - to change speed of the GPU fan to 20% hit: aticonfig --pplib-cmd "set fanspeed 0 20"
+  - to view the speed of the GPU fan hit: aticonfig --pplib-cmd "get fanspeed 0"
+  - to view the GPU temperature hit: aticonfig --adapter=0 --od-gettemperature
 
 If you do decide to try with newer drivers for the ATI - card, make sure you have the installation CD/DVD handy. Or even better, get it on a USB-drive, way faster.
 
@@ -34,17 +34,20 @@ sudo mount ‐‐bind /dev /mnt/dev
 sudo mount ‐‐bind /proc /mnt/proc
 sudo mount ‐‐bind /sys /mnt/sys
 xhost +local:
-# above xhost is to get x things working from within a chroot (possibly unsafe?).
+
+# above xhost is to get x things working from within a chroot (possibly unsafe?)
+
 chroot /mnt
+
 # you can get network working, it needs a good /etc/resolv.conf first. Either overwrite the existing one or somehow get the local nameserver up and running
 
 # Install some good software
 
 apt-get install screen openssh-server tmux openjdk-6-jre unrar p7zip pidgin vim
 
-Spotify Repository - http://www.ubuntuupdates.org/ppa/spotify
+Spotify Repository - <http://www.ubuntuupdates.org/ppa/spotify>
 
-Google Chrome Repository - http://www.ubuntuupdates.org/ppa/google\_chrome
+Google Chrome Repository - <http://www.ubuntuupdates.org/ppa/google\_chrome>
 
 [Universal Media Server](http://www.universalmediaserver.com/ "fork of ps3 media server")
 
@@ -62,10 +65,12 @@ To install it, follow this guide: [http://coreygoldberg.blogspot.fi/2012/04/ins
 
 Carbon-cache initd-script: [https://gist.github.com/1492384](https://gist.github.com/1492384)
 
-### To monitor temperature and fan speed of your AMD/ATI card put this script in /usr/local/bin/atitemp.sh:
+### To monitor temperature and fan speed of your AMD/ATI card put this script in /usr/local/bin/atitemp.sh
 
-#!/bin/bash
-# Script to monitor temp and fanspeed of an AMD/ATI card.
+# !/bin/bash
+
+# Script to monitor temp and fanspeed of an AMD/ATI card
+
 # amdccle required? Also X?
 
 HOST1="$(hostname -s)"

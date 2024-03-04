@@ -30,7 +30,7 @@ If you chose to install [Ports](http://www.freebsd.org/ports/ "link to ports on 
 
 Then 'chsh' and change to /usr/local/bin/bash. Vi-syntax works so press i to insert, r to replace, x to remove or :wq! to write and quit.
 
-### Update and use ports.
+### Update and use ports
 
 You can also search on freshports.org.
 

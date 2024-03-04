@@ -18,8 +18,6 @@ As I ran the letsencrypt-auto [last time](https://www.guldmyr.com/lets-encrypt-t
 - sudo apache2ctl stop # .. why did it start apache2 automatically?
 - sudo systemctl start nginx
 
- 
-
 Since letsencrypt-auto version 0.5.0 it's:
 
 - sudo systemctl stop nginx

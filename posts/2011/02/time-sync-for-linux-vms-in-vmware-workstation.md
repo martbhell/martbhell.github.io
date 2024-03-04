@@ -10,19 +10,19 @@ run ntpdate every hour. This is not advised, primarily because it will add a lot
 
 others mention using VMWare tools time sync.
 
-### My setup:
+### My setup
 
 Intel Quad Core i7-920 8GB RAM Corsair XMS3 DDR3 1333MHz 8GB CL9 Gigabyte GA-EX58-UD3R Windows 7 x64 Vmware Workstation 7.1.1
 
 ### What works for me
 
-#### For **ubuntu 10.10** x64:
+#### For **ubuntu 10.10** x64
 
 Make sure vmware tools is installed (type vmware and hit 'tab'). With a .txt editor open up "vmname.vmx" on your host OS. Set tools.syncTime = "FALSE" to "TRUE". Restart vm.
 
 Now on this particular machine I've had ntpd installed, but it is now uninstalled.
 
-#### For Red Hat Enterprise Linux  5 x64 - **RHEL 5**:
+#### For Red Hat Enterprise Linux  5 x64 - **RHEL 5**
 
 - Install vmware-tools (without make/gcc installed).
 - Set tools.syncTime = "TRUE"

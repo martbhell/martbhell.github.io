@@ -50,11 +50,9 @@ On Cascade/Ring locality is almost a must. Full Mesh: preferred. In any design, 
 
 On directors, spread devices between port blades. Attach them in groups. First x ports for ISLs etc? Attachment in groups makes for better cabling etc. Attaching ports randomly is perhaps good when the SAN is expanding very quickly.
 
- 
-
 # Availability
 
-## Four levels:
+## Four levels
 
 **1)** Single fabric, not resilient: Not HA. For example: a Core switch with three edge switches, one fabric. SPOFs all over the place.
 
@@ -67,8 +65,6 @@ On directors, spread devices between port blades. Attach them in groups. First x
 ## Data Replication
 
 Is the data critical in the event of a catastrophic failure? Consider remote replication. Expensive.
-
- 
 
 # Performance
 

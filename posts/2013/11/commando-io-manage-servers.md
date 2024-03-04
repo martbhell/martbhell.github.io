@@ -23,6 +23,6 @@ All in all:
 - It looks nice and mostly works.
 - Is it safe? Do I want to give access to a third party provider that doesn't have any obvious information declaring their high intent of security.
 - Some things that would be nice:
-    - scheduled executions
-    - using states - puppet-like, to insure that something that was done in a recipe once is still the current state of the machine.
-    - group import of servers
+  - scheduled executions
+  - using states - puppet-like, to insure that something that was done in a recipe once is still the current state of the machine.
+  - group import of servers

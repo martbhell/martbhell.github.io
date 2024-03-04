@@ -28,7 +28,7 @@ Set locale, RSS (niice! don't think google reader will work for me), search/inde
 
 You can create pages (wiki - so Sharepoint is like a wiki as well, never saw that part when I've used it before, I've only used it to upload documents :) - anyway - nice). Calendar, lists, discussions, share documents (libraries), tasks, announcements, links, surveys, subsites and workspaces.
 
-## Change home page.
+## Change home page
 
 Apparently some stuff requires me to install another Software - Sharepoint Designer. Free.
 

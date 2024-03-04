@@ -24,6 +24,6 @@ Some cool stuff, but should you upgrade already? I ran the Firefox 4 beta for wh
 
 \--
 
-http://www.mozilla.com/en-US/firefox/channel/
+<http://www.mozilla.com/en-US/firefox/channel/>
 
 It's now possible to run 'extremely beta' - alpha? Called Aurora. I'm gonna give it a shot :) It installs another Firefox and gives you a new icon (not the old fox around a blue globe). Plugins, bookmarks, passwords are saved/kept so that's cool. It's also noticeably faster than Firefox 4. Besides that it looks just the same. Maybe that'll change in the near future.

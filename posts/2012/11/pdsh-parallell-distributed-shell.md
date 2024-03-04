@@ -14,7 +14,7 @@ For example 'pdsh -a uname -av' will give you "uname -av" of all machines.
 
 It can be installed from rpmforge.0
 
-wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86\_64.rpm
+wget <http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86\_64.rpm>
 rpm -ivh rpm-release\*
 yum install pdsh
 

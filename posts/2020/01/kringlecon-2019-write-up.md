@@ -4,7 +4,7 @@ date: 2020-01-15
 category: it
 tags: ctf, pdftotext, python, programming, language, security, sudo, trail, of, tears
 
-## The challenges!
+## The challenges
 
 Hoe the season to be jolly! Been giving a few [CTFs](https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation))  lately. It started with the disobey 2020 [puzzle](https://disobey2020.github.io/) to get the hacker ticket. Then there was the [OverTheWire](https://overthewire.org/)'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - [KringleCon](https://holidayhackchallenge.com/2019/) 2019. As of writing I got what felt like quite far in the disobey but got real nice stuck in the second keyhole. For OTF I found a similar but slightly easier challenge on the 6th day December, but did not manage to get the key. Most others except the first and challenge-zero I didn't really have time for. So with not so much progress it was very nice to take a step back and try out KringleCon where I managed to get a bit further!
 
@@ -21,13 +21,13 @@ Short tldr of methods to answers to the objectives
 7. splunk: followed the chat, was quite a nice way to learn the tool. Finding the correct file in the archive was a bit tricky, had to read through the chats carefully several times :)
 8. steam tunnels: the physical key! Spent quite some time wandering around trying to find the key. Eventually gave up. Then tried again after making it into the sleigh shop and hey there it was :) Couldn't really get the decoder to line up so used pixels mostly, took 5 times or so :)
 9. captcha: super fun, most fun. Hadn't tensorflowed before. Followed the youtube and github repo basically. Used an 80core 365GB cloud instance from $dayjob for a short while as the 2core 2GB RAM instance I used was too small ;)
-10. scraps: hadn't used sqlmap before either. First mapped out the page manually to find the forms. Then learnt about sqlmap --crawl :) Money shot for me was --eval="import requests;token=requests.get('https://studentportal.elfu.org/validator.php').text"
+10. scraps: hadn't used sqlmap before either. First mapped out the page manually to find the forms. Then learnt about sqlmap --crawl :) Money shot for me was --eval="import requests;token=requests.get('<https://studentportal.elfu.org/validator.php').text>"
 11. elfscrow: So. Hard. Learnt a bit more assembly reading. Used IDA this time instead of my previous attempts with radare2. Wonder when I'll get better at these :)
 12. sleigh shop door. also very fun to unlock those locks! Did not solve it under 5s but the one slower than that.
 13. filter out poisoned: ugh this one was tedious. Actually this and previous I did spend some time trying to learn them, but in the end found a write-up that was published too early (and later removed but still in google cache..)
 \[/su\_spoiler\] \[/su\_accordion\]
 
-## Getting on with it!
+## Getting on with it
 
 - The pdf deobfuscate I could do on my phone in termux just a pkg install pdftotext :)
 - The nyancat took a bit of more time than I should admit, but primarily I forgot how sudo works and what sudo -u does..
@@ -67,7 +67,7 @@ while len(results) < 1000:
 
 You'll need to hit CTRL+C when it doesn't find any more solutions. It's not the fastest, has unused bits and I don't know why it has the for digit in range(1) bit.
 
-## On to the next challenge!:
+## On to the next challenge
 
 - The windows events log file I just opened the file on a Windows machine and looked around
 - The sysmon file I printed some interesting keys in the json strings with a tiny python script
@@ -102,10 +102,10 @@ Some things I learnt were:
 - hints in chat suggested powering off and on
 - $env has things!
 - Format-Hex -Path ./archive | Select-Object -First 1
-    - magic number 50 4B 03 == zip
-    - expand-archive
-    - chmod +x
-    - get-content riddle # Gives an md5sum
+  - magic number 50 4B 03 == zip
+  - expand-archive
+  - chmod +x
+  - get-content riddle # Gives an md5sum
 - md5sum hunter
 
 ```powershell
@@ -238,7 +238,7 @@ Well done! Here's the password:
 ```
 
 - Doing the combination locks in under 3 minutes I think can be done manually.
-    - But nice thing to do would be to enter a bunch of commands into the browser console to help with some programmatically. Maybe one can enter javascript to also enter the numbers into the locks??
+  - But nice thing to do would be to enter a bunch of commands into the browser console to help with some programmatically. Maybe one can enter javascript to also enter the numbers into the locks??
 
 ```
 console.log(document.title)
@@ -467,9 +467,9 @@ if __name__ == "__main__":
 ## NEEEXT! Student Body finding some scrap papers objective 9
 
 - Got some hints in the game talking about sqlmap. Let's play with that and learn about [SQL injections](https://www.owasp.org/index.php/Testing_for_SQL_Injection_(OTG-INPVAL-005)) :)
-    - Started by looking at the page and reading the source code. Identified two forms on two pages that looked interesting.
-    - First went down a rabbit hole of the sqlmap tamper scripts.
-    - Just doing this:
+  - Started by looking at the page and reading the source code. Identified two forms on two pages that looked interesting.
+  - First went down a rabbit hole of the sqlmap tamper scripts.
+  - Just doing this:
 
 ```bash
 #!/bin/bash
@@ -478,8 +478,8 @@ sqlmap --url="https://url?token=$token" -p variable
 ```
 
 - Got sqlmap to find that elfmail in the check.php was vulnerable.
-- a curl "https://url?elfmail=me@me.com'token=$token"
-    - got a noice SQL error!
+- a curl "<https://url?elfmail=me@me.com'token=$token>"
+  - got a noice SQL error!
 - tamper investigation was not wasted because
 
 ```bash
@@ -556,7 +556,7 @@ and     eax, 7FFFh
 
 ```
 
-Which is also here: http://cer.freeshell.org/renma/LibraryRandomNumber/  
+Which is also here: <http://cer.freeshell.org/renma/LibraryRandomNumber/>  
 And here I learnt that >> in python is the sar.
 
 After goin walking thought a bit about what is the end goal here. And it is not the key, but it could be. Right now plan is to generate the secret-id, because the secret-id is what is used to decrypt with the tool, not the key. But maybe the uuid is something you only get from the escrow API server.
@@ -721,7 +721,7 @@ Then to get the key was just a pdf2txt and the 5 word sentence in the beginning 
 
 ## OK THE ZEEK/BRO Logs is the last one?
 
-The username was found in https://srf.elfu.org/README.md
+The username was found in <https://srf.elfu.org/README.md>
 
 Started on this earlier but stopped because I wasn't feeling it and it was a bit tedious.  
 Plan: Make the queries programmatically. Also this time check sizes of requests maybe that's important. Also time when attacks happen could be useful?

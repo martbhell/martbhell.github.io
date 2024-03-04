@@ -14,7 +14,7 @@ I did it over ssh with 'sudo screen -S upgrade **do-release-upgrade**' . Probabl
 
 It would need to download about 210MB of packages, if you press on 'd' at the right time you'll get into a 'less' of all the removes, upgrades and new installs. Press q to exit that.
 
-## During upgrade:
+## During upgrade
 
 - I got to chose keyboard (I have an IBM Thinkpad T40, but it wasn't in the list, took an R60 instead, looked pretty similar).
 - It then asks for which services that are using NSS (I had no idea, so just used the default of rsync, mysql, apache and one more).

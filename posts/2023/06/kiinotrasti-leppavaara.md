@@ -15,11 +15,10 @@ Miksi
 
 Menin yöllä (22:15-23:30 välillä eli aurinkilaskun jälkeen) sinne? No, harjoittelisin otsalampulla ennen [jukolan viestiä](https://jukola.com/2023/)!
 
- - sopiiko akku juomarepussa?
- - miten otsalamppu sopii, tarvitsenko kiristä jotain?
- - kuinka kirkas se nyt on?
- - miten se nyt toimi taas tämä suunnistus pimeässä
-
+- sopiiko akku juomarepussa?
+- miten otsalamppu sopii, tarvitsenko kiristä jotain?
+- kuinka kirkas se nyt on?
+- miten se nyt toimi taas tämä suunnistus pimeässä
 
 Loput
 ===

@@ -31,7 +31,7 @@ Because a lot of the things you can do with a router involves creating networks 
 4. Configure dhcp on the Vyatta VM:
 
 configure
-delete interfaces ethernet eth1 address dhcp 
+delete interfaces ethernet eth1 address dhcp
 set interfaces ethernet eth1 address 10.1.1.1/24
 commit
 
@@ -47,7 +47,7 @@ set nat source rule 10 ??? # Put in the settings you need. Source, outbound inte
 
 Real easy to set up a DNS forwarding server too:
 
-set service dns forwarding listen-on eth1 
+set service dns forwarding listen-on eth1
 set service dns forwarding name-server 8.8.8.8
 commit
 
@@ -93,7 +93,7 @@ V1: set protocol static 10.2.2.0/24 next-hop 10.1.1.20
 V3: set protocol static 10.1.1.0/24 next-hop 10.2.2.20
 V3: ping 10.1.1.10
 
-### OSPF!
+### OSPF
 
 Adding host V4 that is in Network B and Network C. Basically Vyatta, V2 and V4 are routers. V1 and V3 do not run OSPF, they have their default gateway to one of their local routers. So V3 has 10.2.2.20 and V1 has 10.1.1.1.
 

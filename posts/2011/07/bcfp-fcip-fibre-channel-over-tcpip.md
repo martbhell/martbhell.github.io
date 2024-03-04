@@ -12,9 +12,9 @@ Basically the FC frames will be encapsulated in packets over TCP/IP, making the 
 
 ## Terminology
 
-### Tunnel (VE\_port) - are seen as VE\_ports in the fabric.
+### Tunnel (VE\_port) - are seen as VE\_ports in the fabric
 
-### Circuits (GbE ports) are inside a tunnel (VE\_port) Is a logical connection between two IP addresses.
+### Circuits (GbE ports) are inside a tunnel (VE\_port) Is a logical connection between two IP addresses
 
 Metric 0 - active (you can have several links at metric 0) Metric 1 - standby
 
@@ -42,7 +42,7 @@ Not enforced if there is no contention (there is free bandwidth)
 
 VC0 (or F\_frames - fabric frames) - always first. QoS\_High: >50% : : 6 QoS\_Medium: >30% : 3 QoS\_low: >20% : 1
 
-### DSCP (6 bits of priorities - 64 ) L2CoS (3 bits of priorities- 8 ) Priority is set in the TOS - in the header.
+### DSCP (6 bits of priorities - 64 ) L2CoS (3 bits of priorities- 8 ) Priority is set in the TOS - in the header
 
 Compression
 

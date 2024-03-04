@@ -33,20 +33,20 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## httpd:
+## httpd
 
 - Install the packages needed to provide the service.
-    - yum install httpd
+  - yum install httpd
 - Configure SELinux to support the service.
-    - supports by default, if changing documentroot/defaultroot use:
-    - chkcon -R --reference /var/www/html /var/newhtmldir
+  - supports by default, if changing documentroot/defaultroot use:
+  - chkcon -R --reference /var/www/html /var/newhtmldir
 - Configure the service to start when the system is booted.
-    - chkconfig httpd on
+  - chkconfig httpd on
 - Configure the service for basic operation.
-    - rpm -qc httpd (find config file)
+  - rpm -qc httpd (find config file)
 - Configure host-based and user-based security for the service
-    - host-based -> iptables
-    - user-based -> htpasswd for httpd
+  - host-based -> iptables
+  - user-based -> htpasswd for httpd
 
 ### htpasswd
 
@@ -60,29 +60,33 @@ To get more information about httpd in general do:
 
 yum install httpd-manual
 
-Then surf to http://hostname/manual.
+Then surf to `http://hostname/manual`.
 
 To generate a htpasswd:
 
-\[root@rhce webpages\]# htpasswd -c /etc/httpd/conf/.htpasswd user
+```bash
+[root@rhce webpages\]# htpasswd -c /etc/httpd/conf/.htpasswd user
 New password:
 Re-type new password:
 Adding password for user user
+```
 
 Then add this .htaccess file:
 
+```bash
 AuthUserFile /etc/httpd/conf/.htpasswd
 AuthGroupFile /dev/null
 AuthName "Private Area"
 AuthType Basic
 AuthBasicProvider file
 Require user user
+```
 
 ## https
 
 The s - means the httpd uses another port - 443 and that it uses certificates.
 
-yum install mod\_ssl
+`yum install mod_ssl`
 
 This adds /etc/httpd/conf.d/ssl.conf
 
@@ -90,11 +94,11 @@ That config file actually has a 'listen' directive for port 443.
 
 So add that port in the firewall and restart httpd.
 
-After that you can surf to https://ip and it will complain about the certificate (which is a default generated one).
+After that you can surf to `https://ip` and it will complain about the certificate (which is a default generated one).
 
-## But wait, there's more!
+## But wait, there's more
 
-### Configure a virtual host.
+### Configure a virtual host
 
 This is can be used when you want to have several hostnames or domains on the same machine.
 
@@ -111,7 +115,8 @@ To test this you could either put several IP addresses on the server or point se
 
 and add this at the end:
 
-NameVirtualHost \*:80
+```bash
+NameVirtualHost *:80
 
     ServerAdmin webmaster@dummy-host.example.com
     DocumentRoot /var/www/ww1.example.com
@@ -120,16 +125,17 @@ NameVirtualHost \*:80
     ServerAdmin webmaster@dummy-host.example.com
     DocumentRoot /var/www/ww2.example.com
     ServerName ww2.example.com
+```
 
-7\. service httpd restart
+`service httpd restart`
 
 Then on the client point your browser to and (add different index.html in each to make it easy to see).
 
-### Configure private directories.
+### Configure private directories
 
 I'd say this fall under the htpasswd section.
 
-### Deploy a basic CGI application.
+### Deploy a basic CGI application
 
 FOSwiki for example uses CGI. Perhaps it should be a custom CGI application, like a small [hello-world script.](http://www.lies.com/begperl/hello_cgi.html "simple cgi hello world script")
 
@@ -137,7 +143,7 @@ FOSwiki for example uses CGI. Perhaps it should be a custom CGI application, lik
 
 A simple .cgi script is just a perl script with another extension that outputs .HTML text.
 
-### Configure group-managed content.
+### Configure group-managed content
 
 Group-managed. So this would be somehow using the AuthGroupFile in .htaccess?
 

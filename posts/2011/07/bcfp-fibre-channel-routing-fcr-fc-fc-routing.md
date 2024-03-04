@@ -10,7 +10,7 @@ This has many names. FC-FC Routing service provides FCR (fibre channel routing).
 
 Integrated Routing - is a licensed feature that lets you run FCR on a port that is in a normal port in a normal switch or port blade (so not in a dedicated router switch or router blade).
 
-## There's a few things required to set up FCR:
+## There's a few things required to set up FCR
 
 1. Verify that you have the proper setup (required licenses/hardware)
 2. Assign backbone FIDs (**switchdisable; fosConfig --disable fcr; fcrconfigure; fosconfig --enable; switchenable**)
@@ -22,7 +22,7 @@ Integrated Routing - is a licensed feature that lets you run FCR on a port that 
 8. Configure LSAN zones (same as normal zoning; **zonecreate "lsan\_zone\_fabric", "wwn; wwn2; wwn3"; cfgadd "zone\_cfg", "lsan\_zone\_fabric"; cfgenable "zone\_cfg"**). Use **lsanzoneshow -s**. Shows imported/exist/configured/initializing. **fcrphydevshow, fcrproxydevshow** are also useful.
 9. Confirm that it's working (**fcrfabricshow, switchshow, portcfgshow, portexport 7, portshow 7**)
 
-So what you have to do is: assign FIDs, configure IFLs and LSAN zones. 
+So what you have to do is: assign FIDs, configure IFLs and LSAN zones.
 
 ## A little theory
 

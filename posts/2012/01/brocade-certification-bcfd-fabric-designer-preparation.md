@@ -10,7 +10,7 @@ This post will be updated as I move along through the different objectives / doc
 
 // Update 2012-01-15: Added the Knowledge Assessment Test. // Update 2012-01-28: Went through each .pdf and updated some in here.
 
-The link to the Brocade page where it tells you how to register and where to get the material: http://community.brocade.com/docs/DOC-2379
+The link to the Brocade page where it tells you how to register and where to get the material: <http://community.brocade.com/docs/DOC-2379>
 
 \# Note: This link no longer works
 
@@ -60,7 +60,7 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
 (53-1002148-03)
 
 - **Pages** 37,43,66-70,102,142,151,153,157,196,199,241,273-286,301,314,315,320,372,383,395-398,402-406,414,417,425,429,437,438-443,449,454-461,464,503,504
-- topics
+  - topics
     - 256-area addressing
     - WWN-based PID assignment
     - enabling/disabling a port and port decommissioning
@@ -88,13 +88,13 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
 (53-1002147-01)
 
 - **Pages** 302,695,716,721,957,
-- commands
+  - commands
     - fcrconfigure  /  fcredgeshow
     - portcfgspeed
     - portdportest
     - portfencing
-        - Why is the test for "Invalid Word Transmission" called ITW?
-        - Ah, on portThConfig it is called "Invalid Transmission Word".
+      - Why is the test for "Invalid Word Transmission" called ITW?
+      - Ah, on portThConfig it is called "Invalid Transmission Word".
     - supportshow
 
 ## Fabric OS FCIP Administrators Guide v7.0
@@ -103,42 +103,40 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
 
 - **Pages** 1,6
 - topics
-    - FCIP platforms and supported features
-        - 7800, FX8-24 and FR4-18i
-        - FCIP Trunking
-        - Adaptive Rate Limiting
-        - 10GbE
-        - 8G FC Ports
-        - Compression (LZ and Deflate)
-        - Acceleration (FCIP Fastwrite, OSTP)
-        - QoS
-        - VLAN Tagging
-        - FICON
-        - IPSEC
-        - VEX
-        - IPv6
-        - Jumo Frames
-    - 7800 switch hardware overview
-    - FX8-24 has support for all features above, except: Jumbo frames (only FR4-18i supports those), IPv6 addresses for FCIP tunnels or IPsec, or 3rd WAN optimization hardware (the other do support this pre FOS 7)
-
- 
+  - FCIP platforms and supported features
+    - 7800, FX8-24 and FR4-18i
+    - FCIP Trunking
+    - Adaptive Rate Limiting
+    - 10GbE
+    - 8G FC Ports
+    - Compression (LZ and Deflate)
+    - Acceleration (FCIP Fastwrite, OSTP)
+    - QoS
+    - VLAN Tagging
+    - FICON
+    - IPSEC
+    - VEX
+    - IPv6
+    - Jumo Frames
+  - 7800 switch hardware overview
+  - FX8-24 has support for all features above, except: Jumbo frames (only FR4-18i supports those), IPv6 addresses for FCIP tunnels or IPsec, or 3rd WAN optimization hardware (the other do support this pre FOS 7)
 
 ## Monitoring and Diagnostic Testing in Today's High Speed High Density Networks
 
 - **Pages** 2-4
-- topics
+  - topics
     - powerpoint presentation of four pages in total
     - fc cable lengths
     - measuring loss
     - embedded diagnostics (bottleneck detection, fabric watch, frame monitoring, port fencing)
-        - **fmmonitor** is a CLI that you can use to set up frame monitoring, for example SCSI reservations and aborts.
+      - **fmmonitor** is a CLI that you can use to set up frame monitoring, for example SCSI reservations and aborts.
 
 ## Brocade Network Advisor SAN User Manual
 
 (53-1002355-01)
 
 - **Pages** 12,164,186,255,596,770,794,796
-- topics
+  - topics
     - "Connectivity Map Toolbar" & "Product List"
     - Call Home Feature
     - Copying and Deleting Views
@@ -152,7 +150,7 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
 GA-TN-048-01
 
 - **Pages** 2,3
-- topics
+  - topics
     - total 8 pages
     - link lengths and link loss budgets
 
@@ -161,7 +159,7 @@ GA-TN-048-01
 (53-1002449-01)
 
 - **Pages** 13,15
-- topics
+  - topics
     - ISL trunking
     - switchstatuspoolicy
     - fos native and AG modes
@@ -171,11 +169,11 @@ GA-TN-048-01
 (53-1002156-01)
 
 - **Pages** xiv,72,
-- topics
+  - topics
     - supported hardware and software (which switches and FOS)
     - enabling NPIV on M-EOS and Cisco switches
-        - CISCO: config t; npiv enable
-        - MEOS:
+      - CISCO: config t; npiv enable
+      - MEOS:
     - new features -F\_Port static mapping, APM, B6510, Target Aggregation, Direct target attachment, N\_Port monitoring
 
 _"You can run the agshow command to display Access Gateway information registered with the fabric. When an Access Gateway is exclusively connected to non-Fabric-OS-based switches, it will not show up in the agshow output on other Brocade switches in the fabric."_
@@ -183,23 +181,23 @@ _"You can run the agshow command to display Access Gateway information registere
 ## [CEE Admin Guide 53 1002163-02](http://www.brocade.com/downloads/documents/product_manuals/B_SAN/CEE_AdminGd_v700.pdf "this is not in the resource list on community.brocade.com")
 
 - **Page** xviii
-- topics
+  - topics
     - Supported Hardware: Standalone switch B8000 and the blade FCOE10-24
     - IGMP configuring (IGMP is used in multicast, ethernet)
     - Replacing the B8000
-        - configdownload
-        - and copy running config and stuff! Looks very similar to the Cisco CLI.
+      - configdownload
+      - and copy running config and stuff! Looks very similar to the Cisco CLI.
 
 ## Brocade Adaptors Admin Guide
 
 (53-1002143-01)
 
 - **Pages** 3,13,
-- topics
+  - topics
     - AnyIO technology on the 1860 Fabric Adapter, just change the SFP and set the mode with **bcu port --mode** or **bcu adapter --mode**.
-        - HBA or FC mode (FC)
-        - Ethernet or NIC mode (GbE)
-        - CNA mode (FCoE)
+      - HBA or FC mode (FC)
+      - Ethernet or NIC mode (GbE)
+      - CNA mode (FCoE)
     - Adapter Support (OS + description of adapters)
 
 ## The New Data Center 1st Edition
@@ -207,8 +205,8 @@ _"You can run the agshow command to display Access Gateway information registere
 ISBN: 978-1-4507-0195-2
 
 - **Pages** 65,66,78
-- topics
+  - topics
     - Fabric Based Disaster Recovery (64-67)
-        - An overview of some of the extension technologies and reasons behind them.
+      - An overview of some of the extension technologies and reasons behind them.
     - Network Security (77) + Power, Space and Cooling Efficiency (78)
-        - Network Security is not FC related.
+      - Network Security is not FC related.

@@ -4,7 +4,6 @@ date: 2011-03-18
 category: it
 tags: dwm, gdm, gnome, linux, rhel, window, manager
 
-
 Goal: Be able to exit [DWM and](http://dwm.suckless.org "dwm at suckless.org") get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)
 
 Finally got this working like I want it to - with some help from #suckless on irc.oftc.net. This works for me with RHEL6, GDM --version 2.30.4 and DWM 5.8.2. My problem was that before (you can see how that looked in [this post](https://www.guldmyr.com/dwm-editing-the-bar-to-show-time/ "dwm not so good")) I ran the dwm also in a loop. But this is not necessary. If you want to keep the statusbar updated with some goodies by running a while loop, you only need to run the xsetroot in a while loop.
@@ -67,7 +66,5 @@ while true; do
 #loop is done? :p
 
 ```
-
- 
 
 `#traying sleep 1 /usr/bin/ck-launch-session & /usr/local/bin/stalonetray & /usr/bin/nm-applet & /usr/bin/gnome-volume-control-applet & feh -z -Z --bg-scale /home/jguldmyr/Pictures/dwm_pattern.png #feh -z -Z -B black -b trans --bg-scale /home/jguldmyr/Pictures/Flow.png #start dwm after loop exec /usr/local/bin/dwm > /dev/null`

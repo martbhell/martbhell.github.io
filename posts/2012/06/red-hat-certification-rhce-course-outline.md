@@ -50,36 +50,32 @@ Some settings can also go into /etc/sysconfig/network
 
 \-[Netfilter](http://en.wikipedia.org/wiki/Netfilter "on wikipedia") Overview -Rules: General Considerations -[Connection Tracking](http://en.wikipedia.org/wiki/Netfilter#Connection_Tracking "on wikipedia") -Network Address Translation (NAT) -IPv6 and ip6tables
 
- 
-
 ## Web Services
 
 \-Squid Web Proxy Cache
 
 On client check what IP you get:
 
-curl --proxy squid-server.example.com:3128 www.guldmyr.com/ip.php
+curl --proxy squid-server.example.com:3128 <www.guldmyr.com/ip.php>
 
 On server install and setup squid:
 
 yum install squid
 vi /etc/squid/squid.conf
-#add this line in the right place:
+# add this line in the right place:
 acl localnet src 192.168.1.1/32
-#allow port 3128 TCP in the firewall (use very strict access here)
+# allow port 3128 TCP in the firewall (use very strict access here)
 service squid start
 
 On client:
 
-curl --proxy squid-server.example.com:3128 www.guldmyr.com/ip.php
+curl --proxy squid-server.example.com:3128 <www.guldmyr.com/ip.php>
 
 Beware that this is unsecure. Very unsecure. You should at least set up a password for the proxy, change the default port and have as limited firewall rules as possible.
 
 ## E-mail Services
 
 \-Simple Mail Transport Protocol -Sendmail SMTP Restrictions -Sendmail Operation
-
- 
 
 ## Securing Data
 
@@ -95,16 +91,14 @@ There are many more things you can specify.
 
 echo "awesome secret message" > /tmp/file
 gpg --symmetric --force-mdc /tmp/file
-#(enter password)
-#this creates a /tmp/file.gpg
-#beware that /tmp/file still exists
-#to decrypt:
+# (enter password)
+# this creates a /tmp/file.gpg
+# beware that /tmp/file still exists
+# to decrypt:
 gpg --decrypt /tmp/file.gpg
 gpg: 3DES encrypted data
 gpg: encrypted with 1 passphrase
 awesome secret message
-
- 
 
 ### \-Asymmetric Encryption
 
@@ -115,12 +109,18 @@ GnuPG can let you handle this.
 Login with a user called 'labber':
 
 gpg --gen-key
+
 # in this interactive dialog enter username: labber, e-mail and password
+
 # this doesn't always work, might take \_long\_time\_, eventually I just tried on another machine
+
 echo "secret message" > /tmp/file
 gpg -e -r labber /tmp/file
+
 # enter password
+
 gpg --decrypt /tmp/file
+
 # enter password
 
 To export the public key in ASCII format you can:
@@ -144,8 +144,6 @@ A certificate has user details and the public key.
 ## Account Management
 
 \-Account Management -Account Information (Name Service) -[Name Service Switch](http://en.wikipedia.org/wiki/Name_Service_Switch "on wikipedia") (NSS) -[Pluggable Authentication Modules](http://linux-pam.org/whatispam.html "on linux-pam.org") (PAM) -PAM Operation -Utilities and Authentication
-
- 
 
 ### PAM
 

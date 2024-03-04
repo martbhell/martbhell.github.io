@@ -10,42 +10,49 @@ This post is for how to upgrade.
 
 2012-02-01: Updated, added --nodeps to the rpm upgrade. 2013-01-08: This has been confirmed to work with spotify-0.8.8, updated typo in symlink part.
 
-Why? http://repository.spotify.com/pool/non-free/s/spotify/spotify-client-qt\_0.6.1.309.gb871a7d-1\_amd64.deb is out!
+Why? <http://repository.spotify.com/pool/non-free/s/spotify/spotify-client-qt\_0.6.1.309.gb871a7d-1\_amd64.deb> is out!
 
 Is available. Maybe right-click works?? =)
 
 1. Get the .deb into a place where you can run the program 'alien'. I have ubuntu in a virtual machine so fired that up, downloaded the .deb
-2. sudo alien --to-rpm spotify-client-qt\_0.6.1.309.gb871a7d-1\_amd64.deb
+2. `sudo alien --to-rpm spotify-client-qt_0.6.1.309.gb871a7d-1_amd64.deb`
 3. e-mailed spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64.rpm to myself
 4. save the .rpm, close spotify,  and hit:
-5. sudo rpm -Uvh spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64.rpm
+5. `sudo rpm -Uvh spotify-client-qt-0.6.1.309.gb871a7d-2.x86_64.rpm`
 6. this failed, it needed
 
-error: Failed dependencies: _libcrypto.so.0.9.8()(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64 libcrypto.so.0.9.8(OPENSSL\_0.9.8)(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64 libssl.so.0.9.8()(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64 libssl.so.0.9.8(OPENSSL\_0.9.8)(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64_
+> error: Failed dependencies: _libcrypto.so.0.9.8()(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64 libcrypto.so.0.9.8(OPENSSL\_0.9.8)(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64 libssl.so.0.9.8()(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64 libssl.so.0.9.8(OPENSSL\_0.9.8)(64bit) is needed by spotify-client-qt-0.6.1.309.gb871a7d-2.x86\_64_
 
 [A forum post with some more details about this](http://forums.fedoraforum.org/showthread.php?t=270230 "on fedoraforum.org").
 
-_whereis spotify ldd /usr/bin/spotify gives me: libssl.so.10 0> /usr/lib64/libssl.so.10 libcrypto.so.10 0> /usr/lib64/libcrypto.so.10_
+```bash
+whereis spotify
+ldd /usr/bin/spotify
+```
+gives me:
+
+> libssl.so.10 0> /usr/lib64/libssl.so.10
+> libcrypto.so.10 0> /usr/lib64/libcrypto.so.10
 
 hit:
 
-cd /usr/lib64 
-
-sudo ln -s libcrypto.so.10 libcrypto.so.0.9.8 sudo ln -s libssl.so.10 libssl.so.0.9.8
+```bash
+cd /usr/lib64
+sudo ln -s libcrypto.so.10 libcrypto.so.0.9.8
+sudo ln -s libssl.so.10 libssl.so.0.9.8
+```
 
 If still no go, some advise to rename/delete ~/.config/spotify and ~/.cache/spotify
 
 If neither of the above still works, run
 
- 
-
-rpm -Uvh --nodeps spotify-client-qt-0.6.6.10.gbd39032.58-2.x86\_64.rpm
+`rpm -Uvh --nodeps spotify-client-qt-0.6.6.10.gbd39032.58-2.x86_64.rpm`
 
 It's now possible to right-click on playlists! Also to click on 'File' works! Woop!
 
 Right-click on artist worked a few times. Then after a while it stopped working. AGREGHA!!#45
 
-_(still crashes with Spotify 0.6.6.10)_
+> _(still crashes with Spotify 0.6.6.10)_
 
 I would guess that the problem lies with qt or webkit.
 

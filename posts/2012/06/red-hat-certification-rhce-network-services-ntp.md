@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - [ssh](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
 - [ntp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
 
-## NTP:
+## NTP
 
 You could possibly test this from Windows as well.
 
@@ -74,7 +74,7 @@ man ntp.conf this then points to : man ntp\_acc man ntp\_auth man ntp\_clock man
 
 What's a bit reverse for ntpd is that first you need to configure the server as a client
 
-So that your local ntp-server gets good time from somewhere else. You can find a good time-server to use on www.pool.ntp.org
+So that your local ntp-server gets good time from somewhere else. You can find a good time-server to use on <www.pool.ntp.org>
 
 You only need to add one server line but for redundancy you should probably have more than one.
 
@@ -85,8 +85,6 @@ All you need to do is for the client part:
 server ntp.example.com
 service ntpd restart
 ntpq -p
-
- 
 
 ## Enable ntpd as a server
 
@@ -122,8 +120,11 @@ There's not much to go in logs on either server or client for ntpd. You'll get m
 You can also use tcpdump on the server to see if there are any packets coming in.
 
 tcpdump -i eth0 -w /tmp/tcmpdump.123 -s0 'udp port 123 and host NTP.CLIENT.IP'
+
 # wait a while, restart ntpd on client
+
 tcpdump -r /tmp/tcmpdump.123
+
 # this will then show some packets if you have a working communication between server and client
 
 ## To test that it's working

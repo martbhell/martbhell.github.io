@@ -9,10 +9,10 @@ tags: reseptit, pasta, carbonara
 Kahdelle. Jos lisää laitaa enemmän spaghetti ja . Ainesosat:
 
 - kastike:
-    - 1/2 Parmiggiano
-    - 4x munia
-    - Kerma
+  - 1/2 Parmiggiano
+  - 4x munia
+  - Kerma
 - Valkosipuli, öljy
-    - Yksi paketti Pekoni ja vähän kinkku :)
+  - Yksi paketti Pekoni ja vähän kinkku :)
 - Spaghetti
-    - Suola
+  - Suola

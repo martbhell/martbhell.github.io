@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## NFS:
+## NFS
 
 Testing an NFS server is generally easier from another linux-server.
 

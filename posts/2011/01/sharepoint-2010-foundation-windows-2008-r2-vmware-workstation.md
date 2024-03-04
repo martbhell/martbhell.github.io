@@ -54,7 +54,7 @@ When I open server manager there are some errors but none seems to awful. There 
 
 ## SQL Server 2008 R2
 
-Installing this package: SQLFULL\_ia64\_ENU of 1.4GB. This extracts everything inside and takes roughly 2GB of space. Turns out the IA64 does not work on an x64 system. So then I tried to download SQL Express 2008 R2 instead, and it's free and only 250MB! http://www.microsoft.com/express/Database/
+Installing this package: SQLFULL\_ia64\_ENU of 1.4GB. This extracts everything inside and takes roughly 2GB of space. Turns out the IA64 does not work on an x64 system. So then I tried to download SQL Express 2008 R2 instead, and it's free and only 250MB! <http://www.microsoft.com/express/Database/>
 
 Let's see how this goes :) Installing this package: SQLEXPRWT\_x64\_ENU of 250MB
 
@@ -80,7 +80,7 @@ Downloading Sharepoint 2010 Foundation instead of the server version.
 
 Selected "install software pre-requisities". This installed [lots of stuff](http://technet.microsoft.com/en-us/library/cc262485.aspx "pre-requisities") successfully. **Reboot**. Install continues afterwards. Ran installation file again, chose standalone setup. Completed OK. Then a wizard runs. Completed.
 
-Opens http://win2k8/ - log on with administrator
+Opens `http://win2k8/` - log on with administrator
 
 And now we got a sharepoint!
 
@@ -94,6 +94,6 @@ Total size of the VM after all this is 13.6GB (14 661 324 079 bytes).
 2. Patch it.
 3. Run Sharepoint 2010 Foundation pre-requisities install
 4. Run Sharepoint 2010 Foundation install
-5. Point your web browser to http://localhost or http://servername. OR http://ip (this will work from the host os).
+5. Point your web browser to `http://localhost` or `http://servername`. OR `http://ip` (this will work from the host os).
 
 Next post will be about what to do inside sharepoint!

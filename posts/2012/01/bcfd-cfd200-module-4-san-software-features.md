@@ -52,8 +52,6 @@ Do some planning, which devices need to be connected? For example don't zone in 
 
 A diagram might help. nszonemember, fcping, webtools, dcfm, san health. Configupload/download.
 
- 
-
 ## Adaptive Networking
 
 Optimization.
@@ -116,7 +114,7 @@ Starting FICON Config Utility for a single fabric: (Fabric Manager, old displays
 - enabled port based routing
 - disables DLS, enables IOD
 - sets HIFS (high integrity fabric config) on seed/principal switch
-    - Cascaded FICON?
+  - Cascaded FICON?
 - enable SCC policy in strict mode
 - enable FMS (FICON Management Server) mode on switches.
 - checks if there is a CUP license

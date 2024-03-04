@@ -16,7 +16,7 @@ When you see 7.2.x this means any version in the Fabric OS 7.2.x series. For upg
 
 Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
-## Updates in this article:
+## Updates in this article
 
 <details><summary>Old Updates < 2013</summary>
 
@@ -114,6 +114,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 </details>
 
 ## Recent Updates
+
 - **2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days! Also [HPE has them](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_241cfaab2fed4696a003f38ee0).
 - **2023-04-04:** 9.1.1a with link to broadcom
 
@@ -153,15 +154,15 @@ You could in principle also say that (some blades in directors are excepted from
 
 Do you want to use the latest one in each series? Probably. Do check for published advisories and the release notes in the firmwares. Some models or blades may work on 7.0.x and not on 7.1.x or vice versa. Fabric OS 7.3.x supports all hardware that supports 7.2.x. Basically you **need** to read the release notes for at least the version you are upgrading to, to confirm that it supports your switch.
 
-## Download firmware links:
+## Download firmware links
 
 - 5.x and 6.x at HPE's [http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer\_Statement.htm](http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm)
-    - New Link for some older 5.3-8.0.x from HPE: [https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX-fd389e31ce584b35911249126f](https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX-fd389e31ce584b35911249126f)
-    - 6.0.x can also be found here: [ftp://ftp.hp.com/pub/softlib/software10/COL22074/](ftp://ftp.hp.com/pub/softlib/software10/COL22074/)
+  - New Link for some older 5.3-8.0.x from HPE: [https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX-fd389e31ce584b35911249126f](https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX-fd389e31ce584b35911249126f)
+  - 6.0.x can also be found here: [ftp://ftp.hp.com/pub/softlib/software10/COL22074/](ftp://ftp.hp.com/pub/softlib/software10/COL22074/)
 - For [FOS 7.x](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com")
 - For [FOS 8.x](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1009577)
-- NetApp's Broadcom/Brocade link: http://www.brocadeassist.com/public/NetAppRelease
-    - This has more documents and **newer** firmware than the IBM one.
+- NetApp's Broadcom/Brocade link: <http://www.brocadeassist.com/public/NetAppRelease>
+  - This has more documents and **newer** firmware than the IBM one.
 
 If you go to downloads for HP's 4/16 there is a link that also takes you to the older FOS firmware. If you don't click through it also only have the firmware that this switch supports. So the latest on there at the moment is 6.2.2f.
 
@@ -181,7 +182,7 @@ Also, switches that are of higher importance like Principal Switch, Core Switche
 
 With more recent firmwares (6.4 and 7.x) it's possible to jump more than one hop - if you are ok with disruptions in the network. Nice if you need to upgrade switches that aren't in production.
 
-# Release notes:
+# Release notes
 
 Please note. Most of these no longer works. But maybe just having the filenames help?
 
@@ -189,48 +190,48 @@ Please note. Most of these no longer works. But maybe just having the filenames 
 
 Brocade release notes in .pdf:
 
- - [5.2.3](http://public.dhe.ibm.com/storage/san/fos5/v5.2.3_ReleaseNotes_v1.0.pdf)
- - [5.3.1c](http://public.dhe.ibm.com/storage/san/fos5/v5.3.2c_ReleaseNotes_v1.0.pdf)
- - [6.0.0c](http://service.boulder.ibm.com/storage/san/fos6/v6.0.0c_ReleaseNotes_v2.0.pdf "on ibm's ftp")
- - [6.1.2c](http://service.boulder.ibm.com/storage/san/fos6/v6.1.2c_ReleaseNotes_v1.0.pdf "on ibm.com")
- - [6.2.2g](http://service.boulder.ibm.com/storage/san/fos6/v6.2.2g_ReleaseNotes_v1.0.pdf)
- - [6.3.2e](http://service.boulder.ibm.com/storage/san/fos6/v6.3.2e_ReleaseNotes_v1.0.pdf "on ibm.com")
- - [6.4.3h](http://public.dhe.ibm.com/storage/san/fos6/v6.4.3h_ReleaseNotes_v1.0.pdf)
- - [7.0.2e](http://public.dhe.ibm.com/storage/san/fos7/v7.0.2e_ReleaseNotes_v1.0.pdf "release notes")
- - [7.1.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf")
- - [7.2.1g](http://service.boulder.ibm.com/storage/san/fos7/v7.2.1g_ReleaseNotes_v1.0.pdf) 
- - [7.3.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.3.1a_ReleaseNotes_v1.0.pdf")
- - [7.4.2](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2d_ReleaseNotes_v3.0.pdf)
- - [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf)
- - [8.1.2g](http://public.dhe.ibm.com/storage/san/fos8/v8.1.2g_ReleaseNotes_v3.0.pdf)
- - [8.2.1a](http://public.dhe.ibm.com/storage/san/fos8/v8.2.1a_ReleaseNotes_v1.0.pdf)
- - [8.2.2b](http://service.boulder.ibm.com/storage/san/fos8/v8.2.2b_ReleaseNotes_v2.0.pdf)
- - [9.0.0a (hp release notes, thin on information)](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v186294/HPE_FOS_9.0.0a_RN_v1.0.pdf)
- - [9.1.1a](https://docs.broadcom.com/doc/FOS-911a-RN) [9.1.1b HPE](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v225909/HPE_FOS_9.1.1b_RN_v1.pdf)
+- [5.2.3](http://public.dhe.ibm.com/storage/san/fos5/v5.2.3_ReleaseNotes_v1.0.pdf)
+- [5.3.1c](http://public.dhe.ibm.com/storage/san/fos5/v5.3.2c_ReleaseNotes_v1.0.pdf)
+- [6.0.0c](http://service.boulder.ibm.com/storage/san/fos6/v6.0.0c_ReleaseNotes_v2.0.pdf "on ibm's ftp")
+- [6.1.2c](http://service.boulder.ibm.com/storage/san/fos6/v6.1.2c_ReleaseNotes_v1.0.pdf "on ibm.com")
+- [6.2.2g](http://service.boulder.ibm.com/storage/san/fos6/v6.2.2g_ReleaseNotes_v1.0.pdf)
+- [6.3.2e](http://service.boulder.ibm.com/storage/san/fos6/v6.3.2e_ReleaseNotes_v1.0.pdf "on ibm.com")
+- [6.4.3h](http://public.dhe.ibm.com/storage/san/fos6/v6.4.3h_ReleaseNotes_v1.0.pdf)
+- [7.0.2e](http://public.dhe.ibm.com/storage/san/fos7/v7.0.2e_ReleaseNotes_v1.0.pdf "release notes")
+- [7.1.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf")
+- [7.2.1g](http://service.boulder.ibm.com/storage/san/fos7/v7.2.1g_ReleaseNotes_v1.0.pdf)
+- [7.3.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.3.1a_ReleaseNotes_v1.0.pdf")
+- [7.4.2](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2d_ReleaseNotes_v3.0.pdf)
+- [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf)
+- [8.1.2g](http://public.dhe.ibm.com/storage/san/fos8/v8.1.2g_ReleaseNotes_v3.0.pdf)
+- [8.2.1a](http://public.dhe.ibm.com/storage/san/fos8/v8.2.1a_ReleaseNotes_v1.0.pdf)
+- [8.2.2b](http://service.boulder.ibm.com/storage/san/fos8/v8.2.2b_ReleaseNotes_v2.0.pdf)
+- [9.0.0a (hp release notes, thin on information)](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v186294/HPE_FOS_9.0.0a_RN_v1.0.pdf)
+- [9.1.1a](https://docs.broadcom.com/doc/FOS-911a-RN) [9.1.1b HPE](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v225909/HPE_FOS_9.1.1b_RN_v1.pdf)
 
-## Notes from the release notes:
+## Notes from the release notes
 
- - Upgrading from Fabric OS 5.0.x to 5.2.3 is supported
- - Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not.
- - Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades)
- - Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b
- - Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later.
- - Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later.
- - Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2
- - Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later.
- - Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2.
- - Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported.
- - Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS\_UpgradeGuide\_v730.pdf and the Brocade Release notes).
- - Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall
- - Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s"
- - Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s".
- - Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s".
- - Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
- - Upgrading to Fabric OS 9.1.x "For Brocade X6, G630, X7, and G730 a valid Trusted FOS (TruFOS) Certificate is _required_"
+- Upgrading from Fabric OS 5.0.x to 5.2.3 is supported
+- Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from Fabric OS 5.0.x or a previous release directly to 5.3.1a is not.
+- Upgrading to Fabric OS 6.0.0b is only allowed from Fabric OS 5.3.x. (6.0.0c is a special upgrade version, only meant to be used in between firmware upgrades)
+- Upgrading to Fabric OS 6.1.2c is allowed only from Fabric OS 6.0.0b
+- Upgrading to Fabric OS 6.2.2f is allowed only from Fabric OS 6.1.0a or later.
+- Upgrading to Fabric OS 6.3.2e is allowed only from Fabric OS 6.2.0a or later.
+- Upgrading to Fabric OS 6.4.3f is allowed only from Fabric OS 6.3.x. You can upgrade non-disruptively from 6.2
+- Upgrading to Fabric OS 7.0.2 can be done non-disruptively from Fabric OS 6.4.1a or later.
+- Upgrading to Fabric OS 7.1.2 can be non-disruptively upgraded from 7.0.x and 7.1.x. With caveats: For example, any previously existing error log entries with FOS v7.1.0 will be permanently lost once upgraded to FOS v7.1.2.
+- Upgrading to Fabric OS 7.2.x can be done non-disruptively from 7.1.x. Disruptively from 7.0.x is supported.
+- Upgrading to Fabric OS 7.3.x can be done non-disruptively from 7.2.x. Disruptively from 7.1.x is supported (see the FOS\_UpgradeGuide\_v730.pdf and the Brocade Release notes).
+- Upgrading to Fabric OS 7.4.x can be done non-disruptively from 7.3.x. From 6.4.x with firmwarecleaninstall
+- Upgrading to Fabric OS 8.0.x can be done non-disruptively from any Brocade 16G (Gen 5) platform and all blades in the Supported blades table running any FOS v7.4 firmware. From 7.3.0 with "firmwaredownload -s"
+- Upgrading to Fabric OS 8.1.x can be done non-disruptively from Brocade platform running 8.0.2 or later. From 7.4.x disruptively with "firmwaredownload -s".
+- Upgrading to Fabric OS 8.2.x can be done non-disruptively from Brocade platform running 8.1.0a or later. From 8.0.x disruptively with "firmwaredownload -s".
+- Any Brocade platform listed in the Supported Device section running any FOS 8.2 version can be non-disruptively upgraded to FOS 9.0.0
+- Upgrading to Fabric OS 9.1.x "For Brocade X6, G630, X7, and G730 a valid Trusted FOS (TruFOS) Certificate is _required_"
 
 About non-disruptively: This means you **can** go to 7.0.xfrom earlier  than 6.4.1a but ports will go offline during the upgrade. See the release notes or Upgrade Guides for more details.
 
-### DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor .
+### DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor
 
 From 6.2.2a release notes:
 
@@ -256,7 +257,7 @@ See the release notes of the firmware for the specifics. For example Fabric OS 8
 
 # Prepare
 
-## Download old Brocade Fabric OS Firmware.
+## Download old Brocade Fabric OS Firmware
 
 Basically, you need to update in steps.
 
@@ -329,7 +330,7 @@ For firmwares prior to 5.3.x you have to specify the release.plist - /v5.2.2a/r
 
 In some cases you may have to specify the sub directory. For example the 4/16 HP Switch is a Brocade 200E with switchtype 34. So you would then use directory SWBD34 - /v5.3.1a/SWDB34. You can also try with /v5.3.1a/release.plist, /v5.3.1a/SWDB34/release.plist or /v5.3.1a/install. However with 5.3.1a you _should_ not have to so /v5.3.1a should be enough.
 
-### firmwaredownload example:
+### firmwaredownload example
 
 ```bash
 switch:admin> firmwaredownload

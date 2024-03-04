@@ -52,6 +52,6 @@ Wonder if irssi works here? - Not in the default terminal or Eterm no! Xchat wor
 
 core plus has a lot nicer boot manager, and it shows a lot more options, such as fluxbox.
 
-## Think about:
+## Think about
 
 It takes a fair amount of time to install something (or, it feels longer because there's no progress bar) if you run it off the livecd. So, if you decide to try another OS without installing apps on disk, be prepared to reinstall apps.

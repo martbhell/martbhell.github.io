@@ -12,4 +12,4 @@ How to? Just run "update-manager -d" and click on some buttons!
 
 Update process was nice, I like apt-get over yum when it sees a conflicting file it doesn't just overwrite or write the file as .rpmsave  but instead it displays see the difference(s) between the two files and you get to decide what to do!
 
-One issue I have heard about is VMWare Workstation 10.0.1 on 14.04 and recompiling kernel modules. Patching instructions in here: http://dandar3.blogspot.cz/ and patch file is the one at the bottom of this post https://communities.vmware.com/message/2326986
+One issue I have heard about is VMWare Workstation 10.0.1 on 14.04 and recompiling kernel modules. Patching instructions in here: <http://dandar3.blogspot.cz/> and patch file is the one at the bottom of this post <https://communities.vmware.com/message/2326986>

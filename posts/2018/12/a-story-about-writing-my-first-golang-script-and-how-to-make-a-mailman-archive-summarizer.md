@@ -29,7 +29,7 @@ as of right now looks like below in one RSS reader:
 
 In summary the steps to get there were:
 
-- Used https://github.com/bcongdon/colly-example to do some web scraping of the mailman/pipermail web archive of the ceph-users e-mail list. Golang here was quite different from Python and beautifulsoup. It uses callbacks. I didn't look too deeply into those but things did not happen in the same order they were written. Maybe it can be used to speed things up a bit, but the slowest part of this scraping is the 1s+random time delay I have between the HTTP GETs to be nice to the Internet ;)
+- Used <https://github.com/bcongdon/colly-example> to do some web scraping of the mailman/pipermail web archive of the ceph-users e-mail list. Golang here was quite different from Python and beautifulsoup. It uses callbacks. I didn't look too deeply into those but things did not happen in the same order they were written. Maybe it can be used to speed things up a bit, but the slowest part of this scraping is the 1s+random time delay I have between the HTTP GETs to be nice to the Internet ;)
 - It loops over the Months (thread.html) for some of the years and only saves links and their titles which has "GW" in the title.
 - Put this in a map (golang is **different** here too. Kind of like a python dictionary but one had to initialize it in advance. Lots of googling involved :)
 - Loop over the map and create RSS, JSON, ATOM or HTML output using the [gorilla feeds pkg](http://www.gorillatoolkit.org/pkg/feeds). Use of the [time](https://golang.org/pkg/time/) pkg in Golang was needed to have nice fields in the RSS, this was interesting. Not using UNIX 1970 seconds epoch but some date in 2006? Some|most functions?types?interfaces? (I don't know the names of most things) give a value AND an error on the call makes declaring? a variable a bit funny looking:
@@ -50,12 +50,12 @@ I'm a big fan of [travis-ci](https://github.com/martbhell/mailman-summarizer/blo
 - decrypt a file that has the credentials of a service account which has access to a bucket or two in a project in google cloud
 - compiles mailman-summarizer
 - run [a bash script](https://github.com/martbhell/mailman-summarizer/blob/master/tools/deploy.sh) which eventually publishes the RSS feed on a website. It does this to a staging object storage bucket:
-    - go runs "mailman-summarizer -rss" and writes the output to a file called feed.xml
-    - uses the credentials to write feed.xml to the bucket and make the object public-readable
-    - Then the script does the same to the [production bucket](https://storage.googleapis.com/ceph-rgw-users/feed.xml)
+  - go runs "mailman-summarizer -rss" and writes the output to a file called feed.xml
+  - uses the credentials to write feed.xml to the bucket and make the object public-readable
+  - Then the script does the same to the [production bucket](https://storage.googleapis.com/ceph-rgw-users/feed.xml)
 
 One could improve the CI part here a few ways:
 
 - Right now it uses the travis [script provider](https://docs.travis-ci.com/user/deployment/script/) in the deploy phase. There is a 'gcs' provider, but I couldn't find documentation for how to specify the JSON file with the credentials like with appengine. I get a feel that because it's not easy I should probably use appengine instead..
-- One could do more validation, perhaps validate the RSS feed before actually uploading it. But I couldn't find a nice program that would validate the feed. There are websites like https://validator.w3.org/feed/ though so I used that manually. Maybe RSS feeds aren't so cool anymore , I use them _a lot_ though. 
+- One could do more validation, perhaps validate the RSS feed before actually uploading it. But I couldn't find a nice program that would validate the feed. There are websites like <https://validator.w3.org/feed/> though so I used that manually. Maybe RSS feeds aren't so cool anymore , I use them _a lot_ though.
 - An e2e test would also be cool. For example fetch the feed.xml from the staging and make sure it is the same as what was uploaded.

@@ -20,11 +20,9 @@ Please note, this post is not meant to be a replacement for the official Brocade
 - Learn about the different licensing options and versions of the software. [FAQ](http://www.brocade.com/downloads/documents/faqs/brocade-network-advisor-faq.pdf) is useful.
 - Watch youtube videos of BNA
 - Good documents
-    - BNA FAQ http://www.brocade.com/downloads/documents/faqs/brocade-network-advisor-faq.pdf
-    - Brocade Network Advisor SAN + IP User Manual
-    - Brocade Network Advisor Installation and Migration Guide
-
- 
+  - BNA FAQ <http://www.brocade.com/downloads/documents/faqs/brocade-network-advisor-faq.pdf>
+  - Brocade Network Advisor SAN + IP User Manual
+  - Brocade Network Advisor Installation and Migration Guide
 
 ### Install in a VM
 

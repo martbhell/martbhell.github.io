@@ -10,7 +10,7 @@ The standard ones - gmail or hotmail works great, but there are also [scripts](h
 
 To customize this to work with your own setup you may need to change the script available on the link above (as of version 2011-01-04).
 
-If your squirrelmail web server enforces https and is installed on for example https://guldmyr.com/squirrelmail and not https://guldmyr.com/src (which the script by default assumes), you will have to alter the script.
+If your squirrelmail web server enforces https and is installed on for example <https://guldmyr.com/squirrelmail> and not <https://guldmyr.com/src> (which the script by default assumes), you will have to alter the script.
 
 I had to change this function in the code to make it work:
 

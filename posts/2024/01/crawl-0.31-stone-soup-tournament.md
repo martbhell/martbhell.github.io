@@ -6,7 +6,7 @@ tags: games, dcss, stone-soup, crawl, rogue-like
 lang: en
 ---
 
-## 0.31 Tournament!
+## 0.31 Tournament
 
 These are my [stats](https://crawl.develz.org/tournament/0.31/players/martbhell.html). I have not finished the game many times. It is hard. I think the original idea was by someone that played nethack and thought it was too easy.
 

@@ -29,8 +29,6 @@ Requirements needed to set it up:
 - Rpms: cvmfs, -init-scripts, -keys, -auto-setup (for tier-3 sites does some system configs), fuse, fuse-libs, autofs
 - squid cache – you need to have one. Ideally two or more for resilience. Configured (at least) to accept traffic from your site to one or more cvmfs repository servers. You could use existing frontier-squids.
 
- 
-
 ## National Grid Service Cloud
 
 A Brittish cloud.

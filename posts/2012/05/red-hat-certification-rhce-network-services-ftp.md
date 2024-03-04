@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## FTP:
+## FTP
 
 An ftp-server is also quite easy to test. You can test it from many web-browsers, telnet, ftp, lftp or a myriad of other clients.
 
