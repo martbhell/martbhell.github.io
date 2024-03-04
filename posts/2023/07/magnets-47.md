@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, riiga, latvia, Ložmetējkalns, M21AK, kiviton, 
 ---
 
 Magnets 47
-===
+---
 
 - Lohko: M21AK
 - 6.5km (juoksin 9.5)
@@ -17,7 +17,7 @@ Magnets 47
 - [tulokset](https://www.magnets.lv/rezultati/vasara_2023/47_karta/results.htm#M21AK)
 
 yleisesti
-===
+---
 
 - Oli aika hauska että siellä oli vihreät äksät - se olivat kattuneet puita ja toimivat minulle myös kuin "pysähty"-merkki (että olin juoksunut rastin ohi). Aika montta rasteja oli tässä äksässä.
 - Niin monta rasteja, eli se meni aika helposti.

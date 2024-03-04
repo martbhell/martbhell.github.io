@@ -7,7 +7,7 @@ lang: en
 ---
 
 0.30 Tournament
-===
+---
 
 What Is Stone Soup?
 ---

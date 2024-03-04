@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, hs, d-rata, salim, vihti, firmaliiga, d-lohko, r
 ---
 
 Suunnistaa
-===
+---
 
 - Lohko: d
 - 4.5km (juoksin 6.2km, 67min, 53/80)
@@ -15,7 +15,7 @@ Suunnistaa
 - [Livelox](https://www.livelox.com/Viewer/Firmaliiga-2023-syksy-3-kisa-Salmi/D?classId=656177&tab=player)
 
 Miten
-===
+---
 
 - K-1: Tuntui hyvältä ja juoksin suoraa rastiin.
 - 1-2: Halusin mennää avokalliolla, näin kuutosen rasti mutta meni sen jälkeen liian oikealle ja ei pitää korkeusero kuin halusin. Näin tuo vihreämpi alue mutta en uskonut että se oli siitä ja juoksin vihreä alue ja rastin ohi.
@@ -32,6 +32,6 @@ Miten
 [![from rasti 3 to 4](images/3-4.20230829.firmaliiga.png "3-4")](images/3-4.20230829.firmaliiga.png)
 
 Lopussa
-===
+---
 
 En tarvitsinut syödä banaanin just ennen juoksun. Olisi parempi odottaa ja ottaa se jälkeen. Mutta hyvä että otin juomarepun mukaan tämän kerran, kun tuli kävelly (korkea mäki) sain vähän juoma juottu ja otin se vähän rauhallisempi ja antoi enemmän aika tarkistaa kartan ja reitin.

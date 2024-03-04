@@ -7,7 +7,7 @@ lang: en
 ---
 
 0.30 Tournament
-===
+---
 
 Timeline of the 2023 May 0.30 tournament - continuing off from [Part 1](dungeon-crawl-stone-soup-030-tournament).
 

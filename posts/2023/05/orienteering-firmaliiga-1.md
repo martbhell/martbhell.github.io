@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, hs, e-rata, röylä, sorvalampi, firmaliiga, e-l
 ---
 
 Suunnistaa
-===
+---
 
 - Lohko: E
 - 4.0km (juoksin 5.0km, 53min, 16/108)
@@ -15,7 +15,7 @@ Suunnistaa
 - [Livelox](https://www.livelox.com/Viewer/Firmaliiga-2023-kevat-2-kisa-Royla-Sorvalampi/E?classId=604983)
 
 Miten
-===
+---
 
 - K-1: tien kautta. Otin suunta avakalliolta
 - 1-2: menin liikaa oikealle, sen jälkeen vähän matka tiellä ja sitten ylös. Aloitin etsimään liian aikaisin, oli ylämäki ehkä se oli syy.

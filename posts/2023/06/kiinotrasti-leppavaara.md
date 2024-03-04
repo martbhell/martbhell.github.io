@@ -11,7 +11,7 @@ Espoo ylläpitää [kiintorastit](https://www.espoo.fi/fi/liikunta-ja-luonto/ulk
 Olen ollut siellä monta kertaa ja se olisi aika helppo.
 
 Miksi
-===
+---
 
 Menin yöllä (22:15-23:30 välillä eli aurinkilaskun jälkeen) sinne? No, harjoittelisin otsalampulla ennen [jukolan viestiä](https://jukola.com/2023/)!
 
@@ -21,7 +21,7 @@ Menin yöllä (22:15-23:30 välillä eli aurinkilaskun jälkeen) sinne? No, harj
 - miten se nyt toimi taas tämä suunnistus pimeässä
 
 Loput
-===
+---
 
 Meni aika hyvin. Tein oman radan ja löysin kaikki paitsi nro 34, luulen että se ei ollut siellä mutta ehkä en ympärisi koko kumpare riitäväksi. Ja kun lähdin 44:lta 45:lle juoksin värään suuntaan ja tulin metsästa pellon just länsiltä rastilta. No, huomasin aika nopeasti missä olin ja juoksin vaan ympäri isolla tiellä.
 

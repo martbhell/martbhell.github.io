@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, sääksi, rykmentti, b-rata, Nurmijärvi, kunto,
 ---
 
 Suunnistaa
-===
+---
 
 - Lohko: b
 - 5.4km (juoksin 6.4km, 56min, 28/31)
@@ -16,7 +16,7 @@ Suunnistaa
 - [tulokset](https://rajamaenrykmentti.fi/irtulokset2023/v20231017yo.html)
 
 Miten
-===
+---
 
 - K-2: OK
 - 2-3: Isoin bummi. En valitsinut parempi otaminen olisi löytää tuo talo / mäki just ennen rastia ja mennä sieltä rastiin.
@@ -27,7 +27,7 @@ Miten
 [![from rasti 2 to 3](images/rajamaen.saaksi.2-3.png "2-3")](images/rajamaen.saaksi.2-3.png)
 
 Lopussa
-===
+---
 
 Yösuunnistus vinkit:
 

@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, espoorastit, a-rata, leipsuo, vihti
 ---
 
 Mitä?
-===
+---
 
 Yritän kirjoittaa allas miten se meni tämä kertaa ja mitä oli vaikea ja miten meni väärin.
 
@@ -16,7 +16,7 @@ Yritän kirjoittaa allas miten se meni tämä kertaa ja mitä oli vaikea ja mite
 - Leipsuo
 
 Miten
-===
+---
 
 K-7: ihan sekaisin osa
 ---
