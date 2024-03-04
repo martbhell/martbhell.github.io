@@ -9,7 +9,7 @@ def test_content_dir():
 
     debug = False
 
-    EXCLUDE = ["images", "MAKESYMLINKS.py", "extras"]
+    EXCLUDE = ["images", "MAKESYMLINKS.py", "extras", "ADD_PRETTIER_TAG.sh"]
 
     # Get a list of all .md files in the posts directory and its subdirectories
 
