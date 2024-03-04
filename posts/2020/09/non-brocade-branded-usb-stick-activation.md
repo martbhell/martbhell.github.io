@@ -1,3 +1,4 @@
+<!-- markdownlint-disable  MD027 -->
 ---
 title: Non Brocade Branded USB stick activation
 date: 2020-09-17
@@ -55,7 +56,7 @@ All stuff is been tested with FOS v7.4.2f.
 
 Insert stick in a switch and run this script as root:
 
-```
+```bash
 #!/bin/bash -x
 insmod /lib/modules/default/kernel/drivers/usb/core/usbcore.ko
 insmod /lib/modules/default/kernel/drivers/usb/host/hcd-driver.ko
