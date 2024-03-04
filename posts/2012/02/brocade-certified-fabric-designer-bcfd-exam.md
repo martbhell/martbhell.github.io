@@ -14,7 +14,8 @@ Bring some water and food.
 
 Good exam, but I am really tired of exams and certifications for now!
 
-Also, isn't easy to confuse Brocade Certified Fabric Designer with somebody who makes clothes?
+Also, isn't easy to confuse Brocade Certified Fabric Designer with somebody who
+makes clothes?
 
 Check out my other posts on the BCFD subject:
 

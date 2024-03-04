@@ -6,13 +6,16 @@ tags: centos, certification, file, transfer, linux, openssh, red, hat, rhce, ssh
 <!-- prettier-ignore -->
 ---
 
-[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
+\- System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
 # Network services
 
-Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:
+Network services are an important subset of the exam objectives. RHCE candidates
+should be capable of meeting the following objectives for each of the network
+services listed below:
 
 - Install the packages needed to provide the service.
 - Configure SELinux to support the service.
@@ -37,7 +40,9 @@ To test from windows you can use putty.
 
 But in linux you just need ssh for client and sshd for server.
 
-man 5 sshd\_config and [this blogpost](http://www.aboutlinux.info/2005/10/using-tcp-wrappers-to-secure-linux.html "on aboutlinux.info") has an overview.
+man 5 sshd_config and
+[this blogpost](http://www.aboutlinux.info/2005/10/using-tcp-wrappers-to-secure-linux.html "on aboutlinux.info")
+has an overview.
 
 - Install the packages needed to provide the service.
 
@@ -53,7 +58,7 @@ man 5 sshd\_config and [this blogpost](http://www.aboutlinux.info/2005/10/using-
 
 - Configure the service for basic operation.
 
-- /etc/ssh/sshd\_config
+- /etc/ssh/sshd_config
 
 - Configure host-based and user-based security for the service
 
@@ -65,27 +70,28 @@ man 5 sshd\_config and [this blogpost](http://www.aboutlinux.info/2005/10/using-
 
 ### TCP Wrapper
 
-More info in man tcpd and man 5 hosts\_access
+More info in man tcpd and man 5 hosts_access
 
 Check that your daemon supports it:
 
-which sshd
-ldd /usr/sbin/sshd|grep wrap
+which sshd ldd /usr/sbin/sshd|grep wrap
 
-For this test, let's say that the server you are configuring has IP/netmask 192.168.1.1/24 and that you have a client on 192.168.0.0/24
+For this test, let's say that the server you are configuring has IP/netmask
+192.168.1.1/24 and that you have a client on 192.168.0.0/24
 
 cat /etc/hosts.allow
 
-sshd: 192.168.0.0/255.255.255.0
-sshd: ALL : twist /bin/echo DEATH
+sshd: 192.168.0.0/255.255.255.0 sshd: ALL : twist /bin/echo DEATH
 
-The last row sends a special message to a client connecting from a non-allowed network.
+The last row sends a special message to a client connecting from a non-allowed
+network.
 
 cat /etc/hosts.deny
 
 ALL: ALL
 
-If you on the server with these settings try to do "ssh -v root@localhost" or "ssh -v root@192.168.1.1" you'll get the message from twist.
+If you on the server with these settings try to do "ssh -v root@localhost" or
+"ssh -v root@192.168.1.1" you'll get the message from twist.
 
 If you in hosts.allow add:
 
@@ -106,10 +112,10 @@ you can log on from localhost to the public IP of the server.
 - ssh-keygen
 - ssh-copy-id user@host
 - ssh user@host
-- set PasswordAuthentication to no in sshd\_config
+- set PasswordAuthentication to no in sshd_config
 - service sshd restart
 
 - Configure additional options described in documentation.
 
-- many things can be done, see "man 5 sshd\_config"
+- many things can be done, see "man 5 sshd_config"
 - chrootdirectory looks quite cool but requires a bit of work

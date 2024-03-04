@@ -6,7 +6,8 @@ tags: bash, dcache, graph, graphs, linux, monitoring, movers, plotting, rrd, rrd
 <!-- prettier-ignore -->
 ---
 
-This is how to create simple RRD graphs using one data source that can be 0 and above. It is not an "ever increasing" counter.
+This is how to create simple RRD graphs using one data source that can be 0 and
+above. It is not an "ever increasing" counter.
 
 It will look like this:
 
@@ -14,10 +15,11 @@ It will look like this:
 
 ## 1. Create the rrd database
 
-I wrote this down in a .sh file so I can go back later and see how it was set up.
+I wrote this down in a .sh file so I can go back later and see how it was set
+up.
 
 ```bash
-#!/bin/sh 
+#!/bin/sh
 rrdfile='/home/$user/rrd/movers.rrd'
 rrdtool='/usr/bin/rrdtool'
 $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:576 RRA:AVERAGE:0.5:6:672 RRA:AVERAGE:0.5:24:732 RRA:AVERAGE:0.5:144:1460
@@ -27,11 +29,15 @@ $rrdtool create $rrdfile --step 300 DS:movers:GAUGE:600:U:U RRA:AVERAGE:0.5:1:57
 - #10 minute heartbeat for the data source #2 days of 5 minute averages
 - #2 weeks of 1/2 hour averages
 - #2 months of 2 hour averages
-- #2 years of 12 hour averages  
+- #2 years of 12 hour averages
 
 ## 2 Add data to the rrd
 
-Also done in a bash script. Because the --step above is set to 300, you need to run this script every 300 seconds (or every 5 minutes). The script specified in $allpools prints the path to a file. Then with $output and $movers that file is grepped for 'RUNNING' and then it counts how many lines that was - amount of movers.
+Also done in a bash script. Because the --step above is set to 300, you need to
+run this script every 300 seconds (or every 5 minutes). The script specified in
+$allpools prints the path to a file. Then with $output and $movers that file is
+grepped for 'RUNNING' and then it counts how many lines that was - amount of
+movers.
 
 ```bash
 #!/bin/sh
@@ -111,4 +117,5 @@ $rrdtool graph $lastday --end now --start -1d \
 
 ## 5. Final Words
 
-I am not providing the data gathering script here as you probably won't need it: it lists movers (transfers) on all pools in a dCache system.
+I am not providing the data gathering script here as you probably won't need it:
+it lists movers (transfers) on all pools in a dCache system.

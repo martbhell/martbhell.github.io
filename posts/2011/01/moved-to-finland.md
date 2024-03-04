@@ -10,4 +10,5 @@ Just starting the blog off.
 
 I moved to Helsinki, Finland in the beginning of December 2010.
 
-Not going to promise any special topics besides that it will probably be relating to me :p
+Not going to promise any special topics besides that it will probably be
+relating to me :p

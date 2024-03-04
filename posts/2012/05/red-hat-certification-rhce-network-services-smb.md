@@ -6,13 +6,16 @@ tags: centos, certification, file, transfer, linux, red, hat, rhce, samba, smb, 
 <!-- prettier-ignore -->
 ---
 
-[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
+\- System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
 # Network services
 
-Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:
+Network services are an important subset of the exam objectives. RHCE candidates
+should be capable of meeting the following objectives for each of the network
+services listed below:
 
 - Install the packages needed to provide the service.
 - Configure SELinux to support the service.
@@ -33,19 +36,23 @@ User should be able to do the following for all these services:
 
 ## SMB
 
-Testing an SMB server may be quite easy from Windows, but from Linux I suppose it's a bit trickier.
+Testing an SMB server may be quite easy from Windows, but from Linux I suppose
+it's a bit trickier.
 
 The CLI client is called 'smbclient'
 
 The tool to set passwords: 'smbpasswd'
 
-You can also get some information with commands starting with 'net', for example 'net -U username session'
+You can also get some information with commands starting with 'net', for example
+'net -U username session'
 
-testparm is another tool you can use to test that the config file - smb.conf - is not missing anything structural or in syntax.
+testparm is another tool you can use to test that the config file - smb.conf -
+is not missing anything structural or in syntax.
 
 The server is called 'samba'.
 
-There are more packages, for example 'samba-doc', samba4. You can find them by typing: 'yum install samba\*'
+There are more packages, for example 'samba-doc', samba4. You can find them by
+typing: 'yum install samba\*'
 
 samba-doc installs lots of files in /usr/share/doc/samba\*
 
@@ -65,7 +72,7 @@ samba-doc installs lots of files in /usr/share/doc/samba\*
 - Configure the service for basic operation.
 
 - server#: open firewall (check man smb.conf, port 445 and 139 are mentioned)
-- server#: mkdir /samba; chcon -t type\_in\_smb\_conf /samba
+- server#: mkdir /samba; chcon -t type_in_smb_conf /samba
 - server#: edit /etc/samba/smb.conf:
 
 - copy an existing share - make it browseable and allow guest to access

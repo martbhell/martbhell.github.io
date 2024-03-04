@@ -8,27 +8,39 @@ tags: certification, linux, red, hat, rhce, studying
 
 # RHCE Preparation - System Configuration and Management
 
-This is post 1 in a series of posts where I will be going through the objectives for the RHCE certifications. It builds on the initial post that has the objectives:
+This is post 1 in a series of posts where I will be going through the objectives
+for the RHCE certifications. It builds on the initial post that has the
+objectives:
 
 <https://www.guldmyr.com/red-hat-certification-rhce-preparation/>
 
-_It appears that the objectives have been updated, at least if you compare between my post above and <https://www.redhat.com/training/courses/ex300/examobjective>_
+_It appears that the objectives have been updated, at least if you compare
+between my post above and
+<https://www.redhat.com/training/courses/ex300/examobjective>_
 
 _for example build a simple rpm is installs one package is not in the list._
 
-I bet there are [many blogs](http://b.joaoubaldo.com/?page_id=623 "for example") about this topic. I'm doing this quite a lot for myself, but maybe somebody else finds these useful.
+I bet there are [many blogs](http://b.joaoubaldo.com/?page_id=623 "for example")
+about this topic. I'm doing this quite a lot for myself, but maybe somebody else
+finds these useful.
 
 This post will be about the section 'System Configuration and Management'.
 
-My setup: Core i7, 8GB RAM, Windows 7 x64, VMWare Workstation with CentOS installed.
+My setup: Core i7, 8GB RAM, Windows 7 x64, VMWare Workstation with CentOS
+installed.
 
 Installing a fresh VM with 4 cores, 5GB RAM, virtualization and CentOS.
 
-CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: <http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86_64/>
+CentOS is a free clone of Red Hat, it's missing some stuff (satellite for
+example) but it does the job for learning. You can find it in many places, for
+example here: <http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86_64/>
 
 ## IP Routing and NAT
 
-The part "Routing / NAT" will be tricky, as I do not have a second computer that I could use for this. Maybe I can get something working inside the virtual machines though, but for now I think I will skip these two and get straight into the other ones.
+The part "Routing / NAT" will be tricky, as I do not have a second computer that
+I could use for this. Maybe I can get something working inside the virtual
+machines though, but for now I think I will skip these two and get straight into
+the other ones.
 
 ## Use /proc/sys and sysctl to modify and set kernel runtime parameters
 
@@ -62,7 +74,8 @@ Waiting with this. Need to set up a KDC - kerberos service first.
 
 ## Build a simple RPM that packages a single file
 
-This appears to be a bit complicated - the details below are about as simple as this can be made. There is a lot more nifty things that you can do with an rpm.
+This appears to be a bit complicated - the details below are about as simple as
+this can be made. There is a lot more nifty things that you can do with an rpm.
 
 Would be nice to have a guide of this in for example /usr/share/doc
 
@@ -94,7 +107,8 @@ tar -cf GetIP.tar.gz GetIP
 mv GetIP.tar.gz SOURCES/
 ```
 
-Edit a spec-file (**do this as a normal user instead of root, it will show the default entries**):
+Edit a spec-file (**do this as a normal user instead of root, it will show the
+default entries**):
 
 ```bash
 cd SPECS
@@ -158,9 +172,14 @@ Then as normal user you can now execute the installed file:
 
 If you wonder about things - check this fairly unreadable blog post out.
 
-Basically you want to use the $RPM_BUILD_ROOT in front of where you want to install the software. By default there are 'make', 'configure' and nothing in the 'require' entries. I removed the make, configured and just put 'bash' in the require entries, it seemed to do the trick though.
+Basically you want to use the $RPM_BUILD_ROOT in front of where you want to
+install the software. By default there are 'make', 'configure' and nothing in
+the 'require' entries. I removed the make, configured and just put 'bash' in the
+require entries, it seemed to do the trick though.
 
-More info is also available on [rpm.org](http://www.rpm.org/max-rpm/ch-rpm-build.html "rpm.org - directories") - which recommend to use /usr/src/redhat for building packages.
+More info is also available on
+[rpm.org](http://www.rpm.org/max-rpm/ch-rpm-build.html "rpm.org - directories") -
+which recommend to use /usr/src/redhat for building packages.
 
 ## Configure a system as an iSCSI initiator that persistently mounts an iSCSI target
 
@@ -176,7 +195,8 @@ sar -A
 
 Well, this can be a lot of things and is quite hard to prepare for.
 
-But I think a 'for loop' is a good thing to know about and can help with a lot of system maintenance tasks.
+But I think a 'for loop' is a good thing to know about and can help with a lot
+of system maintenance tasks.
 
 an input file with usernames:
 
@@ -202,9 +222,14 @@ done
 
 Remove the "echo" to create the users.
 
-Of course, you could also use the 'newuser' command (interactive or send a file).
+Of course, you could also use the 'newuser' command (interactive or send a
+file).
 
-This happens a lot I think: You get an idea that "hey, I can do this with a script". But then a random amount of time later you find out that there is already a command that does this for you. That doesn't mean the time spent is a total waste, hopefully you learned something while doing it. Maybe your script even does a better job than the new one you found.
+This happens a lot I think: You get an idea that "hey, I can do this with a
+script". But then a random amount of time later you find out that there is
+already a command that does this for you. That doesn't mean the time spent is a
+total waste, hopefully you learned something while doing it. Maybe your script
+even does a better job than the new one you found.
 
 ## Configure a system to log to a remote system
 
@@ -228,14 +253,19 @@ Set the IP to the machine that will be receiving the logs.
 
 ## Configure a system to accept logging from a remote system
 
-So this step you may want to do before the previous step (unless you already have a working syslogd server).
+So this step you may want to do before the previous step (unless you already
+have a working syslogd server).
 
 You edit /etc/rsyslog.conf
 
 and uncomment the "reception" parts (don't forget firewall and restart service).
 
-To test try to "su -" with the wrong password and then check in /var/log/secure on the loghost.
+To test try to "su -" with the wrong password and then check in /var/log/secure
+on the loghost.
 
 ## Create a private repository
 
-"To create a private repository you should proceed as follows: - Install the createrepo software package - Create a `directory` where files can be shared (via FTP or HTTP) - Create a subdirectory called Packages and copy all packages to be published in Packages - run createrepo -v `directory`"
+"To create a private repository you should proceed as follows: - Install the
+createrepo software package - Create a `directory` where files can be shared
+(via FTP or HTTP) - Create a subdirectory called Packages and copy all packages
+to be published in Packages - run createrepo -v `directory`"

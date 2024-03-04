@@ -15,7 +15,8 @@ ainesosat:
 - Liemikuutio
 - Aurajuusto
 
-raaste punajuurea, paistaa sipulia öljyssä, laitaa riisi samassa kattilassa ja lisätä liemikuutiovesi hieman ja hieman.
+raaste punajuurea, paistaa sipulia öljyssä, laitaa riisi samassa kattilassa ja
+lisätä liemikuutiovesi hieman ja hieman.
 
 [![puna](images/DSC_1963-768x1024.jpg)](images/DSC_1963-scaled.jpg)
 

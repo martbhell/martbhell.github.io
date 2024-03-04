@@ -6,13 +6,16 @@ tags: centos, certification, dns, domain, name, linux, red, hat, rhce, studying
 <!-- prettier-ignore -->
 ---
 
-[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
+\- System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
 # Network services
 
-Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:
+Network services are an important subset of the exam objectives. RHCE candidates
+should be capable of meeting the following objectives for each of the network
+services listed below:
 
 - Install the packages needed to provide the service.
 - Configure SELinux to support the service.
@@ -33,7 +36,8 @@ User should be able to do the following for all these services:
 
 ## DNS
 
-A DNS-server is quite easy to test as well, just point a client to the IP of your local DNS server and check /var/log/messages on the DNS-server.
+A DNS-server is quite easy to test as well, just point a client to the IP of
+your local DNS server and check /var/log/messages on the DNS-server.
 
 - Install the packages needed to provide the service.
 
@@ -41,7 +45,8 @@ A DNS-server is quite easy to test as well, just point a client to the IP of you
 
 - Configure SELinux to support the service
 
-- working from scratch, after adding new zones and things you may need to add correct context to the files
+- working from scratch, after adding new zones and things you may need to add
+  correct context to the files
 
 - Configure the service to start when the system is booted.
 
@@ -67,7 +72,9 @@ A DNS-server is quite easy to test as well, just point a client to the IP of you
 
 - Configure a caching-only name server.
 
-- This is what the default /etc/named.conf does it - (this is also stored in the /usr/shar/doc/bind\*/ - but, it a good thing to try would be to try to configure this from an empty named.conf
+- This is what the default /etc/named.conf does it - (this is also stored in the
+  /usr/shar/doc/bind\*/ - but, it a good thing to try would be to try to
+  configure this from an empty named.conf
 
 - Configure a caching-only name server to forward DNS queries.
 

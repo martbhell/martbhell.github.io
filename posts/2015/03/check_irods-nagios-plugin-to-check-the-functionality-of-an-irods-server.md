@@ -8,7 +8,8 @@ tags: irods, monitoring, nagios
 
 Part of my $dayjob as a sysadmin is to monitor all things.
 
-Today I felt like checking if the users on our servers could use the local iRODS storage and thus `check_irods` was born!
+Today I felt like checking if the users on our servers could use the local iRODS
+storage and thus `check_irods` was born!
 
 It checks if it can:
 
@@ -21,7 +22,7 @@ a temporary file.
 
 Dependencies:
 
--  iRODS 3.2 with OS trusted authentication
+- iRODS 3.2 with OS trusted authentication
 - mktemp
 
 Source: <https://github.com/martbhell/nagios-checks/tree/master/plugins/check_irods>

@@ -20,4 +20,5 @@ you can do this
 
 and it will automagically add a .old at the end of the filename.
 
-This is called a brace expansion: [http://tldp.org/LDP/Bash-Beginners-Guide/html/sect\_03\_04.html](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_04.html)
+This is called a brace
+expansion: [http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_04.html](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_04.html)
