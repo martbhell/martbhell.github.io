@@ -2,9 +2,9 @@
 title: Dungeon Crawl Stone Soup 0.31 Tournament
 date: 2024-01-22 21:57
 category: finland
+lang: en
 tags: games, dcss, stone-soup, crawl, rogue-like
 <!-- prettier-ignore -->
-lang: en
 ---
 
 ## 0.31 Tournament
