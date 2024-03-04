@@ -9,7 +9,8 @@ lang: en
 
 ## What was going on?
 
-The wired network connection lost connection every now and then. Most of the time this didn't bother because buffering but sometimes it did annoy.
+The wired network connection lost connection every now and then. Most of the
+time this didn't bother because buffering but sometimes it did annoy.
 
 This was visible in `dmesg -T` output:
 
@@ -37,4 +38,5 @@ exit 0
 
 ## What really really helped
 
-- making sure the cable is properly connected into the switch, the plastic flap that keeps it in is apparently broken
+- making sure the cable is properly connected into the switch, the plastic flap
+  that keeps it in is apparently broken

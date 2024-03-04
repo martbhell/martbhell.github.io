@@ -6,7 +6,9 @@ tags: bna, brocade, certification, network, advisor, studying
 <!-- prettier-ignore -->
 ---
 
-I'm going to focus on the below things when studying for BANAS: They are based on the current objectives listed on Brocade's [page](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page "http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page").
+I'm going to focus on the below things when studying for BANAS: They are based
+on the current objectives listed on Brocade's
+[page](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page "http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/index.page").
 
 ## Brocade Accredited Network Advisor Specialist Exam Topics
 
@@ -20,7 +22,9 @@ I'm going to focus on the below things when studying for BANAS: They are based o
 
 - #### Describe the installation and configuration of Brocade Network Advisor
 
-  - Taken care of in my [previous blog post](https://www.guldmyr.com/banas-brocade-accredited-network-advisor-specialist/ "BANAS – Brocade Accredited Network Advisor Specialist"). Can be installed in a VM for practice.
+  - Taken care of in my
+    [previous blog post](https://www.guldmyr.com/banas-brocade-accredited-network-advisor-specialist/ "BANAS – Brocade Accredited Network Advisor Specialist").
+    Can be installed in a VM for practice.
 
 - #### Perform SAN Discovery
 
@@ -28,8 +32,10 @@ I'm going to focus on the below things when studying for BANAS: They are based o
 
 - #### Perform IP Discovery
 
-  - BNA 170-WBT is a course that's currently free by Brocade - it's about IP Discovery in BNA!
-  - Once discovered devices are stored in the Management application database. First IP of the device discovered becomes the primary address of the device.
+  - BNA 170-WBT is a course that's currently free by Brocade - it's about IP
+    Discovery in BNA!
+  - Once discovered devices are stored in the Management application database.
+    First IP of the device discovered becomes the primary address of the device.
   - Simple/Profile based discovery: single: hostname/IP. Profile: range.
   - Requirements
     - Users must have Discover Setup-IP and "All IP Products AOR" privileges
@@ -39,14 +45,16 @@ I'm going to focus on the below things when studying for BANAS: They are based o
     - IP range of devices must be known
     - All devices must have SNMP MIB support
   - Access by: "Discover -> IP Products".
-  - One can add default username/password. One can add several and it tries the default and then the rest..
+  - One can add default username/password. One can add several and it tries the
+    default and then the rest..
   - It uses OIDs to select products to include/exclude.
     - Cisco/Juniper are available by default.
   - Seed address: the IP the BNA server will use to contact the switches?
 
 ### Migration
 
-- Describe considerations when migrating to Brocade Network Advisor from other tools
+- Describe considerations when migrating to Brocade Network Advisor from other
+  tools
   - Check out the Installation Guide for BNA.
 
 ### Troubleshooting

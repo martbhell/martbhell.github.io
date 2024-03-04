@@ -9,7 +9,8 @@ lang: fi
 
 ## Mitä tapahtui
 
-Langalla verkkoyhteys kotona katkkeili usein. Yleensä ei ollut ongelmä mutta pikkuhiljaa puskurointi ei auttanut enää.
+Langalla verkkoyhteys kotona katkkeili usein. Yleensä ei ollut ongelmä mutta
+pikkuhiljaa puskurointi ei auttanut enää.
 
 Tämä oli näkyvissä `dmesg -T`:
 
@@ -20,7 +21,8 @@ Tämä oli näkyvissä `dmesg -T`:
 
 ## Yritetään
 
-- Poista wifi ja bluetooth käytöstä (lisää seuraava /boot/config.txt-tiedostoon):
+- Poista wifi ja bluetooth käytöstä (lisää seuraava
+  /boot/config.txt-tiedostoon):
 
 ```bash
 [all]
@@ -39,4 +41,6 @@ exit 0
 
 _Muut keinot auttoivat myös, mutta lopulta ongelma ratkesi seuraavasti:_
 
-- Varimsta, että kaapeli on hyvin kiinnitetty kytkimeen; omassa kaapelissani muovien lukitusklipsi oli ilmeisesti rikki, ja kaapeli pääsi liukumaan ulos portista!
+- Varimsta, että kaapeli on hyvin kiinnitetty kytkimeen; omassa kaapelissani
+  muovien lukitusklipsi oli ilmeisesti rikki, ja kaapeli pääsi liukumaan ulos
+  portista!

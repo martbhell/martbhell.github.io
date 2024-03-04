@@ -16,12 +16,14 @@ For example 'pdsh -a uname -av' will give you "uname -av" of all machines.
 
 It can be installed from rpmforge.0
 
-wget <http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86\_64.rpm>
-rpm -ivh rpm-release\*
-yum install pdsh
+wget
+<http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86\_64.rpm>
+rpm -ivh rpm-release\* yum install pdsh
 
-after that you can immediately run "pdsh -w oss1,client1 uname -av" to run a command on a remote node.
+after that you can immediately run "pdsh -w oss1,client1 uname -av" to run a
+command on a remote node.
 
-It's possible to set up so that it executes on a pre-defined list. Check out /etc/machines.
+It's possible to set up so that it executes on a pre-defined list. Check out
+/etc/machines.
 
 Extremely useful if you want to save some time :)

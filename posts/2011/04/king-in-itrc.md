@@ -14,6 +14,9 @@ Woop woop!
 
 HP's ITRC forum is a great place to learn more, help out :)
 
-For me the primary reason is to remember the things I learnt while working at the support, because I do not work with hardware in that respect anymore it's incredible how fast this kind of stuff is forgotten, at least the specifics :/
+For me the primary reason is to remember the things I learnt while working at
+the support, because I do not work with hardware in that respect anymore it's
+incredible how fast this kind of stuff is forgotten, at least the specifics :/
 
-I hope the ITRC won't change into something crap after the move to another forum system now in the summer.
+I hope the ITRC won't change into something crap after the move to another forum
+system now in the summer.

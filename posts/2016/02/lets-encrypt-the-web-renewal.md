@@ -10,7 +10,8 @@ So easy!
 
 just:
 
-As I ran the letsencrypt-auto [last time](https://www.guldmyr.com/lets-encrypt-the-web/), I did again.
+As I ran the letsencrypt-auto
+[last time](https://www.guldmyr.com/lets-encrypt-the-web/), I did again.
 
 - sudo systemctl stop nginx
 - cd letsencrypt
@@ -28,7 +29,8 @@ Since letsencrypt-auto version 0.5.0 it's:
 - ./letsencrypt-auto --standalone --domains "my.example.com,2.example.com"
 - sudo systemctl restart nginx
 
-Since [certbot](https://github.com/certbot/certbot)\-auto (renamed from letsencrypt):
+Since [certbot](https://github.com/certbot/certbot)\-auto (renamed from
+letsencrypt):
 
 - sudo systemctl stop nginx
 - ./certbot-auto renew

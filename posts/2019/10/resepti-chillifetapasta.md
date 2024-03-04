@@ -19,10 +19,13 @@ Osat:
 
 Ohjeet :
 
-Laitta uunin päällä 250C astetta. Feta levy uuniformille, tomaattia ympäri sen. Hakkaa chilli ja laitta juuston päällä. Paljon öljy yli kaikki. Suolata ja pipurita :) 25min uunissa.
+Laitta uunin päällä 250C astetta. Feta levy uuniformille, tomaattia ympäri sen.
+Hakkaa chilli ja laitta juuston päällä. Paljon öljy yli kaikki. Suolata ja
+pipurita :) 25min uunissa.
 
 Kun vesi on 100C laitta suola ja sen jälkeen spaghettin.
 
-Kun tomaattia on rikki ota formmi uunista ja miksata feta ja chilli. Laitta kaikki yhdessä.
+Kun tomaattia on rikki ota formmi uunista ja miksata feta ja chilli. Laitta
+kaikki yhdessä.
 
 Bon App!

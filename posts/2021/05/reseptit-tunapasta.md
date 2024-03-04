@@ -15,4 +15,6 @@ Ainesosat 2.5 lle:
 - 190g pasta
 - Suola ja pippuri
 
-Laitaa vesi päällä. Paistaa sipulia öljyssä purkeista. Listaa tonnikalaa paistinpannulle. Sitten kerma ja mausteet. Kun pasta on melkein valmis laitaa herneet veteen.
+Laitaa vesi päällä. Paistaa sipulia öljyssä purkeista. Listaa tonnikalaa
+paistinpannulle. Sitten kerma ja mausteet. Kun pasta on melkein valmis laitaa
+herneet veteen.

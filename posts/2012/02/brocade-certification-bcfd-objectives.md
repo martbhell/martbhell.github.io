@@ -11,10 +11,13 @@ tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, 
 ### Data Collection
 
 - Given a scenario, design a solution that meets the customer's requirements
-- Given a scenario, demonstrate knowledge of resiliency, redundancy, HA, and locality
-- Given a scenario, describe the various documents required in the design assessment
+- Given a scenario, demonstrate knowledge of resiliency, redundancy, HA, and
+  locality
+- Given a scenario, describe the various documents required in the design
+  assessment
 
-Practice by making up many scenarios and then deciding which is the best way to design it.
+Practice by making up many scenarios and then deciding which is the best way to
+design it.
 
 ### Management and Monitoring Tools
 
@@ -27,16 +30,20 @@ What to monitor How to monitor these
 
 - Demonstrate knowledge of interoperability of B-Series/M-Series products
 - Given a scenario, describe Brocade hardware products and their purpose
-- Given a scenario, demonstrate knowledge of Brocade software features and purpose
+- Given a scenario, demonstrate knowledge of Brocade software features and
+  purpose
 
-Interopmodes Features: VF, FCR, TI, QoS, FW, IRL, Trunking, Port Fencing, D\_Port
+Interopmodes Features: VF, FCR, TI, QoS, FW, IRL, Trunking, Port Fencing, D_Port
 
 ### Distance Solutions
 
-- Given availability, performance and distance requirements, design an appropriate long distance solution using Fibre Channel
-- Given a specific set of requirements, demonstrate ability to design a SAN extension solution using FCIP
+- Given availability, performance and distance requirements, design an
+  appropriate long distance solution using Fibre Channel
+- Given a specific set of requirements, demonstrate ability to design a SAN
+  extension solution using FCIP
 
-FastWrite, Tape Pipelining, SACK Max distance for LWL and ELWL: Max performance of FCIP:
+FastWrite, Tape Pipelining, SACK Max distance for LWL and ELWL: Max performance
+of FCIP:
 
 ### Performance Tuning Optimization
 
@@ -47,11 +54,14 @@ ICL, nohops, trunking. How to increase performance in FCIP and FCR:
 
 ### Migration and Integration
 
-- Given an existing fabric, identify migration strategies to upgrade the fabric with new technology
-- Given a set of existing fabrics and network devices, determine a consolidation plan that minimizes disruption
-- Describe the requirements to integrate a Brocade DCX Backbone into an existing M-Series fabric
+- Given an existing fabric, identify migration strategies to upgrade the fabric
+  with new technology
+- Given a set of existing fabrics and network devices, determine a consolidation
+  plan that minimizes disruption
+- Describe the requirements to integrate a Brocade DCX Backbone into an existing
+  M-Series fabric
 
-FCR, Integrated Routing, E\_port on a switch in the M\_series.
+FCR, Integrated Routing, E_port on a switch in the M_series.
 
 ### Security
 

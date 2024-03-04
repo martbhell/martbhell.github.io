@@ -6,7 +6,9 @@ tags: allison, weiss, music, t61, thesixtyone
 <!-- prettier-ignore -->
 ---
 
-[Allison Weiss - You +  Me + Alcohol](http://www.thesixtyone.com/s/8Pd7ZiwFVrp/ "on t61") \- Lovely. Upbeat. Fnun. Lots of more songs by here on there. Very very nice. Got stuck on this all day ;)
+[Allison Weiss - You +  Me + Alcohol](http://www.thesixtyone.com/s/8Pd7ZiwFVrp/ "on t61")
+\- Lovely. Upbeat. Fnun. Lots of more songs by here on there. Very very nice.
+Got stuck on this all day ;)
 
 Beautiful. I want more.
 

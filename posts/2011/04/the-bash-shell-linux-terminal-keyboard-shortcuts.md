@@ -8,13 +8,16 @@ tags: bash, bash, shell, console, keyboard, shortcuts, linux, shell, terminal
 
 Hey!
 
-Recently found out that there are some quite awesome shortcuts available that I've missed - extremely useful if you use the bash shell in \*Nix.
+Recently found out that there are some quite awesome shortcuts available that
+I've missed - extremely useful if you use the bash shell in \*Nix.
 
-To see which one you are using you can type 'chsh' in a terminal - this will tell you if you are using /bin/bash.
+To see which one you are using you can type 'chsh' in a terminal - this will
+tell you if you are using /bin/bash.
 
 Go try them out! This can speed up your work in the terminal incredibly.
 
-\*\* Updated 2011-04-05 - there are many moooore! See this little link: [faqs](http://www.faqs.org/docs/bashman/bashref_101.html#SEC108)[http://www.faqs.org/docs/bashman/bashref\_93.html#SEC100](http://www.faqs.org/docs/bashman/bashref_93.html#SEC100)
+\*\* Updated 2011-04-05 - there are many moooore! See this little link:
+[faqs](http://www.faqs.org/docs/bashman/bashref_101.html#SEC108)[http://www.faqs.org/docs/bashman/bashref_93.html#SEC100](http://www.faqs.org/docs/bashman/bashref_93.html#SEC100)
 
 You can see the bindings by typing "bind -P"
 

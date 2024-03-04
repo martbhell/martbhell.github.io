@@ -1,14 +1,16 @@
-<!-- markdownlint-disable  MD027 -->
 ---
 title: Non Brocade Branded USB stick activation
 date: 2020-09-17
 category: storage
 tags: brocade, usb
 <!-- prettier-ignore -->
+---
 
 Another submission courtesy of **Eberhard**.
 
-Run anything here at your own risk. From what I can tell they should be fairly safe. Do make sure you run them on the switch itself. Pretty nice in case you don't want to shell out for a Brocade branded USB stick to transfer firmwares!
+Run anything here at your own risk. From what I can tell they should be fairly
+safe. Do make sure you run them on the switch itself. Pretty nice in case you
+don't want to shell out for a Brocade branded USB stick to transfer firmwares!
 
 Hi,
 
@@ -46,10 +48,9 @@ Here is the diff
 > \# diff hotplug.orig hotplug  
 > 62c62  
 > <  
-> \---
->  > echo   "VENDOR $vendor" >> $USBCONFIG  
+> \---  > echo "VENDOR $vendor" >> $USBCONFIG  
 > 63a64  
->  >
+>   >
 >
 > The above output means - "Add the 'echo ... ' bit on line 62"
 
@@ -69,7 +70,8 @@ lsmod | grep usb
 /bin/mknod -m 660 /dev/sda2 b 8 2
 ```
 
-Sometimes the above script fails and you need to run it until it has usb\_storage and usbcore modules listed as loaded kernel modules.
+Sometimes the above script fails and you need to run it until it has usb_storage
+and usbcore modules listed as loaded kernel modules.
 
 Now I can mount an ext3 formatted USB-stick:
 

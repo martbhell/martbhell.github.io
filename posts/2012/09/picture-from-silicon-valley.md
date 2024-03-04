@@ -8,4 +8,5 @@ tags: brocade, picture
 
 As promised.
 
-[![At Silicon Valley Yo](images/DSC_0200-300x225.jpg "At Brocade Headquarters")](images/DSC_0200.jpg) Outside sign for building 3
+[![At Silicon Valley Yo](images/DSC_0200-300x225.jpg "At Brocade Headquarters")](images/DSC_0200.jpg)
+Outside sign for building 3
