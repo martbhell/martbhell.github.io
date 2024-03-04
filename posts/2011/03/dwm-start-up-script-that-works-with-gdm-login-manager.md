@@ -12,7 +12,7 @@ Finally got this working like I want it to - with some help from #suckless on ir
 
 Looks like this:
 
-```
+```text
 [Desktop Entry]
 Encoding=UTF-8
 Name=dwm
@@ -25,7 +25,7 @@ Type=Application
 
 Looks like this (updated on 2011-04-18):
 
-```
+```bash
 #!/bin/sh 
 #not applicable? I do not have this directory in my home dir. 
 # --- commands here and before the "while true; do" are run once #xrdb -merge ~/.Xresources #open screensaver (so that gnome-screensaver-command -l works) 
