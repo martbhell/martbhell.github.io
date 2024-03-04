@@ -137,13 +137,13 @@ Pages 299, 1258-1260,1266,1297,1317,1318
 
 ### Hardware reference manuals
 
-**VDX 6740 Hardware Reference Manual *53-1002829-02:*** Page 1
+**VDX 6740 Hardware Reference Manual** 53-1002829-02: Page 1
 
 - 6470: 24 1/10GbE SFP+ ports.
 - 6740T: 24 RJ-45
 - 6740-1G: 48 RJ-45 Base-T. 10Gb with license.
 
-**VDX 8770-4 / 8770-8 Hardware Reference Manual *53-1002563-03:***
+**VDX 8770-4 / 8770-8 Hardware Reference Manual** 53-1002563-03:
 
 - Chapter 1, Page 1:
   - Features CloudPlex.
@@ -157,11 +157,11 @@ Pages 299, 1258-1260,1266,1297,1317,1318
     (but it might not be if MDI/MDIX works..).
   - LC connectors for fiber ports
 
-**VDX 6730 Hardware Reference Manual *53-1002389-06:*** Pages 1,2,15
+**VDX 6730 Hardware Reference Manual** 53-1002389-06: Pages 1,2,15
 
 - 6730-32: 32-ports. 6730-76: 76 ports. 8 or 16 x 8GB FC ports.
 
-### **Network OS Software Licensing Guide v4.1 *53-1003164-01***
+**Network OS Software Licensing Guide v4.1** 53-1003164-01
 
 Pages 11-13
 

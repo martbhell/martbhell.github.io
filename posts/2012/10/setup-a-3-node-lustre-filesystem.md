@@ -158,7 +158,7 @@ Don't be afraid to check out their wiki or use google.
 
 /var/log/messages is the place to look for more detailed errors.
 
-#### On the MDS
+### On the MDS
 
 Because we do not have infiniband you want to change the parameters slightly for
 lnet to include tcp(eth0). These changes are not reflected until reboot (quite
@@ -174,13 +174,13 @@ mkfs.lustre --mdt --mgs
 mount
 ```
 
-#### On the OSS
+### On the OSS
 
 Also add the parameters into modprobe.
 
 `mkfs.lustre --ost` and `mount`
 
-#### On the client
+### On the client
 
 Add things into modprobe.
 
@@ -192,7 +192,7 @@ Then hit: `lfs df -h`
 
 To see usage!
 
-#### Get it all working on boot
+### Get it all working on boot
 
 You want to start the MDS, then the OSS and last the client. But while it's
 running you can restart any node and eventually it will start working again.

@@ -11,7 +11,8 @@ So read in a
 today about the most common passwords.
 
 On number 4 we had [lifehack](http://en.wikipedia.org/wiki/Life_hack "lifehack")
-\- but I had never heard about this before, so checked out Wikipedia on this and
+
+- but I had never heard about this before, so checked out Wikipedia on this and
 apparently this is a quickly written script with the intent to simplify life by
 filtering for example a feed like for example e-mail or RSS!
 
@@ -22,6 +23,6 @@ qualify?
 p.s. also I doubt that this is #4 in Sweden - but IDG Sweden I suspect quite
 strongly just translate English news d.s.
 
-p.s.2 Today's song: 
+p.s.2 Today's song:
 [James Vincent McMorrow - If I had a Boat](http://www.youtube.com/watch?v=e2XPDP6KkkE "James Vincent McMorrow")
 d.s.2

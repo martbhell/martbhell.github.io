@@ -43,8 +43,9 @@ the rest of IT :)
 [https://www.guldmyr.com/category/finland/feed/](https://www.guldmyr.com/category/finland/feed/ "RSS feed Finland")
 [https://www.guldmyr.com/category/storage/feed/](https://www.guldmyr.com/category/storage/feed/ "RSS feed storage")
 [https://www.guldmyr.com/category/IT/feed/](https://www.guldmyr.com/category/IT/feed/ "RSS feed IT")
-[https://www.guldmyr.com/feed/](https://www.guldmyr.com/feed/ "RSS feed all") - 
-This one has all included.
+[https://www.guldmyr.com/feed/](https://www.guldmyr.com/feed/ "RSS feed all")
+
+- This one has all included.
 
 **Google Reader** Personally I use
 [google reader](http://reader.google.com "google reader") -

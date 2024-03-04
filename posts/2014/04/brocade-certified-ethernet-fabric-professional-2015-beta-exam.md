@@ -61,7 +61,7 @@ the exam (2013 version, so might be different for 2015) are:
 
 ## Page numbers for 2015 beta exam below
 
-**Network OS Administrator’s Guide v4.1.1 *53-1003225-01***
+**Network OS Administrator’s Guide v4.1.1** 53-1003225-01
 
 Pages
 11-20,26-31,54-56,75-77,94,115,119,135-144,149,150,191,201-203,210,243-247,253,261,269,311-314,321,
@@ -70,32 +70,32 @@ Pages
 
 603-609,661-663,668,676,682,686,714,715
 
-**Network OS Command Reference v4.1.1 _53-1003226-01_**
+**Network OS Command Reference v4.1.1** 53-1003226-01
 
 Pages 299, 1258-1260,1266,1297,1317,1318
 
-**_Network OS v4.1.1 Brocade VDX Release Notes_**
+**Network OS v4.1.1 Brocade VDX** Release Notes
 
 Pages 4,10,28,50
 
-**Network OS Software Licensing Guide v4.1 *53-1003164-01***
+**Network OS Software Licensing Guide v4.1** 53-1003164-01
 
 Pages 11-13
 
-**VDX 6740 Hardware Reference Manual *53-1002829-02***
+**VDX 6740 Hardware Reference Manual** 53-1002829-02
 
-Page 1 **VDX 8770-4 Hardware Reference Manual *53-1002563-03***
+Page 1 **VDX 8770-4 Hardware Reference Manual** 53-1002563-03
 
 Chapter 1, Page 1; Chapter 3, Page 32
 
-**VDX 8770-8 Hardware Reference Manual *53-1002564-03***
+**VDX 8770-8 Hardware Reference Manual** 53-1002564-03
 
-Chapter 1, Page 1 **VDX 6730 Hardware Reference Manual *53-1002389-06***
+Chapter 1, Page 1 **VDX 6730 Hardware Reference Manual** 53-1002389-06
 
 Pages 1,2,15
 
-**Brocade VDX 8770 Switch Data Sheet *GA-DS-1701-04***
+**Brocade VDX 8770 Switch Data Sheet** GA-DS-1701-04
 
-**CFP2 Hardware Specification *Draft Revision 0.3***
+**CFP2 Hardware Specification** Draft Revision 0.3
 
 Page 46

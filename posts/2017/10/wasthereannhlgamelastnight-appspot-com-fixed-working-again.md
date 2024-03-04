@@ -22,7 +22,7 @@ Now that's a link to an API provided by NHL where you get the schedule and you
 can filter it. I'm not sure what all the parameters do, they're not all needed.
 You just need the startDate and endDate. The API also has standings and results.
 I have not managed to find any documentation for it. Best so far seems to be
-[this blog post](https://www.kevinsidwar.com/iot/2017/7/1/the-undocumented-nhl-stats-api). 
+[this blog post](https://www.kevinsidwar.com/iot/2017/7/1/the-undocumented-nhl-stats-api).
 So I'm not sure about if it's OK to use it or if there are any restrictions.
 
 p.s. - there is a shorter URL to the main

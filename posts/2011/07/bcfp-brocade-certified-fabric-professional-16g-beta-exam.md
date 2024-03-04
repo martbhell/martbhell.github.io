@@ -34,9 +34,9 @@ protocols. Page 3 in the troubleshooting guide is to the document history or
 **one** of the pages with list of common symptoms. Also Page 1 in FCIP Admin
 Guide is probably not the one they meant :)
 
-**_There's some really weird ones in the admin guide. For example page 582 does
+**There's some really weird ones in the admin guide. For example page 582 does
 not exist in FOS admin or 132 is empty in FCIP Admin guide , in both real page
-counters and the numbers on the pages in the book._**
+counters and the numbers on the pages in the book.**
 
 Also some starting/ending points/pages are a little strange, why cut it off
 there and not the whole chapter/section?
