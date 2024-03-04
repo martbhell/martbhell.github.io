@@ -29,6 +29,7 @@ Is available. Maybe right-click works?? =)
 whereis spotify
 ldd /usr/bin/spotify
 ```
+
 gives me:
 
 > libssl.so.10 0> /usr/lib64/libssl.so.10

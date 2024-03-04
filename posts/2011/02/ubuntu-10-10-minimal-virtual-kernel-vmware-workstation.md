@@ -32,9 +32,14 @@ But on the other hand you could install OpenSSH directly through the install and
 
 What I want installed every time after an uninstall. After install it is a very very small installation. Not even 'man' is installed.
 
-**sudo apt-get install openssh-server ntp nano**
+`sudo apt-get install openssh-server ntp nano`
 
-**edit /etc/network/interfaces - configure static ip edit /etc/ntp.conf - add time servers edit ~/.bashrc - change colors in the prompt and add color**
+- edit /etc/network/interfaces
+- configure static ip
+- edit /etc/ntp.conf
+- add time servers
+- edit ~/.bashrc
+- change colors in the prompt and add color
 
 Kernel difference you can see when running uname: 2.6.35-22-virtual in comparison to 2.6.35-22-generic
 

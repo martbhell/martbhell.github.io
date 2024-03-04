@@ -56,4 +56,4 @@ Updated the numbers on FOS Admin guide (2011-08-18)
   - Page 35
     - **Real** Page: 57
 - Pre-release CFP 300 Course (unedited material)
-    - Modules 2-8
+  - Modules 2-8

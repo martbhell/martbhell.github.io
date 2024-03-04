@@ -28,7 +28,7 @@ Before the presentation they had a nice slide stating that they don't make any p
 
 [Oracle Linux](http://oracle.com/linux "oracle.com") (OL) looks pretty good, it's free to download but if you want any updates you need to pay them. They have an upgrade thing so if you're on RHEL6 you can apparently update easily (changes some yum repos). A lot of advertisement - but it was a presentation about the distribution. It's based on RHEL, they take the updates from RHEL, then add their own magic to it. They have a boot setup so if you want to you can boot OL in Red Hat Compatibility mode. Apparently Oracle wants to put Red Hat out of business (after which they were asked: "Where will you get the kernel then?"). x86-64 only.
 
-#### On the horizon:
+### On the horizon:
 
 - btrfs(fs that supports error detection, CoW, snapshots, ssd optimization, small files are put in metadata)
 - vswitch(full network switch, set up virtual network in the OS, ACL, VLAN, QoS, flow monitoring with openFlow)
@@ -44,19 +44,30 @@ _**“If you don't like how the project is going – fork.” - Gilles Gravier.*
 
 Two reasons to fork: proactively (worried) or because they are unhappy with how it's going (how it's going or not going).
 
-\---
+---
 
 People in the audience are afraid that a lot of times a company acquires an open source project and then closes it down.
 
-\---
+---
 
 _“When you acquire a company and it's the projects. You have two options if don't want the project. Drop it or kill it. Kill it does not work for open source.” - Gilles Gravier._
 
 Openoffice is not dropped yet. Lots of other options. Fork and work on closed source (like Grid Engine). Drop it and stop working on it. Drop it and “talk to the community”. ---
 
-No info about Lustre – when asked about it Oracle did not want to comment. Asked to e-mail [gilles.gravier@oracle.com](mailto:gilles.gravier@oracle.com) for more information. --- Will Oracle port debconf to Oracle Linux? Oracle will take a look. --- There was lot of angst against Oracle that surfaced, but Oracle handed it quite well and had good answers. --- From one of the Oracles: “Allow me to be a bit provocative: If Oracle's prices were lower; would you consider buying an Oracle product?” ---
+No info about Lustre – when asked about it Oracle did not want to comment.
 
-_“It takes 25 years to make a good reputation, 5 minutes to loose it.”_ - CERN employee. _“SUN used to make hardware and give away software for free; Oracle is .. the other way around.”_ \- Lenz Grimmer _“Laughter”_ \- Audience.
+Asked to e-mail [gilles.gravier@oracle.com](mailto:gilles.gravier@oracle.com) for more information.
+
+Will Oracle port debconf to Oracle Linux? Oracle will take a look.
+
+There was lot of angst against Oracle that surfaced, but Oracle handled it quite well and had good answers
+
+From one of the Oracles: “Allow me to be a bit provocative: If Oracle's prices were lower; would you consider buying an Oracle product?”
+
+- “It takes 25 years to make a good reputation, 5 minutes to loose it.”_
+- CERN employee. “SUN used to make hardware and give away software for free; Oracle is .. the other way around.”
+- Lenz Grimmer “Laughter”
+- Audience.
 
 ## European Open File System SCE
 
