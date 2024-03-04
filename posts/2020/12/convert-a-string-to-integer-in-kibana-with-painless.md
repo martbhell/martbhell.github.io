@@ -2,9 +2,9 @@
 title: Convert a string to integer in Kibana with painless
 date: 2020-12-16
 category: it
+lang: en
 tags: kibana, painless, grok, apache
 <!-- prettier-ignore -->
-lang: en
 ---
 
 if (doc\['bytes.keyword'\].size()!=0) { return
