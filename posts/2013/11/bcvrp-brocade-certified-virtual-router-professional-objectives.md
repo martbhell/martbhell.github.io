@@ -10,7 +10,7 @@ The exam I took in October and because it was a beta exam the results aren't out
 
 The BCvRP has the below [objectives](http://community.brocade.com/docs/DOC-3349 "http://community.brocade.com/docs/DOC-3349") (included for free are some of my comments on each topic). None of this should be taken as a replacement for taking the actual course and actually doing these things on a vrouter. And honestly, the various concepts and technologies described in the objectives below can become very complex. So before taking this course/exam you at a minimum want to know the basics of BGP and setting up an OSPF network should be a breeze.
 
-# OSPF Multi-Area Concepts
+## OSPF Multi-Area Concepts
 
 - **_Describe OSPF routing concepts_**
 
@@ -26,7 +26,7 @@ The BCvRP has the below [objectives](http://community.brocade.com/docs/DOC-3349
 - Summarization: Good to have continuous addresses in an area, easier to summarize.
   - Do not summarize routes originating in Area 0.
 
-# BGP, EBGP and IBGP Concepts
+## BGP, EBGP and IBGP Concepts
 
 - **_Describe gateway protocol concepts_**
 
@@ -39,7 +39,7 @@ The BCvRP has the below [objectives](http://community.brocade.com/docs/DOC-3349
   - TCP port 179
   - A unique AS number is needed, there are [private AS numbers](http://en.wikipedia.org/wiki/Autonomous_System_(Internet) "64512 to 65534").
 
-**eBGP**
+- **eBGP**
 
 set protocols bgp AS# router-id IP set protocols bgp AS# neighbor ip-address remote-as as-number set protocols bgp AS# network address/mask
 
@@ -55,7 +55,7 @@ bgp does not reset advertised routes after an administrator's changes. Changes t
 
 reset ip bgp external \[ipv4 address\]
 
-#### Tuning attributes and priority
+### Tuning attributes and priority
 
 1. Local preference - only included within an AS. Default is 100. Higher is better.
 2. AS Path - always forwarded - shorter is better
@@ -117,7 +117,7 @@ Create a peer group, set BGP settings on the peer group. Then assign peers to th
 - Describe the attributes of WAN load balancing
 - Describe QoS features and configuration
 
-# Policy-Based Routing
+### Policy-Based Routing
 
 - Explain where policy-based routing falls in Brocade Vyatta packet flow
 - Configure and verify policy-based routing
@@ -131,7 +131,7 @@ Create a peer group, set BGP settings on the peer group. Then assign peers to th
   - permit/deny in the filters affects if the rule is applied to the filter.
 - Route-maps has the rules.
 
-# Multicast Routing
+### Multicast Routing
 
 - Describe multicast protocols/elements
 - Configure and troubleshoot multicast routing
