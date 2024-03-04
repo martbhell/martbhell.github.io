@@ -15,7 +15,7 @@ Olen mennyt jukolaan nyt aika monta vuotaa, ensimmäinen oli 2015 Lounas (Paimi,
 
 - Yleensä on ollut neljäs / viides osuus mutta katsotaan:
 
-| vuosi | osuus | nimi | sijainti viestissä | joukkue tulos (kun vaihdoin) | joukkue aika (kun vaihdoin) | osuus sijainti | osuus aika | ?? |
+| vuosi | osuus | nimi | sijainti viestissä | joukkue tulos (kun vaihdoin) | joukkue aika (kun vaihdoin) | osuus sijainti | osuus aika |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |[2015 Luona (Paimio)](https://results.jukola.com/tulokset/en/j2015_ju/kilpailijat/1030/)| 4 | Johan Guldmyr | 1353 (+182) | 9:37:28 | +4:43:23 | 1579/1647 | 2:19:35|
 |[2016 Lappee (nranta)](https://results.jukola.com/tulokset/en/j2016_ju/kilpailijat/1255/)|4 | Johan Guldmyr | 1151 (+76) | 8:19:05 | +3:43:38 | 1326/1559 | 1:53:48|
