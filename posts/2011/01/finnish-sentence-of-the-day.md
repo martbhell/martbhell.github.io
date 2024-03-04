@@ -1,5 +1,4 @@
 ---
-
 title: Finnish Sentence of the Day
 date: 2011-01-28
 category: finland
