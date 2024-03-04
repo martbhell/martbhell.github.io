@@ -67,7 +67,7 @@ Installing e2fsprogs, kernel and lustre-modules.
 
 Skipping debuginfo and devel packages, installing all the rest.
 
-```
+```bash
 yum localinstall \ 
 kernel-2.6.32-220.4.2.el6_lustre.x86_64.rpm kernel-firmware-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
 kernel-headers-2.6.32-220.4.2.el6_lustre.x86_64.rpm \

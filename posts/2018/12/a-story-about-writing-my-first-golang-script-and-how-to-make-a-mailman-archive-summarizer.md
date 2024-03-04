@@ -10,7 +10,7 @@ Golang I see quite frequently in my twitters so have been thinking for a while -
 
 TLDR; [https://github.com/martbhell/mailman-summarizer](https://github.com/martbhell/mailman-summarizer)
 
-* * *
+## Why Would Anyone Ever
 
 Took a while to figure out what would be a nice small project. Usually my projects involve some kind of web scraping that helps me somehow, [https://wtangy.se/](https://wtangy.se/) is one which tells me if there "Was An Nhl Game Yesterday". Also in this case it turned out I wanted something similar, but this time it was work related. I have been tinkering with this for a week or so on and off. Today, the day after Finnish Independence day I thought let's get this going!
 

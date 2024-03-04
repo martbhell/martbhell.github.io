@@ -48,7 +48,7 @@ Directors interconnected via ICL is not considered a hop in FICON, is it in Open
 
 ICL cables should all have the same length. ISL can be a bit different, max 30m in difference. Don't have ISL and ICL to the same switch/domain.
 
-## Links
+## Links Again
 
 Hyper-Scale Fabrics: Scale-out Architecture with Brocade DCX 8510 Feature Brief.
 

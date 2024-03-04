@@ -92,26 +92,29 @@ After boot:
 1. fdisk -c -u /dev/sda
 2. n, p, 4, enter, enter, t, 4, 83, w
 
-1. new partition, primary, partition 4, starting, end (space), set type, partition 4, type 83, write
+> new partition, primary, partition 4, starting, end (space), set type, partition 4, type 83, write
 
-4. some error, but fdisk -l shows the new partition /dev/sda4
-5. rebooted (tool advised to)
-6. cryptsetup luksFormat /dev/sda4
-7. cryptsetup luksOpen /dev/sda4 luksdrive
-8. ls /dev/mapper/ will show luksdrive in there.
-9. mkfs.ext4 /dev/mapper/luksdrive
-10. edit /etc/crypttab and add: /dev/mapper/luksdrive /dev/sda4
+1. some error, but fdisk -l shows the new partition /dev/sda4
+1. rebooted (tool advised to)
+1. cryptsetup luksFormat /dev/sda4
+1. cryptsetup luksOpen /dev/sda4 luksdrive
+1. `ls /dev/mapper/` will show luksdrive in there.
+1. mkfs.ext4 /dev/mapper/luksdrive
+1. edit /etc/crypttab and add: `/dev/mapper/luksdrive /dev/sda4`
 
 1. man crypttab
 
-12. edit /etc/fstab and add: /dev/mapper/luksdrive /mnt/luksdrive ext4 defaults 1 2
+1. edit /etc/fstab and add: /dev/mapper/luksdrive /mnt/luksdrive ext4 defaults 1 2
 
 1. man fstab
 
-14. mkdir /mnt/luksdrive
-15. mount -a
-16. cd /mnt/luksdrive
-17. try a reboot
+```bash
+mkdir /mnt/luksdrive
+mount -a
+cd /mnt/luksdrive
+```
+
+try a reboot
 
 ### Mount filesystem based on UUID or label
 

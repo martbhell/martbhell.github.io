@@ -4,7 +4,9 @@ date: 2012-06-04
 category: it
 tags: centos, certification, dovecot, file, transfer, imap, linux, postfix, red, hat, rhce, sendmail, smtp, studying
 
-[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
+
+System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
@@ -37,29 +39,24 @@ To test that e-mail is working you can - tada - use an e-mail client.
 
 You have lots of details in /usr/share/doc/postfix-N ( the path should be in /etc/postfix/main.cf )
 
-- Install the packages needed to provide the service.
-
-- yum install postfix
-
+- Install the packages needed to provide the service. `yum install postfix`
 - Configure SELinux to support the service
-
-- getsebool -a|grep postfix
-
+- `getsebool -a|grep postfix`
 - Configure the service to start when the system is booted.
-
-- chkconfig postfix on
-
+- `chkconfig postfix on`
 - Configure the service for basic operation.
-
 - set hostname to host.example.com
-- /etc/postfix/main.cf and define (this assumes hostname is host.example.com):
+- `/etc/postfix/main.cf` and define (this assumes hostname is host.example.com):
 
-- myhostname = host.example.com
-- mydomain = example.com
-- myorigin = $mydomain
-- inet\_interfaces = all
-- mydestination = add $mydomain to the default one
-- home\_mailbox = Maildir/
+```bash
+myhostname = host.example.com
+mydomain = example.com
+myorigin = $mydomain
+inet_interfaces = all
+mydestination = add $mydomain to the default one
+home_mailbox = Maildir/
+```
+
 - Update firewall to allow port 25 tcp
 - Test with: nc localhost 25
 
@@ -70,21 +67,25 @@ You have lots of details in /usr/share/doc/postfix-N ( the path should be in /et
 
 In CLI (important to use ' and not "):
 
+```bash
 # hostname - record the output of this
 postconf -e 'myhostname = output from hostname in here'
 # hostname -d
 postconf -e 'mydomain = output from hostname -d in here'
 postconf -e 'myorigin = $mydomain'
-postconf -e 'inet\_interface = all'
+postconf -e 'inet_interface = all'
 postconf -e 'mydestination = $myhostname, localhost, $mydomain'
-postconf -e 'mynetworks = 127.0.0.0/8 \[::1\]/128, /32'
-postconf -e 'relay\_domains = $mydestination'
-postconf -e 'home\_mailbox = Maildir/'
+postconf -e 'mynetworks = 127.0.0.0/8 [::1]/128, /32'
+postconf -e 'relay_domains = $mydestination'
+postconf -e 'home_mailbox = Maildir/'
+```
 
 To use it:
 
+```bash
 useradd -s /sbin/nologin labber
 passwd labber
+```
 
 Edit /etc/aliases and add:
 
@@ -92,22 +93,26 @@ labber: labber
 
 Then run:
 
+```bash
 newaliases
 service postfix start
 service postfix status
 netstat -nlp|grep master
+```
 
 Send e-mail:
 
+```bash
 mail -s "Test e-mail here" labber@mydomain
 test123
 .
+```
 
 The . at the end is quite nice, that stops the input.
 
 Check e-mail:
 
-cat /home/labber/Maildir/new/\*
+`cat /home/labber/Maildir/new/*`
 
 ## Real E-mail Client
 
@@ -117,17 +122,18 @@ For this there needs to be a e-mail server that stores the e-mails on the server
 
 For this we can use 'dovecot'
 
+```bash
 yum install dovecot
 service dovecot start
+```
 
 1. Update iptables to allow ports 25 and 143 (TCP)
 2. Update main.cf to allow from your IP
 3. Restart services
-4. Add new account in thunderbird -
-
-1. do use the IP address of your server, not the DNS
-2. do not use SMTP security (or username), but use password authentication
-3. do use IMAP STARTTLS security, username: labber, password auth
+4. Add new account in thunderbird
+5. do use the IP address of your server, not the DNS
+6. do not use SMTP security (or username), but use password authentication
+7. do use IMAP STARTTLS security, username: labber, password auth
 
 Thunderbird is quite nice, it will often tell you which setting is wrong.
 
@@ -137,6 +143,7 @@ You can use /var/log/maillog for details on the server-side (to see if you get c
 
 To illustrate this feature we first need to add a second user/e-mail account:
 
+```bash
 useradd -s /sbin/nologin labrat
 passwd labrat
 echo "labrat: labrat" >> /etc/aliases
@@ -144,16 +151,19 @@ newaliases
 service postfix restart
 service dovecot restart
 mail -s "test" labrat@mydomain
+```
 
 You need to send an e-mail to the e-mail address before you can add it in Thunderbird (because the user does not have a $HOME/Maildir until you do).
 
 After the new user has been created and added to your e-mail client do [the following](http://www.cyberciti.biz/faq/howto-blacklist-reject-sender-email-address/ "source"):
 
+```bash
 cd /etc/postfix
-echo "labber@mydomain REJECT" >> sender\_access
-postmap hash:sender\_access
-echo "smtpd\_sender\_restrictions = check\_sender\_access hash:/etc/postfix/sender\_access" >> /etc/postfix/main.cf
+echo "labber@mydomain REJECT" >> sender_access
+postmap hash:sender_access
+echo "smtpd_sender_restrictions = check_sender_access hash:/etc/postfix/sender_access" >> /etc/postfix/main.cf
 service postfix restart
+```
 
 Try:
 
@@ -163,7 +173,7 @@ Try:
 
 - Configure a mail transfer agent (MTA) to accept inbound email from other systems.
 
-- inet\_interfaces = all
+- `inet_interfaces = all`
 
 - Configure an MTA to forward ([relay](http://www.postfix.org/postconf.5.html#relayhost "on postfix.org")) email through a smart host.
 

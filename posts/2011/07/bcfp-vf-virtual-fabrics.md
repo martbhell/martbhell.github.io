@@ -61,4 +61,3 @@ fosexec --fid FID  -cmd "cmd" (how to run a command on another LS)
 fosexec --fid all -cmd "cmd" (on all logical switches)
 ipaddrset -ls 123 --add 10.10.10.10/24 (set an IP for a logical switch, to segment management)
 ```
-
