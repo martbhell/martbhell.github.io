@@ -2,9 +2,9 @@
 title: New Home Network Plan!
 date: 2020-07-05
 category: it
+lang: en
 tags: network, lan, wifi, homelab, isp
 <!-- prettier-ignore -->
-lang: en
 ---
 
 Changing apartment again so a pretty decent time to change the network at home.

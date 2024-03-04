@@ -4,7 +4,6 @@ date: 2013-08-26
 category: it, storage
 tags: bcvre, brocade, certified, exam, open, source, virtualization
 <!-- prettier-ignore -->
-<!-- prettier-ignore -->
 ---
 
 Brocade has a beta exam up for

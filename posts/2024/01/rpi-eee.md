@@ -3,8 +3,8 @@ title: Raspberry Pi 4 network disconnects
 date: 2024-01-29 22:03
 category: it
 tags: it, network, rpi, raspberry pi, raspberry pi 4, eee, bcmgenet, eth0
-<!-- prettier-ignore -->
 lang: en
+<!-- prettier-ignore -->
 ---
 
 ## What was going on?
