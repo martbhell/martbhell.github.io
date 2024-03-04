@@ -60,42 +60,42 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
 (53-1002148-03)
 
 - **Pages** 37,43,66-70,102,142,151,153,157,196,199,241,273-286,301,314,315,320,372,383,395-398,402-406,414,417,425,429,437,438-443,449,454-461,464,503,504
-- topics
-  - 256-area addressing
-  - WWN-based PID assignment
-  - enabling/disabling a port and port decommissioning
-  - gateway links, ICL,
-  - RADIUS/LDAP authentication
-  - fddcfg / DCC/SCC policies
-  - device authentication
-  - ipfilter
-  - firmwaredownload
-  - advanced zoning (regular, broadcast, frame redirection, lsan, qos, ti)
-  - traffic isolation zoning (and VF considerations for TI zones)
-  - bottleneck detection
-  - in-flight encryption and compression (technologies, enabling/disabling)
-  - licensing (enable 10GbE, 7800, QoS, FCIP Extension, FICON acceleration, etc, etc, etc)
-  - advanced performance monitoring (top talker, frame monitor, end-to-end)
-  - adaptive networking (ingress rate limiting)
-  - QoS prioritization (SID/DID or CS\_CTL - class specific control)
-  - trunking (ISL, ICL, EX\_Port, F\_Port)
-  - Long Distance (buffer credit allocation, max distance, credit recovery)
-  - FC-FC Routing (support platforms)
-  - interopability (FOS vs M-EOS)
+  - topics
+    - 256-area addressing
+    - WWN-based PID assignment
+    - enabling/disabling a port and port decommissioning
+    - gateway links, ICL,
+    - RADIUS/LDAP authentication
+    - fddcfg / DCC/SCC policies
+    - device authentication
+    - ipfilter
+    - firmwaredownload
+    - advanced zoning (regular, broadcast, frame redirection, lsan, qos, ti)
+    - traffic isolation zoning (and VF considerations for TI zones)
+    - bottleneck detection
+    - in-flight encryption and compression (technologies, enabling/disabling)
+    - licensing (enable 10GbE, 7800, QoS, FCIP Extension, FICON acceleration, etc, etc, etc)
+    - advanced performance monitoring (top talker, frame monitor, end-to-end)
+    - adaptive networking (ingress rate limiting)
+    - QoS prioritization (SID/DID or CS\_CTL - class specific control)
+    - trunking (ISL, ICL, EX\_Port, F\_Port)
+    - Long Distance (buffer credit allocation, max distance, credit recovery)
+    - FC-FC Routing (support platforms)
+    - interopability (FOS vs M-EOS)
 
 ## Fabric OS Command Reference v7.0
 
 (53-1002147-01)
 
 - **Pages** 302,695,716,721,957,
-- commands
-  - fcrconfigure  /  fcredgeshow
-  - portcfgspeed
-  - portdportest
-  - portfencing
-    - Why is the test for "Invalid Word Transmission" called ITW?
-    - Ah, on portThConfig it is called "Invalid Transmission Word".
-  - supportshow
+  - commands
+    - fcrconfigure  /  fcredgeshow
+    - portcfgspeed
+    - portdportest
+    - portfencing
+      - Why is the test for "Invalid Word Transmission" called ITW?
+      - Ah, on portThConfig it is called "Invalid Transmission Word".
+    - supportshow
 
 ## Fabric OS FCIP Administrators Guide v7.0
 
@@ -124,89 +124,89 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
 ## Monitoring and Diagnostic Testing in Today's High Speed High Density Networks
 
 - **Pages** 2-4
-- topics
-  - powerpoint presentation of four pages in total
-  - fc cable lengths
-  - measuring loss
-  - embedded diagnostics (bottleneck detection, fabric watch, frame monitoring, port fencing)
-    - **fmmonitor** is a CLI that you can use to set up frame monitoring, for example SCSI reservations and aborts.
+  - topics
+    - powerpoint presentation of four pages in total
+    - fc cable lengths
+    - measuring loss
+    - embedded diagnostics (bottleneck detection, fabric watch, frame monitoring, port fencing)
+      - **fmmonitor** is a CLI that you can use to set up frame monitoring, for example SCSI reservations and aborts.
 
 ## Brocade Network Advisor SAN User Manual
 
 (53-1002355-01)
 
 - **Pages** 12,164,186,255,596,770,794,796
-- topics
-  - "Connectivity Map Toolbar" & "Product List"
-  - Call Home Feature
-  - Copying and Deleting Views
-  - SAN Device Configuration (configuration repository management)
-  - LSAN Zoning
-  - Performance Overview
-  - Bottleneck detection
+  - topics
+    - "Connectivity Map Toolbar" & "Product List"
+    - Call Home Feature
+    - Copying and Deleting Views
+    - SAN Device Configuration (configuration repository management)
+    - LSAN Zoning
+    - Performance Overview
+    - Bottleneck detection
 
 ## Why dB Loss Matters for Building Reliable Stable Networks
 
 GA-TN-048-01
 
 - **Pages** 2,3
-- topics
-  - total 8 pages
-  - link lengths and link loss budgets
+  - topics
+    - total 8 pages
+    - link lengths and link loss budgets
 
 ## Brocade 6505 Hardware Reference
 
 (53-1002449-01)
 
 - **Pages** 13,15
-- topics
-  - ISL trunking
-  - switchstatuspoolicy
-  - fos native and AG modes
+  - topics
+    - ISL trunking
+    - switchstatuspoolicy
+    - fos native and AG modes
 
 ## Brocade Access Gateway Administrator’s Guide
 
 (53-1002156-01)
 
 - **Pages** xiv,72,
-- topics
-  - supported hardware and software (which switches and FOS)
-  - enabling NPIV on M-EOS and Cisco switches
-    - CISCO: config t; npiv enable
-    - MEOS:
-  - new features -F\_Port static mapping, APM, B6510, Target Aggregation, Direct target attachment, N\_Port monitoring
+  - topics
+    - supported hardware and software (which switches and FOS)
+    - enabling NPIV on M-EOS and Cisco switches
+      - CISCO: config t; npiv enable
+      - MEOS:
+    - new features -F\_Port static mapping, APM, B6510, Target Aggregation, Direct target attachment, N\_Port monitoring
 
 _"You can run the agshow command to display Access Gateway information registered with the fabric. When an Access Gateway is exclusively connected to non-Fabric-OS-based switches, it will not show up in the agshow output on other Brocade switches in the fabric."_
 
 ## [CEE Admin Guide 53 1002163-02](http://www.brocade.com/downloads/documents/product_manuals/B_SAN/CEE_AdminGd_v700.pdf "this is not in the resource list on community.brocade.com")
 
 - **Page** xviii
-- topics
-  - Supported Hardware: Standalone switch B8000 and the blade FCOE10-24
-  - IGMP configuring (IGMP is used in multicast, ethernet)
-  - Replacing the B8000
-    - configdownload
-    - and copy running config and stuff! Looks very similar to the Cisco CLI.
+  - topics
+    - Supported Hardware: Standalone switch B8000 and the blade FCOE10-24
+    - IGMP configuring (IGMP is used in multicast, ethernet)
+    - Replacing the B8000
+      - configdownload
+      - and copy running config and stuff! Looks very similar to the Cisco CLI.
 
 ## Brocade Adaptors Admin Guide
 
 (53-1002143-01)
 
 - **Pages** 3,13,
-- topics
-  - AnyIO technology on the 1860 Fabric Adapter, just change the SFP and set the mode with **bcu port --mode** or **bcu adapter --mode**.
-    - HBA or FC mode (FC)
-    - Ethernet or NIC mode (GbE)
-    - CNA mode (FCoE)
-  - Adapter Support (OS + description of adapters)
+  - topics
+    - AnyIO technology on the 1860 Fabric Adapter, just change the SFP and set the mode with **bcu port --mode** or **bcu adapter --mode**.
+      - HBA or FC mode (FC)
+      - Ethernet or NIC mode (GbE)
+      - CNA mode (FCoE)
+    - Adapter Support (OS + description of adapters)
 
 ## The New Data Center 1st Edition
 
 ISBN: 978-1-4507-0195-2
 
 - **Pages** 65,66,78
-- topics
-  - Fabric Based Disaster Recovery (64-67)
-    - An overview of some of the extension technologies and reasons behind them.
-  - Network Security (77) + Power, Space and Cooling Efficiency (78)
-    - Network Security is not FC related.
+  - topics
+    - Fabric Based Disaster Recovery (64-67)
+      - An overview of some of the extension technologies and reasons behind them.
+    - Network Security (77) + Power, Space and Cooling Efficiency (78)
+      - Network Security is not FC related.
