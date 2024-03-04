@@ -53,3 +53,10 @@ jobs:
         run: |
           pip install -r tests/requirements.txt
           python tests/find_metadata.py
+      - name: Hunt for CRLF encoded files
+        run: |
+          CRLF_FILES=$(find . -name '*.md' -exec file {} \;|grep -c CRLF || true)
+          if [ $CRLF_FILES -gt 0 ]; then
+            echo "Found CRLF files"
+            exit 1
+          fi
