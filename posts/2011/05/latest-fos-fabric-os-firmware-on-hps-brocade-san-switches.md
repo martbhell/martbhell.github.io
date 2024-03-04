@@ -24,4 +24,4 @@ switch type.
 
 Usually the EOL of a firmware is announced when a new one is released. See this
 customer notice of 6.4.1b:
-[http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02766238](http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02766238 "on hp.com")
+[http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02766238](http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02766238)

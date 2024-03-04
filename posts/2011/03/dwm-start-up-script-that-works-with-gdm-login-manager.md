@@ -6,7 +6,11 @@ tags: dwm, gdm, gnome, linux, rhel, window, manager
 <!-- prettier-ignore -->
 ---
 
-Goal: Be able to exit [DWM and](http://dwm.suckless.org "dwm at suckless.org") get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)
+Goal: Be able to exit [DWM and](http://dwm.suckless.org "dwm at suckless.org")
+get back to the GDM - gnome login manager.
+To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager.
+Where I can chose another user or window manager.
+Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)
 
 Finally got this working like I want it to - with some help from #suckless on
 irc.oftc.net. This works for me with RHEL6, GDM --version 2.30.4 and DWM 5.8.2.
@@ -75,4 +79,15 @@ while true; do
 
 ```
 
-`#traying sleep 1 /usr/bin/ck-launch-session & /usr/local/bin/stalonetray & /usr/bin/nm-applet & /usr/bin/gnome-volume-control-applet & feh -z -Z --bg-scale /home/jguldmyr/Pictures/dwm_pattern.png #feh -z -Z -B black -b trans --bg-scale /home/jguldmyr/Pictures/Flow.png #start dwm after loop exec /usr/local/bin/dwm > /dev/null`
+```bash
+#traying
+sleep 1
+/usr/bin/ck-launch-session &
+/usr/local/bin/stalonetray &
+/usr/bin/nm-applet &
+/usr/bin/gnome-volume-control-applet &
+feh -z -Z --bg-scale /home/jguldmyr/Pictures/dwm_pattern.png
+#feh -z -Z -B black -b trans --bg-scale /home/jguldmyr/Pictures/Flow.png
+#start dwm after loop
+exec /usr/local/bin/dwm > /dev/null
+```

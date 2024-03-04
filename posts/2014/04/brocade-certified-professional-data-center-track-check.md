@@ -30,7 +30,7 @@ tests one does at home.
   accrediations left (Fabric Specialist, FCoE Specialist and Ethernet Fabric
   Support Specialist) and 1 certification: Ethernet Fabric Professional 2013.
   The certification I have signed up for the free one I mentioned in an
-  [earlier blog post](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional/ "Brocade Certified Ethernet Fabric Professional").
+  [earlier blog post](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional/).
 - For Brocade Certified Professional FICON (**BCPF**) there's one accrediation
   (Accredited FICON Specialist) an done certification (Certified Architect for
   FICON 2013) remaining.

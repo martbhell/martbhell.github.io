@@ -15,7 +15,9 @@ This is part of a series of posts on the topic of studying for Brocade's
 Certified Ethernet Fabric Professional.
 
 The two previous
-posts: [Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam") and [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/ "BCEFP 2015 – Studying for the exam")
+posts:
+ [Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/)
+ and [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/)
 
 ## The NOS 4.1.1 Admin Guide
 
@@ -46,7 +48,7 @@ Notes and acronyms (page in NOS Admin Guide):
 Questions:
 
 - There is also a
-  [Openstack Neutron Plugin](https://wiki.openstack.org/wiki/Brocade-neutron-plugin "https://wiki.openstack.org/wiki/Brocade-neutron-plugin") (p29)
+  [Openstack Neutron Plugin](https://wiki.openstack.org/wiki/Brocade-neutron-plugin) (p29)
 - Would be good to include also page 114 before page 115 to see what they mean
   with leaf/spine/core (p115)
 - OOB access to console is via serial (p115)

@@ -167,7 +167,7 @@ google found
 this: <http://www.nic.funet.fi/pub/mirrors/apache.org//activemq/apache-activemq/5.4.2/apache-activemq-5.4.2-bin.tar.gz>
 
 found in README - installation guide:
-[http://activemq.apache.org/version-5-getting-started.html](http://activemq.apache.org/version-5-getting-started.html "activemq getting started")
+[http://activemq.apache.org/version-5-getting-started.html](http://activemq.apache.org/version-5-getting-started.html)
 
 ```bash
 sudo wget into /usr/share/php5/apachemq
@@ -204,7 +204,7 @@ this directory is however quite empty, just a libintl.jar
 
 searching for java - going for this package: sun-java6-jre did not work, not in
 the repository.. Found this
-[link](http://www.ubuntugeek.com/how-to-install-java-runtime-environment-jre-in-ubuntu-10-10-maverick-using-ppa.html "install JRE in Ubuntu server 10.10")
+[link](http://www.ubuntugeek.com/how-to-install-java-runtime-environment-jre-in-ubuntu-10-10-maverick-using-ppa.html)
 which advises to run "sudo add-apt-repository
 ppa:sun-java-community-team/sun-java6" . This command lets me know that
 add-apt-respository does not exist
@@ -249,7 +249,9 @@ after that it comes up as green ;) adding this to boot as well now
 
 add this to /etc/rc.local
 
-`sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start & sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &`
+```text
+sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start & sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &
+```
 
 _note from future Johan_ haha that's a way to start things on boot too sure
 

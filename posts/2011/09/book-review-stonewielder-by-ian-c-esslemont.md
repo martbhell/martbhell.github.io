@@ -22,8 +22,8 @@ where we might be mistaken. As this book is not directly after The Return of the
 Crimson Guard (supposedly a few year after, but not directly, there are some
 gaps). Some of the important characters are common between the books.
 
-[http://the-void.co.uk/book/interview-damn-contrarian-steven-erikson-conversation-094/](http://the-void.co.uk/book/interview-damn-contrarian-steven-erikson-conversation-094/) if
-you want to know what's happening after the Malazan Empire, apparently there's
+[http://the-void.co.uk/book/interview-damn-contrarian-steven-erikson-conversation-094/](http://the-void.co.uk/book/interview-damn-contrarian-steven-erikson-conversation-094/)
+if you want to know what's happening after the Malazan Empire, apparently there's
 going to be books about the huge Toblakai Karsa Orlong!
 
 Back to the Stonewielder. The Mael priest is now the Emperor and has managed to
@@ -38,8 +38,8 @@ what happens there. I believe Traveller hung out there for a while but he
 escaped. One side-plot surrounds a few Crimson Guard survivors that are
 prisoners/defenders on the wall, there are also a few of the Crimson Guard that
 have been crossing an
-[ice wasteland](http://1.bp.blogspot.com/_SniTwfm5BwE/TLXWdaAwCvI/AAAAAAAAC5A/U8wUnOMtmgs/s1600/Stonewieldermap.JPG "map") and
-later they all meet up for some nasty fighting. Good times.
+[ice wasteland](http://1.bp.blogspot.com/_SniTwfm5BwE/TLXWdaAwCvI/AAAAAAAAC5A/U8wUnOMtmgs/s1600/Stonewieldermap.JPG)
+and later they all meet up for some nasty fighting. Good times.
 
 Kyle with the "normal" name, (he was not a Malazan empire recruit) is quite
 funny. I mean a guy named Kyle kicking some ass just feels odd after dudes like

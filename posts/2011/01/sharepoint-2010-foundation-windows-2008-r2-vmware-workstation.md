@@ -14,7 +14,7 @@ to set up your own sharepoint lab.
 ### Guides and Documentation
 
 Sharepoint server on technet:
-[http://technet.microsoft.com/en-us/library/cc303422.aspx](http://technet.microsoft.com/en-us/library/cc303422.aspx "sharepoint server technet")
+[http://technet.microsoft.com/en-us/library/cc303422.aspx](http://technet.microsoft.com/en-us/library/cc303422.asp)
 
 SQL Server 2008 R2 and Sharepoint 2010 server I downloaded the trial from
 Microsoft.

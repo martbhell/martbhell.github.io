@@ -8,4 +8,5 @@ tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, 
 
 I passed!
 
-[![bcfd](images/bro_edu3_cert_fab_des_rgb-300x120.jpg "bcfd")](https://www.certmetrics.com/brocade/public/transcript.aspx?transcript=8XRF1FE12MR41GC4 "on certmetrics.com")
+[![bcfd](images/bro_edu3_cert_fab_des_rgb-300x120.jpg "bcfd")](https://www.certmetrics.com/brocade/public/transcript.aspx?transcript=8XRF1FE12MR41GC4)
+ on certmetrics.com

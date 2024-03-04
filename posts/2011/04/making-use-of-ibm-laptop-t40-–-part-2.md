@@ -7,7 +7,7 @@ tags: hdd, ibm, laptop, linux, pata, replace, hard, drive, t40, thinkpad, ultima
 ---
 
 Previous post in this series:
-[https://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/](https://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/ "previous post")
+[https://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/](https://www.guldmyr.com/making-use-of-ibm-laptop-t40-part-1/)
 
 I'm going to try to put ubcd on an old USB pen I have, lots easier than burning
 a CD/DVD. Which I may not even have. It's an old Jens of Sweden 1GB mp3-player,

@@ -42,7 +42,7 @@ for HP EVA and HP CA for EVA, but this is not true anymore, CV 9.4 and XCS
 09534000 works with exchange based.
 
 But FICON requires it. See the
-[FICON Administrator's Guide](http://www.brocade.com/downloads/documents/product_manuals/B_SAN/FICON_AdminGd_v700.pdf "for 7.0.0 on brocade.com")
+[FICON Administrator's Guide](http://www.brocade.com/downloads/documents/product_manuals/B_SAN/FICON_AdminGd_v700.pdf)
 for details. _"In all switches and directors that have FICON devices attached,
 or where FICON traffic will be carried, the port-based routing policy is
 required (set aptPolicy option 1). Exchange based routing (set aptPolicy

@@ -7,7 +7,9 @@ tags: android, apps, it
 <!-- prettier-ignore -->
 ---
 
-## Are you ready to take your Android experience to the next level? Then buckle up and get ready to discover some of the best Android apps of 2023
+## Are you ready to take your Android experience to the next level?
+
+Then **buckle up** and get ready to discover some of the best Android apps of 2023
 
 We all remember the days of using clunky task killers and relying on third-party
 apps to perform basic functions on our phones. But now, things have changed, and

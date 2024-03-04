@@ -105,7 +105,7 @@ and mountpoint. This you then put in /etc/crypttab. Don't forget to add it to
 /etc/fsstab too. But, be careful here. I managed to screw it up so much that it
 wouldn't even boot anymore.
 
-[This is a great guide for how to set up a LUKS partition and mount it on boot.](http://rhce.co/configure-systems-to-mount-ext4-luks-encrypted-and-network-file-systems-automatically.html "on rhce.co")
+[This is a great guide for how to set up a LUKS partition and mount it on boot.](http://rhce.co/configure-systems-to-mount-ext4-luks-encrypted-and-network-file-systems-automatically.html)
 Works for partitions created outside install.
 
 When I did 'custom layout' in install and set up encryption, it appears to take
@@ -202,7 +202,7 @@ blkid. If there is none set, it's not shown.
 ### Mount NFS file system
 
 First, we need to
-[set up an nfs server](http://aaronwalrath.wordpress.com/2011/03/18/configure-nfs-server-v3-and-v4-on-scientific-linux-6-and-red-hat-enterprise-linux-rhel-6/ "aaronwalrath"),
+[set up an nfs server](http://aaronwalrath.wordpress.com/2011/03/18/configure-nfs-server-v3-and-v4-on-scientific-linux-6-and-red-hat-enterprise-linux-rhel-6/),
 this is not part of RHCSA though.
 
 **on server:** mkdir /nfs;chmod a+w /nfs Make sure nfs-utils and rpcbind are
@@ -298,7 +298,7 @@ look in the access_log in /var/log. By default it got an address in
 follow
 [this guide](http://www.techotopia.com/index.php/Creating_an_RHEL_6_KVM_Networked_Bridge_Interface "on techotopia")
 (incomplete) or one on
-[linuxtopia](http://linuxtopia.org/online_books/rhel6/rhel_6_virtualization/rhel_6_virtualization_sect-Virtualization-Network_Configuration-Bridged_networking_with_libvirt.html "linuxtopia")
+[linuxtopia](http://linuxtopia.org/online_books/rhel6/rhel_6_virtualization/rhel_6_virtualization_sect-Virtualization-Network_Configuration-Bridged_networking_with_libvirt.html)
 or on
 [libvirt wiki](http://wiki.libvirt.org/page/Networking#Bridged_networking_.28aka_.22shared_physical_device.22.29 "libvirt")
 

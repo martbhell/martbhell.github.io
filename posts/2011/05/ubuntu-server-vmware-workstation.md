@@ -55,12 +55,12 @@ There are two versions of Ubuntu - desktop and
 first time with Linux you may be better of starting with the desktop variant. I
 used the server version (uses less resources - no graphical user interface).
 
-[Here is a guide](https://www.guldmyr.com/ubuntu-10-10-minimal-virtual-kernel-vmware-workstation/ "ubuntu-10-10-minimal-virtual-kernel-vmware-workstation")
+[Here is a guide](https://www.guldmyr.com/ubuntu-10-10-minimal-virtual-kernel-vmware-workstation/)
 for using the Ubuntu Virtual Kernel with VMWare Workstation.
 
 #### 2.3/ Windows 2008 R2?
 
-[sharepoint-2010-foundation-windows-2008-r2-vmware-workstation](https://www.guldmyr.com/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/ "sharepoint-2010-foundation-windows-2008-r2-vmware-workstation")
+[sharepoint-2010-foundation-windows-2008-r2-vmware-workstation](https://www.guldmyr.com/sharepoint-2010-foundation-windows-2008-r2-vmware-workstation/)
 
 ### **3/ Set up management**
 
@@ -74,7 +74,7 @@ to have a fast reboot.
 #### 3.2/ Timezone, time
 
 Quite frustrating, but here is how it worked out in
-Linux: [time-sync-for-linux-vms-in-vmware-workstation](https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/ "time-sync-for-linux-vms-in-vmware-workstation/")
+Linux: [time-sync-for-linux-vms-in-vmware-workstation](https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/)
 
 ### 4/ Post-Installation Joy
 
@@ -104,8 +104,8 @@ machine.
 
 #### 4.2 Other ideas
 
-[Red Hat Enterprise Linux in VMWare Workstation.](https://www.guldmyr.com/red-hat-enterprise-linuxrhel-in-vmware-workstation/ "red-hat-enterprise-linuxrhel-in-vmware-workstation/")
-[How small VM can you have for just IRSSI?](https://www.guldmyr.com/ubuntu-10-10-vmware-irssi/ "ubuntu-10-10-vmware-irssi/")
-[File share from Windows to Ubuntu in a VM.](https://www.guldmyr.com/file-share-from-ubuntu-10-10-with-windows-7-client/ "file-share-from-ubuntu-10-10-with-windows-7-client/")
-[EyeOS](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos-cloud-desktop-in-your-browser-part-2/") -
-OS in your web browser.
+[Red Hat Enterprise Linux in VMWare Workstation.](https://www.guldmyr.com/red-hat-enterprise-linuxrhel-in-vmware-workstation/)
+[How small VM can you have for just IRSSI?](https://www.guldmyr.com/ubuntu-10-10-vmware-irssi/)
+[File share from Windows to Ubuntu in a VM.](https://www.guldmyr.com/file-share-from-ubuntu-10-10-with-windows-7-client/)
+[EyeOS](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos-cloud-desktop-in-your-browser-part-2/")
+ OS in your web browser.

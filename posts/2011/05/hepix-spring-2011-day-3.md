@@ -20,7 +20,7 @@ need to set up specific paths from each agent to each tape drive in each
 library. They were also using Oracle/SUN's T10000c tape drives that goes all the
 way up to 5TB - which is quite far ahead of LTO consortium's LTO-5 that only
 goes to 1.5/3TB per tape. Some talk about
-[buffered tape marks](http://publib.boulder.ibm.com/infocenter/zos/v1r10/index.jsp?topic=/com.ibm.zos.r10.idad500/buftms.htm "on boulder.ibm.com")
+[buffered tape marks](http://publib.boulder.ibm.com/infocenter/zos/v1r10/index.jsp?topic=/com.ibm.zos.r10.idad500/buftms.htm)
 which speeds up tape operations significantly.
 
 Lustre success story at GSI. They have 105 servers that provide 1.2PB of storage

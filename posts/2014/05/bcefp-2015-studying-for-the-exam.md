@@ -8,7 +8,7 @@ coverImage: "original.gif"
 ---
 
 In a
-[previous post](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/ "Brocade Certified Ethernet Fabric Professional 2015 Beta Exam")
+[previous post](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/)
 I listed a some of the sources Brocade listed that one should use when studying
 for the BCEFP exam. Here I'm going through a those I found some comments on what
 what they are and what I think of them.
@@ -16,7 +16,7 @@ what they are and what I think of them.
 ## Beta Course Material
 
 The first of the **beta** material available is something called
-"[Brocade Ethernet Fabric Administration](http://www.brocade.com/forms/getFile?p=documents/course_data_sheets/CEF300-DataSheet.pdf "CEFP 300-WBT Course Data Sheet")".
+"[Brocade Ethernet Fabric Administration](http://www.brocade.com/forms/getFile?p=documents/course_data_sheets/CEF300-DataSheet.pdf)".
 This is a few pdfs/slides with notes on them. Introduction of various features
 and components. Not much detail in the first 10 modules and basically all the
 modules are awfully short, some are one slide even. Hopefully this is just
@@ -25,9 +25,11 @@ not overwhelm the reader I guess. Checking out the
 [data sheet](http://www.brocade.com/downloads/documents/course_data_sheets/CEF300-DataSheet.pdf) for
 the CEF 300 course should give you some idea what you should learn after going
 through the materials. There are free materials available for the
-**[Ethernet Fabric Specialist Accreditation](http://www.brocade.com/education/certification-accreditation/accredited-ethernet-fabric-specialist/curriculum.page "http://www.brocade.com/education/certification-accreditation/accredited-ethernet-fabric-specialist/curriculum.page")**
-\- it's even
-on [the tube](http://www.youtube.com/watch?v=V9tMZgCydYQ "http://www.youtube.com/watch?v=V9tMZgCydYQ").
+**[Ethernet Fabric Specialist Accreditation](http://www.brocade.com/education/certification-accreditation/accredited-ethernet-fabric-specialist/curriculum.page)**
+
+- it's even
+
+on [the tube](http://www.youtube.com/watch?v=V9tMZgCydYQ).
 The youtube video is quite long but it's an introduction to the thought behind
 the Ethernet Fabrics. It's a bit outdated already I hope as they the talk talks
 about immaturity a lot, less than a year old. The presenter - Chip Copper - also
@@ -43,7 +45,7 @@ Questions I got while reading material:
   Is for normal transit traffic and traffic to the CPU == the management
   interface?
 
-## [**BCEFP Nutshell**](http://www.brocade.com/downloads/documents/certification_study_tools/bcefp-nutshell.pdf "pdf on brocade.com")
+## [**BCEFP Nutshell**](http://www.brocade.com/downloads/documents/certification_study_tools/bcefp-nutshell.pdf)
 
 I usually print these out, read through a few times and note down anything I
 don't get so that I can go through the course materials and user guides
@@ -66,9 +68,9 @@ numbers):
   - Is the difference between switching and forwarding bandwidth that one is how
     much the backplane can handle and the other is how much the ports could do?
     - Looks like that, an older version of the
-      [6720 Data Sheet](http://www.governmentbigdataforum.com/2012/files/Brocade_VDX_6720_DataSheet_01.pdf "GA-DS-1524-01") shows
-      this, it's been removed in a future data sheet.
-- [VCS / Logical chassis / Distributed](http://www.brocade.com/downloads/documents/html_product_manuals/NOS_410_AG/GUID-5255C5BC-9A1F-4B3B-83E9-3AE6EA37AC00.html "NOS Administrator's Guide"):
+      [6720 Data Sheet](http://www.governmentbigdataforum.com/2012/files/Brocade_VDX_6720_DataSheet_01.pdf)
+      shows this, it's been removed in a future data sheet.
+- [VCS / Logical chassis / Distributed](http://www.brocade.com/downloads/documents/html_product_manuals/NOS_410_AG/GUID-5255C5BC-9A1F-4B3B-83E9-3AE6EA37AC00.html):
   - VCS Modes:
     - Logical Chassis: Requires NOS 4.0.0. Data and config paths are
       distributed. All is configured from the principal node.
@@ -129,7 +131,7 @@ numbers):
 - Is there a pattern to the MAC addresses of the Switches/RBridges/FD/XD?
 - What is a VMWare Port Group?
   - Found in
-    [VMWare Virtual Networking Concepts](https://www.vmware.com/files/pdf/virtual_networking_concepts.pdf "pdf on vmware.com")
+    [VMWare Virtual Networking Concepts](https://www.vmware.com/files/pdf/virtual_networking_concepts.pdf)
   - Important with VMotion, makes sure that when a VM moves to a different
     hypervisor it gets the same network configuration.
 - In RBAC what does it mean that one can access a command but not execute it?

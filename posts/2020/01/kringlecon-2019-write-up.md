@@ -633,8 +633,9 @@ tool :P Yay, **one** more objective!
 ## Remaining are reversing some crypto windows executable and the ban the IPs in the firewall for the route API
 
 Crypto then. Hint is
-[https://www.youtube.com/watch?v=obJdpKDpFBA&feature=youtu.be](https://www.youtube.com/watch?v=obJdpKDpFBA&feature=youtu.be) >
-[https://github.com/CounterHack/reversing-crypto-talk-public](https://github.com/CounterHack/reversing-crypto-talk-public)
+[https://www.youtube.com/watch?v=obJdpKDpFBA&feature=youtu.be](https://www.youtube.com/watch?v=obJdpKDpFBA&feature=youtu.be)
+and
+ [https://github.com/CounterHack/reversing-crypto-talk-public](https://github.com/CounterHack/reversing-crypto-talk-public)
 
 Running an encryption tells us it uses unix epoch as a seed and a hint to the
 challenge was " We know that it was encrypted on December 6, 2019, between 7pm

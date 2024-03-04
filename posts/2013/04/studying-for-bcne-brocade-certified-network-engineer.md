@@ -9,8 +9,8 @@ tags: bcne, brocade, brocade, certified, network, engineer, ccna, certification,
 In early April of 2013 Brocade had a great offer - ask for it and you'll get a voucher to an exam - for free!
 
 I took them up on their offer and scored a voucher for the
-[BCNE](http://www.brocade.com/education/certification-accreditation/certified-network-engineer/index.page "BCNE Overview on brocade.com") -
-Brocade Certified Network Engineer.
+[BCNE](http://www.brocade.com/education/certification-accreditation/certified-network-engineer/index.page)
+(Brocade Certified Network Engineer).
 
 After that I noticed that Brocade also has a limited offer for
 BCNE [http://www.brocade.com/education/CNE_250.page](http://www.brocade.com/education/CNE_250.page) ,
@@ -27,11 +27,11 @@ things. To find places for improvement.
 
 Some really useful links:
 
-- [BCNE in a Nutshell guide](http://www.brocade.com/education/certification-accreditation/certified-network-engineer/index.page "scroll down") -
+- [BCNE in a Nutshell guide](http://www.brocade.com/education/certification-accreditation/certified-network-engineer/index.page).
   It's also available on their saba/education page. But it's out of date in
   there.
-- [Brocade IP Primer](http://www.brocade.com/downloads/documents/books/Brocade_IP_Primer_eBook.pdf "pdf on brocade.com") -
-  this is a great refresher on most Ethernet things if you've been out of touch.
+- [Brocade IP Primer](http://www.brocade.com/downloads/documents/books/Brocade_IP_Primer_eBook.pdf)
+  is a great refresher on most Ethernet things if you've been out of touch.
 - Go through the manuals - but read the material in the newer released manuals.
 - [IP Quick Reference](http://community.brocade.com/docs/DOC-3074) - CLI Quick
   and quite comprehensive overview not only of commands but also of
@@ -88,10 +88,10 @@ you know.
 Some good articles/blog posts:
 
 - What
-  [Unkonwn Unicast](http://www.juniper.net/techpubs/en_US/junos9.3/topics/concept/rate-limiting-unknown-unicast-forwarding-understanding.html "on juniper.net..")
+  [Unkonwn Unicast](http://www.juniper.net/techpubs/en_US/junos9.3/topics/concept/rate-limiting-unknown-unicast-forwarding-understanding.html)
   is.
-- [STP overview](http://www.bluewolfspirit.com/notes/routing-and-switching/01-layer-2-technologies/8021d_8021w_and_8021s.html "good blog post") -
-  these were great:
+- [STP overview](http://www.bluewolfspirit.com/notes/routing-and-switching/01-layer-2-technologies/8021d_8021w_and_8021s.html)
+  and these were great:
   - 802.1d Plain Old Dumb STP
   - 802.1w RSTP Rapid STP - Fast as in **WOW**
   - 802.1s MSTP Multiple STP - **Multiple**, as in s.

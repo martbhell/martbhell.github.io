@@ -48,7 +48,7 @@ fans, remote monitoring/console.
   and slave
 - **What is the resolution in Windows 2000 safe mode?** - 800x600 or 640x480?-
   see
-  [this link](http://www.mydigitallife.info/2008/06/22/how-to-change-screen-resolution-and-display-colors-quality-in-safe-mode-of-windows/ "windows safe mode resolution")
+  [this link](http://www.mydigitallife.info/2008/06/22/how-to-change-screen-resolution-and-display-colors-quality-in-safe-mode-of-windows/)
   on mydigitallife or
   [this post](http://www.tomshardware.co.uk/forum/34809-35-screen-resolution-safe-mode "screen resolutino safe mode")
   on tom's hardware.
@@ -74,7 +74,7 @@ fans, remote monitoring/console.
   default apparently in hyperterminal - 9600 (this might be tricky, in my
   experience this varies between the devices - max is probably 115200bps). Maybe
   what they are asking for is what is the
-  [default speed](http://www.cisco.com/en/US/products/hw/switches/ps700/products_tech_note09186a008010ff7a.shtml#connecttermtocat "cisco catalyst console port")
+  [default speed](http://www.cisco.com/en/US/products/hw/switches/ps700/products_tech_note09186a008010ff7a.shtml#connecttermtocat)
   of a Cisco switch's aux or console port? If so, the answer is 9600.
 - **What is the port used for HTTP?** - 80
 - **What is the difference between PCIe and PCI?** \- PCI-e is newer than PCI

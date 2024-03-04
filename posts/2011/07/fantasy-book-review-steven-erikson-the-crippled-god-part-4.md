@@ -10,7 +10,7 @@ From about 2/3 to the end: And as usual -  **there's lots of spoilers below. If
 you haven't read the book yet, I'd advise you not to read the below.**
 
 [Part1](https://www.guldmyr.com/fantasy-book-review-steven-erikson-the-crippled-god-part-1/ "part1")
-[Part2](https://www.guldmyr.com/fantasy-book-review-%e2%80%93-steven-erikson-%e2%80%93-the-crippled-god-%e2%80%93-part-2/ "part2")
+[Part2](https://www.guldmyr.com/fantasy-book-review-%e2%80%93-steven-erikson-%e2%80%93-the-crippled-god-%e2%80%93-part-2/)
 [Part3](https://www.guldmyr.com/fantasy-book-review-steven-erikson-the-crippled-god-part-3/ "part3")
 
 There is actually quite a lot going on about the First Shore. The malazans found

@@ -22,7 +22,7 @@ This was fixed with:
 `sudo yum install qtwebkit-2.0-3.el6.x86_64.rpm`
 
 I found this
-package [online](http://rpm.pbone.net/index.php3/stat/4/idpl/15161517/dir/redhat_el_6/com/qtwebkit-2.0-3.el6.x86_64.rpm.html "link to get libQtWebKit.so.4").
+package [online](http://rpm.pbone.net/index.php3/stat/4/idpl/15161517/dir/redhat_el_6/com/qtwebkit-2.0-3.el6.x86_64.rpm.html).
 It's needed because the spotify-install wants libQtWebKit.so.4 - this may be
 available in some other package available from within the red hat repositories
 but I couldn't find it. If you know how/where that would be great to know :)

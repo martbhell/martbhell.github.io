@@ -53,30 +53,30 @@ asking for more access. In the meantime some are available on for example
 HP.com - but the Brocade release notes are not available there. And the HP
 Release notes for 7.0.0a have the HP names of the products. On HP's site you can
 go to the
-[manuals](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=12169&prodSeriesId=3742041 "manuals")
+[manuals](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=12169&prodSeriesId=3742041)
 for the 8/40 to get some more documents.
 
 - [v7.0.0a_release notes_HP](http://h10032.www1.hp.com/ctg/Manual/c02882135.pdf "HP's 7.0.0a release notes in pdf") in
   pdf (HP's
-  [customer notice](http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&taskId=120&prodSeriesId=3759005&prodTypeId=3709945&objectID=c02887883 "hp's customer advisory")
+  [customer notice](http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&taskId=120&prodSeriesId=3759005&prodTypeId=3709945&objectID=c02887883)
   about the release of 7.0.0a)
-- [FOS_TrblShoot](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912108/c02912108.pdf "FOS troubleshooting and diag guide 7.0.0")
+- [FOS_TrblShoot](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912108/c02912108.pdf)
   (3 June 2011, the same)
 - 7.x.x FOS_CMD_reference guide (not available)
-- [7.x.x FOS Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912101/c02912101.pdf "on hp.com pdf")
+- [7.x.x FOS Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912101/c02912101.pdf)
   (3 June 2011, the same)
 - 7.x.x AG Admin Guide (not available)
-- [7.x.x. Fabric Watch Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912099/c02912099.pdf "FW pdf") (29
-  April 2011)
+- [7.x.x. Fabric Watch Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912099/c02912099.pdf)
+  (29 April 2011)
 - Neither is FCIP admin guide available
 - But the Network Advisor stuff is. (assume these are the same)
-- [7.0.0 Message Reference](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912102/c02912102.pdf "Fabric OS Message Reference v7.0.0 (53-1002149-01, April 2011)") (this
-  has the public error messages that you may see in errdump)
+- [7.0.0 Message Reference](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912102/c02912102.pdf)
+  (this has the public error messages that you may see in errdump)
 
 Actually it looks like the documents available are quite up to date. I guess the
 Admin Guides etc don't update that often anyway. There is however a
-[document](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912109/c02912109.pdf "Fabric OS Documentation Updates v7.0 (53-1002165-01, June 2011)")
-in the manuals link above that explains that there have been some changes to
+[document](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912109/c02912109.pdf)
+ in the manuals link above that explains that there have been some changes to
 some of the Brocade Documents. This might be worth checking out.
 
 The conclusion of this little exercise is that the material available is

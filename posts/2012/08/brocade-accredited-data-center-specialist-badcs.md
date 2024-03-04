@@ -31,7 +31,8 @@ this exam you must get a score of 71% or better_
 So that's about 27 correct out of 38 questions.
 
 The objectives are on
-[this page](http://www.brocade.com/education/certification-accreditation/accredited-data-center-specialist/index.page "on brocade.com").
+[this page](http://www.brocade.com/education/certification-accreditation/accredited-data-center-specialist/index.page)
+on brocade.com.
 
 The only part I was initially not entirely sure about is the "Given a scenario,
 describe when portlog dumps are required". The objectives indicate that a Fibre

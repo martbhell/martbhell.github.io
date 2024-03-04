@@ -89,7 +89,7 @@ wget it from [www.dcache.org](http://www.dcache.org "http://www.dcache.org")
 `pkgadd -d dcache-server-1.9.12-16.pkg`
 
 follow
-[http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml](http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml "http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml")
+[http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml](http://www.dcache.org/manuals/Book-1.9.12/start/in-install.shtml)
 for the instructions of which postgresql-scripts and users and stuff to create
 
 It's however not enough :

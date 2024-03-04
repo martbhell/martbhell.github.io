@@ -45,10 +45,10 @@ installs. Press q to exit that.
   Kernel.org only has detailed change log as far as I could see (lots of text).
 - Later on it asks you, do you want to delete these packages (d for details):
   libisc60, libdns66,
-  [linux-image-2.6.35-22-generic](https://www.guldmyr.com/upgrade-ubuntu-10-10-to-natty "This is the kernel, you are installing a newer one :)"),
-  python-newt,
+  [linux-image-2.6.35-22-generic](https://www.guldmyr.com/upgrade-ubuntu-10-10-to-natty),
+   python-newt,
   [libxapian15](http://packages.ubuntu.com/hardy/libxapian15 "supposedly a new indexer has been introduced"),
-  [byobu](http://packages.ubuntu.com/natty/byobu "a profile switcher, supposedly a new one has been introduced here as well")
+  [byobu](http://packages.ubuntu.com/natty/byobu)
 - Last question: do you want to reboot? - **No pain, no gain.** Is 'adventurous'
   to do kernel upgrades remotely ;)
 - VM came back online after what felt like just 15 seconds.

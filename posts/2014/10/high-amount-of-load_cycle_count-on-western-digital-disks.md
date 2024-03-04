@@ -15,7 +15,7 @@ checking if I had notifications from smartd on).
 Low and behold, the Load_Cycle_Count (LLC) was really high, much higher than
 power_cycle_count on the 3TB WD disk I have. It turns out this is quite an old
 problem so there are a few posts about this on the Internets. The
-Interwebs [says](http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3%20 "http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3 ")
+Interwebs [says](http://www.storagereview.com/how_to_stop_excessive_load_cycles_on_the_western_digital_2tb_caviar_green_wd20ears_with_wdidle3%20)
 max in the specs are 300k load cycles. Smartctl -a says I'm already at 218602
 after 9302 power on hours (387 days but I power off the computer at night).
 

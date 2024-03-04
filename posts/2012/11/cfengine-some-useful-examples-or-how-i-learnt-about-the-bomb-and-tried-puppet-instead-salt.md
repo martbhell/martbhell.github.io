@@ -78,7 +78,7 @@ Want to use it for configuration management too? Check out the
 section.
 
 What looks bad with salt is that it's a quite new
-([first release in 2011](http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#cite_note-43 "http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#cite_note-43"))
+([first release in 2011](http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#cite_note-43))
 
 _Salt is a very common word so it makes googling hard. Most hits tend to be
 about cryptography or cooking._

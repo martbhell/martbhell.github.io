@@ -26,7 +26,7 @@ half-height.
 [BCEFP certification](http://community.brocade.com/docs/DOC-2814 "it's free!") -
 Brocade Certified Ethernet Fabric Professional (which include the VDX8770), It
 looks advanced and you probably want to take the previous exam -
-[BCEFE](http://www.brocade.com/education/certification-accreditation/certified-ethernet-fabric-engineer/index.page "on brocade.com") -
+[BCEFE](http://www.brocade.com/education/certification-accreditation/certified-ethernet-fabric-engineer/index.page) -
 before.
 
 \* SDN - **storage-defined network was the main focus of the day**. Fibre
@@ -34,7 +34,8 @@ Channel was barely mentioned at all.
 [Ken Cheng](http://www.brocade.com/company/about-brocade/executive-profiles.page "on brocade.com")'s
 (one of the VPs of Brocade) definition of SDN:
 
-### _"A set of technologies which are focused on achieving three objectives: network virtualization (vxlan), programmatic control (openflow) and cloud orchestration (openstack)."_
+_"A set of technologies which are focused on achieving three objectives network virtualization (vxlan),
+programmatic control (openflow) and cloud orchestration (openstack)."_
 
 It was quite obvious that Brocade's VCS is the technique/medium which they
 intend to enable these new technologies. SDN is still quite immature (even

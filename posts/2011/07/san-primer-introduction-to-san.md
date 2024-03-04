@@ -70,15 +70,15 @@ specific guides, best practices and supported configurations. The FC 101 by
 Brocade actually goes quite deep into the theory of the FC protocol.
 
 - IBM's
-  "[Introduction to Storage Area Networks and System Networking](http://www.redbooks.ibm.com/redpieces/abstracts/sg245470.html "a redbook")"
+  "[Introduction to Storage Area Networks and System Networking](http://www.redbooks.ibm.com/redpieces/abstracts/sg245470.html)"
   :
 - Brocade’s
-  [FC 101 – Introduction to Fibre Channel Concepts](http://www.brocade.com/downloads/documents/course_data_sheets/FC101-DataSheet.pdf "link to a pdf with clickable links").
+  [FC 101 – Introduction to Fibre Channel Concepts](http://www.brocade.com/downloads/documents/course_data_sheets/FC101-DataSheet.pdf).
   - This is really good because it takes you through the theory. There is also a
     page where  more books are mentioned.
 - HPs
-  [SAN Design Reference Guide](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&docIndexId=179911&locale=en_US&prodSeriesId=406734&prodTypeId=12169&taskId=101 "A version with all parts or each part by itself are available here.")
+  [SAN Design Reference Guide](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&docIndexId=179911&locale=en_US&prodSeriesId=406734&prodTypeId=12169&taskId=101)
   - A pdf that goes through best practices for how to configure HP’s storage and
     san.
-- [Evolution - Storage Brain -](http://www.amazon.com/Evolution-Storage-Brain-transformative-storage/dp/1451577648/ "on amazon.com")
+- [Evolution - Storage Brain -](http://www.amazon.com/Evolution-Storage-Brain-transformative-storage/dp/1451577648/)
   - Used to be used to train NetApp's new storage people:

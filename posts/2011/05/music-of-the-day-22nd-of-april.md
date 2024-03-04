@@ -6,7 +6,7 @@ tags: elipepsia, free music, not morrissey, hurl, portland, ra ra riot, the asce
 <!-- prettier-ignore -->
 ---
 
-[Dying is Fine - Ra Ra Riot](http://rarariot.tumblr.com/post/5334715256/hey-uk-europe-we-are-psyched-to-announce-that "on tumblr") -
+[Dying is Fine - Ra Ra Riot](http://rarariot.tumblr.com/post/5334715256/hey-uk-europe-we-are-psyched-to-announce-that) -
 Sounds a lot like Morrissey occasionally, but not often enough for me to start
 hurling, so I liek. Beware of their main web
 site [http://www.rarariot.com/](http://www.rarariot.com/) - you can get

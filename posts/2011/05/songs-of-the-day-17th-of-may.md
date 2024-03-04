@@ -8,8 +8,8 @@ tags: felix, fables, free, hayley, sales, ingrid, michaelson, katzenjammer, musi
 
 From the front page of thesixtyone.com
 
-[Just Pretend - Hayley Sales](http://social.entertainment.msn.com/music/blogs/reverb-blogpost.aspx?post=3fe61693-6d40-47c2-aa49-ee84becaa68f "their blog") -
-Soft and nice. I like the part when the bass is more pronounced with about 50s
+[Just Pretend - Hayley Sales](http://social.entertainment.msn.com/music/blogs/reverb-blogpost.aspx?post=3fe61693-6d40-47c2-aa49-ee84becaa68f)
+is soft and nice. I like the part when the bass is more pronounced with about 50s
 left.
 
 [Train Song - Felix Fables](www.thesixtyone.com/s/vCKljmw6g1B/ "latest update April 2011") -

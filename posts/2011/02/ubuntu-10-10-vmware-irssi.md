@@ -88,7 +88,7 @@ the end there are some 'Out of memory' things going on.
 So there we go. 128MB is too little.
 
 But
-[here](https://help.ubuntu.com/community/Installation/SystemRequirements#Ubuntu%20Server%20%28CLI%29%20Installation "ubuntu install reqs"):
+[here](https://help.ubuntu.com/community/Installation/SystemRequirements#Ubuntu%20Server%20%28CLI%29%20Installation):
 it says that 128MB is the requirement..
 
 ### Test 4
