@@ -32,13 +32,15 @@ yleisesti
 
 [![oikealta-vasemalle](images/7-8.20230726.magnets47.png "7-8")](images/7-8.20230726.magnets47.png)
 
-## ruskea pistettä
+ruskea pistettä
+---
 
 - myös yksi ruskee pistetty polku en ole paljon nähnyt
 
 [![ruskeat_pisteet](images/brown_dotted.png "brown_dotted")](images/brown_dotted.png)
 
-### hyvin järjestetty
+hyvin järjestetty
+---
 
 - muutama mäkejä oli ehkä vaikein, niin monta kuoppaa mäessä oli vaikea löytää just missä kuopassa rasti oli
 - sain numero ja lappu ja saan säästä se!
