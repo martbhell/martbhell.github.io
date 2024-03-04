@@ -61,11 +61,11 @@ Besides the obvious ones (DCX is awesome, it has features you need, you need mor
 
 In BCFA and BCFD there's been very **very** little focus on the M-series equipment. It appears to be a bit more in the BCFD. But, as far as I can tell they are not sold anymore so hopefully there's not much focus on them. Gamble: should I just browse through the McData sections?
 
-**Mi10k**
+### Mi10k
 
 hardware partitioning with SAN LPARs, mix FICON/open system in separate LPARs. 1,2,4,10 Gbps FC. Max 256 ports. Comparable to the 48k.
 
-**M6140**
+### M6140
 
 Open Systems and FICON, 140 ports in 4-port increments (each module you add have 4 ports, except 10G that has 1), 1,2,4,10 Gbps FC. M-series Directors are End of Sale.
 

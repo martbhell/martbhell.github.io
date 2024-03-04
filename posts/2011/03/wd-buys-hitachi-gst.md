@@ -6,7 +6,7 @@ tags: hitachi, home, storage, slashdotted, storage, wd, western, digital
 
 Linky to [the register](http://www.theregister.co.uk/2011/03/07/wd_buys_hitsachi_gst/ "wd buys hitsachi gst on theregister")
 
-_"Western Digital is buying Hitachi Global Storage Technologies for $4.25bn in a friendly takeover ..."_
+> "Western Digital is buying Hitachi Global Storage Technologies for $4.25bn in a friendly takeover ..."
 
 Hitachi GST has quite a few home-based disk products which do look interesting.
 

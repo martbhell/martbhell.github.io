@@ -65,7 +65,7 @@ Another thing to test: launch a bunch of Vyatta VM and use them to route IP traf
 
 ### Starting with static routing
 
-_Key: Network Name (IP subnet, interface on the host)_
+Key: Network Name (IP subnet, interface on the host)
 
 - _VM hostname - Interface inside the VM: IP address_
 

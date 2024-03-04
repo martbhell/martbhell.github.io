@@ -20,7 +20,7 @@ So, that would indicate that the time Pearson follows is GMT-6 or Central Time.
 
 On top of that the only available dates for me was 23rd and 24th of January :( Time to study! // update, that was changed, it was a mistake so now I get some more time to study :)
 
-**Exam Study Resources (page numbers are document page numbers, NOT the PDF page)**
+## Exam Study Resources (page numbers are document page numbers, NOT the PDF page)
 
 As I see it, the importance of each document could be arranged like this:
 
@@ -37,25 +37,25 @@ There is a nutshell guide for BCFD, but this is from November 2008 making it pos
 
 I am doubtful that the M-series will be included in the BCFD 16G exam but as it's still in the objectives for the 8G it's probably wise to not skip that part completely. For that 1.5 years (half 2009 and 2010) when I did SAN support I only had one call about a McData switch.
 
-**Exam Study Resources with my comments:**
+## Exam Study Resources with my comments
 
-## CFD 200 BCFD Design Course Modules 3-7
+### CFD 200 BCFD Design Course Modules 3-7
 
 - Obviously these are the most important. I'll go through these at a later stage.
 
-## Brocade DCX 8510 Backbone Family Datasheet
+### Brocade DCX 8510 Backbone Family Datasheet
 
 (GA-DS-1564-01)
 
 - Lots of details about the system specs.
 
-## SAN Design Best Practices
+### SAN Design Best Practices
 
 (GA-BP-329-02-02)
 
 - **Pages** 2,5-16,19-26,31,32-36,40-45,51-53,55,58-62,66,67,72
 
-## Fabric OS Administrators Guide v7.0
+### Fabric OS Administrators Guide v7.0
 
 (53-1002148-03)
 
@@ -97,7 +97,7 @@ I am doubtful that the M-series will be included in the BCFD 16G exam but as it'
       - Ah, on portThConfig it is called "Invalid Transmission Word".
     - supportshow
 
-## Fabric OS FCIP Administrators Guide v7.0
+### Fabric OS FCIP Administrators Guide v7.0
 
 (53-1002155-01)
 
@@ -154,7 +154,7 @@ GA-TN-048-01
     - total 8 pages
     - link lengths and link loss budgets
 
-## Brocade 6505 Hardware Reference
+### Brocade 6505 Hardware Reference
 
 (53-1002449-01)
 
@@ -164,7 +164,7 @@ GA-TN-048-01
     - switchstatuspoolicy
     - fos native and AG modes
 
-## Brocade Access Gateway Administrator’s Guide
+### Brocade Access Gateway Administrator’s Guide
 
 (53-1002156-01)
 
@@ -176,9 +176,9 @@ GA-TN-048-01
       - MEOS:
     - new features -F\_Port static mapping, APM, B6510, Target Aggregation, Direct target attachment, N\_Port monitoring
 
-_"You can run the agshow command to display Access Gateway information registered with the fabric. When an Access Gateway is exclusively connected to non-Fabric-OS-based switches, it will not show up in the agshow output on other Brocade switches in the fabric."_
+> "You can run the agshow command to display Access Gateway information registered with the fabric. When an Access Gateway is exclusively connected to non-Fabric-OS-based switches, it will not show up in the agshow output on other Brocade switches in the fabric."
 
-## [CEE Admin Guide 53 1002163-02](http://www.brocade.com/downloads/documents/product_manuals/B_SAN/CEE_AdminGd_v700.pdf "this is not in the resource list on community.brocade.com")
+### [CEE Admin Guide 53 1002163-02](http://www.brocade.com/downloads/documents/product_manuals/B_SAN/CEE_AdminGd_v700.pdf "this is not in the resource list on community.brocade.com")
 
 - **Page** xviii
   - topics
@@ -188,7 +188,7 @@ _"You can run the agshow command to display Access Gateway information registere
       - configdownload
       - and copy running config and stuff! Looks very similar to the Cisco CLI.
 
-## Brocade Adaptors Admin Guide
+### Brocade Adaptors Admin Guide
 
 (53-1002143-01)
 
@@ -200,7 +200,7 @@ _"You can run the agshow command to display Access Gateway information registere
       - CNA mode (FCoE)
     - Adapter Support (OS + description of adapters)
 
-## The New Data Center 1st Edition
+### The New Data Center 1st Edition
 
 ISBN: 978-1-4507-0195-2
 

@@ -18,7 +18,7 @@ sudo apt-get -d install eyeos - this did not work, no such package.
 
 ### 2nd attempt
 
-\- downloading the .tar.gz - surfed to the sourceforge. There is a 2.x and a 1.x of eyeOS - link above goes to 2.x
+- downloading the .tar.gz - surfed to the sourceforge. There is a 2.x and a 1.x of eyeOS - link above goes to 2.x
 
 Commands: wget/mv (super long file) then
 
@@ -26,13 +26,19 @@ Commands: wget/mv (super long file) then
 
 Files are index.php, settings.php (maybe the installation is done by just surfing into it?). There are some sub directories too: resource, eyeos, install. The install dir also has index.php
 
-cp -R files/ /var/www cd /var/www mv files/ eyeos cd eyes chmod 777 \*
+```bash
+cp -R files/ /var/www
+cd /var/www
+mv files/ eyeos
+cd eyes
+chmod 777 *
+```
 
 surfing to 192.168.232.128/eyeos ->
 
-> EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied
+> EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos_20110131.log): failed to open stream: Permission denied
 
-\-> a lot nicer, gives a welcome to eyeOS 2 installation!
+-> a lot nicer, gives a welcome to eyeOS 2 installation!
 
 You then get to click on "install" and it will check the requirements.
 
@@ -49,7 +55,7 @@ if you don't know what to run you can either google or check out [packages.ubunt
 > The following NEW packages will be installed: libcurl3 php5-curl
 
 ```bash
-Failed to fetch <http://us.archive.ubuntu.com/ubuntu/pool/main/p/php5/php5-curl\_5.3.3-1ubuntu9.1\_amd64.deb>  404  Not Found \[IP: 91.189.92.171 80\] E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+Failed to fetch <http://us.archive.ubuntu.com/ubuntu/pool/main/p/php5/php5-curl_5.3.3-1ubuntu9.1_amd64.deb>  404  Not Found [IP: 91.189.92.171 80] E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
 sudo apt-get update
 ```
 
@@ -79,7 +85,7 @@ Python stomp.py:    Not installed (Needed in collaborative features) - packag
 
 after a restart of apache and refresh -> doesn't come up as installed. But I really want this so googling.
 
-<http://stomppy.googlecode.com/files/stomp.py\_3.0.2\_all.deb> found on <http://code.google.com/p/stomppy/>
+<http://stomppy.googlecode.com/files/stomp.py_3.0.2_all.deb> found on <http://code.google.com/p/stomppy/>
 
 wget that. then `sudo dpkg -i stomp.py_3.0.2_all.deb`
 
@@ -141,8 +147,8 @@ cd /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq
 ./activemq # This did not work, complaining about JAVA.
 ```
 
-> ERROR: Configuration varaiable JAVA\_HOME or JAVACMD is not defined correctly. (JAVA\_HOME='', JAVACMD='java')
-> INFO: Invoke the following command to create a configuration file ./activemq setup \[ /etc/default/activemq | /home/user/.activemqrc \]
+> ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly. (JAVA_HOME='', JAVACMD='java')
+> INFO: Invoke the following command to create a configuration file ./activemq setup [ /etc/default/activemq | /home/user/.activemqrc ]
 
 ```bash
 sudo ./activemq setup /etc/default/activemq
@@ -150,7 +156,7 @@ sudo chown root:nogroup '/etc/default/activemq'; sudo chmod 600 '/etc/default/ac
 ./activemq # then only complains about this:
 ```
 
-> ERROR: Configuration varaiable JAVA\_HOME or JAVACMD is not defined correctly. (JAVA\_HOME='', JAVACMD='java')
+> ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly. (JAVA_HOME='', JAVACMD='java')
 
 `sudo pico /etc/default/activemq`
 
@@ -198,7 +204,7 @@ add this to /etc/rc.local
 
 `sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start & sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &`
 
-__note from future Johan haha that's a way to start things on boot too sure__
+_note from future Johan_ haha that's a way to start things on boot too sure
 
 ### Configuration during install
 
@@ -208,9 +214,15 @@ this was already filled in so went with that :)
 
 however, still gives this:
 
-**EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied**
+```text
+EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos_20110131.log): failed to open stream: Permission denied
+```
 
-/var/www/eyeos$ chmod 777 \* -R
+Fixed with:
+
+```bash
+/var/www/eyeos$ chmod 777 * -R
+```
 
 ## Logging in
 

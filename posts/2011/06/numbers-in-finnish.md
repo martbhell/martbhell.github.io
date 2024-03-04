@@ -6,7 +6,7 @@ tags: finnish, kielta, language, numbers, suomen
 
 What I found/find really hard was separate kahdeksan and yhdeksän, because cmon, they are pretty similar!
 
-**English - basic - genitivi**
+## English - basic - genitivi
 
 One - yksi - yhden Two - kaksi - kahden Three - kolme - kolmen Four - neljä - neljän Five - viisi - viiden Six - kuusi - kuuden Seven - seitsemän - seitsemän Eight - kahdeksan - kahdeksan Nine - yhdeksän - yhdeksän Ten - Kymmenen - kymmenän
 
