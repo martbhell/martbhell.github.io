@@ -18,7 +18,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
 ## Updates in this article
 
-<details><summary>Old Updates < 2013</summary>
+### Old Updates < 2013
 
 - **2011-02-22:** Updated links because the release notes I had before to 6.1.x and above did not work anymore. Also changed the sub-versions in 6.1.x and above to the latest released one by HP.
 
@@ -51,8 +51,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2012-10-27:** Some grammar updates and 16G FOS 7.x requirement. 6.4.3b and 7.0.2.
 - **2012-11-05:** Updated links to release notes. Perhaps it's time to condense the updates list. Notes about passive/active ftp, ifmodeshow|ipaddrshow and java version required (listed in release notes).
 
-</details>
-<details><summary>Old Updates < 2020</summary>
+### Old Updates < 2020
 
 - **2013-03-10:** 7.0.2b and 6.4.3c added some notes about compatibility. Improved list of which FOS works with which FC speeds.
 - **2013-03-29:** Added 7.1.0a and 7.0.2c. Only HP is out with 7.1.0a as of now. Brocade may have it non-publicly, at least I cannot see it in [my brocade](http://my.brocade.com/ "http://my.brocade.com/"). Other minor updates.
@@ -111,9 +110,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2020-09-27:** 9.0.0a got released in August
 - **2020-12-12:** 9.0.0b is out
 
-</details>
-
-## Recent Updates
+## More Recent Updates
 
 - **2023-04-02:** moved to martbhell.github.io. Keeping this for posterity. Firmware Downloads are via Broadcom these days! Also [HPE has them](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_241cfaab2fed4696a003f38ee0).
 - **2023-04-04:** 9.1.1a with link to broadcom

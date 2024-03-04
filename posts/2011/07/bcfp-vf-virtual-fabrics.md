@@ -20,7 +20,7 @@ There's logical fabrics and logical switches.
 
 From the FAQ: _A Logical Fabric is an implementation of a Fibre Channel fabric with one or more Logical_ _Switches participating in the fabric. A Logical Fabric has its own independent instance of_ _fabric services, name server, zoning database, and so on._
 
-A logical switch needs a fabric id. Default is 128 but can be changed. Same FID cannot be used for same logical switch in the same chassi. You move ports from the default to the new switches. VE\_ and EX\_ ports needs to be configured after the move. LD, QoS, F\_port buffers/trunking may not be enabled on the port.
+A logical switch needs a fabric id. Default is 128 but can be changed. Same FID cannot be used for same logical switch in the same chassi. You move ports from the default to the new switches. `VE_` and `EX_` ports needs to be configured after the move. LD, QoS, `F_port` buffers/trunking may not be enabled on the port.
 
 Max 8 VFs in the DCX, enabling it is disruptive (requires a reboot).
 
@@ -34,9 +34,9 @@ For 8G products it's available on the DCX, B5100 and the B5300. For 16G it's ava
 
 The default switch - is the first logical switch you create.
 
-To connect a logical switch (henceforth known as LS) to another one you can just have one of the ports in the LS as an E\_port, or you can use XISL - extended ISL.
+To connect a logical switch (henceforth known as LS) to another one you can just have one of the ports in the LS as an `E_port`, or you can use XISL - extended ISL.
 
-To use XISL you designate one LS as a **base switch**. This is used for interconnects and you can have ISLs for several fabrics on this one port/cable. It can have E, VE and **EX, VEX** ports. \*x\_ports can only be in the base switch. One base switch per chassi, on DCX platforms the default cannot be the base switch. You connect the base switch to other base switches and then the other logical switches with the same FID merge. By default the logical switches are enabled to use XISL. You can combine normal ISL and XISL. Normal ISL have a lower cost.
+To use XISL you designate one LS as a **base switch**. This is used for interconnects and you can have ISLs for several fabrics on this one port/cable. It can have E, VE and **EX, VEX** ports. `x_ports` can only be in the base switch. One base switch per chassi, on DCX platforms the default cannot be the base switch. You connect the base switch to other base switches and then the other logical switches with the same FID merge. By default the logical switches are enabled to use XISL. You can combine normal ISL and XISL. Normal ISL have a lower cost.
 
 ISL (between physical switches) DISL (between Logical Switches) IFL (routing, not merging) XISL (several LISLs inside) LISL (part of an XISL)
 
@@ -44,6 +44,21 @@ With XISL a logical port is created, their WWN start with 5x.
 
 ## CLI
 
-fosconfig --enable vf lscfg --create FID \[-base\] \[-force\]; setcontext FID; swichdisable (set Domain ID etc); configure; switchenable lscfg --config 128 -slot <slot> -port <port> lscfg --delete non-default-logical-switches lscfg --show lscfg --change 5 --newfid 7 (disables switch and sets it); fosexec --fid FID -cmd "switchenable"
+```bash
+fosconfig --enable vf lscfg --create FID [-base] [-force];
+setcontext FID;
+swichdisable (set Domain ID etc);
+configure;
+switchenable lscfg --config 128 -slot <slot> -port <port>
+lscfg --delete non-default-logical-switches
+lscfg --show
+lscfg --change 5 --newfid 7 (disables switch and sets it);
+fosexec --fid FID -cmd "switchenable"`
+```
 
-fosexec --fid FID  -cmd "cmd" (how to run a command on another LS) fosexec --fid all -cmd "cmd" (on all logical switches) ipaddrset -ls 123 --add 10.10.10.10/24 (set an IP for a logical switch, to segment management)
+```bash
+fosexec --fid FID  -cmd "cmd" (how to run a command on another LS)
+fosexec --fid all -cmd "cmd" (on all logical switches)
+ipaddrset -ls 123 --add 10.10.10.10/24 (set an IP for a logical switch, to segment management)
+```
+

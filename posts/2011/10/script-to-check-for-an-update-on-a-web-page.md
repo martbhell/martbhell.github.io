@@ -26,10 +26,11 @@ The script should check the last x amount of days and if any of them are differe
 
 If it is, then it will write to a file that is referenced in $HOME/.bashrc.
 
-The layout of the blog doesn't like really long lines in <pre>, but you can select below and only get the post (and not the stuff on the right side).
+The layout of the blog doesn't like really long lines in `<pre>`, but you can select below and only get the post (and not the stuff on the right side).
 
-spot\_check.sh:
+spot_check.sh:
 
+```bash
 # !/bin/sh
 
 dat1=$(date +%Y.%m.%d)
@@ -50,7 +51,7 @@ diff -q $path/$dat1.html $path/$dat3.html >> $out
 diff -q $path/$dat1.html $path/$dat4.html >> $out
 diff -q $path/$dat1.html $path/$dat5.html >> $out
 
-if \[\[ -s $out \]\] ; then
+if [[ -s $out ]] ; then
 echo $out "is not empty";
 echo "#!/bin/sh" > $bout;
 echo "echo new spotify release" >> $bout;
@@ -60,14 +61,17 @@ echo $out "is empty";
 echo "No new spotify release.";
 rm $bout;
 fi;
+```
 
 Crontab (daily at 0915):
 
-15 09 \* \* \* /bin/bash /home/username/Downloads/Spotify/spot\_check.sh 2>&1
+`15 09 * * * /bin/bash /home/username/Downloads/Spotify/spot_check.sh 2>&1`
 
 .bashrc:
 
-if \[ -f ~/.spotcheck \]; then
+```bash
+if [ -f ~/.spotcheck ]; then
 cd $HOME
 ./.spotcheck
 fi
+```
