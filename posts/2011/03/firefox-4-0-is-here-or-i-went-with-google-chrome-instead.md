@@ -18,7 +18,7 @@ On my RHEL6 laptop however I couldn't just unpack the linux version and run the 
 
 `./firefox-bin: error while loading shared libraries: libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory`
 
-But `sudo yum install gtk2` gives: 
+But `sudo yum install gtk2` gives:
 
 > Package gtk2-2.18.9-4.el6.x86\_64 already installed and latest version.
 
