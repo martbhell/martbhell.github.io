@@ -6,7 +6,7 @@ tags: amazon, kindle, books, e-book, ebook-reader, e-reader, ebook, eject, eread
 
 On the 28th I purchased it around 1900. Today on the 30th at 0820 it arrived in the airport in Helsinki. Also yesterday somebody called and said it would come this week.
 
-\*\*\* Update: It's now on the way to my work! Got it around 12 or so. Less than 48 hours to get the Kindle (and it came from Reno, NV, US!).
+**Update: It's now on the way to my work! Got it around 12 or so. Less than 48 hours to get the Kindle (and it came from Reno, NV, US!).**
 
 ### Purchase
 
@@ -38,12 +38,12 @@ If you run linux on your PC - you cannot start using it from scratch. It will te
 
 `eject /dev/sdb1`
 
-/dev/sdb1  can vary. I just hit 'dmesg' and saw that there was a 3GiB device connected on \[sdb\]. Be careful not to eject your other disks :) You may have to have root access to do this, if so, try: sudo eject /dev/sdb1
+/dev/sdb1  can vary. I just hit 'dmesg' and saw that there was a 3GiB device connected on [sdb]. Be careful not to eject your other disks :) You may have to have root access to do this, if so, try: sudo eject /dev/sdb1
 
 In the end of 'dmesg' you should see this after you connect the kindle:
 
-```
-scsi 5:0:0:0: Direct-Access **Kindle** Internal Storage 0100 PQ: 0 ANSI: 2 sd 5:0:0:0: Attached scsi generic sg2 type 0 sd 5:0:0:0: \[**sdb**\] Attached SCSI removable disk sd 5:0:0:0: \[**sdb**\] 6410688 512-byte logical blocks: (3.28 GB/3.05 GiB) sd 5:0:0:0: \[**sdb**\] Assuming drive cache: write through sd 5:0:0:0: \[**sdb**\] Assuming drive cache: write through
+```text
+scsi 5:0:0:0: Direct-Access **Kindle** Internal Storage 0100 PQ: 0 ANSI: 2 sd 5:0:0:0: Attached scsi generic sg2 type 0 sd 5:0:0:0: [**sdb**] Attached SCSI removable disk sd 5:0:0:0: [**sdb**] 6410688 512-byte logical blocks: (3.28 GB/3.05 GiB) sd 5:0:0:0: [**sdb**] Assuming drive cache: write through sd 5:0:0:0: [**sdb**] Assuming drive cache: write through
 ```
 
 This was on my RHEL 6 - Red Hat workstation. The syntax is the same for [Ubuntu](http://iamyouruser.blogspot.com/2009/03/ubuntu-eject-kindle.html "on ubuntu") so it sounds more like a Linux thing than a distribution specific thing. Of course you might also be able to do it graphically - depending on your window manager.

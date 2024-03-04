@@ -42,7 +42,7 @@ Conversions from an 8.0 Wireless LAN Controller unified release AP image to auto
 - make sure to let UDP(& TCP?) 69 through the firewall
 - next is to connect the console and login to the AP and run some commands:
 
-```
+```text
 $ ena
 # conf t
 # debug capwap console cli

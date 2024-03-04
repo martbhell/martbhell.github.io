@@ -10,7 +10,7 @@ It will look like this:
 
 [![example rrd graph](images/movers-300x96.png "movers")](images/movers.png)
 
-## 1\. Create the rrd database
+## 1. Create the rrd database
 
 I wrote this down in a .sh file so I can go back later and see how it was set up.
 
@@ -36,7 +36,7 @@ Also done in a bash script. Because the --step above is set to 300, you need to 
 rrdfile='/home/$user/rrd/movers.rrd'
 rrdtool='/usr/bin/rrdtool'
 
-allpools='/home/$user/bash\_script.sh'
+allpools='/home/$user/bash_script.sh'
 output=$($allpools)
 movers=$(grep RUNNING $output|wc -l)
 
@@ -45,7 +45,7 @@ $rrdtool update $rrdfile N:$movers
 
 The N: is NOW. $movers is the value you want to plot.
 
-## 3\. Make a graph
+## 3. Make a graph
 
 Add this to another .sh script. This you can run at whatever interval you want.
 
@@ -64,49 +64,49 @@ enddate=$(date +%s)
 #enddate is the same as "now"
 cd /home/$user/rrd
 
-$rrdtool graph $alltimeimage --end now --start 1321603000 \\
-        -v from\_beginning -t active\_movers \\
+$rrdtool graph $alltimeimage --end now --start 1321603000 \
+        -v from_beginning -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000
-#rrdtool graph /path/to/image.png --end now --start when\_I\_started\_capturing -v label\_left -t title\_top \\
+#rrdtool graph /path/to/image.png --end now --start when_I_started_capturing -v label_left -t title_top \
 #DEF: as I only have one I only used movers, maybe you can change the names in case you have several data sources
 #DEF: you can also use other things than AVERAGE (like MIN/MAX)
 #LINE: #000000 is black
 
-$rrdtool graph $lastweekimage --start -1w \\
-        -v last\_week -t active\_movers \\
-        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000 \\
-        AREA:movers#8C2E64 \\
-        GPRINT:movers:LAST:"Current\\: %1.0lf" \\
-        GPRINT:movers:MAX:"Max\\: %1.0lf" \\
-        GPRINT:movers:MIN:"Min\\: %1.0lf" \\
-        GPRINT:movers:AVERAGE:"Avg\\: %1.0lf"
+$rrdtool graph $lastweekimage --start -1w \
+        -v last_week -t active_movers \
+        DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000 \
+        AREA:movers#8C2E64 \
+        GPRINT:movers:LAST:"Current: %1.0lf" \
+        GPRINT:movers:MAX:"Max: %1.0lf" \
+        GPRINT:movers:MIN:"Min: %1.0lf" \
+        GPRINT:movers:AVERAGE:"Avg: %1.0lf"
 
 #If you want to make it a little more complex. AREA fills the space between the value and the x-axis.
 #GPRINT statements print some values relating to the graph.
 
-$rrdtool graph $last4hoursimage --end now --start end-4h \\
-        -v last\_4\_hours -t active\_movers \\
+$rrdtool graph $last4hoursimage --end now --start end-4h \
+        -v last_4_hours -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000
 
-$rrdtool graph $lastmonthimage --end now --start -1m \\
-        -v last\_month -t active\_movers \\
+$rrdtool graph $lastmonthimage --end now --start -1m \
+        -v last_month -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000
 
-$rrdtool graph $last3monthsimage --end now --start -8035200 \\
-        -v last\_3\_months -t active\_movers \\
+$rrdtool graph $last3monthsimage --end now --start -8035200 \
+        -v last_3_months -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000
 
-$rrdtool graph $lastday --end now --start -1d \\
-        -v last\_day -t active\_movers \\
+$rrdtool graph $lastday --end now --start -1d \
+        -v last_day -t active_movers \
         DEF:movers=$rrdfile:movers:AVERAGE LINE:movers#000000
 ```
 
-## 4\. Crontab - scheduling
+## 4. Crontab - scheduling
 
-```
-\*/5 \* \* \* \* /bin/bash /home/$user/rrd/rrd.update.sh > /dev/null 2>&1 #every 5 minutes \*/15 \* \* \* \* /bin/bash /home/$user/rrd/rrd.graph.sh > /dev/null 2>&1 #every 15 minutes
+```text
+*/5 * * * * /bin/bash /home/$user/rrd/rrd.update.sh > /dev/null 2>&1 #every 5 minutes */15 * * * * /bin/bash /home/$user/rrd/rrd.graph.sh > /dev/null 2>&1 #every 15 minutes
 ```
 
-## 5\. Final Words
+## 5. Final Words
 
 I am not providing the data gathering script here as you probably won't need it: it lists movers (transfers) on all pools in a dCache system.

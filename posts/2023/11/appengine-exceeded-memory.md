@@ -8,7 +8,7 @@ tags: wtangy, nhl, gae, google, gcs, grafana, google app engine, python, gunicor
 
 Have you seen these error messages before?
 
-```
+```text
 10:22:23.481686Z Exceeded hard memory limit of 384 MiB with 400 MiB after servicing 3 requests total. Consider setting a larger instance class in app.yaml.
 10:18:23.473577Z Exceeded hard memory limit of 384 MiB with 393 MiB after servicing 7 requests total. Consider setting a larger instance class in app.yaml.
 ```

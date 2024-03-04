@@ -34,7 +34,7 @@ Minimal install.
 
 Setup OS networking (static ip for servers, start on boot, open port 988 in firewall, possibly some for outgoing if you decide to restrain that too), run yum update and setup ntp.
 
-Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86\_64).
+Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e2fsprogs appropriately (x86_64).
 
 Lustre also does not support selinux, so disable that.
 
@@ -68,37 +68,37 @@ Installing e2fsprogs, kernel and lustre-modules.
 Skipping debuginfo and devel packages, installing all the rest.
 
 ```
-yum localinstall \\ 
-kernel-2.6.32-220.4.2.el6\_lustre.x86\_64.rpm kernel-firmware-2.6.32-220.4.2.el6\_lustre.x86\_64.rpm \\
-kernel-headers-2.6.32-220.4.2.el6\_lustre.x86\_64.rpm \\
-lustre-2.2.0-2.6.32\_220.4.2.el6\_lustre.x86\_64.x86\_64.rpm \\ 
-lustre-ldiskfs-3.3.0-2.6.32\_220.4.2.el6\_lustre.x86\_64.x86\_64.rpm \\
-lustre-modules-2.2.0-2.6.32\_220.4.2.el6\_lustre.x86\_64.x86\_64.rpm
+yum localinstall \ 
+kernel-2.6.32-220.4.2.el6_lustre.x86_64.rpm kernel-firmware-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
+kernel-headers-2.6.32-220.4.2.el6_lustre.x86_64.rpm \
+lustre-2.2.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm \ 
+lustre-ldiskfs-3.3.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm \
+lustre-modules-2.2.0-2.6.32_220.4.2.el6_lustre.x86_64.x86_64.rpm
 ```
 
 The above was not the order they were installed. Yum changed the order so that for example kernel-headers was last.
 
-```
-yum localinstall e2fsprogs-1.42.3.wc3-7.el6.x86\_64.rpm \\
-e2fsprogs-debuginfo-1.42.3.wc3-7.el6.x86\_64.rpm \\
-e2fsprogs-devel-1.42.3.wc3-7.el6.x86\_64.rpm \\
-e2fsprogs-libs-1.42.3.wc3-7.el6.x86\_64.rpm \\
-e2fsprogs-static-1.42.3.wc3-7.el6.x86\_64.rpm \\
-libcom\_err-1.42.3.wc3-7.el6.x86\_64.rpm \\
-libcom\_err-devel-1.42.3.wc3-7.el6.x86\_64.rpm \\
-libss-1.42.3.wc3-7.el6.x86\_64.rpm \\
-libss-devel-1.42.3.wc3-7.el6.x86\_64.rpm
+```bash
+yum localinstall e2fsprogs-1.42.3.wc3-7.el6.x86_64.rpm \
+e2fsprogs-debuginfo-1.42.3.wc3-7.el6.x86_64.rpm \
+e2fsprogs-devel-1.42.3.wc3-7.el6.x86_64.rpm \
+e2fsprogs-libs-1.42.3.wc3-7.el6.x86_64.rpm \
+e2fsprogs-static-1.42.3.wc3-7.el6.x86_64.rpm \
+libcom_err-1.42.3.wc3-7.el6.x86_64.rpm \
+libcom_err-devel-1.42.3.wc3-7.el6.x86_64.rpm \
+libss-1.42.3.wc3-7.el6.x86_64.rpm \
+libss-devel-1.42.3.wc3-7.el6.x86_64.rpm
 ```
 
 After boot, confirm that you have lustre kernel installed by typing:
 
 `uname -av` and `mkfs.lustre --help`
 
-to see if you have that and `rpm -qa 'e2fs\*'` to see if that was installed properly too.
+to see if you have that and `rpm -qa 'e2fs*'` to see if that was installed properly too.
 
 By the way, you probably want to run this to exclude automatic yum kernel updates:
 
-`echo "exclude=kernel\*" >> /etc/yum.conf`
+`echo "exclude=kernel*" >> /etc/yum.conf`
 
 After install and reboot into new kernel it's time to
 
@@ -109,7 +109,7 @@ After install and reboot into new kernel it's time to
 
 ## And then the Client
 
-Install the e2fsprogs\*
+Install the e2fsprogs*
 
 We cannot just install the lustre-client packages, because we run a different kernel than the ones that whamcloud have compiled the lustre-client against.
 
@@ -162,8 +162,8 @@ To see usage!
 
 You want to start the MDS, then the OSS and last the client. But while it's running you can restart any node and eventually it will start working again.
 
-Fstab on **the client**: `ip@tcp:/fsname /mnt lustre defaults,\_netdev 0 0`
+Fstab on **the client**: `ip@tcp:/fsname /mnt lustre defaults,_netdev 0 0`
 
-Fstab on **the OSS and MDS**: `/dev/sdb1 /mnt/MDS lustre defaults,\_netdev 0 0`
+Fstab on **the OSS and MDS**: `/dev/sdb1 /mnt/MDS lustre defaults,_netdev 0 0`
 
 While it's running you can restart any node and eventually it will start working again.

@@ -59,17 +59,17 @@ export PATH PGDATA
 you probably also want to add these to the root user's path
 
 ```bash
-svcadm enable postgresql-84:32\_bit
+svcadm enable postgresql-84:32_bit
 
 root@oi:/var/log# svcs -a|grep postg
-disabled       17:29:37 svc:/application/database/postgresql\_84:default\_64bit
-online         17:31:35 svc:/application/database/postgresql\_84:default\_32bit
+disabled       17:29:37 svc:/application/database/postgresql_84:default_64bit
+online         17:31:35 svc:/application/database/postgresql_84:default_32bit
 
 su - postgres
 
 psql
 
-\\l
+\l
 ```
 
 I initially did this in an ESXi VM in VMWare Workstation, but that keept freezing so I went over to a 'real vm' instead. The VM is more responsive.
@@ -86,13 +86,13 @@ It's however not enough :
 
 ```bash
 root@oi:~# /opt/d-cache/bin/dcache start
-/opt/d-cache/bin/dcache\[127\]: local: not found \[No such file or directory\]
-/opt/d-cache/bin/dcache\[128\]: local: not found \[No such file or directory\]
-/opt/d-cache/bin/dcache\[129\]: local: not found \[No such file or directory\]
-/opt/d-cache/bin/dcache\[130\]: local: not found \[No such file or directory\]
-/opt/d-cache/bin/dcache\[131\]: local: not found \[No such file or directory\]
-/opt/d-cache/bin/dcache\[132\]: local: not found \[No such file or directory\]
-/opt/d-cache/bin/dcache\[317\]: .\[162\]: local: not found \[No such file or directory\]
+/opt/d-cache/bin/dcache[127]: local: not found [No such file or directory]
+/opt/d-cache/bin/dcache[128]: local: not found [No such file or directory]
+/opt/d-cache/bin/dcache[129]: local: not found [No such file or directory]
+/opt/d-cache/bin/dcache[130]: local: not found [No such file or directory]
+/opt/d-cache/bin/dcache[131]: local: not found [No such file or directory]
+/opt/d-cache/bin/dcache[132]: local: not found [No such file or directory]
+/opt/d-cache/bin/dcache[317]: .[162]: local: not found [No such file or directory]
 ```
 
 so, edit /opt/d-cache/bin/dcache and remove the if in the beginning that will make it use /usr/xpg4/bin/sh - so that it uses /bin/bash instead.
@@ -100,10 +100,10 @@ so, edit /opt/d-cache/bin/dcache and remove the if in the beginning that will ma
 Like this:
 
 ```bash
-if \[ "$1" = "%" \]; then
+if [ "$1" = "%" ]; then
     shift
-elif \[ "\`uname\`" = "SunOS" \]; then
-    if \[ -x /bin/bash \]; then
+elif [ "`uname`" = "SunOS" ]; then
+    if [ -x /bin/bash ]; then
         exec /bin/bash $0 % "$@"
     else
         echo "Cannot find POSIX compliant shell. This script will"
@@ -154,10 +154,10 @@ Next step is to try it out, this might prove a little bit more difficult (to fin
 so maybe next time you restart the vm it gives some errors and puts the postgresql-server in maintenance mode. Look in /var/adm/messages for some tips, it should point you to
 
 ```bash
-svcs -xv svc:/application/database/postgresql\_84:default\_32bit
+svcs -xv svc:/application/database/postgresql_84:default_32bit
 ```
 
-/var/svc/log/application-database-postgresql\_84\\:default\_32bit.log
+/var/svc/log/application-database-postgresql_84:default_32bit.log
 
 which will tell you more about what's going on and how to fix it
 
@@ -169,18 +169,18 @@ We'll start with trying to use Webdav (doesn't require anything fancy on the cli
 
 go to the layout file and uncomment the webdav part, add
 
-```
+```text
 webdavAnonymousAccess=FULL
 webdavRootPath=/data/world-writable
 ```
 
 The script /opt/d-cache/bin/chimera-cli.sh sadly assumes that you need bash or a special version of bash somehow. So running
 
-bash /opt/d-cache/bin/chimera-cli.sh mkdir /data
+`bash /opt/d-cache/bin/chimera-cli.sh mkdir /data`
 
 works, but
 
-/opt/d-cache/bin/chimera-cli.sh mkdir /data
+`/opt/d-cache/bin/chimera-cli.sh mkdir /data`
 
 does not.
 
@@ -200,21 +200,18 @@ tada, now the copy starts, or the file creation starts, but I cannot actually wr
 
 some errors to accompany this:
 
- (WebDAV-oi) \[door:WebDAV-oi@dCacheDomain:13295xxx\] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
- (WebDAV-oi) \[door:WebDAV-oi@dCacheDomain:13295xxx\] resource is being locked with a null user. This won't really be locked at all...
- (WebDAV-oi) \[door:WebDAV-oi@dCacheDomain:13295xxx\] resource is being locked with a null user. This won't really be locked at all...
- (WebDAV-oi) \[door:WebDAV-oi@dCacheDomain:13295xxx\] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
- (pool1) \[00002CBCC971ABC14BDC9E496A0AEAA31FC3\] A task was added to queue 'store', however the queue is not configured to execute any tasks.
-
-### trying dccp
-
-```
-[root] #
+```text
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] resource is being locked with a null user. This won't really be locked at all...
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] resource is being locked with a null user. This won't really be locked at all...
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
+ (pool1) [00002CBCC971ABC14BDC9E496A0AEAA31FC3] A task was added to queue 'store', however the queue is not configured to execute any tasks.
+ (WebDAV-oi) [door:WebDAV-oi@dCacheDomain:13295xxx] Your resource factory returned a resource with a different name to that requested!!! Requested: null returned: world-writable - resource factory: class org.dcache.webdav.DcacheResourceFactory
 ```
 
 ### NFSv41
 
-uncomment the nfsv3 and add nfsv41 then on a system you should be able to 'apt-get install nfs-common'; modprobe nfs; mkdir /nfsv4 mount -t nfs4 ip.to.server:/ /nfsv4'. But for me this stops working with an "cp: closing \`./bash': Input/output error". Possibly because I could not specify -o minorversion=1 on this ubuntu install (3.0.0-16).
+uncomment the nfsv3 and add nfsv41 then on a system you should be able to 'apt-get install nfs-common'; modprobe nfs; mkdir /nfsv4 mount -t nfs4 ip.to.server:/ /nfsv4'. But for me this stops working with an "cp: closing `./bash': Input/output error". Possibly because I could not specify -o minorversion=1 on this ubuntu install (3.0.0-16).
 
 #### NFSv41 with dCacheToGo
 
@@ -232,7 +229,7 @@ When this VM is up (and the dCache server of course), hit:
 
 then
 
-```
+```bash
 cd /mnt/data/world-writable
 mkdir another
 cd another

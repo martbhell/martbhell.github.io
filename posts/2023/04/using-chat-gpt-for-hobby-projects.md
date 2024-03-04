@@ -48,7 +48,7 @@ And in the end I needed to remove some double-quotes around the tags so rather t
 
 It returned this pretty quickly, which I TBH could have figured out myself :)
 
-```
+```bash
 find . -name '*.md' -type f -exec sed -i '/^categories:/ s/"//g' {} +
 find . -name '*.md' -type f -exec sed -i '/^tags:/ s/"//g' {} +
 ```
