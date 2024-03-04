@@ -198,7 +198,7 @@ add this to /etc/rc.local
 
 `sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start & sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &`
 
-__note from future Johan haha that's a way to start things on boot too sure__ 
+__note from future Johan haha that's a way to start things on boot too sure__
 
 ### Configuration during install
 
