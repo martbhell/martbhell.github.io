@@ -35,7 +35,7 @@ Preparing...                ########################################### \[100%\]
 
 You'll get errors while trying to start spotify:
 
-spotify 
+spotify
 spotify: error while loading shared libraries: libnss3.so.1d: cannot open shared object file: No such file
 
 What you need to do is create symlinks:

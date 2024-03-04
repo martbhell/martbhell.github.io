@@ -44,11 +44,11 @@ Here is the diff
 > \# diff hotplug.orig hotplug  
 > 62c62  
 > <  
-> \--- 
->  >     echo "VENDOR $vendor" >> $USBCONFIG  
+> \---
+>  > echo "VENDOR $vendor" >> $USBCONFIG  
 > 63a64  
->  >
-> 
+> >
+>
 > The above output means - "Add the 'echo ... ' bit on line 62"
 
 All stuff is been tested with FOS v7.4.2f.

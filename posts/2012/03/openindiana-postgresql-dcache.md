@@ -4,7 +4,7 @@ date: 2012-03-01
 category: it, storage
 tags: dcache, esx, esxi, grid, openindiana, postgres, postgresql, vmware, vmware, workstation
 
-## This is a test for installing openindiana and set up a working dCache test-vm.
+## This is a test for installing openindiana and set up a working dCache test-vm
 
 dCache is a storage element of the Grid (scientific computing).
 
@@ -43,6 +43,7 @@ pkg install pkg:/service/database/postgres-84
 
 vi /etc/passwd
 ```
+
 change postgres to 90:90 and homedir to /export/home/postgres
 
 ```bash
@@ -183,7 +184,7 @@ works, but
 
 does not.
 
-See http://www.dcache.org/manuals/Book-1.9.12/start/intouch-client.shtml for the rest.
+See <http://www.dcache.org/manuals/Book-1.9.12/start/intouch-client.shtml> for the rest.
 
 If you keep the webdav in the same domain you'll need to restart the whole dcache.
 
@@ -191,7 +192,7 @@ In Windows 7 you can then mount a new network folder and click "Connect to a web
 
 Now you get another folder in your computer where you can create folders. These will also show up if you surf to , sadly however, you cannot write files. [gridpp.ac.uk](https://www.gridpp.ac.uk/wiki/DCache_Log_Message_Archive#Pool_too_high) says it's because pool is full. But it's 2048MiB and all free?
 
-https://twiki.grid.iu.edu/bin/view/Storage/MeetingMinutes2009Sep02
+<https://twiki.grid.iu.edu/bin/view/Storage/MeetingMinutes2009Sep02>
 
 suggests minimum pool size might be 4G, changed pool maxdiskspace to 8G.
 
@@ -214,8 +215,6 @@ some errors to accompany this:
 ### NFSv41
 
 uncomment the nfsv3 and add nfsv41 then on a system you should be able to 'apt-get install nfs-common'; modprobe nfs; mkdir /nfsv4 mount -t nfs4 ip.to.server:/ /nfsv4'. But for me this stops working with an "cp: closing \`./bash': Input/output error". Possibly because I could not specify -o minorversion=1 on this ubuntu install (3.0.0-16).
-
- 
 
 #### NFSv41 with dCacheToGo
 
@@ -242,4 +241,4 @@ cp bash /tmp/bash
 diff /tmp/bash /bin/bash
 ```
 
-## SCORE! We have a working dCache setup in a VM running openindiana!
+## SCORE! We have a working dCache setup in a VM running openindiana

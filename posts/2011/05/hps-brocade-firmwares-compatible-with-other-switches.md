@@ -8,7 +8,7 @@ After a [question](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades/
 
 All the sub-directories were the same, only the above two files were added in the HP one. I believe quite strongly that you can use the HP firmwares to upgrade Brocade switches that are branded by other vendors.
 
-At least [IBM](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "Link to "IBM" and Brocade Firmwares") and normal Brocade ones.
+At least [IBM](<http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220> "Link to "IBM" and Brocade Firmwares") and normal Brocade ones.
 
 As they are using the very same Brocade firmware that Brocade themself use, it might be hard for the vendors to change the switch that much.
 
@@ -16,6 +16,6 @@ As they are using the very same Brocade firmware that Brocade themself use, it m
 
 The EULA looks like a normal HP standard end user license agreement form. The HP ancillary.txt file contains this:
 
-###### "This ancillary.txt file provides information as to how to obtain the open source or other third party licenses in this distribution. To obtain such licenses, run the following CLI command at the prompt, "opensource".
+###### "This ancillary.txt file provides information as to how to obtain the open source or other third party licenses in this distribution. To obtain such licenses, run the following CLI command at the prompt, "opensource"
 
 ###### This ancillary.txt file also provides the instructions for customers who require a copy of the machine-readable GPL Source Code by written request.  Upon your written request, HP will provide to You, for a fee covering the cost of distribution, a complete machine-readable copy of the GPL Source Code. Your written request for GPL Source Code can be sent via email to FC\_Infrastructure\_OpenSourceRequest@hp.com. In the request, include product name, version number, your name, and your shipping address. "

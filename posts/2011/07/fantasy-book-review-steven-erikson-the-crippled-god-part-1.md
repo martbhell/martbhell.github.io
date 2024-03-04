@@ -20,12 +20,6 @@ So much unknown going on here. Maybe it will all make sense in the last book? At
 
 Read the end of Dust of Dreams on the Kindle - liked it a lot. Especially when sometimes there is a word I don’t understand I can just point to it and then get a definition. I will read this book completely on the Kindle - what better way to get a good feel for the e-book reader than to give a behemoth like this a go?
 
- 
-
- 
-
- 
-
   There are a few tricky words in Erikson's books. Off the top of my head I am fond of this word but rarely get the use for it: susurration _**(low continuous whispering sound)**_ altruism _**(opposite of selfishness)**_
 
 At this point I feel happy that I'm reaching the end of this series. Will there be more books related to this world by Erikson? The co-creator [Ian C Esslemont](http://www.malazanempire.com/site/authors "on malazanempire.com") should come out with three more books (six in total).

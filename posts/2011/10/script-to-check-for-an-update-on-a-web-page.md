@@ -30,7 +30,7 @@ The layout of the blog doesn't like really long lines in <pre>, but you can sele
 
 spot\_check.sh:
 
-#!/bin/sh
+# !/bin/sh
 
 dat1=$(date +%Y.%m.%d)
 daty=$(perl -MPOSIX=strftime -le 'print strftime "%Y.%m.%d",localtime (time - 86400)')

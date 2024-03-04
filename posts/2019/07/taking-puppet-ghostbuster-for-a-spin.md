@@ -8,7 +8,7 @@ We use puppet at $dayjob to configure OpenStack.
 
 I wanted to know if there's a lot of unused code in our manifests!
 
-\*\*From left of stage enters: https://github.com/camptocamp/puppet-ghostbuster \*\*
+\*\*From left of stage enters: <https://github.com/camptocamp/puppet-ghostbuster> \*\*
 
 Step one is to install the puppet modules and gems and whatnot, this blog post was good about that: [https://codingbee.net/puppet/puppet-identifying-dead-puppet-code-using-puppet-ghostbuster](https://codingbee.net/puppet/puppet-identifying-dead-puppet-code-using-puppet-ghostbuster)
 
@@ -18,7 +18,7 @@ Next I needed to get the HTTP forwarding of the puppetdb working, this can appar
 
 Then for setting some variables pointing to hiera.yaml and setting
 
-> PUPPETDB\_URL=http://localhost:8081 HIERA\_YAML=/tmp/hiera.yaml
+> PUPPETDB\_URL=<http://localhost:8081> HIERA\_YAML=/tmp/hiera.yaml
 
 Unsure if hiera.yaml works, just copied it in from the puppetmaster
 

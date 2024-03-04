@@ -8,7 +8,7 @@ tags: book, crystallization, good, omens, malazan, ra salvatore, review, stephen
 
 As you may have figured out, I sincerely doubt I will ever read another R.A. Salvatore - unless somebody tells me it's worth it and points to another series/trilogy. Thus part 2 will contain the last time I mention this book except for the title: **It** _**is**_ in the process of being returned to the library.
 
-# [Good Omens](http://en.wikipedia.org/wiki/Good_Omens "good omens wiki") by Terry Pratchett and Neil Gaiman.
+# [Good Omens](http://en.wikipedia.org/wiki/Good_Omens "good omens wiki") by Terry Pratchett and Neil Gaiman
 
 Ahhhh, funny. Very very English. In a little weird way it is actually good to know a little bit about the M25 and [M40](http://en.wikipedia.org/wiki/M40_motorway "M40 - London") outside London.. . Besides that just lean back and enjoy the ride! It's pretty "simple"(not if you count the twists) and explanatory which is nice for a non-English person.
 

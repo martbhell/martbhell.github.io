@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## DNS:
+## DNS
 
 A DNS-server is quite easy to test as well, just point a client to the IP of your local DNS server and check /var/log/messages on the DNS-server.
 

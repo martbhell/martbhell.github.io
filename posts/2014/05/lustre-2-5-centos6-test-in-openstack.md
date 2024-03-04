@@ -22,11 +22,11 @@ With 2.6.32-431.17.1.el6.x86\_64 there's some issues at the moment for building 
 
 **MDT/OST:** Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).
 
-yum localinstall all files from: http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86\_64/
+yum localinstall all files from: <http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86\_64/>
 
 Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next boot: [https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel](https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel)
 
-RPMS are here: http://downloads.whamcloud.com/public/lustre/latest-feature-release/el6/server/SRPMS/
+RPMS are here: <http://downloads.whamcloud.com/public/lustre/latest-feature-release/el6/server/SRPMS/>
 
 For rebuilding these are also needed:
 
@@ -43,7 +43,6 @@ basically:
 `yum -y install expect` and install the new kernel with lustre patches and the lustre and lustre modules.
 
 Not important?: `WARNING: /lib/modules/2.6.32-431.17.1.el6.x86\_64/weak-updates/kernel/fs/lustre/fsfilt\_ldiskfs.ko needs unknown symbol ldiskfs\_free\_blocks`
-
 
 ```bash
 /sbin/new-kernel-pkg --package kernel --mkinitrd --dracut --depmod --install 2.6.32.431.17.1.el6\_lustre

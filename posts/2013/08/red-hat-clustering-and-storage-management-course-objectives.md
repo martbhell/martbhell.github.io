@@ -12,11 +12,7 @@ I used the course content summary as a template for this post, my notes are made
 
 For future questions and trolls: this is not a how-to for lazy people who just want to copy and paste. There are plenty of other sites for that. This is just the basics and it might have some pointers so that I know which are the basic steps and names/commands for each task. That way I hope it's possible to figure out how to use the commands and such by RTFM.
 
- 
-
- 
-
-## [Course content summary](http://www.redhat.com/training/courses/rh436/ "http://www.redhat.com/training/courses/rh436/") :
+## [Course content summary](http://www.redhat.com/training/courses/rh436/ "http://www.redhat.com/training/courses/rh436/")
 
 ### Clusters and storage
 
@@ -26,7 +22,7 @@ _Get an overview of storage and cluster technologies._
 
 _Set up and manage iSCSI._
 
-#### Step 1: Setup a server that can present iSCSI LUNs. A target.
+#### Step 1: Setup a server that can present iSCSI LUNs. A target
 
 1. CentOS 6.4 - minimal. Set up basic stuff like networking, user account, yum update, ntp/time sync then make a clone of the VM.
 2. Install some useful software like: yum install ntp parted man
@@ -55,7 +51,7 @@ Next step would be to put an appropriate file system on the LUN.
 
 _Learn basic manipulation and creation of udev rules._
 
-http://www.reactivated.net/writing\_udev\_rules.html is an old link but just change the commands to "udevadm" instead of "udev\*" and at least the sections I read worked the same.
+<http://www.reactivated.net/writing\_udev\_rules.html> is an old link but just change the commands to "udevadm" instead of "udev\*" and at least the sections I read worked the same.
 
 udevadm info -a -n /dev/sdb
 
@@ -100,12 +96,10 @@ Ah, this one I've been in touch with before with fibrechannel, it also works wit
 Some good commands:
 
 service multipathd status
-yum provides \*/multipath.conf # device-mapper-multipath is the package. 
+yum provides \*/multipath.conf # device-mapper-multipath is the package.
 multipath -ll
 
 Copy in default multipath.conf to /etc; reload and hit multipath -ll to see what it does. After that the [Fun](http://dwarffortresswiki.org/index.php/Fun) begins!
-
- 
 
 ### Red Hat high-availability overview
 
@@ -141,7 +135,7 @@ _Understand the use and limitations of 2-node clusters._
 
 _Review LVM commands and Clustered LVM (clvm)._
 
-#### Create **Normal LVM** and make a **snapshot**:
+#### Create **Normal LVM** and make a **snapshot**
 
 [Tutonics](http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html#.UgtWonUW1Ls) has a good "ubuntu" guide for LVMs, but at least the snapshot part works the same.
 
@@ -198,9 +192,9 @@ total 112636
 
 _Work with Gluster to create and maintain a scale-out storage solution._
 
-http://chauhan-rhce.blogspot.fi/2013/04/gluster-file-system-configuration-steps.html
+<http://chauhan-rhce.blogspot.fi/2013/04/gluster-file-system-configuration-steps.html>
 
-http://servicesblog.redhat.com/2012/07/31/updates-to-the-red-hat-enterprise-clustering-and-storage-management-course/
+<http://servicesblog.redhat.com/2012/07/31/updates-to-the-red-hat-enterprise-clustering-and-storage-management-course/>
 
 ### Comprehensive review
 

@@ -14,7 +14,7 @@ Under the start menu there are three new programs:
 
 ### Central Administration -
 
-This opens a page to http://win2k8:48820/default.aspx - I could log on with my extra account (the one with admin/owner privileges).
+This opens a page to <http://win2k8:48820/default.aspx> - I could log on with my extra account (the one with admin/owner privileges).
 
 The sections are:
 

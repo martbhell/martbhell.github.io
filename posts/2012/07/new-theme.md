@@ -13,6 +13,6 @@ Don't like it? Please let me know!
 Changed to this in the CSS - hard to see the links by default:
 
 a{
-	color:#FFF;
-	text-decoration:underline;
+ color:#FFF;
+ text-decoration:underline;
 }

@@ -14,6 +14,4 @@ Kaivopuisto on iso, vihreä ja meri vieressä. Sisällä ovat puut ja kukat.
 
 Kaivopuisto is big, green and next to the sea. Inside are trees and flowers.
 
- 
-
 \-- Turned out this sentence was not the best finnish :) Puistossa and partitivi might be better to use!

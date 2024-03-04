@@ -6,7 +6,7 @@ tags: book, certification, kickstart, linux, luks, red, hat, review, rhcsa, seli
 
 Wow, what a day!
 
-### Some great stuff today:
+### Some great stuff today
 
 It ended with configuring a kickstart file, starting an unattended installation via PXE by referring to said kickstart file on an http-server.
 

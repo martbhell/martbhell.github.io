@@ -8,9 +8,9 @@ tags: certification, linux, red, hat, rhce, studying
 
 This is post 1 in a series of posts where I will be going through the objectives for the RHCE certifications. It builds on the initial post that has the objectives:
 
-https://www.guldmyr.com/red-hat-certification-rhce-preparation/
+<https://www.guldmyr.com/red-hat-certification-rhce-preparation/>
 
-_It appears that the objectives have been updated, at least if you compare between my post above and https://www.redhat.com/training/courses/ex300/examobjective_
+_It appears that the objectives have been updated, at least if you compare between my post above and <https://www.redhat.com/training/courses/ex300/examobjective>_
 
 _for example build a simple rpm is installs one package is not in the list._
 
@@ -22,17 +22,13 @@ My setup: Core i7, 8GB RAM, Windows 7 x64, VMWare Workstation with CentOS instal
 
 Installing a fresh VM with 4 cores, 5GB RAM, virtualization and CentOS.
 
-CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86\_64/
+CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: <http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86\_64/>
 
 ## IP Routing and NAT
 
 The part "Routing / NAT" will be tricky, as I do not have a second computer that I could use for this. Maybe I can get something working inside the virtual machines though, but for now I think I will skip these two and get straight into the other ones.
 
- 
-
-## Use /proc/sys and sysctl to modify and set kernel runtime parameters.
-
- 
+## Use /proc/sys and sysctl to modify and set kernel runtime parameters
 
 Edit /etc/sysctl.conf
 
@@ -54,13 +50,11 @@ To set each time on boot:
 
 echo "vm.overcommit\_ratio = 50" >> /etc/sysctl.conf
 
-##  Configure a system to authenticate using Kerberos.
+##  Configure a system to authenticate using Kerberos
 
 Waiting with this. Need to set up a KDC - kerberos service first.
 
- 
-
-## Build a simple RPM that packages a single file.
+## Build a simple RPM that packages a single file
 
 This appears to be a bit complicated - the details below are about as simple as this can be made. There is a lot more nifty things that you can do with an rpm.
 
@@ -75,9 +69,9 @@ cd GetIP
 The "program":
 
 cat getip.sh
-#!/bin/bash
+# !/bin/bash
 
-wget -q https://guldmyr.com/ip.php -O/tmp/ip
+wget -q <https://guldmyr.com/ip.php> -O/tmp/ip
 cat /tmp/ip
 
 chmod +x getip.sh
@@ -102,7 +96,7 @@ Summary: Get an IP wooop
 
 Group:  Development/Tools
 License:        GPL
-URL:            https://guldmyr.com
+URL:            <https://guldmyr.com>
 Source0:        %{name}.tar.gz
 BuildRoot:      %(mktemp -ud %{\_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
@@ -150,17 +144,17 @@ Basically you want to use the $RPM\_BUILD\_ROOT in front of where you want to in
 
 More info is also available on [rpm.org](http://www.rpm.org/max-rpm/ch-rpm-build.html "rpm.org - directories") - which recommend to use /usr/src/redhat for building packages.
 
-## Configure a system as an iSCSI initiator that persistently mounts an iSCSI target.
+## Configure a system as an iSCSI initiator that persistently mounts an iSCSI target
 
 Waiting with this. Need to set up an iSCSI target first.
 
-## Produce and deliver reports on system utilization (processor, memory, disk, and network).
+## Produce and deliver reports on system utilization (processor, memory, disk, and network)
 
 sar -A
 
 /etc/cron.d/sysstat
 
-## Use shell scripting to automate system maintenance tasks.
+## Use shell scripting to automate system maintenance tasks
 
 Well, this can be a lot of things and is quite hard to prepare for.
 
@@ -175,7 +169,7 @@ goran
 a scriptfile:
 
 \[root@rhce ~\]# cat usersndirs.sh
-#!/bin/sh
+# !/bin/sh
 
 userlist=/tmp/userlist
 
@@ -190,7 +184,7 @@ Of course, you could also use the 'newuser' command (interactive or send a file)
 
 This happens a lot I think: You get an idea that "hey, I can do this with a script". But then a random amount of time later you find out that there is already a command that does this for you. That doesn't mean the time spent is a total waste, hopefully you learned something while doing it. Maybe your script even does a better job than the new one you found.
 
-## Configure a system to log to a remote system.
+## Configure a system to log to a remote system
 
 syslog / rsyslog
 
@@ -208,7 +202,7 @@ add
 
 Set the IP to the machine that will be receiving the logs.
 
-## Configure a system to accept logging from a remote system.
+## Configure a system to accept logging from a remote system
 
 So this step you may want to do before the previous step (unless you already have a working syslogd server).
 

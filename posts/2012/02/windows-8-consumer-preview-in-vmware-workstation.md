@@ -18,8 +18,6 @@ This appears to be the current loading screen while the computer is booting too 
 
 After windows boots you get to decide hostname, enter your windows account, make some settings if you want to update drivers, safety filters. You can enter some extra security stuff (e-mail, alternative e-mail, security question).
 
- 
-
 ## Inside
 
 To get to settings move the mouse cursor down to the bottom right corner.

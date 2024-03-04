@@ -4,8 +4,6 @@ date: 2012-08-15
 category: storage
 tags: bcadc, brocade, certification, certified, fc, fibre, channel, san, san, storage, storage, storage, area, network, study
 
- 
-
 Time to study for another one :) Working my way towards the "Data Center Track". To complete it it would be enough for me to complete 5 accreditations.
 
 This one has a pretty cool name - BADCS!
@@ -21,7 +19,7 @@ I haven't tried one of these Accredited exams before, but as far as I can tell:
 
 Also, for this Accreditation the pre-requisite is the FC-101 course on brocade's SABA page - and it's free!
 
-_\- The BADCS exam consists of 38 questions and lasts 60 minutes_ _\- To pass this exam you must get a score of 71% or better_ 
+_\- The BADCS exam consists of 38 questions and lasts 60 minutes_ _\- To pass this exam you must get a score of 71% or better_
 
 So that's about 27 correct out of 38 questions.
 

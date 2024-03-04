@@ -52,7 +52,7 @@ I'm writing this and updating it as I go along. It's purpose is to prepare for t
 - Open virt-manager and stop/start there.
 - CLI: virtsh.
 
-### Add virtualization post-install.
+### Add virtualization post-install
 
 To test: installing with only Desktop. Packages, modules, services?
 
@@ -188,7 +188,7 @@ Post-install there is a GUI tool in the menu that you can use to install a VM an
 
 By default the virtual machine starts on boot. In chkconfig --list. There is an entry called 'libvirt-guests'. This is a fairly complex script that looks where the VMs are installed and boots them. You can go into the settings of the VM in the GUI and enable it to boot when the host boots. _By the way, if there are issues during boot, see /var/log/boot.log_
 
-### Install a VM via an http server.
+### Install a VM via an http server
 
 yum install php
 
@@ -202,7 +202,7 @@ To keep the rules on reboot:
 
 /etc/init.d/iptables save
 
-### Copy DVD into your web root:
+### Copy DVD into your web root
 
 This assumes that the DVD is mounted automagically which it does for me.
 
@@ -210,7 +210,7 @@ sudo mkdir /var/www/html/SL6; sudo cp -pR /media/nameofdisk/\* /var/www/html/SL6
 
 If you use the -p that means it preserves the read/write permissions on the files, beceause it's mounted as a CD/DVD that means the files are read-only. If you want to do changes don't use the -p or you'll have to change that stuff later.
 
-### To set SELINUX context:
+### To set SELINUX context
 
 chcon -R --reference=/var/www /var/www/html/SL6.
 
@@ -242,7 +242,7 @@ First, copy the /root/anaconda-ks.cfg to /var/www/html/SL6/ks.cfg. Also set perm
 
 In system-config-kickstart: Set it to clear MBR, initialize labels and also to autoreboot upon completion. For root password you need to manually enter, you can set it to plaintext. Set setupagent to disabled for a completely automatic install. Repository you cannot change in system-config-kickstart. Manually edit the ks.cfg.
 
-repo --name --baseurl=http://192.168.0.17/SL6 user --name user --plaintext --password 112233
+repo --name --baseurl=<http://192.168.0.17/SL6> user --name user --plaintext --password 112233
 
 Last one creates a user called user with pw 112233.
 

@@ -10,7 +10,7 @@ This post is for how to upgrade.
 
 2012-02-01: Updated, added --nodeps to the rpm upgrade. 2013-01-08: This has been confirmed to work with spotify-0.8.8, updated typo in symlink part.
 
-Why? http://repository.spotify.com/pool/non-free/s/spotify/spotify-client-qt\_0.6.1.309.gb871a7d-1\_amd64.deb is out!
+Why? <http://repository.spotify.com/pool/non-free/s/spotify/spotify-client-qt\_0.6.1.309.gb871a7d-1\_amd64.deb> is out!
 
 Is available. Maybe right-click works?? =)
 
@@ -29,15 +29,13 @@ _whereis spotify ldd /usr/bin/spotify gives me: libssl.so.10 0> /usr/lib64/libss
 
 hit:
 
-cd /usr/lib64 
+cd /usr/lib64
 
 sudo ln -s libcrypto.so.10 libcrypto.so.0.9.8 sudo ln -s libssl.so.10 libssl.so.0.9.8
 
 If still no go, some advise to rename/delete ~/.config/spotify and ~/.cache/spotify
 
 If neither of the above still works, run
-
- 
 
 rpm -Uvh --nodeps spotify-client-qt-0.6.6.10.gbd39032.58-2.x86\_64.rpm
 

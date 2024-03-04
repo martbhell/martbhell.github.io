@@ -10,7 +10,7 @@ Cyanogenmod's [wiki](http://wiki.cyanogenmod.org/w/Install_CM_for_satsuma) has a
 
 All below done from Windows 7 x64.
 
-**1\. Root it!** Rooted with eroot as found on http://forum.xda-developers.com/showthread.php?t=2219781
+**1\. Root it!** Rooted with eroot as found on <http://forum.xda-developers.com/showthread.php?t=2219781>
 
 **2\. Install ADB**. I installed the whole SDK.. apparently not needed [http://forum.xda-developers.com/showthread.php?t=1474956](http://forum.xda-developers.com/showthread.php?t=1474956)
 

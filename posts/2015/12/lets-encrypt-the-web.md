@@ -12,11 +12,9 @@ There are many good guides for getting this setup. This is how I got it working
 
 on the webhost (not as root):
 
-git clone https://github.com/letsencrypt/letsencrypt letsencrypt-auto #eventually this generates some certificates into /etc/letsencrypt #of course you should read scripts before running anything, there are for example [acme-tiny](https://github.com/diafygi/acme-tiny), [gethttpsforfree.com](https://gethttpsforfree.com/) and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that might be better. #mozilla has some server side SSL recommendations on https://wiki.mozilla.org/Security/Server\_Side\_TLS
+git clone <https://github.com/letsencrypt/letsencrypt> letsencrypt-auto #eventually this generates some certificates into /etc/letsencrypt #of course you should read scripts before running anything, there are for example [acme-tiny](https://github.com/diafygi/acme-tiny), [gethttpsforfree.com](https://gethttpsforfree.com/) and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that might be better. #mozilla has some server side SSL recommendations on <https://wiki.mozilla.org/Security/Server\_Side\_TLS>
 
 Modify your nginx site file to have something like this:
-
- 
 
 server {
  listen \[::\]:443 ssl ipv6only=off;
@@ -36,12 +34,15 @@ ssl\_protocols TLSv1.1 TLSv1.2;
 ssl\_dhparam /etc/nginx/dhparams.pem;
 
 \# ssl\_stapling on;
-# ssl\_stapling\_verify on;
-# resolver 193.166.4.24; 
+
+# ssl\_stapling\_verify on
+
+# resolver 193.166.4.24
+
  root /var/www;
  index index.html index.htm index.php;
 
-\# Make site accessible from http://localhost/
+\# Make site accessible from <http://localhost/>
  server\_name localhost;
 
 add\_header Strict-Transport-Security "max-age=15724800";

@@ -34,7 +34,7 @@ Another good thing would be to set the time zone on the VM. You can find out how
 
 To sync the time - so that it is up to date (mine was 30mins off) -
 
-Edit /etc/default/ntpdate Add a pool or use the default one - http://www.pool.ntp.org/zone/fi for Finnish ones. Then run **sudo ntpdate-debian**
+Edit /etc/default/ntpdate Add a pool or use the default one - <http://www.pool.ntp.org/zone/fi> for Finnish ones. Then run **sudo ntpdate-debian**
 
 Do I really need to run this anymore? I'll just let it be and try to keep track of it :p
 
@@ -106,7 +106,7 @@ Also changed the default values to this in /etc/ntp.conf
 
 restrict -4 default kod notrap nomodify restrict -6 default kod notrap nomodify
 
-#restrict 127.0.0.1 #restrict ::1
+# restrict 127.0.0.1 #restrict ::1
 
 and rebooting the server, again.
 
@@ -142,11 +142,11 @@ See [https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/](htt
 
 install LAMP -> **sudo apt-get install lamp-server^** The ^ needs to be there! All you need to do is to insert a mysql root password.
 
-After this you can surf into http://localhost or http://ip of the VM.
+After this you can surf into <http://localhost> or <http://ip> of the VM.
 
 ### phpymadmin
 
-I also want to put in phpmyadmin (sudo apt-get install phpmyadmin) as well, this is nice tool to manage the mysql db. In that installation, choose apache2 by pressing space, then tab to get to the OK button. Then it asks about dbconfig-common, I chose no here because the db(mysql) is already installed. Then surf to http://ip/phpmyadmin/ and log on. If you see any databases there already -> you are now connected to the mysql you created before! Woop!
+I also want to put in phpmyadmin (sudo apt-get install phpmyadmin) as well, this is nice tool to manage the mysql db. In that installation, choose apache2 by pressing space, then tab to get to the OK button. Then it asks about dbconfig-common, I chose no here because the db(mysql) is already installed. Then surf to <http://ip/phpmyadmin/> and log on. If you see any databases there already -> you are now connected to the mysql you created before! Woop!
 
 ## EyeOS Install
 
@@ -154,7 +154,7 @@ cd - this gets you to your homedir mkdir eyeos cd eyeos wget $URL of eyeOS insta
 
 sudo mv eyeOS /var/www after this the user you have logged on with have ownership inside /var/www/eyeOS - means you don't have to write sudo all the time :)
 
-point your web browser to http://ip/eyeOS (note that it is case sensitive) it will tell you that you need to chmod 777 some files, do that.
+point your web browser to <http://ip/eyeOS> (note that it is case sensitive) it will tell you that you need to chmod 777 some files, do that.
 
 Then it will tell you to install these packages: SQLite and IMAP if you want mail client.
 
@@ -164,7 +164,7 @@ put in a password and then hit install
 
 then it's installed!
 
-## eyeOS - nice!
+## eyeOS - nice
 
 It's a lot slimmer than eyeOS 2.x and stuff appears to be working just off the bat. Everything runs so fast too, in comparison to 2.x.
 

@@ -16,7 +16,7 @@ while true; do #battery remaining capacity in mh. About 10 every second. BAT=$( 
 
 **What I want to figure out is how to logout! .**:DD:dD MODKEY+SHIFT+Q only refreshes the screen. MODKEY+l (which I've set to run "gnome-screensaver-command -l" : lock - lets me run another user, but I cannot logout myself) so with this setup I have to reboot the computer for each time I want to re-load the configuration (after a change in config.h make;make install)
 
-\*\* update 14/3 1600 `static const char *volup[] = { "amixer", "set", "Master", "15%+", NULL }; static const char *voldown[] = { "amixer", "set", "Master", "15%-", NULL };
+\*\* update 14/3 1600 `static const char *volup[] = { "amixer", "set", "Master", "15%+", NULL }; static const char*voldown[] = { "amixer", "set", "Master", "15%-", NULL };
 
 { MODKEY, XK_Up, spawn, {.v = volup } }, { MODKEY, XK_Down, spawn, {.v = voldown } },`
 

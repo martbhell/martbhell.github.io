@@ -6,13 +6,13 @@ tags: games, dcss, stone-soup, crawl, rogue-like
 lang: en
 ---
 
-0.30 Tournament!
+0.30 Tournament
 ===
 
 What Is Stone Soup?
 ---
 
-It's a game! I usually play it on https://underhound.eu:8080/#lobby with the WebTiles because the telnet/ASCII art is just unbearable for me. But one can play it over telnet if one so chooses.
+It's a game! I usually play it on <https://underhound.eu:8080/#lobby> with the WebTiles because the telnet/ASCII art is just unbearable for me. But one can play it over telnet if one so chooses.
 
 These are my [stats](https://crawl.develz.org/tournament/0.30/players/martbhell.html). I have not finished the game many times. It is hard. I think the original idea was by someone that played nethack and thought it was too easy.
 
@@ -24,10 +24,10 @@ Timeline of the 2023 May 0.30 tournament.
 
 Try to win first with my usual MiBe. Each bullet is roughly 1 or a few deaths.
 
-- Not enough RC+ (0) and went against three white ugly things. Blah. 
+- Not enough RC+ (0) and went against three white ugly things. Blah.
 - Then some just spamming tab o tab o and dying a few times until I calmed down.
 - Okay managed to get through snake and shoal quite easily one round! But then went to SLIME and thought it'd be great to do so with a Fun weapon (a +0 spectral unrand broad axe) instead of the trusty +7 war axe. Bah. Got Mark. Killed the big baddie but got killed trying to escape.
-- Let's get some banners! :dagger: 
+- Let's get some banners! :dagger:
   - Started a MiFi .. I thought. It was a Minotaur Artificer (so had some wands to evoke at start..)
     - Yhh.. well okay let's see how far this can go!
     - Managed to get to level 9 so yay one more banner - two level nines in a row!
@@ -43,7 +43,7 @@ Try to win first with my usual MiBe. Each bullet is roughly 1 or a few deaths.
   - Back to MiFi
     - Nemelex combo? Man playing around with a sword when training axes just can't by any good at all.. Let's remember that we have Nemelx if we get it mmmkay
     - Okay, Got another banner. Only worship a god from a faded alter (it had nemelx, okawaru and a third). Got [Okawaru](https://underhound.eu/crawl/morgue/martbhell/morgue-martbhell-20230508-063237.txt).
-      - In the same run shortly after got a +5 woodsman axe. Which is like a +3 battle axe they say? https://crawl.develz.org/info/index.php?q=woodcutter%27s+axe . Not training axes so hard and putting focus on the rest. Got the "enter lair with invocation as highest skill". Bah. Killed by Minotaur with lots of potions and scrolls left!!
+      - In the same run shortly after got a +5 woodsman axe. Which is like a +3 battle axe they say? <https://crawl.develz.org/info/index.php?q=woodcutter%27s+axe> . Not training axes so hard and putting focus on the rest. Got the "enter lair with invocation as highest skill". Bah. Killed by Minotaur with lots of potions and scrolls left!!
 
 Time spent until now: 1h 6m + 4m + 16m + 2h 23m + + 23m + 1m + 5m + 22m + 6m + 11m + 46m= much!
 

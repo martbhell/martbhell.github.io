@@ -7,6 +7,7 @@ tags: wtangy, nhl, gae, google, gcs, grafana, google app engine, python, gunicor
 ---
 
 Oletko näyhnyt tälläisiä viestiä Googlen AppEnginen logissa? Onko sinun palvelu hidas?
+
 ```
 10:22:23.481686Z Exceeded hard memory limit of 384 MiB with 400 MiB after servicing 3 requests total. Consider setting a larger instance class in app.yaml.
 10:18:23.473577Z Exceeded hard memory limit of 384 MiB with 393 MiB after servicing 7 requests total. Consider setting a larger instance class in app.yaml.
@@ -32,6 +33,7 @@ Ja en pitäinyt käyttää default - 4 workers koska **F1** on liian pieni. 2 ol
 Näin massiivi nopeutus! Ennen oli aina > 300ms ja yleensä yli 5s per request. Nyt se on aika nopea. Aina < 250ms
 
 ## ennen (Y on sekunttia)
+
 [![before](images/wtangy_before.png "before_latency")](images/wtangy_before.png)
 
 ## jälkeen

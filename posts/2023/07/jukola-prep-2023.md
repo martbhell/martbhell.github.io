@@ -13,7 +13,7 @@ Olen mennyt jukolaan nyt aika monta vuotaa, ensimmäinen oli 2015 Lounas (Paimi,
 
 [jukolan viesti 2023](https://jukola.com/2023/)!
 
- - Yleensä on ollut neljäs / viides osuus mutta katsotaan:
+- Yleensä on ollut neljäs / viides osuus mutta katsotaan:
 
 | vuosi | osuus | nimi | sijainti viestissä | joukkue tulos (kun vaihdoin) | joukkue aika (kun vaihdoin) | osuus sijainti | osuus aika | ?? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -26,41 +26,35 @@ Olen mennyt jukolaan nyt aika monta vuotaa, ensimmäinen oli 2015 Lounas (Paimi,
 |[2022 Lukkari (Mynämäki)](https://results.jukola.com/tulokset/en/j2022_ju/kilpailijat/1133/)|5|Johan Guldmyr|1308 (+12)|13:18:40|+8:01:17|1319/1396|2:46:24|1242624|
 |[2022 Porvoo](https://results.jukola.com/tulokset/en/j2023_ju/kilpailijat/1143/)|2|Johan Guldmyr|1038 (+25)|5:01:25|+2:18:30|1168/1621|2:44:52|1526679|
 
-
 Valmistautuminen
 ===
 
 Olen pitänyt lista missä olen kirjoitanyt:
 
-   - mitä otan mukaan
-     - sauna kassi 
-     - varusteet
-   - miten sää oli ja minkalaisia vaateet minulla oli päällä
-   - mitä söin
-   - miten sunnistus meni ja mitä voin parentaa
+- mitä otan mukaan
+  - sauna kassi
+  - varusteet
+- miten sää oli ja minkalaisia vaateet minulla oli päällä
+- mitä söin
+- miten sunnistus meni ja mitä voin parentaa
 
-
-Vinkkeja olen kirjoitanut itseleen:
+Vinkkeja olen kirjoitanut itseleen
 ===
 
-   - 2015: et tarvitse leimata k-pisteessä
-   - 2019: 
-     - et tarvitse mennä emit tsekki ennen IN portti, se on vaan oma tarkastus!
-     - käyttä korkeuseroa! Ihmiset menee suora ja ympäri, urat ovat myös ympäri 
-   - 2021:
-     - soiden on myös muodot!
-     - käytää kieletty alue jos on tarve
-     - käyttää pidempi matka ja tie olisi hyvä, hävisin 20 sijainti pitkä välimatka koska menin suora
-   - 2022:
-     - lukekaa rastitaulu
-     - yleislähdössä? Ota juna
-     - kävellä kun asiat alkaa mennä huonosti
-   - 2023 (ensimmäinen yö):
-     - uta juna
-     - uta urat
-     - ihmiset enemmän ottavat polkut ja halua enemmän varmempi rastin otaminen. 
-     - ota huomio että et juoksee k-pisten ohi!
-
-
-
-
+- 2015: et tarvitse leimata k-pisteessä
+- 2019:
+  - et tarvitse mennä emit tsekki ennen IN portti, se on vaan oma tarkastus!
+  - käyttä korkeuseroa! Ihmiset menee suora ja ympäri, urat ovat myös ympäri
+- 2021:
+  - soiden on myös muodot!
+  - käytää kieletty alue jos on tarve
+  - käyttää pidempi matka ja tie olisi hyvä, hävisin 20 sijainti pitkä välimatka koska menin suora
+- 2022:
+  - lukekaa rastitaulu
+  - yleislähdössä? Ota juna
+  - kävellä kun asiat alkaa mennä huonosti
+- 2023 (ensimmäinen yö):
+  - uta juna
+  - uta urat
+  - ihmiset enemmän ottavat polkut ja halua enemmän varmempi rastin otaminen.
+  - ota huomio että et juoksee k-pisten ohi!

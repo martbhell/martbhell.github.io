@@ -27,33 +27,33 @@ Anyway, with the details from [http://community.brocade.com/docs/DOC-2041](http:
 Updated the numbers on FOS Admin guide (2011-08-18)
 
 - Fabric OS Administrators Guide v7.0 (53-1002148-02)
-    - Pages 63,77,80,99,100,117,118,128,133,137,200,272-281,287-302,372,382,395,404-412,413,418,422-433,435-438,447-481,582
-    - **Real** Pages: 102-103, 120, 139, 168, 173-174, 177, 240, (271-303), 311-343, 410, 412, 422, 435, 444-453, 458-478, 487-521,
+  - Pages 63,77,80,99,100,117,118,128,133,137,200,272-281,287-302,372,382,395,404-412,413,418,422-433,435-438,447-481,582
+  - **Real** Pages: 102-103, 120, 139, 168, 173-174, 177, 240, (271-303), 311-343, 410, 412, 422, 435, 444-453, 458-478, 487-521,
 - Fabric OS Command Reference Guide v7.0 (53-1002147-01)
-    - Pages 239,244-246,283-290,380-383,609,610,637,653,661-663,701-710,714-717,824,885,930,953-956,1028,1029,1083
-    - **Real** Pages: 273, 278-280, 316-324, 643, 644, 671, 687, 695-697, 735-744, 748-751, 857-858, 918-920, 964, 987-990, 1061-1063
+  - Pages 239,244-246,283-290,380-383,609,610,637,653,661-663,701-710,714-717,824,885,930,953-956,1028,1029,1083
+  - **Real** Pages: 273, 278-280, 316-324, 643, 644, 671, 687, 695-697, 735-744, 748-751, 857-858, 918-920, 964, 987-990, 1061-1063
 - Fabric OS Troubleshooting Guide v7.0 (51-1002150-02)
-    - Pages 3,22,31,38,92,
-    - **Real** Pages: 23, 43-44, 51-52, 112
+  - Pages 3,22,31,38,92,
+  - **Real** Pages: 23, 43-44, 51-52, 112
 - Brocade 1860 Datasheet (GA-DS-1566-00)
 - Brocade SAN Health Family Data Sheet (GA-DS-870-03)
 - Fabric OS v7.0 Release Notes
-    - Pages 11,12
-    - **Real** Pages: 11, 12
+  - Pages 11,12
+  - **Real** Pages: 11, 12
 - Brocade Network Advisor SAN User Manual 11.1.x (53-1002167-01)
-    - Pages xxxviii,xxxix,47-52,148,202,230-233,647,648,782,911
-    - **Real** Pages: 38-39, 91-96, 192, 246, 274-277, 691-692, 826, 955
+  - Pages xxxviii,xxxix,47-52,148,202,230-233,647,648,782,911
+  - **Real** Pages: 38-39, 91-96, 192, 246, 274-277, 691-692, 826, 955
 - Brocade Network Advisor Installation Guide 11.1.x (53-1002320-01)
-    - Page 9
-    - **Real** Page: 9
+  - Page 9
+  - **Real** Page: 9
 - Fabric OS FCIP Administrator’s Guide (53-1002155-01)
-    - Pages 1,6,29-37,54,111-113,132
-    - **Real** Pages: 15, 20-21, 43-52, 68, 125-127
+  - Pages 1,6,29-37,54,111-113,132
+  - **Real** Pages: 15, 20-21, 43-52, 68, 125-127
 - Access Gateway Administrator's Guide (53-1002156-01)
-    - Pages 11,22,52,53,67-69,
-    - **Real** Pages: 31, 42, 72-73, 87-89
+  - Pages 11,22,52,53,67-69,
+  - **Real** Pages: 31, 42, 72-73, 87-89
 - Brocade Adapters Administrator’s Guide (53-1001923-01)
-    - Page 35
-    - **Real** Page: 57
+  - Page 35
+  - **Real** Page: 57
 - Pre-release CFP 300 Course (unedited material)
-    - Modules 2-8
+  - Modules 2-8

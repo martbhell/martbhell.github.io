@@ -18,10 +18,10 @@ The way I write my personal notes is: write them off from the brocade material i
 
 1. I do this on google docs.
 2. I then download it into .doc and then
-3. e-mail it as an attachment to youraccount@free.kindle.com.
+3. e-mail it as an attachment to <youraccount@free.kindle.com>.
 4. Then next time you hook up your kindle to wifi it will download the documents, converted to .azw.
 
-What's important here is to not use lists, as the conversion from a google doc saved as word and then e-mailed to youraccount@free.kindle.com does not like lists, it only takes the first level in the list.
+What's important here is to not use lists, as the conversion from a google doc saved as word and then e-mailed to <youraccount@free.kindle.com> does not like lists, it only takes the first level in the list.
 
 I instead used headers, lost of them.
 

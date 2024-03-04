@@ -21,7 +21,7 @@ Besides lustre you'll need an updated version of e2fsprogs as well (because the 
 
 Starting with the MDS. When the basic OS setup is done will make a copy of that to use for OSS and Client.
 
-# Setup basic services.
+# Setup basic services
 
 ## Install an MDS
 
@@ -38,8 +38,8 @@ Download latest lustre and e2fsprogs to /root/lustre-client, lustre-server and e
 
 Lustre also does not support selinux, so disable that.
 
- - works fine with it in enforcing until time to create mds/mdt
- - also fine with permissive until it's time to mount.
+- works fine with it in enforcing until time to create mds/mdt
+- also fine with permissive until it's time to mount.
 
 Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set hostname.
 
@@ -61,7 +61,7 @@ Clone of the OSS before installing any lustre services or kernels.
 
 Before you do this it may be wise to take a snapshot of each server. In case you screw the VM up you can then go back :)
 
-## Starting with the MDS.
+## Starting with the MDS
 
 Installing e2fsprogs, kernel and lustre-modules.
 
@@ -106,7 +106,6 @@ After install and reboot into new kernel it's time to
 1. start creating MDT, OST
 1. then mount things!
 1. But hold on to your horses, first we ned to install the client :)
- 
 
 ## And then the Client
 
@@ -115,8 +114,6 @@ Install the e2fsprogs\*
 We cannot just install the lustre-client packages, because we run a different kernel than the ones that whamcloud have compiled the lustre-client against.
 
 We can either back-pedal and install an older kernel. Or we can build (from source / SRPMS) a lustre-client that works on a kernel of our choosing. The later option seems like a better way, because we can then upgrade the kernel if we want to.
-
- 
 
 ### Build custom linux-client rpms
 
@@ -160,8 +157,6 @@ Write something.
 Then hit: `lfs df -h`
 
 To see usage!
-
- 
 
 # Get it all working on boot
 

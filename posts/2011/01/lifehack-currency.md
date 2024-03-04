@@ -10,7 +10,7 @@ On to another script that would assist me when I need to send money between a no
 
 Also, good thing I checked with the girlfriend: When sending money **to** a **non-euro country** **from** a **euro country**, you want to get as **many non-euro** as possible.
 
-When sending money **to** a **euro country** **from** a **non-euro country**, you want to use as **few non-euro** as possible to make **a euro**. 
+When sending money **to** a **euro country** **from** a **non-euro country**, you want to use as **few non-euro** as possible to make **a euro**.
 
 ```bash
 
@@ -25,7 +25,6 @@ wget $webpage -O $inputfile cat $inputfile | grep EUR/SEK -m 1 > $play
 awk '{print $4}' $play >> $outputfile 
 date >> $outputfile
 ```
-
 
 This is how the bash script looks like at the moment.
 

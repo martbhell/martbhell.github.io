@@ -69,14 +69,12 @@ No problems, just do exactly what the instructions say (don't try to be smart an
 
 At this point the wiki went down :/
 
-\[root@localhost ~\]# glance add name=f16 is\_public=true disk\_format=qcow2 container\_format=ovf copy\_from=http://berrange.fedorapeople.org/images/2012-02-29/f16-x86\_64-openstack-sda.qcow2
+\[root@localhost ~\]# glance add name=f16 is\_public=true disk\_format=qcow2 container\_format=ovf copy\_from=<http://berrange.fedorapeople.org/images/2012-02-29/f16-x86\_64-openstack-sda.qcow2>
 Failed to add image. Got error:
 Unexpected response: 500
 Note: Your image metadata may still be in the registry, but the image's status will likely be 'killed'.
 
 Yes, this is where it fall short. Manpage for clance doesn't even have the 'copy\_from'. Maybe it could be downloaded? 'glance index' doesn't work either.
-
- 
 
 \[root@localhost ~\]# glance index
 Failed to show index. Got error:
@@ -112,7 +110,7 @@ ValueError: No JSON object could be decoded
 \[root@localhost ~\]# cd images/
 \[root@localhost images\]# ls
 aki-tty  ami-tty  ari-tty
-\[root@localhost images\]# http://berrange.fedorapeople.org/images/2012-02-29/f16- x86\_64-openstack-sda.qcow2^C
+\[root@localhost images\]# <http://berrange.fedorapeople.org/images/2012-02-29/f16-> x86\_64-openstack-sda.qcow2^C
 \[root@localhost images\]# glance add name=aki-tty is\_public=true container\_format                                                                                        =aki disk\_format=aki < aki-tty/image
 =================================================\[100%\] 7.79M/s, ETA  0h  0m  0s
 =\[  2%\]                                                 1.25M/s, ETA  0h  0m  3s                                                                                        Failed to add image. Got error:

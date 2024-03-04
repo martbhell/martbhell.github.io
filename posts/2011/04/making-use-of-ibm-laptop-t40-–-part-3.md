@@ -20,11 +20,11 @@ If that works (maybe even just try live-cd? nah, that's chicken) then maybe late
 
 archlinux (which apparently requires setting up x-servers (required for graphical interface):
 
-### How to boot:
+### How to boot
 
 Put in CD, press F12 during boot, chose the ACPI CD0 entry.
 
-### The install:
+### The install
 
 Ubuntu loading logo looks like crap during boot (green pixelation around it). However during the actual install it looks fine. It would be good to have an UTP cable so that you can have internet access during install (download updates to packages etc). I did not have a UTP cable so I will hope that the wireless works and that I can update after install. I like that while the CD is copying files, you get to set some settings:
 

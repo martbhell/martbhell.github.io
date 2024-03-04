@@ -28,7 +28,7 @@ Before the presentation they had a nice slide stating that they don't make any p
 
 [Oracle Linux](http://oracle.com/linux "oracle.com") (OL) looks pretty good, it's free to download but if you want any updates you need to pay them. They have an upgrade thing so if you're on RHEL6 you can apparently update easily (changes some yum repos). A lot of advertisement - but it was a presentation about the distribution. It's based on RHEL, they take the updates from RHEL, then add their own magic to it. They have a boot setup so if you want to you can boot OL in Red Hat Compatibility mode. Apparently Oracle wants to put Red Hat out of business (after which they were asked: "Where will you get the kernel then?"). x86-64 only.
 
-#### On the horizon:  ﻿
+#### On the horizon:
 
 - btrfs(fs that supports error detection, CoW, snapshots, ssd optimization, small files are put in metadata)
 - vswitch(full network switch, set up virtual network in the OS, ACL, VLAN, QoS, flow monitoring with openFlow)
@@ -36,7 +36,7 @@ Before the presentation they had a nice slide stating that they don't make any p
 - storage connect
 - linux containers (resource management, jails on bsd, zones on solaris, own apps/libs/root, runs on top of the kernel, not a virtualization).
 
-## From the discussion:
+## From the discussion
 
 Pidgin – some wanted Video. Pidgin said: no way. This is how Oracle will run their open source projects like MySQL, Lustre.
 
@@ -66,8 +66,6 @@ _“It takes 25 years to make a good reputation, 5 minutes to loose it.”_ - CE
 - Close work together with eofs.org – the two above have agreed on a set of improvements.
 - 2.1 lustre will be released by Whamcloud in summer 2011.
 - LUG – lustre user group – reports and interviews at [http://insidehpc.com](http://insidehpc.com/)
-
- 
 
 Next Day: [Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5")
 

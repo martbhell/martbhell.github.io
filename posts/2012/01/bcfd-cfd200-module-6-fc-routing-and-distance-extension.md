@@ -101,7 +101,7 @@ VE\_ - VE\_ (merge) VEX\_ - VE\_ (routing) EX\_ - E\_ (routing)
 
 E\_Switch1 <FC> EX\_Router1 VE\_Router1 <FCIP> VE\_router2 EX\_Router2 <FC> E\_Switch2
 
-Red = Backbone Fabric Blue = Edge Fabrics 
+Red = Backbone Fabric Blue = Edge Fabrics
 
 With this, any device can be shared with any device in any fabric.
 

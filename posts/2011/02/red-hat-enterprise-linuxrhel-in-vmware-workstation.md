@@ -4,7 +4,7 @@ date: 2011-02-21
 category: it
 tags: kernel, linux, red, hat, enterprise, rhel, ssh, subscription, number, ubuntu, vmware, workstation
 
-## Test with Red Hat Enterprise Linux (RHEL).
+## Test with Red Hat Enterprise Linux (RHEL)
 
 Download: Sign up for an evaulation on [https://access.redhat.com/downloads/](https://access.redhat.com/downloads/ "red hat download")
 
@@ -17,7 +17,7 @@ VMWare Workstation does find this in "easy install". Not doing that this time.
 1. install in either graphical or text mode, going with graphical. There are also special modes. Maybe something similar to Ubuntu's minimal virtual kernel is available?
 2. test cd
 3. Mouse works!
-4. Get subscription number with the help of this: https://access.redhat.com/kb/docs/DOC-15404. Copy paste did not work.
+4. Get subscription number with the help of this: <https://access.redhat.com/kb/docs/DOC-15404>. Copy paste did not work.
 5. Filesystem stuff. Modify or not. Encrypt or not. I went with default and encryption. For encryption you need to set a boot password (min 8 chars).
 6. IP/Timezone settings.
 7. root password (not min 8 chars)

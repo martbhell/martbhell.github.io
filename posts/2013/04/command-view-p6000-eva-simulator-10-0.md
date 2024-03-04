@@ -11,11 +11,11 @@ The [older post](https://www.guldmyr.com/p6000-eva-command-view-simulator/) is 
 - Download: [http://software.hp.com](http://software.hp.com/ "http://software.hp.com/")
 - Two files: EVA Simulator 10.0 (Z7550-00252\_EvasimInstaller\_100fr\_v1.exe) and a readme
 - There is an e-mail listed in the readme!
-    - But if you want to, you can put in a comment below saying how sexy I am :p
+  - But if you want to, you can put in a comment below saying how sexy I am :p
 - The readme is quite long but most of it is about how to use the PA (performance analyzer), Appendix B is a required read. It describes how to add the Groups so you can log on to CV.
-    - A [previous blog](https://www.guldmyr.com/to-create-a-new-user-group-in-windows-7/) post by myself truly also goes through how to add a user group :)
+  - A [previous blog](https://www.guldmyr.com/to-create-a-new-user-group-in-windows-7/) post by myself truly also goes through how to add a user group :)
 
-## For lazy hounds:
+## For lazy hounds
 
 1. _(optional)_ Disable UAC in Windows and make yourself admin.
 2. Put an account in the Windows Group called "HP Storage Admins".
@@ -34,10 +34,10 @@ With default Windows security, the Simulator runs into a problem when it tries t
 2. Right-click on 'start\_bundle.bat' and run it as an administrator. This should start the simulator.
 3. Open up a command prompt with Admin Privileges, cd your way into evasim directory and type: "start startcv.bat"
 4. That should launch the Command View process and also IE pointing to CV.
-5. If not, point your web-browser to: https://localhost:2374/SPoG/ or https://localhost:2374/
+5. If not, point your web-browser to: <https://localhost:2374/SPoG/> or <https://localhost:2374/>
 6. Log in with the user/password you added into the "HP Storage Admins" group earlier.
 
-## Some tips:
+## Some tips
 
 In one of the "DOS" windows, there might be more clues as to what's going on.
 
@@ -47,7 +47,7 @@ Inside the Simulator DOS prompt you can hit enter and if you see some commands (
 
 If you want your changes to be kept, type "save" in the simulator window before quitting.
 
-## Some thoughts:
+## Some thoughts
 
 It feels a bit ruggish. I bet this whole mess could be improved quite easily with some decent scripts. Here's one I'd like to see:
 

@@ -24,6 +24,6 @@ So Symmetrix has even more similarities to the XP. For example the blades with t
 
 Both appears to have more ways of configuring it than the EVA - the admin interface looks more complex anyway and you can tune the cache which is neat ;)
 
-http://en.wikipedia.org/wiki/EMC\_Symmetrix http://en.wikipedia.org/wiki/EMC\_Clariion
+<http://en.wikipedia.org/wiki/EMC\_Symmetrix> <http://en.wikipedia.org/wiki/EMC\_Clariion>
 
 Both of these are quite extensive but especially the Symmetrix article looks **a lot** like an advertisement.

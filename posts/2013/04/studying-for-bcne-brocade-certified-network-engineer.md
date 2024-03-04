@@ -43,9 +43,9 @@ Some good articles/blog posts:
 
 - What [Unkonwn Unicast](http://www.juniper.net/techpubs/en_US/junos9.3/topics/concept/rate-limiting-unknown-unicast-forwarding-understanding.html "on juniper.net..") is.
 - [STP overview](http://www.bluewolfspirit.com/notes/routing-and-switching/01-layer-2-technologies/8021d_8021w_and_8021s.html "good blog post") - these were great:
-    - 802.1d Plain Old Dumb STP
-    - 802.1w RSTP Rapid STP - Fast as in **WOW**
-    - 802.1s MSTP Multiple STP - **Multiple**, as in s.
+  - 802.1d Plain Old Dumb STP
+  - 802.1w RSTP Rapid STP - Fast as in **WOW**
+  - 802.1s MSTP Multiple STP - **Multiple**, as in s.
 - [Multicast Routing](http://www.soucy.org/network/multicast.php "on soucy.org")
 
 P.s. I passed :)

@@ -26,13 +26,9 @@ Implementing ITIL with [Service-Now](http://www.service-now.com/ "service-now") 
 
 [www.livecd.ethz.ch](http://www.livecd.ethz.ch/). They might [port NFS 4.](http://pnfs.com/ "pnfs.com")1 that comes with Linux Kernel 2.6.38 to work with SL5. There aren't many differences between RHEL and SL but in SL there is a tool called [Revisor](https://www.scientificlinux.org/distributions/6x/build/sites "howto"), which can be used to create your own linux distributions/CDs quite easily.
 
- 
-
 Errata is a term - this means security fixes.
 
 Dinner later today!
-
- 
 
 Next Days: [Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5") [Day 4](https://www.guldmyr.com/hepix-spring-2011-day-4/ "day4")
 

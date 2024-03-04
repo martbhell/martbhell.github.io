@@ -32,8 +32,6 @@ For the two above I think I need to use another machine. Maybe the IBM T40 could
 - Configure a system to log to a remote system
 - Configure a system to accept logging from a remote system
 
- 
-
 ## Network Services
 
 Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the following objectives for each of the network services listed below:

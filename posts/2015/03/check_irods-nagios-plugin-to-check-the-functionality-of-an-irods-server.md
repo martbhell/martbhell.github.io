@@ -22,4 +22,4 @@ Dependencies:
 -  iRODS 3.2 with OS trusted authentication
 - mktemp
 
-Source: https://github.com/martbhell/nagios-checks/tree/master/plugins/check\_irods
+Source: <https://github.com/martbhell/nagios-checks/tree/master/plugins/check\_irods>

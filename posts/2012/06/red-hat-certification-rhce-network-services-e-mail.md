@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## SMTP:
+## SMTP
 
 Hackmode has a [good article](http://www.hackmode.net/?page_id=80 "on hackmode.net") about setting postfix for the first time.
 
@@ -70,9 +70,9 @@ You have lots of details in /usr/share/doc/postfix-N ( the path should be in /et
 
 In CLI (important to use ' and not "):
 
-#hostname - record the output of this
+# hostname - record the output of this
 postconf -e 'myhostname = output from hostname in here'
-#hostname -d
+# hostname -d
 postconf -e 'mydomain = output from hostname -d in here'
 postconf -e 'myorigin = $mydomain'
 postconf -e 'inet\_interface = all'
@@ -132,8 +132,6 @@ service dovecot start
 Thunderbird is quite nice, it will often tell you which setting is wrong.
 
 You can use /var/log/maillog for details on the server-side (to see if you get connections at all for example).
-
- 
 
 ## Deny a User
 

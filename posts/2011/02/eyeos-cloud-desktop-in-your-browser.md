@@ -30,7 +30,7 @@ cp -R files/ /var/www cd /var/www mv files/ eyeos cd eyes chmod 777 \*
 
 surfing to 192.168.232.128/eyeos ->
 
-**EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied** 
+**EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied**
 
 \-> a lot nicer, gives a welcome to eyeOS 2 installation!
 
@@ -46,7 +46,7 @@ if you don't know what to run you can either google or check out [packages.ubunt
 
 sudo apt-get install php5-curl The following NEW packages will be installed: libcurl3 php5-curl
 
-Failed to fetch http://us.archive.ubuntu.com/ubuntu/pool/main/p/php5/php5-curl\_5.3.3-1ubuntu9.1\_amd64.deb  404  Not Found \[IP: 91.189.92.171 80\] E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+Failed to fetch <http://us.archive.ubuntu.com/ubuntu/pool/main/p/php5/php5-curl\_5.3.3-1ubuntu9.1\_amd64.deb>  404  Not Found \[IP: 91.189.92.171 80\] E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
 
 sudo apt-get update
 
@@ -76,7 +76,7 @@ The following NEW packages will be installed: python-dingus python-nose python-p
 
 after a restart of apache and refresh -> doesn't come up as installed. But I really want this so googling.
 
-http://stomppy.googlecode.com/files/stomp.py\_3.0.2\_all.deb found on http://code.google.com/p/stomppy/
+<http://stomppy.googlecode.com/files/stomp.py\_3.0.2\_all.deb> found on <http://code.google.com/p/stomppy/>
 
 wget that. then
 
@@ -124,7 +124,7 @@ then script shows it as good!
 
 no hits in ubuntu packages
 
-google found this: http://www.nic.funet.fi/pub/mirrors/apache.org//activemq/apache-activemq/5.4.2/apache-activemq-5.4.2-bin.tar.gz
+google found this: <http://www.nic.funet.fi/pub/mirrors/apache.org//activemq/apache-activemq/5.4.2/apache-activemq-5.4.2-bin.tar.gz>
 
 found in README - installation guide: [http://activemq.apache.org/version-5-getting-started.html](http://activemq.apache.org/version-5-getting-started.html "activemq getting started")
 
@@ -196,11 +196,11 @@ this was already filled in so went with that :)
 
 however, still gives this:
 
-**EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied** 
+**EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied**
 
 /var/www/eyeos$ chmod 777 \* -R
 
-## Logging in!
+## Logging in
 
 Login prompt does not show up in FF4 B10 or Chrome. It does show up in IE8. But when I click on new user nothing happens. apachectrl restart trying with both root/martbhell account
 

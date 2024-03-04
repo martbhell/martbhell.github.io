@@ -29,7 +29,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## SMB:
+## SMB
 
 Testing an SMB server may be quite easy from Windows, but from Linux I suppose it's a bit trickier.
 

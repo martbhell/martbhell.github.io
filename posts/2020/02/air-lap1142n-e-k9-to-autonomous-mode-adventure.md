@@ -4,14 +4,14 @@ date: 2020-02-19
 category: it
 tags: aironet, cisco, ethernet, https, ip, lap1142n e k9, network, vlan, wifi, wlan
 
-> ## [![Wifi and PoE injector ](images/DSC_1469-300x225.jpg)](images/DSC_1469-scaled.jpg)
+> ## [Wifi and PoE injector](images/DSC_1469-300x225.jpg)](images/DSC_1469-scaled.jpg)
 
 ## Some initial needful information
 
 - Reset is done by holding MODE and then powering off and on the device
 - Default enable password is Cisco
 - Serial ttyUSB0 worked with one usb to rs232 and then a serial to RJ45 adapter, my cheapo ebay USB to rj45 did not work. The colors of the wires are different..
-    - working: LL977744 CSA AWM and a "pl2303 converter" Prolific Technology Inc on ttyUSB0
+  - working: LL977744 CSA AWM and a "pl2303 converter" Prolific Technology Inc on ttyUSB0
 - Firmware c1140-k9w7-tar.153-3.JD17.tar found on twitter with checksum d96702caf75442f01359aa9a6cb70d19
 
 While the AP is in non autonomous mode you need to run a debug command to get the conf t: _debug capwap console cli_
@@ -21,7 +21,7 @@ To change it from using a controller to autonomous mode you need to load a firmw
 - While looking in serial log indeed the firmware on the AP was "w8" at the end == needs a WLC
 - tried to first setup a TFTP server and open firewalls and reboot the access point while holding the mode button (you need to hold it for a long time, like 27s) - it tried to fetch the image from tftp://255.255.255.255/ but didn't work / timed out..
 
-## Hunt goes on:
+## Hunt goes on
 
 These release notes got me a bit worried: [https://www.cisco.com/c/en/us/td/docs/wireless/access\_point/ios/release/notes/aap-rn-83mr5.html](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/ios/release/notes/aap-rn-83mr5.html)
 
@@ -36,7 +36,7 @@ Conversions from an 8.0 Wireless LAN Controller unified release AP image to auto
 - setup static IP on your linux computer, **_make sure to not just "ip addr add ip/24 dev eth0" because you might still have NetworkManager with DHCP that might revert those changes_**
 - setup a dhcpd that has 10.0.0.5 10.0.0.7 range or some such
 - setup a linux tftp.service - if you want "--verbose --address 255.255.255.255:69" to the tftp.service CentOS7 edit that file in systemctl cat tftp
-    - Not sure if needed but maybe it was useful
+  - Not sure if needed but maybe it was useful
 - systemctl start tftp dhcpd
 - sysetmctl disable dhcpd tftp
 - make sure to let UDP(& TCP?) 69 through the firewall
@@ -53,7 +53,7 @@ $ ena
 
 ## Configuring it
 
-Easiest is probably to use the http on http://IP:80 to configure it
+Easiest is probably to use the http on <http://IP:80> to configure it
 
 Username/Password: Cisco/Cisco
 

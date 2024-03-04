@@ -8,7 +8,7 @@ After some time the solution I devised on [https://www.guldmyr.com/script-to-ch
 
 Instead of getting some kind of output in a terminal sometimes somewhere I decided to make an RSS feed that updates [https://guldmyr.com/spotify/spot.xml](https://guldmyr.com/spotify/spot.xml) instead :)
 
-I suspect that the repository itself could be used to see if there's an update to it. It has all these nice looking files in here: http://repository.spotify.com/dists/stable/ - but I also suspect this is a repository for debian/ubuntu which I cannot use on my RHEL-based workstation.
+I suspect that the repository itself could be used to see if there's an update to it. It has all these nice looking files in here: <http://repository.spotify.com/dists/stable/> - but I also suspect this is a repository for debian/ubuntu which I cannot use on my RHEL-based workstation.
 
 Thus:
 
@@ -28,7 +28,5 @@ Some things I learned:
 - [http://feedvalidator.org](http://feedvalidator.org "http://feedvalidator.org") is a great tool, use it.
 
 _I claim no responsibility if you actually use the script, the feed however should be fairly safe to subscribe to._
-
- 
 
 [![[Valid RSS]](images/valid-rss-rogers.png "Validate my RSS feed")](http://feedvalidator.org/check.cgi?url=http%3A//guldmyr.com/spotify/spot.xml)

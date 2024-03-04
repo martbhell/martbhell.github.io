@@ -22,7 +22,7 @@ tags: chat, eyeos, irssi, linux, sharepoint, ubuntu, virtual, machine, vm, vmwar
 
 What do you want to do? Do you have enough of it? My desktop has an Intel i7-920, 8GB RAM and two 500GB hard drives. Generally when testing I would give it 1GB or maybe 2GB for Windows. This can be decreased later if you feel the need. You can also increase storage, memory and CPU after you create your virtual machine. It is easy to create a new virtual machine so do not worry if you make it too small or too big.
 
-#### 1.2/ Network setup, LAN, Bridged, Hidden.
+#### 1.2/ Network setup, LAN, Bridged, Hidden
 
 Do you want to be able to access your VM from your LAN, Internet or do you want a completely private network between your virtual machines?
 
@@ -42,11 +42,11 @@ There are two versions of Ubuntu - desktop and [server version.](http://www.ubun
 
 ### **3/ Set up management**
 
-#### 3.1/ sshd - autostart if you reboot host OS / Windows.
+#### 3.1/ sshd - autostart if you reboot host OS / Windows
 
 I haven't managed to set up autostart of the VM when rebooting the OS. But then again, I do not run "life-critical" services in the virtual machine, just some cheap bash-script and an EyeOS. Not sure if I want to have it autostart, I like to have a fast reboot.
 
-#### 3.2/ Timezone, time.
+#### 3.2/ Timezone, time
 
 Quite frustrating, but here is how it worked out in Linux: [time-sync-for-linux-vms-in-vmware-workstation](https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/ "time-sync-for-linux-vms-in-vmware-workstation/")
 
@@ -70,6 +70,6 @@ It then starts irssi in a screen. You can hit CTRL+A+D (or, CTRL+A D also works)
 
 Of course the screen does not resume when you restart the whole server / virtual machine.
 
-#### 4.2 Other ideas:
+#### 4.2 Other ideas
 
 [Red Hat Enterprise Linux in VMWare Workstation.](https://www.guldmyr.com/red-hat-enterprise-linuxrhel-in-vmware-workstation/ "red-hat-enterprise-linuxrhel-in-vmware-workstation/") [How small VM can you have for just IRSSI?](https://www.guldmyr.com/ubuntu-10-10-vmware-irssi/ "ubuntu-10-10-vmware-irssi/") [File share from Windows to Ubuntu in a VM.](https://www.guldmyr.com/file-share-from-ubuntu-10-10-with-windows-7-client/ "file-share-from-ubuntu-10-10-with-windows-7-client/") [EyeOS](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos-cloud-desktop-in-your-browser-part-2/") - OS in your web browser.

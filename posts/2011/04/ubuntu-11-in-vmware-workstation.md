@@ -32,7 +32,7 @@ Looks pretty smooth. Quite different from what I remember. I set it to 2GB  RAM
 - Audio is also working from start.
 - Resolution/screen proportions are automagically updated so that Ubuntu fits the whole screen. Nice. Ubuntu 10.10 does not do this in Virtualbox on RHEL6.
 
-### Comes default with these programs:
+### Comes default with these programs
 
 - Mozilla Firefox 4.0
 - Libreoffice (not openoffice??) - looks like openoffice anyway.
@@ -45,13 +45,13 @@ Looks pretty smooth. Quite different from what I remember. I set it to 2GB  RAM
 
 This "ubuntu software manager" is a bit of a fail. It seems very mainstream.
 
-### For example:
+### For example
 
 - irssi cannot be found there
 
 That's about all I can think of for now.
 
-### Adobe Flash:
+### Adobe Flash
 
 - No flash from the start. But! Search for it in the software manager and you can install it. This however failed. I tried to report but it required a login so I skipped.
 - After fail the app still has a green check-mark on it.

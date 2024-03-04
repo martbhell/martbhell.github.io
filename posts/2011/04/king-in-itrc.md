@@ -6,7 +6,7 @@ tags: forum, hp, itrc, king, servers, storage, support
 
 Just got the Royal rank - 2500 points :)
 
-http://forums11.itrc.hp.com/service/forums/questionanswer.do?threadId=1477054&admit=109447626+1302808876390+28353475
+<http://forums11.itrc.hp.com/service/forums/questionanswer.do?threadId=1477054&admit=109447626+1302808876390+28353475>
 
 Woop woop!
 

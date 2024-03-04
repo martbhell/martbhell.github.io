@@ -30,15 +30,13 @@ Notes and acronyms (page in NOS Admin Guide):
 - AMPP - Automatic Migration of Port Profiles - some OK pictures around p375
 - VRF - Virtual Routing and Forwarding
 
- 
-
 Questions:
 
 - There is also a [Openstack Neutron Plugin](https://wiki.openstack.org/wiki/Brocade-neutron-plugin "https://wiki.openstack.org/wiki/Brocade-neutron-plugin") (p29)
 - Would be good to include also page 114 before page 115 to see what they mean with leaf/spine/core (p115)
 - OOB access to console is via serial (p115)
 - How to reload a group of switches? (p115)
-    - reload system rbridge-id all
+  - reload system rbridge-id all
 - Does trill use IS-IS type link-state? (p136) [Yes](http://en.wikipedia.org/wiki/TRILL_(computing) "on wikipedia")
 - Can VF\_Ports be anywhere in the fabric? (p202) Yes, they must be mapped to N\_Ports.
 - Is there no web interface on the VDX? (p269) Probably not, there are some "http server" and "ip http-server" commands.
@@ -46,26 +44,24 @@ Questions:
 - What is this netinstall? (p371) - 10 hits on google: brocade "netinstall" vdx
 - What does the asterisk mean in the output of "do show vcs" ? (p597) The one you are running the command on? Is not principal RBRidge, that is >.
 
- 
-
 Commands (# comments) (page):
 
 - backup config: copy rbridge-running-config rbridge-id rbridge-id location\_config
-    - copy rbridge-running-config rbridge-id 2 scp://user:pw@host
+  - copy rbridge-running-config rbridge-id 2 scp://user:pw@host
 - vcs
-    - no vcs logical-chassis enable # remove a node from logical chassis cluster (p76)
-    - vcs replace rbridge-id 3 # replace RBridge with id 3 (p77)
-    - enable (p139)
-    - virtual ip address 10.1.1.1 (p143)
+  - no vcs logical-chassis enable # remove a node from logical chassis cluster (p76)
+  - vcs replace rbridge-id 3 # replace RBridge with id 3 (p77)
+  - enable (p139)
+  - virtual ip address 10.1.1.1 (p143)
 - config terminal # to enter global exec mode (p94)
 - firmware download (p119)
 - logical-chassis principal-switchover (p138)
-    - and logical-chassis principal-priority are the only logical-chassis commands
+  - and logical-chassis principal-priority are the only logical-chassis commands
 - disabling a port:
-    - shutdown # on an ISL brings down link and FSPF adjacency.
-    - no fabric isl enable #  link stays up, shorter reconvergence
+  - shutdown # on an ISL brings down link and FSPF adjacency.
+  - no fabric isl enable #  link stays up, shorter reconvergence
 - show
-    - vcs virtual-ip (p143)
+  - vcs virtual-ip (p143)
 - vcenter/vnetwork # used to connect to a vcenter and to discover hosts. (p243)
 - bind # create persistent binding between logical FCoE port and 10G/40G/LAG port. Port or MAC, not both. (p345)
 - enable statistics direction # for VXLAN tunnels to enable statistics on VLANs. (p365)
@@ -74,11 +70,9 @@ Commands (# comments) (page):
 - nas server-ip IP/PREFIX # Set IPs for AutoQoS for NAS (p506)
 - address-family ipv4 unicast # Used to enter IPv4 config in a VRF (p609)
 - debug lacp pdu # turn on debug (p714)
-    - terminal monitor # view debug messages in terminal
+  - terminal monitor # view debug messages in terminal
 
-### Printing the NOS Admin Guide relevant pages:
-
- 
+### Printing the NOS Admin Guide relevant pages
 
 Because the slides for the BCEFP course were insufficient I would get a lot of the basic information about the NOS from the NOS Admin Guide. In the materials provided the NOS Admin Guide was separated into two documents. The guide is of course available in one pdf. Go to the [web version](http://www.brocade.com/downloads/documents/html_product_manuals/NOS_411_AG/index.html "html") and click on the [pdf icon](http://www.brocade.com/downloads/documents/product_manuals/B_VDX/NOS_AdminGuide_v411.pdf "http://www.brocade.com/downloads/documents/product_manuals/B_VDX/NOS_AdminGuide_v411.pdf"). This makes printing based on the numbers provided easier. However the NOS Admin Guide for v4.1.1 referenced was one version below the one on the html version.
 

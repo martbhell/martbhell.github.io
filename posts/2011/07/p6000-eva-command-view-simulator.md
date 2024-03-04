@@ -8,7 +8,7 @@ tags: command, view, command, view, simulator, cv, cv, simulator, cvutil, disk, 
 
 Command View EVA is HP's web based management tool for their EVA/P6000 products. It's been looking the same for quite some time except the quite old ones. It's simple to use compared to other management softwares but sure it has its limitations too. It's not based on JAVA anyway :)
 
-# Install.
+# Install
 
 Run the install file, this extracted the files but then it said something about it not being correctly installed. I then went to the folder and started the install manually. This completed after a while. After this:
 

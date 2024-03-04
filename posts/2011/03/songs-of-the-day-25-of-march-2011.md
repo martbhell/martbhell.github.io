@@ -16,7 +16,7 @@ Birthday Party (demo) - The Preachers # energetic and emotional(?, maybe not, bu
 
 Me and You - Helga Knardal # soft sung
 
-#### Places to Go - Leftover Cuties # classical comp, like 70s, 60s. Lovely.
+#### Places to Go - Leftover Cuties # classical comp, like 70s, 60s. Lovely
 
 [Do the Whirlwind - Architecture in Helsinki](http://www.youtube.com/watch?v=MXIzyquw-kc "on youtube") # bitop. full of win. Awesome videos. See also [The Owls Go](http://www.youtube.com/watch?v=MQL9JaVl7ns "the owls go on youtube") and [Hold Music](http://www.youtube.com/watch?v=khxFF8rcG-A "hold music on youtube") by the same band.
 

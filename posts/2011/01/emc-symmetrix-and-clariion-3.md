@@ -4,7 +4,7 @@ date: 2011-01-18
 category: storage
 tags: emc, storage
 
-http://thestorageanarchist.typepad.com/weblog/2011/01/3017-vmax-2011-edition-powerful-trusted-smartest.html
+<http://thestorageanarchist.typepad.com/weblog/2011/01/3017-vmax-2011-edition-powerful-trusted-smartest.html>
 
 Whoa, EMC released a bunch of stuff last night :)
 
@@ -12,7 +12,7 @@ Updating this post as we go today :p
 
 \*\*\*
 
-http://finland.emc.com/ some kind of bicycle jump on in 5h and 45mins! Or 1330 UK Time, 1430 Central European, 1530 Finnish.
+<http://finland.emc.com/> some kind of bicycle jump on in 5h and 45mins! Or 1330 UK Time, 1430 Central European, 1530 Finnish.
 
 \*\*\*
 

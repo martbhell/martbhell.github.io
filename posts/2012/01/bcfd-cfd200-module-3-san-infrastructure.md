@@ -55,11 +55,9 @@ lulz, all this has a nice marketing feeling to it. But I guess when you design a
 
 Besides the obvious ones (DCX is awesome, it has features you need, you need more ports) it's good to cope with faster FICON environments, encryption, CEE or FCoE support when/if, integrated routing (in a normal FC port in a port blade), more QoS features.
 
- 
-
 # Distinguish differences between Brocade hw platforms
 
-## M-Series.
+## M-Series
 
 In BCFA and BCFD there's been very **very** little focus on the M-series equipment. It appears to be a bit more in the BCFD. But, as far as I can tell they are not sold anymore so hopefully there's not much focus on them. Gamble: should I just browse through the McData sections?
 
@@ -71,8 +69,6 @@ hardware partitioning with SAN LPARs, mix FICON/open system in separate LPARs. 1
 
 Open Systems and FICON, 140 ports in 4-port increments (each module you add have 4 ports, except 10G that has 1), 1,2,4,10 Gbps FC. M-series Directors are End of Sale.
 
- 
-
 ## Fabric Routing and Extension
 
 There was quite a lot about this in the BCFP course. I am not sure if BCFA -> BCFP -> BCFD is the best order to do them in but it is starting to look that way.
@@ -82,8 +78,6 @@ There was quite a lot about this in the BCFP course. I am not sure if BCFA -> BC
 M3000 and USD-X does not: HW encryption (IPSec), FCR, Call Home, SSH(SSL, RADIUS), inband management via GbE or FastWrite over FC. They both also only operate at 2G speed. This makes me believe they are not included in the 16G BCFD, 2G is just too little?
 
 Also integrated routing on the DCX, 5300 and 5100.
-
- 
 
 ## 7600 and FA4-18
 

@@ -22,7 +22,7 @@ Just read a little about the tiering and that looks really awesome. Having data 
 
 So updating inside the post.
 
-Found this aricle: http://storagenerve.com/2008/12/19/emc-symmetrix-management-console/ looks pretty nice. Would like to find a user guide that shows how to install and how to use it :)
+Found this aricle: <http://storagenerve.com/2008/12/19/emc-symmetrix-management-console/> looks pretty nice. Would like to find a user guide that shows how to install and how to use it :)
 
 \*\*\*
 
@@ -34,7 +34,7 @@ Going to a flea market today, need some chairs for the upcoming move-in party :)
 
 \*\*\*
 
-http://finland.emc.com/collateral/demos/microsites/mediaplayer-video/application-view-provisioning-storage-vmax.htm
+<http://finland.emc.com/collateral/demos/microsites/mediaplayer-video/application-view-provisioning-storage-vmax.htm>
 
 .. which stops after 5 seconds in FF4b9 and IE8 :/ same goes for videos. sucky website.
 

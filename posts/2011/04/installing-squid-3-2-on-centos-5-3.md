@@ -12,7 +12,7 @@ Squid for those who do not know is a [proxy server.](http://en.wikipedia.org/wik
 
 It's a good idea to not run any service as root.
 
-1. Download it from http://www.squid-cache.org/ there are many options to chose from. Stable, unstable, 3.2, 3.1 etc. I just took a recent developer build from the 3.2 chain - squid-3.2.0.6.
+1. Download it from <http://www.squid-cache.org/> there are many options to chose from. Stable, unstable, 3.2, 3.1 etc. I just took a recent developer build from the 3.2 chain - squid-3.2.0.6.
 2. Untar this somewhere, doesn't matter where. Move directory and:
 
 To get the program to install itself in a location where you have access, you need to specify that while running the configure check.
@@ -25,7 +25,7 @@ or wherever you want to put it. I just put it directly in /home/user/squid-inst.
 
 If that completes without errors next step is to: make; make install. This will compile and then install it in the directory you specified above. After that completes sucessfully you can delete/hide the directory. I hide it just in case I want to change something in the configure or whatever.
 
-### Then it's time to configure!
+### Then it's time to configure
 
 Now proxy servers you need to put some kind of authentication on. Unless you want a hoard of unwanted visitors.
 
@@ -42,7 +42,7 @@ Configuration is done via ~/squid-inst/etc/squid.conf
 
 If everything is working fine, then your console displays: "Ready to serve requests".
 
-You can now surf to your http://host:port
+You can now surf to your <http://host:port>
 
 However, you cannot use it as a cache yet.
 

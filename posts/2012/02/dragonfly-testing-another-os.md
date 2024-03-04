@@ -23,8 +23,6 @@ It has a 'hammer' filesystem. Apparently this is unsupported for FS under 10GB a
      regular system maintenance job runs once a day by [periodic(8)](http://leaf.dragonflybsd.org/cgi/web-man?command=periodic&section=8) to handle
      reclamation.
 
- 
-
 Nice and straight-forward console-based installation.
 
 Quick and easy!
@@ -60,8 +58,6 @@ or it will complain that libcrypt.so.3 doesn't exist.
 ## The HAMMER filesystem
 
 All commands start with 'hammer'. Like 'hammer info'.
-
- 
 
 ## Conclusion
 

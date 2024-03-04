@@ -14,14 +14,14 @@ Does it still build?
 CentOS 7.7:
 
 ```bash
-$ sudo yum install git
-$ git clone github.com/quadra-game/quadra
-$ sudo yum groupinstall "Development Tools" 
-$ sudo yum install SDL2-devel boost-devel libpng-devel
-$ cd quadra
-$ autoreconf -i
-$ ./configure
-$ make
+sudo yum install git
+git clone github.com/quadra-game/quadra
+sudo yum groupinstall "Development Tools" 
+sudo yum install SDL2-devel boost-devel libpng-devel
+cd quadra
+autoreconf -i
+./configure
+make
 ```
 
 **It DOES!**
