@@ -3,6 +3,8 @@ title: HEPIX Spring 2011 – Day 3
 date: 2011-05-05
 category: it, storage
 tags: adaptec, buffered, tape, marks, cern, cloud, ermm, errata, hepix, hepix, spring, 2011, ibm, ioapps, ioreplay, ipv4, ipv6, lustre, oracle, scientific, linux, service, now, sl, strace, sun, t10000c, tape, drive, tsm
+<!-- prettier-ignore -->
+---
 
 Day 3 woop!
 

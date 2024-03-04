@@ -3,6 +3,8 @@ title: DWM editing the bar to show time
 date: 2011-03-14
 category: finland
 tags: dwm, rhel, status, bar, statusbar
+<!-- prettier-ignore -->
+---
 
 ```bash
 xrdb -merge ~/.Xresources

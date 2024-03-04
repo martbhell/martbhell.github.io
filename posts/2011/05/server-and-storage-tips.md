@@ -3,6 +3,8 @@ title: Server and Storage Tips from the ITRC
 date: 2011-05-21
 category: finland
 tags: bladec, class, command, view, eva, flexfabric, hp, it, itrc, port, mapping, sc11xe, scsi, sense, errors, storage, support
+<!-- prettier-ignore -->
+---
 
 Just a good howto - tip - solution. It's a little hard to find good threads.
 

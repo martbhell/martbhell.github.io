@@ -4,6 +4,7 @@ date: 2023-07-14 23:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, jukola, yö, otsalamppu, porvoo, borgå
+<!-- prettier-ignore -->
 ---
 
 Historia

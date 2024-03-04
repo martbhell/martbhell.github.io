@@ -3,6 +3,8 @@ title: Moved to Finland
 date: 2011-01-14
 category: finland
 tags: finland
+<!-- prettier-ignore -->
+---
 
 Just starting the blog off.
 

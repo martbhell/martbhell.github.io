@@ -3,6 +3,8 @@ title: Trip to San Francisco
 date: 2012-09-10
 category: finland
 tags: frisco, hostel, san, francisco, travel, trip, usa
+<!-- prettier-ignore -->
+---
 
 Made it through flights and security checkpoints and buses and trains!
 

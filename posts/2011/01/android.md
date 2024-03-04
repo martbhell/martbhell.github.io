@@ -3,6 +3,7 @@ title: android
 date: 2011-01-14
 category: it
 tags: embassy, finland
+<!-- prettier-ignore -->
 ---
 
 Testing the posting via android native browser.

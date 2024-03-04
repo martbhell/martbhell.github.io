@@ -3,6 +3,7 @@ title: Yesterday was my last day at CSCfi
 date: 2020-03-08
 category: finland, it
 tags: work
+<!-- prettier-ignore -->
 ---
 
 9 years were significant and meaningful to me.

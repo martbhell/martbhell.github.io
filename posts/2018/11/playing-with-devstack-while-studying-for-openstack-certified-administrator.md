@@ -3,6 +3,8 @@ title: Playing with devstack while studying for OpenStack Certified Administrato
 date: 2018-11-08
 category: it
 tags: cloud
+<!-- prettier-ignore -->
+---
 
 Below I'll go through some topics I thought about while reading through the [requirements](https://www.openstack.org/coa/requirements/) for COA:
 

@@ -3,6 +3,8 @@ title: Sofiero Mörk
 date: 2011-04-08
 category: finland
 tags: beer, öl, sofiero
+<!-- prettier-ignore -->
+---
 
 Ahh.
 

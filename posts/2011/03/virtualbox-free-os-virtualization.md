@@ -3,6 +3,8 @@ title: Virtualbox - Free OS Virtualization
 date: 2011-03-12
 category: it
 tags: rhel, virtualbox, virtualization, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 Had the opportunity to try out [virtualbox](http://www.virtualbox.org/ "virtualbox") the other day on RHEL.
 

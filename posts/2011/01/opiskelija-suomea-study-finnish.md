@@ -3,6 +3,8 @@ title: Opiskelija suomea - study Finnish
 date: 2011-01-17
 category: finland
 tags: finland, study
+<!-- prettier-ignore -->
+---
 
 Just been to the immigration arbetskraftsbyrå in Hakaniemi. The course I have found that's out in Espoo should be ok. They may pay for it too as their requirement is 14-16 hours per week and at least four days per week!
 

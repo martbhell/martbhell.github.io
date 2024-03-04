@@ -3,6 +3,8 @@ title: BCFD - CFD200 - Module 4 - SAN Software Features
 date: 2012-01-15
 category: storage
 tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, storage, storage, area, network, storage, network
+<!-- prettier-ignore -->
+---
 
 [Overview](https://www.guldmyr.com/brocade-certification-bcfd-fabric-designer-preparation/ "overview") / Preparation
 

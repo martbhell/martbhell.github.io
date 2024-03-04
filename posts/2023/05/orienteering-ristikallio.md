@@ -4,6 +4,7 @@ date: 2023-05-09 21:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, espoorastit, a-rata, ristikallio, kirkkonummi
+<!-- prettier-ignore -->
 ---
 
 Suunistaa

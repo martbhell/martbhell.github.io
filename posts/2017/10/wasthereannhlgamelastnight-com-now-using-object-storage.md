@@ -3,6 +3,7 @@ title: wasthereannhlgamelastnight.com - now using object storage!
 date: 2017-10-07
 category: it, storage
 tags: cloud, gcloud, google, nhl, programming, wasthereannhlgamelastnight
+<!-- prettier-ignore -->
 coverImage: "screenshot.png"
 ---
 

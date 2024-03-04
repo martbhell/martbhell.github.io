@@ -3,6 +3,8 @@ title: BCFD - SAN Design Best Practices
 date: 2012-01-23
 category: storage
 tags: bcfd, best, practices, brocade, brocade, certified, fabric, designer, certification, design, san, design, storage, storage, area, network, storage, network
+<!-- prettier-ignore -->
+---
 
 This is a post in series of me studying for the BCFD - Brocade Certified Fabric Designer and it's my comments on the document SAN Design Best Practices. Apparently this document is planned to be updated. The one I have is version 2.1. To find the latest go to My.brocade.com , documentation, Best Practices Guides. There's also a "SAN Migration" guide there, but it's from 2003 so irrelevant when it comes to anything specific, but ideas and reasons and methods might be valuable.
 

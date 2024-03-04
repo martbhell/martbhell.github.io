@@ -3,6 +3,8 @@ title: VMWare Workstation -> Put VM on your LAN IP network
 date: 2011-01-29
 category: it
 tags: networking, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 So, you have this awesome Virtual Machine running in your local area network (LAN) and want to be able to forward a port from your broadband router so it can be accessed by somebody else?
 

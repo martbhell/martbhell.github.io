@@ -3,6 +3,8 @@ title: Firefox 5 Beta
 date: 2011-05-26
 category: it
 tags: beta, ff5, firefox, firefox5, mozilla
+<!-- prettier-ignore -->
+---
 
 You can download the Beta here:
 

@@ -3,6 +3,8 @@ title: Drupal 7
 date: 2011-03-09
 category: it
 tags: debian, drupal, virtual, machine
+<!-- prettier-ignore -->
+---
 
 Just installed Drupal 7 on a Debian Virtual Machine.
 

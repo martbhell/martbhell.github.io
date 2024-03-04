@@ -3,6 +3,8 @@ title: Lustre 2.5 + CentOS6 Test in OpenStack
 date: 2014-05-30
 category: storage
 tags: centos, linux, lustre, openstack
+<!-- prettier-ignore -->
+---
 
 Reason: Testing to Lustre 2.5 from a clean CentOS 6.5 install in an openstack.
 

@@ -3,6 +3,8 @@ title: High amount of Load_Cycle_Count on Green Western Digital disks
 date: 2014-10-26
 category: it, storage
 tags: idl3ctl, llc, load_cycle_count, ubuntu, wd, wdidle3, wdidle3, exe, western, digital
+<!-- prettier-ignore -->
+---
 
 You are monitoring the SMART values of your disks right? They're usually a real good indicator of the health of the drive.
 

@@ -3,6 +3,8 @@ title: IPv6
 date: 2013-01-13
 category: it
 tags: ip, ipv6, networking
+<!-- prettier-ignore -->
+---
 
 Do you have IPv6 connectivity? Perhaps a server and a domain name already set up?
 

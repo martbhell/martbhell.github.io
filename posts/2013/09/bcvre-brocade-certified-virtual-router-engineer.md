@@ -3,6 +3,8 @@ title: BCvRE - Brocade Certified virtual Router Engineer
 date: 2013-09-08
 category: it
 tags: bcvre, brocade, certified, exam, open, source, virtualization
+<!-- prettier-ignore -->
+---
 
 Been checking out the Vyatta vRouter a bit closer. Mostly because of the BCvRE exam but I'm slowly starting to think there might be some benefits to using it elsewhere too.
 

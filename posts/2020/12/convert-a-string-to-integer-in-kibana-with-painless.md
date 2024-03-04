@@ -3,6 +3,7 @@ title: Convert a string to integer in Kibana with painless
 date: 2020-12-16
 category: it
 tags: kibana, painless, grok, apache
+<!-- prettier-ignore -->
 lang: en
 ---
 

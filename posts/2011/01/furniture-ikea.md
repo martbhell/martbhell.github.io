@@ -3,6 +3,8 @@ title: furniture - IKEA
 date: 2011-01-21
 category: finland
 tags: furniture
+<!-- prettier-ignore -->
+---
 
 Heading out to IKEA now, need a bigger duvet, cover for that, under-chair-protection pads and of course some meatballs and mash :-)
 

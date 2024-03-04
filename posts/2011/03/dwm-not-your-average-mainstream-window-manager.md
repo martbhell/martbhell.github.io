@@ -3,6 +3,8 @@ title: DWM - not your average mainstream window manager
 date: 2011-03-16
 category: finland
 tags: dwm, gnome, linux, rhel, window, manager
+<!-- prettier-ignore -->
+---
 
 Have been playing around with a new window manager (new as in for me, I've only used fluxbox, kde and gnome before) called DWM - see more information on [www.suckless.org.](http://www.suckless.org "suckless.org")
 

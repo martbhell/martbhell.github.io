@@ -3,6 +3,8 @@ title: Science-Fiction Books
 date: 2011-09-13
 category: finland
 tags: book, book, review, reading, review, sci, fi, science, fiction
+<!-- prettier-ignore -->
+---
 
 Been reading a bit, is nice to get to read something other than fibre channel :)
 

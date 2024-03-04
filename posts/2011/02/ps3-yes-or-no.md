@@ -3,6 +3,8 @@ title: PS3 - yes or no?
 date: 2011-02-20
 category: it
 tags: gran, turismo5, granturismo5, ps3, sony, wii, xbox360
+<!-- prettier-ignore -->
+---
 
 As I will soon be getting some income again, we thought this might be a good time to get a video game console.
 

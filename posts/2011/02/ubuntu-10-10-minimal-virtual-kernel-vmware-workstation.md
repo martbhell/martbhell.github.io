@@ -3,6 +3,8 @@ title: Ubuntu 10.10 Minimal Virtual Kernel + VMWare Workstation
 date: 2011-02-07
 category: it
 tags: 10.10, apt, get, dns, finland, it, kernel, pico, time, servers, ubuntu, virtual, kernel, virtual, machine, vm, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 To install Ubuntu 10.10 with a virtual kernel instead of the normal one = good, less stuff installed that you may not need.
 

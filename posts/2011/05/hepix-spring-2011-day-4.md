@@ -3,6 +3,7 @@ title: HEPIX Spring 2011 - Day 4
 date: 2011-05-09
 category: it, storage
 tags: eofs, hepix, hepix, spring, 2011, iaas, lustre, öl, open, source, oracle, oracle, linux, virtual, machine, virtual, machine, image, virtualization, vm
+<!-- prettier-ignore -->
 
 Dinner on the 3rd night was amazing. It was at the hotel Weisse Schwan in Arheilgen outside Darmstadt and it was a nice reception hall with big round tables, waiters with lots of wine and great buffet food. A+
 

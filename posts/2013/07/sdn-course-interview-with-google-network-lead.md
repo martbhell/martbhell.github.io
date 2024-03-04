@@ -3,6 +3,8 @@ title: SDN Course - Interview with Google Network Lead
 date: 2013-07-31
 category: it
 tags: coursera, learning, linux, pyretic, python, resonance, sdn, software, defined, networking, studying
+<!-- prettier-ignore -->
+---
 
 This week in the [SDN course](https://www.coursera.org/course/sdn) on coursera there were lots of examples of real use of SDN stuff, for example like the B4 WAN by Google. They got a really _interesting_ and _cool_ interview with the Network Lead at Google - Amin Vahdat. And! They actually put this [interview up on youtube](http://www.youtube.com/watch?v=8I6YevjRFQ0 "http://www.youtube.com/watch?v=8I6YevjRFQ0") so you don't have to be registered for the course on coursera to view the interview. Actually I just noticed all the interviews are there, including the one I mentioned before with the Internetz Architect David Clark.
 

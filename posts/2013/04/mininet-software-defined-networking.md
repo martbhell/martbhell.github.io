@@ -3,6 +3,8 @@ title: Mininet - Software Defined Networking
 date: 2013-04-29
 category: it
 tags: coursera, mininet, networking, sdn, software, defined, networking, vm
+<!-- prettier-ignore -->
+---
 
 ## Mininet
 

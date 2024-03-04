@@ -3,6 +3,8 @@ title: Google Interview - Data Center IT Technician
 date: 2011-01-21
 category: finland, it, storage
 tags: data, center, data, center, technician, data, centre, datacenter, datacentre, google, hamina, interview, it, job, questions
+<!-- prettier-ignore -->
+---
 
 - Updated 2011-01-29
 - Updated 2011-03-08 Dtek contributed some more questions from the first interview.

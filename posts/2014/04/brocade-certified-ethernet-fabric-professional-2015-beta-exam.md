@@ -3,6 +3,8 @@ title: Brocade Certified Ethernet Fabric Professional 2015 Beta Exam
 date: 2014-04-18
 category: it
 tags: brocade, brocade, certified, brocade, certified, ethernet, fabric, professional, certification
+<!-- prettier-ignore -->
+---
 
 ## Intro
 

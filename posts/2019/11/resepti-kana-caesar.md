@@ -3,6 +3,7 @@ title: Resepti: Kana Caesar
 date: 2019-11-12
 category: finland
 tags: reseptit, recipe, kana, salaati, salaatti, salatit
+<!-- prettier-ignore -->
 ---
 
 Croutons : Uniin päällä. Laitta pakastettuna leipä mikroaaltouuniin ja lämmitävät. Leikkaa ja laitaa uunilevylle. Miksata öljyllä ja valkosipulilla. Odottaa.

@@ -3,6 +3,8 @@ title: Merry Christmas
 date: 2011-12-24
 category: finland
 tags: christmas, finland
+<!-- prettier-ignore -->
+---
 
 Merry Christmas ya'll!
 

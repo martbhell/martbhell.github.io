@@ -3,6 +3,8 @@ title: check_irods - nagios plugin to check the functionality of an iRODS server
 date: 2015-03-31
 category: it, storage
 tags: irods, monitoring, nagios
+<!-- prettier-ignore -->
+---
 
 Part of my $dayjob as a sysadmin is to monitor all things.
 

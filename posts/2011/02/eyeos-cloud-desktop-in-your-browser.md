@@ -3,6 +3,8 @@ title: EyeOS - Cloud Desktop in your browser
 date: 2011-02-03
 category: it
 tags: activemq, apt, get, cloud, eyeos, icloud, kaazing, pico, ubuntu, virtual, desktop, vmware, workstation
+<!-- prettier-ignore -->
+---
 
 Useful? Hopefully! Interesting? Very!
 

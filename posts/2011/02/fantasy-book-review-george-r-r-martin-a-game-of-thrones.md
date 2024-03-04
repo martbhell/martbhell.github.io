@@ -3,6 +3,8 @@ title: Fantasy Book Review - George R.R. Martin - A Game of Thrones
 date: 2011-02-23
 category: finland
 tags: game of thrones, song of ice and fire, book, fantasy, george rr martin, review
+<!-- prettier-ignore -->
+---
 
 Warning, this article may contains spoilers (I am trying to be sublime about them though) and have written them in white text just to be on the safe side.
 

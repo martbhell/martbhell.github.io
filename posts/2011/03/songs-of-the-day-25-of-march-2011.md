@@ -3,6 +3,8 @@ title: Songs of the day - 25 of March - 2011
 date: 2011-03-25
 category: finland
 tags: free, indie, music, stream, thesi
+<!-- prettier-ignore -->
+---
 
 Same story as last time: I am listening from the laptop speakers while working so not listening to the lyrics much. I put in 'open mic' or a special mood in thesixtyone and see what comes up! Great way to find new music :)
 

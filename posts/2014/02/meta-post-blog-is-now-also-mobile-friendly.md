@@ -3,6 +3,8 @@ title: Meta Post: Blog is now also mobile friendly!
 date: 2014-02-24
 category: finland, it
 tags: blogging, metapost, theme
+<!-- prettier-ignore -->
+---
 
 Update! If you view this blog on an a mobile device with the right user agent (and apparently very few of you do that) there's now very little white space wasted! It's not perfect yet but I'm working on it making it nicer. It seems to have some
 

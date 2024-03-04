@@ -3,6 +3,8 @@ title: Trick with labels in gmail - how to find out who is selling your e-mail a
 date: 2011-04-29
 category: it
 tags: e-mail, gmail, google, spam, tips, tricks
+<!-- prettier-ignore -->
+---
 
 I actually read about this in some comment field somewhere else, but here is a great explanation of my intention:
 

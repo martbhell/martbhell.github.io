@@ -3,6 +3,7 @@ title: DWM - start up script that works with GDM login manager
 date: 2011-03-18
 category: it
 tags: dwm, gdm, gnome, linux, rhel, window, manager
+<!-- prettier-ignore -->
 
 Goal: Be able to exit [DWM and](http://dwm.suckless.org "dwm at suckless.org") get back to the GDM - gnome login manager. To be able to hit MODKEY+SHIFT+Q, exit dwm and get me back to the login manager. Where I can chose another user or window manager. Or if I make a change in dwm and need to re-load it, this would work as well. Before I had to reboot :)
 

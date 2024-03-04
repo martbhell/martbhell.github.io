@@ -3,6 +3,8 @@ title: Update to Spotify - An RSS Feed
 date: 2012-07-08
 category: it
 tags: bash, feed, ftp, linux, repository, rss, rss, feed, script, spotify, web
+<!-- prettier-ignore -->
+---
 
 After some time the solution I devised on [https://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/](https://www.guldmyr.com/script-to-check-for-an-update-on-a-web-page/) just did not elegant enough (also it stopped working).
 

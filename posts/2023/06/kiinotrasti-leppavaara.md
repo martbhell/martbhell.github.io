@@ -4,6 +4,7 @@ date: 2023-06-03 23:57
 category: finland
 lang: fi
 tags: orienteering, suunnistus, espoo, yö, otsalamppu, kiintorastit, jukola
+<!-- prettier-ignore -->
 ---
 
 Espoo ylläpitää [kiintorastit](https://www.espoo.fi/fi/liikunta-ja-luonto/ulkoliikuntapaikat/kiintorastit), ja yksi niistä on Leppäävaaran urheilupuiston vieressä ja se oli aika sopiva minulle - helpo mennä sinne ja takaisin.

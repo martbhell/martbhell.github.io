@@ -3,6 +3,8 @@ title: Common Passwords
 date: 2011-01-18
 category: it
 tags: it, lifehack, script
+<!-- prettier-ignore -->
+---
 
 So read in a [Swedish IDG]( http://www.idg.se/2.1085/1.363794/50-populara-losenord---som-du-bor-undvika "idg_password") today about the most common passwords.
 

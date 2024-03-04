@@ -3,6 +3,8 @@ title: BCFP - more studying
 date: 2011-08-23
 category: storage
 tags: bcfp, brocade, brocade, certified, fabric, professional, rehearse, san, storage, network, studying
+<!-- prettier-ignore -->
+---
 
 OK, so now you've been studying for a while? Read the material once or twice, made notes. Have you read more details about a command in the command reference guide, or more details about a technique in the FCIP Admin Guide or the FOS guide? **Or how do you do your studying?**
 

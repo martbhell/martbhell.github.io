@@ -3,6 +3,8 @@ title: Songs of the day 23st of March - 2011
 date: 2011-03-23
 category: finland
 tags: free, indie, music, streaming, thesixtyone
+<!-- prettier-ignore -->
+---
 
 Graciously taken from listening to thesixtyone.com today. Some links go to the youtube some to thesixtyone.com Please note that I rarely listen to the actual text of the songs, just the music and the rhythm. Primarily because I do not listen to them from my head phones, my hearing is a bit shot and the speakers now are from the laptop and a bit low volume.
 

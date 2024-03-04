@@ -3,6 +3,8 @@ title: Fibre Channel SAN - Zoning in Detail
 date: 2012-01-19
 category: storage
 tags: fibre, channel, san, storage, storage, area, network, storage, network, zoning
+<!-- prettier-ignore -->
+---
 
 [http://brasstacksblog.typepad.com/brass-tacks/2012/01/hard-zoning-versus-soft-zoning-in-a-fcfcoe-san.html](http://brasstacksblog.typepad.com/brass-tacks/2012/01/hard-zoning-versus-soft-zoning-in-a-fcfcoe-san.html)
 

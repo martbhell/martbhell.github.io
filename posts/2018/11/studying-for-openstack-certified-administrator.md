@@ -3,6 +3,8 @@ title: Studying for Openstack Certified Administrator
 date: 2018-11-04
 category: it
 tags: certification, cloud, openstack
+<!-- prettier-ignore -->
+---
 
 The plan : study a bit and then attempt the [coa](https://www.openstack.org/coa#coa-details) exam. If I don't pass then attend the course during openstack summit: [SUSE](https://www.openstack.org/summit/berlin-2018/summit-schedule/events/22735/rsvp-required-suse-two-day-training-openstack-administration-prepare-for-the-certified-exams-day-2﻿)
 
