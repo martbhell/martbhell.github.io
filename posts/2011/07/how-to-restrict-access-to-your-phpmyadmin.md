@@ -1,5 +1,4 @@
 ---
-
 title: How to restrict access to your phpmyadmin
 date: 2011-07-27
 category: it
