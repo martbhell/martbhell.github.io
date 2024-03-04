@@ -7,14 +7,14 @@ tags: orienteering, suunnistus, espoorastit, a-rata, ristikallio, kirkkonummi
 ---
 
 Suunistaa
-===
+---
 
 - A
 - 6.4km (juoksin 8.1km, 1h29min)
 - Ristikallio 2
 
 Miten
-===
+---
 
 K-13: ihan okay
 ---

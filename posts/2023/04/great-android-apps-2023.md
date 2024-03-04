@@ -6,7 +6,7 @@ tags: android, apps, it
 lang: en
 ---
 
-# Are you ready to take your Android experience to the next level? Then buckle up and get ready to discover some of the best Android apps of 2023
+## Are you ready to take your Android experience to the next level? Then buckle up and get ready to discover some of the best Android apps of 2023
 
 We all remember the days of using clunky task killers and relying on third-party apps to perform basic functions on our phones. But now, things have changed, and Android is better than ever. In fact, some of the apps we once relied on have become obsolete as Android has improved its own features.
 
@@ -28,7 +28,7 @@ So what are you waiting for? Head to the Google Play Store and start downloading
 
 My phone is a Samsung and I no longer have a tablet like in [2013](https://guldmyr.com/great-android-apps).
 
-# To compare, in 2013 I liked
+## To compare, in 2013 I liked
 
 - a flashlight
 - mybookdroid
@@ -39,7 +39,7 @@ My phone is a Samsung and I no longer have a tablet like in [2013](https://guldm
 - some different launcher
 - a task killer..
 
-## In 2023
+### In 2023
 
 My phone is a Samsung and I no longer have a tablet like in [2013](https://guldmyr.com/great-android-apps).
 
@@ -51,7 +51,7 @@ My phone is a Samsung and I no longer have a tablet like in [2013](https://guldm
 - but I use pushbullet!
 - default launcher and no task killer in use, but I think that's because the one inside android is pretty good now no?
 
-# Links
+## Links
 
 - [Guitartuna](https://play.google.com/store/apps/details?id=com.ovelin.guitartuna) for tuning guitar/bass/ukulele
 - [Simple ABP Free](https://play.google.com/store/apps/details?id=mdmt.sabp.free) really good audio book player

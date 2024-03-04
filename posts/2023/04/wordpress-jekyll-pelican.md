@@ -7,7 +7,7 @@ lang: en
 ---
 
 Background Story
-===
+---
 
 I had this great webhost.
 
@@ -20,7 +20,7 @@ Anyway, eventually I also had some websites with them and this blog used to live
 Until the other day when I think wordpress had gotten auto-updated beyond the now quite old PHP version.
 
 Let's try Jekyll They Say
-===
+---
 
 First I thought: hey how can I keep on paying very little money for this? Is exporting and importing the wordpress somewhere that? No. At least not on this one web hotell I checked :)
 

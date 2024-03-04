@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, jukola, yö, otsalamppu, porvoo, borgå
 ---
 
 Historia
-===
+---
 
 Olen mennyt jukolaan nyt aika monta vuotaa, ensimmäinen oli 2015 Lounas (Paimi, Salo lähellä).
 
@@ -27,7 +27,7 @@ Olen mennyt jukolaan nyt aika monta vuotaa, ensimmäinen oli 2015 Lounas (Paimi,
 |[2022 Porvoo](https://results.jukola.com/tulokset/en/j2023_ju/kilpailijat/1143/)|2|Johan Guldmyr|1038 (+25)|5:01:25|+2:18:30|1168/1621|2:44:52|1526679|
 
 Valmistautuminen
-===
+---
 
 Olen pitänyt lista missä olen kirjoitanyt:
 
@@ -39,7 +39,7 @@ Olen pitänyt lista missä olen kirjoitanyt:
 - miten sunnistus meni ja mitä voin parentaa
 
 Vinkkeja olen kirjoitanut itseleen
-===
+---
 
 - 2015: et tarvitse leimata k-pisteessä
 - 2019:

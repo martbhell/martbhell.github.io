@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, hs, d-rata, velskola, firmaliiga, d-lohko, lippu
 ---
 
 Suunnistaa
-===
+---
 
 - Lohko: d
 - 4.5km (juoksin 6.7km, 90min, 64/73)
@@ -15,7 +15,7 @@ Suunnistaa
 - [Livelox](https://www.livelox.com/Viewer/Firmaliiga-2023-syksy-1-kisa-Velskola/D?classId=644526&tab=player)
 
 Miten
-===
+---
 
 - K-4: mäen ympäri, juoksin liikaa allaspäin, tielle. Aika hyvin
 - 4-5: järkyttävä iso bummi. Sunnitelma oli juostaa metsällä järveen polku ja juostaa ympäri. Vaikeus ehkä tuli koska aloitin katsoa järveen ja yritin käyttä sen missä olin ja ilmeisesti oli vaikea arvioida missä olen sen mukaan. En katsonyt tarkasti eteenpäin, luulin että olin liikaa. Yksi lisä vaikeus oli että kartta oli 10000:1 - jostain syystä tuntui pidempi kuin yleensä. Olin väsynt ja en ollut treenanut juoksu riitäväks paljon kesällä.
@@ -28,7 +28,7 @@ Miten
 - 11-12: menin ylös liian aikaisin (siellä oli joku toinen radan rastti).
 
 Lopussa
-===
+---
 
 Mutta lopussa oli tosi hauskaa olla takaisin metsässä ja firmaliiga. Velskolla oli remontti ja saimme limosiinikuljetus Luukista :D
 

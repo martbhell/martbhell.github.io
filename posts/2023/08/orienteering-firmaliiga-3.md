@@ -7,7 +7,7 @@ tags: orienteering, suunnistus, hs, d-rata, haukkalampi, firmaliiga, d-lohko, ra
 ---
 
 Suunnistaa
-===
+---
 
 - Lohko: d
 - 4.5km (juoksin 5.9km, 67min, 56/87)
@@ -15,7 +15,7 @@ Suunnistaa
 - [Livelox](https://www.livelox.com/Viewer/Firmaliiga-2023-syksy-2-kisa-Haukkalampi/D?classId=648305&tab=player)
 
 Miten
-===
+---
 
 - K-2: Tuntui hyvältä ja juoksin suoraan.
 - 2-3: Käännyin liikaa vasemmalle ja enkä löytänyt väylää suolle, joten pyörisin siellä aika pahasti. Menetin noin 4 minuuttia. Juoksin aika kovaa K-2 välillä, joten harkitsisin ehkä hieman rauhallisempaa vauhtia.
@@ -28,6 +28,6 @@ Miten
 [![from rasti 2 to 3](images/2-3.20230822.firmaliiga.png "2-3")](images/2-3.20230822.firmaliiga.png)
 
 Lopussa
-===
+---
 
 Hyvä tunnelma. Meni paljon paremmin kuin viime viikon kilpailussa.
