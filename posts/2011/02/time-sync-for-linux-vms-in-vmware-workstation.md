@@ -52,14 +52,19 @@ still 0.000.
 
 **ntp.conf:**
 
-`tinker panic 0 restrict default kod nomodify notrap nopeer noquery`
-
-`restrict 127.0.0.1 restrict -6 ::1`
-
-`# Hosts on local network are less restricted. #restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap`
-
-`server 0.rhel.pool.ntp.org server 1.rhel.pool.ntp.org server 2.rhel.pool.ntp.org`
-
-`# Undisciplined Local Clock. This is a fake driver intended for backup # and when no outside source of synchronized time is available. #fudge  127.127.1.0 stratum 10`
-
-`driftfile /var/lib/ntp/drift keys /etc/ntp/keys restrict 0.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery restrict 1.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery restrict 2.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery`
+```text
+tinker panic 0 restrict default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1 restrict -6 ::1
+# Hosts on local network are less restricted.
+#restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap
+server 0.rhel.pool.ntp.org
+server 1.rhel.pool.ntp.org
+server 2.rhel.pool.ntp.org
+# Undisciplined Local Clock. This is a fake driver intended for backup # and when no outside source of synchronized time is available.
+#fudge  127.127.1.0 stratum 10
+driftfile /var/lib/ntp/drift
+keys /etc/ntp/keys
+restrict 0.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery
+restrict 1.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery
+restrict 2.rhel.pool.ntp.org mask 255.255.255.255 nomodify notrap noquery
+```

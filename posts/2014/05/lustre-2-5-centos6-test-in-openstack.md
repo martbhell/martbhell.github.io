@@ -23,7 +23,7 @@ Three VMs:
 With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building
 the server components. One needs to use the latest branch for 2.5 so the
 instructions are
-[https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821](https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821 "https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821")
+[https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821](https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821)
 
 ## Server side
 
@@ -31,7 +31,7 @@ instructions are
 kernel kernel).
 
 yum localinstall all files from:
-<http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86\_64/>
+<http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/>
 
 Next is to rebuild lustre kernels to work with the kernel you are running and
 the one you have installed for next
@@ -42,7 +42,7 @@ RPMS are here:
 
 For rebuilding these are also needed:
 
-y`um -y install kernel-devel\* kernel-debug\* rpm-build make libselinux-devel gcc`
+y`um -y install kernel-devel* kernel-debug* rpm-build make libselinux-devel gcc`
 
 basically:
 
@@ -59,10 +59,13 @@ basically:
 lustre and lustre modules.
 
 Not important?:
-`WARNING: /lib/modules/2.6.32-431.17.1.el6.x86\_64/weak-updates/kernel/fs/lustre/fsfilt\_ldiskfs.ko needs unknown symbol ldiskfs\_free\_blocks`
+
+```text
+WARNING: /lib/modules/2.6.32-431.17.1.el6.x86_64/weak-updates/kernel/fs/lustre/fsfilt_ldiskfs.ko needs unknown symbol ldiskfs_free_blocks`
+```
 
 ```bash
-/sbin/new-kernel-pkg --package kernel --mkinitrd --dracut --depmod --install 2.6.32.431.17.1.el6\_lustre
+/sbin/new-kernel-pkg --package kernel --mkinitrd --dracut --depmod --install 2.6.32.431.17.1.el6_lustre
 chkconfig lustre on
 ```
 
@@ -73,14 +76,19 @@ edit `/etc/modprobe.d/lustre.conf` and add the lnet parameters
 creating MDT:
 `mkfs.lustre --mdt --mgs --index=0 --fsname=wrk /dev/vdc1 mounting MDT: mkdir /mnt/MDT; mount.lustre /dev/vdc1 /mnt/MDT`
 
-creating
-OST: `mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1 mounting OST: mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1`
+creating OST:
+
+```bash
+mkfs.lustre --ost --index=0 --fsname=wrk --mgsnode=lustreserver /dev/vdc1
+# mounting OST:
+mkdir /mnt/OST1; mount -t lustre /dev/vdc1 /mnt/OST1
+```
 
 ## Client Side
 
 ```bash
 rpmbuild --rebuild --without servers
-cd /root/rpmbuild/RPMS/x86\_64 rpm -Uvh lustre-client\*
+cd /root/rpmbuild/RPMS/x86_64 rpm -Uvh lustre-client*
 ```
 
 add `modprobe.d/lustre.conf`

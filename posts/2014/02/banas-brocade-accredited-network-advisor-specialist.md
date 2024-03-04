@@ -7,9 +7,8 @@ tags: bna, brocade, certification, network, advisor, studying
 ---
 
 Finally got around to start preparing the last certificate/accreditation -
-[BANAS](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/curriculum.page "curriculum on brocade.com") -
-to complete the Brocade Data Center Track (ok, not last. There are plenty
-more!).
+[BANAS](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/curriculum.page)
+ to complete the Brocade Data Center Track (ok, not last. There are plenty more!).
 
 It looks like it's an accreditation showing that the taker can do some basic
 tasks in Brocade Network Advisor (BNA). This used to be a certification, so it's
@@ -27,10 +26,11 @@ studying recommendation, just my notes on how I'm practicing for it.
 - Use it with some switches attached.
 - Check out the "BNA 101 - Introduction to BNA" course on Brocade's training
   page. There is
-  also [BNA 200-WBT Brocade Network Advisor Training](http://www.brocade.com/downloads/documents/course_data_sheets/BNA200-WBT-DataSheet.pdf) but
-  I'm gonna try to do it without that.
+  also [BNA 200-WBT Brocade Network Advisor Training](http://www.brocade.com/downloads/documents/course_data_sheets/BNA200-WBT-DataSheet.pdf)
+  but I'm gonna try to do it without that.
 - Until May 15 2014 there is also
-  this: [http://community.brocade.com/t5/Certification/Free-Training-Through-May-15th-on-Brocade-Network-Advisor/ta-p/56511](http://community.brocade.com/t5/Certification/Free-Training-Through-May-15th-on-Brocade-Network-Advisor/ta-p/56511 "free training!")
+  this: [http://community.brocade.com/t5/Certification/Free-Training-Through-May-15th-on-Brocade-Network-Advisor/ta-p/56511](http://community.brocade.com/t5/Certification/Free-Training-Through-May-15th-on-Brocade-Network-Advisor/ta-p/56511)
+  free training!
 - Learn about the different licensing options and versions of the software.
   [FAQ](http://www.brocade.com/downloads/documents/faqs/brocade-network-advisor-faq.pdf)
   is useful.

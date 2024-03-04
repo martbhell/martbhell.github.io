@@ -49,7 +49,7 @@ parameters to send and how to send them, etc, that'll save you a lot of time.
 But even that is not enough, you really need to be experienced with Linux
 before. How to use the CLI and things like that. There are some good books
 around. Such as the book
-[UNIX and Linux System Administration Handbook](http://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0131480057 "Link to Amazon.").
+[UNIX and Linux System Administration Handbook](http://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0131480057).
 I haven't read all of it yet, actually just the part until Perl scripting, which
 is only the 2nd chapter! The stuff before chapter 3 are just basic linux
 administration / using the system. After that it goes into booting, filesystem,

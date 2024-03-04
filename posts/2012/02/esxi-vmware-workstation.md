@@ -87,14 +87,14 @@ this is how to update your OI (no questions asked, just update everything).
 pkg install pkg:/package/pkg pkg update
 
 You can of course do a lot more, see
-[http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management](http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management "http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management")
+[http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management](http://wiki.openindiana.org/oi/3.+Installing+software+and+package+management)
 
 #### Installing stuff
 
-pkg install irssi
+`pkg install irssi`
 
 easy peasy, no problems at all (and screen is installed by default!).
 
 JAVA is already installed by default (1.6.0.26).
 
-java -version
+`java -version`

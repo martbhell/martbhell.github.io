@@ -11,7 +11,7 @@ tags: cfengine, cluster, clustering, cms, configuration, management, software
 It's a (old) software that is used to make sure that (for example) the same
 config files are used on all machines. There are several other CMSs, for example
 [puppet.](http://puppetlabs.com/ "puppetlabs.com") Wikipedia has a nice
-[overview](http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#Basic_properties "on wikipedia")
+[overview](http://en.wikipedia.org/wiki/Comparison_of_open_source_configuration_management_software#Basic_properties)
 of them.
 
 Let's use the

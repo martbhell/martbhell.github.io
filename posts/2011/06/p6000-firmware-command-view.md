@@ -13,7 +13,7 @@ is out, or has been for a while now. You can find it on
 link above.
 
 The Command View 9.4 release notes are
-[here](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=18964&prodSeriesId=471497 "cv 9.4 release notes").
+[here](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=18964&prodSeriesId=471497).
 
 Extra nice stuff (besides the obvious ones like new hw support):
 
@@ -28,7 +28,7 @@ Extra nice stuff (besides the obvious ones like new hw support):
 - SSSU 9.4 - took away the 10s delay when executing commands.
 
 And release notes for the XCS 10M is
-[here](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=12169&prodSeriesId=5062117 "hp.com").
+[here](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=12169&prodSeriesId=5062117).
 
 More hw stuff ;)
 

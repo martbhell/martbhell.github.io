@@ -27,7 +27,8 @@ subjects and for the record some subjects I decided to skip.
 
 I'm taking the course over at Tieturi here in Helsinki and they have published
 the schedule for the course, with quite
-[detailed o](http://www.tieturi.fi/kurssit/kurssi.html?course=83902366&category=RedHat%2BLinux&city=Helsinki&training=25.06.2012 "on tieturi.fi")utline.
+[detailed](http://www.tieturi.fi/kurssit/kurssi.html?course=83902366&category=RedHat%2BLinux&city=Helsinki&training=25.06.2012)
+ outline.
 
 This outline of the course can with benefit be used to see if you missed any
 terms or functions while going through the objectives.

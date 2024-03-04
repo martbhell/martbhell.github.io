@@ -149,7 +149,7 @@ parameters to ./configure. This will be the topic of a future post.
 
 The above rpmbuild should create rpms for the running kernel. If you want to
 create rpms for a non-running kernel
-[you are supposed to be able to run.](http://wiki.whamcloud.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel "whamcloud wiki")
+[you are supposed to be able to run.](http://wiki.whamcloud.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel)
 
 ## Configure Lustre
 

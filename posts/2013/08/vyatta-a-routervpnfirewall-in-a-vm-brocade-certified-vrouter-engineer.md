@@ -27,10 +27,9 @@ networks.
 
 To install it to disk: hit "install system" at the CLI after it's booted.
 
-More
-documentation: [http://docs.vyatta.com/current/wwhelp/wwhimpl/js/html/wwhelp.htm](http://docs.vyatta.com/current/wwhelp/wwhimpl/js/html/wwhelp.htm) -
-there are descriptions how to get for example ssh management working ( set
-service ssh ).
+More documentation: [http://docs.vyatta.com/current/wwhelp/wwhimpl/js/html/wwhelp.htm](http://docs.vyatta.com/current/wwhelp/wwhimpl/js/html/wwhelp.htm)
+
+- there are descriptions how to get for example ssh management working ( set service ssh ).
 
 The server is basically Debian with a more recent kernel (6.6 has 3.3) and a
 shell to make it more switch-like. It actually uses the bash completion to make

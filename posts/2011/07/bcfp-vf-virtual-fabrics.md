@@ -14,9 +14,11 @@ are questions concerning it in the Nutshell Guide and the BCFP 8 knowledge
 assessment. Also it is mentioned in the pre-requisites for the BCFP (the AFS
 141).
 
-[Brocade's overview page of Virtual Fabrics](http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/virtual_fabrics.page "overview")[.](http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/virtual_fabrics.page "overview")
+[Brocade's overview page of Virtual Fabrics](http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/virtual_fabrics.page)
 
-[FAQ on Virtual Fabrics](http://www.brocade.com/downloads/documents/faqs/FOS6%202_Virtual%20Fabrics%20FAQ%201-9-2009%20Final.pdf "faq")
+[overview](http://www.brocade.com/solutions-technology/technology/platforms/fabric-os/virtual_fabrics.page)
+
+[FAQ on Virtual Fabrics](http://www.brocade.com/downloads/documents/faqs/FOS6%202_Virtual%20Fabrics%20FAQ%201-9-2009%20Final.pdf)
 
 There is also quite a lot of information about VF in the FOS Administration
 Guide. You can find this guide in lots of places but it is in the exam

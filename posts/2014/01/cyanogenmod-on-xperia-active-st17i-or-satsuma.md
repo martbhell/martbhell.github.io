@@ -41,7 +41,7 @@ that's probably safer than installing them from flashtool (unsigned).
 Run cmd as administrator if it doesn't work or give the -waiting for device-.
 
 Get the key from Sony via
-[http://unlockbootloader.sonymobile.com](http://unlockbootloader.sonymobile.com "http://unlockbootloader.sonymobile.com")/ -
+[http://unlockbootloader.sonymobile.com](http://unlockbootloader.sonymobile.com)/ -
 Thanks Sony!
 
 ## 4. Install CM 9.1.0

@@ -6,7 +6,7 @@ tags: 09534000, 10.000.00, command, view, 9.4, dynamic, lun, migration, eva, eva
 <!-- prettier-ignore -->
 ---
 
-[http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/XCS-10-000-00/m-p/4789795](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/XCS-10-000-00/m-p/4789795 "to hp forum")
+[http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/XCS-10-000-00/m-p/4789795](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/XCS-10-000-00/m-p/4789795)
 
 2011-07-12: Updated with new link to new HP ITRC forum.
 
@@ -23,7 +23,7 @@ migration "for r coming EVA x400 systems._ _In addition, the new EVA Command
 View v.9.4, which for r all generations of EVA systems can be used."_
 
 The newsletter was in German - it mentions
-[Thin Provisioning](http://www.unitiv.com/it-solutions-blog/bid/62903/5-Ways-Thin-Provisioning-Saves-You-Money "5 good things about TP - on unitiv.com")
+[Thin Provisioning](http://www.unitiv.com/it-solutions-blog/bid/62903/5-Ways-Thin-Provisioning-Saves-You-Money)
 and Dynamic LUN Migration ([a blog post about
 Tiering](<http://storageexpert.wordpress.com/2011/04/25/the-new-storage-services-catalog-employing-storage-auto-tiering-and-policies/>
 "by "storageexpert"")). Especially interesting I find that the x400 will also

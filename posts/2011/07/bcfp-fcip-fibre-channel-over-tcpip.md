@@ -104,12 +104,12 @@ with half and you're not oversubscribing. There, easy to explain in words :d
 ### FX8-24
 
 2 x 10GbE ports, 12 x 1GbE and 12 x FC8
-[Link to hardware page on Brocade.](http://www.brocade.com/products/all/san-backbone-director-blades/product-details/FX8-24-extension-blade/specifications.page "on brocade.com")
+[Link to hardware page on Brocade.](http://www.brocade.com/products/all/san-backbone-director-blades/product-details/FX8-24-extension-blade/specifications.page)
 
 ### 7800
 
 6 x 1GbE ports, 16 x FC8
-[Link to hardware page on Brocade.](http://www.brocade.com/products/all/switches/product-details/7800-extension-switch/specifications.page "on brocade.com")
+[Link to hardware page on Brocade.](http://www.brocade.com/products/all/switches/product-details/7800-extension-switch/specifications.page)
 
 ## Steps
 

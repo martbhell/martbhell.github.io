@@ -70,11 +70,11 @@ system.
 
 The syntax to test the hard drive cache:
 
-`martbhell@bottle:~$ sudo hdparm -T /dev/sda`
-
-`/dev/sda: Timing cached reads:   688 MB in  2.00 seconds = 343.59 MB/sec martbhell@bottle:~$ sudo hdparm -tT /dev/sda`
-
-`/dev/sda: Timing cached reads:   774 MB in  2.00 seconds = 386.65 MB/sec Timing buffered disk reads:  102 MB in  3.00 seconds =  33.95 MB/sec`
+```bash
+martbhell@bottle:~$ sudo hdparm -T /dev/sda
+/dev/sda: Timing cached reads:   688 MB in  2.00 seconds = 343.59 MB/sec martbhell@bottle:~$ sudo hdparm -tT /dev/sda
+/dev/sda: Timing cached reads:   774 MB in  2.00 seconds = 386.65 MB/sec Timing buffered disk reads:  102 MB in  3.00 seconds =  33.95 MB/sec
+```
 
 So that looks good. I feel better now :)
 

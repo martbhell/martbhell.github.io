@@ -68,7 +68,7 @@ is forwarded to DID. If not, only PLOGI is dropped; edge fabrics' zoning
 enforcement takes care of the rest.
 
 I found
-[this document](http://education.emc.com/main/common/documents/ks_articles/brocade_fibre_channel_routing.pdf "on emc.com and it's a pdf")
+[this document](http://education.emc.com/main/common/documents/ks_articles/brocade_fibre_channel_routing.pdf)
 on EMC's webpage (it's from 2007 so a bit outdated and it has EMC's names of the
 Brocade products) but it explains the concept pretty nicely.
 

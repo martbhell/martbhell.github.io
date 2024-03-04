@@ -45,7 +45,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
   above to the latest released one by HP.
 
 - **2011-02-24:** Found link to
-  [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1 "FOS 6.0.x and 5.1.x")
+  [5.2.x and 6.0.x FOS](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&cc=us&prodTypeId=12169&prodSeriesId=3414314&prodNameId=3414317&swEnvOID=54&swLang=8&mode=2&taskId=135&swItem=co-86625-1)
   on HP.com with the help of an ITRC thread.
 - **2011-04-21:** Added links for correlating Brocade Product name, model number
   and HP name. Latest in 6.4.x series is now 6.4.1b
@@ -61,14 +61,14 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
   firmwares. EMC
   [also has Brocade products](http://www.brocade.com/partnerships/oems/index.page "on brocade.com").
 - **2011-05-18:** Added a link to a post on
-  [HP's support forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new HP's ITRC Forum") where
-  the post helped a bit. Also made post a little easier, wrote a little about
+  [HP's support forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345)
+  where the post helped a bit. Also made post a little easier, wrote a little about
   the release.plist confusion.
 - **2011-05-24:** Added example to show that driver updates are important. Some
   more restructuring of the article.
 - **2011-07-12:** Added FOS 7.0.0a
 - **2011-07-14:** Added
-  [link](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/mostViewedResults/?d-8034386-p=&d-8034386-o=&sort=updatedDate&tableId=tableA&dir=desc&page=&d-8034386-s=&showSecondTableA=&action=tableAction&sp4ts.oid=3742051 "searching for HP SAN Switch b-series 8/80 advisories")
+  [link](http://h20566.www2.hp.com/portal/site/hpsc/public/psi/mostViewedResults/?d-8034386-p=&d-8034386-o=&sort=updatedDate&tableId=tableA&dir=desc&page=&d-8034386-s=&showSecondTableA=&action=tableAction&sp4ts.oid=3742051)
   to HP knowledge base and updated a link to an ITRC forum thread to point to
   the new forum.
 - **2011-09-29:** Added FOS 7.0.0b and section about CF cards.
@@ -83,7 +83,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2012-01-02:** Added FOS 7.0.0c
 - **2012-01-09:** Added EMC branded switches default pw
 - **2012-02-14:** Added HP's
-  [link](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareIndex.jsp?lang=en&cc=us&prodNameId=315080&prodTypeId=12169&prodSeriesId=315078&swLang=8&taskId=135&swEnvOID=54 "on hp.com")
+  [link](http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareIndex.jsp?lang=en&cc=us&prodNameId=315080&prodTypeId=12169&prodSeriesId=315078&swLang=8&taskId=135&swEnvOID=54)
   to FOS 5.x. firmware.
 - **2012-02-15:** Added
   [IBM's link](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com")
@@ -99,8 +99,8 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2012-04-27:** Rewrote some part of the upgrade section.
 - **2012-06-07:** Added 6.4.3 and 7.0.1b
 - **2012-06-14:** Added link to
-  [Brocade FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf "on brocade.com") in
-  decide section.
+  [Brocade FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf)
+  in decide section.
 - **2012-10-27:** Some grammar updates and 16G FOS 7.x requirement. 6.4.3b and
   7.0.2.
 - **2012-11-05:** Updated links to release notes. Perhaps it's time
@@ -119,7 +119,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2013-05-02:** Updated link to FOS Target Path.
 - **2013-06-23:** Changed some ftp:// links to http://
 - **2013-07-16:** Added link to IBM's
-  [pdf](http://www.ibm.com/developerworks/aix/library/au-aix-san-switch-firmware/au-aix-san-switch-firmware-pdf.pdf "pdf")
+  [pdf](http://www.ibm.com/developerworks/aix/library/au-aix-san-switch-firmware/au-aix-san-switch-firmware-pdf.pdf)
   with pictures for firmware upgrade.
 - **2013-08-03:** 6.4.3e by IBM - not available by HP yet. Disruptive upgrades
   are OK from 6.2 to 6.4.
@@ -137,7 +137,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
   couldn't find any important ones when I compared 6.3.1b). So far it seems this
   restriction of access to firmwares only applies to HP servers.
 - **2014-02-07:** Added new link to
-  [HP's page for FOS 5.2 to 6.3](http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm "http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm")
+  [HP's page for FOS 5.2 to 6.3](http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm)
    Thanks Leo R!
 - **2014-02-11:** Added 7.2.0b and 7.1.1c (HP have 7.1.1c release notes up but
   IBM does not - to find Brocade version go to IBM's download the firmware page
@@ -307,7 +307,7 @@ HP: HP B-series Connectivity stream (available in
 "[Brocade FOS Target Path](http://www2.brocade.com/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/target-path-selection-guide/brocade-fos-target-path.pdf)"
 Other: Contact them for their compatibility matrices, for example IBM, HDS, EMC,
 Fujitsu. Brocade also has their own
-"[Brocade Fabric OS 7.x Compatibility Matrix](https://docs.broadcom.com/docs/12379670?eula=true "pdf on brocade.com - original link found on Brocade's Compatibility Page")"
+"[Brocade Fabric OS 7.x Compatibility Matrix](https://docs.broadcom.com/docs/12379670?eula=true)"
 which lists compatibility with other vendors.
 
 You could in principle also say that (some blades in directors are excepted from
@@ -390,15 +390,15 @@ Brocade release notes in .pdf:
 
 - [5.2.3](http://public.dhe.ibm.com/storage/san/fos5/v5.2.3_ReleaseNotes_v1.0.pdf)
 - [5.3.1c](http://public.dhe.ibm.com/storage/san/fos5/v5.3.2c_ReleaseNotes_v1.0.pdf)
-- [6.0.0c](http://service.boulder.ibm.com/storage/san/fos6/v6.0.0c_ReleaseNotes_v2.0.pdf "on ibm's ftp")
-- [6.1.2c](http://service.boulder.ibm.com/storage/san/fos6/v6.1.2c_ReleaseNotes_v1.0.pdf "on ibm.com")
+- [6.0.0c](http://service.boulder.ibm.com/storage/san/fos6/v6.0.0c_ReleaseNotes_v2.0.pdf)
+- [6.1.2c](http://service.boulder.ibm.com/storage/san/fos6/v6.1.2c_ReleaseNotes_v1.0.pdf)
 - [6.2.2g](http://service.boulder.ibm.com/storage/san/fos6/v6.2.2g_ReleaseNotes_v1.0.pdf)
-- [6.3.2e](http://service.boulder.ibm.com/storage/san/fos6/v6.3.2e_ReleaseNotes_v1.0.pdf "on ibm.com")
+- [6.3.2e](http://service.boulder.ibm.com/storage/san/fos6/v6.3.2e_ReleaseNotes_v1.0.pdf)
 - [6.4.3h](http://public.dhe.ibm.com/storage/san/fos6/v6.4.3h_ReleaseNotes_v1.0.pdf)
-- [7.0.2e](http://public.dhe.ibm.com/storage/san/fos7/v7.0.2e_ReleaseNotes_v1.0.pdf "release notes")
-- [7.1.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf")
+- [7.0.2e](http://public.dhe.ibm.com/storage/san/fos7/v7.0.2e_ReleaseNotes_v1.0.pdf)
+- [7.1.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.1.2b_ReleaseNotes_v1.0.pdf)
 - [7.2.1g](http://service.boulder.ibm.com/storage/san/fos7/v7.2.1g_ReleaseNotes_v1.0.pdf)
-- [7.3.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf "http://service.boulder.ibm.com/storage/san/fos7/v7.3.1a_ReleaseNotes_v1.0.pdf")
+- [7.3.2b](http://service.boulder.ibm.com/storage/san/fos7/v7.3.2b_ReleaseNotes_v1.0.pdf)
 - [7.4.2](http://service.boulder.ibm.com/storage/san/fos7/v7.4.2d_ReleaseNotes_v3.0.pdf)
 - [8.0.2f](http://service.boulder.ibm.com/storage/san/fos8/v8.0.2f_ReleaseNotes_v2.0.pdf)
 - [8.1.2g](http://public.dhe.ibm.com/storage/san/fos8/v8.1.2g_ReleaseNotes_v3.0.pdf)
@@ -497,10 +497,11 @@ Basically, you need to update in steps.
 To get FOS 5.2.1b and 6.0.0c firmware: Contact OEM Vendor or Brocade. I've found
 that two vendors have the firmware available online for free: HP and IBM, see
 below: Eventually after looking around on HP's old pages we found to
-[http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm](http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm) -
-[this link sometimes changes](http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm).
+[http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm](http://ftp.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm)
+and [this link sometimes changes](http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm).
 
-[Link to IBM's page for downloading FOS 6 firmwares](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220 "get brocade firmwares here").
+[Link to IBM's page for downloading FOS 6 firmwares](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003220).
+
 This has firmwares going back all the way to FOS 2.6, it even has Fabric OS
 6.0.0c and 5.2.3. On the page they have listed release notes and a little
 further down there is a link called "Release 6 Firmware". Actually, if you click
@@ -515,10 +516,10 @@ and ftp).
 
 ### Equivalent Product Names
 
-[Page with the equivalent Brocade and HP product names.](http://www.brocade.com/partnerships/oems/hp/products_solutions.page "on brocade.com")
-[Page with the model number as seen in switchshow and HP's model and Brocade's model.](https://support.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0100588 "on hp.com emr_na-c01777657")
+[Page with the equivalent Brocade and HP product names.](http://www.brocade.com/partnerships/oems/hp/products_solutions.page)
+[Page with the model number as seen in switchshow and HP's model and Brocade's model.](https://support.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0100588)
 This is a good one.
-[Page for correlating IBM and Brocade product names.](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com")
+[Page for correlating IBM and Brocade product names.](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855)
 
 ### Recommendations
 
@@ -578,7 +579,7 @@ Other ways:
 - Firmware can also be upgraded through the web interface (click on switch admin
   and then on firmware download). You will still need an FTP/SCP server for this
   though. See
-  the [web tools admin guide](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c01731559/c01731559.pdf "web tools admin guide for fos 6.2.x")
+  the [web tools admin guide](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c01731559/c01731559.pdf)
   page 73-74 (FOS 6.2.x but it hasn't moved).
 
 FileZilla is a free FTP-server that works well. There are many alternatives
@@ -623,7 +624,7 @@ Java version that's supported is listed in the release notes of the Fabric OS.
 
 ## Upgrade
 
-[Here on HP's Support Forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new ITRC")
+[Here on HP's Support Forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345)
 are some more notes about v6.x. Basic steps:
 
 Note: version 6 does not require to specify the exact folder location SWBDxx: it
@@ -642,7 +643,7 @@ just needs the root containing "the install" file
 CLI Command to start the update process is **firmwaredownload** - this starts
 the interactive version, it is possible to specify user, directory, host
 directly via the CLI. See the
-[Command Reference Guide](http://www.brocade.com/content/html/en/command-reference-guide/fos-741-commandref/wwhelp/wwhimpl/js/html/wwhelp.htm "Link to manuals for HP B-series switches on hp.com")
+[Command Reference Guide](http://www.brocade.com/content/html/en/command-reference-guide/fos-741-commandref/wwhelp/wwhimpl/js/html/wwhelp.htm)
 for details. There are reference guides for each major Fabric OS release.
 
 #### Specifying Directory

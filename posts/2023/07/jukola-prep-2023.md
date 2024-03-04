@@ -16,6 +16,7 @@ Salo lähellä).
 
 - Yleensä on ollut neljäs / viides osuus mutta katsotaan:
 
+<!-- markdownlint-disable MD013 -->
 | vuosi                                                                                           | osuus | nimi          | sijainti viestissä | joukkue tulos (kun vaihdoin) | joukkue aika (kun vaihdoin) | osuus sijainti | osuus aika |
 | ----------------------------------------------------------------------------------------------- | ----- | ------------- | ------------------ | ---------------------------- | --------------------------- | -------------- | ---------- | ------- |
 | [2015 Luona (Paimio)](https://results.jukola.com/tulokset/en/j2015_ju/kilpailijat/1030/)        | 4     | Johan Guldmyr | 1353 (+182)        | 9:37:28                      | +4:43:23                    | 1579/1647      | 2:19:35    |
@@ -26,6 +27,7 @@ Salo lähellä).
 | [2021 Napapiiri (Rovaniemi)](https://results.jukola.com/tulokset/en/j2021_ju/kilpailijat/1173/) | 4     | Johan Guldmyr | 778 (-11)          | 11:24:21                     | +6:32:56                    | 778/836        | 2:12:17    | 1242624 |
 | [2022 Lukkari (Mynämäki)](https://results.jukola.com/tulokset/en/j2022_ju/kilpailijat/1133/)    | 5     | Johan Guldmyr | 1308 (+12)         | 13:18:40                     | +8:01:17                    | 1319/1396      | 2:46:24    | 1242624 |
 | [2022 Porvoo](https://results.jukola.com/tulokset/en/j2023_ju/kilpailijat/1143/)                | 2     | Johan Guldmyr | 1038 (+25)         | 5:01:25                      | +2:18:30                    | 1168/1621      | 2:44:52    | 1526679 |
+<!-- markdownlint-disable MD013 -->
 
 ## Valmistautuminen
 

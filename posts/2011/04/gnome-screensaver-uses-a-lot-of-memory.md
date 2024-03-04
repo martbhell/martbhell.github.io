@@ -8,7 +8,7 @@ tags: dwm, gnome, screensaver, linux, memory, memory, hog, useage
 
 Just checked out a memory useage script (because honestly I find top a but too
 complicated). I found one that looks good on
-[asim.pk](http://www.asim.pk/2011/03/28/find-memory-consumed-by-currently-running-processes-on-linux/ "memory useage perl script")
+[asim.pk](http://www.asim.pk/2011/03/28/find-memory-consumed-by-currently-running-processes-on-linux/)
 . The script is a nice little perl script. Just download it from the link and
 set chmod +x ps_mem.pl and you can run it with "sudo ps_mem.pl", you need to be
 root for some reason to run this script.

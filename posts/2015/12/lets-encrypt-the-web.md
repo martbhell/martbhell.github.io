@@ -24,7 +24,8 @@ on the webhost (not as root):
 
 you should read scripts before running anything, there are for
 example [acme-tiny](https://github.com/diafygi/acme-tiny),
-[gethttpsforfree.com](https://gethttpsforfree.com/) and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that
+[gethttpsforfree.com](https://gethttpsforfree.com/)
+ and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that
 might be better. #mozilla has some server side SSL recommendations
 on <https://wiki.mozilla.org/Security/Server_Side_TLS>
 
