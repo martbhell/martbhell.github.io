@@ -8,8 +8,6 @@ tags: ctf, pdftotext, python, programming, language, security, sudo, trail, of, 
 
 Hoe the season to be jolly! Been giving a few [CTFs](https://en.wikipedia.org/wiki/Capture_the_flag_(disambiguation))  lately. It started with the disobey 2020 [puzzle](https://disobey2020.github.io/) to get the hacker ticket. Then there was the [OverTheWire](https://overthewire.org/)'s 2019 advent CTF. And finally this one, the SANS holiday hackmechallenge - [KringleCon](https://holidayhackchallenge.com/2019/) 2019. As of writing I got what felt like quite far in the disobey but got real nice stuck in the second keyhole. For OTF I found a similar but slightly easier challenge on the 6th day December, but did not manage to get the key. Most others except the first and challenge-zero I didn't really have time for. So with not so much progress it was very nice to take a step back and try out KringleCon where I managed to get a bit further!
 
-\[su\_accordion\] \[su\_spoiler title="TLDR"\]
-
 Short tldr of methods to answers to the objectives
 
 1. talkt to santa: go upupuppu and click click click :)
@@ -25,7 +23,6 @@ Short tldr of methods to answers to the objectives
 11. elfscrow: So. Hard. Learnt a bit more assembly reading. Used IDA this time instead of my previous attempts with radare2. Wonder when I'll get better at these :)
 12. sleigh shop door. also very fun to unlock those locks! Did not solve it under 5s but the one slower than that.
 13. filter out poisoned: ugh this one was tedious. Actually this and previous I did spend some time trying to learn them, but in the end found a write-up that was published too early (and later removed but still in google cache..)
-\[/su\_spoiler\] \[/su\_accordion\]
 
 ## Getting on with it
 
@@ -122,7 +119,7 @@ Could have found this with a recurse grep for temperature -e angle -e param..
 
 The solution:
 
-```
+```bash
 (Invoke-WebRequest -Uri http://localhost:1225/api/off).RawContent                                       $correct_gases_postbody = @{O='6';H='7';He='3';N='4';Ne='22';Ar='11';Xe='10';F='20';Kr='8';Rn='9'}      (Invoke-WebRequest -Uri http://localhost:1225/api/gas -Method POST -Body $correct_gases_postbody).RawContent
 (Invoke-WebRequest http://127.0.0.1:1225/api/angle?val=65.5).RawContent
 (Invoke-WebRequest http://127.0.0.1:1225/api/temperature?val=-33.5).RawContent
@@ -135,7 +132,7 @@ The solution:
 
 - Iptables/ smart bracelet one: think I was close or did complete this but Kent did not agree? Went back and tried this again slowly by first writing the commands in a text file
 
-```
+```bash
 #1
 sudo iptables -P FORWARD DROP
 
@@ -170,7 +167,6 @@ Kent TinselTooth: Great, you hardened my IOT Smart Braces firewall!
 
 - Ah this isfun! While poking through the web source after fixing the smartbracelet found the URL to the sleigh shop in teh source. It had a bunch of locks.
 
-```
 haha! if you reload the page the codes needed are different!
 
 1. B46DU583 - top of the console
@@ -181,29 +177,32 @@ ha this was funneh, so clicking around the tabs found a javascript that needed s
 
 so I ran that in the console with the values found in if statements and eventually:
 
-console.log(_0x1e21["jIdunh"]);
+`console.log(_0x1e21["jIdunh"]);`
 
  and it printed a bunch of things, and element 34 had an image:
 
+```bash
 console.log(_0x1e21["jIdunh"][34]);
 VM3008:1 images/73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12.png
+```
 
 which was image with combination to the 3rd lock
 
-4. ILMJRNTP found in local storage
-5 CJ4WCMG4 - <title></title>
+1. ILMJRNTP found in local storage
+1. CJ4WCMG4 - `<title></title>`
 
-6. from the card.. Y3WJVE01 sticker - but if one removes the hologram CSS the letters are in a different order JYV0EW13. 
-7. G7LDS1LS - font family
+1. from the card.. Y3WJVE01 sticker - but if one removes the hologram CSS the letters are in a different order JYV0EW13.
+1. G7LDS1LS - font family
 
-8 VERONICA In the event that the .eggs go bad, you must figure out who will be sad.
+1. VERONICA In the event that the .eggs go bad, you must figure out who will be sad.
 From client.js and then deobfuscated to make it a bit readable and just read through
 
-9 8SEOGRW1
+1. 8SEOGRW1
 chakra in css file
 
-https://sleighworkshopdoor.elfu.org/css/styles.css/73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12
-10. compopnent.swab, bunch of things around lock c10
+<https://sleighworkshopdoor.elfu.org/css/styles.css/73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12>
+
+1. compopnent.swab, bunch of things around lock c10
 
 finding .locks > li > .lock.c10 .cover
 
@@ -217,30 +216,33 @@ console.log says "Missing macaroni"
 
 In the code there's:
 
+```bash
  console["log"]("Well done! Here's the password:");
  console[_0x1e21("0x45")]("%c" + args["reward"], _0x1e21("0x46"));
+ ```
 
 In the console there's this whenever one presses the unlock:
 
+```bash
 73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 Error: Missing macaroni!
     at HTMLButtonElement.<anonymous> (73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1)
 (anonymous) @ 73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1
+```
 
-there's a bunch of "<div class="component gnome, mac, swab" with data-codes: XJ0 A33 J39
+there's a bunch of iv class="component gnome, mac, swab" with data-codes: XJ0 A33 J39
 
 Dragging the components further down changed the error and printed this in the console:
 
-Well done! Here's the password:
-73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 The Tooth Fairy
-73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 You opened the chest in 6291.088 seconds
-73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 Well done! Do you have what it takes to Crack the Crate in under three minutes?
-73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 Feel free to use this handy image to share your score!
-```
+Well done! Here is the password:
+
+> 73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 The Tooth Fairy
+> 73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 You opened the chest in 6291.088 seconds
+> 73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 Well done! Do you have what it takes to Crack the Crate in under three minutes?
+> 73cda8f4-6dc7-4edc-adb8-b2bd4b3ecd12:1 Feel free to use this handy image to share your score!
 
 - Doing the combination locks in under 3 minutes I think can be done manually.
   - But nice thing to do would be to enter a bunch of commands into the browser console to help with some programmatically. Maybe one can enter javascript to also enter the numbers into the locks??
 
-```
 console.log(document.title)
 some are maybe fixed??:
 VERONICA
@@ -248,15 +250,14 @@ KD29XJ37
 
 However, after doing that as fast as I could manually:
 
-You opened the chest in 150.151 seconds
-621c8819-1d6a-4d77-bd41-5214a6beccf5:1 Very impressive!! But can you Crack the Crate in less than five seconds?
-621c8819-1d6a-4d77-bd41-5214a6beccf5:1 Feel free to use this handy image to share your score!
-```
+> You opened the chest in 150.151 seconds
+> 621c8819-1d6a-4d77-bd41-5214a6beccf5:1 Very impressive!! But can you Crack the Crate in less than five seconds?
+> 621c8819-1d6a-4d77-bd41-5214a6beccf5:1 Feel free to use this handy image to share your score!
 
 - For that I'm thinking burp suite to automate the browser is needed?
 - When inside the Sled Shop there was a request to get the IP for the connection with longest duration:
 
-```
+```bash
 head conn.log|jq '.["id.orig_h"],.duration' -c 'sort_by(.duration)'
 cat conn.log|jq -s -c 'sort_by(.duration)' > /tmp/sorted
 cat /tmp/sorted#... took forever, then just looked at the bottom:
@@ -327,7 +328,7 @@ def read_tensor_from_image_bytes(imagebytes, input_height=299, input_width=299, 
     result = sess.run(normalized)
     return result
 
-# above is from predict_images_using_trained_model.py because python and import meh
+########### above is from predict_images_using_trained_model.py because python and import meh
 
 ###########
 
@@ -490,7 +491,7 @@ sqlmap --url="https://studentportal.elfu.org/application-check.php?elfmail=my%40
 
 - was needed to get sqlmap to find some techniques. Presumably the token only worked for the first tests.
 
-```
+```bash
 #SNIPSNIP
 Parameter: elfmail (GET)
     Type: boolean-based blind
@@ -504,7 +505,7 @@ Parameter: elfmail (GET)
 
 Could not get the above queries to work in a curl.. maybe some escape messup. But sqlmap --users find stuff.
 
-```
+```bash
 [18:51:19] [INFO] retrieved: 'elfu'
 [18:51:20] [INFO] retrieved: 'applications'
 [18:51:21] [INFO] retrieved: 'elfu'
@@ -514,7 +515,7 @@ Could not get the above queries to work in a curl.. maybe some escape messup. Bu
 
 sqlmap had a nice --sql-shell and with that one could "select \* from elfu.krampus" which got us some paths:
 
-```
+```bash
 select * from elfu.krampus [6]:
 [*] /krampus/0f5f510e.png, 1
 [*] /krampus/1cc7e121.png, 2
@@ -532,7 +533,7 @@ Crypto then. Hint is [https://www.youtube.com/watch?v=obJdpKDpFBA&feature=youtu.
 
 Running an encryption tells us it uses unix epoch as a seed and a hint to the challenge was " We know that it was encrypted on December 6, 2019, between 7pm and 9pm UTC. " This is from **1575658800 to 1575666000** . There are some super\_secure\_random and super\_secure\_srand functions found with IDA freeware. Probably they are not super. [https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey](https://docs.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-cryptimportkey) for example is one in use. I wonder what the difference with --insecure is? One error talks about [DES-CBC](https://crypto.stackexchange.com/questions/62771/is-des-secure-under-cbc) which internet says is insecure. It uses 56-bits and 8bytes. Stack of do\_encrypt also says "dd 8" so yay?
 
-```
+```bash
 00000000 ; [00000008 BYTES. COLLAPSED UNION  _LARGE_INTEGER. PRESS CTRL-NUMPAD+ TO EXPAND]
 00000000 ; [00000008 BYTES. COLLAPSED STRUCT $FAF74743FBE1C8632047CFB668F7028A. PRESS CTRL-NUMPAD+ TO EXPAND]
 ```
@@ -548,7 +549,7 @@ there is a loop (8) and inside that it calls super\_secure\_random which looks c
 
 which has
 
-```
+```bash
 rseed * 214013 + 2531011
 # the disasembled then does:
 sar     eax, 10h
@@ -561,7 +562,7 @@ And here I learnt that >> in python is the sar.
 
 After goin walking thought a bit about what is the end goal here. And it is not the key, but it could be. Right now plan is to generate the secret-id, because the secret-id is what is used to decrypt with the tool, not the key. But maybe the uuid is something you only get from the escrow API server.
 
-```
+```bash
 $ curl -XPOST http://elfscrow.elfu.org/api/store -d 1234567890abcdef
 0e5b05dd-e132-42aa-b699-1829d3e23e2f
 $ curl -XPOST http://elfscrow.elfu.org/api/retrieve -d 0e5b05dd-e132-42aa-b699-1829d3e23e2f
@@ -570,7 +571,7 @@ $ curl -XPOST http://elfscrow.elfu.org/api/retrieve -d 0e5b05dd-e132-42aa-b699-1
 
 Seems it is. And the hex needs to be in lower letters. ABCDEF did not fly. UUID must be in this format: 00000000-0000-0000-0000-000000000000 it seems. Not sure about sqlmap use here. . SSH and web server is running. But SSH has been open on several previous addresses in this CTF too..
 
-```
+```bash
  WEBrick/1.4.2 (Ruby/2.6.3/2019-04-16) at
  elfscrow.elfu.org:443
 ```
@@ -596,7 +597,7 @@ Generate\_key does:
 2. call **super\_secure\_srand**, probably with file,time and seed as args
 3. loop 8 times and call **super\_secure\_random** to modify state?
 
-```
+```bash
 call    ?super_secure_random@@YAHXZ ; super_secure_random(void)
 movzx   ecx, al
 and     ecx, 0FFh
@@ -605,10 +606,12 @@ add     edx, [ebp+i]
 mov     [edx], cl
 ```
 
-super\_secure\_srand does:  
-_something with seed.. really unsure_
+super_secure_srand does:
 
-super\_secure\_srandom does:  
+something with seed.. really unsure
+
+super_secure_srandom does:
+
 this is doing the rseed, sar, and
 
 ## The Key Writer
@@ -653,7 +656,7 @@ for rseed in seed:
 
 Trying the edit hosts file. As I use WSL I learnt that for .exe files I also need to update window's hosts file, even though I run it from inside the WSL! Also the syntax is **NOT**:
 
-```
+```bash
 localhost elfscrow.elfu.org
 ```
 
