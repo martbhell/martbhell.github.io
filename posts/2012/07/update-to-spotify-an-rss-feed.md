@@ -22,7 +22,7 @@ Or, more easily, you can just add [https://guldmyr.com/spotify/spot.xml](https:/
 
 Some things I learned:
 
-- Latest post in an RSS feed is just below the header, making it a bit awkward to update via a script as you cannot just remove the </channel> and </rss>, add a new <item></item> and then add the </channel> and </rss> at the end again.
+- Latest post in an RSS feed is just below the header, making it a bit awkward to update via a script as you cannot just remove the `</channel>` and `</rss>`, add a new `<item>``</item>` and then add the `</channel>` and `</rss>` at the end again.
 - lastBuildDate in the header also needs to be updated each time the feed is updated. In the end I decided to re-create the file/feed completely every time there was an update.
 - Some rss-readers appear to have a built-in interval that they use to check if there's an update. So for example you could update the rss-feed and press 'refresh' but the client still won't show the new feeds. Google Reader does this for example. With Mozilla's Thunderbird you can ask it to update (Get Messages) and it will. You don't need an e-mail account in Thunderbird to use it as an RSS reader by the way.
 - [http://feedvalidator.org](http://feedvalidator.org "http://feedvalidator.org") is a great tool, use it.

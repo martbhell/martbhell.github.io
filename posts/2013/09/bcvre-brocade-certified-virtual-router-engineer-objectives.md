@@ -25,7 +25,7 @@ The **Brocade Certified vRouter Engineer 2013** exam has these [objectives](ht
 
 - Identify Ethernet operations
 - Identify VLAN operations and settings
-  - set interface ethernet eth0 vif <vlanid> # this creates eth0.<vlanid> a subinterface. This looks like a normal ethernet interface.
+  - set interface ethernet eth0 vif `vlanid` # this creates eth0.`vlanid` a subinterface. This looks like a normal ethernet interface.
   - set interface pseudo-ethernet # these can be used if you want to set the MAC-address. Some features are not allowed for these peth devices though (VLAN, bonding).
 - Identify bonded interface operations
   - Two NICs on the same network
@@ -62,10 +62,10 @@ The **Brocade Certified vRouter Engineer 2013** exam has these [objectives](ht
 
 - Describe firewall operations and troubleshooting using show commands
 - Describe firewall rulebase operations
-  - set firewall name <name> default-action
-  - set firewall name <name> rule 1 destination/source
-  - set firewall name <name> rule 1 action <action>
-  - set interface bonding bond0 firewall in/local/out name <name>
+  - set firewall name `name` default-action
+  - set firewall name `name` rule 1 destination/source
+  - set firewall name `name` rule 1 action `action`
+  - set interface bonding bond0 firewall in/local/out name `name`
     - in - into the router (matching on destination IP)
     - out - out from the router  (matching on source IP)
     - local - to the router itself
@@ -85,7 +85,7 @@ The **Brocade Certified vRouter Engineer 2013** exam has these [objectives](ht
 ## Logging and Packet Captures
 
 - Identify logging options for firewall and NAT operations
-  - set firewall name <name> rule <num> log enable
+  - set firewall name `name` rule `num` log enable
   - commit; exit
   - monitor firewall .. # and see matches to the rule.
 - Identify methods to verify operations and troubleshooting

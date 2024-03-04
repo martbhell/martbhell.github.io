@@ -22,7 +22,7 @@ My setup: Core i7, 8GB RAM, Windows 7 x64, VMWare Workstation with CentOS instal
 
 Installing a fresh VM with 4 cores, 5GB RAM, virtualization and CentOS.
 
-CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: <http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86\_64/>
+CentOS is a free clone of Red Hat, it's missing some stuff (satellite for example) but it does the job for learning. You can find it in many places, for example here: <http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86_64/>
 
 ## IP Routing and NAT
 
@@ -34,21 +34,25 @@ Edit /etc/sysctl.conf
 
 Or use sysctl -w to set it temporary
 
-For example one is: vm.overcommit\_ratio
+For example one is: vm.overcommit_ratio
 
 You can then do either of these to view the current setting:
 
-cat /proc/sys/vm/overcommit\_ratio
-sysctl vm.overcommit\_ratio
+```bash
+cat /proc/sys/vm/overcommit_ratio
+sysctl vm.overcommit_ratio
+```
 
 To set it temporarily:
 
-echo "60" > /proc/sys/vm/overcommit\_ratio
-sysctl -w vm.overcommit\_ratio="50"
+```bash
+echo "60" > /proc/sys/vm/overcommit_ratio
+sysctl -w vm.overcommit_ratio="50"
+```
 
 To set each time on boot:
 
-echo "vm.overcommit\_ratio = 50" >> /etc/sysctl.conf
+`echo "vm.overcommit_ratio = 50" >> /etc/sysctl.conf`
 
 ##  Configure a system to authenticate using Kerberos
 
@@ -60,35 +64,44 @@ This appears to be a bit complicated - the details below are about as simple as 
 
 Would be nice to have a guide of this in for example /usr/share/doc
 
+```bash
 yum install rpm-build
 cd $HOME/rpmbuild
 mkdir {BUILD,RPMS,SOURCES,SPECS,SRPMS}
 mkdir GetIP
 cd GetIP
+```
 
 The "program":
 
+```bash
 cat getip.sh
 # !/bin/bash
 
 wget -q <https://guldmyr.com/ip.php> -O/tmp/ip
 cat /tmp/ip
+```
 
-chmod +x getip.sh
+`chmod +x getip.sh`
 
 Make an archive and put it in the SOURCES DIR:
 
+```bash
 cd $HOME/rpmbuild
 tar -cf GetIP.tar.gz GetIP
 mv GetIP.tar.gz SOURCES/
+```
 
 Edit a spec-file (**do this as a normal user instead of root, it will show the default entries**):
 
+```bash
 cd SPECS
 vi sample.spec
+```
 
 Make it look like this:
 
+```bash
 Name:GetIP
 Version:1.0
 Release:        1%{?dist}
@@ -98,7 +111,7 @@ Group:  Development/Tools
 License:        GPL
 URL:            <https://guldmyr.com>
 Source0:        %{name}.tar.gz
-BuildRoot:      %(mktemp -ud %{\_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
+BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 BuildRequires:bash
 Requires:bash
@@ -112,11 +125,11 @@ Get an IP woop!
 %build
 
 %install
-mkdir -p "$RPM\_BUILD\_ROOT/opt/GetIP"
-cp -R \* "$RPM\_BUILD\_ROOT/opt/GetIP"
+mkdir -p "$RPM_BUILD_ROOT/opt/GetIP"
+cp -R * "$RPM_BUILD_ROOT/opt/GetIP"
 
 %clean
-rm -rf "$RPM\_BUILD\_ROOT"
+rm -rf "$RPM_BUILD_ROOT"
 
 %files
 /opt/GetIP
@@ -124,23 +137,26 @@ rm -rf "$RPM\_BUILD\_ROOT"
 %doc
 
 %changelog
+```
 
 Then make an rpm:
 
-rpmbuild -v -bb $HOME/rpmbuild/SPECS/sample.spec
+`rpmbuild -v -bb $HOME/rpmbuild/SPECS/sample.spec`
 
 Then as root:
 
-cd /home/user/rpmbuild/RPMS/x86\_64/
-rpm -ivh GetIP-1.0-1.el6.x86\_64.rpm
+```bash
+cd /home/user/rpmbuild/RPMS/x86_64/
+rpm -ivh GetIP-1.0-1.el6.x86_64.rpm
+```
 
 Then as normal user you can now execute the installed file:
 
-/opt/getip/getip.sh
+`/opt/getip/getip.sh`
 
 If you wonder about things - check this fairly unreadable blog post out.
 
-Basically you want to use the $RPM\_BUILD\_ROOT in front of where you want to install the software. By default there are 'make', 'configure' and nothing in the 'require' entries. I removed the make, configured and just put 'bash' in the require entries, it seemed to do the trick though.
+Basically you want to use the $RPM_BUILD_ROOT in front of where you want to install the software. By default there are 'make', 'configure' and nothing in the 'require' entries. I removed the make, configured and just put 'bash' in the require entries, it seemed to do the trick though.
 
 More info is also available on [rpm.org](http://www.rpm.org/max-rpm/ch-rpm-build.html "rpm.org - directories") - which recommend to use /usr/src/redhat for building packages.
 
@@ -162,21 +178,25 @@ But I think a 'for loop' is a good thing to know about and can help with a lot o
 
 an input file with usernames:
 
-\[martbhell@rhce ~\]$ cat /tmp/userlist
+```bash
+[martbhell@rhce ~]$ cat /tmp/userlist
 bengt
 goran
+```
 
 a scriptfile:
 
-\[root@rhce ~\]# cat usersndirs.sh
+```bash
+[root@rhce ~]# cat usersndirs.sh
 # !/bin/sh
 
 userlist=/tmp/userlist
 
-for i in \`cat $userlist\`; do
+for i in `cat $userlist`; do
 echo useradd $i;
 echo mkdir $i;
 done
+```
 
 Remove the "echo" to create the users.
 
@@ -194,11 +214,13 @@ edit /etc/rsyslog.conf
 
 add
 
-       To  forward  messages  to another host via UDP, prepend the hostname with the at sign ("@").  To forward it via plain tcp, prepend two at
-       signs ("@@"). To forward via RELP, prepend the string ":omrelp:" in front of the hostname.
+```bash
+To  forward  messages  to another host via UDP, prepend the hostname with the at sign ("@").  To forward it via plain tcp, prepend two at
+signs ("@@"). To forward via RELP, prepend the string ":omrelp:" in front of the hostname.
 
-       Example:
-              \*.\* @@192.168.0.8
+Example:
+*.* @@192.168.0.8
+```
 
 Set the IP to the machine that will be receiving the logs.
 
@@ -214,4 +236,4 @@ To test try to "su -" with the wrong password and then check in /var/log/secure 
 
 ## Create a private repository
 
-"To create a private repository you should proceed as follows: - Install the createrepo software package - Create a <directory> where files can be shared (via FTP or HTTP) - Create a subdirectory called Packages and copy all packages to be published in Packages - run createrepo -v <directory>"
+"To create a private repository you should proceed as follows: - Install the createrepo software package - Create a `directory` where files can be shared (via FTP or HTTP) - Create a subdirectory called Packages and copy all packages to be published in Packages - run createrepo -v `directory`"
