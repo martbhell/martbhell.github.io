@@ -6,7 +6,7 @@ tags: bookmarks, mail, files, ldap, music, opensuse, owncloud, storage, suse, up
 <!-- prettier-ignore -->
 ---
 
-# owncloud
+## owncloud
 
 [http://susestudio.com/a/TadMax/owncloud-in-a-box](http://susestudio.com/a/TadMax/owncloud-in-a-box "http://susestudio.com/a/TadMax/owncloud-in-a-box")
 

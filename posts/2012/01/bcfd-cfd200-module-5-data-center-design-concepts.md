@@ -12,9 +12,9 @@ backup, application and databases.
 
 This module is quite long.
 
-# Topologies and Topology Considerations
+## Topologies and Topology Considerations
 
-## Single Switch
+### Single Switch
 
 Simplest: one switch. HA: use two. Pro: 0 hops. Con: no redundancy. Starting
 point. Management becomes difficult if you keep each switch isolated when the
@@ -23,25 +23,25 @@ fabric expands.
 What are the long-term management costs associated with more than one switch in
 a small SAN?
 
-## Cascaded
+### Cascaded
 
 Serial connection. Pro: Low port count for ISLs. Con: low perf/avail/scal. Good
 when most/all traffic is local.
 
-## Ring
+### Ring
 
 Better perf and avail than Cascade but scalability is not so great. ISLs are
 however still oversubscribed. Local traffic or suffer poor performance for
 non-local traffic.
 
-## Full Mesh
+### Full Mesh
 
 All switches connect to all. Pro: great reliability and max one hop while all
 switches are operational. Con: Does not scale well, uses lots of ISLs. When
 setting up, leave free ports for ISL or be prepared to step away from the
 full-mesh. Or, if SAN will never grow, this is also good.
 
-## Core to Edge
+### Core to Edge
 
 Core switches only connect switches. Edge switches connect devices. For example,
 Directors as cores and B5300 as edge switches. Brocade pictures this with two
@@ -49,12 +49,12 @@ directors in the core (so four for 2 fabrics.. expensive). Pro: Scales well.
 Because there is always the same amount of hops to another switch, load
 balancing will use all paths. Con: Expensive.
 
-## Single / Dual Fabric
+### Single / Dual Fabric
 
 Simplest: only one. HA: need two. Pro: HA, easier migrations. Con: Cost,
 footprint, more to manage
 
-## Techniques
+### Techniques
 
 Check how much oversubscription, how many ports are available for servers,
 enough bandwidth. Core/Edge is da bomb, especially if you're planning for
@@ -64,7 +64,7 @@ For **inter** **site** connections consider putting switches on remote site,
 less cables. One idea is to have a third site where the Core layer (and
 arrays/libraries) is.
 
-## Locality / Attachment
+### Locality / Attachment
 
 If you put devices in the Core in a Core/Edge fabric then they will have a
 greater locality compared to having initiators and targets on different
@@ -80,9 +80,9 @@ On directors, spread devices between port blades. Attach them in groups. First x
 ports for ISLs etc? Attachment in groups makes for better cabling etc. Attaching
 ports randomly is perhaps good when the SAN is expanding very quickly.
 
-# Availability
+## Availability
 
-## Four levels
+### Four levels
 
 **1)** Single fabric, not resilient: Not HA. For example: a Core switch with
 three edge switches, one fabric. SPOFs all over the place.
@@ -99,12 +99,12 @@ fabric is resilient. This is better than 3) because it leaves the fabric to
 handle the failure of a switch instead of the multipathing in the server.
 Default multipath timeout on Windows is 60 seconds, how fast is FSPF?
 
-## Data Replication
+### Data Replication
 
 Is the data critical in the event of a catastrophic failure? Consider remote
 replication. Expensive.
 
-# Performance
+## Performance
 
 ISL Oversubscription: bandwidth by devices:ISLs or # of devices:ISLs. Fan-out:
 HBA_port_rates:storage_port_rates Fan-in: storage_port_rates:HBA_port_rates # of
@@ -117,7 +117,7 @@ See the whole path.
 
 How fast does Condor ASICs route frames? Condor: 800ns Condor2: 700ns Condor3:
 
-## Trunking
+### Trunking
 
 Max 64Gbps - On 8G. 200E - 4 port port groups Condor/C2/GE2 - 8 port port groups
 Condor3 -
@@ -132,17 +132,17 @@ No FSPF routing update if one ISL in a trunk is lost.
 Multiple trunks (several port blades): can lose a port blade (FSPF routing
 update will happen).
 
-### Individual ISLs
+#### Individual ISLs
 
 This is with for example connecting two switches but the ports are in different
 port groups. If one ISL is lost, an FSPF routing update occurs.
 
-## 8/16G technologies
+### 8/16G technologies
 
 ICL - no hops, no user ports, heaps of bandwidth. When connecting directors:
 prefer two 2xISL trunks to one 4xISL.
 
-## Measurement
+### Measurement
 
 **bandwidth:** good for "large block size" applications, backups, large files.
 on SAN with: 'portperfshow'. **IOPS:** "small block size" apps, sql/transaction
@@ -157,7 +157,7 @@ user to get the response of a small/quick SQL query.
 Tools: DCFM/BNA, APM, SAN Health, Web Tools and SNMP. Portperfshow, Fabric Watch
 thresholds and "performance view" in Web Tools.
 
-# Scalability
+## Scalability
 
 Minimize / eliminate cable changes and device relocations. Non-disruptive.
 

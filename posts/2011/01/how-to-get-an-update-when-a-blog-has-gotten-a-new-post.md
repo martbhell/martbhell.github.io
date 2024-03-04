@@ -8,7 +8,7 @@ tags: google, it, rss, subscribe
 
 Hello and welcome to my blog :)
 
-# New Stuff From 2023
+## New Stuff From 2023
 
 - [All Content Feed](https://guldmyr.com/atom.xml)
 - [IT](https://guldmyr.com/it.atom.xml)
@@ -17,7 +17,7 @@ Hello and welcome to my blog :)
 
 These days I use inoreader.
 
-# Old Stuff From 2011
+## Old Stuff From 2011
 
 If you want to get an update whenever there is a new post you can subscribe (for
 free of course) to an RSS feed. This feed is a small page in .XML format that

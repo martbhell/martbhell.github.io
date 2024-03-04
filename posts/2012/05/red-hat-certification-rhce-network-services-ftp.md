@@ -11,7 +11,7 @@ tags: centos, certification, file, transfer, ftp, linux, red, hat, rhce, studyin
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network

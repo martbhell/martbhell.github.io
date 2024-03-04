@@ -6,7 +6,7 @@ tags: brocade, brocade, san, fabric, fabric, os, firmware, guide, hp, hp, suppor
 <!-- prettier-ignore -->
 ---
 
-# Overview
+## Overview
 
 [TOC]
 
@@ -36,9 +36,9 @@ about new releases.
 
 Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 
-## Updates in this article
+### Updates in this article
 
-### Old Updates < 2013
+#### Old Updates < 2013
 
 - **2011-02-22:** Updated links because the release notes I had before to 6.1.x
   and above did not work anymore. Also changed the sub-versions in 6.1.x and
@@ -107,7 +107,7 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
   to condense the updates list. Notes about passive/active ftp,
   ifmodeshow|ipaddrshow and java version required (listed in release notes).
 
-### Old Updates < 2020
+#### Old Updates < 2020
 
 - **2013-03-10:** 7.0.2b and 6.4.3c added some notes about compatibility.
   Improved list of which FOS works with which FC speeds.
@@ -242,20 +242,20 @@ Carefully plan the upgrade, it takes time but it is rewarding and worth it.
 - **2020-09-27:** 9.0.0a got released in August
 - **2020-12-12:** 9.0.0b is out
 
-## More Recent Updates
+### More Recent Updates
 
 - **2023-04-02:** moved to martbhell.github.io. Keeping this for posterity.
   Firmware Downloads are via Broadcom these days! Also
   [HPE has them](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_241cfaab2fed4696a003f38ee0).
 - **2023-04-04:** 9.1.1a with link to broadcom
 
-## Steps
+### Steps
 
 1. [decide](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades#decide)
 2. [prepare](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades#prepare)
 3. [upgrade](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades#upgrade)
 
-# Decide
+## Decide
 
 One major release at a time is required for the upgrades after 5.2.x, see
 details below at the release notes section.
@@ -326,7 +326,7 @@ supports all hardware that supports 7.2.x. Basically you **need** to read the
 release notes for at least the version you are upgrading to, to confirm that it
 supports your switch.
 
-## Download firmware links
+### Download firmware links
 
 - 5.x and 6.x at
   HPE's [http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm](http://whp-aus2.cold.extweb.hp.com/pub/softlib/software12/COL22074/co-86832-6/FOS-Drawer_Statement.htm)
@@ -356,7 +356,7 @@ release notes and other guides and references.
 
 6.x, 7.x and 8.x. can be found in the IBM and NetApp links.
 
-## Firmware Upgrade Order
+### Firmware Upgrade Order
 
 You also probably want to decide on an order to upgrade the firmware on the
 switches. It's possible to do it via DCFM (now called Network Advisor, used to
@@ -375,7 +375,7 @@ With more recent firmwares (6.4 and 7.x) it's possible to jump more than one
 hop - if you are ok with disruptions in the network. Nice if you need to upgrade
 switches that aren't in production.
 
-# Release notes
+## Release notes
 
 Please note. Most of these no longer works. But maybe just having the filenames
 help?
@@ -406,7 +406,7 @@ Brocade release notes in .pdf:
 - [9.1.1a](https://docs.broadcom.com/doc/FOS-911a-RN)
   [9.1.1b HPE](https://downloads.hpe.com/pub/softlib2/software1/pubsw-windows/p2007118470/v225909/HPE_FOS_9.1.1b_RN_v1.pdf)
 
-## Notes from the release notes
+### Notes from the release notes
 
 - Upgrading from Fabric OS 5.0.x to 5.2.3 is supported
 - Upgrading from Fabric OS 5.1.x to 5.3.1a is supported, but upgrading from
@@ -448,7 +448,7 @@ About non-disruptively: This means you **can** go to 7.0.xfrom earlier  than
 6.4.1a but ports will go offline during the upgrade. See the release notes or
 Upgrade Guides for more details.
 
-### DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor
+#### DCFM: Data Centre Fabric Manager / BNA: Brocade Network Advisor
 
 From 6.2.2a release notes:
 
@@ -466,13 +466,13 @@ Brocade Network Advisor 12.4.0 or later is required to manage switches running
 FOS 7.4.0 or later. Brocade Network Advisor 14.0.1 or later is required to
 manage switches running Fabric OS 8.0.1 or later
 
-### Updates to documents
+#### Updates to documents
 
 Sometimes Brocade releases updates to the manuals without actually updating the
 manuals. On HP's page you can find them as "Documentation Updates", "Fabric OS
 Administrator's Guide Update".
 
-### Fabric Watch and MAPS with FOS v7.3
+#### Fabric Watch and MAPS with FOS v7.3
 
 Users running Fabric Watch for switch monitoring in FOS v7.3 are advised to
 convert to MAPS monitoring before upgrading to FOS v7.4. If you don't, Fabric
@@ -480,15 +480,15 @@ Watch will stop working.
 
 Also the APM have been replaced with Fabric/Flow Vision.
 
-### Interoperability
+#### Interoperability
 
 See the release notes of the firmware for the specifics. For example Fabric OS
 8.0.2 cannot be in the same fabric as for example HP C-Class 4/12 FC switches
 (4024) and one must use Fibre Channel Routing.
 
-# Prepare
+## Prepare
 
-## Download old Brocade Fabric OS Firmware
+### Download old Brocade Fabric OS Firmware
 
 Basically, you need to update in steps.
 
@@ -511,14 +511,14 @@ Also note that some features does not exist/work on older Fabric OS. For example
 on Fabric OS 5.1.x DHCP and SCP may not work (which forces you to use static IP
 and ftp).
 
-## Equivalent Product Names
+### Equivalent Product Names
 
 [Page with the equivalent Brocade and HP product names.](http://www.brocade.com/partnerships/oems/hp/products_solutions.page "on brocade.com")
 [Page with the model number as seen in switchshow and HP's model and Brocade's model.](https://support.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0100588 "on hp.com emr_na-c01777657")
 This is a good one.
 [Page for correlating IBM and Brocade product names.](http://www-01.ibm.com/support/docview.wss?uid=ssg1S1003855 "on ibm.com")
 
-## Recommendations
+### Recommendations
 
 HP recommend that you upgrade one fabric and one switch at a time. **Waiting a
 week or at least a couple of days after you upgrade the first fabric is a good
@@ -558,7 +558,7 @@ stuck in G_port after a reboot. Another for Qlogic FC cards was to not write a
 partition table on Dell servers at 2TB on the LUN (not so nice for > 2TB
 disks)..
 
-## Upgrading Tools
+### Upgrading Tools
 
 SANLoader is an unofficial HP tool to upgrade firmwares. With this you do not
 have to create an ftpserver etc. Contact HP Support, they may give this to you.
@@ -604,7 +604,7 @@ server to provide the firmwares via SCP don't forget to let the switches in via
 firewall or tcp.wrapper ( /etc/hosts.allow ). If you do the upgrade via ftp -
 make sure that passive and active ftp both works.
 
-## How to access the SAN-switch
+### How to access the SAN-switch
 
 The most common way is to access the CLI of a Brocade switch by connect to the
 IP of it with an ssh- or telnet-client,
@@ -619,7 +619,7 @@ default in some Windows versions. You can also use PuTTy for serial access. To
 access the web interface just point the web browser to . It requires Java. The
 Java version that's supported is listed in the release notes of the Fabric OS.
 
-# Upgrade
+## Upgrade
 
 [Here on HP's Support Forum](http://h30499.www3.hp.com/t5/Storage-Area-Networks-SAN/Upgrade-of-EVA-4400-Switches/m-p/4788345 "on new ITRC")
 are some more notes about v6.x. Basic steps:
@@ -635,7 +635,7 @@ just needs the root containing "the install" file
    impossible to download the firmware 6) Wait for reboot of the switch and
    reconnect, check the firmware version with the "version" command
 
-## More notes about the upgrade
+### More notes about the upgrade
 
 CLI Command to start the update process is **firmwaredownload** - this starts
 the interactive version, it is possible to specify user, directory, host
@@ -643,7 +643,7 @@ directly via the CLI. See the
 [Command Reference Guide](http://www.brocade.com/content/html/en/command-reference-guide/fos-741-commandref/wwhelp/wwhimpl/js/html/wwhelp.htm "Link to manuals for HP B-series switches on hp.com")
 for details. There are reference guides for each major Fabric OS release.
 
-### Specifying Directory
+#### Specifying Directory
 
 Please use forward slashes when specifying directories.
 
@@ -661,7 +661,7 @@ SWBD34 - /v5.3.1a/SWDB34. You can also try with /v5.3.1a/release.plist,
 /v5.3.1a/SWDB34/release.plist or /v5.3.1a/install. However with 5.3.1a you
 _should_ not have to so /v5.3.1a should be enough.
 
-### firmwaredownload example
+#### firmwaredownload example
 
 ```bash
 switch:admin> firmwaredownload
@@ -695,7 +695,7 @@ All packages have been downloaded successfully.
 
 ```
 
-### Transfer Protocol and Connectivity
+#### Transfer Protocol and Connectivity
 
 If you are using SCP and that does not work, please try with FTP. If neither
 works, see if something else can log on to the FTP/SCP server. And of course,
@@ -717,7 +717,7 @@ If that also does not work, you have some kind of networking problem - you can
 try direct connecting a laptop to the LAN interface of the switch. To see the
 network settings on the switch: ifmodeshow and ipaddrshow
 
-### Passwords
+#### Passwords
 
 Sometimes when upgrading from 6.1.1d to 6.2.2 we have seen that the passwords
 have gotten reset.
@@ -733,7 +733,7 @@ serial cable interface while booting the switch.
 On EMC branded switches the default password might
 be: [Serv4EMC](http://community.brocade.com/thread/6127 "link to forum post on brocade.com")
 
-### CF Cards
+#### CF Cards
 
 If your switch is out of warranty/contract and it's still working. I'd suggest
 making a
@@ -741,7 +741,7 @@ copy([dd  in linux for example](http://community.brocade.com/thread/6406 "post 
 of the CF-card. Then if the CF card decides to fail you can just get a new one
 from random_electronic store and dd the contents of the flash back.
 
-### Licenses
+#### Licenses
 
 When replacing a switch make sure that the licenses are correct. If for example
 you have a switch with 'power pack' - then for HP there is a special spare part

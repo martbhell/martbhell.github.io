@@ -11,7 +11,7 @@ tags: centos, certification, file, transfer, linux, nfs, red, hat, rhce, studyin
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -34,7 +34,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## NFS
+### NFS
 
 Testing an NFS server is generally easier from another linux-server.
 
@@ -74,7 +74,7 @@ Testing an NFS server is generally easier from another linux-server.
 
 - man exports
 
-## Extra
+### Extra
 
 - Provide network shares to specific clients.
 

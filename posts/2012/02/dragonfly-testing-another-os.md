@@ -6,9 +6,9 @@ tags: bsd, dragonfly, freebsd, operating, system, os, vmware, vmware, workstatio
 <!-- prettier-ignore -->
 ---
 
-# [http://www.dragonflybsd.org/](http://www.dragonflybsd.org/ "http://www.dragonflybsd.org/")
+## [http://www.dragonflybsd.org/](http://www.dragonflybsd.org/ "http://www.dragonflybsd.org/")
 
-## Install
+### Install
 
 It's based on ... BSD! (FreeBSD 4.8 is apparently what dragonfly span off from)
 
@@ -33,7 +33,7 @@ Nice and straight-forward console-based installation.
 
 Quick and easy!
 
-## Configure
+### Configure
 
 As it's BSD, add the user to the 'wheel' group so that it can become super-user.
 
@@ -41,7 +41,7 @@ Guide to get sshd working (basically set PasswordAuthentication = yes). The
 guide mentions a lot of other things, but in 3.0.1 sshd is on by default and the
 keys have been generated.
 
-## Install  software
+### Install  software
 
 Edit /usr/pkg/etc/pkgin/repositories.conf and add the URL to a repository near
 you.
@@ -65,11 +65,11 @@ ln -s /usr/lib/libcrypt.so.4 /usr/lib/libcrypt.so.3
 
 or it will complain that libcrypt.so.3 doesn't exist.
 
-## The HAMMER filesystem
+### The HAMMER filesystem
 
 All commands start with 'hammer'. Like 'hammer info'.
 
-## Conclusion
+### Conclusion
 
 While looking at it from the above angle (quite distant) - this doesn't appear
 to be very different from other bsd/unix/linux distributions, a bit different

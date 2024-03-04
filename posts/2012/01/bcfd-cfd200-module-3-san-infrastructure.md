@@ -17,7 +17,7 @@ terms of size :)
 
 The material could be found here: community.brocade.com/docs/DOC-2379
 
-# Describe B- and M-Series infrastructure for a DCF
+## Describe B- and M-Series infrastructure for a DCF
 
 dcf - data center fabric?
 
@@ -42,9 +42,9 @@ that supports routing.
    [FICON](http://en.wikipedia.org/wiki/FICON "on wikipedia") (mainframes such
    as IBM's z/ and high end disk arrays)?
 
-# Discuss the hw technologies for B- and M-series switches, directors and backbone
+## Discuss the hw technologies for B- and M-series switches, directors and backbone
 
-## HW
+### HW
 
 There's quite a lot about harware in this module. This was in both BCFA and
 BCFP, so if you've done them you gain a lot. A little repetition is in order
@@ -70,7 +70,7 @@ it does not trunk and proprietary. Because it uses 64b/66b encoding you gain a
 lot compared to the 8/10. 8/10 you miss out on 20% due to encoding, crc, etc.
 64/66 you miss about 3%. So out of 10G you miss out on 300Mbit.
 
-## Technologies
+### Technologies
 
 **Oversubscription**: The 48k does 4 and 8 Gbps in ports in 8G port blades, but
 it has 4G CP ASICs (Condor). Making it easier to oversubscribe, make sure to do
@@ -85,7 +85,7 @@ Calculate with: #buffers per port group - 8(ports in port group). For blades the
 credits are about the same for FC8 (**also same for FC8-64? they are about 1300
 on DCX and 1400 on 48k..).**
 
-## Why get a DCX?
+### Why get a DCX?
 
 lulz, all this has a nice marketing feeling to it. But I guess when you design
 an IT infrastructure you need to wade through a lot of marketing.
@@ -95,27 +95,27 @@ more ports) it's good to cope with faster FICON environments, encryption, CEE or
 FCoE support when/if, integrated routing (in a normal FC port in a port blade),
 more QoS features.
 
-# Distinguish differences between Brocade hw platforms
+## Distinguish differences between Brocade hw platforms
 
-## M-Series
+### M-Series
 
 In BCFA and BCFD there's been very **very** little focus on the M-series
 equipment. It appears to be a bit more in the BCFD. But, as far as I can tell
 they are not sold anymore so hopefully there's not much focus on them. Gamble:
 should I just browse through the McData sections?
 
-### Mi10k
+#### Mi10k
 
 hardware partitioning with SAN LPARs, mix FICON/open system in separate LPARs.
 1,2,4,10 Gbps FC. Max 256 ports. Comparable to the 48k.
 
-### M6140
+#### M6140
 
 Open Systems and FICON, 140 ports in 4-port increments (each module you add have
 4 ports, except 10G that has 1), 1,2,4,10 Gbps FC. M-series Directors are End of
 Sale.
 
-## Fabric Routing and Extension
+### Fabric Routing and Extension
 
 There was quite a lot about this in the BCFP course. I am not sure if BCFA ->
 BCFP -> BCFD is the best order to do them in but it is starting to look that
@@ -135,7 +135,7 @@ BCFD, 2G is just too little?
 
 Also integrated routing on the DCX, 5300 and 5100.
 
-## 7600 and FA4-18
+### 7600 and FA4-18
 
 They are the same?
 
@@ -143,11 +143,11 @@ Allows "third party storage apps to run on top of FOS". Uses Brocade's SAS
 (storage application services) for 'data movement' and 'offload server
 resources'. EMC, Fujitsu and Brocade has softwares (possibly more now)
 
-## HBA
+### HBA
 
 815, 825, 415, 425.
 
-## Embedded SAN modules
+### Embedded SAN modules
 
 For blades:
 

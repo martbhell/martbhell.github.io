@@ -6,7 +6,7 @@ tags: certification, linux, red, hat, rhce, studying
 <!-- prettier-ignore -->
 ---
 
-# RHCE Preparation - System Configuration and Management
+## RHCE Preparation - System Configuration and Management
 
 This is post 1 in a series of posts where I will be going through the objectives
 for the RHCE certifications. It builds on the initial post that has the
@@ -35,14 +35,14 @@ CentOS is a free clone of Red Hat, it's missing some stuff (satellite for
 example) but it does the job for learning. You can find it in many places, for
 example here: <http://www.nic.funet.fi/pub/Linux/INSTALL/Centos/6/isos/x86_64/>
 
-## IP Routing and NAT
+### IP Routing and NAT
 
 The part "Routing / NAT" will be tricky, as I do not have a second computer that
 I could use for this. Maybe I can get something working inside the virtual
 machines though, but for now I think I will skip these two and get straight into
 the other ones.
 
-## Use /proc/sys and sysctl to modify and set kernel runtime parameters
+### Use /proc/sys and sysctl to modify and set kernel runtime parameters
 
 Edit /etc/sysctl.conf
 
@@ -68,11 +68,11 @@ To set each time on boot:
 
 `echo "vm.overcommit_ratio = 50" >> /etc/sysctl.conf`
 
-##  Configure a system to authenticate using Kerberos
+###  Configure a system to authenticate using Kerberos
 
 Waiting with this. Need to set up a KDC - kerberos service first.
 
-## Build a simple RPM that packages a single file
+### Build a simple RPM that packages a single file
 
 This appears to be a bit complicated - the details below are about as simple as
 this can be made. There is a lot more nifty things that you can do with an rpm.
@@ -91,7 +91,7 @@ The "program":
 
 ```bash
 cat getip.sh
-# !/bin/bash
+## !/bin/bash
 
 wget -q <https://guldmyr.com/ip.php> -O/tmp/ip
 cat /tmp/ip
@@ -181,17 +181,17 @@ More info is also available on
 [rpm.org](http://www.rpm.org/max-rpm/ch-rpm-build.html "rpm.org - directories") -
 which recommend to use /usr/src/redhat for building packages.
 
-## Configure a system as an iSCSI initiator that persistently mounts an iSCSI target
+### Configure a system as an iSCSI initiator that persistently mounts an iSCSI target
 
 Waiting with this. Need to set up an iSCSI target first.
 
-## Produce and deliver reports on system utilization (processor, memory, disk, and network)
+### Produce and deliver reports on system utilization (processor, memory, disk, and network)
 
 sar -A
 
 /etc/cron.d/sysstat
 
-## Use shell scripting to automate system maintenance tasks
+### Use shell scripting to automate system maintenance tasks
 
 Well, this can be a lot of things and is quite hard to prepare for.
 
@@ -210,7 +210,7 @@ a scriptfile:
 
 ```bash
 [root@rhce ~]# cat usersndirs.sh
-# !/bin/sh
+## !/bin/sh
 
 userlist=/tmp/userlist
 
@@ -231,7 +231,7 @@ already a command that does this for you. That doesn't mean the time spent is a
 total waste, hopefully you learned something while doing it. Maybe your script
 even does a better job than the new one you found.
 
-## Configure a system to log to a remote system
+### Configure a system to log to a remote system
 
 syslog / rsyslog
 
@@ -251,7 +251,7 @@ Example:
 
 Set the IP to the machine that will be receiving the logs.
 
-## Configure a system to accept logging from a remote system
+### Configure a system to accept logging from a remote system
 
 So this step you may want to do before the previous step (unless you already
 have a working syslogd server).
@@ -263,7 +263,7 @@ and uncomment the "reception" parts (don't forget firewall and restart service).
 To test try to "su -" with the wrong password and then check in /var/log/secure
 on the loghost.
 
-## Create a private repository
+### Create a private repository
 
 "To create a private repository you should proceed as follows: - Install the
 createrepo software package - Create a `directory` where files can be shared

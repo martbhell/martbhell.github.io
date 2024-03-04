@@ -12,7 +12,7 @@ System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -35,7 +35,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## SMTP
+### SMTP
 
 Hackmode has a
 [good article](http://www.hackmode.net/?page_id=80 "on hackmode.net") about
@@ -75,9 +75,9 @@ home_mailbox = Maildir/
 In CLI (important to use ' and not "):
 
 ```bash
-# hostname - record the output of this
+## hostname - record the output of this
 postconf -e 'myhostname = output from hostname in here'
-# hostname -d
+## hostname -d
 postconf -e 'mydomain = output from hostname -d in here'
 postconf -e 'myorigin = $mydomain'
 postconf -e 'inet_interface = all'
@@ -121,7 +121,7 @@ Check e-mail:
 
 `cat /home/labber/Maildir/new/*`
 
-## Real E-mail Client
+### Real E-mail Client
 
 But, perhaps you want to check this out with a real e-mail client like
 thunderbird 10.
@@ -149,7 +149,7 @@ Thunderbird is quite nice, it will often tell you which setting is wrong.
 You can use /var/log/maillog for details on the server-side (to see if you get
 connections at all for example).
 
-## Deny a User
+### Deny a User
 
 To illustrate this feature we first need to add a second user/e-mail account:
 
@@ -181,7 +181,7 @@ Try:
 
 - to send an e-mail from and to both accounts
 
-## Extra
+### Extra
 
 - Configure a mail transfer agent (MTA) to accept inbound email from other
   systems.

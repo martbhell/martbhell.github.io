@@ -11,7 +11,7 @@ tags: centos, certification, dns, domain, name, linux, red, hat, rhce, studying
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -34,7 +34,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## DNS
+### DNS
 
 A DNS-server is quite easy to test as well, just point a client to the IP of
 your local DNS server and check /var/log/messages on the DNS-server.
@@ -68,7 +68,7 @@ your local DNS server and check /var/log/messages on the DNS-server.
 - host-based: allow-query { localhost; };
 - but user-based??
 
-## Extra
+### Extra
 
 - Configure a caching-only name server.
 

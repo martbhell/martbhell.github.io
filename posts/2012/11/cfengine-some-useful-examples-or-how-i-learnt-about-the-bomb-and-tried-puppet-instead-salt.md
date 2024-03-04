@@ -18,7 +18,7 @@ In this post you'll first see two attempts at getting cfengine and then puppet
 to do my bidding until success was finally accomplished with
 [salt](https://www.guldmyr.com/cfengine-some-useful-examples-or-how-i-learnt-about-the-bomb-and-tried-puppet-instead-salt/#salt).
 
-# Cfengine
+## Cfengine
 
 Set up name resolution to be identical on all machines.
 
@@ -33,7 +33,7 @@ Perhaps some kind of rule / IF-statement in the promise?
 Cfengine feels archaic. Think editing named/bind configs are complicated? They
 are not even close to setting up basic promises in cfengine.
 
-# Puppet ->
+## Puppet ->
 
 <http://puppetlabs.com/>
 
@@ -61,7 +61,7 @@ create databases (as in the database.yml file)
 after this I didn't get much further... But I did get the web-server up.
 Although it was quite empty...
 
-# salt
+## salt
 
 [Easy startup instructions](http://docs.saltstack.org/en/latest/topics/installation/fedora.html "http://docs.saltstack.org/en/latest/topics/installation/fedora.html")
 here for getting a parallel shell going:

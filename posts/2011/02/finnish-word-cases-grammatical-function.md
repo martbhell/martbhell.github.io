@@ -18,9 +18,9 @@ I put in some color coding to visualize the words in each sentence as they are
 translated - there might very well be some mistakes there - if you see one,
 please let me know :)
 
-# Cases expressing grammatical function
+## Cases expressing grammatical function
 
-## Nominative
+### Nominative
 
 Meaning/function: Base form / subject, object Singular ending: Ø Plural ending:
 -t Example: hotelli /t
@@ -28,7 +28,7 @@ Meaning/function: Base form / subject, object Singular ending: Ø Plural ending:
 **Examples**: Is **the hotel** open? - Onko **hotelli** auki? Are **the hotels**
 open? - Ovatko **hotellit** auki?
 
-## Genitive
+### Genitive
 
 Possession / object Ending: -n or -en Example: Hotellin / Hotellien
 
@@ -36,13 +36,13 @@ Possession / object Ending: -n or -en Example: Hotellin / Hotellien
 **Hotellien nimet** ovan Vaakuna ja Presidentti. Who owns this hotel? - Kuka
 omistaa tämän hotellin?
 
-## Accusative
+### Accusative
 
 Object of personal pronouns Ending: -t Example: hänet
 
 **Example**: Do I know **him/her** - Tunnetko **hänet**?
 
-## Partitive
+### Partitive
 
 Meaning/function: vage amount, negative complement, greetings, etc Ending: -a/-ä
 and -(t)ta/ -(t)tä Example: rahaa, häntä, huonetta, taksia, päivää **Examples**:
