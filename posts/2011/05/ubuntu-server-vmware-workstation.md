@@ -56,15 +56,15 @@ Quite frustrating, but here is how it worked out in Linux: [time-sync-for-linux
 
 This is really easy to set up. Basically all you need to do is install these in a Debian style Linux (like Ubuntu):
 
-**sudo-apt get screen irssi openssh-server**
+`sudo-apt get screen irssi openssh-server`
 
 then start a screen session called chat and the command 'irssi'
 
-**screen -S chat irssi**
+`screen -S chat irssi`
 
 It then starts irssi in a screen. You can hit CTRL+A+D (or, CTRL+A D also works) to detach it and get back to the terminal. You can then close the terminal / log off from the server. Next time you log on you can just type:
 
-**screen -rdx chat**
+`screen -rdx chat`
 
 [Irssi](http://irssi.org/ ".org") is my IRC tool of choice, it's slim and well, I've gotten used to it. It has scripts and you can do encryption and lots of nice little things with it if you want to.
 

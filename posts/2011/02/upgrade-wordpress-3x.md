@@ -37,4 +37,4 @@ There are things you can use to make this a lot faster. For example maybe a lot 
 
 Some ftp-clients (flashfxp for example) have what's called a skip-list where you can specify that files with the exact same size should not be over-written but skipped.
 
-**\- What I did last time was to just download 3.2. Extract the archive. Remove the wp-content. Upload and overwrite the files on the web host. Tada. Not so complicated at all :)**
+>What I did last time was to just download 3.2. Extract the archive. Remove the wp-content. Upload and overwrite the files on the web host. Tada. Not so complicated at all :)

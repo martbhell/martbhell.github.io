@@ -105,11 +105,24 @@ OK, so it now has 512MB. Going down to 64 in one go (listed as minimum in VMWare
 
 It's swapping after just a few minutes with screen+irssi.
 
-_to sort by memory usage in top press SHIFT+m_
+to sort by memory usage in top **press SHIFT+m**
 
 biggest memory hogs (all over 1% - figures in **bold**) are :
 
-1474 user 20   0 23388 6220 1572 S  0.0 **11.2** 0:00.25 bash 1503 user 20   0 50084 5228 3824 S  0.0  **9.4** 0:00.06 irssi 1470 root      20   0 70488 3280 2584 S  0.0  **5.9** 0:00.03 sshd 913 root      20   0  117m 1788  904 S  0.0  **3.2** 0:00.01 rsyslogd 1473 user 20   0 70488 1680  964 S  0.0  **3.0** 0:00.06 sshd 1502 user 20   0 25184 1472  992 S  0.0  **2.6** 0:00.01 screen 1546 user 20   0 19040 1300 1004 R 99.9  **2.3** 0:00.01 top 985 root      20   0 22392  712  512 S  0.0  **1.3** 0:00.00 cron 1233 Debian-e  20   0 44140  660  392 S  0.0  **1.2** 0:00.00 exim4 1472 root      20   0  5928  620  520 S  0.0  **1.1** 0:00.00 getty 1 root      20   0  8352  616  560 S  0.0  **1.1** 0:01.42 init 1277 root      20   0 49168  544  428 S  0.0  **1.0** 0:00.00 sshd
+```text
+1474 user 20   0 23388 6220 1572 S  0.0 **11.2** 0:00.25 bash 
+1503 user 20   0 50084 5228 3824 S  0.0  **9.4** 0:00.06 irssi
+1470 root      20   0 70488 3280 2584 S  0.0  **5.9** 0:00.03 sshd
+913 root      20   0  117m 1788  904 S  0.0  **3.2** 0:00.01 rsyslogd
+1473 user 20   0 70488 1680  964 S  0.0  **3.0** 0:00.06 sshd
+1502 user 20   0 25184 1472  992 S  0.0  **2.6** 0:00.01 screen
+1546 user 20   0 19040 1300 1004 R 99.9  **2.3** 0:00.01 top
+985 root      20   0 22392  712  512 S  0.0  **1.3** 0:00.00 cron
+1233 Debian-e  20   0 44140  660  392 S  0.0  **1.2** 0:00.00 exim4
+1472 root      20   0  5928  620  520 S  0.0  **1.1** 0:00.00 getty
+1 root      20   0  8352  616  560 S  0.0  **1.1** 0:01.42 init
+1277 root      20   0 49168  544  428 S  0.0  **1.0** 0:00.00 sshd
+```text
 
 What I might be able to get rid of is rsyslogd and cron. But then again, if I were to connect this to the internet so I could access it and resume the screen/irssi from anywhere, I would want to keep track of what is happening on the machine.
 

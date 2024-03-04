@@ -16,6 +16,6 @@ Spoke with DNA in Kamppi who said it was the phone's problem - that that the acc
 
 After quite some translated search I managed to find this profile:
 
-**Name: dna internet APN: Internet Proxy: not set Port: not set Username: not set Password: not set Server: not set MMSC: not set MMS Proxy: not set MMS Port: not set MCC 244 MNC 12 APN type: not set**
+> Name: dna internet APN: Internet Proxy: not set Port: not set Username: not set Password: not set Server: not set MMSC: not set MMS Proxy: not set MMS Port: not set MCC 244 MNC 12 APN type: not set
 
 Which makes it all work! DNA does not sell Sony Ericsson cell phones - I suppose they do not like it because they are "made" in Sweden.

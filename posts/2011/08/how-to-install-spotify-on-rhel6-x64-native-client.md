@@ -16,23 +16,23 @@ The only requirement I had was that I did not have libQtWebKit.so.4 installed.
 
 This was fixed with:
 
-**sudo yum install qtwebkit-2.0-3.el6.x86\_64.rpm**
+`sudo yum install qtwebkit-2.0-3.el6.x86_64.rpm`
 
 I found this package [online](http://rpm.pbone.net/index.php3/stat/4/idpl/15161517/dir/redhat_el_6/com/qtwebkit-2.0-3.el6.x86_64.rpm.html "link to get libQtWebKit.so.4"). It's needed because the spotify-install wants libQtWebKit.so.4 - this may be available in some other package available from within the red hat repositories but I couldn't find it. If you know how/where that would be great to know :)
 
 I have qt 4.6.2-19 but adding the WebKit in this way hasn't caused any issues (yet).
 
-You'll probably need other qt-stuff installed too (run `ldd /usr/bin/spotify` after install and it will tell you which libraries it need. There's a lot of them in there but libQtGui.so.4 , libQtCore.so.4 , libQtWebKit.so.4 , libQtDBus.so.4 , libQtNetwork.so.4 , libQtXml.so.4 are the libQt\* ones.
+You'll probably need other qt-stuff installed too (run `ldd /usr/bin/spotify` after install and it will tell you which libraries it need. There's a lot of them in there but libQtGui.so.4 , libQtCore.so.4 , libQtWebKit.so.4 , libQtDBus.so.4 , libQtNetwork.so.4 , libQtXml.so.4 are the libQt* ones.
 
-To find which qt packages you have installed in a Red Hat based system hit: **sudo yum list '\*qt\*'**
+To find which qt packages you have installed in a Red Hat based system hit: `sudo yum list '*qt*'`
 
-Download the spotify-client, I used spotify-client-qt\_0.5.2.84.g6d797eb-1\_amd64.deb. You can get the latest one via [http://repository.spotify.com/pool/non-free/s/spotify/](http://repository.spotify.com/pool/non-free/s/spotify/)
+Download the spotify-client, I used `spotify-client-qt_0.5.2.84.g6d797eb-1_amd64.deb`. You can get the latest one via [http://repository.spotify.com/pool/non-free/s/spotify/](http://repository.spotify.com/pool/non-free/s/spotify/)
 
 As spotify doesn't release an rpm anymore - you need to convert the debian .deb to rpm like this:
 
-**sudo alien --to-rpm spotify-client-qt\_0.5.2.84.g6d797eb-1\_amd64.deb**
+`sudo alien --to-rpm spotify-client-qt_0.5.2.84.g6d797eb-1_amd64.deb`
 
-Then install spotify like this: **sudo yum install spotify-client-qt-0.5.rpm**
+Then install spotify like this: `sudo yum install spotify-client-qt-0.5.rpm`
 
 Run spotify (just hit spotify in the terminal) and log in!
 

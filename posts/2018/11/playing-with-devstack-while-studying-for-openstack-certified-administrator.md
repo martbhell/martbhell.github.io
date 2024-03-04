@@ -36,4 +36,4 @@ Below I'll go through some topics I thought about while reading through the [req
 
 A [devstack](https://docs.openstack.org/devstack/latest/) setup in an Ubuntu 18.04 in a VM in $dayjob cloud. This means no nested virtualization and I wonder how unhappy neutron will be because port security. But it's all within one VM - it started OK, not everything worked but that's fine with me :) Probably just need a local.conf which is not the default!
 
-_One thing I got to figure out was the LVM setup for cinder. Always fun to read logs :)_
+> One thing I got to figure out was the LVM setup for cinder. Always fun to read logs :)

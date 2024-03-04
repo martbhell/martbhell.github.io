@@ -42,7 +42,7 @@ while true; do
 
 **What I want to figure out is how to logout! .**:DD:dD MODKEY+SHIFT+Q only refreshes the screen. MODKEY+l (which I've set to run "gnome-screensaver-command -l" : lock - lets me run another user, but I cannot logout myself) so with this setup I have to reboot the computer for each time I want to re-load the configuration (after a change in config.h make;make install)
 
-**update 14/3 1600**
+**update** 14/3 1600
 
 ```bash
 static const char *volup[] = { "amixer", "set", "Master", "15%+", NULL }; static const char*voldown[] = { "amixer", "set", "Master", "15%-", NULL };
@@ -53,5 +53,4 @@ static const char *volup[] = { "amixer", "set", "Master", "15%+", NULL }; static
 will lower/increase the volume with 15% with MODKEY+up or MODKEY+down :) if you are unsure what the key should be called you can run `xev` which will tell you what they are
 
 > KeyRelease event, serial 27, synthetic NO, window 0x1a00001, root 0x111, subw 0x0, time 277994, (965,69), root:(966,87), state 0x0, keycode 111 (keysym 0xff52, **Up**), same\_screen YES, XLookupString gives 0 bytes: XFilterEvent returns: False
-
 > KeyPress event, serial 27, synthetic NO, window 0x1a00001, root 0x111, subw 0x0, time 278097, (965,69), root:(966,87), state 0x0, keycode 116 (keysym 0xff54, **Down**), same\_screen YES, XLookupString gives 0 bytes: XmbLookupString gives 0 bytes:
