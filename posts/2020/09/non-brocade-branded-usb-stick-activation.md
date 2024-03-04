@@ -44,11 +44,11 @@ Here is the diff
 > \# diff hotplug.orig hotplug  
 > 62c62  
 > <  
-> \---
->  > echo "VENDOR $vendor" >> $USBCONFIG  
+> \--- 
+>  > echo   "VENDOR $vendor" >> $USBCONFIG  
 > 63a64  
-> >
->
+>  >
+> 
 > The above output means - "Add the 'echo ... ' bit on line 62"
 
 All stuff is been tested with FOS v7.4.2f.
@@ -71,7 +71,7 @@ Sometimes the above script fails and you need to run it until it has usb\_storag
 
 Now I can mount an ext3 formatted USB-stick:
 
-```
+```bash
 # mkdir /usb_ext3
 
 # mount -t ext3 /dev/sda1 /usb_ext3

@@ -14,7 +14,7 @@ Under the start menu there are three new programs:
 
 ### Central Administration -
 
-This opens a page to <http://win2k8:48820/default.aspx> - I could log on with my extra account (the one with admin/owner privileges).
+This opens a page to `http://win2k8:48820/default.aspx` - I could log on with my extra account (the one with admin/owner privileges).
 
 The sections are:
 
@@ -52,7 +52,7 @@ also you can specify anti-virus settings, block file types, and self-service sit
 
 check product, patch and upgrade status for example you can see what versions you have installed: I have:
 
-Microsoft SharePoint Foundation 2010  - 14.0.4763.1000 Microsoft SharePoint Foundation 2010 1033 Lang Pack - 14.0.4763.1000 Microsoft SharePoint Foundation 2010 Core - 14.0.4763.1000
+> Microsoft SharePoint Foundation 2010  - 14.0.4763.1000 Microsoft SharePoint Foundation 2010 1033 Lang Pack - 14.0.4763.1000 Microsoft SharePoint Foundation 2010 Core - 14.0.4763.1000
 
 ### General Application Settings
 

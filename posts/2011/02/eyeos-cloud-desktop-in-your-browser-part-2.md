@@ -142,11 +142,11 @@ See [https://www.guldmyr.com/time-sync-for-linux-vms-in-vmware-workstation/](htt
 
 install LAMP -> **sudo apt-get install lamp-server^** The ^ needs to be there! All you need to do is to insert a mysql root password.
 
-After this you can surf into <http://localhost> or <http://ip> of the VM.
+After this you can surf into `http://localhost` or `http://ip` of the VM.
 
 ### phpymadmin
 
-I also want to put in phpmyadmin (sudo apt-get install phpmyadmin) as well, this is nice tool to manage the mysql db. In that installation, choose apache2 by pressing space, then tab to get to the OK button. Then it asks about dbconfig-common, I chose no here because the db(mysql) is already installed. Then surf to <http://ip/phpmyadmin/> and log on. If you see any databases there already -> you are now connected to the mysql you created before! Woop!
+I also want to put in phpmyadmin (sudo apt-get install phpmyadmin) as well, this is nice tool to manage the mysql db. In that installation, choose apache2 by pressing space, then tab to get to the OK button. Then it asks about dbconfig-common, I chose no here because the db(mysql) is already installed. Then surf to `http://ip/phpmyadmin/` and log on. If you see any databases there already -> you are now connected to the mysql you created before! Woop!
 
 ## EyeOS Install
 
@@ -154,7 +154,7 @@ cd - this gets you to your homedir mkdir eyeos cd eyeos wget $URL of eyeOS insta
 
 sudo mv eyeOS /var/www after this the user you have logged on with have ownership inside /var/www/eyeOS - means you don't have to write sudo all the time :)
 
-point your web browser to <http://ip/eyeOS> (note that it is case sensitive) it will tell you that you need to chmod 777 some files, do that.
+point your web browser to `http://ip/eyeOS` (note that it is case sensitive) it will tell you that you need to chmod 777 some files, do that.
 
 Then it will tell you to install these packages: SQLite and IMAP if you want mail client.
 

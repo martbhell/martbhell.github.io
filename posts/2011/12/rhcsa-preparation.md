@@ -242,7 +242,7 @@ First, copy the /root/anaconda-ks.cfg to /var/www/html/SL6/ks.cfg. Also set perm
 
 In system-config-kickstart: Set it to clear MBR, initialize labels and also to autoreboot upon completion. For root password you need to manually enter, you can set it to plaintext. Set setupagent to disabled for a completely automatic install. Repository you cannot change in system-config-kickstart. Manually edit the ks.cfg.
 
-repo --name --baseurl=<http://192.168.0.17/SL6> user --name user --plaintext --password 112233
+repo --name --baseurl=`http://192.168.0.17/SL6` user --name user --plaintext --password 112233
 
 Last one creates a user called user with pw 112233.
 

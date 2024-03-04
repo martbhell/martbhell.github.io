@@ -42,7 +42,7 @@ Configuration is done via ~/squid-inst/etc/squid.conf
 
 If everything is working fine, then your console displays: "Ready to serve requests".
 
-You can now surf to your <http://host:port>
+You can now surf to your `http://host:port`
 
 However, you cannot use it as a cache yet.
 

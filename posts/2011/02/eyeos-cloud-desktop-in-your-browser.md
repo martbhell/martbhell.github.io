@@ -22,7 +22,7 @@ sudo apt-get -d install eyeos - this did not work, no such package.
 
 Commands: wget/mv (super long file) then
 
-tar -zxvf (no errors). This extracts the whole archive into the directory you are, so probably best to put the archive in a new and empty directory before doing this.
+`tar -zxvf` (no errors). This extracts the whole archive into the directory you are, so probably best to put the archive in a new and empty directory before doing this.
 
 Files are index.php, settings.php (maybe the installation is done by just surfing into it?). There are some sub directories too: resource, eyeos, install. The install dir also has index.php
 
@@ -30,7 +30,7 @@ cp -R files/ /var/www cd /var/www mv files/ eyeos cd eyes chmod 777 \*
 
 surfing to 192.168.232.128/eyeos ->
 
-**EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied**
+> EyeErrorException: fopen(./system/conf/libs/log4php/logs/eyeos\_20110131.log): failed to open stream: Permission denied
 
 \-> a lot nicer, gives a welcome to eyeOS 2 installation!
 
@@ -44,17 +44,20 @@ if you don't know what to run you can either google or check out [packages.ubunt
 
 #### curl
 
-sudo apt-get install php5-curl The following NEW packages will be installed: libcurl3 php5-curl
+`sudo apt-get install php5-curl`
 
+> The following NEW packages will be installed: libcurl3 php5-curl
+
+```bash
 Failed to fetch <http://us.archive.ubuntu.com/ubuntu/pool/main/p/php5/php5-curl\_5.3.3-1ubuntu9.1\_amd64.deb>  404  Not Found \[IP: 91.189.92.171 80\] E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
-
 sudo apt-get update
+```
 
 then trying again, working a lot better ;)
 
 install looked a bit weird, or it went very fast.
 
-anyway, did a "sudo apachectrl restart" and then curl was OK in the installation (it didn't install any of the others by chance though :/)
+anyway, did a `sudo apachectrl restart` and then curl was OK in the installation (it didn't install any of the others by chance though :/)
 
 #### sqlite extensions and  PDO sqlite driver
 
@@ -72,15 +75,13 @@ Python uno:    Not installed (Needed to convert office documents) - **python-
 
 Python stomp.py:    Not installed (Needed in collaborative features) - package name: **python-stompy** (I am unsure about this one, it looks old and on packages it doesn't say hardy).
 
-The following NEW packages will be installed: python-dingus python-nose python-pkg-resources python-stompy
+> The following NEW packages will be installed: python-dingus python-nose python-pkg-resources python-stompy
 
 after a restart of apache and refresh -> doesn't come up as installed. But I really want this so googling.
 
 <http://stomppy.googlecode.com/files/stomp.py\_3.0.2\_all.deb> found on <http://code.google.com/p/stomppy/>
 
-wget that. then
-
-sudo dpkg -i stomp.py\_3.0.2\_all.deb
+wget that. then `sudo dpkg -i stomp.py_3.0.2_all.deb`
 
 now it's green in eyeOS pre-req check! Check!
 
@@ -92,9 +93,9 @@ keeping this as it is for now
 
 package name: recoll
 
-sudo apt-get install recoll
+`sudo apt-get install recoll`
 
-The following NEW packages will be installed: aspell aspell-en fontconfig libaspell15 libaudio2 libice6 liblcms1 libmng1 libqt4-dbus libqt4-designer libqt4-network libqt4-qt3support libqt4-script libqt4-sql libqt4-sql-mysql libqt4-xml libqtcore4 libqtgui4 libsm6 libtiff4 libxt6 recoll x11-common
+> The following NEW packages will be installed: aspell aspell-en fontconfig libaspell15 libaudio2 libice6 liblcms1 libmng1 libqt4-dbus libqt4-designer libqt4-network libqt4-qt3support libqt4-script libqt4-sql libqt4-sql-mysql libqt4-xml libqtcore4 libqtgui4 libsm6 libtiff4 libxt6 recoll x11-common
 
 worked fine, no need to restart apache and it showed up as installed
 
@@ -102,7 +103,7 @@ worked fine, no need to restart apache and it showed up as installed
 
 found this package: libimage-exiftool-perl
 
-same story: sudo apt-get install libimage-exiftool-perl
+same story: `sudo apt-get install libimage-exiftool-perl`
 
 worked like a charm :)
 
@@ -116,7 +117,12 @@ no hits in ubuntu packages
 
 googled and found this:
 
-sudo wget into /usr/share/kaazing sudo tar -zxvf cd /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin ./gateway.start
+```bash
+sudo wget into /usr/share/kaazing
+sudo tar -zxvf
+cd /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin
+./gateway.start
+```
 
 then script shows it as good!
 
@@ -128,29 +134,33 @@ google found this: <http://www.nic.funet.fi/pub/mirrors/apache.org//activemq/ap
 
 found in README - installation guide: [http://activemq.apache.org/version-5-getting-started.html](http://activemq.apache.org/version-5-getting-started.html "activemq getting started")
 
-sudo wget into /usr/share/php5/apachemq sudo tar -zxvf cd /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq then ./activemq This did not work, complaining about JAVA.
+```bash
+sudo wget into /usr/share/php5/apachemq
+sudo tar -zxvf
+cd /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq
+./activemq # This did not work, complaining about JAVA.
+```
 
-ERROR: Configuration varaiable JAVA\_HOME or JAVACMD is not defined correctly. (JAVA\_HOME='', JAVACMD='java')
+> ERROR: Configuration varaiable JAVA\_HOME or JAVACMD is not defined correctly. (JAVA\_HOME='', JAVACMD='java')
+> INFO: Invoke the following command to create a configuration file ./activemq setup \[ /etc/default/activemq | /home/user/.activemqrc \]
 
-INFO: Invoke the following command to create a configuration file ./activemq setup \[ /etc/default/activemq | /home/user/.activemqrc \]
-
+```bash
 sudo ./activemq setup /etc/default/activemq
-
 sudo chown root:nogroup '/etc/default/activemq'; sudo chmod 600 '/etc/default/activemq'
+./activemq # then only complains about this:
+```
 
-./activemq then only complains about this:
+> ERROR: Configuration varaiable JAVA\_HOME or JAVACMD is not defined correctly. (JAVA\_HOME='', JAVACMD='java')
 
-ERROR: Configuration varaiable JAVA\_HOME or JAVACMD is not defined correctly. (JAVA\_HOME='', JAVACMD='java')
-
-sudo pico /etc/default/activemq
+`sudo pico /etc/default/activemq`
 
 has this:
 
-JAVACMD="auto"
+`JAVACMD="auto"`
 
 and
 
-martbhell@ubuntu:/etc/default$ whereis java java: /usr/share/java
+> martbhell@ubuntu:/etc/default$ whereis java java: /usr/share/java
 
 this directory is however quite empty, just a libintl.jar
 
@@ -158,7 +168,7 @@ searching for java - going for this package: sun-java6-jre did not work, not in 
 
 and cat /etc/issue gives me 10.10
 
-sudo apt-cache search java
+`sudo apt-cache search java`
 
 meh, ok, opening the installation guide..
 
@@ -168,17 +178,17 @@ Found this on [ubuntuforums](http://ubuntuforums.org/showthread.php?t=1662947 "i
 
 went to /etc/apt/sources.list - searched for 'partner' and uncommented that line.
 
-then **sudo apt-get update; sudo apt-get install sun-java6-jre**
+then `sudo apt-get update; sudo apt-get install sun-java6-jre`
 
-The following NEW packages will be installed: avahi-daemon consolekit dbus gsfonts gsfonts-x11 java-common libasound2 libavahi-common-data libavahi-common3 libavahi-core7 libck-connector0 libdaemon0 libeggdbus-1-0 libfontenc1 libltdl7 libnss-mdns libpam-ck-connector libpolkit-gobject-1-0 libpython2.6 libxfont1 libxi6 libxtst6 odbcinst odbcinst1debian2 sun-java6-bin sun-java6-jre unixodbc xfonts-encodings xfonts-utils
+> The following NEW packages will be installed: avahi-daemon consolekit dbus gsfonts gsfonts-x11 java-common libasound2 libavahi-common-data libavahi-common3 libavahi-core7 libck-connector0 libdaemon0 libeggdbus-1-0 libfontenc1 libltdl7 libnss-mdns libpam-ck-connector libpolkit-gobject-1-0 libpython2.6 libxfont1 libxi6 libxtst6 odbcinst odbcinst1debian2 sun-java6-bin sun-java6-jre unixodbc xfonts-encodings xfonts-utils
 
 that's a lot. 115MB too.
 
 but went pretty fast, trying to run activemq again changed the JAVACMD setting back to "auto" after it gave some kind of permission error
 
-then sudo ./activemq restart
+then `sudo ./activemq restart`
 
-martbhell@ubuntu:/usr/share/php5/apachemq/apache-activemq-5.4.2/bin$ sudo ./activemq status INFO: Loading '/etc/default/activemq' INFO: Using java '/usr/bin/java' ActiveMQ is running (pid '5995')
+> martbhell@ubuntu:/usr/share/php5/apachemq/apache-activemq-5.4.2/bin$ sudo ./activemq status INFO: Loading '/etc/default/activemq' INFO: Using java '/usr/bin/java' ActiveMQ is running (pid '5995')
 
 after that it comes up as green ;) adding this to boot as well now
 
@@ -186,7 +196,9 @@ after that it comes up as green ;) adding this to boot as well now
 
 add this to /etc/rc.local
 
-sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start & sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &
+`sudo /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq start & sudo /usr/share/kaazing/kaazing-websocket-gateway-demos-2010.05.1.21/bin/gateway.start &`
+
+__note from future Johan haha that's a way to start things on boot too sure__ 
 
 ### Configuration during install
 
@@ -214,11 +226,19 @@ Changed to static IP on the server by editing /etc/network/interfaces
 
 to make it look like this :
 
-auto eth0 iface eth0 inet static address 192.168.1.100 netmask 255.255.255.0 network 192.168.1.0 broadcast 192.168.1.255 gateway 192.168.1.1
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.168.1.100
+    netmask 255.255.255.0
+    network 192.168.1.0
+    broadcast 192.168.1.255
+    gateway 192.168.1.1
+```
 
 Restart the neworking service using the following command
 
-sudo /etc/init.d/networking restart
+`sudo /etc/init.d/networking restart`
 
 and changing to a bridged ethernet - then it's on my local LAN network :)
 

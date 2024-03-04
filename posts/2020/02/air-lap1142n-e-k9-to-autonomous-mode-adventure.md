@@ -53,7 +53,7 @@ $ ena
 
 ## Configuring it
 
-Easiest is probably to use the http on <http://IP:80> to configure it
+Easiest is probably to use the http on `http://IP:80` to configure it
 
 Username/Password: Cisco/Cisco
 

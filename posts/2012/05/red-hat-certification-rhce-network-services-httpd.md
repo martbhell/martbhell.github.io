@@ -60,29 +60,33 @@ To get more information about httpd in general do:
 
 yum install httpd-manual
 
-Then surf to <http://hostname/manual>.
+Then surf to `http://hostname/manual`.
 
 To generate a htpasswd:
 
-\[root@rhce webpages\]# htpasswd -c /etc/httpd/conf/.htpasswd user
+```bash
+[root@rhce webpages\]# htpasswd -c /etc/httpd/conf/.htpasswd user
 New password:
 Re-type new password:
 Adding password for user user
+```
 
 Then add this .htaccess file:
 
+```bash
 AuthUserFile /etc/httpd/conf/.htpasswd
 AuthGroupFile /dev/null
 AuthName "Private Area"
 AuthType Basic
 AuthBasicProvider file
 Require user user
+```
 
 ## https
 
 The s - means the httpd uses another port - 443 and that it uses certificates.
 
-yum install mod\_ssl
+`yum install mod_ssl`
 
 This adds /etc/httpd/conf.d/ssl.conf
 
@@ -90,7 +94,7 @@ That config file actually has a 'listen' directive for port 443.
 
 So add that port in the firewall and restart httpd.
 
-After that you can surf to <https://ip> and it will complain about the certificate (which is a default generated one).
+After that you can surf to `https://ip` and it will complain about the certificate (which is a default generated one).
 
 ## But wait, there's more
 
@@ -111,7 +115,8 @@ To test this you could either put several IP addresses on the server or point se
 
 and add this at the end:
 
-NameVirtualHost \*:80
+```bash
+NameVirtualHost *:80
 
     ServerAdmin webmaster@dummy-host.example.com
     DocumentRoot /var/www/ww1.example.com
@@ -120,8 +125,9 @@ NameVirtualHost \*:80
     ServerAdmin webmaster@dummy-host.example.com
     DocumentRoot /var/www/ww2.example.com
     ServerName ww2.example.com
+```
 
-7\. service httpd restart
+`service httpd restart`
 
 Then on the client point your browser to and (add different index.html in each to make it easy to see).
 

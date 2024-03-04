@@ -12,19 +12,18 @@ There is a nice nagios script written by Tom <http://www.toms-blog.com/nagios-hp
 
 To use that you need an API string which you can get from capturing traffic while logging in to the HTTP interface.
 
-Another way to get the string is to run this perl code that gets the md5sum out of "manage\_!manage" which is the default username and password:
+Another way to get the string is to run this perl code that gets the md5sum out of `manage_!manage` which is the default username and password:
 
+```bash
 # !/usr/bin/perl
 
-use Digest::MD5 qw(md5\_hex);
-
+use Digest::MD5 qw(md5_hex);
 # generate MD5 hash using default username/password
-
-my $md5\_data = "manage\_!manage";
+my $md5_data = "manage_!manage";
 
 # replace !manage with the new password in case you change the password
-
-my $md5\_hash = md5\_hex( $md5\_data );
-print "$md5\_hash\\n";
+my $md5_hash = md5_hex( $md5_data );
+print "$md5_hash\\n";
+```
 
 Code borrowed from "HP P2000 G3 MSA System CLI Reference Guide" <http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02520779/c02520779.pdf>
