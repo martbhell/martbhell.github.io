@@ -16,14 +16,14 @@ disk).
 
 [http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day](http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day)
 
-# Basic Setup
+## Basic Setup
 
-## 1
+### 1
 
 [http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages](http://fedoraproject.org/wiki/QA:Testcase_install_OpenStack_packages) -
 No problem.
 
-## 2
+### 2
 
 [http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova](http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova) -
 
@@ -53,7 +53,7 @@ useexisting=True)
 
 Complete!
 
-## 3
+### 3
 
 \[root@localhost nova\]# ADMIN_PASSWORD=$OS_PASSWORD
 openstack-keystone-sample-data The default service password has been detected.
@@ -62,20 +62,20 @@ SERVICE_PASSWORD
 
 But after that it generates users.
 
-## 4
+### 4
 
 No problems, should 'glance index' return anything at this stage?
 
-## 5
+### 5
 
 No problems.
 
-## 6 Add SSH keypair
+### 6 Add SSH keypair
 
 No problems, just do exactly what the instructions say (don't try to be smart
 and put them in .sh files for example :P).
 
-## 7 Register Guest Images
+### 7 Register Guest Images
 
 At this point the wiki went down :/
 

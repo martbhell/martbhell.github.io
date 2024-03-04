@@ -6,7 +6,7 @@ tags: bcfd, bcfp, brocade, brocade, certified, fabric, designer, certification, 
 <!-- prettier-ignore -->
 ---
 
-# Fabric migration planning and implementation
+### Fabric migration planning and implementation
 
 Why: faster, better scaling (less switches to manage), running out of ports,
 hardware refresh, new features.
@@ -17,14 +17,14 @@ and site preparation. Only 20% is for deployment and validation.
 **_The first page describes the order as above, but the order in the slides are
 different with strategies coming after the planning._**
 
-## Assessment
+#### Assessment
 
 Which connections are needed - which hosts and targets need to communicate. Any
 applications that need to be moved together. Maintenance windows. Coordinate
 with other groups (servers, disk arrays, OS, services, etc) Compatibility Matrix
 (HBA model, driver, firmware and FC OS, storage firmware) Risk
 
-## Plan Development
+#### Plan Development
 
 Build a plan based on current and future requirements for:
 
@@ -36,13 +36,13 @@ But also current and future technologies like: high bandwidth, server/storage
 virtualization and improved power/cooling efficiencies. Is the availability of
 the data center acceptable?
 
-## Strategies
+#### Strategies
 
 Most common ones:
 
-### Replacement of existing switches
+##### Replacement of existing switches
 
-### Integration or consolidation of fabrics
+##### Integration or consolidation of fabrics
 
 Existing fabrics have new switches added. Hosts and targets are migrated to the
 new switches over time and eventually old switches are removed. Means new and
@@ -55,12 +55,12 @@ to test architecture before implementing it. Loss of B-series features - if
 interopability mode or too old switches. Hard to schedule downtime for one
 fabric?
 
-#### Merge Fabric Considerations
+###### Merge Fabric Considerations
 
 Before merging check for: Duplicate DID, incompatible fabric.ops, zoning
 mismatch, SCC policies.
 
-### Dual fabrics (rip-and-replace)
+##### Dual fabrics (rip-and-replace)
 
 Two new fabrics are created (not merged, so re-create zoning db). New hosts are
 moved over time. Means having devices on more fabrics (four) at the same time,
@@ -71,7 +71,7 @@ careful planning. Can test before deploying. Less planning needed. Cables moved
 more often. More power / cooling requirements. Changes might be required on
 hosts when storage moves.
 
-### Dual fabrics and FC routing
+##### Dual fabrics and FC routing
 
 Same as dual fabrics, but you can then use routing to interconnect devices
 during the transition period. Meaning you don't have to move hosts and targets
@@ -85,7 +85,7 @@ moves. Best and with less impact. Can roll back if it doesn't work.
 Use two routers for redundancy. LSAN zoning used to connect hosts between
 fabrics. This is also a way to migrate data off arrays.
 
-#### Migration Steps
+###### Migration Steps
 
 1. Create two new fabrics
 2. Configure EX_Ports
@@ -97,13 +97,13 @@ fabrics. This is also a way to migrate data off arrays.
 8. Repeat per fabric and for rest of storage and hosts
 9. Remove routers
 
-#### verify devices after they are moved
+###### verify devices after they are moved
 
 migrate one device at a time, after it's migrated confirm connectivity with
 'nsshow, fcrproxydevshow, fcrphydevshow'. Record and track FID, PID and WWN.
 lsanshow -s.
 
-# Interopability between B- and M-series SAN
+### Interopability between B- and M-series SAN
 
 M- to B-Series migration: for non-disruptive migration redundant fabrics are
 required. New FOS fabric should also be redundant. Postmigration you will have
@@ -127,13 +127,13 @@ FOS 7.x a switch has to be in interopmode 0.
 When you do routing between a B- and M-series the FD DID needs to be in the
 range of the M-EOS fabric (DID offset).
 
-# Considerations when migration from 4G to 8G
+### Considerations when migration from 4G to 8G
 
 Why: new features and more credits/channels/ports per ASIC. More bandwidth in
 the ISL ("optimum use of fabric resources"). If your SAN is high performing, you
 can implement services with both high and lower performance requirements.
 
-## Put DCX in Core
+#### Put DCX in Core
 
 Put DCX in Core and move 48k to the edge. Higher speed and denser core. 8G ISL
 are possible with 8G blades in the 48k, so 8G blades for ISL and keep the 4G for
@@ -141,16 +141,16 @@ ports. FC10-6 could be used, but no trunking. On the 8G blades you could put
 hosts and storage on the same blade - local switching - means more
 chassi-backplane bandwidth available for other stuff.
 
-## NPIV
+#### NPIV
 
 Could increase need for high-speed capability in the SAN (well, better usage on
 a per server basis). A single server could exceed 4Gbps.
 
-# Migrating from low port count switches to directors
+## Migrating from low port count switches to directors
 
 structured - time phased integration manageable - interopable migration
 
-## technology refresh
+### technology refresh
 
 \- amount of ports - amount of rack space
 
@@ -158,12 +158,12 @@ Is there a single director that can accomodate all the ports? Replace existing
 hardware. Maybe that single director by itself is smaller (less U). No ISL, no
 oversubscription etc. If there are more ports, consider ICL. Nohops = nice.
 
-## fabric expansion
+### fabric expansion
 
 you have to switches that are connected, you are running out of ports. put a DCX
 in the middle
 
-# Interopability modes
+### Interopability modes
 
 Interop 0: Brocade Native. Interop 2: McData - M-EOS 9.6.2+ in **Fabric Mode**
 Interop 3: McData - M-EOS 9.6.2+ in **Open Fabric Mode**
@@ -191,7 +191,7 @@ Server, "Domain Offset"
 
 Port and Exchange based can be mixed freely between any mode and B- or M-series.
 
-## Zoning
+#### Zoning
 
 IM3: only zone on WWpN. FOS zone confdigs are not supported IM2: WWpN and D,I
 zoning. No port number greater than 255, on any switch in the fabric, neither in

@@ -11,7 +11,7 @@ tags: centos, certification, file, transfer, linux, ntp, ntpd, ntpq, red, hat, r
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+### Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -34,7 +34,7 @@ User should be able to do the following for all these services:
 - [ssh](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
 - [ntp](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ntp/)
 
-## NTP
+### NTP
 
 You could possibly test this from Windows as well.
 
@@ -79,7 +79,7 @@ ntp_misc
 
 - port 123 (UDP)
 
-## Enable ntpd as a client
+### Enable ntpd as a client
 
 What's a bit reverse for ntpd is that first you need to configure the server as
 a client
@@ -97,7 +97,7 @@ All you need to do is for the client part:
 
 server ntp.example.com service ntpd restart ntpq -p
 
-## Enable ntpd as a server
+### Enable ntpd as a server
 
 You need to add a restrict line in ntp.conf.
 
@@ -105,18 +105,18 @@ You also need to allow port 123 UDP in the firewall.
 
 restrict 192.168.0.0 mask 255.255.255.0 nomodify notrap service ntpd restart
 
-## Client to use your ntp server
+### Client to use your ntp server
 
 Basically the same as the above for client, but you specify the address to your
 NTP-server instead of one from pool.ntp.org.
 
-## Extra
+### Extra
 
 - Synchronize time using other NTP peers.
 
 I believe this has been covered.
 
-## More Extra
+### More Extra
 
 One extra thing you may want to check out is the 'tinker' command.
 
@@ -125,7 +125,7 @@ This is put on top of ntp.conf and more info are available in 'man ntp_misc'.
 However, most of the time you just need to wait a bit for the time change to
 come through.
 
-## tcpdump
+### tcpdump
 
 There's not much to go in logs on either server or client for ntpd. You'll get
 messages in /var/log/messages though that says "synchronized" and when the
@@ -136,13 +136,13 @@ in.
 
 tcpdump -i eth0 -w /tmp/tcmpdump.123 -s0 'udp port 123 and host NTP.CLIENT.IP'
 
-# wait a while, restart ntpd on client
+## wait a while, restart ntpd on client
 
 tcpdump -r /tmp/tcmpdump.123
 
-# this will then show some packets if you have a working communication between server and client
+## this will then show some packets if you have a working communication between server and client
 
-## To test that it's working
+### To test that it's working
 
 Start with the server still connecting to an ntp-server with good time.
 

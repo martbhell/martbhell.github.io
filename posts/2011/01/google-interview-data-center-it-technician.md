@@ -30,7 +30,7 @@ for some feedback (besides the template e-mail).
 If you read this go ahead and comment, maybe we can figure out a better way to
 approach the questions :)
 
-# First Interview
+## First Interview
 
 First there was one interview which had 20 questions (I don't remember all)
 around basic (older - like no SATA) PC stuff: **What are all the components in a
@@ -103,7 +103,7 @@ fans, remote monitoring/console.
   Linux and "ipconfig" in Windows.
 - **What is the subnet mask for a Class B Network?** 255.255.0.0
 
-# Second Interview
+## Second Interview
 
 Then there was a second one that was done by a person who worked in a data
 center and had questions like these:

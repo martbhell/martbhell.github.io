@@ -11,7 +11,7 @@ tags: centos, certification, file, transfer, linux, red, hat, rhce, samba, smb, 
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -34,7 +34,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## SMB
+### SMB
 
 Testing an SMB server may be quite easy from Windows, but from Linux I suppose
 it's a bit trickier.
@@ -97,7 +97,7 @@ samba-doc installs lots of files in /usr/share/doc/samba\*
 - client#: cd upload; mkdir newfolder; cd newfolder
 - client#: put file
 
-## Extra
+### Extra
 
 - Provide network shares to specific clients.
 

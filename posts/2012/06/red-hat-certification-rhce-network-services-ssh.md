@@ -11,7 +11,7 @@ tags: centos, certification, file, transfer, linux, openssh, red, hat, rhce, ssh
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -34,7 +34,7 @@ User should be able to do the following for all these services:
 - [ssh](https://www.guldmyr.com/red-hat-certification-rhce-network-services-ssh/)
 - ntp
 
-## SSH
+### SSH
 
 To test from windows you can use putty.
 
@@ -68,7 +68,7 @@ has an overview.
 
 - tcp.wrapper
 
-### TCP Wrapper
+#### TCP Wrapper
 
 More info in man tcpd and man 5 hosts_access
 
@@ -105,7 +105,7 @@ sshd: 192.168.1.
 
 you can log on from localhost to the public IP of the server.
 
-## Extra
+### Extra
 
 - Configure key-based authentication.
 

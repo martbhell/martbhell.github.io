@@ -6,7 +6,7 @@ tags: centos, cluster, filesystem, install, kernel, linux, lustre, mds, oss, ost
 <!-- prettier-ignore -->
 ---
 
-# Introduction
+## Introduction
 
 Lustre is a filesystem often used by clusters because many computers can mount
 the filesystem simultaneously.
@@ -32,9 +32,9 @@ version that comes from RHEL6.3 does not support large partitions).
 Starting with the MDS. When the basic OS setup is done will make a copy of that
 to use for OSS and Client.
 
-# Setup basic services
+### Setup basic services
 
-## Install an MDS
+#### Install an MDS
 
 This will run the MDT - the metadata target.
 
@@ -58,7 +58,7 @@ Lustre also does not support selinux, so disable that.
 Put all hostnames into /etc/hosts. Poweroff and make two full clones. Set
 hostname.
 
-## Install an OSS
+#### Install an OSS
 
 This will contain the OST (object storage target). This is where the data will
 be stored.
@@ -69,18 +69,18 @@ be stored.
 - [A blog post](http://www.banym.de/linux/centos/change-network-device-name-from-eth1-back-to-eth0)
   about doing that.
 
-## Install a client
+#### Install a client
 
 This will access and use the filesystem.
 
 Clone of the OSS before installing any lustre services or kernels.
 
-# Install Lustre
+### Install Lustre
 
 Before you do this it may be wise to take a snapshot of each server. In case you
 screw the VM up you can then go back :)
 
-## Starting with the MDS
+#### Starting with the MDS
 
 Installing e2fsprogs, kernel and lustre-modules.
 
@@ -129,7 +129,7 @@ After install and reboot into new kernel it's time to
 1. then mount things!
 1. But hold on to your horses, first we ned to install the client :)
 
-## And then the Client
+#### And then the Client
 
 Install the e2fsprogs\*
 
@@ -151,14 +151,14 @@ The above rpmbuild should create rpms for the running kernel. If you want to
 create rpms for a non-running kernel
 [you are supposed to be able to run.](http://wiki.whamcloud.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel "whamcloud wiki")
 
-# Configure Lustre
+## Configure Lustre
 
 [Whamcloud have good instructions](http://wiki.whamcloud.com/display/PUB/Create+and+Mount+a+Lustre+Filesystem).
 Don't be afraid to check out their wiki or use google.
 
 /var/log/messages is the place to look for more detailed errors.
 
-## On the MDS
+#### On the MDS
 
 Because we do not have infiniband you want to change the parameters slightly for
 lnet to include tcp(eth0). These changes are not reflected until reboot (quite
@@ -174,13 +174,13 @@ mkfs.lustre --mdt --mgs
 mount
 ```
 
-## On the OSS
+#### On the OSS
 
 Also add the parameters into modprobe.
 
 `mkfs.lustre --ost` and `mount`
 
-## On the client
+#### On the client
 
 Add things into modprobe.
 
@@ -192,7 +192,7 @@ Then hit: `lfs df -h`
 
 To see usage!
 
-# Get it all working on boot
+#### Get it all working on boot
 
 You want to start the MDS, then the OSS and last the client. But while it's
 running you can restart any node and eventually it will start working again.

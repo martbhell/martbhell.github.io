@@ -6,7 +6,7 @@ tags: desktop, install, linux, operating, system, tips, ubuntu
 <!-- prettier-ignore -->
 ---
 
-# Introduction
+## Introduction
 
 Recently I've had the pleasure of installing Ubuntu on my desktop. Here are some
 thoughts and what I initially do:
@@ -54,14 +54,14 @@ sudo mount ‐‐bind /dev /mnt/dev
 sudo mount ‐‐bind /proc /mnt/proc
 sudo mount ‐‐bind /sys /mnt/sys
 xhost +local:
-# above xhost is to get x things working from within a chroot (possibly unsafe?)
+## above xhost is to get x things working from within a chroot (possibly unsafe?)
 chroot /mnt
 ```
 
 you can get network working, it needs a good /etc/resolv.conf first. Either
 overwrite the existing one or somehow get the local nameserver up and running
 
-# # Install some good software
+## # Install some good software
 
 `apt-get install screen openssh-server tmux openjdk-6-jre unrar p7zip pidgin vim`
 
@@ -80,7 +80,7 @@ see if there are any errors in the beginning that they are not found. If so the
 hack is to create symlinks. For me the libzen.so and libmediainfo.so are in the
 /usr/lib/x86_64-linux-gnu/ directory.
 
-## Getting graphite running (for graphing / system monitoring )
+### Getting graphite running (for graphing / system monitoring )
 
 One reason was that I wanted to learn more about this tool - but another reason
 is that it's quite light weight, especially if you're going to be running an
@@ -92,14 +92,14 @@ guide: [http://coreygoldberg.blogspot.fi/2012/04/installing-graphite-099-on-ubu
 Carbon-cache
 initd-script: [https://gist.github.com/1492384](https://gist.github.com/1492384)
 
-### To monitor temperature and fan speed of your AMD/ATI card put this script in /usr/local/bin/atitemp.sh
+#### To monitor temperature and fan speed of your AMD/ATI card put this script in /usr/local/bin/atitemp.sh
 
 ```bash
-# !/bin/bash
+## !/bin/bash
 
-# Script to monitor temp and fanspeed of an AMD/ATI card
+## Script to monitor temp and fanspeed of an AMD/ATI card
 
-# amdccle required? Also X?
+## amdccle required? Also X?
 
 HOST1="$(hostname -s)"
 DEBUG="0"
@@ -144,7 +144,7 @@ sleep 60;
 done
 ```
 
-## To graph useful system resources (network bandwidth, cpu/mem-usage, disk space)
+### To graph useful system resources (network bandwidth, cpu/mem-usage, disk space)
 
 Would be good to install collectl and just export to graphite. But this does not
 work well currently because the version of collectl with Ubuntu 12.04 LTS is

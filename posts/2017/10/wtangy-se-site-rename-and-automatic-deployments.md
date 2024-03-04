@@ -12,7 +12,7 @@ Previous entries in this
 series: [https://www.guldmyr.com/wasthereannhlgamelastnight-com-now-using-object-storage/](https://www.guldmyr.com/wasthereannhlgamelastnight-com-now-using-object-storage/)
 and  [https://www.guldmyr.com/wasthereannhlgamelastnight-appspot-com-fixed-working-again/](https://www.guldmyr.com/wasthereannhlgamelastnight-appspot-com-fixed-working-again/)
 
-# Renamed to wtangy.se
+## Renamed to wtangy.se
 
 First things first! The website has been renamed to
 [wtangy.se](https://wtangy.se)! Nobody in their right mind would type out
@@ -20,7 +20,7 @@ wasthereannhlgamelastnight.com.. so now it's an acronym of
 wasthereannhlgame**yesterday**. [wtangy.se](http://wtangy.se) . Using Sweden .se
 top level domain because there was an offer making it really cheap :)
 
-# Automatic testing and deployment
+## Automatic testing and deployment
 
 Second important update is that now we do some
 [automatic testing and deployment.](https://github.com/martbhell/wasthereannhlgamelastnight/blob/master/.travis.yml)

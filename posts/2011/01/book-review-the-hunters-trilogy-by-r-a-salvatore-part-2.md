@@ -14,7 +14,7 @@ series/trilogy. Thus part 2 will contain the last time I mention this book
 except for the title: **It** _**is**_ in the process of being returned to the
 library.
 
-# [Good Omens](http://en.wikipedia.org/wiki/Good_Omens "good omens wiki") by Terry Pratchett and Neil Gaiman
+## [Good Omens](http://en.wikipedia.org/wiki/Good_Omens "good omens wiki") by Terry Pratchett and Neil Gaiman
 
 Ahhhh, funny. Very very English. In a little weird way it is actually good to
 know a little bit about the M25 and

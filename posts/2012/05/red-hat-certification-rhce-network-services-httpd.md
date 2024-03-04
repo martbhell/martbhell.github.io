@@ -16,7 +16,7 @@ available during the exam anyway.
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
-# Network services
+## Network services
 
 Network services are an important subset of the exam objectives. RHCE candidates
 should be capable of meeting the following objectives for each of the network
@@ -39,7 +39,7 @@ User should be able to do the following for all these services:
 - ssh
 - ntp
 
-## httpd
+### httpd
 
 - Install the packages needed to provide the service.
   - yum install httpd
@@ -54,7 +54,7 @@ User should be able to do the following for all these services:
   - host-based -> iptables
   - user-based -> htpasswd for httpd
 
-### htpasswd
+#### htpasswd
 
 An htpasswd file contains users/passwords.
 
@@ -89,7 +89,7 @@ AuthBasicProvider file
 Require user user
 ```
 
-## https
+### https
 
 The s - means the httpd uses another port - 443 and that it uses certificates.
 
@@ -104,9 +104,9 @@ So add that port in the firewall and restart httpd.
 After that you can surf to `https://ip` and it will complain about the
 certificate (which is a default generated one).
 
-## But wait, there's more
+### But wait, there's more
 
-### Configure a virtual host
+#### Configure a virtual host
 
 This is can be used when you want to have several hostnames or domains on the
 same machine.
@@ -147,11 +147,11 @@ NameVirtualHost *:80
 Then on the client point your browser to and (add different index.html in each
 to make it easy to see).
 
-### Configure private directories
+#### Configure private directories
 
 I'd say this fall under the htpasswd section.
 
-### Deploy a basic CGI application
+#### Deploy a basic CGI application
 
 FOSwiki for example uses CGI. Perhaps it should be a custom CGI application,
 like a small
@@ -162,7 +162,7 @@ like a small
 A simple .cgi script is just a perl script with another extension that outputs
 .HTML text.
 
-### Configure group-managed content
+#### Configure group-managed content
 
 Group-managed. So this would be somehow using the AuthGroupFile in .htaccess?
 
