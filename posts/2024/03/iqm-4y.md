@@ -11,7 +11,7 @@ completely new to the exciting world of Quantum Computing.
 
 It's been an incredible journey filled with learning, challenges, and a sense of accomplishment.
 
-# Starting Fresh, Building Confidence
+## Starting Fresh, Building Confidence
 
 The supportive environment at IQM provided numerous opportunities to explore and grow.
 I actively participated in various projects, including:
@@ -26,7 +26,7 @@ I actively participated in various projects, including:
   Contributing to the Software Development team, I emphasized the need for user-friendly and
   easy-to-install software solutions, improving overall user experience.
 
-# Overcoming Challenges, Discovering Impact
+## Overcoming Challenges, Discovering Impact
 
 Every journey has its hurdles. Balancing the need for immediate solutions with long-term viability
 was a key lesson learned.
@@ -38,7 +38,7 @@ continues to have a positive impact on our monitoring capabilities.
 This highlights the collaborative nature of our work, where ideas can originate from various sources
 and benefit the entire team.
 
-# Lessons Learned, A Look Forward
+## Lessons Learned, A Look Forward
 
 Today, I'm proud to say that I've started to understand the basics of Quantum Computing, its components,
 and the intricate processes involved in maintaining a Quantum Computer.
