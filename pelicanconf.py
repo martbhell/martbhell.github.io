@@ -40,8 +40,8 @@ LINKS = (
          )
 
 FOOTER_LINKS = (
-         ('tags', 'tags/'),
-         ('categories', 'categories/'),
+         ('Tags', 'tags/'),
+         ('Categories', 'categories/'),
          ('Recipes in Finnish', 'tag/resepti'),
          )
 
