@@ -34,14 +34,14 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
+# Blogroll - opens in new window
 LINKS = (
-         ('tags', 'tags/'),
-         ('categories', 'categories/'),
+         ('Was There an NHL Game Yesterday?', 'https://wtangy.se'),
          )
 
 FOOTER_LINKS = (
-         ('Was There an NHL Game Yesterday?', 'https://wtangy.se'),
+         ('tags', 'tags/'),
+         ('categories', 'categories/'),
          ('Recipes in Finnish', 'tag/resepti'),
          )
 
