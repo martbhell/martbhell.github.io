@@ -6,17 +6,18 @@ build_content () {
   echo "SITEURL: $SITEURL"
   echo "Creating symlinks of posts in posts/ into content/"
   cd content && python MAKESYMLINKS.py && cd ..
-  pelican content
+  pelican content "$@"
+  sed -i 's/\.html</</' output/sitemap.xml
   echo "BUILD: end"
 }
 
 if [ "$CF_PAGES_BRANCH" == "main" ]; then
 
-  # In ase we want to do something special for deploys to main
-  build_content
+  # In case we want to do something special for deploys to main
+  build_content "$@"
 
 else
 
-  build_content
+  build_content "$@"
 
 fi
