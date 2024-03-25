@@ -1,0 +1,18 @@
+---
+name: markdownlint
+
+on: [push]
+
+jobs:
+
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prettify code
+        uses: creyD/prettier_action@9561a3f1e164fa28b6f4da59c1807e1cd1af7cf5 # v4.3
+        with:
+          dry: True
+          prettier_options: --check **/*.md
+
