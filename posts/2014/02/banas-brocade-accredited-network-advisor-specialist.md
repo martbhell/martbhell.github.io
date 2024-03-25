@@ -8,7 +8,7 @@ tags: bna, brocade, certification, network, advisor, studying
 
 Finally got around to start preparing the last certificate/accreditation -
 [BANAS](http://www.brocade.com/education/certification-accreditation/accredited-network-advisor-specialist/curriculum.page)
- to complete the Brocade Data Center Track (ok, not last. There are plenty more!).
+to complete the Brocade Data Center Track (ok, not last. There are plenty more!).
 
 It looks like it's an accreditation showing that the taker can do some basic
 tasks in Brocade Network Advisor (BNA). This used to be a certification, so it's

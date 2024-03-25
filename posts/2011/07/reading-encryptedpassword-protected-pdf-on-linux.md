@@ -21,7 +21,7 @@ Error: Weird encryption info Error: Incorrect password
 
 It's only the material starting with M0\* that has this issue, this has also
 been seen with other documents. Maybe this is because they were created with a
-***too new*** version of Adobe Acrobat that evince/pdftotext doesn't support.
+**_too new_** version of Adobe Acrobat that evince/pdftotext doesn't support.
 The rest of the material are going to be public and they are user/admin guides
 anyway. But the M0\* files are from the actual course material for the 16G so
 this is why.

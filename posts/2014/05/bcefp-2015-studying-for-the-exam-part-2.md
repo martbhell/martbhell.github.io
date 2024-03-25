@@ -16,8 +16,8 @@ Certified Ethernet Fabric Professional.
 
 The two previous
 posts:
- [Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/)
- and [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/)
+[Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/)
+and [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/)
 
 ## The NOS 4.1.1 Admin Guide
 

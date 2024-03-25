@@ -13,7 +13,7 @@ tags: access, gateway, brocade, cisco, ipm, mds, npiv, npv, qlogic, san, storage
 Brocade
 
 [NPV](http://datacenteroverlords.com/2012/05/08/npv-and-npiv/)
- (_great discussion in the comments on this post by the way_) (N_port Virtualization (not NPIV) - Cisco
+(_great discussion in the comments on this post by the way_) (N_port Virtualization (not NPIV) - Cisco
 
 [Transparent Mode](http://community.brocade.com/thread/6267?start=0&tstart=0 "on brocade.com") -
 QLogic

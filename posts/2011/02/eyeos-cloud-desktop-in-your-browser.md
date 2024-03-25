@@ -179,7 +179,7 @@ cd /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq
 > ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly.
 > (JAVA_HOME='', JAVACMD='java') INFO: Invoke the following command to create a
 > configuration file ./activemq setup [ /etc/default/activemq |
-> /home/user/.activemqrc ]
+> > /home/user/.activemqrc ]
 
 ```bash
 sudo ./activemq setup /etc/default/activemq

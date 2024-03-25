@@ -54,9 +54,9 @@ that new features / hw we need to investigate ourselves and read about in the
 manuals.**
 
 8G Switches:
- [300](http://www.brocade.com/products/all/switches/product-details/300-switch/specifications.page)
- , [5100](http://www.brocade.com/products/all/switches/product-details/5100-switch/specifications.page),
- [5300](http://www.brocade.com/products/all/switches/product-details/5300-switch/specifications.page "brocade.com").
+[300](http://www.brocade.com/products/all/switches/product-details/300-switch/specifications.page)
+, [5100](http://www.brocade.com/products/all/switches/product-details/5100-switch/specifications.page),
+[5300](http://www.brocade.com/products/all/switches/product-details/5300-switch/specifications.page "brocade.com").
 
 Standalone switches usually don't have all ports enabled when you get them
 (unless you buy them that way), to enable all you buy POD (ports on demand)
