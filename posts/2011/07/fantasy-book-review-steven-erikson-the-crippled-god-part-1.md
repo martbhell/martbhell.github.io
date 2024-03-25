@@ -45,7 +45,7 @@ to get a good feel for the e-book reader than to give a behemoth like this a go?
 
 There are a few tricky words in Erikson's books. Off the top of my head I am
 fond of this word but rarely get the use for it: susurration _**(low continuous
-whispering sound)**_ altruism ***(opposite of selfishness)***
+whispering sound)**_ altruism **_(opposite of selfishness)_**
 
 At this point I feel happy that I'm reaching the end of this series. Will there
 be more books related to this world by Erikson? The co-creator

@@ -29,15 +29,15 @@ Jätkäsaaressa en tarvinnut koska oli vielä valossa ulkona.
 - K-1: Kävelin vaan suora ja luin kartan samaan aikaan.
 - 1-3: Jatketin suorana ja kun olin 2-3 välillä näin yhden rastin nelosen suuntaan
 - 3-4: No ihan hirveä. Otin rapuset ylös koska "näin rastin". Juoksin vanhan
-       työkavern ohi ja leimasin ilman tarkistamassa rastin numeron. Se olin väärin.
-       Oikein rasti neljä oli hieman alas- ja eteenpäin.
+  työkavern ohi ja leimasin ilman tarkistamassa rastin numeron. Se olin väärin.
+  Oikein rasti neljä oli hieman alas- ja eteenpäin.
 - 4-5: No otin se väärän rastin tosi hyvin ja leimaus meni ainoastaan hyvin koko juoksu.
 - 9-10: Juoksin eteenpäin, luulen että parempi ja lyhyempi oli käänttää taksepäin.
 - 13-14: En ole ihan varma mikä on lyhyempi, voittajat otivat vaseman reitti ja muut
-       oikean. Olin hitain :)
+  oikean. Olin hitain :)
 - 17-18: Viimeinen rasti ennen maali mahdollisuus ota yksi ihan jäinen alamäki, otin
-       sen koska minulla oli nastakengät päällä. Meni ihan OK mutta minun tarvitsin
-       ota vähän isompi käännös autotieen kun meinasin.
+  sen koska minulla oli nastakengät päällä. Meni ihan OK mutta minun tarvitsin
+  ota vähän isompi käännös autotieen kun meinasin.
 
 ## Lopussa
 

@@ -46,7 +46,7 @@ installs. Press q to exit that.
 - Later on it asks you, do you want to delete these packages (d for details):
   libisc60, libdns66,
   [linux-image-2.6.35-22-generic](https://www.guldmyr.com/upgrade-ubuntu-10-10-to-natty),
-   python-newt,
+  python-newt,
   [libxapian15](http://packages.ubuntu.com/hardy/libxapian15 "supposedly a new indexer has been introduced"),
   [byobu](http://packages.ubuntu.com/natty/byobu)
 - Last question: do you want to reboot? - **No pain, no gain.** Is 'adventurous'

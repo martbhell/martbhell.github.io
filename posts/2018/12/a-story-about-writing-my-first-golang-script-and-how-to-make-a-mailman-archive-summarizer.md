@@ -46,7 +46,7 @@ this piece will probably have been purged from memory!
 
 The end
 result [https://storage.googleapis.com/ceph-rgw-users/feed.xml](https://storage.googleapis.com/ceph-rgw-users/feed.xml)
- as of right now looks like below in one RSS reader:
+as of right now looks like below in one RSS reader:
 
 ![RSS Feed Output](images/image-1024x339.png)
 

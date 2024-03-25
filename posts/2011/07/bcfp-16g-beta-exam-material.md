@@ -71,12 +71,12 @@ for the 8/40 to get some more documents.
 - Neither is FCIP admin guide available
 - But the Network Advisor stuff is. (assume these are the same)
 - [7.0.0 Message Reference](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912102/c02912102.pdf)
-  (this has the public error messages that you may see in errdump)
+   (this has the public error messages that you may see in errdump)
 
 Actually it looks like the documents available are quite up to date. I guess the
 Admin Guides etc don't update that often anyway. There is however a
 [document](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912109/c02912109.pdf)
- in the manuals link above that explains that there have been some changes to
+in the manuals link above that explains that there have been some changes to
 some of the Brocade Documents. This might be worth checking out.
 
 The conclusion of this little exercise is that the material available is

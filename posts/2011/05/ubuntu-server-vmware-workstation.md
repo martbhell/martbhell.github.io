@@ -108,4 +108,4 @@ machine.
 [How small VM can you have for just IRSSI?](https://www.guldmyr.com/ubuntu-10-10-vmware-irssi/)
 [File share from Windows to Ubuntu in a VM.](https://www.guldmyr.com/file-share-from-ubuntu-10-10-with-windows-7-client/)
 [EyeOS](https://www.guldmyr.com/eyeos-cloud-desktop-in-your-browser-part-2/ "eyeos-cloud-desktop-in-your-browser-part-2/")
- OS in your web browser.
+OS in your web browser.

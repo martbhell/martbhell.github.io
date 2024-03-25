@@ -156,7 +156,7 @@ use diamond or a few other tools that has graphite-support.
 
 Diamond is another option, to install follow these two
 links [https://github.com/BrightcoveOS/Diamond/wiki/Installation](https://github.com/BrightcoveOS/Diamond/wiki/Installation)
- (only addition is first you have to clone the git repository, from in there you run make builddeb).
+(only addition is first you have to clone the git repository, from in there you run make builddeb).
 
 How to manually configure a custom
 collector: [https://github.com/BrightcoveOS/Diamond/wiki/Configuration](https://github.com/BrightcoveOS/Diamond/wiki/Configuration)

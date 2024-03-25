@@ -19,7 +19,7 @@ the link above, but it's also currently free on brocade's saba education page.
 ## Objectives for 2013 exam
 
 [Objectives](http://www.brocade.com/education/certification-accreditation/certified-ethernet-fabric-professional/index.page)
- for the exam (2013 version, so might be different for 2015) are:
+for the exam (2013 version, so might be different for 2015) are:
 
 ### Theory and Concepts
 

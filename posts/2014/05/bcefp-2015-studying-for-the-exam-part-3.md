@@ -17,9 +17,9 @@ This is part of a series of posts on the topic of studying for Brocade's
 Certified Ethernet Fabric Professional.
 
 The two previous posts:
- [Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/),
- [course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/)
- and [NOS Admin Guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam-part-2/)
+[Objectives and reading materials](https://www.guldmyr.com/brocade-certified-ethernet-fabric-professional-2015-beta-exam/),
+[course and nutshell guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam/)
+and [NOS Admin Guide](https://www.guldmyr.com/bcefp-2015-studying-for-the-exam-part-2/)
 
 ## VDX Troubleshooting Course
 

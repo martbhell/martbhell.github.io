@@ -9,7 +9,7 @@ tags: android, arch, asus, asus, eee, pad, asus, transformer, chroot, linux, tf1
 Just got one of these - thought it would be a great tool when going to
 [conferences](https://www.guldmyr.com/brocade-analyst-and-technology-day-2012/)
 like Brocade Analyst and Technology Day 2012
- for example or somewhere where I would need a small computer but don't want to
+for example or somewhere where I would need a small computer but don't want to
 bring a long my normal heavy laptop.
 
 Normally I prefer pen and paper when going to meetings or conferences, but if

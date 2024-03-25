@@ -13,8 +13,8 @@ today about the most common passwords.
 On number 4 we had [lifehack](http://en.wikipedia.org/wiki/Life_hack "lifehack")
 
 - but I had never heard about this before, so checked out Wikipedia on this and
-apparently this is a quickly written script with the intent to simplify life by
-filtering for example a feed like for example e-mail or RSS!
+  apparently this is a quickly written script with the intent to simplify life by
+  filtering for example a feed like for example e-mail or RSS!
 
 Unfortunately I do not have a lifehack :/ But it would be nice to have one!
 Think I will try to set one up as a filter on my e-mail account - does this
