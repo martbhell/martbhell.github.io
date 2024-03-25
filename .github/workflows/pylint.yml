@@ -31,10 +31,11 @@ jobs:
           cd content
           python MAKESYMLINKS.py
           cd ..
-      - name: Look for broken links in this branch
+      - name: Look for broken links in this branch # TODO: Use build.sh?
         run: |
           pip install -r tests/requirements.txt
           SITE_URL=http://127.0.0.1:8000 pelican content
+          python tags_sorter.py
           SITE_URL=http://127.0.0.1:8000 pelican -l -r &
           sleep 5
           python tests/find_broken_links.py --host http://127.0.0.1:8000
@@ -42,6 +43,7 @@ jobs:
         run: |
           pip install -r tests/requirements.txt
           SITE_URL=http://127.0.0.1:8000 pelican content
+          python tags_sorter.py
           SITE_URL=http://127.0.0.1:8000 pelican -l -r &
           sleep 5
           python tests/find_broken_links_deeper.py --host http://127.0.0.1:8000
