@@ -41,6 +41,7 @@ LINKS = (
 
 FOOTER_LINKS = (
          ('Tags', 'tags/'),
+         ('Tags sorted by # articles', 'sorted_tags.html'),
          ('Categories', 'categories/'),
          ('Recipes in Finnish', 'tag/resepti'),
          )

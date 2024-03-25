@@ -8,6 +8,7 @@ build_content () {
   cd content && python MAKESYMLINKS.py && cd ..
   pelican content "$@"
   sed -i 's/\.html</</' output/sitemap.xml
+  python3 tags_sorter.py
   echo "BUILD: end"
 }
 
