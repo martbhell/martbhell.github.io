@@ -176,10 +176,13 @@ cd /usr/share/php5/apachemq/apache-activemq-5.4.2/bin/activemq
 ./activemq # This did not work, complaining about JAVA.
 ```
 
-> ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly.
-> (JAVA_HOME='', JAVACMD='java') INFO: Invoke the following command to create a
-> configuration file ./activemq setup [ /etc/default/activemq |
-> > /home/user/.activemqrc ]
+```text
+ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly.
+(JAVA_HOME='', JAVACMD='java') INFO: Invoke the following command to create a
+configuration file ./activemq setup [ /etc/default/activemq |
+
+/home/user/.activemqrc ]
+```
 
 ```bash
 sudo ./activemq setup /etc/default/activemq
@@ -187,8 +190,10 @@ sudo chown root:nogroup '/etc/default/activemq'; sudo chmod 600 '/etc/default/ac
 ./activemq # then only complains about this:
 ```
 
-> ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly.
-> (JAVA_HOME='', JAVACMD='java')
+```text
+ERROR: Configuration varaiable JAVA_HOME or JAVACMD is not defined correctly.
+(JAVA_HOME='', JAVACMD='java')
+```
 
 `sudo pico /etc/default/activemq`
 
@@ -198,7 +203,9 @@ has this:
 
 and
 
-> martbhell@ubuntu:/etc/default$ whereis java java: /usr/share/java
+```bash
+martbhell@ubuntu:/etc/default$ whereis java java: /usr/share/java
+```
 
 this directory is however quite empty, just a libintl.jar
 
