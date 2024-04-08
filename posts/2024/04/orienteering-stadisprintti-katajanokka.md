@@ -12,6 +12,7 @@ tags: orienteering, suunnistus, rasti-jyry, b-rata, rastianalyysi, katajanokka
 - Lohko: b
 - 2.7km (juoksin 2.4km, 25min, 10/19)
 - Katajanokka, Helsinki
+- [Tulokset](https://navisport.fi/events/cf37ea05-da1a-4942-a0da-9e9328d2d840/results/57b92705-a57e-4642-82b0-51bcaff12939)
 
 ## Kuvaus
 
