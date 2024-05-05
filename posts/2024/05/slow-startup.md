@@ -1,7 +1,7 @@
 ---
 title: Slow Startup?
 date: 2024-05-05 22:57
-category: it
+category: finland
 lang: en
 tags: windows, windows 10, proxy, slow, startup
 <!-- prettier-ignore -->
