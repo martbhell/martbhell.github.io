@@ -20,4 +20,4 @@ jonka tietokoneesi on konfiguroitu käyttämään, ehkä lakannut toimimasta?
 Tämä voi hidastaa useita asioita.
 Varmista myös, että et käytä proxy-palvelinta.
 Jos poistat valinnan "havaitse proxy-asetukset automaattisesti", saatat nähdä parannuksia nopeudessa.
-Itse känyn [setup script](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file).
+Itse käyn [setup script](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file).
