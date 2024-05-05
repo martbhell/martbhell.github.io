@@ -1,5 +1,5 @@
 ---
-title: Hidas tietokoneen käynnistys?
+title: Slow Startup?
 date: 2024-05-05 22:57
 category: it
 lang: fi
