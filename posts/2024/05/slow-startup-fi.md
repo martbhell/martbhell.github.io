@@ -1,7 +1,7 @@
 ---
 title: Hidas tietokoneen käynnistys?
 date: 2024-05-05 22:57
-category: finland
+category: it
 lang: fi
 tags: windows, windows 10, proxy, slow, startup
 <!-- prettier-ignore -->
