@@ -31,7 +31,7 @@ Ekä firmaliiga ja metsäsuunnistus tänä vounna.
 Minä olen vihreä/punainen reitti, toinen reitti on yksi random suunnistajasta
 jotka sain sijoitus 31 muttä hänelle se kesti 13:07 min ja minulle 13:56.
 
-[![from rasti 1 to 2](images/f.2024.solvalla.1-2.png "1-2")](images/f.2024.solvalla.1-2.png){:height=600}
+[![from rasti 1 to 2](images/f.2024.solvalla.1-2.png "1-2"){:height=600}](images/f.2024.solvalla.1-2.png)
 
 - 2-3: Okei menin liikaa linjasta pois vasella puollella.
 - 4-5: Pitkä reittiväli. Voisin otannut lyhyempi reitti suon yli mutta en tehnyt
