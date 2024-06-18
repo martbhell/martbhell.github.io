@@ -59,7 +59,7 @@ Olen pitänyt lista missä olen kirjoitanyt:
   - yleislähdössä? Ota juna
   - kävellä kun asiat alkaa mennä huonosti
 - 2023 (ensimmäinen yö)
-  - uta juna
-  - uta urat
+  - ota juna
+  - ota urat
   - ihmiset enemmän ottavat polkut ja halua enemmän varmempi rastin otaminen.
   - ota huomio että et juoksee k-pisten ohi!
