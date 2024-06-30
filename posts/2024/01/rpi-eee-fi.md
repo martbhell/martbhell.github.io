@@ -30,11 +30,15 @@ dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
 
-- Poista eee käytöstä, muokkaa /etc/rc.local-tiedostoa:
+- Poista eee käytöstä (Energy-Efficient Ethernet)
+
+Varmistaa että haluat DHCP etc ja sitten laittaa tämä `/etc/network/interfaces.d/eth0`:
 
 ```bash
-/usr/sbin/ethtool --set-eee eth0 eee off
-exit 0
+auto eth0
+iface eth0 inet dhcp
+#link-speed 100
+post-up /sbin/ethtool --set-eee eth0 eee off
 ```
 
 ## Mitä oikeasti auttoi lopulta
