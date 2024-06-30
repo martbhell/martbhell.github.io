@@ -2,7 +2,7 @@
 title: Raspberry Pi 4 network disconnects
 date: 2024-01-29 22:03
 category: it
-tags: it, network, rpi, raspberry pi, raspberry pi 4, eee, bcmgenet, eth0
+tags: it, network, rpi, raspberry pi, raspberry pi 4, eee, bcmgenet, eth0, raspian 11
 lang: en
 <!-- prettier-ignore -->
 ---
@@ -11,6 +11,8 @@ lang: en
 
 The wired network connection lost connection every now and then. Most of the
 time this didn't bother because buffering but sometimes it did annoy.
+
+This was on Raspian 11 and a raspberry 4.
 
 This was visible in `dmesg -T` output:
 
@@ -29,11 +31,15 @@ dtoverlay=disable-wifi
 dtoverlay=disable-bt
 ```
 
-- disable eee (Energy-Efficient Ethernet), done by adding this to /etc/rc.local:
+- disable eee (Energy-Efficient Ethernet)
+
+Make sure you actually want DHCP etc then add this to `/etc/network/interfaces.d/eth0`:
 
 ```bash
-/usr/sbin/ethtool --set-eee eth0 eee off
-exit 0
+auto eth0
+iface eth0 inet dhcp
+#link-speed 100
+post-up /sbin/ethtool --set-eee eth0 eee off
 ```
 
 ## What really really helped
