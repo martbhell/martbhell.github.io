@@ -19,6 +19,9 @@ attendees included:
 It would have been beneficial to have a CTF expert and someone for
 documentation/write-ups to create a well-rounded team.
 
+CTF -
+[Capture the Flag](<https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)>)
+
 Organizing the event involved a lot of non-security-related tasks, such as
 securing a budget, booking venues and food, and transporting equipment.
 
