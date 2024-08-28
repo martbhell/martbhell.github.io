@@ -34,14 +34,14 @@ Hauska suunnistus
   mennä mäessä.
 - 8-9: Hirveä pitkä. Kesti noin 28 minuuttia. Oli montta vaihtoehtoa:
 
-    - taksepäin ja isompi polun ympäri (lyhyin oli 2514m)
-    - eteenpäin ja pienempi polut ympäri (lyhyin oli 2341m)
-    - suora (lyin oli 1796m) Valitsin eteenpäin, mutta en totenut se hyvin.
-      Juoksin 2889 metriä!
+  - taksepäin ja isompi polun ympäri (lyhyin oli 2514m)
+  - eteenpäin ja pienempi polut ympäri (lyhyin oli 2341m)
+  - suora (lyin oli 1796m) Valitsin eteenpäin, mutta en totenut se hyvin.
+    Juoksin 2889 metriä!
 
 Minä olen harma ja toinen juoksija jonka juoksi noin samalla vauhdella kuin minä
-sai 18minuuti lyhyempi suorempi reittillä. Ehkä korkeuseroa oli enemmän mutta
-en oo varma.
+sai 18minuuti lyhyempi suorempi reittillä. Ehkä korkeuseroa oli enemmän mutta en
+oo varma.
 
 [![from rasti 8 to 9](images/f.2024.kattila.8-9.png "8-9"){:height=800}](images/f.2024.kattila.8-9.png)
 
