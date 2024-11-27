@@ -67,3 +67,14 @@ Loppuun asti:
 
 Kova kova reitti oli. 400m yläs ja alas korkeusero kello sanoi. Kävellin
 hassusti 4-5 päiävää tämän jälkeen :)
+
+Kompassi oli vähän erilainen kuin vanhan moscowen:
+
+- ei voi pyöreä se "kompassi-talo"
+- ei ollut siinä märkejä/asteet
+
+Mutta ei se haitanut, toimi ihan hyvin. En usko että juoksin väärään suuntaan
+niin pahasti. Otin se myös selvästi rennompi koska oli uudella kompassilla mutta
+myös koska rastia olivat vaikeampi. Ei vaan B-C rada helppo kuntosuunistus.
+
+Ihan kiva kokemus, menen luultavasti sinne takaisin uudelleen :)
