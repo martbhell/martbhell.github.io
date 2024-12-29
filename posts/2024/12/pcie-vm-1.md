@@ -15,7 +15,7 @@ But for some reason an all_reduce is still slow (1/10 out of 2 nodes in BM).
 
 Layout is something like:
 
-```
+```text
 upstream_port
 ^
 downstream_port
