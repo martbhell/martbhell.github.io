@@ -42,3 +42,18 @@ Theories / Next Steps:
 - Read [libvirt python](https://libvirt-python.readthedocs.io/) docs, maybe
   there are some more clues there than what already found in
   [Domain XML format](https://libvirt.org/formatdomain.html)?
+
+### Update 2
+
+The setup I had managed to create was one upstream and one downstream PCI device
+visible in lspci per each GPU/IB card pair.
+
+Taking a step back however with the cards passed into the VM I could only get
+35Gbps between two VMs.
+
+Theories:
+
+- MTU? Or does infiniband figure that out based on what is set in the partition?
+- Is there a better way to test this than `ib_write_bw` ?
+  - Maybe some parameters to do it in parallel, does that increase bandwidth?
+- ATS ON did not help.
