@@ -2,6 +2,7 @@
 title: Brocade Fabric OS Downloads
 date: 2025-01-30
 category: storage
+lang: en
 tags: brocade, fabric os, broadcom, download, firmware
 <!-- prettier-ignore -->
 ---
