@@ -89,6 +89,7 @@ EXTRA_PATH_METADATA = {
     'extras/favicon-32x32.png': {'path': 'favicon-32x32.png'},
     'extras/favicon.ico': {'path': 'favicon.ico'},
     'extras/manifest.json': {'path': 'manifest.json'},
+    'extras/robots.txt': {'path': 'robots.txt'},
 }
 
 #TEMPLATE_PAGES = {'src/tag-cloud.html': 'posts/tag-cloud.html'}
