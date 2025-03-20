@@ -12,16 +12,17 @@ tags: ctf, hacking, hacker, reverse, rev, reverse engineering, radare2, r2, pico
 Usually in Capture the Flag (CTF) challenges I get stuck when it comes to
 reverse engineering. I never really studied programming in assembly or c.
 
-Is it pwning I get stuck in or reversing? Probably a combination.
+Taking some time as part of the monthly Training Day at `$dayjob` as
+Infrastructure Engineer @ datacrunch to get a bit better at this.
+
+Is it pwning I get stuck in, or is it while reverse engineering? Probably a
+combination.
 
 The difference as far as I can tell:
 
 - Pwning: Binary exploitation. Making software do things it wasn't supposed to
   do.
 - Reversing: Figuring out how a program ticks.
-
-Taking some time as part of the monthly Training Day at the `$dayjob` as
-Infrastructure Engineer @ datacrunch to get a bit better at this.
 
 I was thinking, maybe if I just try a few challenges and just follow write-ups?
 Maybe some stuff will just eventually fall into place?
@@ -30,9 +31,9 @@ Maybe some stuff will just eventually fall into place?
 
 [Execute](https://github.com/jon-brandy/hackthebox/blob/main/Categories/Pwn/Execute/README.md)
 
-- Uh. So somehow realize that the program will shellcode.
+- Uh. So somehow realize that the program will execute machine code
 - That it doesn't allow any characters. xor "/bin/sh" and store that in a
-  variable? that doesn't contain any of the bad characters.
+  variable? that doesn't contain any of the bad characters
 - This was still hard level for me. Actually writing machine code and storing
   strings in registers..
 
@@ -59,9 +60,9 @@ on the container in picoCTF and get the flag!
 Before this I tried briefly a second approach: Modify the code and adding
 `printf("Address of win: %p\n", &win);` printed the thing to enter.
 
-Then there was a difference of `162` / `0xa2` between the functions always. But
-that didn't work with the vanilla `./vuln`. Because I added code, it would
-something shorter..
+There was a difference of `162` / `0xa2` between the functions always. But that
+didn't work with the vanilla `./vuln`. Because I added code, it would something
+shorter..
 
 Third approach / not complete idea:
 
