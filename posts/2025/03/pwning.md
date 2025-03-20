@@ -7,50 +7,55 @@ tags: ctf, hacking, hacker, reverse, rev, reverse engineering, radare2, r2, pico
 <!-- prettier-ignore -->
 ---
 
+## It's hard
+
 Usually in Capture the Flag (CTF) challenges I get stuck when it comes to
-reverse engineering.
+reverse engineering. I never really studied programming in assembly or c.
 
-Or is it pwning? Probably both.
+Is it pwning I get stuck in or reversing? Probably a combination.
 
-The difference:
+The difference as far as I can tell:
 
 - Pwning: Binary exploitation. Making software do things it wasn't supposed to
   do.
 - Reversing: Figuring out how a program ticks.
 
-Taking some time as part of the monthly Training Day at datacrunch to get a bit
-better at this.
+Taking some time as part of the monthly Training Day at the `$dayjob` as
+Infrastructure Engineer @ datacrunch to get a bit better at this.
 
 I was thinking, maybe if I just try a few challenges and just follow write-ups?
 Maybe some stuff will just eventually fall into place?
 
-- hackthebox
-  [Execute](https://github.com/jon-brandy/hackthebox/blob/main/Categories/Pwn/Execute/README.md)
-  - Uh. So somehow realize that the program will shellcode.
-  - That it doesn't allow any characters. xor "/bin/sh" and store that in a
-    variable? that doesn't contain any of the bad characters.
-  - This was still hard level for me. Actually writing machine code and storing
-    strings in registers..
+### hackthebox Execute Challenge
+
+[Execute](https://github.com/jon-brandy/hackthebox/blob/main/Categories/Pwn/Execute/README.md)
+
+- Uh. So somehow realize that the program will shellcode.
+- That it doesn't allow any characters. xor "/bin/sh" and store that in a
+  variable? that doesn't contain any of the bad characters.
+- This was still hard level for me. Actually writing machine code and storing
+  strings in registers..
 
 Maybe picoCTF is easier?
 
-- picoCTF 2025 PIE Time
-  - Uh hmm.. so when the program runs it prints the address to main() and one
-    can enter an address.
-  - Exit codes are different. Sometimes it's SIGKILL / exit code -4, 58, 59, 0..
-  - Maybe I can start the process. Then use gdb to find out the address of the
-    win()? Maybe. How does one use `r2 -d $(pidof vuln)` to to find the address
-    of the function?
-    - command `is~win` in radare2 returns `0x59d28578e2a7` vaddr for
-      `0x59d28578e33d` or `0x5bec819872a7` vaddr for `0x5bec8198733d`
-  - in python: `hex(0x59d28578e33d-0x59d28578e2a7)` == 0x96
-    - `0x96` in both cases is the difference - so then I could connect to the
-      address on the container in picoCTF and get the flag!
-  - Before this I tried briefly a second approach: Modify the code and adding
-    `printf("Address of win: %p\n", &win);` printed the thing to enter.
-    - There was a difference of `162` / `0xa2` between the functions always.
-    - But that didn't work with the vanilla `./vuln`. Because I added code, it
-      would something shorter..
+### picoCTF 2025 PIE Time
+
+- Uh hmm.. so when the program runs it prints the address to main() and one can
+  enter an address.
+- Exit codes are different. Sometimes it's SIGKILL / exit code -4, 58, 59, 0..
+- Maybe I can start the process. Then use gdb to find out the address of the
+  win()? Maybe. How does one use `r2 -d $(pidof vuln)` to to find the address of
+  the function?
+  - command `is~win` in radare2 returns `0x59d28578e2a7` vaddr for
+    `0x59d28578e33d` or `0x5bec819872a7` vaddr for `0x5bec8198733d`
+- in python: `hex(0x59d28578e33d-0x59d28578e2a7)` == 0x96
+  - `0x96` in both cases is the difference - so then I could connect to the
+    address on the container in picoCTF and get the flag!
+- Before this I tried briefly a second approach: Modify the code and adding
+  `printf("Address of win: %p\n", &win);` printed the thing to enter.
+  - There was a difference of `162` / `0xa2` between the functions always.
+  - But that didn't work with the vanilla `./vuln`. Because I added code, it
+    would something shorter..
 
 Third approach / not complete idea:
 
