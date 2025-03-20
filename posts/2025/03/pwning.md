@@ -44,18 +44,24 @@ Maybe picoCTF is easier?
   enter an address.
 - Exit codes are different. Sometimes it's SIGKILL / exit code -4, 58, 59, 0..
 - Maybe I can start the process. Then use gdb to find out the address of the
-  win()? Maybe. How does one use `r2 -d $(pidof vuln)` to to find the address of
-  the function?
-  - command `is~win` in radare2 returns `0x59d28578e2a7` vaddr for
-    `0x59d28578e33d` or `0x5bec819872a7` vaddr for `0x5bec8198733d`
-- in python: `hex(0x59d28578e33d-0x59d28578e2a7)` == 0x96
-  - `0x96` in both cases is the difference - so then I could connect to the
-    address on the container in picoCTF and get the flag!
-- Before this I tried briefly a second approach: Modify the code and adding
-  `printf("Address of win: %p\n", &win);` printed the thing to enter.
-  - There was a difference of `162` / `0xa2` between the functions always.
-  - But that didn't work with the vanilla `./vuln`. Because I added code, it
-    would something shorter..
+  win()? Yeahhhh!
+
+How does one use `r2 -d $(pidof vuln)` to to find the address of the function?
+
+The command in r2 is: `is~win` and it returns `0x59d28578e2a7` vaddr for
+`0x59d28578e33d` or `0x5bec819872a7` vaddr for `0x5bec8198733d`
+
+In python: `hex(0x59d28578e33d-0x59d28578e2a7)` == 0x96
+
+`0x96` in both cases is the difference - so then I could connect to the address
+on the container in picoCTF and get the flag!
+
+Before this I tried briefly a second approach: Modify the code and adding
+`printf("Address of win: %p\n", &win);` printed the thing to enter.
+
+Then there was a difference of `162` / `0xa2` between the functions always. But
+that didn't work with the vanilla `./vuln`. Because I added code, it would
+something shorter..
 
 Third approach / not complete idea:
 
