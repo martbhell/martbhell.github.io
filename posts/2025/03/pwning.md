@@ -58,11 +58,10 @@ In python: `hex(0x59d28578e33d-0x59d28578e2a7)` == 0x96
 on the container in picoCTF and get the flag!
 
 Before this I tried briefly a second approach: Modify the code and adding
-`printf("Address of win: %p\n", &win);` printed the thing to enter.
+`printf("Address of win: %p\n", &win);` . That printed the thing to enter.
 
-There was a difference of `162` / `0xa2` between the functions always. But that
-didn't work with the vanilla `./vuln`. Because I added code, it would something
-shorter..
+There was a difference of `162` / `0xa2` between the functions, always. But that
+didn't work with the vanilla `./vuln`. Because I added code, it would be a lower address..
 
 Third approach / not complete idea:
 
