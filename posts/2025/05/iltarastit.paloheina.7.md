@@ -24,8 +24,8 @@ Paljon juokssut metsässä ja ei niin kiertoreittijä polkulta. Silti +2km yhtee
 
 ## Rastivälit
 
-- 2-3: Oli hassu. En tarkistanut missä rasti oli. Vai mikä rasti oli. Juoksin liian
-  syvää. Seurasin muut juoksijaa, jotkä menivät toiseen rastiin.
+- 2-3: Oli hassu. En tarkistanut missä rasti oli. Vai mikä rasti oli. Juoksin
+  liian syvää. Seurasin muut juoksijaa, jotkä menivät toiseen rastiin.
 - 7-8: Enemmän kompassi. Outo S kurva. Silti hyvä tulos 57/83 tästä hieman
   pidempi osuus (431m)
 - 8-9: Ei hyvin. +1.5minuuttia. Syy: epävarma rastinotto.
@@ -33,9 +33,7 @@ Paljon juokssut metsässä ja ei niin kiertoreittijä polkulta. Silti +2km yhtee
   helpo ja turvallinen reitti alas mäeltä.
 - 16-17: 1.5min bummi. 90 asetta väärä, en tarkistanut kartta hyvin
 
-
 [![from rasti 16 to 17](images/iltarastit20250505.16.17.png "16-17"){:height=400}](images/iltarastit20250505.16.17.png)
-
 
 ## Lopussa
 
