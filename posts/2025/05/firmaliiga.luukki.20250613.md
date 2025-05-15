@@ -28,10 +28,10 @@ Monta A-radan rasteja oli lähellä. Tarvitsin olli tosi tarkaa.
 - Rekisteröinti - Lähdö: Niin lähellä. Yleensä on ehkä kilometrin sinne :)
 
 - 1-2: Liikaa vasemmalle, mutta halusin varmempi rastinotto ainostaan alussa.
-       Sain se myös helposti.
+  Sain se myös helposti.
 - 2-3: Outo. Juoksin turha mäen ympäri, pitäsi juokssut suora yli. Silti mun paras tulos 64
 - 3-4: Iso pummi. Halusin juosta rakennuksen vieressä mutta lähtin liian aikaisin
-       polusta. Seurasin muita juoksijoita liikaa
+  polusta. Seurasin muita juoksijoita liikaa
 - 4-5: Vaikea
 - 5-6: En nähnyt hyvin missä tunneli oli kartassa.
 - 6-7: Epävarma lähtö. Oli liian jyrkkä jyrkänne suora.
@@ -39,14 +39,13 @@ Monta A-radan rasteja oli lähellä. Tarvitsin olli tosi tarkaa.
 - 9-10: Kiva! Vaan suoraa mäkiä välillä :) Suon yli vaan!
 - 10-11: Järven ympäri. Käytin avokalliot. Meni tosi hyvin. 68 nopein
 - 11-12: Yess vielä yksi lyhyt suo. Ei kannat juostaa ympäri. Epävarma lähellä.
-         Ehkäpä hieman liikaa korkeuseroa ja polkua.
+  Ehkäpä hieman liikaa korkeuseroa ja polkua.
 - 13-14: Minulla oli idea mennä suora polkulla. Lähempi tuli epävarma mielen,
-         olin aika yksinäinen just silloin ja vaihtoin.
+  olin aika yksinäinen just silloin ja vaihtoin.
 - 14-15: Vaikea.
 
 ## Lopussa
 
 Käytin uudet suunnistuskengät. Laitoin vanhan juoksukenkien pohjalliset ja se meni tosi hyvin.
 
-Ei sattunut polvissä. Olen vaan 
-
+Ei sattunut polvissä. Olen vaan hidas. Taas sain myös paikka CSC joukkuessa. Heillä oli tarve :)
