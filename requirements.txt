@@ -1,5 +1,5 @@
 pelican[markdown]==4.11.0
-pelican-sitemap==1.2.0
+pelican-sitemap==1.2.1
 pelican-more-categories==0.1.0
 git+https://github.com/martbhell/pelican-alchemy.git@bd530f11a6b77baaef6cfd46050a3b7afa0bfe8f
 beautifulsoup4==4.13.4
