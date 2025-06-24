@@ -3,7 +3,7 @@ title: Suunnistus - Jukola Mikkeli
 date: 2025-06-25 22:57
 category: finland
 lang: fi
-tags: orienteering, suunnistus, mikkeli, jukola, 2-osuus, rastianalyysi, 
+tags: orienteering, suunnistus, mikkeli, jukola, 2-osuus, rastianalyysi, tikkala, vatila
 <!-- prettier-ignore -->
 ---
 
@@ -11,7 +11,7 @@ tags: orienteering, suunnistus, mikkeli, jukola, 2-osuus, rastianalyysi,
 
 - Osuus: 2
 - 10 km (juoksin 13km, 210min, 1386/1615)
-- Mikkeli, Etelä-Savo
+- Tikkala (Mikkeli), Etelä-Savo
 - [Tulokset](https://results.jukola.com/tulokset-new/fi/j2025_ju/ju/kilpailijat/p2/?Popup=Competitor;1100;2)
   [Livelox](https://www.livelox.com/Viewer/Mikkeli-Jukola-2025-Jukolan-Viesti/Jukolan-Viesti/2?classId=988724&relayLeg=2)
 
