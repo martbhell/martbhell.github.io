@@ -45,7 +45,6 @@ should be a breeze.
 - **_Describe gateway protocol concepts_**
 
 - BGP Basics
-
   - Purpose is to determine best path (not necessarily the shortest)
   - TCP Connection, no periodic updates.
   - iBGP - within an AS / eBGP - between AS

@@ -33,7 +33,6 @@ Hauska suunnistus
   menin vaan yli. Käytin se keltainen suo kyn maamerkki kuinka vase pitäisin
   mennä mäessä.
 - 8-9: Hirveä pitkä. Kesti noin 28 minuuttia. Oli montta vaihtoehtoa:
-
   - taksepäin ja isompi polun ympäri (lyhyin oli 2514m)
   - eteenpäin ja pienempi polut ympäri (lyhyin oli 2341m)
   - suora (lyin oli 1796m) Valitsin eteenpäin, mutta en totenut se hyvin.

@@ -36,7 +36,6 @@ Below I'll go through some topics I thought about while reading through the
     volumes into a group you can take snapshots of a volume group. And also
     create a volume group (and volumes) from the list of snapshots.
 - Cinder storage pool
-
   - backends. In devstack it's devstack@lvmdriver-1apparently one can set
     volume_backend_name both as a cinder.conf and as a property
 
