@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Prettify code
-        uses: creyD/prettier_action@8c18391fdc98ed0d884c6345f03975edac71b8f0# v4.6
+        uses: creyD/prettier_action@8c18391fdc98ed0d884c6345f03975edac71b8f0 # v4.6
         with:
           dry: True
           prettier_options: --check --log-level debug **/*.md
