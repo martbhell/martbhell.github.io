@@ -22,7 +22,6 @@ Source for the Blog where I blog about IT, Finnish Things and sometimes about St
   - cd content; python MAKESYMLINKS.py # done by `build.sh`
 - Makefile
 - output/
-
   - generated from `pelican content` and most of it should not be commited
     as it's being built on every deploy in cloudflare in `build.sh`.
     See publishconf.py: `DELETE_OUTPUT_DIRECTORY = False` for

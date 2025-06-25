@@ -21,17 +21,14 @@ on the current objectives listed on Brocade's
 ### Installation and Configuration
 
 - #### Describe the installation and configuration of Brocade Network Advisor
-
   - Taken care of in my
     [previous blog post](https://www.guldmyr.com/banas-brocade-accredited-network-advisor-specialist/).
     Can be installed in a VM for practice.
 
 - #### Perform SAN Discovery
-
   - What are seed switches?
 
 - #### Perform IP Discovery
-
   - BNA 170-WBT is a course that's currently free by Brocade - it's about IP
     Discovery in BNA!
   - Once discovered devices are stored in the Management application database.
