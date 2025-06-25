@@ -54,8 +54,8 @@ Numerot ovat rastiväli sijainti kautta juoksija. Eli joskus 1453/1552 ja joskus
   samaan rastiin mutta silti monta tuli oikealta kun olin jo ylhällä. Eli
   vähemmän korkeuseroa minulle. 1315/1605.
 
-[![from rasti 15 to 16](images/f.2025.jukola.15-16.png "15-16"){:height=600}](images/f.2026.jukola.15-17.png)
-[![from rasti 16 to 17](images/f.2025.jukola.16-17.png "16-17"){:height=600}](images/f.2026.jukola.16-17.png)
+[![from rasti 15 to 16](images/f.2025.jukola.15-16.png "15-16"){:height=600}](images/f.2025.jukola.15-17.png)
+[![from rasti 16 to 17](images/f.2025.jukola.16-17.png "16-17"){:height=600}](images/f.2025.jukola.16-17.png)
 
 ## Lopussa
 
