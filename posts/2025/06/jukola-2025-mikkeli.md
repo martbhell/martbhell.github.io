@@ -21,6 +21,8 @@ Toinen osuus taas! Lyhempi kuin ennen, mutta paljon enemmän korkeuseroa.
 
 Lännestä Mikkelistä. Paljon ylös ja alamäkeä.
 
+Kun katsoin OC Puisto ne sanottii ehkä vaikein Jukola ikinä vai 50 vuotta.
+
 ## Rastivälit
 
 Numerot ovat rastiväli sijainti kautta juoksija. Eli joskus 1453/1552 ja joskus
@@ -59,15 +61,40 @@ Numerot ovat rastiväli sijainti kautta juoksija. Eli joskus 1453/1552 ja joskus
 
 ## Lopussa
 
-- looot of ura. going around hills
-- dusty
-- long walk to competition center
-- last year with CSC most likely. Suunnistajanbankki ensi vuonna?
-- en ole hyvä teltta , pitä harjoittaa :)
-- ruoka meni hyvin: iltapala noin 2130 leipä, banaani ja yksi patuka
-- juoksin monta vesipisteja vieressä, mutta juomareppu oli hyvä
-- ei ollut pimeä vai kylmä
-- sauna niin hyvä
-- niin hyvä tuoksu yksi lammen ympäri/suossa
-- blister laastaria oli pakko.
-- ei mitään vaivoja vahinkoa. Jalkat tosi hyvä :)
+Siellä oli niin monta uria, ne kuljivät mäkeä ympäri.
+
+Oli aika pölynen, siellä on ollut kuiva pitkän aikan.
+
+Luultavasti viime vuonna CSC:n joukkue, mutta katsotaan. Jos ei ehkä
+suunnistajanpankki ensi vuonna.
+
+En ollut hyvää teltta-asentaja, mutta selvisin. Nyt olen jo parempi, laitoin se
+yhteen viikon jälkeen ja se meni ihan hyvin :)
+
+Ruokailuni meni ihan hyvin. Söin iltapala noin 21:30. Lepä, banaani ja yksi patuka.
+Sitten vähän unta, sain noin puoli tuntti. Katsoin vähän ylessä. En katsonut startti,
+oli liian pitkä matka sinne (> 2km). Kun kävelin sinne en tiennyt mikä tilanne oli, ja kävelin
+tosi nopeasti. Se oli hyvä lämmittely. Odotin noin puoli tuntti vaihtopuomin vieressä
+että ykkösosuus tuli vaihtoon. Tuntui aika kapea se puomi. Oli 4-5 henkilö riviä syvä jono.
+Olin vaan juoksuvaateilla, oli lämmin yö.
+Mutta katsoin ja tiesin mistä hän pitäisi tulla ja sitten se ilmestyi :)
+
+Näin aurinkonousu. Juoksin hienoissa soitassa. Ja yksi niistä oli hieno lammen vieressä ja
+se tuoksuu niin hyvä. Vaan syviä henkiä ja nautii ja sitten lisävoimalla eteenpäin!
+
+Tämä ei ollut niin vaikea minulle. Vaikein itsellee oli ehkä Lahti Hollola kun oli melkein vaan
+korkeuseroja kartassa. Vai muutama ehkä viime vuonna kun oli tosi tiheikkö / hiekka alue lopussa.
+
+Täällä oli aika monta polkua/tietä, kuviaraja vai vihreä oli yleensä aika
+selvä.
+
+Otin mukaan liikaa juomavetta, oli niin monta juomapisteitä matkalla ja join vettä ehkä
+hieman liikaa. Mutta se oli myös hyvä aika lukea kartaa ja sunnittella reitiä.
+
+Sauna oli niin hyvä. Isompi ja vaan kolme saunaa.
+
+Viikon ennen Jukola menin suunnistamaan Kasavuorella ja sain haava. Ehkä koska käytin
+jalkapallosukat ja ei suunnistussukat. Laitoin blister laastari ja ei tuntennut mitään.
+Käytin tämä kerttaa mun normi juoksi pohjalliset ja en tuntennut mittän myös polvelle, mitkä
+olen tuntennut viime vuosia. Paras. Ei mikään jalkaongelmia tänä vuonna. Olin vaan hidas
+ja seurasin muita liikaa :)
