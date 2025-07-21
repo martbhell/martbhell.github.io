@@ -11,13 +11,17 @@ tags: noita, game, games, rogue
 
 Just managed to beat Noita!
 
-With a moderate amount of spoilers and wiki reading it took about 127 hours to beat the Tutorial.
+With a moderate amount of spoilers and wiki reading it took about 127 hours to
+beat the Tutorial.
 
-Got a teleport wand and a freezing field early on. Went to fungal caverns and got wand with some green magic missiles that I could use to get out of some hairy situation.
+Got a teleport wand and a freezing field early on. Went to fungal caverns and
+got wand with some green magic missiles that I could use to get out of some
+hairy situation.
 
 Perks: got invisibility after Jungle. That helped a lot :)
 
-Also made progress and got some new perks I hadn't taken before: Iron Stomach. Didn't use it for anything though.
+Also made progress and got some new perks I hadn't taken before: Iron Stomach.
+Didn't use it for anything though.
 
 ## My usual Route
 
