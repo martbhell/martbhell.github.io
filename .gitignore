@@ -6,3 +6,8 @@ output/**
 content/*.md
 content/extras/*
 content/images/*
+
+node_modules
+package-lock.json
+package.json
+

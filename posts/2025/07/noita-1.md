@@ -14,9 +14,12 @@ Just managed to beat Noita!
 With a moderate amount of spoilers and wiki reading it took about 127 hours to
 beat the Tutorial.
 
+<details>
+<summary> Spoilers </summary>
 Got a teleport wand and a freezing field early on. Went to fungal caverns and
 got wand with some green magic missiles that I could use to get out of some
 hairy situation.
+</details>
 
 Perks: got invisibility after Jungle. That helped a lot :)
 
