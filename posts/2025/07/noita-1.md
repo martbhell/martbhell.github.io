@@ -7,6 +7,8 @@ tags: noita, game, games, rogue
 <!-- prettier-ignore -->
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 ## Witch
 
 Just managed to beat Noita!
@@ -20,6 +22,7 @@ Got a teleport wand and a freezing field early on. Went to fungal caverns and
 got wand with some green magic missiles that I could use to get out of some
 hairy situation.
 </details>
+<!-- markdownlint-enable MD033 -->
 
 Perks: got invisibility after Jungle. That helped a lot :)
 

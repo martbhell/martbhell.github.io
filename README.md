@@ -52,5 +52,8 @@ fnm use 24
 mkdir prettier-env && cd prettier-env
 npm init -y
 npm install --save-dev prettier
+npm install --save-dev markdownlint-cli2
+
 npx prettier --write --prose-wrap always mymardkwon.md
+
 ```
