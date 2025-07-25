@@ -43,3 +43,17 @@ Source for the Blog where I blog about IT, Finnish Things and sometimes about St
     - Ensure only symlinks in content/
   - Moar
   - Profit
+
+### How to do fnm / prettier from cli
+
+```bash
+fnm install 24
+fnm use 24
+mkdir prettier-env && cd prettier-env
+npm init -y
+npm install --save-dev prettier
+npm install --save-dev markdownlint-cli2
+
+npx prettier --write --prose-wrap always mymardkwon.md
+
+```
