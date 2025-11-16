@@ -54,6 +54,15 @@ npm init -y
 npm install --save-dev prettier
 npm install --save-dev markdownlint-cli2
 
-npx prettier --write --prose-wrap always mymardkwon.md
+npx prettier --write --prose-wrap=always mymarkdown.md
 
+```
+
+Or this way if you don't see that it says `npx`:
+
+```bash
+pip install --user nodenv
+nodeenv ~/npm-env --node=25.2.0
+source ~/npm-env/bin/activate
+pxprettier --write --prose-wrap=always mymarkdownt.md
 ```
