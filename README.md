@@ -64,5 +64,5 @@ Or this way if you don't see that it says `npx`:
 pip install --user nodenv
 nodeenv ~/npm-env --node=25.2.0
 source ~/npm-env/bin/activate
-pxprettier --write --prose-wrap=always mymarkdownt.md
+prettier --write posts/2025/11/huurteinen-iltarastit-25.md --prose-wrap always --print-width 120
 ```
