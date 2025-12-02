@@ -63,5 +63,9 @@ If you want your changes to be kept, type "save" in the simulator window before 
 It feels a bit ruggish. I bet this whole mess could be improved quite easily with some decent scripts. Here's one I'd
 like to see:
 
-if $os == Win7: if $write_read_permissions_in_program_files != "allowed": print_in_big_letter("You need more axx! Do
-$THIS") exit_everything_and_die
+```bash
+if
+$os == Win7: if $write_read_permissions_in_program_files != "allowed": print_in_big_letter("You need more axx! Do
+$THIS")
+exit_everything_and_die
+```
