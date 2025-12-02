@@ -1,11 +1,11 @@
-Source for the Blog where I blog about IT, Finnish Things and sometimes about Storage (but not so much anymore on this topic).
+Source for the Blog where I blog about IT, Finnish Things and sometimes about Storage (but not so much anymore on this
+topic).
 
 ## Workflow
 
-- build content with `bash build.sh` - same as in deployment but
-  without defining `SITEURL` when running `pelican content`.
-  In cloudflare deploy we set it to <https://guldmyr.com>
-  Having it unset makes links work when developing locally
+- build content with `bash build.sh` - same as in deployment but without defining `SITEURL` when running
+  `pelican content`. In cloudflare deploy we set it to <https://guldmyr.com> Having it unset makes links work when
+  developing locally
 - Test stuff locally with `pelican -l`
 - minimize changes to output/content, if needed keep in separate commits than ones to:
   - any config files
@@ -22,10 +22,9 @@ Source for the Blog where I blog about IT, Finnish Things and sometimes about St
   - cd content; python MAKESYMLINKS.py # done by `build.sh`
 - Makefile
 - output/
-  - generated from `pelican content` and most of it should not be commited
-    as it's being built on every deploy in cloudflare in `build.sh`.
-    See publishconf.py: `DELETE_OUTPUT_DIRECTORY = False` for
-    re-generating the tags.html after pelican did its thing.
+  - generated from `pelican content` and most of it should not be commited as it's being built on every deploy in
+    cloudflare in `build.sh`. See publishconf.py: `DELETE_OUTPUT_DIRECTORY = False` for re-generating the tags.html
+    after pelican did its thing.
 
 - output/images
   - images go here only or also under `posts/yyyy/mm/images/` ?? TODO

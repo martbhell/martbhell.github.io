@@ -16,14 +16,12 @@ while true; do
   xsetroot -name "$BAT | $CLK" xsetroot -name "$CLK" sleep 1 done | while true; do ~/bin/dwm; done
 ```
 
-Hello from future Johan, the above also looks super weird. Think these days I
-just run dwm in the background once.
+Hello from future Johan, the above also looks super weird. Think these days I just run dwm in the background once.
 
 Will this work to on RHEL6 x64 on a T400 Lenovo/IBM? Let's see tomorrow :)
 
-**14/3 0900- after a little modification the startup script now looks like this
-(just pointed to it in /usr/share/xsession/dwm.start) - script is also chmod
-a+x:**
+**14/3 0900- after a little modification the startup script now looks like this (just pointed to it in
+/usr/share/xsession/dwm.start) - script is also chmod a+x:**
 
 ```bash
 # commands here and before the "while true; do" are run once
@@ -45,11 +43,10 @@ while true; do
   # This looks weird. A while in a while?
 ```
 
-**What I want to figure out is how to logout! .**:DD:dD MODKEY+SHIFT+Q only
-refreshes the screen. MODKEY+l (which I've set to run "gnome-screensaver-command
--l" : lock - lets me run another user, but I cannot logout myself) so with this
-setup I have to reboot the computer for each time I want to re-load the
-configuration (after a change in config.h make;make install)
+**What I want to figure out is how to logout! .**:DD:dD MODKEY+SHIFT+Q only refreshes the screen. MODKEY+l (which I've
+set to run "gnome-screensaver-command -l" : lock - lets me run another user, but I cannot logout myself) so with this
+setup I have to reboot the computer for each time I want to re-load the configuration (after a change in config.h
+make;make install)
 
 **update** 14/3 1600
 
@@ -59,14 +56,11 @@ static const char *volup[] = { "amixer", "set", "Master", "15%+", NULL }; static
 { MODKEY, XK_Up, spawn, {.v = volup } }, { MODKEY, XK_Down, spawn, {.v = voldown } },
 ```
 
-will lower/increase the volume with 15% with MODKEY+up or MODKEY+down :) if you
-are unsure what the key should be called you can run `xev` which will tell you
-what they are
+will lower/increase the volume with 15% with MODKEY+up or MODKEY+down :) if you are unsure what the key should be called
+you can run `xev` which will tell you what they are
 
-> KeyRelease event, serial 27, synthetic NO, window 0x1a00001, root 0x111, subw
-> 0x0, time 277994, (965,69), root:(966,87), state 0x0, keycode 111 (keysym
-> 0xff52, **Up**), same_screen YES, XLookupString gives 0 bytes: XFilterEvent
-> returns: False KeyPress event, serial 27, synthetic NO, window 0x1a00001, root
-> 0x111, subw 0x0, time 278097, (965,69), root:(966,87), state 0x0, keycode 116
-> (keysym 0xff54, **Down**), same_screen YES, XLookupString gives 0 bytes:
-> XmbLookupString gives 0 bytes:
+> KeyRelease event, serial 27, synthetic NO, window 0x1a00001, root 0x111, subw 0x0, time 277994, (965,69),
+> root:(966,87), state 0x0, keycode 111 (keysym 0xff52, **Up**), same_screen YES, XLookupString gives 0 bytes:
+> XFilterEvent returns: False KeyPress event, serial 27, synthetic NO, window 0x1a00001, root 0x111, subw 0x0, time
+> 278097, (965,69), root:(966,87), state 0x0, keycode 116 (keysym 0xff54, **Down**), same_screen YES, XLookupString
+> gives 0 bytes: XmbLookupString gives 0 bytes:

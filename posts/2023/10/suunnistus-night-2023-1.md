@@ -18,8 +18,8 @@ tags: orienteering, suunnistus, sääksi, rykmentti, b-rata, Nurmijärvi, kunto,
 ## Miten
 
 - K-2: OK
-- 2-3: Isoin bummi. En valitsinut parempi otaminen olisi löytää tuo talo / mäki
-  just ennen rastia ja mennä sieltä rastiin.
+- 2-3: Isoin bummi. En valitsinut parempi otaminen olisi löytää tuo talo / mäki just ennen rastia ja mennä sieltä
+  rastiin.
 - 4-5: En katsonut kompassi tarkasti. Oli parempi jos menisin enemmän vasemalle.
 - 5-6: Menin liikaa mäen alle. Silti tä oli mun paras rasti?? 16/31 ??
 - 7-8: OK mutta ei uskonut mennä mihin muut olivat siellä eli meni rastin ohi.
@@ -30,7 +30,6 @@ tags: orienteering, suunnistus, sääksi, rykmentti, b-rata, Nurmijärvi, kunto,
 
 Yösuunnistus vinkit:
 
-- Kun suunnistaan muun kanssa, muistakaa sovitta loppuaika ja että kaikilla on
-  kaikien puhelinumerot.
-- Itse en ymmärtää miksi en laitaa lampun asetuksen; että näen pidempi.. Mutta
-  se heiastaa kartasta.. Ehkä minus ja en pitäisi käyttää muovipussi.
+- Kun suunnistaan muun kanssa, muistakaa sovitta loppuaika ja että kaikilla on kaikien puhelinumerot.
+- Itse en ymmärtää miksi en laitaa lampun asetuksen; että näen pidempi.. Mutta se heiastaa kartasta.. Ehkä minus ja en
+  pitäisi käyttää muovipussi.

@@ -15,9 +15,8 @@ FUNET: [http://ftp.funet.fi/pub/Linux/INSTALL/Centos/](http://ftp.funet.fi/pub/
 
 It installs just fine on an HP DL360 G7 with P410 and P411 controller.
 
-CentOS has as far as I understand been slower at releasing updates than
-Scientific Linux (for example 6.2 was out 5 days earlier on SLC than on CentOS),
-this was not the case today though, SLC 5.8 is not available yet. Why?
+CentOS has as far as I understand been slower at releasing updates than Scientific Linux (for example 6.2 was out 5 days
+earlier on SLC than on CentOS), this was not the case today though, SLC 5.8 is not available yet. Why?
 
 Compare release dates here:
 

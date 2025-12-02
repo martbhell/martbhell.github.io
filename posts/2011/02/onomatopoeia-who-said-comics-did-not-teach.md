@@ -6,9 +6,7 @@ tags: cyanide and happiness, english, explosm, language, onomatopoeia
 <!-- prettier-ignore -->
 ---
 
-[http://www.explosm.net/comics/2322/](http://www.explosm.net/comics/2322/ "explosm c & h")
-brought
-[Onomatopoeia](http://en.wikipedia.org/wiki/Onomatopoeia "wiki onomatopoeia") to
-my attention.
+[http://www.explosm.net/comics/2322/](http://www.explosm.net/comics/2322/ "explosm c & h") brought
+[Onomatopoeia](http://en.wikipedia.org/wiki/Onomatopoeia "wiki onomatopoeia") to my attention.
 
 Pretty awesome word :)

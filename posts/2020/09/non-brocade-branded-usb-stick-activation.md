@@ -8,9 +8,8 @@ tags: brocade, usb
 
 Another submission courtesy of **Eberhard**.
 
-Run anything here at your own risk. From what I can tell they should be fairly
-safe. Do make sure you run them on the switch itself. Pretty nice in case you
-don't want to shell out for a Brocade branded USB stick to transfer firmwares!
+Run anything here at your own risk. From what I can tell they should be fairly safe. Do make sure you run them on the
+switch itself. Pretty nice in case you don't want to shell out for a Brocade branded USB stick to transfer firmwares!
 
 Hi,
 
@@ -67,8 +66,8 @@ lsmod | grep usb
 /bin/mknod -m 660 /dev/sda2 b 8 2
 ```
 
-Sometimes the above script fails and you need to run it until it has usb_storage
-and usbcore modules listed as loaded kernel modules.
+Sometimes the above script fails and you need to run it until it has usb_storage and usbcore modules listed as loaded
+kernel modules.
 
 Now I can mount an ext3 formatted USB-stick:
 

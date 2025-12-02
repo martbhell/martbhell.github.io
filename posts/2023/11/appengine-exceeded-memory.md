@@ -19,15 +19,12 @@ I saw these with:
 - Google's AppEngine and a Python Flask webservice.
 - Wanting to stick with Free Tier (and dynamic instance **F1**).
 
-I should not have used the default gunicorn settings of 4 workers, but rather
-follow their
-[guidance](https://cloud.google.com/appengine/docs/standard/python3/runtime#entrypoint_best_practices)
-and use 2!
+I should not have used the default gunicorn settings of 4 workers, but rather follow their
+[guidance](https://cloud.google.com/appengine/docs/standard/python3/runtime#entrypoint_best_practices) and use 2!
 
-Massive speedup seen, from always >300ms and frequently over 5 seconds to
-respond, it's now down to just a few milliseconds. Probably because the instance
-was I guess using all the memory. But when memory really was exceeded the app
-was killed and restarted resulting in even higher latency.
+Massive speedup seen, from always >300ms and frequently over 5 seconds to respond, it's now down to just a few
+milliseconds. Probably because the instance was I guess using all the memory. But when memory really was exceeded the
+app was killed and restarted resulting in even higher latency.
 
 ## before (the Y axis is in seconds)
 

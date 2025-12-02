@@ -6,8 +6,7 @@ tags: ip, ipv6, networking
 <!-- prettier-ignore -->
 ---
 
-Do you have IPv6 connectivity? Perhaps a server and a domain name already set
-up?
+Do you have IPv6 connectivity? Perhaps a server and a domain name already set up?
 
 [http://ipv6.he.net/](http://ipv6.he.net/)
 

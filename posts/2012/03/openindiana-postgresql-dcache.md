@@ -10,15 +10,13 @@ tags: dcache, esx, esxi, grid, openindiana, postgres, postgresql, vmware, vmware
 
 dCache is a storage element of the Grid (scientific computing).
 
-OI == OpenIndiana. Kind of like opensolaris with an Illumos kernel, not the
-sun/oracle kernel.
+OI == OpenIndiana. Kind of like opensolaris with an Illumos kernel, not the sun/oracle kernel.
 
 With
 [https://www.guldmyr.com/esxi-vmware-workstation/](https://www.guldmyr.com/esxi-vmware-workstation/ "https://www.guldmyr.com/esxi-vmware-workstation/")
 as a base for how to set up ip settings etc in OI.
 
-[oi-dev-151a-text-x86.iso](http://openindiana.org/ "get it from openindiana.org")
-installed
+[oi-dev-151a-text-x86.iso](http://openindiana.org/ "get it from openindiana.org") installed
 
 ```bash
 
@@ -41,8 +39,7 @@ chmod 755 /var/postgres
 
 The pkg update makes it into 151a2
 
-If you do not create the ones above the install of service/postgres will fail
-and create a new BE.
+If you do not create the ones above the install of service/postgres will fail and create a new BE.
 
 ```bash
 pkg install pkg:/database/postgres-84
@@ -79,8 +76,8 @@ psql
 \l
 ```
 
-I initially did this in an ESXi VM in VMWare Workstation, but that keept
-freezing so I went over to a 'real vm' instead. The VM is more responsive.
+I initially did this in an ESXi VM in VMWare Workstation, but that keept freezing so I went over to a 'real vm' instead.
+The VM is more responsive.
 
 ### dCache stuff
 
@@ -105,8 +102,8 @@ root@oi:~# /opt/d-cache/bin/dcache start
 /opt/d-cache/bin/dcache[317]: .[162]: local: not found [No such file or directory]
 ```
 
-so, edit /opt/d-cache/bin/dcache and remove the if in the beginning that will
-make it use /usr/xpg4/bin/sh - so that it uses /bin/bash instead.
+so, edit /opt/d-cache/bin/dcache and remove the if in the beginning that will make it use /usr/xpg4/bin/sh - so that it
+uses /bin/bash instead.
 
 Like this:
 
@@ -140,8 +137,8 @@ in /var/log/dCacheDomain.log you'll find why it's not working:
 
 touch /etc/exports
 
-and it appears to be stable, except for some errors about (NFSv3-oi), however,
-we disregard those for now, we just want to get it running!
+and it appears to be stable, except for some errors about (NFSv3-oi), however, we disregard those for now, we just want
+to get it running!
 
 ```bash
 vi /opt/d-cache/etc/dcache.conf
@@ -155,19 +152,18 @@ and
 vi /opt/d-cache/etc/layouts/single.conf
 ```
 
-uncomment the pool1 section, set a maxDiskSize=2G to specify max disk space
-allowed. Specifics are in the installation part on dcache.org in the book.
+uncomment the pool1 section, set a maxDiskSize=2G to specify max disk space allowed. Specifics are in the installation
+part on dcache.org in the book.
 
 Then point your webbrowser to - see any blue buttons?! **yay, it's up!**
 
-Next step is to try it out, this might prove a little bit more difficult (to
-find dcap/root/srm client for opensolaris/oi).
+Next step is to try it out, this might prove a little bit more difficult (to find dcap/root/srm client for
+opensolaris/oi).
 
 ### PostgreSQL problem
 
-so maybe next time you restart the vm it gives some errors and puts the
-postgresql-server in maintenance mode. Look in /var/adm/messages for some tips,
-it should point you to
+so maybe next time you restart the vm it gives some errors and puts the postgresql-server in maintenance mode. Look in
+/var/adm/messages for some tips, it should point you to
 
 ```bash
 svcs -xv svc:/application/database/postgresql_84:default_32bit
@@ -181,8 +177,8 @@ which will tell you more about what's going on and how to fix it
 
 ## Use dCache with webdav
 
-We'll start with trying to use Webdav (doesn't require anything fancy on the
-client side, except maybe a browser plugin for uploading).
+We'll start with trying to use Webdav (doesn't require anything fancy on the client side, except maybe a browser plugin
+for uploading).
 
 go to the layout file and uncomment the webdav part, add
 
@@ -191,8 +187,8 @@ webdavAnonymousAccess=FULL
 webdavRootPath=/data/world-writable
 ```
 
-The script /opt/d-cache/bin/chimera-cli.sh sadly assumes that you need bash or a
-special version of bash somehow. So running
+The script /opt/d-cache/bin/chimera-cli.sh sadly assumes that you need bash or a special version of bash somehow. So
+running
 
 `bash /opt/d-cache/bin/chimera-cli.sh mkdir /data`
 
@@ -202,27 +198,23 @@ works, but
 
 does not.
 
-See <http://www.dcache.org/manuals/Book-1.9.12/start/intouch-client.shtml> for
-the rest.
+See <http://www.dcache.org/manuals/Book-1.9.12/start/intouch-client.shtml> for the rest.
 
-If you keep the webdav in the same domain you'll need to restart the whole
-dcache.
+If you keep the webdav in the same domain you'll need to restart the whole dcache.
 
-In Windows 7 you can then mount a new network folder and click "Connect to a web
-site that you can use to store your documents and pictures" and in there type:
+In Windows 7 you can then mount a new network folder and click "Connect to a web site that you can use to store your
+documents and pictures" and in there type:
 
-Now you get another folder in your computer where you can create folders. These
-will also show up if you surf to , sadly however, you cannot write files.
-[gridpp.ac.uk](https://www.gridpp.ac.uk/wiki/DCache_Log_Message_Archive#Pool_too_high)
+Now you get another folder in your computer where you can create folders. These will also show up if you surf to , sadly
+however, you cannot write files. [gridpp.ac.uk](https://www.gridpp.ac.uk/wiki/DCache_Log_Message_Archive#Pool_too_high)
 says it's because pool is full. But it's 2048MiB and all free?
 
 <https://twiki.grid.iu.edu/bin/view/Storage/MeetingMinutes2009Sep02>
 
 suggests minimum pool size might be 4G, changed pool maxdiskspace to 8G.
 
-tada, now the copy starts, or the file creation starts, but I cannot actually
-write anything to it. So if I create a .txt file, I can give it a name and save
-it, unless I try to write anything inside it!
+tada, now the copy starts, or the file creation starts, but I cannot actually write anything to it. So if I create a
+.txt file, I can give it a name and save it, unless I try to write anything inside it!
 
 some errors to accompany this:
 
@@ -237,11 +229,9 @@ some errors to accompany this:
 
 ### NFSv41
 
-uncomment the nfsv3 and add nfsv41 then on a system you should be able to
-'apt-get install nfs-common'; modprobe nfs; mkdir /nfsv4 mount -t nfs4
-ip.to.server:/ /nfsv4'. But for me this stops working with an "cp: closing
-`./bash': Input/output error". Possibly because I could not specify -o
-minorversion=1 on this ubuntu install (3.0.0-16).
+uncomment the nfsv3 and add nfsv41 then on a system you should be able to 'apt-get install nfs-common'; modprobe nfs;
+mkdir /nfsv4 mount -t nfs4 ip.to.server:/ /nfsv4'. But for me this stops working with an "cp: closing `./bash':
+Input/output error". Possibly because I could not specify -o minorversion=1 on this ubuntu install (3.0.0-16).
 
 #### NFSv41 with dCacheToGo
 

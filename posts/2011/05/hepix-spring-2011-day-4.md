@@ -47,35 +47,29 @@ Two reasons to fork: proactively (worried) or because they are unhappy with how 
 
 ---
 
-People in the audience are afraid that a lot of times a company acquires an open
-source project and then closes it down.
+People in the audience are afraid that a lot of times a company acquires an open source project and then closes it down.
 
 ---
 
-_“When you acquire a company and it's the projects. You have two options if
-don't want the project. Drop it or kill it. Kill it does not work for open
-source.” - Gilles Gravier._
+_“When you acquire a company and it's the projects. You have two options if don't want the project. Drop it or kill it.
+Kill it does not work for open source.” - Gilles Gravier._
 
-Openoffice is not dropped yet. Lots of other options. Fork and work on closed
-source (like Grid Engine). Drop it and stop working on it. Drop it and “talk to
-the community”. ---
+Openoffice is not dropped yet. Lots of other options. Fork and work on closed source (like Grid Engine). Drop it and
+stop working on it. Drop it and “talk to the community”. ---
 
 No info about Lustre – when asked about it Oracle did not want to comment.
 
-Asked to e-mail [gilles.gravier@oracle.com](mailto:gilles.gravier@oracle.com)
-for more information.
+Asked to e-mail [gilles.gravier@oracle.com](mailto:gilles.gravier@oracle.com) for more information.
 
 Will Oracle port debconf to Oracle Linux? Oracle will take a look.
 
-There was lot of angst against Oracle that surfaced, but Oracle handled it quite
-well and had good answers
+There was lot of angst against Oracle that surfaced, but Oracle handled it quite well and had good answers
 
-From one of the Oracles: “Allow me to be a bit provocative: If Oracle's prices
-were lower; would you consider buying an Oracle product?”
+From one of the Oracles: “Allow me to be a bit provocative: If Oracle's prices were lower; would you consider buying an
+Oracle product?”
 
 - “It takes 25 years to make a good reputation, 5 minutes to loose it.”\_
-- CERN employee. “SUN used to make hardware and give away software for free;
-  Oracle is .. the other way around.”
+- CERN employee. “SUN used to make hardware and give away software for free; Oracle is .. the other way around.”
 - Lenz Grimmer “Laughter”
 - Audience.
 
@@ -83,18 +77,13 @@ were lower; would you consider buying an Oracle product?”
 
 - [http://www.eofs.org](http://www.eofs.org/)
 - one repository of lustre
-- hpcfs.org is another lustre open source – this will merge with opensfs.org.
-  Both are American.
-- Close work together with eofs.org – the two above have agreed on a set of
-  improvements.
+- hpcfs.org is another lustre open source – this will merge with opensfs.org. Both are American.
+- Close work together with eofs.org – the two above have agreed on a set of improvements.
 - 2.1 lustre will be released by Whamcloud in summer 2011.
-- LUG – lustre user group – reports and interviews at
-  [http://insidehpc.com](http://insidehpc.com/)
+- LUG – lustre user group – reports and interviews at [http://insidehpc.com](http://insidehpc.com/)
 
-Next Day:
-[Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5")
+Next Day: [Day 5](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-5/ "day5")
 
-Previous Days:
-[Day 3](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3")
+Previous Days: [Day 3](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-3/ "day3")
 [Day 2](https://www.guldmyr.com/hepix-spring-2011-%e2%80%93-day-2/ "day2")
 [Day 1](https://www.guldmyr.com/hepix-spring-2011-day-1/ "day1")

@@ -19,9 +19,8 @@ Firefox download links:
 
 Going to test this as soon as I get home on My Windows machine.
 
-On my RHEL6 laptop however I couldn't just unpack the linux version and run the
-./firefox. I also couldn't find the installation guide. Nonetheless, it
-complains about this;
+On my RHEL6 laptop however I couldn't just unpack the linux version and run the ./firefox. I also couldn't find the
+installation guide. Nonetheless, it complains about this;
 
 ```text
 ./firefox-bin: error while loading shared libraries: libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory
@@ -33,22 +32,19 @@ But `sudo yum install gtk2` gives:
 
 And after a 'find /' I found the file here:
 
-> cat ~/find.all | grep libgtk-x11-2.0.so.0
-> /usr/lib64/libgtk-x11-2.0.so.0.1800.9 /usr/lib64/libgtk-x11-2.0.so.0
+> cat ~/find.all | grep libgtk-x11-2.0.so.0 /usr/lib64/libgtk-x11-2.0.so.0.1800.9 /usr/lib64/libgtk-x11-2.0.so.0
 
-How do I proceed? - Did not find anything online quick enough that would help
-me. The
-[other requirements](http://www.mozilla.com/en-US/firefox/system-requirements.html "firefox requirements")
-I could also find in my system.. I tried to run ./firefox-bin which complained
-about libxul.so which I also have in my system. I tried to run it in a sudo, no
-difference.
+How do I proceed? - Did not find anything online quick enough that would help me. The
+[other requirements](http://www.mozilla.com/en-US/firefox/system-requirements.html "firefox requirements") I could also
+find in my system.. I tried to run ./firefox-bin which complained about libxul.so which I also have in my system. I
+tried to run it in a sudo, no difference.
 
 If anybody reads this and has some ideas or so - please let me know :)
 
 ...
 
-So I tried **Google Chrome** instead (haven't tried this before) and wow,
-compared to Firefox 3.6.x which is the default one on RHEL6 it is really fast!
+So I tried **Google Chrome** instead (haven't tried this before) and wow, compared to Firefox 3.6.x which is the default
+one on RHEL6 it is really fast!
 
 This is the link I used to install it and it worked perfectly:
 

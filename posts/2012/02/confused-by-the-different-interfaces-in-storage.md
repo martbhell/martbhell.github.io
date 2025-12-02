@@ -10,5 +10,5 @@ Look no further than this link by Demartek:
 
 [http://www.demartek.com/Demartek_Interface_Comparison.html](http://www.demartek.com/Demartek_Interface_Comparison.html)
 
-It has a good picture that shows the difference between the "mini LC", mSFP or
-whatever it's called and the standard LC connector.
+It has a good picture that shows the difference between the "mini LC", mSFP or whatever it's called and the standard LC
+connector.

@@ -6,8 +6,8 @@ tags: food, pasta, resepti, 2x tortellini 250g, 1x kirsikka tomaatia, 1x tomaati
 <!-- prettier-ignore -->
 ---
 
-Miksata kerma, tomaatimurska ja mausteet. Kaada sose formille jossa on jo
-tortellinia ja tomaatia. fetajuusto päällä. Uunille 200 ℃ ~18min.
+Miksata kerma, tomaatimurska ja mausteet. Kaada sose formille jossa on jo tortellinia ja tomaatia. fetajuusto päällä.
+Uunille 200 ℃ ~18min.
 
 Versiolle kaksille: ehkä parempi rikottajuusto, penaati ja ilman tomaatimurska?
 

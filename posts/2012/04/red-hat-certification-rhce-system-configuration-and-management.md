@@ -6,9 +6,7 @@ tags: certification, linux, red, hat, rhce
 <!-- prettier-ignore -->
 ---
 
-Just tried out the
-"[Red Hat Skills Assessment](http://www.redhat.com/training/assessment.html "redhat.com")"
-for RHCE.
+Just tried out the "[Red Hat Skills Assessment](http://www.redhat.com/training/assessment.html "redhat.com")" for RHCE.
 
 These are apparently the ones I need to work on:
 
@@ -23,7 +21,6 @@ These are apparently the ones I need to work on:
 - Caching-Only DNS Server Familiarity
 - File Sharing with NFS Familiarity
 
-But the assessment doesn't say which questions I missed, so it could be that
-some of the ones with "Deep Understanding" I could have gotten enough answers
-right by guessing. Best to not answer if you don't know so you get a better
-pointer at what to look at?
+But the assessment doesn't say which questions I missed, so it could be that some of the ones with "Deep Understanding"
+I could have gotten enough answers right by guessing. Best to not answer if you don't know so you get a better pointer
+at what to look at?

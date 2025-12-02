@@ -16,8 +16,7 @@ Ainesosat:
 
 valmistelu:
 
-- Kun spaghetti on melkein valmis, alkaa lämmittä voin toisella kattilalla.
-  Lisätä suola ja pipuri.
+- Kun spaghetti on melkein valmis, alkaa lämmittä voin toisella kattilalla. Lisätä suola ja pipuri.
 - Laita sitten pastan voihin kattilaan.
 - Säästä kupillinen vetä pastakattilasta.
 - Latitaa spaghettia voihin kattilaan.

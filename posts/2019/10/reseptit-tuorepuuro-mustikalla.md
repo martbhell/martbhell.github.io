@@ -19,8 +19,7 @@ Ainesosit:
 
 Ohjeet:
 
-Laita mustikoita laatikkoon ja odottaa noin tunti. Sen jälkeen laitta kaikki
-muut ainesosit laatikkoon ja miksata. Huomata että mustikoita eivät menevät
-liian rikki kuin haluat. Sulje laatiko ja laitta jääkaapiin yli yö.
+Laita mustikoita laatikkoon ja odottaa noin tunti. Sen jälkeen laitta kaikki muut ainesosit laatikkoon ja miksata.
+Huomata että mustikoita eivät menevät liian rikki kuin haluat. Sulje laatiko ja laitta jääkaapiin yli yö.
 
 Nautista aamulla!
