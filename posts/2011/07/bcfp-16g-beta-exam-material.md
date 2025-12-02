@@ -6,15 +6,12 @@ tags: bcfp, brocade, certification, learning, san, storage, network, study, stud
 <!-- prettier-ignore -->
 ---
 
-After the announcement of the available material Fabric OS 7.0.0a has been
-released.
+After the announcement of the available material Fabric OS 7.0.0a has been released.
 
-On the page
-[http://community.brocade.com/docs/DOC-2041](http://community.brocade.com/docs/DOC-2041 "on brocade.com")
+On the page [http://community.brocade.com/docs/DOC-2041](http://community.brocade.com/docs/DOC-2041 "on brocade.com")
 only the first revision of the 7.0 release notes is available.
 
-The BCFA 16G beta course material is also
-[available](http://community.brocade.com/docs/DOC-2039 "BCFA 16g material"),
+The BCFA 16G beta course material is also [available](http://community.brocade.com/docs/DOC-2039 "BCFA 16g material"),
 probably a good idea to read up on both and do a little rehearsing.
 
 The old attachments are these:
@@ -47,12 +44,10 @@ With my notes:
 - Brocade_Adapters_v2.3.0.0_Admin_Guide.pdf (27 October 2010, 292p)
 - AccessGateway_AdminGd_v700.pdf (29 April 2011, 102p)
 
-The newer versions are not available if you have a registered account on
-my.brocade.com without any product registered to it. I've e-mailed Brocade
-asking for more access. In the meantime some are available on for example
-HP.com - but the Brocade release notes are not available there. And the HP
-Release notes for 7.0.0a have the HP names of the products. On HP's site you can
-go to the
+The newer versions are not available if you have a registered account on my.brocade.com without any product registered
+to it. I've e-mailed Brocade asking for more access. In the meantime some are available on for example HP.com - but the
+Brocade release notes are not available there. And the HP Release notes for 7.0.0a have the HP names of the products. On
+HP's site you can go to the
 [manuals](http://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?contentType=SupportManual&lang=en&cc=us&docIndexId=64179&taskId=101&prodTypeId=12169&prodSeriesId=3742041)
 for the 8/40 to get some more documents.
 
@@ -60,11 +55,11 @@ for the 8/40 to get some more documents.
   pdf (HP's
   [customer notice](http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&taskId=120&prodSeriesId=3759005&prodTypeId=3709945&objectID=c02887883)
   about the release of 7.0.0a)
-- [FOS_TrblShoot](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912108/c02912108.pdf)
-  (3 June 2011, the same)
+- [FOS_TrblShoot](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912108/c02912108.pdf) (3 June 2011,
+  the same)
 - 7.x.x FOS_CMD_reference guide (not available)
-- [7.x.x FOS Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912101/c02912101.pdf)
-  (3 June 2011, the same)
+- [7.x.x FOS Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912101/c02912101.pdf) (3
+  June 2011, the same)
 - 7.x.x AG Admin Guide (not available)
 - [7.x.x. Fabric Watch Admin Guide](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912099/c02912099.pdf)
   (29 April 2011)
@@ -73,11 +68,10 @@ for the 8/40 to get some more documents.
 - [7.0.0 Message Reference](http://bizsupport2.austin.hp.com/bc/docs/support/SupportManual/c02912102/c02912102.pdf)
    (this has the public error messages that you may see in errdump)
 
-Actually it looks like the documents available are quite up to date. I guess the
-Admin Guides etc don't update that often anyway. There is however a
-[document](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912109/c02912109.pdf)
-in the manuals link above that explains that there have been some changes to
-some of the Brocade Documents. This might be worth checking out.
+Actually it looks like the documents available are quite up to date. I guess the Admin Guides etc don't update that
+often anyway. There is however a
+[document](http://bizsupport1.austin.hp.com/bc/docs/support/SupportManual/c02912109/c02912109.pdf) in the manuals link
+above that explains that there have been some changes to some of the Brocade Documents. This might be worth checking
+out.
 
-The conclusion of this little exercise is that the material available is
-currently good enough (for me).
+The conclusion of this little exercise is that the material available is currently good enough (for me).

@@ -16,8 +16,8 @@ Does this happen on your computer?
 
 ## Try these things
 
-- It is often/always DNS. Is one of the DNS server your computer is set to use perhaps
-  no longer working? That'd sure make things slower.
-- Except when it's not. Is your computer setup to use a proxy server?
-  For me unticking the "automatically detect proxy settings" did the trick.
-  I'm using a [setup script](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file).
+- It is often/always DNS. Is one of the DNS server your computer is set to use perhaps no longer working? That'd sure
+  make things slower.
+- Except when it's not. Is your computer setup to use a proxy server? For me unticking the "automatically detect proxy
+  settings" did the trick. I'm using a
+  [setup script](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file).

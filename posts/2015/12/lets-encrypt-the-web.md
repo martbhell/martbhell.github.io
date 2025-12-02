@@ -8,13 +8,11 @@ tags: https, letsencrypt, nginx
 
 Letsencrypt is finally in public beta!
 
-Got
-[from ssllabs.com](https://www.ssllabs.com/ssltest/analyze.html?d=mat.rix.fi)
-https enabled on my own play [webhost](https://mat.rix.fi) today with let's
-encrypt!
+Got [from ssllabs.com](https://www.ssllabs.com/ssltest/analyze.html?d=mat.rix.fi) https enabled on my own play
+[webhost](https://mat.rix.fi) today with let's encrypt!
 
-There are many good guides for getting this setup. This is how I got it working
-with nginx (without using the experimental nginx plugin of letsencrypt).
+There are many good guides for getting this setup. This is how I got it working with nginx (without using the
+experimental nginx plugin of letsencrypt).
 
 on the webhost (not as root):
 
@@ -23,11 +21,9 @@ on the webhost (not as root):
 **eventually** this generates some certificates into /etc/letsencrypt _of course_
 
 you should read scripts before running anything, there are for
-example [acme-tiny](https://github.com/diafygi/acme-tiny),
-[gethttpsforfree.com](https://gethttpsforfree.com/)
-and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that
-might be better. #mozilla has some server side SSL recommendations
-on <https://wiki.mozilla.org/Security/Server_Side_TLS>
+example [acme-tiny](https://github.com/diafygi/acme-tiny), [gethttpsforfree.com](https://gethttpsforfree.com/)
+and [letsencrypt-nosudo](https://github.com/diafygi/letsencrypt-nosudo) that might be better. #mozilla has some server
+side SSL recommendations on <https://wiki.mozilla.org/Security/Server_Side_TLS>
 
 Modify your nginx site file to have something like this:
 

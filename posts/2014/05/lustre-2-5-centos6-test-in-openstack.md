@@ -12,33 +12,26 @@ Three VMs:
 
 - two servers, one MDS, one OSS and one Client.
 - CentOS65 on all.
-- An open internal ethernet network for the lustre traffic (don't forget
-  firewalls).
+- An open internal ethernet network for the lustre traffic (don't forget firewalls).
 - Yum updated to latest kernel.
-- Two volumes presented to the lustreserver and lustreoss for MDT + OST, both
-  are at /dev/vdc.
+- Two volumes presented to the lustreserver and lustreoss for MDT + OST, both are at /dev/vdc.
 - Hostnames set.
 - /etc/hosts updated with three IPs: lustreserver,  lustreoss and lustreclient.
 
-With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building
-the server components. One needs to use the latest branch for 2.5 so the
-instructions are
+With 2.6.32-431.17.1.el6.x86_64 there's some issues at the moment for building the server components. One needs to use
+the latest branch for 2.5 so the instructions are
 [https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821](https://wiki.hpdd.intel.com/pages/viewpage.action?pageId=8126821)
 
 ## Server side
 
-**MDT/OST:** Install e2fsprogs and reboot after yum update (to run the latest
-kernel kernel).
+**MDT/OST:** Install e2fsprogs and reboot after yum update (to run the latest kernel kernel).
 
-yum localinstall all files from:
-<http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/>
+yum localinstall all files from: <http://downloads.whamcloud.com/public/e2fsprogs/1.42.9.wc1/el6/RPMS/x86_64/>
 
-Next is to rebuild lustre kernels to work with the kernel you are running and
-the one you have installed for next
+Next is to rebuild lustre kernels to work with the kernel you are running and the one you have installed for next
 boot: [https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel](https://wiki.hpdd.intel.com/display/PUB/Rebuilding+the+Lustre-client+rpms+for+a+new+kernel)
 
-RPMS are here:
-<http://downloads.whamcloud.com/public/lustre/latest-feature-release/el6/server/SRPMS/>
+RPMS are here: <http://downloads.whamcloud.com/public/lustre/latest-feature-release/el6/server/SRPMS/>
 
 For rebuilding these are also needed:
 
@@ -49,14 +42,12 @@ basically:
 - git clone -b b2_5 git://git.whamcloud.com/fs/lustre-release.git
 - autogen
 - install kernel.src from redhat (puts tar.gz in /root/rpmbuild/SOURCES/)
-- if rpmbuilding as user build, then copy files from /root/rpmbuild into
-  /home/build/rpmbuild..
-- rebuilding kernel requires quite a bit of hard disk space, as I only had 10G
-  for / then I made symlinks under $HOME to the $HOME/kernel and
+- if rpmbuilding as user build, then copy files from /root/rpmbuild into /home/build/rpmbuild..
+- rebuilding kernel requires quite a bit of hard disk space, as I only had 10G for / then I made symlinks under
+  $HOME to the $HOME/kernel and
   $HOME/lustre-release
 
-`yum -y install expect` and install the new kernel with lustre patches and the
-lustre and lustre modules.
+`yum -y install expect` and install the new kernel with lustre patches and the lustre and lustre modules.
 
 Not important?:
 

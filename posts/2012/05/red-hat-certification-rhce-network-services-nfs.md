@@ -6,16 +6,15 @@ tags: centos, certification, file, transfer, linux, nfs, red, hat, rhce, studyin
 <!-- prettier-ignore -->
 ---
 
-[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
-\- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \-
+System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
 ## Network services
 
-Network services are an important subset of the exam objectives. RHCE candidates
-should be capable of meeting the following objectives for each of the network
-services listed below:
+Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the
+following objectives for each of the network services listed below:
 
 - Install the packages needed to provide the service.
 - Configure SELinux to support the service.
@@ -78,8 +77,7 @@ Testing an NFS server is generally easier from another linux-server.
 
 - Provide network shares to specific clients.
 
-- Add a new folder / line in /etc/exports and only allow certain clients to
-  connect to it
+- Add a new folder / line in /etc/exports and only allow certain clients to connect to it
 
 - Provide network shares suitable for group collaboration.
 

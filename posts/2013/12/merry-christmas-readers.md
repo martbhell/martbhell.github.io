@@ -14,8 +14,8 @@ The most visited articles last 2 months are:
 
 1. [Brocade SAN Switch Firmware Upgrades](https://www.guldmyr.com/brocade-san-switch-firmware-upgrades/ "Brocade SAN Switch Firmware Upgrades")
 
-OK, that's the biggest one by a magnitude and the article I have surely spent
-most time on to keep up to date over the years :)
+OK, that's the biggest one by a magnitude and the article I have surely spent most time on to keep up to date over the
+years :)
 
 Here's the shared second places :)
 

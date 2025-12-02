@@ -11,8 +11,7 @@ tags: kvm, qemu, libvirt, pcie, pci, XML, ib, infiniband, gpu, h100, virtualizat
 
 I have managed to with PCI passthrough pass in devices(GPU and IB) into a VM.
 
-But for some reason an [all_reduce](https://github.com/NVIDIA/nccl-tests) is
-still slow (1/10 with 2 full nodes in BM).
+But for some reason an [all_reduce](https://github.com/NVIDIA/nccl-tests) is still slow (1/10 with 2 full nodes in BM).
 
 First attempted layout was something like:
 
@@ -25,30 +24,24 @@ GPU1   GPU2   GPU3  ..  GPU8
 IB1    IB2    IB3   ..  IB8
 ```
 
-Where the upstream & downstream ports show up as Texas Instruments PCIe switches
-and are `<controllers>` in libvirt XML.
+Where the upstream & downstream ports show up as Texas Instruments PCIe switches and are `<controllers>` in libvirt XML.
 
 Theories / Next Steps:
 
-- NUMA domains are not sent in properly into the VM and it doesn't know which
-  cores are in which domain
-- There are more ways to setup the layouts, maybe different models on the
-  controllers?
-- Run NCCL with `TOPO_DUMP` to get the topography on a baremetal and then use
-  this layout inside VM? Maybe with some small modifications?
-- Read server & CPU & system board manuals to get understanding of how layout
-  actually is
-- Read [libvirt python](https://libvirt-python.readthedocs.io/) docs, maybe
-  there are some more clues there than what already found in
-  [Domain XML format](https://libvirt.org/formatdomain.html)?
+- NUMA domains are not sent in properly into the VM and it doesn't know which cores are in which domain
+- There are more ways to setup the layouts, maybe different models on the controllers?
+- Run NCCL with `TOPO_DUMP` to get the topography on a baremetal and then use this layout inside VM? Maybe with some
+  small modifications?
+- Read server & CPU & system board manuals to get understanding of how layout actually is
+- Read [libvirt python](https://libvirt-python.readthedocs.io/) docs, maybe there are some more clues there than what
+  already found in [Domain XML format](https://libvirt.org/formatdomain.html)?
 
 ### Update 2
 
-The setup I had managed to create was one upstream and one downstream PCI device
-visible in lspci per each GPU/IB card pair.
+The setup I had managed to create was one upstream and one downstream PCI device visible in lspci per each GPU/IB card
+pair.
 
-Taking a step back however with the cards passed into the VM I could only get
-35Gbps between two VMs.
+Taking a step back however with the cards passed into the VM I could only get 35Gbps between two VMs.
 
 Theories:
 
@@ -61,17 +54,14 @@ Theories:
 
 There's been about 2 weeks since last update :)
 
-It is possible to get good performance with GPU and ConnectX 7 cards passed into
-the VM.
+It is possible to get good performance with GPU and ConnectX 7 cards passed into the VM.
 
 In short these are important:
 
-- Use pcie-expander-buses, root ports, upstream and downstream ports to connect
-  the `<hostdevs>` because `pxb-pcie` devices one can assign to a specific NUMA
-  node.
+- Use pcie-expander-buses, root ports, upstream and downstream ports to connect the `<hostdevs>` because `pxb-pcie`
+  devices one can assign to a specific NUMA node.
 - Enable ACS (in BIOS and setpci) and ATS (mlxconfig).
-- Follow
-  [NCCL troubleshooting](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html)
+- Follow [NCCL troubleshooting](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html)
 
 Poor man's visual representation
 

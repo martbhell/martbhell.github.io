@@ -108,14 +108,12 @@ With this, any device can be shared with any device in any fabric.
 
 ---
 
-`E_Switch3` `<FC>` `EX_Router3` `VEX_Router3` <> `VE_Router4` `E_Router4` `<FC>`
-`E_Switch4`
+`E_Switch3` `<FC>` `EX_Router3` `VEX_Router3` <> `VE_Router4` `E_Router4` `<FC>` `E_Switch4`
 
-You can also make it like below, and you would have the same functionality,
-except that the router is in the same fabric as the  switches.
+You can also make it like below, and you would have the same functionality, except that the router is in the same fabric
+as the  switches.
 
-`E_Switch3` `<FC>` `E_Router3` `VEX_Router3` <> `VE_Router4`
-`E_Router4` `<FC>` `E_Switch4`
+`E_Switch3` `<FC>` `E_Router3` `VEX_Router3` <> `VE_Router4` `E_Router4` `<FC>` `E_Switch4`
 
 ## nonos
 
@@ -123,8 +121,7 @@ except that the router is in the same fabric as the  switches.
 
 2. which is the edge/backbone? `EX_SW1` -> `E_SW2` `E_SW1` -> `EX_SW2`
 
-3. a switch cannot be both edge and backbone `E_SW1` -> `EX_R1` `E_R1` ->
-   `EX_R2`
+3. a switch cannot be both edge and backbone `E_SW1` -> `EX_R1` `E_R1` -> `EX_R2`
 
 You cannot share devices over more than one backbone fabric.
 
@@ -132,38 +129,32 @@ You cannot share devices over more than one backbone fabric.
 
 ### Dark Fiber
 
-fibre optic that is not used. Long Wavelength SFPs. Allocate extra buffers to
-the ports. **WDM - Transponder- or SFP-based**
+fibre optic that is not used. Long Wavelength SFPs. Allocate extra buffers to the ports. **WDM - Transponder- or
+SFP-based**
 
-several links on the same fibre optic (at different wave lengths). DWDM - full
-of win and expensive. CWDM - slower, shorter, less channels - lower cost.
+several links on the same fibre optic (at different wave lengths). DWDM - full of win and expensive. CWDM - slower,
+shorter, less channels - lower cost.
 
-Transponder based : 850nm or 1310nm. Using Optical-to-Electrical-to-Optical
-(OE-O). SFP based: uses switch equipment that has special WDM transcveivers
-(colored optics). Cheaper. CWDM SFPs are like a standard SFP in a FC switch,
-except they transmit on a particular CWDM frequency.
+Transponder based : 850nm or 1310nm. Using Optical-to-Electrical-to-Optical (OE-O). SFP based: uses switch equipment
+that has special WDM transcveivers (colored optics). Cheaper. CWDM SFPs are like a standard SFP in a FC switch, except
+they transmit on a particular CWDM frequency.
 
 ### TDM
 
-Time Division Multiplexing takes many client-side data channels and map them
-onto a single higher-bit-rate channel for transmission on one wavelength. May
-requires special config on switches (IDLE primitives, `R_RDY` flow control)
+Time Division Multiplexing takes many client-side data channels and map them onto a single higher-bit-rate channel for
+transmission on one wavelength. May requires special config on switches (IDLE primitives, `R_RDY` flow control)
 
 ### FC-SONET/SDH
 
-Synchronous Optical Network and Synch. Digital Hierarchy. Often used across
-metropolitan networks. FC are mapped onto a SONET or SDH payload. Also special
-config.
+Synchronous Optical Network and Synch. Digital Hierarchy. Often used across metropolitan networks. FC are mapped onto a
+SONET or SDH payload. Also special config.
 
-**"Extended Distance Solutions"** Some  of these can participate in
-buffer-to-buffer flow control. Participate in `E_Port` initialization with an
-`FC_Switch` or "snoop" and that way get the **receive-buffer field** in the ELP.
-For these `R_RDY` needs to be enabled (`VC_RDY` is brocade proprietary?). The
-`R_RDY` are returned from the device to the switch in order to maintain
-performance over very long distances. Flow control and error correction between
-these extension solutions are not handled by the FC switches.
+**"Extended Distance Solutions"** Some  of these can participate in buffer-to-buffer flow control. Participate in
+`E_Port` initialization with an `FC_Switch` or "snoop" and that way get the **receive-buffer field** in the ELP. For
+these `R_RDY` needs to be enabled (`VC_RDY` is brocade proprietary?). The `R_RDY` are returned from the device to the
+switch in order to maintain performance over very long distances. Flow control and error correction between these
+extension solutions are not handled by the FC switches.
 
 Consider bandwidth, delay/latency,packet loss (congestion), MTU sizes, etc.
 
-Packet loss = congestion. When a router discards packets because it cannot store
-or pass them on.
+Packet loss = congestion. When a router discards packets because it cannot store or pass them on.

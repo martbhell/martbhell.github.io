@@ -9,8 +9,8 @@ lang: en
 
 ## What was going on?
 
-The wired network connection lost connection every now and then. Most of the
-time this didn't bother because buffering but sometimes it did annoy.
+The wired network connection lost connection every now and then. Most of the time this didn't bother because buffering
+but sometimes it did annoy.
 
 This was on Raspian 11 and a raspberry 4.
 
@@ -44,5 +44,4 @@ post-up /sbin/ethtool --set-eee eth0 eee off
 
 ## What really really helped
 
-- making sure the cable is properly connected into the switch, the plastic flap
-  that keeps it in is apparently broken
+- making sure the cable is properly connected into the switch, the plastic flap that keeps it in is apparently broken

@@ -10,14 +10,12 @@ tags: 10.04, lts, hp, libs, linux, red, hat, enterprise, linux, remote, support,
 
 I couldn't get it to work.
 
-Eventually I installed Ubuntu 10.04 LTS in a VM in Virtualbox and in there it
-worked.
+Eventually I installed Ubuntu 10.04 LTS in a VM in Virtualbox and in there it worked.
 
 However, resolution is only 800x600. So I found this page:
 
 [http://forums.virtualbox.org/viewtopic.php?t=15679](http://forums.virtualbox.org/viewtopic.php?t=15679)
 
-That told me to install some stuff and then install the Guest Addition stuff.
-After that and a reboot HP Vroom no longer worked. But resolution was fine!
-Grah. Then I just used the "Live CD" of Ubuntu instead, or the normal .iso but
-no need to install, just boot from it.
+That told me to install some stuff and then install the Guest Addition stuff. After that and a reboot HP Vroom no longer
+worked. But resolution was fine! Grah. Then I just used the "Live CD" of Ubuntu instead, or the normal .iso but no need
+to install, just boot from it.

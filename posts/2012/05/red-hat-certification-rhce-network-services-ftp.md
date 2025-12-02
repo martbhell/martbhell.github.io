@@ -6,16 +6,15 @@ tags: centos, certification, file, transfer, ftp, linux, red, hat, rhce, studyin
 <!-- prettier-ignore -->
 ---
 
-[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post")
-\- System Management and Configuration
+[1st post](https://www.guldmyr.com/red-hat-certification-rhce-system-configuration-and-management-2/ "1st post") \-
+System Management and Configuration
 
 [Objectives](https://www.redhat.com/training/courses/ex300/examobjective "on redhat.com")
 
 ## Network services
 
-Network services are an important subset of the exam objectives. RHCE candidates
-should be capable of meeting the following objectives for each of the network
-services listed below:
+Network services are an important subset of the exam objectives. RHCE candidates should be capable of meeting the
+following objectives for each of the network services listed below:
 
 - Install the packages needed to provide the service.
 - Configure SELinux to support the service.
@@ -36,8 +35,8 @@ User should be able to do the following for all these services:
 
 ## FTP
 
-An ftp-server is also quite easy to test. You can test it from many
-web-browsers, telnet, ftp, lftp or a myriad of other clients.
+An ftp-server is also quite easy to test. You can test it from many web-browsers, telnet, ftp, lftp or a myriad of other
+clients.
 
 - Install the packages needed to provide the service.
 
@@ -45,8 +44,7 @@ web-browsers, telnet, ftp, lftp or a myriad of other clients.
 
 - Configure SELinux to support the service
 
-- this might be more interesting, you may need to do some magic here for sharing
-  files
+- this might be more interesting, you may need to do some magic here for sharing files
 - getsebool -a|grep ftp
 
 - Configure the service to start when the system is booted.

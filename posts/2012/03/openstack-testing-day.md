@@ -8,11 +8,10 @@ tags: fedora, linux, openstack, operating, system, os, red, hat, testing, virtua
 
 Only one day late!
 
-I actually started installing this on the 8th but I forgot to install it to hdd
-so the 'yum update' failed and broke the machine with I/O errors :)
+I actually started installing this on the 8th but I forgot to install it to hdd so the 'yum update' failed and broke the
+machine with I/O errors :)
 
-Installing it in a VMWare Workstation (fedora 64-bit type, 2, cores, 4G RAM, 20G
-disk).
+Installing it in a VMWare Workstation (fedora 64-bit type, 2, cores, 4G RAM, 20G disk).
 
 [http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day](http://fedoraproject.org/wiki/Test_Day:2012-03-08_OpenStack_Test_Day)
 
@@ -27,9 +26,8 @@ No problem.
 
 [http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova](http://fedoraproject.org/wiki/QA:Testcase_setup_OpenStack_Nova)
 
-Says that if you are doing this in a VM you need to "configure nova to use qemu
-without KVM and hardware virtualization:". This is not true, as VMWare
-Workstation 8 has virtualization pass-through.
+Says that if you are doing this in a VM you need to "configure nova to use qemu without KVM and hardware
+virtualization:". This is not true, as VMWare Workstation 8 has virtualization pass-through.
 
 ```bash
 [root@localhost mart]# vgcreate nova-volumes $(sudo losetup --show -f
@@ -78,8 +76,7 @@ No problems.
 
 ### 6 Add SSH keypair
 
-No problems, just do exactly what the instructions say (don't try to be smart
-and put them in .sh files for example :P).
+No problems, just do exactly what the instructions say (don't try to be smart and put them in .sh files for example :P).
 
 ### 7 Register Guest Images
 
@@ -94,8 +91,8 @@ metadata may still be in the registry, but the image's status will likely be
 'killed'.
 ```
 
-Yes, this is where it fall short. Manpage for clance doesn't even have the
-'copy_from'. Maybe it could be downloaded? 'glance index' doesn't work either.
+Yes, this is where it fall short. Manpage for clance doesn't even have the 'copy_from'. Maybe it could be downloaded?
+'glance index' doesn't work either.
 
 ```python
 [root@localhost ~]# glance index Failed to show index. Got error: Internal

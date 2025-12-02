@@ -12,12 +12,11 @@ tags: bsd, dragonfly, freebsd, operating, system, os, vmware, vmware, workstatio
 
 It's based on ... BSD! (FreeBSD 4.8 is apparently what dragonfly span off from)
 
-What's weird is that while VMWare Workstation scans the iso (to find which OS it
-is) it stops responding (other VMs are unaffected). It finds FreeBSD 64-bit.
+What's weird is that while VMWare Workstation scans the iso (to find which OS it is) it stops responding (other VMs are
+unaffected). It finds FreeBSD 64-bit.
 
-It has a 'hammer' filesystem. Apparently this is unsupported for FS under 10GB
-and not recommended for under 50G and will apparently require a lot of
-[things](http://leaf.dragonflybsd.org/cgi/web-man?command=newfs_hammer&section=8)
+It has a 'hammer' filesystem. Apparently this is unsupported for FS under 10GB and not recommended for under 50G and
+will apparently require a lot of [things](http://leaf.dragonflybsd.org/cgi/web-man?command=newfs_hammer&section=8)
 (period clean-up job) occasionally.
 
      **HAMMER** file systems are designed for large storage systems, up to 1
@@ -37,14 +36,12 @@ Quick and easy!
 
 As it's BSD, add the user to the 'wheel' group so that it can become super-user.
 
-Guide to get sshd working (basically set PasswordAuthentication = yes). The
-guide mentions a lot of other things, but in 3.0.1 sshd is on by default and the
-keys have been generated.
+Guide to get sshd working (basically set PasswordAuthentication = yes). The guide mentions a lot of other things, but in
+3.0.1 sshd is on by default and the keys have been generated.
 
 ### Install  software
 
-Edit /usr/pkg/etc/pkgin/repositories.conf and add the URL to a repository near
-you.
+Edit /usr/pkg/etc/pkgin/repositories.conf and add the URL to a repository near you.
 
 pkgin update
 
@@ -56,8 +53,7 @@ pkgin install bash
 
 This installs bash to /usr/pkg/bin/bash
 
-It's not enough to just edit /etc/passwd to get the new shell, you need to edit
-it via 'chsh'.
+It's not enough to just edit /etc/passwd to get the new shell, you need to edit it via 'chsh'.
 
 To install screen you need to
 
@@ -71,8 +67,7 @@ All commands start with 'hammer'. Like 'hammer info'.
 
 ### Conclusion
 
-While looking at it from the above angle (quite distant) - this doesn't appear
-to be very different from other bsd/unix/linux distributions, a bit different
-commands to do some things but that's not so odd in itself.
+While looking at it from the above angle (quite distant) - this doesn't appear to be very different from other
+bsd/unix/linux distributions, a bit different commands to do some things but that's not so odd in itself.
 
 Personally I like the name, maybe that's enough to use it? =)
