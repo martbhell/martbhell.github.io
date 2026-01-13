@@ -30,7 +30,7 @@ Sure took a while to learn:
 
 These kind of extra flags to `mpirun` to get [all_reduce_perf](https://github.com/NVIDIA/nccl-tests) running:
 
-```
+```bash
 mpirun -H 10.1.1.5:8,10.1.1.6:8 \
       -x NCCL_IB_GID_INDEX=5 \
       -mca coll ^hcoll \
