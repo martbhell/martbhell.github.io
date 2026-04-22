@@ -44,7 +44,7 @@ def fetch_url(url):
         return
 
     # Parse the HTML content of the page
-    soup = BeautifulSoup(response.content, 'html.parser')
+    soup = BeautifulSoup(response.content, features='xml')
 
     # Find all links in the page
     links = soup.find_all('a')
