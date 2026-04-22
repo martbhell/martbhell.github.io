@@ -70,4 +70,5 @@ prettier --write posts/2025/11/huurteinen-iltarastit-25.md --prose-wrap always -
 
 Maybe it's time to upgrade python?
 
-So in cloudflare pages, you have different environment. Prod and preview. You can set PYTHON_VERSION to be different in each of them. Do that :)
+So in cloudflare pages, you have different environment. Prod and preview. You can set PYTHON_VERSION to be different in
+each of them. Do that :)
