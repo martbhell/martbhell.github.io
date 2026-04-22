@@ -65,3 +65,9 @@ nodeenv ~/npm-env --node=25.2.0
 source ~/npm-env/bin/activate
 prettier --write posts/2025/11/huurteinen-iltarastit-25.md --prose-wrap always --print-width 120
 ```
+
+# Deployment
+
+Maybe it's time to upgrade python?
+
+So in cloudflare pages, you have different environment. Prod and preview. You can set PYTHON_VERSION to be different in each of them. Do that :)
