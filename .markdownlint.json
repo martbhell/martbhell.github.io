@@ -1,8 +1,1 @@
-{
-  "first-line-h1": false,
-  "no-inline-html": true,
-  "line-length": {
-    code_blocks: false,
-    line_length: 120
-  }
-}
+{\n  "first-line-h1": false,\n  "no-inline-html": true,\n  "line-length": {\n    "code_blocks": false,\n    "line_length": 120\n  },\n  "ul-indent": {\n    "indent": 2\n  },\n  "list-marker-space": true,\n  "no-trailing-spaces": true,\n  "no-multiple-blanks": true\n}
