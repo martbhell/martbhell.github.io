@@ -18,9 +18,8 @@ Olen mennyt jukolaan nyt aika monta vuotaa, ensimmäinen oli 2015 Lounas (Paimi,
 <!-- markdownlint-disable MD013 -->
 <!-- prettier-ignore-start -->
 
-| | | | | | | | | |
 | vuosi | osuus | nimi | sijainti viestissä | joukkue tulos (kun vaihdoin) | joukkue aika (kun vaihdoin) | osuus sijainti | osuus aika | |
-| ----------------------------------------------------------------------------------------------- | ----- | ------------- | ------------------ | ---------------------------- | --------------------------- | -------------- | ---------- | ------- |
+| ----- | ----- | ---- | ------------------ | ---------------------------- | --------------------------- | -------------- | ---------- | --- |
 | [2015 Luona (Paimio)](https://results.jukola.com/tulokset/en/j2015_ju/kilpailijat/1030/) | 4 | Johan Guldmyr | 1353 (+182) | 9:37:28 | +4:43:23 | 1579/1647 | 2:19:35 | |
 | [2016 Lappee (nranta)](https://results.jukola.com/tulokset/en/j2016_ju/kilpailijat/1255/) | 4 | Johan Guldmyr | 1151 (+76) | 8:19:05 | +3:43:38 | 1326/1559 | 1:53:48 | |
 | [2017 Joensuu](https://results.jukola.com/tulokset/en/j2017_ju/kilpailijat/1110/) | 4 | Johan Guldmyr | 1234 (-58) | 9:07:47 | +4:40:22 | 985/1472 | 1:32:58 | |
