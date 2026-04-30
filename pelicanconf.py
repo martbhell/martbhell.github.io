@@ -73,6 +73,8 @@ MARKDOWN = {
         "markdown.extensions.toc": {"title": "Table of Contents"},
     },
     'output_format': 'html5',
+    # Match markdownlint's ul-indent=2 so 2-space-indented sub-lists nest in HTML
+    'tab_length': 2,
 }
 
 import alchemy
