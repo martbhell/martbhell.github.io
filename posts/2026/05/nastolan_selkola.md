@@ -21,6 +21,9 @@ alueen enemmän.
 - 3-4: Pitkä, mäki missä oli osi tasainen alue päällä ja paljon kivejä. Oli polku mäen päällä mutta se oli kivien
   välillä että en edes huomannut sita kartassa! No lähtin yritin mennä pohjoiseen suoraa. En mennyt. Tulin alas niin
   aikaisin ja oikealle ja vihreä alue ja oja..
+
+[![from rasti 3 to 4](images/nastola.3-4.png "3-4"){:height=400}](images/nastola.3-4.png)
+
 - 4-5: Alku osa menin keltainen alue yli, en ole varma olisi hyvä. Niin paljon vettä siellä ja syvä oli. Keski osa tien
   kautta. Loppu osa, tien kautta ja kompassi suunttaa.
 - 5-6: Tosi kiva. Nousin heti, seurasin kuvioraja, menin enemmän oikealle että näin se avokallio mäki, ja näin sitä.
