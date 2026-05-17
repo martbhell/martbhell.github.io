@@ -15,7 +15,7 @@ Ostin tämä terassille vuosi sitten, toiminut ihan OK. No, paitse että sulake 
 1. paina "1" kaukosäädin
 2. Sulake trippaa
 3. Flippaan sulake takaisin
-4. paina "1" -> laite alkaa lämmittää
+4. paina "1" : laite alkaa lämmittää
 
 Anyway, aihe tästä postista on että pelkäsin että hukasin kaukosäätimen.
 
@@ -27,4 +27,4 @@ Output infrared kerttoo että protocol on `NEC`, osoite on `00 00 00 00` ja comm
 - Taso 1: `40 00 00 00`
 - Taso 2 (lämpömämpi): `43 00 00 00`
 
-[Heater.ir](Heater.ir)
+[images/Heater.ir](images/Heater.ir)
