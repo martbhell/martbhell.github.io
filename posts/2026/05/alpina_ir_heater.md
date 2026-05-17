@@ -27,4 +27,4 @@ Output infrared kerttoo että protocol on `NEC`, osoite on `00 00 00 00` ja comm
 - Taso 1: `40 00 00 00`
 - Taso 2 (lämpömämpi): `43 00 00 00`
 
-[images/Heater.ir](images/Heater.ir)
+[extras/Heater.ir](extras/Heater.ir)
