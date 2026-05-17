@@ -1,6 +1,6 @@
 ---
 title: Alpina IR Heater
-date: 2026-05-11 23:57
+date: 2026-05-17 23:57
 category: it
 lang: fi
 tags: ir, infrared, heater, flipper zero
