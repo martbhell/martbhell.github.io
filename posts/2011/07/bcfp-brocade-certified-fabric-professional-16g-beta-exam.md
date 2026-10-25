@@ -18,7 +18,7 @@ of the BCFA stuff, get back in the game.
 ## The Material
 
 I've been going through what's recommended (the material) and these are the useful pages: Please note that the second
-item in each list is the *actual* page number in the document. I also took the liberty of adding pages before/after in
+item in each list is the _actual_ page number in the document. I also took the liberty of adding pages before/after in
 case they were adding context to the page. It's not like I'm going to try to remember the pages by heart. And quite
 often the pages referenced by Brocade were just one page in the middle of a chapter.
 

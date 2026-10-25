@@ -58,7 +58,7 @@ still happen for each dropped frame.
 Is a new features in FOS 7**(confirm)** and it is ASIC dependent. Meaning ports in another port group are not affected
 by the EHT in another port group.
 
-EHT applies to all F_Ports on a switch *and* all the E_ports that share ASIC with F_Ports.
+EHT applies to all F_Ports on a switch _and_ all the E_ports that share ASIC with F_Ports.
 
 Intended for initiators only.
 

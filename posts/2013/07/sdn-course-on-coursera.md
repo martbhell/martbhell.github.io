@@ -18,6 +18,6 @@ hard deadlines for each week's quiz aren't until 5th of August so plenty of time
 
 In particular I'd recommend a quite cool interview with
 [David D. Clark](http://en.wikipedia.org/wiki/David_D._Clark "on wikipedia") and who is that? Quote from
-wikipedia: *"... acted as chief protocol architect in the development of
-the [Internet](http://en.wikipedia.org/wiki/Internet "Internet")..."* Which is pretty awesome. Hearing about some design
+wikipedia: _"... acted as chief protocol architect in the development of
+the [Internet](http://en.wikipedia.org/wiki/Internet "Internet")..."_ Which is pretty awesome. Hearing about some design
 decisions around the internet was quite interesting.
