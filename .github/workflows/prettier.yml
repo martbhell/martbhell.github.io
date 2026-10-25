@@ -15,11 +15,13 @@ jobs:
         continue-on-error: true
         with:
           dry: True
+          prettier_version: "3.7.4"
           prettier_options: --check **/*.md --prose-wrap always --print-width 120 --log-level debug
 
       - name: Prettify code without debug
         uses: creyD/prettier_action@8c18391fdc98ed0d884c6345f03975edac71b8f0 # v4.6
         with:
           dry: True
+          prettier_version: "3.7.4"
           prettier_options: --check **/*.md --prose-wrap always --print-width 120
 
