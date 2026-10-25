@@ -18,8 +18,8 @@ One such thing I noticed while looking
 through [https://github.com/AJNOURI/COA/wiki/02.-Compute:-Nova](https://github.com/AJNOURI/COA/wiki/02.-Compute:-Nova)
 
 Was setting the default project quota. I wonder if that's a cli/webui/API call or service config. But a config file
-would be weird, unless it's in Keystone. *Turns out default quotas are in each of the services' config files. It's also
-possible to set a default quota with for example the nova command.*
+would be weird, unless it's in Keystone. _Turns out default quotas are in each of the services' config files. It's also
+possible to set a default quota with for example the nova command._
 
 Another perhaps useful thing I did was to go through the release notes for the services. $dayjob run
 [Newton](https://releases.openstack.org/newton/index.html) so I started with the release after that and tried to grok

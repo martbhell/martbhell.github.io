@@ -43,9 +43,8 @@ basically:
 - autogen
 - install kernel.src from redhat (puts tar.gz in /root/rpmbuild/SOURCES/)
 - if rpmbuilding as user build, then copy files from /root/rpmbuild into /home/build/rpmbuild..
-- rebuilding kernel requires quite a bit of hard disk space, as I only had 10G for / then I made symlinks under
-  $HOME to the $HOME/kernel and
-  $HOME/lustre-release
+- rebuilding kernel requires quite a bit of hard disk space, as I only had 10G for / then I made symlinks under $HOME to
+  the $HOME/kernel and $HOME/lustre-release
 
 `yum -y install expect` and install the new kernel with lustre patches and the lustre and lustre modules.
 
